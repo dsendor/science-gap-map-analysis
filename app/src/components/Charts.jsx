@@ -7,7 +7,7 @@
 
 import { TIER_ORDER, MATURITY_ORDER, MATURITY_COLOR } from '../lib/constants';
 
-export function BarChart({ data, total, color = 'var(--series-1)', colorMap }) {
+export function BarChart({ data, total, color = 'var(--accent)', colorMap }) {
   const max = Math.max(...data.map((d) => d[1]), 1);
   return (
     <div className="bars">
@@ -45,7 +45,7 @@ export function StackedMaturity({ rows }) {
           const t = totals[i];
           return (
             <Fragment2 key={label}>
-              <div className="lbl" style={{ fontSize: 13, color: 'var(--text-secondary)', textAlign: 'right' }}>
+              <div className="lbl" style={{ fontSize: 14, color: 'var(--ink-2)', textAlign: 'right' }}>
                 {label}
               </div>
               <div className="stack" style={{ width: `${(100 * t) / max}%` }} title={`${label}: ${t} gaps`}>
@@ -53,14 +53,14 @@ export function StackedMaturity({ rows }) {
                   counts[m] ? (
                     <span
                       key={m}
-                      style={{ flex: counts[m], background: MATURITY_COLOR[m], color: m === 'Working now' ? '#0b0b0b' : '#fff' }}
+                      style={{ flex: counts[m], background: MATURITY_COLOR[m], color: '#ffffff' }}
                     >
                       {counts[m]}
                     </span>
                   ) : null
                 )}
               </div>
-              <div className="val" style={{ fontSize: 13 }}>{t}</div>
+              <div className="val" style={{ fontSize: 14 }}>{t}</div>
             </Fragment2>
           );
         })}
@@ -89,7 +89,7 @@ export function CrossTab({ crosstab, cols = TIER_ORDER, rowLabel = 'Primary AI t
     const s = Math.ceil((5 * v) / max);
     return `var(--heat-${Math.max(1, Math.min(5, s))})`;
   };
-  const ink = (v) => (v && Math.ceil((5 * v) / max) >= 3 ? '#fff' : 'var(--text-primary)');
+  const ink = (v) => (v && Math.ceil((5 * v) / max) >= 3 ? 'var(--page)' : 'var(--ink)');
   return (
     <div className="scroll">
       <table className="heat">

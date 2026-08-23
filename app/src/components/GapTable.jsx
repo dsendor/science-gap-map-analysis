@@ -120,57 +120,57 @@ export default function GapTable({ gaps, newGaps }) {
         </label>
       </div>
 
-      <p className="note" style={{ marginBottom: 10 }}>
+      <p style={{ marginBottom: 12, fontSize: 14.5, color: 'var(--ink-3)' }}>
         Showing {rows.length} of {all.length} rows
         {showProposed ? ` (${gaps.length} of theirs, ${proposed.length} proposed)` : ` (theirs only)`} ·{' '}
         {nGuess} of the {rows.length} carry at least one label flagged{' '}
-        <span className="chip guess">guess</span> · order is Convergent&rsquo;s export order, not a ranking
+        <span className="tag flag">guess</span> · order is Convergent&rsquo;s export order, not a ranking
       </p>
 
       <div>
         {rows.map((g) => (
           <GapRow key={g.id} g={g} />
         ))}
-        {rows.length === 0 && <p className="note">No gaps match those filters.</p>}
+        {rows.length === 0 && <p style={{ color: 'var(--ink-3)' }}>No gaps match those filters.</p>}
       </div>
     </>
   );
 }
 
 function Conf({ c }) {
-  return c === 'guess' ? <span className="chip guess">guess</span> : <span className="chip">confident</span>;
+  return c === 'guess' ? <span className="tag flag">guess</span> : <span className="tag">confident</span>;
 }
 
 function GapRow({ g }) {
+  const flagged = [g.outcome_confidence, g.primary_confidence, g.tier_confidence].includes('guess');
   return (
-    <details className="gap">
+    <details className="gaprow">
       <summary>
         <div>
-          <div className="gapname">
-            {g.is_new ? <span className="chip newgap">proposed addition</span> : null} {g.name}
+          <div className="name">
+            {g.is_new ? <span className="tag new" style={{ marginRight: 7 }}>proposed</span> : null}
+            {g.name}
           </div>
-          <div className="gapmeta">
+          {/* The outcome sits in the closed row on purpose: it is the most useful of the
+              four attributes and the only one that is invisible from a label alone. */}
+          {g.outcome && <div className="outcome">{g.outcome}</div>}
+          <div className="meta">
             {g.field} · {g.tier ?? '—'} · {g.primary_ai_type ?? '—'} ({g.primary_maturity ?? '—'})
           </div>
         </div>
-        <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-          {[g.outcome_confidence, g.primary_confidence, g.tier_confidence].filter((c) => c === 'guess').length > 0 && (
-            <span className="chip guess">guess</span>
-          )}
+        <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          {flagged && <span className="tag flag">guess</span>}
           {g.indicators?.length > 0 && (
-            <span className="chip">{g.indicators[0].is_null_result ? 'indicator: null' : 'indicator'}</span>
+            <span className="tag">{g.indicators[0].is_null_result ? 'indicator: null' : 'indicator'}</span>
           )}
         </div>
       </summary>
-      <div className="gapbody">
+      <div className="body">
         <p style={{ fontSize: 14 }}>{g.description}</p>
 
         <div className="why">
-          <div className="k">Outcome if this gap closes <Conf c={g.outcome_confidence} /></div>
-          <div className="t">{g.outcome}</div>
-          <div className="t" style={{ color: 'var(--muted)', fontSize: 13, marginTop: 4 }}>
-            Why: {g.outcome_rationale}
-          </div>
+          <div className="k">Why that outcome <Conf c={g.outcome_confidence} /></div>
+          <div className="t">{g.outcome_rationale}</div>
         </div>
 
         <div className="why">
@@ -179,7 +179,7 @@ function GapRow({ g }) {
           </div>
           <div className="t">{g.primary_rationale}</div>
           {g.ai_types?.filter((t) => !t.is_primary).length > 0 && (
-            <ul style={{ fontSize: 13, color: 'var(--muted)', marginTop: 6 }}>
+            <ul style={{ fontSize: 13, color: 'var(--ink-3)', marginTop: 6 }}>
               {g.ai_types
                 .filter((t) => !t.is_primary)
                 .map((t) => (
@@ -213,7 +213,7 @@ function GapRow({ g }) {
                 <a href={i.source_url} target="_blank" rel="noreferrer">
                   {i.source_title}
                 </a>{' '}
-                <span className="chip">source {i.source_checked}</span>
+                <span className="tag">source {i.source_checked}</span>
               </div>
             )}
             <div className="t" style={{ fontSize: 13, marginTop: 4 }}>{i.rationale}</div>
@@ -241,7 +241,7 @@ function GapRow({ g }) {
           </>
         ) : (
           g.capabilities?.length > 0 && (
-            <p className="note" style={{ marginTop: 10 }}>
+            <p style={{ marginTop: 12, fontSize: 14.5, color: 'var(--ink-3)' }}>
               Their foundational capabilities for this gap: {g.capabilities.map((c) => c.name).join(' · ')}
             </p>
           )

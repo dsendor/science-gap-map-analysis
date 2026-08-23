@@ -3,152 +3,89 @@
 **Status: draft.** External communication is David's. Nothing here has been sent to
 anyone at Convergent Research.
 
+The page now carries the argument, the caveats and the ask, so this is deliberately
+short: its only job is to get the link opened.
+
 ---
 
-Subject: An augmented copy of the Gap Map, plus one thing worth knowing about your export
+To: gapmap@convergentresearch.org
+Subject: An extended version of the Gap Map, and a hypothesis I'd like you to shoot at
 
 Hi —
 
-I've been working with the Fundamental Development Gap Map v1.0 export and ended up
-building something on top of it. It's a contribution rather than a critique: your own
-data, untouched, with four columns added to every gap. Sending it in case it's useful,
-and because there's a bug in the export that I think you'd want to know about.
+I've been trying to work out where AI can most accelerate science, and I kept landing
+on questions your Gap Map had already framed better than I had.
 
-**What's in it**
+One hypothesis I keep coming back to: as AI clears the cognitive bottlenecks in
+research, the bottlenecks that are left don't stay the same size — they become *the*
+constraint, and more visibly so. The software version is familiar: writing code got
+cheap, and now everyone's time goes into code review. Science has the same shape and a
+harder version of it, because most of what's left is fabrication, funding, approval and
+agreement rather than thinking.
 
-For all 103 gaps:
+If that's right it has a funding consequence, so rather than send you a suggestion I
+spent a few days testing it against your data. I added four attributes to all 103 of
+your gaps — a stated outcome, an AI capability type and maturity, a measurability tier,
+and a progress indicator for a sample of eight — plus four proposed gaps and two worked
+critical paths.
 
-- **A stated outcome** — one sentence on what becomes knowable or buildable if the gap
-  closes.
-- **An AI capability type and maturity** — which of seven named kinds of AI would
-  actually move this gap, and whether that kind is working now, two-to-five years out,
-  or speculative.
-- **A measurability tier** — whether the gap has an agreed observable, only a proxy, a
-  contested observable, or a quantity that is inherently counterfactual.
+**[link]**
 
-Plus a stratified sample of eight **progress indicators** with real sources, four
-**proposed new gaps** written to your house format and kept in their own table, and two
-worked **critical paths** with the evidence behind each link.
+The short version of what came out: not one gap in the map has physical build and
+manipulation as a working-now primary capability. All 17 sit at two-to-five years or
+speculative, against 60% working-now for LLM reasoning and synthesis. And two gaps in
+two different fields — a space telescope and research publishing — turn out to share a
+binding link, which is peer review of proposals, evidenced by ESO's own account of why
+they moved to Distributed Peer Review.
 
-Every added judgment carries its own rationale and a confidence flag, and the ones that
-were uncertain are marked `guess` rather than smoothed over — 24 of the 103
-measurability tiers and 20 of the primary AI-type assignments are flagged that way. A
-second labeller relabelled a stratified 36-gap sample blind; the population-weighted
-disagreement rate on tier is 15%, and 33% raw on AI type. Those numbers are in the
-artifact rather than in a footnote, because they are the honest measure of how much
-weight these labels bear.
+Two caveats up front. It isn't comprehensive, and parts of it are probably wrong: it
+was produced quickly and mostly by AI, and no human has reviewed the labels. The
+disagreement rates from a blind second pass are on the page, including the one category
+of my own that failed its own audit. Your data is untouched — the additions live in
+separate tables and the baseline is diffed against a hash-pinned copy of your
+2026-07-29 export on every build.
 
-**It is provably additive**
+Also, one thing worth knowing regardless: `capabilities[].gaps` is empty for all 369
+capabilities in the v1.0 export, though `schema.json` documents it as populated. All 389
+edges are on the gap side only, so anyone starting from `capabilities.json` builds an
+empty graph and gets no error. Two capability records are missing the `description` your
+schema marks required, and six resources are referenced by no capability.
 
-Your five baseline tables are re-serialised and diffed against a hash-pinned copy of the
-2026-07-29 export on every commit — `engine/verify-additive.mjs`. If anything of yours
-changed, the build fails. The additions live in separate tables and your ids and slugs
-are preserved exactly, so the CSV joins straight back to your source data on `id`. There
-is no score column anywhere in the schema, by design: you deferred prioritisation
-deliberately and a stranger ranking your map would be presumptuous.
+What I'd like is your feedback — particularly the critical version. The capability
+taxonomy is the part I'd most like torn apart. And I'd like to talk about whether a
+future version of the map should be built for a world where the cognitive work is cheap:
+chains across all 103 gaps so a recurring bottleneck can be counted rather than noticed,
+typed capability edges, and outcomes as a real entity rather than a text field.
 
-**How long it took**
+Your About page says you're open to partners interested in meta analyses and new tools
+that make the data more actionable, and that you hope to add attributes for urgency and
+impact. That's what this is aiming at.
 
-79 minutes of agent time across six phases, and zero minutes of human review. Both
-numbers are instrumented rather than estimated and they are reported separately, since a
-single blended figure would be the first thing anyone reasonably objected to. Phase 0's
-start was never instrumented, so the 79 is a lower bound.
-
-**The export bug**
-
-This is the part I'd want to know if it were mine.
-
-`schema.json` documents `capabilities[].gaps` as "IDs of R&D gaps addressed by this
-capability". In the 2026-07-29 export **that array is empty for all 369 capabilities**.
-All 389 edges exist only on the gap side, in `gaps[].foundationalCapabilities`.
-
-The graph is still complete — nothing is lost — but any consumer that trusts the
-documented capability-side field builds an empty graph and silently reports that no
-capability addresses any gap. Anyone starting from `capabilities.json` alone gets
-nothing at all.
-
-Two smaller things from the same pass:
-
-- Two capability records have no `description`, which `schema.json` marks required:
-  `Earthquake Prediction` and `Subduction Zone Observation`.
-- Six resources are referenced by no capability, so they are unreachable by navigation.
-
-Full detail in `docs/integrity-report.md`.
-
-**One structural finding, because it argues for the next piece of work**
-
-The two critical paths were picked to be as unalike as possible — a telescope, on
-elapsed time, and research publishing, on reviewer labour cost. They turned out to share
-a binding link.
-
-Facility approval and telescope time are both allocated by peer review of proposals: a
-decadal survey is a review panel, and so is a time allocation committee. That isn't an
-analogy I'm imposing. It is ESO's own stated reason for changing the mechanism — when
-they introduced Distributed Peer Review they wrote that panel load "has become
-unsustainable" and that "it has become progressively harder to find scientists willing
-to serve in the panels and in the OPC", which is the publishing chain's binding link
-written by an observatory about telescope time.
-
-Two gaps in two different fields of your map blocked by the same thing is something a
-catalogue structurally cannot show — there's one row per gap and nowhere to record that
-two rows share a blocker. Chains can, and once you have chains the recurrence is
-countable rather than anecdotal.
-
-**Where I think the harder work is**
-
-Four things, roughly in order of how much I'd want to do them with you rather than at
-you:
-
-1. **Outcomes as a proper many-to-many entity.** I modelled an outcome as a text field
-   on a gap, which is wrong and I've said so in the artifact's limitations. There are
-   almost certainly more outcomes than gaps, and one capability can unlock outcomes
-   across several fields. Fixing it is a schema change, which is not a thing to arrive
-   unsolicited from outside.
-2. **Chains across the whole map.** Two is enough to show the method discriminates. The
-   value is in counting how often a binding link recurs, and that needs all of them.
-3. **Progress tracking as a maintained system** rather than a sample of eight. Two of my
-   eight are nulls, and I think that ratio is informative rather than embarrassing — but
-   eight is a demonstration, not coverage.
-4. **Typed capability edges.** Nothing currently marks a capability as necessary,
-   sufficient or partial for its gap. That is the single most consequential absence for
-   anyone reasoning about what unblocks what, and it is why the chain work had to
-   reconstruct link semantics by hand for two gaps only. It also connects to the urgency
-   and impact attributes you've already said you want.
-
-Everything is in the artifact and the CSV. Happy to hand over the whole repository,
-including the decision ledger — eleven calls where the runner-up was usually the more
-flattering option, recorded with what would reverse each one.
-
-Best,
-David
+David Sendor
+david@sendorai.com
 
 ---
 
 ## Notes for David, not for sending
 
-- **Numbers checked before drafting.** The 79-minute figure, the 15% and 33%
-  disagreement rates, the 24 and 20 guess counts, and the 369/389/6/2 export figures are
-  all regenerated from the database rather than typed in.
-- **Three figures from the brief were cut, not softened.** The 3ie comparison —
-  approximately 42 evidence gap maps, a Development Evidence Portal at roughly 21,800
-  impact evaluations and 1,700 systematic reviews, and the absolute-gap versus
-  synthesis-gap distinction — did not survive verification. 3ie's own gap maps page
-  shows on the order of forty maps but states no total; their published portal figures
-  disagree with each other by a factor of three across sources (3,745 impact evaluations
-  in one 3ie blog post, "more than 11,000" in another), and nothing found states 21,800
-  or 1,700; and neither the gap maps page nor the Snilstveit working paper page uses the
-  terms "absolute gap" or "synthesis gap". The substance of the distinction *is* on their
-  page — gaps are where "few or no impact evaluations or systematic reviews exist" versus
-  "where there is a concentration of impact evaluations but no recent high-quality
-  systematic review" — so if a 3ie comparison is wanted later, that quote is the
-  defensible version and the numbers are not.
-- **Aaron Tohuvavohu** is verified twice: as resource `1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee`
-  (type Individual) cited by the capability "Space Telescope Factory", which is attached
-  to the telescope gap; and by name in the acknowledgments on gap-map.org/about. If the
-  artifact leads with that gap there is a named person already associated with it.
-- **Tone check.** Every statement about their capability set is phrased as an
-  observation. The telescope chain says their three capabilities act on fabrication,
-  integration and launch and not on ranking or funding — and immediately notes that two
-  of the four binding links are ones they hit, which is better than chance. The
-  publishing chain notes that half their capabilities for that gap act directly on a
-  binding link.
+- **Numbers in the email are regenerated from the database**, not typed in: 103 / 17 /
+  60% / 369 / 389 / 6 / 2, and the 2026-07-29 snapshot date.
+- **Three figures from the original brief were cut, not softened.** The 3ie comparison —
+  roughly 42 evidence gap maps, a Development Evidence Portal at roughly 21,800 impact
+  evaluations and 1,700 systematic reviews, and the absolute-gap versus synthesis-gap
+  distinction — did not survive verification. 3ie's own blog posts disagree with each
+  other about the portal totals by a factor of three, their gap maps page states no
+  total, and neither that page nor the Snilstveit working paper uses those two terms.
+  The substance of the distinction *is* on their page — gaps are where "few or no impact
+  evaluations or systematic reviews exist" versus "where there is a concentration of
+  impact evaluations but no recent high-quality systematic review" — so if a 3ie
+  comparison is wanted later, that quote is the defensible version and the numbers are
+  not.
+- **Aaron Tohuvavohu** is verified twice: as resource
+  `1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee` (type Individual) cited by the capability "Space
+  Telescope Factory", which is attached to the telescope gap; and by name in the
+  acknowledgments on gap-map.org/about. If a first conversation needs a warm entry point,
+  there is a named person already associated with the gap the page leads on.
+- **Who to send to.** `gapmap@convergentresearch.org` is the address on their About page
+  for questions and suggestions. `sarah@convergentresearch.org` is listed separately for
+  funders, which is a different conversation and probably the wrong door for this.

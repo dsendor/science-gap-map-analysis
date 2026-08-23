@@ -64,6 +64,7 @@ const newGaps = all(`
 
 const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   ...p,
+  programmes: JSON.parse(p.programmes_json || '[]'),
   gap_name: gaps.find((g) => g.id === p.gap_id)?.name ?? null,
   gap_field: gaps.find((g) => g.id === p.gap_id)?.field ?? null,
   links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id),

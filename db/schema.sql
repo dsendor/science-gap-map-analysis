@@ -202,6 +202,10 @@ CREATE TABLE IF NOT EXISTS critical_paths (
     axes_excluded TEXT NOT NULL,              -- the ones deliberately left as separate chains
     expectation   TEXT NOT NULL,              -- predicted binding link, recorded BEFORE the analysis
     finding       TEXT,                       -- what the chain actually showed
+    -- A critical path is a claim about durations. A chain that shows which links bind
+    -- without showing how long each one takes asks to be believed rather than checked.
+    duration_basis  TEXT,
+    programmes_json TEXT NOT NULL DEFAULT '[]',
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -223,6 +227,10 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     is_binding INTEGER NOT NULL DEFAULT 0 CHECK (is_binding IN (0, 1)),
     evidence   TEXT,
     rationale  TEXT NOT NULL,
+    duration_years  REAL,   -- elapsed years for this link, where the milestone record dates it
+    duration_span   TEXT,   -- the two milestones the figure is measured between
+    duration_note   TEXT,
+    figure          TEXT,   -- for a non-time axis, the published quantity for this link
     PRIMARY KEY (path_id, seq)
 );
 

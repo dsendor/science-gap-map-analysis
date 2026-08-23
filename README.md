@@ -46,6 +46,16 @@ cd app && npm install && npm run build     # -> app/out/, a self-contained stati
 npx serve app/out                          # or any static host
 ```
 
+Deploying to Vercel: set the project's **Root Directory to `app`**. `trailingSlash` is
+on and `output: 'export'` is set, so the same build works unchanged on Vercel, on a
+plain static server, and from disk.
+
+The site is two pages. `/` is the argument — the hypothesis, the evidence for it, the
+two critical paths, the proposed gaps, and the ask. `/map` is the data — all 103 gaps
+with the four attributes, the cross-tabs, the audit, the method and the decision ledger.
+Design tokens are read from gap-map.org so the page reads as an extension of their
+portal; their logo and wordmark are deliberately not used, and the masthead is David's.
+
 `npm run build` runs `engine/export-artifact.mjs` first, which regenerates
 `app/public/data.json` and `app/public/gap-map-augmented.csv` from the database. Both
 are gitignored for the same reason `db/gapmap.sqlite` is: the sources of record are the

@@ -1,580 +1,483 @@
 import data from '../../public/data.json';
-import GapTable from '../components/GapTable';
+import Masthead from '../components/Masthead';
+import { StackedMaturity } from '../components/Charts';
 import Chain from '../components/Chain';
-import { MERMAID } from '../components/mermaid';
-import { BarChart, StackedMaturity, CrossTab } from '../components/Charts';
-import { TIER_ORDER, MATURITY_ORDER, TIER_COLOR } from '../lib/constants';
+import { MATURITY_ORDER } from '../lib/constants';
 
-const pct = (x) => `${Math.round(100 * x)}%`;
 const byCount = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
-const inOrder = (o, order) => order.filter((k) => o[k] !== undefined).map((k) => [k, o[k]]);
-
-function agentMinutes(runs) {
-  return Math.round(
-    runs
-      .filter((r) => r.kind === 'agent' && r.ended_at)
-      .reduce((a, r) => a + (new Date(`${r.ended_at.replace(' ', 'T')}Z`) - new Date(`${r.started_at.replace(' ', 'T')}Z`)), 0) / 60000
-  );
-}
 
 export default function Page() {
-  const { summary: s, gaps, new_gaps: newGaps, critical_paths: paths, audit_summary: audit, runs, decisions } = data;
-  const mins = agentMinutes(runs);
-  const workingNowShare = byCount(s.ai_type).map(([t]) => {
-    const m = s.maturity_by_ai_type[t] ?? {};
+  const { summary: s, gaps, new_gaps: newGaps, critical_paths: paths, audit_summary: audit } = data;
+
+  const workingNow = byCount(s.ai_type).map(([type]) => {
+    const m = s.maturity_by_ai_type[type] ?? {};
     const tot = MATURITY_ORDER.reduce((a, k) => a + (m[k] ?? 0), 0);
-    return { type: t, now: m['Working now'] ?? 0, tot };
+    return { type, now: m['Working now'] ?? 0, tot };
   });
-  const indicators = gaps.flatMap((g) => g.indicators.map((i) => ({ ...i, gap: g.name, field: g.field, tier: g.tier })));
+  const nowTotal = workingNow.reduce((a, r) => a + r.now, 0);
+  const llm = workingNow.find((r) => r.type === 'LLM reasoning and synthesis');
+  const build = workingNow.find((r) => r.type === 'Physical build and manipulation');
+  const coord = workingNow.find((r) => r.type === 'Coordination and institutional');
+  const nonCognitive =
+    (s.ai_type['Physical build and manipulation'] ?? 0) +
+    (s.ai_type['Coordination and institutional'] ?? 0) +
+    (s.ai_type['Autonomous experimentation'] ?? 0);
+
+  const telescope = paths.find((p) => p.id === 'path-telescope-elapsed-time');
+  const publishing = paths.find((p) => p.id === 'path-publishing-cost');
+  const indicators = gaps.flatMap((g) => g.indicators.map((i) => ({ ...i, gap: g.name, tier: g.tier })));
+  const nulls = indicators.filter((i) => i.is_null_result);
+
+  // Worked examples, picked because a reader of their map already knows these rows.
+  const ex = (slug) => gaps.find((g) => g.slug === slug);
+  const telescopeGap = ex('frontier-telescopes-are-expensive-and-take-decades-to-build');
+  const fraudGap = ex('fraud-in-the-scientific-literature');
 
   return (
-    <main>
-      <header className="masthead">
-        <div className="wrap">
-          <p className="eyebrow">A contribution to the Fundamental Development Gap Map</p>
-          <h1>Their map, with four columns added and every judgment showing its reasoning</h1>
-          <p className="lead">
-            Convergent Research&rsquo;s{' '}
-            <a href={s ? data.source.url : '#'} target="_blank" rel="noreferrer">
-              Fundamental Development Gap Map v1.0
-            </a>{' '}
-            catalogues {s.n_gaps} R&amp;D gaps and {s.n_capabilities} foundational capabilities across {s.n_fields}{' '}
-            fields. This page adds four things it does not have, for every one of those gaps: a stated{' '}
-            <strong>outcome</strong>, an <strong>AI capability type and maturity</strong>, a{' '}
-            <strong>measurability tier</strong>, and — for a stratified sample of eight — a{' '}
-            <strong>progress indicator</strong>. Plus {s.n_new_gaps} proposed additions and two worked critical paths.
-          </p>
-          <p>
-            Nothing here rewrites their data, ranks their gaps, or tells them they got something wrong. The additions
-            live in separate tables; <code>engine/verify-additive.mjs</code> re-serialises their five baseline tables
-            and diffs them against the hash-pinned {data.source.snapshot} snapshot on every commit, so &ldquo;additive
-            only&rdquo; is a test rather than a promise. Their ids and slugs are preserved exactly, so the CSV joins
-            straight back to their export.
-          </p>
-          <div className="statrow">
-            <div className="stat">
-              <div className="v">{s.n_gaps}</div>
-              <div className="k">gaps labelled</div>
-            </div>
-            <div className="stat">
-              <div className="v">{pct(audit.dimensions.measurability.weighted_disagreement)}</div>
-              <div className="k">audit disagreement, tier</div>
-            </div>
-            <div className="stat">
-              <div className="v">{s.n_indicators}</div>
-              <div className="k">indicators, {s.n_indicator_nulls} honest nulls</div>
-            </div>
-            <div className="stat">
-              <div className="v">{s.n_new_gaps}</div>
-              <div className="k">proposed additions</div>
-            </div>
-            <div className="stat">
-              <div className="v">2</div>
-              <div className="k">worked critical paths</div>
-            </div>
-            <div className="stat">
-              <div className="v">{mins} min</div>
-              <div className="k">agent time, 0 human review</div>
-            </div>
+    <>
+      <Masthead active="why" />
+      <main className="wrap">
+        <section>
+          <div className="col">
+            <h1>
+              As AI clears the cognitive bottlenecks in science, the ones that are left get
+              bigger
+            </h1>
+            <p className="lead">
+              If that is right, then the gaps worth funding are shifting — and your map is the
+              best description I have found of what is actually in the way. So rather than send
+              you a suggestion, I spent a few days building a version of it with four attributes
+              added, to see whether the idea survives contact with all 103 of your gaps.
+            </p>
+            <p>
+              I&rsquo;m David Sendor. I&rsquo;ve been trying to work out where AI can most
+              accelerate science, and I kept arriving at questions your team had already framed
+              better than I had. This page is my attempt to answer the invitation on your About
+              page, which says you are open to partners interested in meta analyses and new tools
+              that make the data more actionable, and that you hope to introduce additional
+              attributes in future. Here are four of them, applied to everything.
+            </p>
+            <p>
+              <strong>What I&rsquo;d like:</strong> your feedback on whether the attributes are
+              the right ones, and a conversation about whether a future version of the Gap Map
+              should be built for a world where the cognitive work is cheap.{' '}
+              <a href="mailto:david@sendorai.com">david@sendorai.com</a>.
+            </p>
           </div>
-          <p className="note" style={{ marginTop: 18 }}>
-            Downloads: <a href="./gap-map-augmented.csv">gap-map-augmented.csv</a> (one row per gap, keyed on their id
-            and slug) · <a href="./data.json">data.json</a> (everything this page renders)
-          </p>
-        </div>
-      </header>
+        </section>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">How to read it</p>
-          <h2>Every added judgment carries a rationale and a confidence flag</h2>
-          <p className="narrow">
-            These are labels produced by a language model, not expert consensus. Two things make them worth reading
-            anyway. Every one shows the reasoning that produced it, in the row rather than behind a tooltip. And every
-            one that was uncertain is marked <span className="chip guess">guess</span> rather than smoothed over —{' '}
-            {s.confidence.tier.guess ?? 0} of {s.n_gaps} tiers and {s.confidence.primary_ai_type.guess ?? 0} of{' '}
-            {s.n_gaps} AI-type assignments are flagged. A run that produced no guesses would not be a confident run.
-            It would be a dishonest one.
-          </p>
-          <div className="grid2" style={{ marginTop: 24 }}>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>Measurability tier</h3>
-              <p style={{ fontSize: 14 }}>
-                <strong>Directly measurable</strong> — an observable quantity exists and its direction of improvement
-                is agreed. <strong>Proxy only</strong> — inputs or adjacent effects are measurable, the gap itself is
-                not. <strong>Verification contested</strong> — a candidate observable exists but there is no agreement
-                that it settles anything. <strong>Counterfactual required</strong> — the quantity of interest is
-                something that did not happen.
+        <section>
+          <div className="col">
+            <h2>The hypothesis</h2>
+            <p>
+              AI is getting very good at a particular slice of scientific work: reading,
+              summarising, proposing, searching a design space, predicting a property. That slice
+              is real and it is large. My working hypothesis is that clearing it does not make
+              science uniformly faster — it makes whatever is left binding, and more visibly so.
+            </p>
+            <p>
+              The clearest version I know is from software. Writing code got dramatically cheaper,
+              and the result was not that teams shipped proportionally faster. It was that
+              everyone started spending their time in code review, which is now the thing people
+              complain about. The work moved to the step that had not been automated, and that
+              step became the constraint.
+            </p>
+            <p>
+              Science has the same shape and a harder version of it. Peer review is showing the
+              same squeeze. But most of the remaining constraints in science are not cognitive at
+              all — they are things that have to be fabricated, assembled, funded, approved, or
+              agreed by a committee. Those do not get cheaper because a model got better at
+              reading papers.
+            </p>
+            <p>
+              If that holds, it has a funding consequence, which is why it seemed worth testing
+              against your data rather than just asserting: <strong>the bottlenecks that AI does
+              not touch become higher-leverage places to build, not lower.</strong> They are
+              exactly the bridge-scale, coordinated, unglamorous things your FRO model exists to
+              do.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="col">
+            <h2>What I added</h2>
+            <p>
+              Four attributes, on all {s.n_gaps} of your gaps, kept in separate tables so nothing
+              of yours is altered. Each one is a judgment, each one carries the reasoning that
+              produced it, and each one can be argued with.
+            </p>
+            <ul>
+              <li>
+                <strong>An outcome:</strong> one sentence saying what becomes knowable or
+                buildable if the gap closes. Your descriptions say what is in the way; this says
+                what is on the other side.
+              </li>
+              <li>
+                <strong>An AI capability type, and how mature it is:</strong> which kind of AI
+                would actually move this gap — seven named kinds — and whether that kind is
+                working now, two-to-five years out, or speculative. This is the attribute the
+                hypothesis lives or dies on.
+              </li>
+              <li>
+                <strong>A measurability tier:</strong> whether the gap has an agreed observable at
+                all. Your own roadmapping criterion asks whether success is unambiguously
+                measurable, and it turns out that quietly filters a lot.
+              </li>
+              <li>
+                <strong>A progress indicator</strong>, for a sample of eight: the one number you
+                would watch to know whether the gap is closing, with a real source.
+              </li>
+            </ul>
+            <p>
+              Then two things that are additions rather than attributes:{' '}
+              <a href="#gaps">{s.n_new_gaps} proposed new gaps</a> written in your format, and{' '}
+              <a href="#chains">two worked critical paths</a> — a gap decomposed into the ordered
+              steps whose durations add up, so you can see which single step is setting the pace.
+            </p>
+            <div className="pull">
+              <p>
+                <strong>What I am not claiming.</strong> This is not comprehensive, and parts of
+                it are probably wrong. It was produced quickly and mostly by AI, and no human has
+                reviewed the labels yet — which is the honest state of it, and also somewhat the
+                point: the reason I could offer you four attributes across 103 gaps instead of a
+                suggestion that you add them is that this kind of work has become cheap. The
+                disagreement rates and the confidence flags are published so you can see how much
+                weight each label bears.
               </p>
             </div>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>AI capability type</h3>
-              <p style={{ fontSize: 14 }}>
-                Seven named values, no numeric scale: LLM reasoning and synthesis, ML surrogates and prediction, design
-                and optimization search, sensing and signal processing, autonomous experimentation, physical build and
-                manipulation, coordination and institutional. Each gap gets exactly one primary and any number of
-                secondaries. Maturity is <em>Working now</em>, <em>2-5 years</em> or <em>Speculative</em>.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">Findings</p>
-          <h2>AI maturity tracks verifiability, not importance</h2>
-          <p className="narrow">
-            The share of each capability type&rsquo;s primary assignments that are already working now runs from{' '}
-            {pct(workingNowShare[0] ? workingNowShare.find((r) => r.type === 'LLM reasoning and synthesis').now / workingNowShare.find((r) => r.type === 'LLM reasoning and synthesis').tot : 0)}{' '}
-            for LLM reasoning and synthesis down to zero for physical build and manipulation. Not one gap in the entire
-            map has physical build as a working-now primary: all{' '}
-            {workingNowShare.find((r) => r.type === 'Physical build and manipulation')?.tot} sit at 2-5 years or
-            speculative. Coordination and institutional manages{' '}
-            {workingNowShare.find((r) => r.type === 'Coordination and institutional')?.now} of{' '}
-            {workingNowShare.find((r) => r.type === 'Coordination and institutional')?.tot}. Where feedback is fast and
-            objective, AI has arrived; where it is slow, contested or absent, it has not.
-          </p>
+        <section>
+          <div className="col">
+            <h2>What the labelling says about the hypothesis</h2>
+            <p>
+              This is the part I would most like you to push back on, because it is the whole
+              argument in one chart. For each kind of AI capability, the share of the gaps it is
+              the primary lever for that are <em>already working today</em>:
+            </p>
+          </div>
 
-          <div className="grid2" style={{ marginTop: 26 }}>
-            <figure className="card">
-              <h3 style={{ marginTop: 0 }}>Measurability tier</h3>
-              <BarChart data={inOrder(s.tier, TIER_ORDER)} total={s.n_gaps} colorMap={TIER_COLOR} />
-              <figcaption>All {s.n_gaps} gaps. Tiers in their own order, not sorted by count.</figcaption>
-            </figure>
-            <figure className="card">
-              <h3 style={{ marginTop: 0 }}>Primary AI capability type</h3>
-              <BarChart data={byCount(s.ai_type)} total={s.n_gaps} />
+          <figure className="card" style={{ marginTop: 22 }}>
+            <div className="pad">
+              <StackedMaturity rows={byCount(s.ai_type).map(([t]) => [t, s.maturity_by_ai_type[t] ?? {}])} />
               <figcaption>
-                One primary per gap. A single hue: the row label carries identity, so colour has no work to do.
+                All {s.n_gaps} gaps, one primary capability type each. Segments carry their counts;
+                bar length is the number of gaps, not a share.
               </figcaption>
-            </figure>
-          </div>
-
-          <figure className="card" style={{ marginTop: 20 }}>
-            <h3 style={{ marginTop: 0 }}>Maturity of the primary type, by type</h3>
-            <StackedMaturity
-              rows={byCount(s.ai_type).map(([t]) => [t, s.maturity_by_ai_type[t] ?? {}])}
-            />
-            <figcaption>
-              Ordered ramp, light to dark, because maturity is ordered. Every segment carries its count, so the
-              encoding never rests on colour alone.
-            </figcaption>
+            </div>
           </figure>
 
-          <figure className="card" style={{ marginTop: 20 }}>
-            <h3 style={{ marginTop: 0 }}>Measurability tier against primary AI capability type</h3>
-            <CrossTab crosstab={s.tier_by_ai_type} />
-            <figcaption>
-              Counts, one sequential hue. Design and optimization search is directly measurable in all{' '}
-              {s.tier_by_ai_type['Design and optimization search']?.['Directly measurable']} of its cases; coordination
-              and institutional is the only type with a counterfactual-required gap.
-            </figcaption>
-          </figure>
-
-          <figure className="card" style={{ marginTop: 20 }}>
-            <h3 style={{ marginTop: 0 }}>Measurability tier against field</h3>
-            <CrossTab crosstab={s.tier_by_field} rowLabel="Field" />
-          </figure>
-
-          <h3>The expected finding, tested</h3>
-          <p className="narrow">
-            The prediction recorded before labelling was that LLM-shaped work would prove largely saturated and that
-            most remaining gaps would be limited by physical build, fabrication or institutions.{' '}
-            <strong>Confirmed, and by a sharper mechanism than expected.</strong> Physical build, institutional
-            coordination and autonomous experimentation together take{' '}
-            {(s.ai_type['Physical build and manipulation'] ?? 0) + (s.ai_type['Coordination and institutional'] ?? 0) + (s.ai_type['Autonomous experimentation'] ?? 0)}{' '}
-            of {s.n_gaps} primaries, against {s.ai_type['LLM reasoning and synthesis']} for LLM reasoning. But the
-            stronger result is not the count. It is the maturity gradient above: the constraint is not that few gaps
-            are cognitive, it is that the non-cognitive categories never reach working-now at all.
-          </p>
-
-          <h3>A category that does not work, reported because it does not</h3>
-          <p className="narrow">
-            A second labeller, which never saw the original labels, independently relabelled a stratified sample of{' '}
-            {audit.n_sampled} of {s.n_gaps} gaps. The sample deliberately oversamples the rare tiers, which biases the
-            raw rate upward, so the population-weighted figure is the one that means anything.
-          </p>
-          <div className="scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>Stratum (original tier)</th>
-                  <th className="num">Population</th>
-                  <th className="num">Sampled</th>
-                  <th className="num">Agreed</th>
-                  <th className="num">Disagreement</th>
-                </tr>
-              </thead>
-              <tbody>
-                {audit.dimensions.measurability.strata.map((r) => (
-                  <tr key={r.stratum}>
-                    <td>{r.stratum}</td>
-                    <td className="num">{r.population}</td>
-                    <td className="num">{r.sampled}</td>
-                    <td className="num">{r.agreed}</td>
-                    <td className="num">{pct(r.disagreement)}</td>
-                  </tr>
-                ))}
-                <tr>
-                  <td>
-                    <strong>Population-weighted</strong>
-                  </td>
-                  <td className="num">{s.n_gaps}</td>
-                  <td className="num">{audit.dimensions.measurability.n}</td>
-                  <td className="num">{audit.dimensions.measurability.agreed}</td>
-                  <td className="num">
-                    <strong>{pct(audit.dimensions.measurability.weighted_disagreement)}</strong>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="col">
+            <p style={{ marginTop: 26 }}>
+              The gradient runs from <strong>{Math.round((100 * llm.now) / llm.tot)}%</strong> for
+              LLM reasoning and synthesis down to <strong>zero</strong> for physical build and
+              manipulation. Not one gap in your map has physical build as a working-now primary —
+              all {build.tot} sit at two-to-five years or speculative. Coordination and
+              institutional manages {coord.now} of {coord.tot}.
+            </p>
+            <p>
+              That is the hypothesis, visible in your own data. Where the feedback loop is fast and
+              the answer is checkable, AI has arrived. Where it is slow, contested, or a matter of
+              what an institution agrees to do, it has not — and there is no sign it is about to.
+            </p>
+            <p>
+              Two numbers I&rsquo;d put in front of a funder. <strong>{nowTotal} of {s.n_gaps}</strong>{' '}
+              gaps ({Math.round((100 * nowTotal) / s.n_gaps)}%) have a primary capability that works
+              today. And <strong>{nonCognitive} of {s.n_gaps}</strong> are primarily blocked by
+              physical build, institutional coordination, or autonomous experimentation — against{' '}
+              {s.ai_type['LLM reasoning and synthesis']} for LLM reasoning. The count is
+              interesting; the maturity gradient is the finding.
+            </p>
+            <p className="note" style={{ fontSize: 15, color: 'var(--ink-3)' }}>
+              The seven capability types are mine, not a standard, and the blind audit found three
+              cases they handle badly — closed-loop control of a physical system, gaps where AI is
+              the object rather than the instrument, and composite gaps that would take different
+              types for different sub-problems. If the taxonomy is wrong, this chart is wrong, so
+              it is the first thing worth arguing about.
+            </p>
           </div>
-          <p className="narrow" style={{ marginTop: 14 }}>
-            <strong>Proxy only cannot be applied reliably.</strong> It ran {pct(audit.dimensions.measurability.strata.find((r) => r.stratum === 'Proxy only').disagreement)}{' '}
-            disagreement against 0% for directly measurable and{' '}
-            {pct(audit.dimensions.measurability.strata.find((r) => r.stratum === 'Verification contested').disagreement)}{' '}
-            for verification contested, and all three auditors independently reported it was repeatedly the nearest
-            alternative and almost never won. Every Proxy only assignment has been downgraded to a guess, including the
-            ones the auditor did not sample. The tiers that carry the argument are the two that held up. On primary AI
-            capability type the raw sample disagreement was{' '}
-            {pct(audit.dimensions.ai_type.raw_disagreement)}, and the audit surfaced three cases where the seven-type
-            taxonomy has no right answer: closed-loop control of a physical system, gaps where AI is the object rather
-            than the instrument, and composite gaps that bundle sub-problems needing different types and different
-            tiers.
-          </p>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">The map</p>
-          <h2>All {s.n_gaps} gaps, filterable, with the reasoning in the row</h2>
-          <p className="narrow">
-            Their gaps in their export order. Open any row to see the outcome, the AI capability type and maturity, the
-            measurability tier, each one&rsquo;s rationale and confidence flag, and — where the sample covers it — the
-            progress indicator. Proposed additions are marked and can be filtered out.
-          </p>
-          <div style={{ marginTop: 20 }}>
-            <GapTable gaps={gaps} newGaps={newGaps} />
+        <section id="chains">
+          <div className="col">
+            <h2>Two worked critical paths</h2>
+            <p>
+              A catalogue tells you a gap exists. A critical path tells you which step inside it is
+              setting the pace — and therefore which improvements would change nothing. I did two,
+              picked to be as unalike as possible so the method has a chance to fail: a space
+              telescope on elapsed time, and research publishing on reviewer labour cost.
+            </p>
+            <p>
+              For each, I wrote down what I expected to find <em>before</em> doing the analysis and
+              committed it separately, because a prediction confirmed afterwards is just a story.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">Progress indicators</p>
-          <h2>A sample of eight, and two of them are nulls</h2>
-          <p className="narrow">
-            <strong>This is a sample, not coverage, and it must not be extrapolated.</strong> Eight gaps were chosen
-            across all four tiers so the set cannot be read as picking the easy ones. Every value was read off a page
-            that was actually fetched, never off a search snippet; four verify against Crossref or arXiv, and the two
-            that are only reachable are recorded as <em>unchecked</em> rather than as passes. The two nulls each have
-            six logged, cached searches behind them and each names its closest near-miss.
-          </p>
-          <div className="scroll" style={{ marginTop: 18 }}>
-            <table>
-              <thead>
-                <tr>
-                  <th>Gap</th>
-                  <th>Tier</th>
-                  <th>Quantity</th>
-                  <th className="num">Current</th>
-                  <th>Target</th>
-                  <th>Source</th>
-                </tr>
-              </thead>
-              <tbody>
-                {indicators.map((i, n) => (
-                  <tr key={n}>
-                    <td style={{ maxWidth: 220 }}>{i.gap}</td>
-                    <td style={{ color: 'var(--text-secondary)' }}>{i.tier}</td>
-                    <td style={{ color: 'var(--text-secondary)', maxWidth: 260 }}>
-                      {i.quantity} {i.confidence === 'guess' && <span className="chip guess">guess</span>}
-                    </td>
-                    <td className="num">
-                      {i.is_null_result ? (
-                        <span className="chip newgap">honest null</span>
-                      ) : (
-                        <>
-                          <strong>{i.current_value}</strong>{' '}
-                          <span style={{ color: 'var(--muted)', fontSize: 12 }}>{i.unit}</span>
-                        </>
-                      )}
-                    </td>
-                    <td style={{ color: 'var(--muted)', fontSize: 13, maxWidth: 180 }}>
-                      {i.target_value ?? '—'}
-                    </td>
-                    <td style={{ fontSize: 13, maxWidth: 200 }}>
-                      {i.source_url ? (
-                        <>
-                          <a href={i.source_url} target="_blank" rel="noreferrer">
-                            {i.source_title}
-                          </a>
-                          <div>
-                            <span className="chip">{i.source_checked}</span>
-                          </div>
-                        </>
-                      ) : (
-                        '—'
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div style={{ marginTop: 24 }}>
+            <Chain path={telescope} />
+            <Chain path={publishing} />
           </div>
-          {indicators
-            .filter((i) => i.is_null_result)
-            .map((i, n) => (
-              <div className="card" key={n} style={{ marginTop: 18 }}>
-                <p className="eyebrow">Honest null · {i.gap}</p>
-                <p style={{ fontSize: 14, marginBottom: 0 }}>{i.rationale}</p>
-              </div>
-            ))}
-        </div>
-      </section>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">Proposed additions</p>
-          <h2>{s.n_new_gaps} gaps, written in their house format, kept separate from theirs</h2>
-          <p className="narrow">
-            Each is 49–60 words, matching the corpus statistics of their own {s.n_gaps} descriptions (12–192 words,
-            median 38). Each cleared a near-duplicate check over all {s.n_gaps} gaps and all {s.n_capabilities}{' '}
-            capabilities, and a funding check against current programmes — two of which came back{' '}
-            <em>not clear of funding</em>, and say so. Ids are prefixed <code>new-</code>; none is a Convergent-style
-            UUID.
-          </p>
+          <div className="col">
+            <h3>The part I did not expect</h3>
+            <p>
+              The two chains share a binding link, and I did not go looking for it.
+            </p>
+            <p>
+              Telescope time and facility approval are both allocated by peer review of proposals —
+              a decadal survey is a review panel, and so is a time allocation committee. So the
+              telescope chain&rsquo;s ranking and funding steps are an instance of the publishing
+              chain&rsquo;s reviewer-recruitment and judgment steps. That is not an analogy I am
+              imposing. It is ESO&rsquo;s own account of why they changed the mechanism:
+            </p>
+            <blockquote>
+              &ldquo;the load on the panels and the Observing Programmes Committee (OPC) members
+              has become unsustainable&rdquo; … &ldquo;it has become progressively harder to find
+              scientists willing to serve in the panels and in the OPC&rdquo;
+              <cite>
+                ESO, on introducing Distributed Peer Review, in which every PI submitting a
+                qualifying proposal reviews ten others. Running since Period 110; at ALMA from
+                Cycle 8; after Gemini&rsquo;s Fast Turnaround channel.
+              </cite>
+            </blockquote>
+            <p>
+              That is a live natural experiment in review capacity under load, at scale, with a
+              before and after — and as far as I can find, nobody funds it as research.
+            </p>
+            <p>
+              Two gaps in two different fields of your map, blocked by the same thing. Your export
+              has one row per gap and nowhere to record that, which is not a criticism — it is the
+              natural place for the map to extend, and it is the single thing I would most want to
+              work on with you. Once gaps decompose into steps, a shared bottleneck stops being an
+              anecdote and starts being something you can count across all {s.n_gaps}.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="col">
+            <h2>The other two attributes, and where they fail</h2>
+
+            <h3>Outcomes</h3>
+            <p>
+              The cheapest of the four and possibly the most useful. Your telescope gap says
+              building them is cost-prohibitive and slow. The outcome attribute says what that
+              buys:
+            </p>
+            <blockquote>
+              {telescopeGap?.outcome}
+              <cite>Outcome recorded for &ldquo;{telescopeGap?.name}&rdquo;</cite>
+            </blockquote>
+            <p>
+              One caveat I&rsquo;d flag rather than let you find: {s.confidence.outcome.confident} of{' '}
+              {s.n_gaps} outcomes are marked confident and only{' '}
+              {s.confidence.outcome.guess ?? 0} is flagged as a guess. For the most interpretive of
+              the four attributes that is suspiciously tidy, and I&rsquo;d treat the outcome
+              confidence flags as the least trustworthy thing on this page.
+            </p>
+
+            <h3>Measurability tiers, one of which does not work</h3>
+            <p>
+              Four tiers: <strong>directly measurable</strong> (an agreed observable and a
+              direction), <strong>proxy only</strong>, <strong>verification contested</strong> (an
+              observable exists, but no agreement it settles anything), and{' '}
+              <strong>counterfactual required</strong> (the quantity of interest is something that
+              did not happen). {s.tier['Directly measurable']} of your gaps land in the first tier;{' '}
+              {s.tier['Counterfactual required']} in the last.
+            </p>
+            <p>
+              A second labeller, which never saw the first set, relabelled a stratified{' '}
+              {audit.n_sampled}-gap sample blind. Weighted to the population, it disagreed on{' '}
+              {Math.round(100 * audit.dimensions.measurability.weighted_disagreement)}% of tiers and{' '}
+              {Math.round(100 * audit.dimensions.ai_type.raw_disagreement)}% of AI-type assignments
+              in the raw sample. But the useful result is narrower than that:{' '}
+              <strong>&ldquo;proxy only&rdquo; cannot be applied reliably.</strong> It ran{' '}
+              {Math.round(
+                100 *
+                  (audit.dimensions.measurability.strata.find((r) => r.stratum === 'Proxy only')
+                    ?.disagreement ?? 0)
+              )}
+              % disagreement against 0% for directly measurable, and every auditor independently
+              reported it was the nearest alternative and almost never the winner. If you adopt a
+              measurability attribute, three tiers would be better than four.
+            </p>
+            <p className="note" style={{ fontSize: 15, color: 'var(--ink-3)' }}>
+              Related, and worth knowing before you read any confidence flag: because every
+              proxy-only tier was downgraded as a class, {s.confidence.tier.guess} of the tier flags
+              are that rule and only{' '}
+              {s.confidence.tier.guess - (s.tier['Proxy only'] ?? 0)} are independent judgments. No
+              directly-measurable tier is flagged at all. The tier confidence flag is close to a
+              synonym for &ldquo;proxy only&rdquo;, which is a weakness in how I assigned it rather
+              than a property of the map.
+            </p>
+
+            <h3>Progress indicators, including two that came back empty</h3>
+            <p>
+              For eight gaps across all four tiers I went looking for the one number you would
+              watch. Six have one. The JWST figure is the one I&rsquo;d put in a deck: STScI states
+              that from conception to launch took <strong>32 years</strong>.
+            </p>
+            <p>
+              Two came back with nothing, after six logged searches each, and those are the rows I
+              think are most worth your time. For {nulls[0]?.gap.trim()}, there is a real published
+              quantity that improves over time — and no agreement about what any particular value
+              of it would settle, which is what that tier means. For{' '}
+              {nulls[1]?.gap.trim().slice(0, 60)}…, the closest thing is the 42% of researcher time
+              that goes to administration, which measures a symptom rather than the research the
+              structure prevented.
+            </p>
+            <p>
+              Eight is a sample, not coverage, and it should not be extrapolated to the other{' '}
+              {s.n_gaps - 8}. What it does show is that an indicator attribute is buildable for
+              tier-one gaps and honestly is not for tier-four ones — which is itself worth knowing
+              before committing to build the column.
+            </p>
+            <p>
+              <a href="./map/">
+                Browse all {s.n_gaps} gaps with the four attributes, the cross-tabs, and the
+                downloads →
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section id="gaps">
+          <div className="col">
+            <h2>Four gaps I think are missing</h2>
+            <p>
+              Written to your format — title-case declarative name, 30&ndash;60 words, no urgency
+              language, no named vendors — and kept in a separate table so they are never mixed
+              with yours. Each one was checked against all {s.n_gaps} of your gaps and all{' '}
+              {s.n_capabilities} capabilities for near-duplicates, and against current programmes to
+              make sure it is not already funded and under construction. Two of those funding checks
+              came back &ldquo;not clear&rdquo;, and say so.
+            </p>
+          </div>
           <div className="grid2" style={{ marginTop: 22 }}>
             {newGaps.map((n) => (
               <div className="card" key={n.id}>
-                <p className="eyebrow">
-                  {n.field} · proposed{' '}
-                  {n.confidence === 'guess' && <span className="chip guess">guess</span>}
-                </p>
-                <h3 style={{ marginTop: 0, fontSize: 17 }}>{n.name}</h3>
-                <p style={{ fontSize: 14 }}>{n.description}</p>
-                <p className="note">
-                  {n.tier} · {n.ai_type} · {n.maturity}
-                </p>
-                <details>
-                  <summary style={{ cursor: 'pointer', fontSize: 13.5, color: 'var(--series-1)' }}>
-                    Tests, dedup and funding checks
-                  </summary>
-                  <div className="why">
-                    <div className="k">Outcome</div>
-                    <div className="t">{n.outcome}</div>
+                <div className="pad">
+                  <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginBottom: 11 }}>
+                    <span className="tag on">{n.field}</span>
+                    <span className="tag">{n.tier}</span>
+                    {n.confidence === 'guess' && <span className="tag flag">guess</span>}
                   </div>
-                  <div className="why">
-                    <div className="k">Productive tension test</div>
-                    <div className="t">{n.tension_test}</div>
+                  <h3 style={{ margin: '0 0 10px', fontSize: 19 }}>{n.name}</h3>
+                  <p style={{ fontSize: 16, marginBottom: 0 }}>{n.description}</p>
+                </div>
+                <div className="pad">
+                  <div className="why" style={{ margin: 0 }}>
+                    <div className="k">Nearest thing already in your map</div>
+                    <div className="t">{n.dedup_check.split('. ').slice(-2).join('. ')}</div>
                   </div>
-                  <div className="why">
-                    <div className="k">Downstream unlock test</div>
-                    <div className="t">{n.unlock_test}</div>
-                  </div>
-                  <div className="why">
-                    <div className="k">Near-duplicate check</div>
-                    <div className="t">{n.dedup_check}</div>
-                  </div>
-                  <div className="why">
-                    <div className="k">Funding check</div>
-                    <div className="t">{n.funding_check}</div>
-                  </div>
-                  <div className="why">
-                    <div className="k">Why this label</div>
-                    <div className="t">{n.rationale}</div>
-                  </div>
-                </details>
+                  <details>
+                    <summary>Both tests, the full dedup, and the funding check</summary>
+                    <div className="body">
+                      <div className="why">
+                        <div className="k">Outcome</div>
+                        <div className="t">{n.outcome}</div>
+                      </div>
+                      <div className="why">
+                        <div className="k">Productive tension</div>
+                        <div className="t">{n.tension_test}</div>
+                      </div>
+                      <div className="why">
+                        <div className="k">Downstream unlock</div>
+                        <div className="t">{n.unlock_test}</div>
+                      </div>
+                      <div className="why">
+                        <div className="k">Near-duplicate check, in full</div>
+                        <div className="t">{n.dedup_check}</div>
+                      </div>
+                      <div className="why">
+                        <div className="k">Funding check</div>
+                        <div className="t">{n.funding_check}</div>
+                      </div>
+                    </div>
+                  </details>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">Critical paths</p>
-          <h2>Two worked chains, chosen so the results differ</h2>
-          <p className="narrow">
-            A critical path is the ordered sequence of steps whose duration sets the duration of the whole thing: one
-            link sets the pace, so speeding up any other link changes nothing. Both expectations below were committed
-            to git <em>before</em> the link analysis existed, in a separate commit, so the ordering is checkable rather
-            than asserted. A single chain would show the method works; a pair shows it discriminates. Doing this across
-            the whole map is the collaboration being proposed, not the thing being given away.
-          </p>
-          <div style={{ marginTop: 22 }}>
-            {paths.map((p) => (
-              <Chain key={p.id} path={p} mermaid={MERMAID[p.id]} />
-            ))}
-          </div>
-
-          <div className="card" style={{ borderColor: 'var(--series-2)' }}>
-            <p className="eyebrow">The intersection</p>
-            <h3 style={{ marginTop: 0, fontSize: 19 }}>
-              Two gaps in two different fields turn out to share a binding link
-            </h3>
-            <p style={{ fontSize: 15 }}>
-              Chain 1&rsquo;s strategic ranking and funding authorisation links are an instance of chain 2&rsquo;s
-              reviewer recruitment and judgment links. Facility approval and telescope time are both allocated by peer
-              review of proposals: a decadal survey is a review panel, and so is a time allocation committee.
+        <section>
+          <div className="col">
+            <h2>What I&rsquo;d like to do next, with you</h2>
+            <p>
+              You wrote that you hope to introduce additional attributes to help orient users to
+              the urgency or potential impact of solving particular gaps, and that you are open to
+              partners interested in meta analyses and new tools that make the data more
+              actionable. That is what this is, offered as a starting point rather than a finished
+              proposal.
             </p>
-            <p style={{ fontSize: 15 }}>
-              The evidence is not an analogy. It is ESO&rsquo;s own stated reason for changing the mechanism.
-              Introducing <strong>Distributed Peer Review</strong> — every PI submitting a qualifying proposal reviews
-              ten others — ESO writes that panel load &ldquo;has become unsustainable&rdquo;, that classical triage
-              &ldquo;has significantly degraded the quality of feedback for the triaged proposals&rdquo;, and that
-              &ldquo;it has become progressively harder to find scientists willing to serve in the panels and in the
-              OPC&rdquo;. Those are chain 2&rsquo;s links, written by an observatory about telescope time. DPR has run
-              at ESO since Period 110, and at ALMA from Cycle 8, after Gemini&rsquo;s Fast Turnaround channel. That is
-              a live natural experiment in review capacity under load, with a before and after, and as far as this
-              search found nobody funds it as research.
+            <ul>
+              <li>
+                <strong>Tell me which attributes are wrong.</strong> The capability taxonomy is the
+                one I&rsquo;d most like torn apart — the audit already found three gap types it
+                handles badly, and you have talked to far more scientists than I have.
+              </li>
+              <li>
+                <strong>Chains across the whole map.</strong> Two is enough to show the method
+                discriminates. The value is in counting how often the same bottleneck recurs across
+                fields, and that needs all {s.n_gaps} — it is a week of compute and a lot of
+                argument, and it is the thing I would most like to do together.
+              </li>
+              <li>
+                <strong>Typed capability edges.</strong> Nothing in the export marks a capability as
+                necessary, sufficient or partial for its gap, which is why the chains had to
+                reconstruct link semantics by hand. Typed edges would make chains generatable rather
+                than hand-built, and they connect directly to the urgency and impact attributes you
+                already said you want.
+              </li>
+              <li>
+                <strong>Outcomes as a real entity.</strong> I modelled an outcome as a text field on
+                a gap, which is wrong — there are more outcomes than gaps and one capability unlocks
+                outcomes across several fields. Fixing it is a schema change, and that lands badly
+                arriving unsolicited from outside.
+              </li>
+            </ul>
+            <p>
+              One thing worth knowing regardless of whether any of this is useful:{' '}
+              <strong>
+                <code>capabilities[].gaps</code> is empty for all {s.n_capabilities} capabilities in
+                the v1.0 export
+              </strong>
+              , though your <code>schema.json</code> documents it as populated. All {s.n_edges} edges
+              live on the gap side only, so anyone starting from <code>capabilities.json</code>{' '}
+              builds an empty graph and gets no error. Two capability records are also missing the{' '}
+              <code>description</code> your schema marks required, and six resources are referenced
+              by no capability.
             </p>
-            <p style={{ fontSize: 15, marginBottom: 0 }}>
-              A catalogue cannot show this. It has one row per gap and no place to record that two rows are blocked by
-              the same thing. Chains can, and once you have chains the recurrence is countable rather than anecdotal.
-              That is the argument for doing this across the whole map, and it is why there are exactly two chains
-              here.
+            <p className="lead" style={{ marginTop: 26 }}>
+              <a href="mailto:david@sendorai.com">david@sendorai.com</a> — I&rsquo;d welcome the
+              critical version of this feedback most of all.
             </p>
-            <details style={{ marginTop: 14 }}>
-              <summary style={{ cursor: 'pointer', fontSize: 14 }}>Mermaid source for this diagram</summary>
-              <pre
-                style={{
-                  fontSize: 12, overflowX: 'auto', background: 'var(--page)', padding: 12,
-                  borderRadius: 8, border: '1px solid var(--border)',
-                }}
-              >
-                {MERMAID.intersection}
-              </pre>
-            </details>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section>
-        <div className="wrap">
-          <p className="eyebrow">Limitations</p>
-          <h2>What is wrong with this, stated by us</h2>
-          <div className="grid2" style={{ marginTop: 20 }}>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>Outcomes are not modelled as a proper entity</h3>
-              <p style={{ fontSize: 14, marginBottom: 0 }}>
-                An outcome is a text field on a gap. There are almost certainly more outcomes than gaps, and one
-                capability can unlock outcomes across several fields. A future version should promote outcomes to a
-                first-class entity with its own links. Resolving it here would have been a schema redesign, which lands
-                badly from a stranger.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>The indicators are a sample of eight</h3>
-              <p style={{ fontSize: 14, marginBottom: 0 }}>
-                Not coverage. Eight of {s.n_gaps}, deliberately spread across tiers. Nothing about the sample supports
-                a statement about the other {s.n_gaps - 8}, and two of the eight are nulls.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>Every label is an AI judgment</h3>
-              <p style={{ fontSize: 14, marginBottom: 0 }}>
-                Not expert consensus. {mins} minutes of agent time and, at the time of writing,{' '}
-                <strong>zero minutes of human review</strong>. The audit disagreement rate — {pct(audit.dimensions.measurability.weighted_disagreement)}{' '}
-                population-weighted on tier, {pct(audit.dimensions.ai_type.raw_disagreement)} raw on AI type — is the
-                honest measure of how much weight these labels bear.
-              </p>
-            </div>
-            <div className="card">
-              <h3 style={{ marginTop: 0 }}>Capability edges are untyped upstream</h3>
-              <p style={{ fontSize: 14, marginBottom: 0 }}>
-                Nothing in the export marks a capability as necessary, sufficient or partial for its gap, so link
-                semantics had to be reconstructed by hand — which is why there are two chains and not {s.n_gaps}.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ borderBottom: 'none' }}>
-        <div className="wrap">
-          <p className="eyebrow">Method</p>
-          <h2>How long it took, and what is checkable</h2>
-          <div className="scroll">
-            <table>
-              <thead>
-                <tr>
-                  <th>Phase</th>
-                  <th>Kind</th>
-                  <th className="num">Units</th>
-                  <th className="num">Elapsed</th>
-                  <th>Note</th>
-                </tr>
-              </thead>
-              <tbody>
-                {runs.map((r, n) => {
-                  const el = r.ended_at
-                    ? Math.round((new Date(`${r.ended_at.replace(' ', 'T')}Z`) - new Date(`${r.started_at.replace(' ', 'T')}Z`)) / 60000)
-                    : null;
-                  return (
-                    <tr key={n}>
-                      <td>{r.phase}</td>
-                      <td>{r.kind}</td>
-                      <td className="num">{r.n_units ?? '—'}</td>
-                      <td className="num">{el === null ? 'open' : `${el} min`}</td>
-                      <td style={{ color: 'var(--muted)', fontSize: 13 }}>{r.note}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          <p className="narrow" style={{ marginTop: 16 }}>
-            Agent time and human review time are tracked separately on purpose; a single blended number invites the
-            obvious objection. Phase 0&rsquo;s start was never instrumented, so it counts as zero and every total is a
-            lower bound.
-          </p>
-          <h3>The decision ledger</h3>
-          <p className="narrow">
-            {decisions.length} non-obvious calls, each with what was decided, why, what the runner-up was, and what
-            would reverse it. They are here because the runner-up is usually the more flattering option.
-          </p>
-          <div>
-            {decisions.map((d, n) => (
-              <details className="gap" key={n}>
-                <summary>
-                  <div>
-                    <div className="gapname">{d.decision}</div>
-                    <div className="gapmeta">{d.phase}</div>
-                  </div>
-                  <span className="chip">{d.confidence}</span>
-                </summary>
-                <div className="gapbody">
-                  <div className="why">
-                    <div className="k">Why</div>
-                    <div className="t">{d.rationale}</div>
-                  </div>
-                  {d.runner_up && (
-                    <div className="why">
-                      <div className="k">Runner-up</div>
-                      <div className="t">{d.runner_up}</div>
-                    </div>
-                  )}
-                  <div className="why">
-                    <div className="k">What would reverse it</div>
-                    <div className="t">{d.reversal_condition}</div>
-                  </div>
-                </div>
-              </details>
-            ))}
-          </div>
-          <p className="note" style={{ marginTop: 28 }}>
-            Built {data.generated_at} from the {data.source.snapshot} export of{' '}
+      <div className="footer">
+        <div className="wrap col">
+          <p style={{ color: 'var(--ink-3)' }}>
+            Built on the {data.source.snapshot} export of{' '}
             <a href={data.source.url} target="_blank" rel="noreferrer">
               gap-map.org
             </a>
-            , which states of itself: &ldquo;This is not by any means a comprehensive survey or prioritized
-            roadmap!&rdquo; Nothing on this page ranks anything.
+            , which describes itself as &ldquo;not by any means a comprehensive survey or prioritized
+            roadmap&rdquo;. Neither is this. Nothing here reorders or ranks their gaps, and their
+            data is unmodified — the additions live in their own tables and the baseline is checked
+            against a hash-pinned copy on every build.
+          </p>
+          <p style={{ color: 'var(--ink-3)' }}>
+            <a href="./map/">The extended map, cross-tabs and method</a> ·{' '}
+            <a href="./gap-map-augmented.csv">CSV, keyed on their ids and slugs</a> ·{' '}
+            <a href="./data.json">JSON</a> · David Sendor,{' '}
+            <a href="mailto:david@sendorai.com">david@sendorai.com</a>
           </p>
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 }

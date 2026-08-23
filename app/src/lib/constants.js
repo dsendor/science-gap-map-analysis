@@ -10,6 +10,9 @@ export const MATURITY_COLOR = {
   '2-5 years': 'var(--ord-2)',
   Speculative: 'var(--ord-3)',
 };
+// Four ordered steps of one hue, validated for light-end contrast against the cream
+// and navy surfaces. The heat-* tokens stay reserved for the cross-tab, where the
+// lightest step means "near zero" and is allowed to recede into the surface.
 export const TIER_COLOR = {
   'Directly measurable': 'var(--tier-1)',
   'Proxy only': 'var(--tier-2)',
