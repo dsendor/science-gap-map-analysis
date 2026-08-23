@@ -1,0 +1,41 @@
+{
+  "_comment": "Time ledger, source of record. Agent and human-review time are tracked separately on purpose: a single blended number invites the obvious objection. Append an entry when a phase starts and fill ended_at when it finishes, then re-run node engine/rebuild.mjs.",
+  "runs": [
+    {
+      "phase": "phase-0",
+      "kind": "agent",
+      "started_at": "2026-08-23T01:44:00Z",
+      "ended_at": "2026-08-23T02:30:00Z",
+      "model": "claude-opus-5",
+      "n_units": null,
+      "note": "Repo scaffold, schema, importer, additive guardrail, integrity report, search client, baseline snapshot."
+    },
+    {
+      "phase": "phase-1",
+      "kind": "agent",
+      "started_at": "2026-08-23T02:30:00Z",
+      "ended_at": "2026-08-23T02:41:00Z",
+      "model": "claude-opus-5",
+      "n_units": 103,
+      "note": "Full-coverage labeling of all 103 gaps across 20 field batches: outcome, AI type and maturity, measurability tier."
+    },
+    {
+      "phase": "phase-2",
+      "kind": "agent",
+      "started_at": "2026-08-23T02:41:00Z",
+      "ended_at": "2026-08-23T03:00:00Z",
+      "model": "claude-opus-5",
+      "n_units": 36,
+      "note": "Stratified blind audit across 3 independent auditors, adjudication, findings report."
+    },
+    {
+      "phase": "phase-2b",
+      "kind": "agent",
+      "started_at": "2026-08-23T03:00:00Z",
+      "ended_at": "2026-08-23T03:55:00Z",
+      "model": "claude-opus-5",
+      "n_units": 103,
+      "note": "Taxonomy revision (8th type, frame dimension), full independent blind relabel of all 103 gaps by 5 labelers, mechanical adjudication, withdrawal of the maturity gradient."
+    }
+  ]
+}

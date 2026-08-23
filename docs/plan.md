@@ -80,6 +80,10 @@ against 0% for `Directly measurable` and 9% for `Verification contested`), so ev
 `Proxy only` assignment was downgraded to `guess`. The two tiers that carry the argument
 are the two that held up.
 
+Phases 3-6 run locally, where the network is open. `BRAVE_API_KEY` is set in `.env` on
+David's machine. Full execution plan with mandatory review gates:
+`docs/local-agent-plan.md`.
+
 ### Phase 3 — Progress indicators (outcome 4)
 
 Six to eight gaps only, stratified across tiers: one quantity, current value, source,

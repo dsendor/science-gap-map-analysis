@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS gap_ai_types (
                    'Design and optimization search',
                    'Sensing and signal processing',
                    'Autonomous experimentation',
+                   'Real-time control of physical systems',
                    'Physical build and manipulation',
                    'Coordination and institutional'
                )),
@@ -229,6 +230,7 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
                    'Design and optimization search',
                    'Sensing and signal processing',
                    'Autonomous experimentation',
+                   'Real-time control of physical systems',
                    'Physical build and manipulation',
                    'Coordination and institutional'
                )),
@@ -242,6 +244,19 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     figure          TEXT,   -- for a non-time axis, the published quantity for this link
     ai_acts         INTEGER NOT NULL DEFAULT 0 CHECK (ai_acts IN (0, 1)),
     PRIMARY KEY (path_id, seq)
+);
+
+-- Frame. The AI-type dimension asks which AI capability would move a gap, which
+-- presupposes AI is the instrument and the gap is a science problem. A few gaps are
+-- ABOUT AI, where the question is ill-posed. Adding an 'AI safety research' capability
+-- type would be a category error — the other types are capabilities applied to science,
+-- not research fields — so these gaps are marked and reported separately instead.
+-- Default is ai-as-instrument; only exceptions get a row.
+CREATE TABLE IF NOT EXISTS gap_frame (
+    gap_id     TEXT PRIMARY KEY REFERENCES gm_gaps(id),
+    frame      TEXT NOT NULL CHECK (frame IN ('ai-as-instrument', 'ai-as-object')),
+    rationale  TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
 --------------------------------------------------------------------------------
@@ -263,6 +278,29 @@ CREATE TABLE IF NOT EXISTS audits (
     auditor_note  TEXT NOT NULL,
     audited_by    TEXT,
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- v1 against v2 for the AI-type relabel: a complete independent second pass over all
+-- 103 gaps after 'Real-time control of physical systems' was added. Kept separate from
+-- `audits`, which holds a 36-gap stratified sample — mixing a census with a sample
+-- would make both rates uninterpretable.
+CREATE TABLE IF NOT EXISTS relabels (
+    gap_id              TEXT PRIMARY KEY REFERENCES gm_gaps(id),
+    v1_type             TEXT NOT NULL,
+    v1_maturity         TEXT NOT NULL,
+    v2_type             TEXT NOT NULL,
+    v2_maturity         TEXT NOT NULL,
+    type_agreed         INTEGER NOT NULL CHECK (type_agreed IN (0, 1)),
+    maturity_agreed     INTEGER NOT NULL CHECK (maturity_agreed IN (0, 1)),
+    discriminating_test TEXT,
+    nearest_alternative TEXT,
+    v2_rationale        TEXT,
+    v2_confidence       TEXT CHECK (v2_confidence IN ('confident', 'guess')),
+    adjudicated_type    TEXT,
+    adjudicated_maturity TEXT,
+    adjudication_note   TEXT,
+    labeled_by          TEXT,
+    created_at          TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
 -- Ported from ai-science-gap-map. Every non-obvious call gets a row: taxonomy

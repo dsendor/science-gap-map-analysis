@@ -11,3 +11,5 @@ app/node_modules/
 .DS_Store
 db/*.sqlite
 .playwright-mcp/
+research-log/format-test.json
+research-log/format-test-key.json

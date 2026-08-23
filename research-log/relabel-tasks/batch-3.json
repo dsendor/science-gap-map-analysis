@@ -1,0 +1,258 @@
+{
+  "batch": 3,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8762-c51aee94a680",
+      "field": "Astrophysics",
+      "name": "Limited Detection of Gravitational Waves Across the Frequency Spectrum",
+      "description": "Detecting gravitational waves allows us to observe cosmic events like black hole mergers and neutron star collisions that are invisible through traditional telescopes. Current gravitational wave detectors are primarily sensitive to audio-band signals. Some phenomena, including speculative ones such as high-frequency emissions from advanced propulsion systems, might only be detectable with novel approaches.",
+      "convergent_capabilities": [
+        "Decihertz (~0.1 Hz) Gravitational Wave Detection",
+        "Explore High-Frequency Gravitational Wave Detection",
+        "Space-Based Gravitational Wave Detection"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-9b62-ef8af2ed2fa6",
+      "field": "Biophysics",
+      "name": "Light Scattering in Living Tissue Prevents Optical Access to Deeper Regions",
+      "description": "Living tissue exhibits strong light scattering, which hampers deep-tissue imaging and limits resolution. Overcoming this barrier is critical for mapping neural activity and enabling noninvasive diagnostic imaging.",
+      "convergent_capabilities": [
+        "Anti-Scattering Optical and Opto-Acoustic Methods",
+        "Magnetic-Based Imaging"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-802e-bd40-dd7361f31518",
+      "field": "Biosecurity",
+      "name": "Inadequate Blockers of Transmission",
+      "description": "Our ability to block the transmission of pathogens is limited. Without effective strategies, airborne and surface-based transmission continues to spread diseases. A meta roadmap is here.",
+      "convergent_capabilities": [
+        "Better PPE",
+        "Built Environment Protection",
+        "Engineering the Microbiome to Improve Immune Response ",
+        "Transmission Reduction Through Surfaces and Textiles"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-8060-a0b6-cc4e1c0e782b",
+      "field": "Cellular and Molecular Biology",
+      "name": "Fundamental Biomolecular Actors in Cells Remain Largely Invisible",
+      "description": "Many of the fundamental actors in cells—proteins, lipids, and metabolites—are still mostly invisible to us, especially when considering their extensive multiplexity, diversity, cell-to-cell heterogeneity, and temporal variation. Without scalable, cost-effective technologies to capture these molecular details, our comprehensive analysis of complex biological systems remains limited.",
+      "convergent_capabilities": [
+        "Deciphering the DNA Regulatory Code",
+        "High-Throughput Single-Cell Proteomics",
+        "Mapping Other Key Biomolecules",
+        "Metabolomics"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "field": "Chemistry",
+      "name": "Limited ability to identify molecular structures through spectroscopy",
+      "description": "Most molecular structure determination methods lose critical information, and solving the inverse problem remains challenging. This limits our ability to accurately reconstruct molecular structures from spectral data.",
+      "convergent_capabilities": [
+        "Microwave Spectroscopy for 1:1 Mapping",
+        "Universal Spectroscopic Databases"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "field": "Computation",
+      "name": "AI Could Go Rogue",
+      "description": "The potential for AI systems to behave unpredictably or dangerously (“go rogue”) is a critical concern. Ensuring safe and controllable AI architectures is essential for reliable operation. \n\nSee also: \n• https://www.lesswrong.com/posts/fAW6RXLKTLHC3WXkS/shallow-review-of-technical-ai-safety-2024\n• https://deepmind.google/discover/blog/taking-a-responsible-path-to-agi/",
+      "convergent_capabilities": [
+        "Automate AI Interpretability",
+        "Guaranteed Safe AI Architectures",
+        "Hardware Governance",
+        "Mitigating (Indirect) Data Poisoning",
+        "Non-Agentic AI Scientists",
+        "Secure and Privacy-Preserving Local AI Enclaves",
+        "Understand AI Psychology without Assuming Human-Like Psychology",
+        "Understanding Neural Design Principles of Social Instincts"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8131-ede48bd0d654",
+      "field": "Computation",
+      "name": "Silicon Compute is Massively Energy Intensive Compared to Biological Brains",
+      "description": "Modern deep learning and general computation demand enormous energy, limiting scalability and sustainability. Addressing energy efficiency is critical for the next generation of computing platforms, though it also supports potential proliferation of advanced AI and should be advanced alongside AI safety and governance considerations.",
+      "convergent_capabilities": [
+        "AI-Based Design of AI Chips",
+        "Denser and More Robust Longer Term Data Storage",
+        "Living Computers",
+        "Lower Energy Architectures for Deep Learning",
+        "Millivolt Switching",
+        "Neuromorphic Systems",
+        "Next-Gen 3D Integration of Discrete Components",
+        "Probabilistic Computing Hardware",
+        "Reversible Computing",
+        "Superconducting Virtual Brains",
+        "Thermodynamic Computing"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
+      "field": "Ecology",
+      "name": "We Can Learn More from Nature’s Biological Designs",
+      "description": "Nature’s blueprints span from the unseen nanoworld to the enigmatic origins of life. Despite the incredible diversity of nanostructures, many remain hidden due to current imaging limitations. Likewise, the mysteries of animal communication—crucial for decoding behavioral cues and social structures—await breakthrough insights. Moreover, the primordial conditions of our planet, essential for understanding life’s genesis, are obscured by the absence of rocks from before 4.1 Ga and fossils before 3.5 Ga (although life almost certainly established itself on our planet before that). Addressing these challenges can unlock new understandings in biology, ecology, and more.",
+      "convergent_capabilities": [
+        "Advanced Imaging of Natural Nanostructures",
+        "Develop Missions to Search for Life on Europa and/or Enceladus",
+        "Leverage Modern Machine Learning to Communicate with Animals",
+        "Massive-Scale Search and Screening of Hadean Zircons",
+        "Rake Ancient Lunar Regolith - “Earth’s Attic” - to Find Fragments of Hadean Rock from Earth",
+        "Understand Ancient Proteins"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "field": "Geophysics and Climate",
+      "name": "Intervening in Earth Systems at Scale is Largely Untested",
+      "description": "There are currently no direct interventions to address climate tipping points such as glacier melt, leaving some critical processes unmitigated. The fundamental science and engineering principles behind emergency climate interventions remain largely untested at relevant scales, limiting our preparedness for rapid climate change.\n\nSee: https://www.outlierprojects.org/",
+      "convergent_capabilities": [
+        "Arctic Interventions",
+        "Glacial Climate Intervention",
+        "Glacier Measurement Tools",
+        "Planetary Sunshade Fundamentals",
+        "Protecting Ocean Ecosystems",
+        "Removal of Methane and N2O from the Atmosphere",
+        "Safely Testing Emergency Atmospheric Interventions",
+        "Solar Radiation Modification Fundamentals"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80d3-b382-c445e2718659",
+      "field": "Immunology",
+      "name": "Our Immune Memory Contains a Detailed History of Exposures but We Can’t Read It",
+      "description": "Immunological diseases often have nonobvious, complex etiologies and pathophysiologies that are difficult to identify.",
+      "convergent_capabilities": [
+        "Immune Tolerance Induction to Enable In-Human Synthetic Biology with Foreign Proteins",
+        "Large-Scale Profiling of Infection to Expose Links to Neurodegeneration",
+        "Longitudinal Multi-Omic Immune Profiling\n  Across Populations",
+        "Repertoire- and Cellular Subset-Level Adaptive Immune Tools",
+        "Universal Immune-Computer Interface (ICI)"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "field": "Materials Science",
+      "name": "We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes",
+      "description": "The cost of materials is often dominated by the cost to obtain their constituent elements. What presents commercially as the “critical minerals problem” masks a larger scientific bottleneck on how we acquire, concentrate, and substitute chemical elements.",
+      "convergent_capabilities": [
+        "Efficient Chemical Separation of Lanthanides",
+        "High-Strength, Non-Neodymium Magnets",
+        "Recovering Metals and Rare Minerals from Waste"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8007-8f03-ea967970cb8f",
+      "field": "Mechanical Engineering",
+      "name": "Modeling Mechanical Systems is Hard",
+      "description": "The simulation and modeling of complex mechanical systems is challenging due to the intricate interplay of multiple physical phenomena. Improved computational models can enhance design and optimization.",
+      "convergent_capabilities": [
+        "Transferrable Multiphysics Foundation Model"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
+      "field": "Metascience",
+      "name": "Doing and publishing research is expensive and subject to structural roadblocks",
+      "description": "Traditional structures dominate in how research is conducted and how its outputs are disseminated. Expensive publishing practices restrict and slow the spread of knowledge. We should replace outdated publishing practices and complement research practices with new approaches that leverage frugal innovation, community-led platforms, and open access. We imagine a future where scientific discovery is more inclusive and dynamic.",
+      "convergent_capabilities": [
+        "Disrupt Traditional Publishing Models",
+        "Frugal Science Initiatives",
+        "New Protocols for Knowledge Production and Verification",
+        "Post-Publication Peer Review Layer"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
+      "field": "Nanoscale Fabrication",
+      "name": "Synthetic Biology Platforms Are Over-Reliant on Evolved Cells That We Don’t Fully Understand or Control",
+      "description": "We currently perform synthetic biology using naturally evolved (“kludgy”) cells rather than truly bottom-up engineered cells. This bottleneck limits our ability to design fully customizable biological systems.",
+      "convergent_capabilities": [
+        "Bottom-Up Synthetic Cells"
+      ]
+    },
+    {
+      "gap_id": "1f0cb37e-2a00-803f-80fe-cb4166e4f94b",
+      "field": "Physics",
+      "name": "Artisanal Nature of Experimental Physics Platforms",
+      "description": "There is a lack of open and repeatable tooling to spread experimental physics into new areas, e.g., can ultracold atoms be more readily leveraged by people outside a small set of quantum physics labs to pave the way for more applied uses?",
+      "convergent_capabilities": [
+        "Standardized Open Experimental Physics Platform Tools"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "field": "Physics",
+      "name": "Quantum Gravity is Experimentally Hard to Constrain\n",
+      "description": "Quantum gravity remains elusive, with experimental constraints hindered by the need for extremely large-scale or prohibitively expensive experiments.",
+      "convergent_capabilities": [
+        "Targeted Experiments for Quantum Gravity"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fd-87e6-c92b83132c48",
+      "field": "Physiology and Medicine",
+      "name": "Limited Longitudinal Data in Humans",
+      "description": "A comprehensive understanding of human health over time is hindered by the lack of longitudinal data from cohorts that are diverse and globally representative. Such datasets are essential to track developmental, nutritional, and environmental influences on long-term health outcomes.",
+      "convergent_capabilities": [
+        "Accessing Human Cohorts",
+        "Breast Milk-ome Profiling",
+        "Easy Longitudinal Sampling",
+        "Expanded Biobank Initiatives",
+        "Mapping Developmental Malnutrition"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bd01-c3b284abeb44",
+      "field": "Social Science",
+      "name": "Ephemeral Societal Data on Proprietary Platforms",
+      "description": "Much critical data is stored on proprietary platforms and is at risk of disappearing, hindering long-term research and reproducibility.",
+      "convergent_capabilities": [
+        "Create an Internet Archive for Critical Data"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e6-a011-db27cb962cd8",
+      "field": "Social Science",
+      "name": "Translational Gaps in Development Economics",
+      "description": "There exists a disconnect between academic research and the practical implementation of development economics, hampering the conversion of theoretical insights into effective real-world interventions. Current mechanisms for delivering public goods and fostering collective cooperation are inefficient, limiting our capacity to coordinate resources and drive meaningful change. Innovative approaches are needed to bridge this gap, ensuring that cutting-edge economic theories can be transformed into actionable policies and scalable interventions that truly improve development outcomes.",
+      "convergent_capabilities": [
+        "Cost Effectiveness and Techno-Economics Calculations",
+        "Enhance Operational Approaches in Development Economics",
+        "Experiments in Alternative Economic Structures",
+        "Invent New Decentralized Coordination and Contract Mechanisms",
+        "Large-Scale Economic Experiments in Multiplayer Games",
+        "Long-Run Followups on Major Economic Studies"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-a10f-e4099f056390",
+      "field": "Space Engineering",
+      "name": "We Lack Basic Capabilities that Are Necessary for Travel Far Beyond Earth",
+      "description": "We lack the many technologies to support exploration and survival off earth. Our exploration efforts remain confined to our solar system, limiting our potential to explore beyond and understand the broader cosmos.",
+      "convergent_capabilities": [
+        "Air Breathing Fusion for Single-Stage-to-Orbit Vehicle",
+        "Cryosleep",
+        "Interstellar Probes",
+        "Pressurizing Technology or Habitation Domes"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "field": "Synthetic Biology",
+      "name": "Protein Design Has Been Limited to Static, Bio-mimetic Structures",
+      "description": "Protein engineering has largely focused on designing static structures that closely mimic natural proteins. This narrow approach limits the creation of truly novel or highly functional enzymes.",
+      "convergent_capabilities": [
+        "AI Enzyme Design and De Novo Design of Novel Protein Functions",
+        "Biosynthesis of Inorganic Materials",
+        "Enzyme Stabilization in Extreme Environments",
+        "Non-Canonical Amino Acids",
+        "Protein Carpentry"
+      ]
+    }
+  ]
+}

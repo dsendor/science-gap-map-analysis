@@ -1,0 +1,243 @@
+{
+  "batch": 2,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8042-a5bd-ff3dc13b3998",
+      "field": "Astrophysics",
+      "name": "Higher-Resolution Views of the Universe Are Roadblocked by Formation Flying Technology",
+      "description": "Space telescopes offer vastly superior sensitivity to ground-based systems, but enhancing their resolution requires spacecraft with sub-micron precision. \r\n\nAngular resolution of telescopes is limited by the size of the primary optic. Coherent aperture synthesis (interferometry) gets around this by coherently combining signal from separated telescopes where the resolution is proportional to the baseline separation. This has been very successful in the radio (see Event Horizon Telescope) but in the optical regime requires extremely difficult optomechanics and controls, and the sensitivity on the ground is inherently limited by the coherence time of the atmosphere. \r\n",
+      "convergent_capabilities": [
+        "Advance Formation Flying Technology for Spacecraft"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-8411-ee3977ce38e1",
+      "field": "Biophysics",
+      "name": "Lack of Structure Prediction for Highly Dynamic Proteins",
+      "description": "Current structure prediction tools like AlphaFold excel for stable proteins but struggle with highly dynamic proteins whose structures fluctuate continuously, leaving a gap in our understanding of intrinsically disordered proteins and protein allostery.",
+      "convergent_capabilities": [
+        "NMR Mapping and Modeling of Intrinsically Disordered Proteins",
+        "Protein Allostery Prediction Across the Proteome"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+      "field": "Biosecurity",
+      "name": "Fragile Supply Chains and Lack of Backup for Critical Infrastructure",
+      "description": "Many critical supply chains and infrastructure systems are fragile and lack robust backup mechanisms, leaving society vulnerable.",
+      "convergent_capabilities": [
+        "Civilization Reboot Toolkit",
+        "Optimize Circular and Robust Supply Chains"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "field": "Cellular and Molecular Biology",
+      "name": "Cellular and Biomolecular States Are\n  Highly Multimodal and Complex",
+      "description": "Cellular state is a multifaceted and complex phenomenon, involving multiple overlapping omics layers that vary in time and space. Capturing and representing this multimodal complexity is essential for predictive modeling of cell behavior and for advancing our understanding of cellular function. ",
+      "convergent_capabilities": [
+        "Automated Mechanistic Interpretability of Generative AI Models Trained on Biological Data",
+        "Models for Dynamic Cellular and Subcellular Data",
+        "Universal Latent Variable Model of\n  Cellular State"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80f9-8c4d-fa70c0da8ada",
+      "field": "Chemistry",
+      "name": "Limited Understanding of the Chemical Reaction Space",
+      "description": "Our overall knowledge of the chemical reaction space, including the catalysts that drive these reactions, is still rudimentary. We also lack detailed the large materials synthesis and processing datasets needed to enable highly predictive models.",
+      "convergent_capabilities": [
+        "Comprehensive Mapping and Modeling of Chemical Space",
+        "Multi-Modal Chemical Data to Enable AlphaChem",
+        "Open Synthesis Database"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "field": "Computation",
+      "name": "AI Could Be Misused",
+      "description": "The risk of AI being misused—whether through malicious intent or unintended consequences—necessitates robust safeguards and countermeasures.",
+      "convergent_capabilities": [
+        "Decentralized Training",
+        "Jailbreak Resistance"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "field": "Computation",
+      "name": "Proving Math Theorems is Challenging for Both Humans and AI",
+      "description": "Both human mathematicians and current AI systems struggle with proving complex math theorems. Enhancing theorem proving through interactive and automated methods could push the boundaries of mathematical reasoning.",
+      "convergent_capabilities": [
+        "Reinforcement Learning from Interactive Theorem Prover Feedback"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "field": "Ecology",
+      "name": "Much of the Biosphere Remains Uncharted and Vulnerable to Information Loss",
+      "description": "Much of Earth's biosphere—from the deep ocean to atmospheric bioaerosols—remains unexplored, with the microbial majority largely uncharted. Advancing new exploration technologies and systematically cataloging the Earth's microbiome could unlock discoveries of new life forms and biological insights that could impact health, climate, geoengineering, agriculture, and fundamental biology.",
+      "convergent_capabilities": [
+        "Dense Ocean DNA Sampling",
+        "Efficient Ocean Exploration Systems",
+        "Genomic Maps of Global Microbiomes",
+        "Map Atmospheric Extremophiles"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8058-9458-d04c0edfd1b8",
+      "field": "Geophysics and Climate",
+      "name": "Insufficient Monitoring and Modeling of Climate Processes and Control Paths",
+      "description": "We have limited capacity to predict key disruptive events, such as solar flares that threaten power grids and communications, alongside an incomplete understanding of natural processes (atmospheric, ocean, etc.) that underpin climate models. We need better monitoring tools for characterizing phenomena that impact climate dynamics, such as aerosol-cloud interactions, and assessing potential interventions such as marine cloud brightening. These issues underscore the need for enhanced observational tools and more sophisticated models of climate processes.",
+      "convergent_capabilities": [
+        "Dynamic Ecosystem Feedback Modeling",
+        "Efficient Ocean Exploration Systems",
+        "Equip Ships and Planes as Sensors or Modulators of Climate",
+        "Improve Solar Flare Models",
+        "Improved Remote Sensing of Aerosol Particle Size and Composition",
+        "Integrated Methane and N2O Monitoring in Natural Systems",
+        "Ocean Heat and Circulation Modeling",
+        "Starlink Atmospheric Tomography",
+        "Stratospheric Observation Platforms"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+      "field": "Global Health",
+      "name": "Under-Provisioning of Antibiotics, Vaccines and Other Interventions for Major Global Health Challenges",
+      "description": "Many of the world’s most deadly diseases—such as tuberculosis, Group A Streptococcus, hepatitis C, hepatitis B, and syphilis—lack effective vaccines or cures. Additionally, the pace of developing effective, low-cost, therapeutics for emerging pathogens in low resource settings is too slow to meet global health needs. Malnutrition exacerbates susceptibility to disease and impedes recovery; food security is important especially for early child development. Understanding the basic science of malnutrition during development is important for the development of more effective interventions.",
+      "convergent_capabilities": [
+        "Effective Vaccines for Global Health Challenges",
+        "Improved Interventions for Malnutrition",
+        "Novel Therapeutic Approaches for Chronic Infections"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "field": "Materials Science",
+      "name": "Searching Through the Vast, Underexplored Space of Materials is Slow and Expensive",
+      "description": "“New materials create fundamentally new human capabilities. And yet…new materials-enabled human capabilities have been rare in the past 50 years.” The core challenge lies in our inability to reliably design and manufacture materials that meet specific engineering requirements–and to do so at an industrial scale and reasonable cost. \n\nIdentifying promising new materials is hampered by the slow pace of exploration. The integration of machine learning, physics-based property prediction, and self-driving laboratories could dramatically accelerate this process. A significant opportunity lies in modeling the vast, unexplored space of potential materials in silico.",
+      "convergent_capabilities": [
+        "Build Better Assay Platforms for Materials",
+        "In-Silico Modeling of Material Space",
+        "ML & Physics-Based Property Prediction and Iterative Self-Driving Lab",
+        "Materials Property Bank"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8018-8a8c-f42f50d9229a",
+      "field": "Mechanical Engineering",
+      "name": "Many Methods Are Stuck in 20th Century Fabrication Paradigms",
+      "description": "Modern manufacturing systems largely rely on paradigms developed in the last century where large machines produce components smaller than themselves. This approach is increasingly limited by scaling challenges and cost inefficiencies. To meet future demands, we need to reimagine manufacturing by developing universal robotic construction systems and low-capital, high-energy manufacturing solutions that leverage emerging technologies such as advanced robotics, precision machining, and renewable energy integration. These innovations could, for example, dramatically lower the cost of machining high-performance materials like titanium or enable widespread automation in sectors like desalination.",
+      "convergent_capabilities": [
+        "Automated Defect and Weld Inspection",
+        "Cheap, Automatic Five Axis Electrochemical Machining ",
+        "Low-Capital Manufacturing Systems ",
+        "Universal Robotic Construction Systems"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
+      "field": "Metascience",
+      "name": "Clinical Trials Are Poorly Optimized for Evidence Gathering",
+      "description": "Current clinical trial designs are not sufficiently optimized for gathering robust evidence, leading to inefficiencies and suboptimal outcomes.",
+      "convergent_capabilities": [
+        "Federated Data Approaches",
+        "Increase Predictive Validation of Early Studies",
+        "Infrastructure for Decentralized Patient-Reported Clinical Studies",
+        "Out-of-Clinic Studies",
+        "Quasi-Experimental Causality in Biomedical Research"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
+      "field": "Nanoscale Fabrication",
+      "name": "Inability to Perform Chemistry with Direct Positional Control",
+      "description": "Our current methods do not allow precise control over the positional placement of atoms or groups during chemical synthesis, limiting our ability to build molecules with atomic precision. A general-purpose approach to atomically precise fabrication was envisioned by Drexler in the 1980s and Feynman in the late 1950s. DNA origami made a leap in 2006, but DNA is in some key ways a much less precise and versatile nanoscale building material than proteins/peptides. A promising path would extend “DNA origami” to “protein carpentry” by adapting Beta Solenoid proteins, or other modular protein components with programmable binding properties, as lego-like building blocks and then using the latter to construct massively parallel protein-based 3D printers for lego-like covalent assembly of a restricted set of chemical building blocks. This one is riskier: how programmably can we really control protein assembly, and could we bootstrap from initial crappy prototype protein-carpentry-and-or-DNA-origami-based molecular 3D printers to genuinely useful ones? ",
+      "convergent_capabilities": [
+        "Cell-Free Systems",
+        "Designer Enzymes from Quantum Chemistry and Protein Design",
+        "Direct 3D Specification of Protein-Like Molecules",
+        "Molecular 3D Printing",
+        "Silicon-Protein Interfaces",
+        "Vacuum Mechanosynthesis Exploration"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80da-94b7-d6c79e96cf17",
+      "field": "Neuroscience",
+      "name": "We Can’t Take High-Resolution Movies of or Intervene in Brain Computation at the Single Neuron Level",
+      "description": "Capturing the dynamics of large brain networks at single-neuron resolution in vivo is extremely challenging. Advanced imaging methods that record fast, high-resolution activity without destructive intervention are required to unravel the complex interplay of neuronal circuits in real time.",
+      "convergent_capabilities": [
+        "In-Vivo Connectomics",
+        "In-Vivo Optical Transparency of Brain Tissue",
+        "Low Energy Multiphoton Brain Imaging",
+        "Novel Fast-Scanning Microscopy of Brain Cortex"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
+      "field": "Physics",
+      "name": "Particle Accelerators Are Large and Expensive",
+      "description": "Traditional particle accelerators are enormous and costly, limiting experimental flexibility. Compact, benchtop accelerators could democratize high-energy physics and open new avenues in applications such as medical isotope production.",
+      "convergent_capabilities": [
+        "Benchtop Particle Accelerators"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fd-a046-f81466f201e7",
+      "field": "Physiology and Medicine",
+      "name": "Inadequate Models of Human Physiology",
+      "description": "Current preclinical models of human physiology, including animals and organoids, do not fully capture the complexity of human physiology, limiting the predicting power of preclinical experiments and explaining, in part, the costly failures of drug development in clinical trials. This is especially true for complex disorders including those of aging, neurological disorders, and female reproductive biology. More systematic and representative models—including ex vivo human organ systems or even whole bodies and novel animal species—are needed to improve the predictive power of biomedical research. These technologies also have applications in addressing organ shortages, improving neonatal care, and other unmet medical needs.",
+      "convergent_capabilities": [
+        "3D Organoid Technology",
+        "Cryopreservation and Rewarming to Extend the Viability of Biological Tissues",
+        "Ectogenesis (Artificial Wombs)",
+        "Grow and Maintain Human Organs Ex Vivo or in Animals",
+        "Improved and Diverse Research Models",
+        "Living Human Bodies Without Brains",
+        "More Information Gleaned from Single Animals"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8097-9eca-e48345e90acc",
+      "field": "Social Science",
+      "name": "Education Modalities Suffer From Scaling Limitations",
+      "description": "Current education systems face structural inefficiencies such as excessive administrative workloads on educators, overcrowded classrooms, and inequitable resource distribution. Innovative technologies have the potential to significantly reduce these burdens by providing tools that assist teachers with scheduling, grading, and creating personalized, adaptive lesson plans. Digital platforms could dynamically tailor learning experiences to individual student progress, complementing classroom teaching. Additionally, technology-driven improvements in administrative efficiency could free valuable resources, enhancing educational equity and overall student experiences.\n\n“US K-12 teachers are 30% more likely to face burnout than U.S. soldiers, whose lives are defined by relentless duty, perpetual war and low wages.” - Adrienne Williams \n\n“Given recent improvements in the quality, affordability, and usability of technologies like AI, computer vision, and AR/VR, we can reimagine a more personalized, research-driven K-12 experience—one better able to meet diverse learning needs and set students up for success both in school and in life. From chatbots for individual coaching to immersive mixed reality solutions to adaptive technologies supporting culturally responsive pedagogy, we have an opportunity to leverage new technologies to tackle pressing needs across literacy education, STEM instruction, and preparing students for the workforce.” - Kumar Garg ",
+      "convergent_capabilities": [
+        "Digital Tools for Educators and School Districts",
+        "Digital Tutor Technologies",
+        "New Architectures for Learning Assistance"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8013-a845-c84eb5cde804",
+      "field": "Social Science",
+      "name": "Policy Creation and Evaluation is Manual and Suffers from Low Efficiency and Accountability",
+      "description": "Policy development and evaluation processes today rely heavily on manual human review to ensure accountability. However, as AI systems increasingly support or automate these processes, this human-centered accountability becomes challenging. Human reviewers risk becoming a critical bottleneck, slowing policy implementation. New tools are needed to streamline policy creation and evaluation, and to ensure consistency and compliance before deployment.",
+      "convergent_capabilities": [
+        "Formalization of Policy"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c6-88ec-c73d91a62be4",
+      "field": "Space Engineering",
+      "name": "Outdated Space Station Construction",
+      "description": "Only one new space station (天宫) has been launched this century, due to high costs and reliance on traditional, government-led megaprojects.",
+      "convergent_capabilities": [
+        "In-Situ Resource Utilization",
+        "Leverage Commercial Approaches",
+        "New Construction Approaches for Space Stations"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
+      "field": "Synthetic Biology",
+      "name": "Poor Scalability of Bioreactors Limits Biomanufacturing",
+      "description": "Current bioreactor designs are inefficient when scaling up production processes, limiting the ability to produce bioproducts at industrial scales.",
+      "convergent_capabilities": [
+        "Modularization of Bioreactors",
+        "Novel Materials and Sterilization of Bioreactors "
+      ]
+    }
+  ]
+}

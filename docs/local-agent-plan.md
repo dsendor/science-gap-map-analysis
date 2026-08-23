@@ -13,27 +13,53 @@ remote session that produced Phases 0–2.
 
 ## 0. Before you touch anything
 
+**`BRAVE_API_KEY` is already set in `.env` locally.** `.env` is gitignored, so it exists
+on David's machine and nowhere else — do not commit it, echo it, or paste it into a
+prompt, a commit message, or an issue.
+
+`engine/search.mjs` reads `.env` itself if the variable is not already exported, so no
+`export` or `--env-file` is needed. The `.mcp.json` route is different: Claude Code
+expands `${BRAVE_API_KEY}` from the **shell environment**, not from `.env`, so if you
+want the Brave MCP tool as well as the script, export it in your shell first.
+
+Remaining setup — **run these yourself, they are all machine-checkable:**
+
 ```bash
 cd science-gap-map-analysis
-cp .env.example .env          # set BRAVE_API_KEY
-cp .mcp.json.example .mcp.json
-node engine/rebuild.mjs       # import baseline + all label files + verify additive
+git checkout claude/science-gap-map-analysis-yu3wek && git pull
+node engine/rebuild.mjs       # import baseline + all label/audit/decision files + verify additive
+node engine/preflight.mjs     # checks everything below in one command; exits non-zero if blocked
 ```
 
-`rebuild.mjs` must end with **"additive-only check passed"**. If it does not, stop and
-fix that before doing anything else — every later phase depends on Convergent's data
-being untouched.
+`preflight.mjs` verifies the Node version, that the database is built and complete, that
+the additive guardrail passes, that the Brave key resolves from either the environment or
+`.env`, and that arXiv, Crossref and the Brave API are actually reachable. It treats an
+HTTP 403 as **blocked**, not reachable, because that is how an egress proxy answers — a
+naive reachability check passes a fully blocked environment, which is the exact false
+green that would let Phase 3 run and produce unsourced numbers.
 
-Confirm the network is actually open, because the remote session's was not:
+Do not start a phase while it exits non-zero. The only step needing a human is
+`cp .mcp.json.example .mcp.json` plus a shell `export`, and only if you want the Brave
+MCP tool in addition to the script.
+
+`db/gapmap.sqlite` is gitignored on purpose — the pinned snapshot and the JSON files in
+`research-log/` are the sources of record, and `rebuild.mjs` reconstructs the database
+from them. So **`rebuild.mjs` is not optional**; nothing works before it runs. Expect it
+to report 20 fields, 103 gaps, 369 capabilities, 1080 resources and 389 edges, then
+ingest 20 label files, 3 audit files, the adjudication, and the decision, run and frame
+ledgers. It must end with **"additive-only check passed"**.
+
+Then confirm search really works end to end, since preflight only checks reachability:
 
 ```bash
-curl -sS -o /dev/null -w "%{http_code}\n" https://arxiv.org/
-node engine/search.mjs "test" --count 3 | head -20
+node engine/search.mjs "gravitational wave detector coating thermal noise" --count 3
 ```
 
-Both must succeed. If `search.mjs` returns a 403 naming a blocked host, you are behind
-an egress proxy and Phase 3 cannot be done properly — say so rather than producing
-unsourced numbers.
+The first real search costs a Brave query; results cache to `research-cache/`
+(gitignored), so re-runs are free.
+
+Nothing else is needed to start. Phase 6 additionally needs `npm` and will create the
+`app/` directory, which does not exist yet.
 
 ### Rules that hold across every phase
 
@@ -43,16 +69,26 @@ unsourced numbers.
    no column for it; do not add one.
 3. **Every judgment gets a `rationale` and a `confidence`.** `guess` is not a failure
    state. A phase that produces no guesses will be assumed to be lying.
-4. **Log non-obvious calls** as `decisions` rows (phase, decision, rationale,
-   runner_up, confidence, reversal_condition).
-5. **Log time.** Open a `runs` row when you start a phase and close it when you finish:
-   ```sql
-   INSERT INTO runs (phase, kind, started_at, model, note)
-   VALUES ('phase-3', 'agent', datetime('now'), '<model>', 'progress indicators');
-   ```
-   Track `agent` and `human-review` separately. The elapsed-time figure is part of the
-   argument, and a single blended number invites the obvious objection.
+4. **Log non-obvious calls** by appending to `research-log/decisions.json`
+   (phase, decision, rationale, runner_up, confidence, reversal_condition), then
+   re-running `node engine/rebuild.mjs`. **Do not INSERT into the database directly.**
+   `db/gapmap.sqlite` is gitignored and derived — anything written only there is
+   invisible in a diff and erased by the next rebuild.
+5. **Log time** by appending to `research-log/runs.json`: an entry when a phase starts,
+   `ended_at` filled when it finishes. Track `agent` and `human-review` separately. The
+   elapsed-time figure is part of the argument, and a single blended number invites the
+   obvious objection.
+
+   The general rule: **every durable fact belongs in a file under `research-log/` or
+   `data/`, never only in SQLite.** The database is a queryable projection of those
+   files and `engine/rebuild.mjs` reconstructs it from scratch at any time.
 6. **Commit per phase**, with `verify-additive` passing at every commit.
+7. **Every phase has a mandatory independent review gate.** Phases 1-2 had one and it
+   materially changed the output — it found that a whole measurability tier could not be
+   applied reliably, and 23% of tier labels and 19% of AI-type labels ended up flagged
+   as guesses that were not flagged before. Do not skip these. The reviewer must never
+   be the agent that produced the work, and must form its own view before reading
+   yours. Reviewers report; they do not fix. See `agents/reviewer.md`.
 
 ---
 
@@ -126,11 +162,25 @@ If a number is real but you could only get it from a secondary source, set
 commitment, a stated programme goal, or a physical limit are all acceptable. An invented
 round number is not. If no defensible target exists, leave both NULL and say why.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode A** of `agents/reviewer.md`. It must not be the
+agent that produced the rows and must not see their reasoning first.
+
+It re-fetches every source and confirms the number is really on the page and really
+measures the stated quantity, and — the important part — **it runs its own independent
+search for every null before reading yours.** A null two independent searchers reach
+separately is the strongest row in the artifact. A null the reviewer breaks by finding
+an indicator you missed is a false claim, and must be fixed before anything ships.
+
+Resolve every `blocking` finding. Record unresolved ones in `decisions`.
+
 ### Acceptance
 
 - 6–8 `gap_indicators` rows, spanning at least three different tiers.
 - At least one `is_null_result = 1` with at least five logged searches behind it.
 - Every non-null row has a `source_url` that you actually fetched.
+- Reviewer Mode A run, `research-log/reviews/phase-3.json` written, no unresolved `blocking`.
 - The artifact must label this a **sample** and must not extrapolate it to coverage.
 
 ---
@@ -204,12 +254,36 @@ maturity, measurability tier. If a new gap lands in tier 3 or 4, **say so plainl
 rather than dressing it up as tier 1. Their own roadmapping criterion asks whether
 success is unambiguously measurable, and the honest answer is part of the contribution.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode B** of `agents/reviewer.md`. Its instruction is
+to **refute novelty, not confirm it** — it greps the export with its own search terms
+and hunts for funded work, defaulting to "already covered". You have every incentive to
+conclude your own gap is novel, which is exactly why you do not get to be the one who
+checks.
+
+It also runs the **house-format blind test**:
+
+```bash
+node engine/make-format-test.mjs
+```
+
+This writes `research-log/format-test.json` — your proposed gaps shuffled among real
+Convergent ones with identifying markers stripped — and a key the reviewer only opens
+after answering. If the reviewer reliably picks yours out, the voice does not match and
+the finding says what gave them away: length, hedging, vocabulary, sentence shape,
+numbers. Revise and re-run until recall on your items is near chance.
+
+A `covered-by-existing-gap`, `covered-by-existing-capability`, or `already-funded`
+verdict is blocking. Drop or replace that gap.
+
 ### Acceptance
 
 - 3–5 rows, each 30–60 words, title-case declarative name, no urgency language, no
   inline citations, no named vendors.
 - `dedup_check` and `funding_check` both populated with what was actually searched.
 - IDs prefixed `new-`. **Never** mint a Convergent-style UUID.
+- Reviewer Mode B run, format test at near-chance recall, no unresolved `blocking`.
 
 ---
 
@@ -305,14 +379,29 @@ Two gaps in different fields sharing a binding link demonstrates something a cat
 structurally cannot: **that bottlenecks recur across fields and can be counted.** Give it
 its own section in the findings.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode C** of `agents/reviewer.md`. Two things it does
+that you cannot do for yourself:
+
+1. **Verifies the expectation was really pre-registered**, by checking that the commit
+   containing `expectation` precedes the one containing `finding` in git history. This
+   is why you commit the expectation on its own before starting the analysis — the git
+   log is the evidence, and without it the pre-registration claim is unfalsifiable.
+2. **Argues that a different link binds.** It takes the strongest case it can for at
+   least two non-binding links using the same evidence. If it can make a serious case,
+   your conclusion is not established and the chain needs more work.
+
+It also checks axis discipline, the intersection claim, and the tone rule.
+
 ### Acceptance
 
 - Exactly two chains. Not three. Doing this across the map is the collaboration being
   proposed, not the thing being given away.
 - Every link has `blocker` and `rationale`; `is_binding` set on the ones that bind.
-- `expectation` written before the analysis; `finding` written after, and honest about
-  divergence.
+- `expectation` committed **in an earlier commit** than `finding`, and honest about divergence.
 - Tone check: every statement about their capability set reads as observation, not critique.
+- Reviewer Mode C run, no unresolved `blocking`.
 
 ---
 
@@ -397,6 +486,15 @@ Include:
   and impact attributes they have already said they want.
 
 **Draft it. Do not send it.** External communication is David's.
+
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode D** of `agents/reviewer.md`. It traces every
+quantitative claim in `docs/findings.md` and the cover note back to a database row and
+lists the ones that do not trace — the check that catches a confident sentence written
+from memory. It also hunts for ranking, which re-enters through the side door as a
+default sort, a "top" list, or a chart ordered by magnitude, and it opens the built page
+to confirm `guess` labels are visually distinct rather than merely present in the data.
 
 ### Verify before anything goes outside the repo
 

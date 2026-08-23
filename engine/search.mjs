@@ -45,6 +45,22 @@ const flag = (name, fallback = null) =>
   args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
 const has = (name) => args.includes(name);
 
+// Load .env if the key is not already exported. Node does not read .env on its own
+// and neither does Claude Code, so without this a key sitting correctly in .env still
+// fails with "BRAVE_API_KEY is not set", which is a confusing way to lose ten minutes.
+function loadDotEnv() {
+  if (process.env.BRAVE_API_KEY) return;
+  try {
+    for (const line of readFileSync(`${root}.env`, 'utf8').split('\n')) {
+      const m = line.match(/^\s*([A-Z_][A-Z0-9_]*)\s*=\s*(.*)\s*$/i);
+      if (!m) continue;
+      const value = m[2].replace(/^["']|["']$/g, '');
+      if (value && !process.env[m[1]]) process.env[m[1]] = value;
+    }
+  } catch { /* no .env: fall through to the explicit error below */ }
+}
+loadDotEnv();
+
 const cacheKey = (q, count) => createHash('sha256').update(`${q}::${count}`).digest('hex').slice(0, 32);
 
 async function braveSearch(query, count = 10, { fresh = false } = {}) {
@@ -57,7 +73,7 @@ async function braveSearch(query, count = 10, { fresh = false } = {}) {
   }
 
   const apiKey = process.env.BRAVE_API_KEY;
-  if (!apiKey) throw new Error('BRAVE_API_KEY is not set — see .env.example');
+  if (!apiKey) throw new Error('BRAVE_API_KEY is not set. Put it in .env at the repo root, or export it.');
 
   const wait = MIN_INTERVAL_MS - (Date.now() - lastCall);
   if (wait > 0) await new Promise((r) => setTimeout(r, wait));

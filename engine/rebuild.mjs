@@ -17,25 +17,41 @@ const run = (script, ...args) =>
 
 run('import-gapmap.mjs');
 
+let audited = 0;
 for (const [dir, script] of [
   ['research-log/labels', 'ingest-labels.mjs'],
   ['research-log/audits', 'ingest-audits.mjs'],
   ['research-log/indicators', 'ingest-indicators.mjs'],
   ['research-log/new-gaps', 'ingest-new-gaps.mjs'],
   ['research-log/critical-paths', 'ingest-critical-paths.mjs'],
-  ['research-log/ledger', 'ingest-ledger.mjs'],
 ]) {
   const path = `${root}${dir}`;
   if (!existsSync(path) || !existsSync(`${root}engine/${script}`)) continue;
   const files = readdirSync(path).filter((f) => f.endsWith('.json')).sort();
   for (const f of files) run(script, `${path}/${f}`);
   if (files.length) console.log(`ingested ${files.length} file(s) from ${dir}`);
+  if (dir.endsWith('audits')) audited = files.length;
 }
 
-// Adjudication rewrites confidence flags on the ingested labels and must run after
-// the audits are in. It was previously invoked by hand, which meant a clean rebuild
-// silently dropped every downgrade — including the blanket 'Proxy only' one — and
-// produced a database that did not match the published findings. It is idempotent.
-if (existsSync(`${root}engine/adjudicate.mjs`)) run('adjudicate.mjs');
+// Adjudication is part of the derived state, not a one-off edit. Without this a
+// rebuild silently restores the pre-audit confidence flags and the artifact would
+// under-report its own uncertainty — the opposite of what the audit was for.
+if (audited) run('adjudicate.mjs');
+
+if (existsSync(`${root}research-log/decisions.json`)) run('ingest-decisions.mjs');
+if (existsSync(`${root}research-log/runs.json`)) run('ingest-runs.mjs');
+if (existsSync(`${root}research-log/frames.json`)) run('ingest-frames.mjs');
+
+// v2 relabel comparison, then the adjudication that acts on it. Order matters: the
+// comparison must be recorded against v1 before adjudication rewrites the primaries.
+const v2dir = `${root}research-log/labels-v2`;
+if (existsSync(v2dir) && existsSync(`${root}engine/ingest-relabels.mjs`)) {
+  const files = readdirSync(v2dir).filter((f) => f.endsWith('.json')).sort();
+  for (const f of files) run('ingest-relabels.mjs', `${v2dir}/${f}`);
+  if (files.length) {
+    console.log(`ingested ${files.length} relabel file(s)`);
+    if (existsSync(`${root}research-log/relabel-adjudication.json`)) run('apply-relabel.mjs');
+  }
+}
 
 run('verify-additive.mjs');

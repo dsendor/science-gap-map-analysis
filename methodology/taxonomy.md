@@ -37,6 +37,7 @@ different gaps are blocked on AI at wildly different maturities.
 | `Design and optimization search` | Inverse design, generative proposal of candidates, experiment planning over a defined space |
 | `Sensing and signal processing` | Extracting signal from instrument data: detection, denoising, anomaly finding, reconstruction |
 | `Autonomous experimentation` | Closed-loop self-driving labs that choose and run their own experiments. Bench scale, narrow domains, working now in chemistry and materials formulation |
+| `Real-time control of physical systems` | Closed-loop sense-decide-actuate on hardware that already exists, at machine timescales. Learned plasma control, adaptive optics, station-keeping, accelerator tuning |
 | `Physical build and manipulation` | Robotics for fabrication, assembly, installation, field deployment. The category that would build a detector, a beamline, an observatory |
 | `Coordination and institutional` | Allocation, review, funding decisions, standards, incentives — anything where the blocker is an organisation rather than a technique |
 
@@ -45,9 +46,26 @@ not be collapsed.** A self-driving lab pipetting into well plates and a robot
 assembling a space telescope differ by decades of maturity. Conflating them destroys
 the finding.
 
+**Real-time control is a third thing again, and was added after blind audit found it
+had no home.** The discriminator is a two-part test:
+
+- Does it *choose what to try*? Then autonomous experimentation.
+- Does it *construct or move something that did not exist assembled*? Then physical build.
+- Does it *hold an existing system on a trajectory*, reading sensors and driving
+  actuators in a loop? Then real-time control.
+
+Learned tokamak plasma control chooses no experiments and builds no tokamak; it keeps
+an existing one stable. Two independent labelers disagreed on it precisely because the
+category was missing. Control is a highly verifiable task class — feedback arrives in
+milliseconds — so leaving it folded into ML surrogates and design search understates
+where AI already works.
+
 Maturity, for the type identified: `Working now` | `2-5 years` | `Speculative`.
 
-**Maturity is always relative to this gap, never to the capability class in general.**
+**Maturity has two ambiguities. The first is fixed below; the second was not, and it
+broke the project's headline finding — read both before assigning one.**
+
+**(a) Relative to this gap, never to the capability class in general.**
 Both readings are defensible and they give different answers, so the convention is
 fixed here: ask *how mature is this capability class for moving this particular gap*,
 not *how mature is this capability class somewhere*. Autonomous experimentation is
@@ -57,9 +75,63 @@ raised independently by two blind auditors as ambiguous in an earlier revision; 
 existing labels already follow the for-this-gap reading, so pinning it down changes no
 label but makes the disagreement rate on maturity interpretable.
 
+**(b) Availability versus efficacy — unresolved, and the reason maturity cannot carry a
+conclusion.** Does `Working now` mean *the capability exists and can be applied today*,
+or *applying it today would actually move this gap*? For technical categories the two
+readings mostly coincide. For `Coordination and institutional` they diverge completely:
+convening a standards body is a mature capability available this afternoon, while getting
+universal DNA-synthesis screening adopted is not.
+
+An independent relabel of all 103 gaps found this empirically. Coordination's working-now
+share went from **7% under the efficacy reading to 67% under the availability reading** —
+a complete inversion at the top of the ordering — and overall maturity agreement between
+two independent passes was only 63/103. Twenty-three of the forty disagreements moved in
+the same direction, `2-5 years` to `Working now`.
+
+Until this is resolved with a rubric that forces one reading, **maturity is the least
+reliable field in this taxonomy and no aggregate claim should rest on it.** Assign it,
+record it, and report it with its disagreement rate attached. See `docs/relabel-report.md`.
+
 Multiple types per gap are allowed and expected. Exactly one is marked primary — the
 one that would move the gap *most*, which is not always the one most obviously
 applicable. The primary is what the cross-tabs use.
+
+## 2b. Frame: is AI the instrument or the object?
+
+The AI-type dimension asks *which AI capability would move this gap*. That presupposes
+AI is the instrument and the gap is a science problem. A few gaps are **about AI**, and
+for those the question is ill-posed.
+
+`frame` is `ai-as-instrument` by default. Set `ai-as-object` when **the gap would still
+exist if AI did not** — that is, when AI is the subject matter rather than a possible
+remedy.
+
+The criterion matters more than the list. An earlier revision enumerated three gaps
+instead of stating a test, and a blind relabeler immediately found a fourth that meets
+the same description and was not on it: *Labor-Replacing AI Could Lead to Human
+Disempowerment*. An enumeration cannot be applied to a gap nobody thought of, which is
+exactly what a labeler needs to do. The test is the definition; the list below is its
+current output, not its boundary.
+
+Applying the test: *AI Could Be Misused*, *AI Could Go Rogue*, *AI is Still Narrow in its
+Reasoning and Planning*, and *Labor-Replacing AI Could Lead to Human Disempowerment* all
+disappear if AI does not exist. *Risks of Malicious Bioengineering* does not — it is a
+biosecurity gap that happens to have an AI-mediated capability attached, and DNA synthesis
+screening would be needed regardless. It stays `ai-as-instrument`.
+
+**Why this is a frame flag and not a ninth capability type.** The obvious fix is to add
+something like "AI safety and assurance research" to the list above. That would be a
+category error. The eight types are *capabilities applied to science*; safety research
+is a research field. A ninth entry of a different kind would silently change what the
+dimension means and would make the cross-tabs incomparable.
+
+These gaps still get a type and a tier — they are still real gaps — but they are
+reported separately and **excluded from the headline maturity gradient**, because a
+capability's maturity "for this gap" means something different when the gap is the
+capability. Their tiers are also not comparable to the rest: *AI Could Go Rogue* is
+`Verification contested` because we are arguing about a technology we are building,
+where quantum gravity is contested because physicists disagree about what would settle
+a question about nature. Both are tier 3; they are not the same phenomenon.
 
 ### Known limits of this dimension
 
@@ -67,17 +139,14 @@ Two cases where the taxonomy is a poor fit rather than a hard call, both surface
 blind audit. Label the dominant component, flag `guess`, and say so in the notes —
 do not force a clean answer:
 
-- **Gaps where AI is the object rather than the instrument.** "AI Could Be Misused" and
-  "AI Could Go Rogue" ask which AI capability would move a gap *about AI*. There is no
-  safety-and-robustness-research category among the seven, and the nearest fits
-  (`LLM reasoning and synthesis` for automated red-teaming, `Coordination and
-  institutional` for governance) are both partial.
 - **Composite gaps.** "We Can Learn More from Nature's Biological Designs" spans
   nanostructure imaging, animal communication, Hadean geology and an Europa mission;
   "Underdevelopment of Modern Tools in the Social Sciences" spans qualitative methods,
   question prioritisation and satellite archaeology. Their sub-components would take
   different types *and different tiers*. A single primary is a real loss of information
-  and the artifact should say so rather than pretend otherwise.
+  and the artifact should say so rather than pretend otherwise. Splitting them is not
+  available to us — that would mean authoring gap records Convergent did not write —
+  so the decomposition is offered as a proposal in `docs/decomposition-proposal.md`.
 
 Revise the taxonomy if the data argues for it. Any revision writes a `decisions` row
 with the runner-up and a reversal condition.

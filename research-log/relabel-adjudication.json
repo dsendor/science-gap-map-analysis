@@ -1,0 +1,404 @@
+{
+  "_comment": "Adjudication rule, applied mechanically. Agreement -> keep, confidence confident. Disagreement -> take v2 and mark guess. v2 wins because it alone had all eight categories. The disagreement is NOT resolved by argument: I authored v1 and am not a neutral adjudicator, so picking winners case by case would reintroduce exactly the bias the blind pass was built to remove. A guess flag is the honest record of two independent labelers failing to converge.",
+  "adjudications": [
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Speculative vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8084-a877-c83d9b9c3ece",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8069-8477-e0e62e56db05",
+      "type": "Autonomous experimentation",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Autonomous experimentation; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ff-986f-d66a6d646d7d",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8045-ad83-cb1081a2eaf1",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Speculative vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-809a-a069-c93e72813eb6",
+      "type": "Physical build and manipulation",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Speculative). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e4-bb14-ecc39aa04c12",
+      "type": "Sensing and signal processing",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Sensing and signal processing; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "type": "Autonomous experimentation",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80af-8e6b-ff088bc25396",
+      "type": "Design and optimization search",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "type": "LLM reasoning and synthesis",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Coordination and institutional vs LLM reasoning and synthesis; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Speculative vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-805f-8b53-dd343406ab07",
+      "type": "Autonomous experimentation",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs Autonomous experimentation; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8762-c51aee94a680",
+      "type": "Sensing and signal processing",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Sensing and signal processing; maturity: Speculative vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-9b62-ef8af2ed2fa6",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-8060-a0b6-cc4e1c0e782b",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8131-ede48bd0d654",
+      "type": "Design and optimization search",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs ML surrogates and prediction; maturity: Speculative vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8007-8f03-ea967970cb8f",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1f0cb37e-2a00-803f-80fe-cb4166e4f94b",
+      "type": "Real-time control of physical systems",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Coordination and institutional vs Real-time control of physical systems; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "type": "Sensing and signal processing",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Sensing and signal processing; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fd-87e6-c92b83132c48",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e6-a011-db27cb962cd8",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "type": "Design and optimization search",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "type": "LLM reasoning and synthesis",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Speculative). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fe-9540-c14ef07e4d85",
+      "type": "Physical build and manipulation",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Coordination and institutional vs Physical build and manipulation; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8039-a26b-ea2d3b4f9bd6",
+      "type": "Autonomous experimentation",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "type": "Real-time control of physical systems",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: ML surrogates and prediction vs Real-time control of physical systems; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8031-b79b-c13cca53b9c9",
+      "type": "Sensing and signal processing",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs Sensing and signal processing; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cd-aef2-fe6e9d360328",
+      "type": "Design and optimization search",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8027-9ab6-d431ec43d57f",
+      "type": "Design and optimization search",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "type": "Design and optimization search",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: ML surrogates and prediction vs Design and optimization search; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c0-aae9-fc48f6ef2af6",
+      "type": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs Coordination and institutional; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80f5-b3d1-d19cab7aeec3",
+      "type": "Design and optimization search",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Design and optimization search; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c5-921e-de69ffaca475",
+      "type": "Physical build and manipulation",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: ML surrogates and prediction vs Physical build and manipulation; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "type": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: LLM reasoning and synthesis vs Coordination and institutional; maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8008-8543-ca3099dae993",
+      "type": "Autonomous experimentation",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Autonomous experimentation; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8042-a5bd-ff3dc13b3998",
+      "type": "Real-time control of physical systems",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Real-time control of physical systems; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80f9-8c4d-fa70c0da8ada",
+      "type": "Autonomous experimentation",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Sensing and signal processing; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8058-9458-d04c0edfd1b8",
+      "type": "ML surrogates and prediction",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Sensing and signal processing vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "type": "Autonomous experimentation",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs Autonomous experimentation; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
+      "type": "Coordination and institutional",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs Coordination and institutional; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
+      "type": "Design and optimization search",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: Speculative vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80da-94b7-d6c79e96cf17",
+      "type": "Sensing and signal processing",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
+      "type": "Real-time control of physical systems",
+      "maturity": "Working now",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs Real-time control of physical systems; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fd-a046-f81466f201e7",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Design and optimization search vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c6-88ec-c73d91a62be4",
+      "type": "Physical build and manipulation",
+      "maturity": "Speculative",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (maturity: 2-5 years vs Speculative). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "guess",
+      "note": "Independent passes disagreed (type: Physical build and manipulation vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    }
+  ]
+}
