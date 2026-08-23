@@ -13,27 +13,51 @@ remote session that produced Phases 0–2.
 
 ## 0. Before you touch anything
 
+**`BRAVE_API_KEY` is already set in `.env` locally.** `.env` is gitignored, so it exists
+on David's machine and nowhere else — do not commit it, echo it, or paste it into a
+prompt, a commit message, or an issue.
+
+`engine/search.mjs` reads `.env` itself if the variable is not already exported, so no
+`export` or `--env-file` is needed. The `.mcp.json` route is different: Claude Code
+expands `${BRAVE_API_KEY}` from the **shell environment**, not from `.env`, so if you
+want the Brave MCP tool as well as the script, export it in your shell first.
+
+Remaining setup:
+
 ```bash
 cd science-gap-map-analysis
-cp .env.example .env          # set BRAVE_API_KEY
-cp .mcp.json.example .mcp.json
+git checkout claude/science-gap-map-analysis-yu3wek && git pull
+
+node --version                # 22+ required (node:sqlite); 24 recommended, as CI uses it
+cp .mcp.json.example .mcp.json    # only if you want the Brave MCP tool too
+
 node engine/rebuild.mjs       # import baseline + all label files + verify additive
 ```
 
-`rebuild.mjs` must end with **"additive-only check passed"**. If it does not, stop and
-fix that before doing anything else — every later phase depends on Convergent's data
-being untouched.
+`db/gapmap.sqlite` is gitignored on purpose — the pinned snapshot and the JSON files in
+`research-log/` are the sources of record, and `rebuild.mjs` reconstructs the database
+from them. So **`rebuild.mjs` is not optional**; nothing works before it runs. Expect
+it to report 20 fields, 103 gaps, 369 capabilities, 1080 resources, 389 edges, then
+ingest 20 label files and 3 audit files.
 
-Confirm the network is actually open, because the remote session's was not:
+It must end with **"additive-only check passed"**. If it does not, stop and fix that
+before doing anything else — every later phase depends on Convergent's data being
+untouched.
+
+Then confirm the network is actually open, because the remote session's was not:
 
 ```bash
-curl -sS -o /dev/null -w "%{http_code}\n" https://arxiv.org/
-node engine/search.mjs "test" --count 3 | head -20
+curl -sS -o /dev/null -w "%{http_code}\n" https://arxiv.org/     # expect 200
+node engine/search.mjs "gravitational wave detector coating thermal noise" --count 3
 ```
 
 Both must succeed. If `search.mjs` returns a 403 naming a blocked host, you are behind
 an egress proxy and Phase 3 cannot be done properly — say so rather than producing
-unsourced numbers.
+unsourced numbers. Note that the first real search costs a Brave query; results cache to
+`research-cache/` (gitignored), so re-runs are free.
+
+Nothing else is needed to start. Phase 6 additionally needs `npm` and will create the
+`app/` directory, which does not exist yet.
 
 ### Rules that hold across every phase
 
