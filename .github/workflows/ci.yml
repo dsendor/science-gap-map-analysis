@@ -1,0 +1,29 @@
+name: CI — additions stay additive
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Rebuild database from snapshot + label files
+        run: node engine/rebuild.mjs
+
+      - name: Verify snapshot hashes are untouched
+        run: cd data/baseline/2026-07-29 && sha256sum -c ../2026-07-29.sha256
+
+      - name: Verify additions have not modified Convergent's data
+        run: node engine/verify-additive.mjs
+
+      - name: Regenerate integrity report and check it is committed
+        run: |
+          node engine/integrity-report.mjs
+          git diff --exit-code docs/integrity-report.md

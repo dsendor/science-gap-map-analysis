@@ -1,0 +1,11 @@
+{
+  "exportDate": "2026-07-29T19:28:52.436Z",
+  "version": "1.0.0",
+  "counts": {
+    "fields": 20,
+    "gaps": 103,
+    "capabilities": 369,
+    "resources": 1080
+  },
+  "schema": "https://gap-map.org/data/schema.json"
+}

@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+.mcp.json
+db/*.sqlite-wal
+db/*.sqlite-shm
+research-cache/*.json
+app/.next/
+app/out/
+app/node_modules/
+.DS_Store
+db/*.sqlite
