@@ -157,7 +157,7 @@ The nulls are the load-bearing rows. Each has six logged, cached searches behind
 ## Critical paths
 
 - **From draft to credited contribution: what sets the cost of publishing research** — axis: Cost, measured as reviewer and editor labour per published paper. 3 of 7 links bind: Reviewer recruitment and matching, Review judgment, Credit and legitimacy.
-- **From science case to first light: what sets the elapsed time of a frontier telescope** — axis: Elapsed time from first concept study to first light. 4 of 8 links bind: Strategic ranking (decadal survey or council priority), Funding authorisation, Fabrication, Integration and test.
+- **From science case to first light: what sets the elapsed time of a frontier telescope** — axis: Elapsed time from first concept study to first light. 0 of 8 links bind: .
 
 Both expectations were committed before the link analysis existed, in a separate commit, so the ordering is checkable in git. Full chains, evidence and the cross-field intersection: `docs/critical-paths.md`.
 
@@ -172,9 +172,15 @@ Both expectations were committed before the link analysis existed, in a separate
 | phase-4 | agent | 4 | 6 min |
 | phase-5 | agent | 2 | 7 min |
 | phase-6 | agent | 1 | 27 min |
-| all | human-review | 0 | 0 min |
+| revision-1 | agent | — | 73 min |
+| revision-2 | agent | — | 50 min |
+| revision-3 | agent | — | 41 min |
+| revision-4 | agent | — | 22 min |
+| revision-5 | agent | — | 33 min |
+| revision-6 | agent | — | open |
+| all | human-review | — | 244 min |
 
-**Agent time: 79 minutes. Human review time: 0 minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.
+**Agent time: 298 minutes. Human review time: 244 minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.
 
 ## What this shows
 

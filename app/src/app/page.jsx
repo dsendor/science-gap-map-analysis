@@ -34,6 +34,14 @@ export default function Page() {
               conversation about what a version of the map built for the next few years should
               record. <a href="mailto:david@sendorai.com">david@sendorai.com</a>.
             </p>
+            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
+              I spent 15+ years applying AI to hard problems in large organizations, most recently
+              leading Enterprise Data Science at Liberty Mutual. I am moving into AI for science,
+              working on where the binding constraint goes as AI dissolves the cognitive bottleneck.{' '}
+              <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </p>
           </div>
         </section>
 
@@ -65,22 +73,23 @@ export default function Page() {
               <li>
                 <strong>An outcome.</strong> What becomes knowable or buildable if this gap closes.
                 Your names say what is in the way; this says what is on the other side, which is the
-                version that recruits people. <a href="./map/">On the map</a>
+                version that recruits people. <a href="./attributes/#outcome">How I wrote them</a>
               </li>
               <li>
                 <strong>The kind of work in the way, and how mature the AI for it is.</strong> Seven
-                kinds, five with an AI analogue and two without, each at working now, two-to-five
-                years, or speculative. <a href="./map/">On the map</a>
+                kinds of work, each with an AI analogue and each at working now, two-to-five years,
+                or speculative. Robotics is the analogue for physical build and nothing in the map is
+                served by it yet. <a href="./attributes/">What the seven are</a>
               </li>
               <li>
                 <strong>A measurability tier.</strong> Whether the gap has an agreed observable, only
-                a proxy, a contested observable, or a quantity that is inherently counterfactual.{' '}
-                <a href="./method/">How it was audited</a>
+                a proxy, a contested observable, or a quantity that is inherently counterfactual. One
+                of the four tiers failed its own audit. <a href="./attributes/">What the tiers are</a>
               </li>
               <li>
                 <strong>A progress indicator</strong>, for eight gaps. The number you would watch to
                 know whether the gap is closing. Six have one, two do not.{' '}
-                <a href="./indicators/">All eight</a>
+                <a href="./indicators/">All eight</a> · <a href="./attributes/">What it is for</a>
               </li>
               <li>
                 <strong>Two worked critical paths</strong> and{' '}
@@ -123,7 +132,8 @@ export default function Page() {
               {llm['Working now']} of the {llmTot} gaps blocked by reading and synthesis are served
               today. All {buildTot} blocked by physical build sit at two-to-five years or speculative.
               What separates the top of that list from the bottom is how much physical world is
-              involved.
+              involved, and that ordering should move: robotics is the AI analogue for physical build,
+              and it is advancing quickly.
             </p>
 
             <h3 style={{ marginTop: 34 }}>Then the chains show what a one-line label compresses</h3>
@@ -133,18 +143,22 @@ export default function Page() {
             </p>
             <p>
               Take <em>Doing and publishing research is expensive and subject to structural
-              roadblocks</em>. My label says the work in the way is coordination and institutional.
+              roadblocks</em>, tracing the publishing half. The cost of doing the research is the
+              other half, and it is most of what the rest of your map is about. My label for this gap
+              says the work in the way is coordination and institutional.
               Seven steps later the trace agrees, and says where: the cost sits in finding reviewers,
               agreeing what a review means, and getting institutions to count the work. A one-line
               label predicted where a seven-step decomposition would land, which is the result I would
               want before adopting the attribute.
             </p>
             <p>
-              The surprise is elsewhere. AI has arrived on this gap, and it arrived on the two steps
-              that carry no cost. Where it reaches a step that does carry cost, it reaches the wrong
-              half: it can match a reviewer to a paper, and it cannot make that reviewer say yes. One
-              step got actively worse. Submissions rose 42% over five years in the one corpus where a
-              journal has published full figures, and that load landed on reviewer recruitment.
+              The surprise is what happened to the saving. Drafting was one of the most expensive
+              steps here, measured in researcher weeks per paper, and AI has taken a large share of
+              that cost out. Publishing did not get cheaper. Submissions rose 42% over five years in
+              the one corpus where a journal has published full figures, and the labor moved
+              downstream to reviewer recruitment, which is where the cost now concentrates. Where AI
+              reaches a step that carries cost, it reaches the tractable half: it can match a reviewer
+              to a paper, and it cannot make that reviewer say yes.
             </p>
           </div>
 
@@ -162,8 +176,8 @@ export default function Page() {
           <div className="col">
             <div className="pull">
               <p>
-                The speedup on this gap is real and mostly uncollectable. Publishing did not get
-                cheaper, because the steps AI took over were not the ones setting the cost.
+                The speedup is real and currently uncollectable. Relieving a step upstream of where
+                the cost concentrates moves the cost along; it does not remove it.
               </p>
               <p style={{ marginBottom: 0 }}>
                 That is what makes the remaining steps worth more than they used to be. Clearing

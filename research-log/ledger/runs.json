@@ -33,7 +33,7 @@
     "ended_at": "2026-08-23 17:55:49",
     "model": "claude-opus-5",
     "n_units": 8,
-    "note": "progress indicators: 8 rows across 4 tiers, 2 honest nulls, 29 logged searches. Local-session setup before this point \u2014 rebuild, network verification, ingest plumbing \u2014 is not counted."
+    "note": "progress indicators: 8 rows across 4 tiers, 2 honest nulls, 29 logged searches. Local-session setup before this point (rebuild, network verification, ingest plumbing) is not counted."
   },
   {
     "phase": "phase-4",
@@ -51,7 +51,7 @@
     "ended_at": "2026-08-23 18:09:09",
     "model": "claude-opus-5",
     "n_units": 2,
-    "note": "two critical paths, 15 links, 7 binding, plus the cross-field intersection. Expectations committed before the analysis in a separate commit."
+    "note": "two critical paths, 15 steps, plus the cross-field intersection. Expectations committed before the analysis in a separate commit."
   },
   {
     "phase": "phase-6",
@@ -63,12 +63,66 @@
     "note": "artifact (Next.js static export), CSV keyed on their id and slug, findings summary, cover note draft; found and fixed the adjudication rebuild defect."
   },
   {
+    "phase": "revision-1",
+    "kind": "agent",
+    "started_at": "2026-08-23 18:39:22",
+    "ended_at": "2026-08-23 19:52:15",
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "rebuilt around the argument in Convergent's voice, after a blind cold review"
+  },
+  {
+    "phase": "revision-2",
+    "kind": "agent",
+    "started_at": "2026-08-23 19:52:15",
+    "ended_at": "2026-08-23 20:42:25",
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "second cold review: replotted the chart, fixed three dead links, stated three holes"
+  },
+  {
+    "phase": "revision-3",
+    "kind": "agent",
+    "started_at": "2026-08-23 20:42:25",
+    "ended_at": "2026-08-23 21:23:15",
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "cut page one to a fifth, split into five pages, rebuilt the map on their components"
+  },
+  {
+    "phase": "revision-4",
+    "kind": "agent",
+    "started_at": "2026-08-23 21:23:15",
+    "ended_at": "2026-08-23 21:45:30",
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "new opening, all 103 outcome sentences rewritten, indicators page"
+  },
+  {
+    "phase": "revision-5",
+    "kind": "agent",
+    "started_at": "2026-08-23 21:45:30",
+    "ended_at": "2026-08-23 22:18:22",
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "third cold review: two reasoning errors corrected, outcomes deticked, attributes page"
+  },
+  {
+    "phase": "revision-6",
+    "kind": "agent",
+    "started_at": "2026-08-23 22:18:22",
+    "ended_at": null,
+    "model": "claude-opus-5",
+    "n_units": null,
+    "note": "robotics as the AI analogue for physical build, time ledger, drafting cost corrected"
+  },
+  {
     "phase": "all",
     "kind": "human-review",
-    "started_at": "2026-08-23 02:22:39",
-    "ended_at": "2026-08-23 02:22:39",
+    "started_at": "2026-08-23 18:39:22",
+    "ended_at": "2026-08-23 22:43:00",
     "model": null,
-    "n_units": 0,
-    "note": "Zero. No human has reviewed any label, indicator, proposed gap or chain at the time of writing. This row exists so the agent and human figures are never blended into one number, and so the zero is stated rather than implied."
+    "n_units": null,
+    "note": "David's own time reviewing, directing and rewriting, over the same window as the revision cycle. His estimate rather than an instrumented figure, and roughly equal to the agent's. The build phases above had no human review at all."
   }
 ]

@@ -25,6 +25,9 @@ export default function Nav({ here = '' }) {
             </a>
           ))}
         </nav>
+        <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
         <span className="note">
           An independent contribution to Convergent Research&rsquo;s{' '}
           <a href="https://www.gap-map.org/" target="_blank" rel="noreferrer">

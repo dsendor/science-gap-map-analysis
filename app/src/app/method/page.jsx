@@ -14,7 +14,7 @@ export default function MethodPage() {
   const m = audit.dimensions.measurability;
   const mins = Math.round(
     runs
-      .filter((r) => r.kind === 'agent' && r.ended_at)
+      .filter((r) => r.kind === 'agent' && r.ended_at && !r.phase.startsWith('revision'))
       .reduce(
         (a, r) => a + (new Date(`${r.ended_at.replace(' ', 'T')}Z`) - new Date(`${r.started_at.replace(' ', 'T')}Z`)),
         0
@@ -36,9 +36,18 @@ export default function MethodPage() {
           <div className="col">
             <h1>Method, audit, and what is wrong with this</h1>
             <p className="lead">
-              {mins} minutes of agent time, zero minutes of human review, and a blind second pass over
-              a stratified sample. Everything that would make you trust the labels less is on this
-              page.
+              About five hours of agent time and about four hours of mine, plus three blind cold
+              reviews of the artifact itself. Everything that would make you trust the labels less is
+              on this page.
+            </p>
+            <p>
+              The split matters. The first seven rows below are the build: all {s.n_gaps} gaps
+              labelled, audited and written up in {mins} minutes with <strong>no human review at
+              all</strong>. Everything after that is the revision cycle, where an agent role-playing
+              one of you read the artifact cold three times and I rewrote it against what came back.
+              Those windows are commit to commit, so they include my reading as well as the
+              agent&rsquo;s work; the two figures should be read as roughly equal rather than as
+              precise.
             </p>
           </div>
         </section>
@@ -62,10 +71,10 @@ export default function MethodPage() {
                 dimension {coordFlagged} times out of {coordTotal}.
               </li>
               <li>
-                <strong>Two of the seven kinds of work are not AI capabilities.</strong> Coordination
-                and institutional, and physical build and manipulation, are kinds of non-AI blocker.
-                The axis is named for what it measures rather than for AI, but the seven-value list
-                still mixes two things.
+                <strong>The seven kinds of work fuse two questions.</strong> What kind of work is in
+                the way, and how mature the AI for it is, are separate facts sharing one axis. Every
+                kind has an AI analogue, robotics included, so the axis is really about maturity and
+                should probably be split in two.
               </li>
               <li>
                 <strong>The tier confidence flag is close to a synonym for &ldquo;proxy only&rdquo;.</strong>{' '}
@@ -324,9 +333,9 @@ export default function MethodPage() {
               </table>
             </div>
             <p style={{ marginTop: 16 }}>
-              Agent time and human review time are tracked separately, because a single blended number
-              would be the first thing worth objecting to. Phase 0&rsquo;s start was never
-              instrumented, so it counts as zero and {mins} minutes is a lower bound.
+              Agent time and human time are tracked separately, because a single blended number would
+              be the first thing worth objecting to. Phase 0&rsquo;s start was never instrumented, so
+              it counts as zero and the {mins} minutes for the build is a lower bound.
             </p>
 
             <h2 style={{ marginTop: 40 }}>Calls that could have gone the other way</h2>

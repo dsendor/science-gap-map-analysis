@@ -5,13 +5,20 @@ import { TIER_ORDER } from '../../lib/constants';
 export const metadata = { title: 'The four attributes, and how to read them' };
 
 const KINDS = [
-  { k: 'LLM reasoning and synthesis', ai: true, what: 'Reading, summarizing, connecting, proposing. Work whose product is text or an argument.' },
-  { k: 'ML surrogates and prediction', ai: true, what: 'Learning a fast approximation of something slow to compute or measure, then using it in place of the slow thing.' },
-  { k: 'Design and optimization search', ai: true, what: 'Searching a large space of candidate designs against a stated objective. Protein and materials design sit here.' },
-  { k: 'Sensing and signal processing', ai: true, what: 'Getting a usable measurement out of a noisy or indirect one. Reconstruction, denoising, segmentation.' },
-  { k: 'Autonomous experimentation', ai: true, what: 'Choosing the next experiment and running it without a person in the loop.' },
-  { k: 'Physical build and manipulation', ai: false, what: 'Fabricating, assembling, or handling matter. Not an AI capability. Robotics touches the edges of it.' },
-  { k: 'Coordination and institutional', ai: false, what: 'Approval, funding, agreement, incentives, who counts what. Not an AI capability either.' },
+  { k: 'LLM reasoning and synthesis', ai: 'Language models. Working today.',
+    what: 'Reading, summarizing, connecting, proposing. Work whose product is text or an argument.' },
+  { k: 'ML surrogates and prediction', ai: 'Learned surrogates. Working today in several fields.',
+    what: 'Learning a fast approximation of something slow to compute or measure, then using it in place of the slow thing.' },
+  { k: 'Design and optimization search', ai: 'Generative design and search. Working today for proteins and materials.',
+    what: 'Searching a large space of candidate designs against a stated objective.' },
+  { k: 'Sensing and signal processing', ai: 'Learned reconstruction and denoising. Working today.',
+    what: 'Getting a usable measurement out of a noisy or indirect one.' },
+  { k: 'Autonomous experimentation', ai: 'Self-driving labs. Early, and real.',
+    what: 'Choosing the next experiment and running it with nobody in the loop.' },
+  { k: 'Physical build and manipulation', ai: 'Robotics, and it is moving fast. Not one gap in the map is served by it yet.',
+    what: 'Fabricating, assembling, or handling matter.' },
+  { k: 'Coordination and institutional', ai: 'Hardest of the seven, and not empty: matching, scheduling, drafting and forecasting all apply.',
+    what: 'Approval, funding, agreement, incentives, and who counts what.' },
 ];
 
 export default function AttributesPage() {
@@ -62,9 +69,10 @@ export default function AttributesPage() {
           <div className="col">
             <h2>2. What kind of work is in the way</h2>
             <p>
-              Seven values. Five name work an AI system can do. Two name work it cannot, and those
-              two are in the list on purpose, because a gap blocked by fabrication or by an approval
-              committee needs to be sayable in the same vocabulary as a gap blocked by prediction.
+              Seven values, naming kinds of work and not kinds of model. Every one of them has an AI
+              analogue. What separates them is how mature that analogue is and how hard the work is
+              to automate: language models are here, robotics is arriving, and the institutional
+              category is the hardest of the seven without being empty.
             </p>
           </div>
           <div className="scroll" style={{ marginTop: 16 }}>
@@ -74,7 +82,7 @@ export default function AttributesPage() {
                   <th>Kind of work</th>
                   <th>What it means</th>
                   <th className="num">Gaps</th>
-                  <th>AI analogue</th>
+                  <th>Where the AI for it stands</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,7 +93,7 @@ export default function AttributesPage() {
                     </td>
                     <td>{r.what}</td>
                     <td className="num">{s.ai_type[r.k] ?? 0}</td>
-                    <td>{r.ai ? 'yes' : <span style={{ color: 'var(--bind)' }}>no</span>}</td>
+                    <td>{r.ai}</td>
                   </tr>
                 ))}
               </tbody>
@@ -113,8 +121,10 @@ export default function AttributesPage() {
                 is built from.
               </p>
               <p style={{ marginBottom: 0 }}>
-                Fusing &ldquo;what kind of blocker&rdquo; with &ldquo;can AI act on it&rdquo; into one
-                axis is probably the underlying mistake. Two fields would be cleaner than one.
+                Fusing &ldquo;what kind of blocker&rdquo; with &ldquo;how mature is the AI for
+                it&rdquo; into one axis is probably the underlying mistake. Two fields would be
+                cleaner than one, and would make the robotics trajectory legible instead of hiding it
+                inside a maturity label.
               </p>
             </div>
           </div>
