@@ -1,0 +1,44 @@
+{
+  "decisions": [
+    {
+      "phase": "phase-2",
+      "decision": "Maturity is scored relative to the specific gap, not to the capability class in general.",
+      "rationale": "Two blind auditors independently flagged the taxonomy as ambiguous between the two readings, which give different answers. Both auditors and the original labeler had already converged on the for-this-gap reading, so fixing the wording changes no existing label but makes the maturity disagreement rate interpretable.",
+      "runner_up": "Score maturity per capability class globally, which is simpler to apply but collapses the distinction between autonomous experimentation in chemistry and in orbital assembly.",
+      "confidence": "high",
+      "reversal_condition": "If a future batch shows labelers cannot apply the for-this-gap reading consistently, switch to global class maturity and record the loss."
+    },
+    {
+      "phase": "phase-2",
+      "decision": "Keep a single primary AI type and a single tier per gap, and name composite gaps as a stated limitation rather than splitting them.",
+      "rationale": "Two gaps bundle several unrelated research programmes whose sub-components would take different types and tiers. Splitting them would mean creating gap records Convergent did not write, which violates the additive-only constraint and is exactly the schema redesign the brief forbids.",
+      "runner_up": "Allow multiple tiers per gap, or decompose composite gaps into sub-gaps.",
+      "confidence": "medium",
+      "reversal_condition": "If Convergent respond that they would welcome decomposition, split them in a later version."
+    },
+    {
+      "phase": "phase-2",
+      "decision": "Publish the audit disagreement rate as measured, including the population-weighted figure, without re-adjudicating labels to improve it.",
+      "rationale": "The brief requires the artifact to be auditable rather than confident. A tuned agreement rate would defeat the purpose of running the audit, and a near-zero rate would be evidence the audit was not independent rather than evidence the labels are good.",
+      "runner_up": "Adjudicate every disagreement to a single answer and report only the post-adjudication labels.",
+      "confidence": "high",
+      "reversal_condition": "Never — if this is reversed the audit stops measuring anything."
+    },
+    {
+      "phase": "phase-2",
+      "decision": "Downgrade every 'Proxy only' tier to confidence 'guess', including gaps the auditor never sampled.",
+      "rationale": "The stratum ran 78 percent disagreement against 0 percent for Directly measurable and 9 percent for Verification contested, and all three auditors independently reported the category was repeatedly the nearest alternative and almost never won. A category that two independent labelers applying the same written definition cannot agree on has not earned confident anywhere, and downgrading only the sampled failures would let an unreliable category keep its confidence wherever the auditor happened not to look.",
+      "runner_up": "Downgrade only the eight sampled disagreements, which understates the problem and implies the unsampled Proxy only labels are sound.",
+      "confidence": "high",
+      "reversal_condition": "If Proxy only is redefined sharply enough that a re-run audit brings its disagreement rate near the other strata, restore confidence on relabeled rows."
+    },
+    {
+      "phase": "phase-2",
+      "decision": "Do not add a 'Control of physical systems' category to the AI type taxonomy in this version; record it as a finding instead.",
+      "rationale": "A blind auditor found that closed-loop control of a physical system has no home: fusion plasma control chooses no experiments so it is not autonomous experimentation, and builds nothing so it is not physical build. The case is real, but adding an eighth category mid-run would invalidate the 103 labels already applied and the audit measured against them. Naming it is the contribution; acting on it belongs in a later version.",
+      "runner_up": "Add the eighth category now and relabel all 103 gaps against it.",
+      "confidence": "medium",
+      "reversal_condition": "If a re-run is scheduled anyway, add the category first and relabel from scratch."
+    }
+  ]
+}

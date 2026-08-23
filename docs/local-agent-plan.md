@@ -67,15 +67,19 @@ Nothing else is needed to start. Phase 6 additionally needs `npm` and will creat
    no column for it; do not add one.
 3. **Every judgment gets a `rationale` and a `confidence`.** `guess` is not a failure
    state. A phase that produces no guesses will be assumed to be lying.
-4. **Log non-obvious calls** as `decisions` rows (phase, decision, rationale,
-   runner_up, confidence, reversal_condition).
-5. **Log time.** Open a `runs` row when you start a phase and close it when you finish:
-   ```sql
-   INSERT INTO runs (phase, kind, started_at, model, note)
-   VALUES ('phase-3', 'agent', datetime('now'), '<model>', 'progress indicators');
-   ```
-   Track `agent` and `human-review` separately. The elapsed-time figure is part of the
-   argument, and a single blended number invites the obvious objection.
+4. **Log non-obvious calls** by appending to `research-log/decisions.json`
+   (phase, decision, rationale, runner_up, confidence, reversal_condition), then
+   re-running `node engine/rebuild.mjs`. **Do not INSERT into the database directly.**
+   `db/gapmap.sqlite` is gitignored and derived — anything written only there is
+   invisible in a diff and erased by the next rebuild.
+5. **Log time** by appending to `research-log/runs.json`: an entry when a phase starts,
+   `ended_at` filled when it finishes. Track `agent` and `human-review` separately. The
+   elapsed-time figure is part of the argument, and a single blended number invites the
+   obvious objection.
+
+   The general rule: **every durable fact belongs in a file under `research-log/` or
+   `data/`, never only in SQLite.** The database is a queryable projection of those
+   files and `engine/rebuild.mjs` reconstructs it from scratch at any time.
 6. **Commit per phase**, with `verify-additive` passing at every commit.
 7. **Every phase has a mandatory independent review gate.** Phases 1-2 had one and it
    materially changed the output — it found that a whole measurability tier could not be

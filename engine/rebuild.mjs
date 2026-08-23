@@ -17,12 +17,22 @@ const run = (script, ...args) =>
 
 run('import-gapmap.mjs');
 
+let audited = 0;
 for (const [dir, script] of [['research-log/labels', 'ingest-labels.mjs'], ['research-log/audits', 'ingest-audits.mjs']]) {
   const path = `${root}${dir}`;
   if (!existsSync(path) || !existsSync(`${root}engine/${script}`)) continue;
   const files = readdirSync(path).filter((f) => f.endsWith('.json')).sort();
   for (const f of files) run(script, `${path}/${f}`);
   if (files.length) console.log(`ingested ${files.length} file(s) from ${dir}`);
+  if (dir.endsWith('audits')) audited = files.length;
 }
+
+// Adjudication is part of the derived state, not a one-off edit. Without this a
+// rebuild silently restores the pre-audit confidence flags and the artifact would
+// under-report its own uncertainty — the opposite of what the audit was for.
+if (audited) run('adjudicate.mjs');
+
+if (existsSync(`${root}research-log/decisions.json`)) run('ingest-decisions.mjs');
+if (existsSync(`${root}research-log/runs.json`)) run('ingest-runs.mjs');
 
 run('verify-additive.mjs');

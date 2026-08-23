@@ -93,14 +93,14 @@ Disagreements:
 
 | Gap | Original | Audit |
 |---|---|---|
+| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Verification contested | Directly measurable |
+| Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain | Proxy only | Verification contested |
 | AI Could Be Misused | Proxy only | Verification contested |
 | Major Planetary Science and Astrobiology Missions Are Not Realized by Existing Government Space Agencies | Proxy only | Directly measurable |
 | Limited Tools for Improving Individual, Social and Societal Epistemics in the Face of Misinformation  | Proxy only | Verification contested |
 | Underdevelopment of Modern Tools in the Social Sciences | Proxy only | Directly measurable |
 | Lack of a Dedicated Field for Planetary Terraforming | Proxy only | Counterfactual required |
 | We Can Learn More from Nature’s Biological Designs | Proxy only | Verification contested |
-| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Verification contested | Directly measurable |
-| Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain | Proxy only | Verification contested |
 
 ### Primary AI capability type
 
@@ -110,6 +110,10 @@ Disagreements:
 
 | Gap | Original | Audit |
 |---|---|---|
+| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Coordination and institutional | ML surrogates and prediction |
+| Our Platforms for Civic Engagement and Democratic Decision-Making Don’t Take Advantage of 21st Century Scalable Technology | Coordination and institutional | LLM reasoning and synthesis |
+| Robust and Compact Plasma Confinement for Fusion is Still Not Solved | ML surrogates and prediction | Design and optimization search |
+| We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes | Design and optimization search | Autonomous experimentation |
 | Biological Life is Our Only Working Example of Complex Evolved Computation | ML surrogates and prediction | Design and optimization search |
 | Intervening in Earth Systems at Scale is Largely Untested | Physical build and manipulation | ML surrogates and prediction |
 | AI Could Be Misused | Coordination and institutional | LLM reasoning and synthesis |
@@ -118,10 +122,6 @@ Disagreements:
 | Difficulty Delivering Physical Probes for Imaging into Living Cells | Design and optimization search | Sensing and signal processing |
 | Synthetic Biology Platforms Are Over-Reliant on Evolved Cells That We Don’t Fully Understand or Control | Design and optimization search | Autonomous experimentation |
 | Poor Scalability of Bioreactors Limits Biomanufacturing | Physical build and manipulation | ML surrogates and prediction |
-| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Coordination and institutional | ML surrogates and prediction |
-| Our Platforms for Civic Engagement and Democratic Decision-Making Don’t Take Advantage of 21st Century Scalable Technology | Coordination and institutional | LLM reasoning and synthesis |
-| Robust and Compact Plasma Confinement for Fusion is Still Not Solved | ML surrogates and prediction | Design and optimization search |
-| We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes | Design and optimization search | Autonomous experimentation |
 
 ## What this shows
 
