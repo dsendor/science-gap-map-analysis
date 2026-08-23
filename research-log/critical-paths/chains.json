@@ -1,0 +1,26 @@
+{
+  "phase": "phase-5",
+  "note": "Two chains only. Doing this across the map is the collaboration being proposed, not the thing being given away. Both expectations are written here BEFORE any link analysis exists; the links and findings arrive in a later commit, so the ordering is checkable in git rather than asserted.",
+  "paths": [
+    {
+      "id": "path-telescope-elapsed-time",
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "title": "From science case to first light: what sets the elapsed time of a frontier telescope",
+      "axis": "Elapsed time from first concept study to first light",
+      "axes_excluded": "Cost per unit of collecting area, and cost per unit of science return. Their gap statement bundles cost with schedule — 'cost-prohibitive and slow' — and the two run over a partly different set of links. Each is a separate chain, and a chain that mixes them produces a binding link that is an artifact of the mixing rather than a property of the world.",
+      "expectation": "Design and optimisation search helps at the concept and optics stages, and the binding links will fall on the physical build and on the funding decision, neither of which any current AI capability touches. If that holds, the demonstration is that closing every cognitive link in the chain changes the total duration very little. A second prediction, stated separately so it can fail separately: Convergent's three capabilities attached to this gap — modular assembly with reduced launch costs, leveraging commercial component advances, and a space telescope factory — all act on the fabrication and assembly links, and none acts on decision, approval or funding. Both predictions are recorded before any programme history was assembled, and both are testable against published JWST, Rubin and ELT milestone dates.",
+      "finding": null,
+      "links": []
+    },
+    {
+      "id": "path-publishing-cost",
+      "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
+      "title": "From draft to credited contribution: what sets the cost of publishing research",
+      "axis": "Cost, measured as reviewer and editor labour per published paper",
+      "axes_excluded": "Speed, meaning elapsed time from submission to publication, and inclusiveness, meaning who can afford to publish and who can read the result. Their sentence bundles all three — 'expensive publishing practices restrict and slow the spread of knowledge' and 'more inclusive and dynamic'. Speed in particular behaves differently by venue: journal latency is reviewer-supply-driven, conference latency is set by a fixed programme committee calendar, so a chain mixing them would produce a binding link that is an artifact of the venue mix.",
+      "expectation": "This chain must produce a different answer from chain 1 or the pair demonstrates nothing. AI does act on several links here: drafting and screening work now, and reviewer-to-proposal matching is tractable, though there is published evidence that traditional statistical representations outperform generative AI at identifying expert reviewers. So the expectation is not that AI does nothing. It is that AI acts on the links that were never rate-limiting, while reviewer recruitment, judgment consistency and the credit and legitimacy step remain untouched. Stated explicitly so it cannot be read the other way: this is not a claim that publishing is a cognitive bottleneck. It is not, and asserting it would be wrong. Recorded before the link analysis.",
+      "finding": null,
+      "links": []
+    }
+  ]
+}
