@@ -166,6 +166,23 @@ CREATE TABLE IF NOT EXISTS new_gaps (
     description    TEXT NOT NULL,
     field_id       TEXT NOT NULL REFERENCES gm_fields(id),
     outcome        TEXT NOT NULL,
+    -- The same three labels every one of their gaps carries. They live here rather
+    -- than in gap_ai_types / gap_measurability because those tables hold foreign keys
+    -- into gm_gaps, and a proposed gap is deliberately not one of theirs.
+    ai_type        TEXT NOT NULL CHECK (ai_type IN (
+                       'LLM reasoning and synthesis',
+                       'ML surrogates and prediction',
+                       'Design and optimization search',
+                       'Sensing and signal processing',
+                       'Autonomous experimentation',
+                       'Physical build and manipulation',
+                       'Coordination and institutional'
+                   )),
+    maturity       TEXT NOT NULL CHECK (maturity IN ('Working now', '2-5 years', 'Speculative')),
+    tier           TEXT NOT NULL CHECK (tier IN (
+                       'Directly measurable', 'Proxy only',
+                       'Verification contested', 'Counterfactual required'
+                   )),
     tension_test   TEXT NOT NULL,             -- agreed transformative + genuine feasibility debate
     unlock_test    TEXT NOT NULL,             -- which downstream dominoes fall
     dedup_check    TEXT NOT NULL,             -- what was searched, what came closest, why it is distinct

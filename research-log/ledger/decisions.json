@@ -3,7 +3,7 @@
     "phase": "phase-3",
     "decision": "Recorded the quantum gravity gap as an honest null even though a real, published, improving quantity exists (the lower bound on the QG energy scale from photon dispersion: Fermi-LAT E_QG,1 > 7.6 E_Planck, GRB 090510, 2013; extended by LHAASO on GRB 221009A, 2024).",
     "rationale": "The bound constrains linear-in-energy Lorentz violation, which most leading quantum-gravity programmes do not predict, and the community has no target and no shared claim about what any particular value of it would establish. A number that improves without agreement on what its improvement means is not a progress indicator for the gap. This is precisely what the Verification contested tier asserts, so recording it as an indicator would have contradicted our own tier label.",
-    "runner_up": "Record the Fermi/LHAASO bound as the indicator with confidence 'guess'. This would have been the more flattering choice — a tier-3 gap with a real number is a more interesting headline than a null — and it is why the decision is logged rather than assumed.",
+    "runner_up": "Record the Fermi/LHAASO bound as the indicator with confidence 'guess'. This would have been the more flattering choice \u2014 a tier-3 gap with a real number is a more interesting headline than a null \u2014 and it is why the decision is logged rather than assumed.",
     "confidence": "medium",
     "reversal_condition": "A published community statement, roadmap or review that names a target value for E_QG or an equivalent parameter and says what reaching it would settle. Reverse immediately if one exists.",
     "created_at": "2026-08-23 17:54:59"
@@ -36,12 +36,39 @@
     "created_at": "2026-08-23 17:54:59"
   },
   {
-    "phase": "phase-5",
-    "decision": "Phase 5 chain 2 will be built from public sources rather than from the Notion page named as its source of record ('Peer review as a research program', 0dcfd19f70b04baf855814eedb8427d8).",
-    "rationale": "The Notion MCP server is not authenticated in this session and cannot be authorised non-interactively, so the page cannot be read. The plan states the page's substantive claims explicitly enough to re-source them, so the claims will be independently sourced and cited rather than taken on the plan's word, and any that cannot be confirmed will be dropped.",
-    "runner_up": "Block Phase 5 until the connector is authorised. Rejected: it stalls the whole remaining plan on one document whose content is summarised in the plan itself, and re-sourcing produces citable references the artifact needs anyway.",
+    "phase": "phase-4",
+    "decision": "Dropped the fifth candidate gap \u2014 queue and turnaround time at shared nanofabrication user facilities \u2014 rather than shipping four with one weak.",
+    "rationale": "Five logged searches turned up no published wait-time or turnaround data for NNCI or comparable facilities, so the gap could not be grounded in an observed rate limit. It also had the weakest funding check of the five: NSF's National Nanotechnology Coordinated Infrastructure exists precisely to provide open access across 16 sites, so proposing access latency as an unowned gap would have required arguing against a programme built for it, on no evidence.",
+    "runner_up": "Include it with confidence 'guess' and an honest funding check. Rejected: the plan asks for 3-5 gaps, four are well grounded, and an ungrounded fifth costs more credibility than the count gains.",
+    "confidence": "high",
+    "reversal_condition": "Facility-level turnaround statistics become available, from NNCI reporting or a user survey.",
+    "created_at": "2026-08-23 18:02:00"
+  },
+  {
+    "phase": "phase-4",
+    "decision": "Proposed the coating thermal noise gap even though coatings research is funded, and said so in the funding check rather than around it.",
+    "rationale": "The NSF LSC Center for Coatings Research and Italy's ETIC project both fund this work as a detector subsystem inside one instrument programme. The gap proposed is the cross-instrument materials framing \u2014 the same loss angle bounds optical clocks and cavity-stabilised lasers, and no programme owns it at that level. Writing 'not clear of funding' in the funding_check and stating exactly what is funded is more useful than a claim of novelty a reader could puncture in one search.",
+    "runner_up": "Drop it as already funded. Rejected: it would discard the strongest tier-1 candidate over a framing question, and the framing is the contribution.",
     "confidence": "medium",
-    "reversal_condition": "The Notion connector is authorised; re-read the page and reconcile it against what was independently sourced.",
-    "created_at": "2026-08-23 17:54:59"
+    "reversal_condition": "A programme is found that funds low-mechanical-loss optical coatings as a materials target across instrument classes.",
+    "created_at": "2026-08-23 18:02:00"
+  },
+  {
+    "phase": "phase-4",
+    "decision": "Added ai_type, maturity and tier columns to new_gaps rather than writing proposed gaps into gap_ai_types and gap_measurability.",
+    "rationale": "Those two tables hold foreign keys into gm_gaps. A proposed gap is deliberately not one of theirs, and giving it a row in the same tables would make the two indistinguishable in every downstream query and export. The plan requires new gaps to carry the same three labels; this carries them without blurring the boundary the whole project rests on.",
+    "runner_up": "Relax the foreign keys so both kinds of gap share the label tables. Rejected: it trades the clearest structural guarantee in the schema for a small convenience in the export.",
+    "confidence": "high",
+    "reversal_condition": "None expected.",
+    "created_at": "2026-08-23 18:02:00"
+  },
+  {
+    "phase": "phase-5",
+    "decision": "The Notion connector, unavailable at the start of this run, was authorised mid-run, so chain 2 is built from its named source of record after all.",
+    "rationale": "Recorded because a decision to substitute public sources was logged earlier in this same run and then reversed; the ledger should show the reversal rather than quietly drop it. Public sources gathered before the connector returned are kept and cited alongside the Notion page, since they are citable in the artifact and the page is not.",
+    "runner_up": "Proceed on public sources only. No longer necessary.",
+    "confidence": "high",
+    "reversal_condition": "None.",
+    "created_at": "2026-08-23 18:02:00"
   }
 ]
