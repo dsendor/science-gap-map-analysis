@@ -138,7 +138,7 @@ export default function Chain({ path }) {
             </p>
           ))}
         <details>
-          <summary>The rest of what it showed, and what I predicted before running it</summary>
+          <summary>The rest of what it showed</summary>
           <div className="body">
             {path.finding
               .split('\n\n')
@@ -148,8 +148,8 @@ export default function Chain({ path }) {
                   {para}
                 </p>
               ))}
-            <h4>What I expected, written down first</h4>
-            <p style={{ fontSize: 15.5 }}>{path.expectation}</p>
+            <h4>Appendix: what I predicted before running this</h4>
+            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>{path.expectation}</p>
           </div>
         </details>
       </div>

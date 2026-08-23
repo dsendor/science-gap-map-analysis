@@ -147,7 +147,9 @@ section:first-of-type { border-top: none; }
 
 /* masthead — David's, not theirs */
 .masthead { border-bottom: 1px solid var(--rule); background: var(--surface); }
-.masthead .inner { display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: baseline; padding: 18px 0; }
+.masthead .inner { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; padding: 16px 0; }
+.masthead nav { display: flex; flex-wrap: wrap; gap: 18px; margin-left: auto; }
+.masthead nav a.on { color: var(--ink); font-weight: 600; text-decoration: none; }
 .byline { font-weight: 600; font-size: 15px; color: var(--ink); letter-spacing: 0.01em; }
 .masthead .sep { color: var(--ink-3); }
 .masthead a { font-size: 15px; }
@@ -230,6 +232,7 @@ details .body { padding: 0 2px 16px; }
   border: 1px solid var(--rule); background: var(--page); color: var(--ink);
 }
 .filters label { font-size: 12.5px; color: var(--ink-3); display: flex; flex-direction: column; gap: 4px; }
+.filters label input[type='checkbox'] { min-width: 0; margin: 0; }
 
 .gaprow { border-bottom: 1px solid var(--rule-soft); }
 .gaprow > summary { padding: 13px 4px; display: grid; grid-template-columns: 1fr max-content; gap: 12px; align-items: start; }
@@ -269,3 +272,57 @@ details .body { padding: 0 2px 16px; }
    6-month one. */
 .node .bar { display: block; height: 4px; border-radius: 2px; background: var(--rule); margin-top: 7px; }
 .node.bind .bar { background: var(--bind); }
+
+/* Their gap card, rebuilt: 8px radius, 1px rule, the field pill carrying the field
+   colour on its border, and the "N Capabilities" disclosure button. */
+.gcard { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 12px; }
+.gcard__head { padding: 20px 22px 0; display: flex; gap: 14px; align-items: flex-start; justify-content: space-between; }
+.gcard__title { font-family: var(--font-serif, Georgia, serif); font-weight: 500; font-size: 20px; line-height: 1.25; letter-spacing: -0.0075em; color: var(--ink); margin: 0; }
+.field-pill {
+  display: inline-block; font-size: 13px; letter-spacing: 0.04em; padding: 3px 8px;
+  border-radius: 4px; border: 1px solid var(--rule); color: var(--ink-3);
+  background: transparent; white-space: nowrap;
+}
+.gcard__body { padding: 14px 22px 0; }
+.gcard__theirs { font-size: 15.5px; color: var(--ink-2); margin: 0 0 14px; max-width: none; }
+.gcard__ours {
+  border-left: 3px solid var(--accent); padding: 2px 0 2px 14px; margin: 0 0 16px;
+  font-size: 15.5px; color: var(--ink); max-width: none;
+}
+.gcard__ours .k { display: block; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+.gcard__attrs { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 22px 16px; }
+.gcard__foot { border-top: 1px solid var(--rule); padding: 0; }
+.capbtn {
+  width: 100%; text-align: left; background: transparent; border: 0; cursor: pointer;
+  font: inherit; font-size: 14px; color: var(--accent-ink); padding: 12px 22px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.capbtn:hover { color: var(--accent); }
+.capbtn .icon { font-size: 11px; }
+.capwrap { padding: 0 22px 18px; }
+.capwrap ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+.capwrap li { margin-bottom: 7px; }
+
+/* Their two-column browse: a field filter rail on the left with a colour swatch per
+   field, cards on the right. */
+.browse { display: grid; grid-template-columns: 232px 1fr; gap: 26px; align-items: start; }
+@media (max-width: 860px) { .browse { grid-template-columns: 1fr; } }
+.fieldfilter { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; position: sticky; top: 16px; }
+.fieldfilter__head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 16px; border-bottom: 1px solid var(--rule);
+  font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3);
+}
+.fieldfilter__head button {
+  font: inherit; font-size: 12px; text-transform: none; letter-spacing: 0;
+  background: var(--page); border: 1px solid var(--rule); border-radius: 4px;
+  color: var(--ink-2); padding: 3px 9px; cursor: pointer;
+}
+.fieldfilter ul { list-style: none; margin: 0; padding: 10px 14px 14px; max-height: 62vh; overflow-y: auto; }
+.fieldfilter li { margin: 0; }
+.fieldfilter label {
+  display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2);
+  padding: 4px 0; cursor: pointer;
+}
+.fieldfilter .swatch { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+.fieldfilter .n { color: var(--ink-3); font-size: 12px; }

@@ -1,0 +1,86 @@
+import data from '../../../public/data.json';
+import Nav from '../../components/Nav';
+import Chain from '../../components/Chain';
+
+export const metadata = { title: 'Two worked critical paths' };
+
+export default function ChainsPage() {
+  const { critical_paths: paths, summary: s } = data;
+  const telescope = paths.find((p) => p.id === 'path-telescope-elapsed-time');
+  const publishing = paths.find((p) => p.id === 'path-publishing-cost');
+  return (
+    <>
+      <Nav here="chains/" />
+      <main className="wrap">
+        <section>
+          <div className="col">
+            <h1>Two worked critical paths</h1>
+            <p className="lead">
+              A gap broken into the ordered steps that actually have to happen, with a duration or a
+              cost on each one.
+            </p>
+            <p>
+              <strong>The binding step is the one that sets the total.</strong> If a step is binding,
+              shortening it shortens the whole thing. If a step is not binding, you can make it free
+              and the total does not move. Binding steps are outlined in orange below and labelled in
+              the tables.
+            </p>
+            <p>
+              I did two, picked to be as unalike as possible so the method had a chance to fail: a
+              space telescope measured in elapsed time, and research publishing measured in reviewer
+              and editor labour. Where a gap bundles several axes, I picked one, said which, and left
+              the others as separate chains.
+            </p>
+          </div>
+        </section>
+        <section style={{ paddingTop: 20 }}>
+          <Chain path={telescope} />
+          <Chain path={publishing} />
+        </section>
+        <section>
+          <div className="col">
+            <h2>Both chains share a binding step</h2>
+            <p>
+              Telescope time and facility approval are allocated by peer review of proposals. A
+              decadal survey is a review panel, and so is a time allocation committee. That makes the
+              telescope chain&rsquo;s ranking and funding steps an instance of the publishing
+              chain&rsquo;s reviewer recruitment and judgment steps.
+            </p>
+            <p>This is ESO&rsquo;s own account of why they changed the mechanism:</p>
+            <blockquote>
+              &ldquo;the load on the panels and the Observing Programmes Committee (OPC) members has
+              become unsustainable&rdquo; &hellip; &ldquo;it has become progressively harder to find
+              scientists willing to serve in the panels and in the OPC&rdquo;
+              <cite>
+                ESO, introducing Distributed Peer Review, where every PI submitting a qualifying
+                proposal reviews ten others. Running since Period 110, at ALMA from Cycle 8, and at
+                Gemini before that in the Fast Turnaround channel.
+              </cite>
+            </blockquote>
+            <p>
+              That is a natural experiment in review capacity under load, at scale, with a before and
+              after, and as far as I can find nobody funds it as research.
+            </p>
+            <p>
+              Two gaps in two different fields of your map, held up by the same step. Your export has
+              one row per gap and nowhere to record that. It is the natural place for the map to
+              extend, and once gaps decompose into steps a recurring blocker becomes something you can
+              count across all {s.n_gaps} rather than notice twice.
+            </p>
+            <p>
+              <a href="mailto:david@sendorai.com">david@sendorai.com</a>
+            </p>
+          </div>
+        </section>
+      </main>
+      <div className="footer">
+        <div className="wrap col">
+          <p style={{ color: 'var(--ink-3)' }}>
+            David Sendor, <a href="mailto:david@sendorai.com">david@sendorai.com</a> ·{' '}
+            <a href="../">The argument</a> · <a href="../map/">The extended map</a>
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
