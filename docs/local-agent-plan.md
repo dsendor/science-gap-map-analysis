@@ -111,9 +111,10 @@ A search snippet is not a source. For every non-null indicator:
 1. Find the candidate via `engine/search.mjs`.
 2. **`WebFetch` the actual page** and read the number off it.
 3. Record `source_title`, `source_url`, and `source_doi` where one exists.
-4. Run `node engine/validate-citations.mjs` if you have ported it from
-   `ai-science-gap-map`, or verify the DOI resolves by hand, and set `source_checked`
-   accordingly (`verified` / `unreachable` / `metadata-mismatch`).
+4. Run `node engine/validate-indicators.mjs`, which checks arXiv, then Crossref, then
+   plain URL reachability, and writes `source_checked` back to the row. Note that a
+   bare URL check records `unchecked`, not `verified`: a reachable page proves the page
+   exists, not that it supports the number.
 5. Set `as_of` to the date the value refers to, not the date you looked.
 
 If a number is real but you could only get it from a secondary source, set
