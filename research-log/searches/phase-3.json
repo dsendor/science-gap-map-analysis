@@ -1,0 +1,1044 @@
+{
+  "note": "Every search issued in Phase 3, with its cache key and the result titles and URLs returned. research-cache/ is gitignored, so this file is what makes the two null results provable rather than asserted.",
+  "searches": [
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "provider": "brave",
+      "query": "James Webb Space Telescope years from concept study to launch timeline history",
+      "cache_key": "edf6bbc3fab27eabe0136cf821cc8b88",
+      "n_results": 8,
+      "created_at": "2026-08-23 17:47:08",
+      "results": [
+        {
+          "title": "Mission Timeline - James Webb Space Telescope",
+          "url": "https://science.nasa.gov/mission/webb/webb-mission-timeline/"
+        },
+        {
+          "title": "James Webb Space Telescope - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+        },
+        {
+          "title": "Webb Project History - NASA Science",
+          "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/webb-project-history/"
+        },
+        {
+          "title": "Timeline of the James Webb Space Telescope - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Timeline_of_the_James_Webb_Space_Telescope"
+        },
+        {
+          "title": "Mission Timeline | STScI",
+          "url": "https://www.stsci.edu/jwst/about-jwst/history/mission-timeline"
+        },
+        {
+          "title": "Timeline of the James Webb Space Telescope — Grokipedia",
+          "url": "https://grokipedia.com/page/Timeline_of_the_James_Webb_Space_Telescope"
+        },
+        {
+          "title": "History | STScI",
+          "url": "https://www.stsci.edu/jwst/about-jwst/history"
+        },
+        {
+          "title": "JWST: The Early Days",
+          "url": "https://www.ucolick.org/~gdi/early_jwst/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "provider": "brave",
+      "query": "Vera Rubin Observatory first light 2025 project start date history",
+      "cache_key": "0a7b8ded4e215a32e2a5d8df86c98d88",
+      "n_results": 8,
+      "created_at": "2026-08-23 17:47:09",
+      "results": [
+        {
+          "title": "Vera C. Rubin Observatory - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Vera_C._Rubin_Observatory"
+        },
+        {
+          "title": "Announcement: Vera C. Rubin Observatory | NOIRLab",
+          "url": "https://noirlab.edu/public/announcements/archive/program/rubin/"
+        },
+        {
+          "title": "History | Rubin Observatory",
+          "url": "https://rubinobservatory.org/about/history"
+        },
+        {
+          "title": "Monthly Updates | Rubin Observatory",
+          "url": "https://www.lsst.org/about/project-status"
+        },
+        {
+          "title": "NSF-DOE Vera C. Rubin Observatory installs LSST Camera on telescope | NSF - U.S. National Science Foundation",
+          "url": "https://www.nsf.gov/news/nsf-doe-vera-c-rubin-observatory-installs-lsst-camera"
+        },
+        {
+          "title": "Waiting for First Light | Museum of Science",
+          "url": "https://www.mos.org/article/waiting-first-light"
+        },
+        {
+          "title": "NAOJ Researchers Contribute to Launch of Vera C. Rubin Observatory | NAOJ - National Astronomical Observatory of Japan",
+          "url": "https://www.nao.ac.jp/en/news/topics/2025/20250624-rubin.html"
+        },
+        {
+          "title": "Vera C. Rubin Observatory - AURA Astronomy",
+          "url": "https://www.aura-astronomy.org/centers/nsfs-oir-lab/rubinobservatory/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "provider": "brave",
+      "query": "Extremely Large Telescope ELT timeline approval 2005 first light 2029",
+      "cache_key": "81c8ba4033ee68cf39d022bd2a449e48",
+      "n_results": 8,
+      "created_at": "2026-08-23 17:47:10",
+      "results": [
+        {
+          "title": "Extremely Large Telescope - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Extremely_Large_Telescope"
+        },
+        {
+          "title": "Telescope first light for ESO’s Extremely Large Telescope now planned for March 2029 | ESO",
+          "url": "https://www.eso.org/public/announcements/ann25001/"
+        },
+        {
+          "title": "Timeline | ELT | ESO",
+          "url": "https://elt.eso.org/about/timeline/"
+        },
+        {
+          "title": "Construction of the Extremely Large Telescope is delayed",
+          "url": "https://universemagazine.com/en/first-light-in-2029-construction-of-the-extremely-large-telescope-is-delayed/"
+        },
+        {
+          "title": "Giant Dome Door Fitted to Europe’s Extremely Large Telescope - European Spaceflight",
+          "url": "https://europeanspaceflight.com/giant-dome-door-fitted-to-europes-extremely-large-telescope/"
+        },
+        {
+          "title": "r/Astronomy on Reddit: Current build progress of the Extremely Large Telescope, created by the European Southern Observatory (ESO)",
+          "url": "https://www.reddit.com/r/Astronomy/comments/1rr7dt6/current_build_progress_of_the_extremely_large/"
+        },
+        {
+          "title": "What is the Extremely Large Telescope and what makes it special? All about the most powerful telescope ever made - Starlust",
+          "url": "https://starlust.org/what-is-the-extremely-large-telescope-and-what-makes-it-special-all-about-the-most-powerful-telescope-ever-made/"
+        },
+        {
+          "title": "About | ELT | ESO",
+          "url": "https://elt.eso.org/about/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "provider": "brave",
+      "query": "Astro2020 decadal survey recommendation great observatories technology maturation launch cadence target years",
+      "cache_key": "395b7de175a57eecbbf7af0f498f326e",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:47:55",
+      "results": [
+        {
+          "title": "Astro2020: A decadal survey that spans decades - SpaceNews",
+          "url": "https://spacenews.com/astro2020-a-decadal-survey-that-spans-decades/"
+        },
+        {
+          "title": "2020 Decadal Survey - NASA Science",
+          "url": "https://science.nasa.gov/astrophysics/resources/decadal-survey/2020-decadal-survey/"
+        },
+        {
+          "title": "Astronomy and Astrophysics Decadal Survey - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Astronomy_and_Astrophysics_Decadal_Survey"
+        },
+        {
+          "title": "Astro2020 Decadal Survey Arrives: Priorities for Major Facilities - AIP.ORG",
+          "url": "https://www.aip.org/fyi/2021/astro2020-decadal-survey-arrives-priorities-major-facilities"
+        },
+        {
+          "title": "Your Guide to the 2020 Astrophysics Decadal Survey",
+          "url": "https://www.planetary.org/articles/the-2020-astrophysics-decadal-survey-guide"
+        },
+        {
+          "title": "Astro2020 proposes new approaches to realizing projects - Physics Today",
+          "url": "https://physicstoday.aip.org/news/astro2020-proposes-new-approaches-to-realizing-projects"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "provider": "brave",
+      "query": "A-Lab autonomous laboratory 41 new compounds 17 days Nature 2023",
+      "cache_key": "781f86e675975f05b2eff24b89c471ec",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:47:56",
+      "results": [
+        {
+          "title": "An autonomous laboratory for the accelerated synthesis of inorganic materials | Nature",
+          "url": "https://www.nature.com/articles/s41586-023-06734-w"
+        },
+        {
+          "title": "An autonomous laboratory for the accelerated synthesis of novel materials - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38030721/"
+        },
+        {
+          "title": "New analysis raises doubts over autonomous lab’s materials ...",
+          "url": "https://www.chemistryworld.com/news/new-analysis-raises-doubts-over-autonomous-labs-materials-discoveries/4018791.article"
+        },
+        {
+          "title": "An autonomous laboratory for the accelerated synthesis of novel materials (Journal Article) | OSTI.GOV",
+          "url": "https://www.osti.gov/biblio/2281696"
+        },
+        {
+          "title": "Artificial intelligence-driven autonomous laboratory for accelerating chemical discovery",
+          "url": "https://www.oaepublish.com/articles/cs.2025.66"
+        },
+        {
+          "title": "A-Lab paper published in Nature, featured in news stories – CEDER Group at Berkeley and LBL",
+          "url": "https://ceder.berkeley.edu/news/a-lab-paper-published-in-nature-featured-in-news-story/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "provider": "brave",
+      "query": "GNoME DeepMind 2.2 million new crystals 380000 stable materials experimentally validated",
+      "cache_key": "2e1edb29baaeb468c2f6b5cb48ecee98",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:47:57",
+      "results": [
+        {
+          "title": "Millions of new materials discovered with deep learning — Google DeepMind",
+          "url": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/"
+        },
+        {
+          "title": "r/Futurology on Reddit: DeepMind’s GNoME: Discovering Over 2 Million New Materials Including 380,000 Stable Crystals That Could Shape Future Tech",
+          "url": "https://www.reddit.com/r/Futurology/comments/186y2ny/deepminds_gnome_discovering_over_2_million_new/"
+        },
+        {
+          "title": "Millions of New Materials Discovered with Deep Learning | by Eduardo Larrañaga | Medium",
+          "url": "https://medium.com/@EduardoLarranaga/millions-of-new-materials-discovered-with-deep-learning-d64c56ab226f"
+        },
+        {
+          "title": "Scaling deep learning for materials discovery | Nature",
+          "url": "https://www.nature.com/articles/s41586-023-06735-9"
+        },
+        {
+          "title": "How AI is Supercharging Materials Science: Inside DeepMind’s Breakthrough Materials Discovery Engine. | by Shibil | Medium",
+          "url": "https://medium.com/@shibilahammad/how-ai-is-supercharging-materials-science-inside-deepminds-breakthrough-materials-discovery-a4515395be88"
+        },
+        {
+          "title": "Google Deepmind - New materials discovered with deep learning. — BIOMIMICRY INNOVATION LAB",
+          "url": "https://www.biomimicryinnovationlab.com/blog/google-deepmind-new-materials"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "provider": "brave",
+      "query": "how many new inorganic materials experimentally validated per year ICSD growth rate",
+      "cache_key": "ee9f5020bf723b60fc214704a8a545c9",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:47:58",
+      "results": [
+        {
+          "title": "New developments in the Inorganic Crystal Structure Database (ICSD): accessibility in support of materials research and design - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12037357/"
+        },
+        {
+          "title": "The Inorganic Crystal Structure Database ( ICSD ): A Tool for Materials Sciences",
+          "url": "https://www.researchgate.net/publication/335604264_The_Inorganic_Crystal_Structure_Database_ICSD_A_Tool_for_Materials_Sciences"
+        },
+        {
+          "title": "Data Import and Validation in the Inorganic Crystal Structure Database - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4963141/"
+        },
+        {
+          "title": "ICSD Database: The Essential Tool for Advanced Materials ...",
+          "url": "https://www.inorgmatchem.com/posts/icsd-database-the-essential-tool-for-advanced-materials-synthesis-and-research"
+        },
+        {
+          "title": "Inorganic Crystal Structure Database - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Inorganic_Crystal_Structure_Database"
+        },
+        {
+          "title": "Home | ICSD",
+          "url": "https://icsd.products.fiz-karlsruhe.de/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "provider": "brave",
+      "query": "MICrONS cubic millimeter mouse visual cortex connectome 2025 Nature 200000 cells",
+      "cache_key": "76517f45c9e44e246d23ef0c359ecab7",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:23",
+      "results": [
+        {
+          "title": "Functional connectomics spanning multiple areas of mouse visual cortex | Nature",
+          "url": "https://www.nature.com/articles/s41586-025-08790-w"
+        },
+        {
+          "title": "Functional connectomics spanning multiple areas of ... - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40205214/"
+        },
+        {
+          "title": "The MICrONS Project",
+          "url": "https://www.nature.com/immersive/d42859-025-00001-w/index.html"
+        },
+        {
+          "title": "Scientists map the half-billion connections that allow mice to see",
+          "url": "https://www.princeton.edu/news/2025/04/09/first-time-scientists-map-half-billion-connections-allow-mice-see"
+        },
+        {
+          "title": "Cubic Millimeter — MICrONS Explorer",
+          "url": "https://www.microns-explorer.org/cortical-mm3"
+        },
+        {
+          "title": "Functional connectomics reveals general wiring rule in mouse visual cortex | Nature",
+          "url": "https://www.nature.com/articles/s41586-025-08840-3"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "provider": "brave",
+      "query": "FlyWire whole brain connectome Drosophila 139255 neurons Nature 2024",
+      "cache_key": "9dd1ba5293bd974898fae375ba3c6872",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:24",
+      "results": [
+        {
+          "title": "Whole-brain annotation and multi-connectome cell typing of Drosophila | Nature",
+          "url": "https://www.nature.com/articles/s41586-024-07686-5"
+        },
+        {
+          "title": "FlyWire",
+          "url": "https://flywire.ai/"
+        },
+        {
+          "title": "Network statistics of the whole-brain connectome of Drosophila | Nature",
+          "url": "https://www.nature.com/articles/s41586-024-07968-y"
+        },
+        {
+          "title": "Neuronal wiring diagram of an adult brain | Nature",
+          "url": "https://www.nature.com/articles/s41586-024-07558-y"
+        },
+        {
+          "title": "Complete wiring map of an adult fruit fly brain | National Institutes of Health (NIH)",
+          "url": "https://www.nih.gov/news-events/nih-research-matters/complete-wiring-map-adult-fruit-fly-brain"
+        },
+        {
+          "title": "Scientists have traced all 54.5 million connections in a fruit fly’s brain",
+          "url": "https://www.sciencenews.org/article/fruit-fly-brain-connections-traced"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "provider": "brave",
+      "query": "H01 human cortex 1 cubic millimeter petavoxel Google Harvard 1.4 petabytes",
+      "cache_key": "ff1d306586494c08e038244901809b9a",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:25",
+      "results": [
+        {
+          "title": "A petavoxel fragment of human cerebral cortex reconstructed at nanoscale resolution | Science",
+          "url": "https://www.science.org/doi/10.1126/science.adk4858"
+        },
+        {
+          "title": "H01 Release | A Browsable Petascale Reconstruction of the Human Cortex",
+          "url": "https://h01-release.storage.googleapis.com/landing.html"
+        },
+        {
+          "title": "A Browsable Petascale Reconstruction of the Human Cortex",
+          "url": "https://research.google/blog/a-browsable-petascale-reconstruction-of-the-human-cortex/"
+        },
+        {
+          "title": "VCG Harvard | A petavoxel fragment of human cerebral cortex reconstructed at nanoscale resolution",
+          "url": "https://vcg.seas.harvard.edu/publications/20240510-a-connectomic-study-of-a-petascale-fragment-of-human-cerebral-cortex"
+        },
+        {
+          "title": "A petavoxel fragment of human cerebral cortex reconstructed at nanoscale resolution | Request PDF",
+          "url": "https://www.researchgate.net/publication/380486353_A_petavoxel_fragment_of_human_cerebral_cortex_reconstructed_at_nanoscale_resolution"
+        },
+        {
+          "title": "A petavoxel fragment of human cerebral cortex reconstructed ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11718559/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
+      "provider": "brave",
+      "query": "median cost of pivotal clinical trial JAMA Internal Medicine Moore 2018 19 million",
+      "cache_key": "a26c6435f73f2f0b54ce6e657c916844",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:26",
+      "results": [
+        {
+          "title": "Estimated Costs of Pivotal Trials for Therapeutic Agents ...",
+          "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2702287"
+        },
+        {
+          "title": "Variation in the estimated costs of pivotal clinical benefit trials supporting the US approval of new therapeutic agents, 2015–2017: a cross-sectional study | BMJ Open",
+          "url": "https://bmjopen.bmj.com/content/10/6/e038863"
+        },
+        {
+          "title": "Estimated Costs of Pivotal Trials for Novel Therapeutic ...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30264133/"
+        },
+        {
+          "title": "JAMA Study First to Estimate Key Clinical Trial Costs | Institute For Safe Medication Practices",
+          "url": "https://www.ismp.org/news/jama-study-first-estimate-key-clinical-trial-costs"
+        },
+        {
+          "title": "https://www4.courts.ca.gov/opinions/links/S283862-...",
+          "url": "https://www4.courts.ca.gov/opinions/links/S283862-LINK9.PDF"
+        },
+        {
+          "title": "The True Costs of Pivotal Trials That Support FDA Approval",
+          "url": "https://www.medscape.com/viewarticle/902776"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
+      "provider": "brave",
+      "query": "clinical trial cost per patient phase 3 median 2024 estimate published study",
+      "cache_key": "3068b07f0f199f65a9db3aa5612c0d49",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:27",
+      "results": [
+        {
+          "title": "Inclusion of phase III clinical trial costs in health ... - PMC - NIH",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11443897/"
+        },
+        {
+          "title": "Clinical Trial Costing: Phase-By-Phase Budget Guide | Abacum",
+          "url": "https://www.abacum.ai/blog/clinical-trial-costing"
+        },
+        {
+          "title": "How Much Does a Clinical Trial Cost?",
+          "url": "https://www.sofpromed.com/how-much-does-a-clinical-trial-cost"
+        },
+        {
+          "title": "Benchmarking Phase 3 trial costs | CLINICAL TRIAL RISK TOOL",
+          "url": "https://clinicaltrialrisk.org/rct-cost-modelling/benchmarking-phase-3-trial-costs/"
+        },
+        {
+          "title": "Clinical Trial Cost Analysis 2024: FDA Phase 1-3 Expenses",
+          "url": "https://novapharmanews.com/us/articles/fda-clinical-trial-cost-analysis-phase1-3-2024"
+        },
+        {
+          "title": "What Is the Actual Cost of a Clinical Trial? - Sofpromed",
+          "url": "https://www.sofpromed.com/what-is-the-cost-of-a-clinical-trial"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "provider": "brave",
+      "query": "BRAIN CONNECTS whole mouse brain connectome goal NIH funding 2023 scaling",
+      "cache_key": "72ef8829afb05d1f12fcea5d7b6e4186",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:46",
+      "results": [
+        {
+          "title": "Scientists map unprecedented detail of connections and visual perception in the mouse brain | National Institutes of Health (NIH)",
+          "url": "https://www.nih.gov/news-events/news-releases/scientists-map-unprecedented-detail-connections-visual-perception-mouse-brain"
+        },
+        {
+          "title": "Human brain too big to map so they’re starting with mice",
+          "url": "https://news.harvard.edu/gazette/story/2023/09/human-brain-too-big-to-map-so-theyre-starting-with-mice/"
+        },
+        {
+          "title": "NIH BRAIN Initiative launches projects to develop innovative technologies to map the brain in incredible detail | National Institute of Neurological Disorders and Stroke",
+          "url": "https://www.ninds.nih.gov/news-events/news/highlights-announcements/nih-brain-initiative-launches-projects-develop-innovative-technologies-map-brain-incredible-detail"
+        },
+        {
+          "title": "Expired RFA-NS-22-049: BRAIN Initiative Connectivity across Scales (BRAIN CONNECTS): Specialized Projects for Scalable Technologies (U01 Clinical Trial Not Allowed)",
+          "url": "https://grants.nih.gov/grants/guide/rfa-files/RFA-NS-22-049.html"
+        },
+        {
+          "title": "Projects launch to map brain connections in mouse and macaque - Allen Institute",
+          "url": "https://alleninstitute.org/news/projects-launch-to-map-brain-connections-in-mouse-and-macaque"
+        },
+        {
+          "title": "Scaling up connectomics | Reports | Wellcome",
+          "url": "https://wellcome.org/insights/reports/scaling-connectomics"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
+      "provider": "brave",
+      "query": "IRDS 2023 More Moore contacted gate pitch nm roadmap table 2022 2025 2028",
+      "cache_key": "7258b1ede63287c355d840e954b6a59d",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:47",
+      "results": [
+        {
+          "title": "International Roadmap Devices & Systems (IRDS) More ...",
+          "url": "https://conferences.linx-consulting.com/wp-content/uploads/2023/11/20231107_IRDS_More_Moore_Yield_Workshop_v1.pdf"
+        },
+        {
+          "title": "2023 IRDS More Moore - IEEE",
+          "url": "https://irds.ieee.org/images/files/pdf/2023/2023IRDS_MM.pdf"
+        },
+        {
+          "title": "International Roadmap for Devices and Systems — Grokipedia",
+          "url": "https://grokipedia.com/page/International_Roadmap_for_Devices_and_Systems"
+        },
+        {
+          "title": "IRDS More Moore Roadmap for edge and cloud computing",
+          "url": "https://icos-semiconductors.eu/wp-content/uploads/2023/04/1-M.Badaroglu20230428_WS-ICOS.pdf"
+        },
+        {
+          "title": "MORE MOORE",
+          "url": "https://www.semiconductors.org/wp-content/uploads/2018/06/5_2015-ITRS-2.0_More-Moore.pdf"
+        },
+        {
+          "title": "IRDS 2022 More Moore - IEEE",
+          "url": "https://irds.ieee.org/images/files/pdf/2022/2022IRDS_MM.pdf"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
+      "provider": "brave",
+      "query": "TSMC N3 contacted poly pitch 45nm metal pitch 23nm IEDM disclosed",
+      "cache_key": "3a078b06e3cded673e8e6478181e8f98",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:48",
+      "results": [
+        {
+          "title": "IEDM 2022 – TSMC 3nm - Semiwiki",
+          "url": "https://semiwiki.com/semiconductor-manufacturers/tsmc/322688-iedm-2022-tsmc-3nm/"
+        },
+        {
+          "title": "3 nm process - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/3_nm_process"
+        },
+        {
+          "title": "IEDM: TSMC N3 Details - Breakfast Bytes - Cadence Blogs - Cadence Community",
+          "url": "https://community.cadence.com/cadence_blogs_8/b/breakfast-bytes/posts/iedm-tsmc-n3-details"
+        },
+        {
+          "title": "TSMC 3nm FinFlex + Self-Aligned Contacts, Intel EMIB 3 + Foveros Direct, AMD Yield Issues, IBM Vertical Transport FET (VTFET) + RU Interconnects, CFET, Sequential Stacking, Samsung Yield, and more",
+          "url": "https://newsletter.semianalysis.com/p/iedm2022p1"
+        },
+        {
+          "title": "The Shape of Tomorrow’s Semiconductor Technology - Semiconductor Digest",
+          "url": "https://www.semiconductor-digest.com/the-shape-of-tomorrows-semiconductor-technology/"
+        },
+        {
+          "title": "TSMC Reveals 3nm Process Details - EE Times Asia",
+          "url": "https://www.eetasia.com/express/techinsights-2023020620/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0",
+      "provider": "brave",
+      "query": "retraction rate per 10000 papers Nature 2023 more than 10000 retractions record",
+      "cache_key": "ae7ac22a0f0534e8976070675c75c077",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:49",
+      "results": [
+        {
+          "title": "More than 10,000 research papers were retracted in 2023 — a new record | Nature",
+          "url": "https://www.nature.com/articles/d41586-023-03974-8"
+        },
+        {
+          "title": "More than 10,000 research papers were retracted in 2023 - a new record - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38087103/"
+        },
+        {
+          "title": "10,000 Research Papers Were Retracted In 2023, Breaking Annual Records | IFLScience",
+          "url": "https://www.iflscience.com/10000-research-papers-were-retracted-in-2023-breaking-annual-records-72071"
+        },
+        {
+          "title": "Linking citation and retraction data reveals the demographics ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11781634"
+        },
+        {
+          "title": "More than 10000 research papers were retracted in 2023",
+          "url": "https://librarylearningspace.com/more-than-10000-research-papers-were-retracted-in-2023/"
+        },
+        {
+          "title": "Daily briefing: Record number of papers retracted in 2023",
+          "url": "https://www.nature.com/articles/d41586-023-04035-w"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0",
+      "provider": "brave",
+      "query": "Retraction Watch database retraction rate 2024 papers per 10000 published trend",
+      "cache_key": "230688ff1feca2babf9744a3d0307796",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:48:49",
+      "results": [
+        {
+          "title": "Prevalence and Trends in Global Retractions Explored Through a Topic Lens",
+          "url": "https://arxiv.org/html/2511.21176v1"
+        },
+        {
+          "title": "Linking citation and retraction data reveals the demographics ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11781634"
+        },
+        {
+          "title": "Rising Retraction Rates: A Symptom of a Strained System",
+          "url": "https://www.the-scientist.com/rising-retraction-rates-a-symptom-of-a-strained-system-74451"
+        },
+        {
+          "title": "What a massive database of retracted papers reveals about science publishing's ‘death penalty' | Science | AAAS",
+          "url": "https://www.science.org/content/article/what-massive-database-retracted-papers-reveals-about-science-publishing-s-death-penalty"
+        },
+        {
+          "title": "Fifty Years of Retracted Medical Publications From 1975 to 2024: A Comprehensive Analysis of Trends, Reasons, and Countries Using the Retraction Watch Database",
+          "url": "https://jkms.org/DOIx.php?id=10.3346%2Fjkms.2025.40.e300"
+        },
+        {
+          "title": "Annual Count of Retracted Papers and Retraction Notices. * Data as of... | Download Scientific Diagram",
+          "url": "https://www.researchgate.net/figure/Annual-Count-of-Retracted-Papers-and-Retraction-Notices-Data-as-of-August-31-2025_fig1_398026352"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "quantum gravity experimental constraint progress metric measurable quantity over time",
+      "cache_key": "77f745f08f951d647cd5c0e35cd28658",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:00",
+      "results": [
+        {
+          "title": "Quantum Gravity (Stanford Encyclopedia of Philosophy)",
+          "url": "https://plato.stanford.edu/entries/quantum-gravity/"
+        },
+        {
+          "title": "[2606.13522] Beyond the Metric: Geometrical Measurability as a Constraint on Quantum Gravity",
+          "url": "https://arxiv.org/abs/2606.13522"
+        },
+        {
+          "title": "Quantum-Spacetime Phenomenology - PMC - NIH",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5255913/"
+        },
+        {
+          "title": "Quantum gravity - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Quantum_gravity"
+        },
+        {
+          "title": "Quantum Gravity Tests Coming Soon - Physics (APS)",
+          "url": "https://physics.aps.org/articles/v19/18"
+        },
+        {
+          "title": "Full article: Gravity in the quantum lab",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/23746149.2017.1383184"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "Lorentz invariance violation constraint improvement Fermi GRB energy scale Planck limit",
+      "cache_key": "3540d92b818f33db5cfc9670e5316123",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:01",
+      "results": [
+        {
+          "title": "Constraints on Lorentz invariance violation from Fermi -Large Area Telescope observations of gamma-ray bursts (Journal Article) | OSTI.GOV",
+          "url": "https://www.osti.gov/pages/biblio/1356591"
+        },
+        {
+          "title": "(PDF) Constraints on Lorentz Invariance Violation from Fermi-Large Area Telescope Observations of Gamma-Ray Bursts",
+          "url": "https://www.researchgate.net/publication/236834679_Constraints_on_Lorentz_Invariance_Violation_from_Fermi-Large_Area_Telescope_Observations_of_Gamma-Ray_Bursts"
+        },
+        {
+          "title": "[1305.3463] Constraints on Lorentz Invariance Violation from Fermi-Large Area Telescope Observations of Gamma-Ray Bursts",
+          "url": "https://arxiv.org/abs/1305.3463"
+        },
+        {
+          "title": "A Planck-scale limit on spacetime fuzziness and stochastic Lorentz invariance violation | Nature Physics",
+          "url": "https://www.nature.com/articles/nphys3270"
+        },
+        {
+          "title": "arXiv:1305.3463v1 [astro-ph.HE] 15 May 2013",
+          "url": "https://arxiv.org/pdf/1305.3463"
+        },
+        {
+          "title": "Constraints on Lorentz Invariance Violation from Fermi-Large Area Telescope Observations of Gamma-Ray Bursts - INSPIRE",
+          "url": "https://inspirehep.net/literature/1233487"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "tabletop quantum gravity gravitationally induced entanglement experiment sensitivity roadmap milestone",
+      "cache_key": "c08ad5be5a3710949e7493b91f843aba",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:02",
+      "results": [
+        {
+          "title": "The Tabletop Experiment That Could Unify Quantum Mechanics And Gravity",
+          "url": "https://quantumzeitgeist.com/the-tabletop-experiment-that-could-unify-quantum-mechanics-and-gravity/"
+        },
+        {
+          "title": "[2210.12713] Gravity mediated entanglement between light beams as a table-top test of quantum gravity",
+          "url": "https://arxiv.org/abs/2210.12713"
+        },
+        {
+          "title": "Gravity mediated entanglement between light beams as a table-top test of quantum gravity",
+          "url": "https://arxiv.org/html/2210.12713v2"
+        },
+        {
+          "title": "Contents",
+          "url": "https://arxiv.org/html/2512.17024"
+        },
+        {
+          "title": "Tabletop Experiments for Quantum Gravity Are Also Tests of the Interpretation of Quantum Mechanics | Foundations of Physics | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s10701-022-00636-z"
+        },
+        {
+          "title": "ICTP – SAIFR » Witnessing Quantum Aspects of Gravity in a Lab",
+          "url": "https://www.ictp-saifr.org/wqag2024/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "how to measure progress toward testing quantum gravity indicator benchmark",
+      "cache_key": "11b005a073a0fb20d25fe27fd6b0bf4f",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:03",
+      "results": [
+        {
+          "title": "Quantum Gravity Tests Coming Soon - Physics (APS)",
+          "url": "https://physics.aps.org/articles/v19/18"
+        },
+        {
+          "title": "Testing Whether Gravity Acts as a Quantum Entity When Measured",
+          "url": "https://arxiv.org/html/2307.08133"
+        },
+        {
+          "title": "The Role of Quantum Measurements when Testing the Quantum Nature of Gravity",
+          "url": "https://arxiv.org/html/2503.11882v1"
+        },
+        {
+          "title": "Measuring gravity with milligram levitated masses | Science Advances",
+          "url": "https://www.science.org/doi/10.1126/sciadv.adk2949"
+        },
+        {
+          "title": "Benchmarking quantum computers",
+          "url": "https://arxiv.org/html/2407.08828v1"
+        },
+        {
+          "title": "Quantum-information methods for quantum gravity laboratory-based tests",
+          "url": "https://arxiv.org/html/2410.07262v1"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "quantum gravity phenomenology figure of merit parameter constrained decade improvement",
+      "cache_key": "dd55f6b5259442f0024ef7fca4762f5d",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:04",
+      "results": [
+        {
+          "title": "Constraining the quantum gravity polymer scale using LIGO data - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/1361-6382/ad0db1"
+        },
+        {
+          "title": "Quantum-Spacetime Phenomenology - PMC - NIH",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5255913/"
+        },
+        {
+          "title": "(PDF) Phenomenological Quantum Gravity",
+          "url": "https://www.researchgate.net/publication/45884362_Phenomenological_Quantum_Gravity"
+        },
+        {
+          "title": "[0911.2761] Phenomenological Quantum Gravity",
+          "url": "https://arxiv.org/abs/0911.2761"
+        },
+        {
+          "title": "Quantum Gravity Phenomenology to explore the inaccessible - COST",
+          "url": "https://www.cost.eu/quantum-qg-mm/"
+        },
+        {
+          "title": "(PDF) Loop Quantum Gravity Phenomenology: Linking Loops to Observational Physics",
+          "url": "https://www.researchgate.net/publication/231609431_Loop_Quantum_Gravity_Phenomenology_Linking_Loops_to_Observational_Physics"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "provider": "brave",
+      "query": "LHAASO 2024 Lorentz invariance violation limit quantum gravity energy scale improvement over Fermi",
+      "cache_key": "2a03b8b50b993aca4426c1d8d961ac60",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:30",
+      "results": [
+        {
+          "title": "Bounding anisotropic Lorentz invariance violation from measurements of the effective energy scale of quantum gravity | Phys. Rev. D",
+          "url": "https://journals.aps.org/prd/abstract/10.1103/k3xg-wkrc"
+        },
+        {
+          "title": "Constraints on Lorentz invariance violation from the LHAASO observation of GRB 221009A - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/1475-7516/2024/04/060"
+        },
+        {
+          "title": "Lorentz invariance violation limits from GRB 221009A | Phys. Rev. D",
+          "url": "https://link.aps.org/doi/10.1103/PhysRevD.109.L081501"
+        },
+        {
+          "title": "Lorentz invariance violation limits from GRB 221009A - ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2024PhRvD.109h1501P"
+        },
+        {
+          "title": "arXiv:2308.03031v3 [astro-ph.HE] 28 Mar 2024",
+          "url": "https://arxiv.org/pdf/2308.03031"
+        },
+        {
+          "title": "[2308.03031] Lorentz Invariance Violation Limits from GRB 221009A",
+          "url": "https://arxiv.org/abs/2308.03031"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "what share of researcher time is spent on administration grant writing survey percentage",
+      "cache_key": "7bf90ed5551fff799bc982dba378011b",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:31",
+      "results": [
+        {
+          "title": "Almost half of US researchers' time goes on admin | News | Chemistry World",
+          "url": "https://www.chemistryworld.com/news/almost-half-of-us-researchers-time-goes-on-admin/7728.article"
+        },
+        {
+          "title": "Reducing Researcher Administrative Burden at R1 Universities | Key Solutions",
+          "url": "https://www.keyusa.com/blog/reducing-researcher-administrative-burden-research-universities"
+        },
+        {
+          "title": "Faculty Researcher’s Administrative Workload",
+          "url": "https://www.researchadministrationdigest.com/you-need-what-when-faculty-researchers-administrative-workload/"
+        },
+        {
+          "title": "A Survey of Research Administrators: Identifying Administrative Burden in Post-Award Federal Research Grant Management",
+          "url": "https://www.srainternational.org/blogs/srai-jra2/2023/10/13/a-survey-of-research-administrators-identifying-ad"
+        },
+        {
+          "title": "Scientists Spend Nearly Half Their Time on Administrative Tasks, Survey Finds",
+          "url": "https://www.chronicle.com/article/scientists-spend-nearly-half-their-time-on-administrative-tasks-survey-finds-23697/"
+        },
+        {
+          "title": "Administrative Burden in Research - by Alexis Ogdie",
+          "url": "https://alexisogdie.substack.com/p/administrative-burden-in-research"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "measuring diversity of research funding mechanisms indicator metric organizational forms",
+      "cache_key": "c3505b1982567dd8094075e16690acd2",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:31",
+      "results": [
+        {
+          "title": "Do funding modes matter? A multilevel analysis of funding allocation mechanisms on university research performance | Research Evaluation | Oxford Academic",
+          "url": "https://academic.oup.com/rev/article/32/3/545/7259632"
+        },
+        {
+          "title": "Metric: Organizational Diversity - CHAOSS Community",
+          "url": "https://www.chaoss.community/kb/metric-organizational-diversity/"
+        },
+        {
+          "title": "(PDF) A representative organizational diversity metric: a dashboard measure for executive action",
+          "url": "https://www.researchgate.net/publication/323886034_A_representative_organizational_diversity_metric_a_dashboard_measure_for_executive_action"
+        },
+        {
+          "title": "EFFECTIVE OPERATION OF COMPETITIVE RESEARCH FUNDING SYSTEMS",
+          "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/10/effective-operation-of-competitive-research-funding-systems_0cb94718/2ae8c0dc-en.pdf"
+        },
+        {
+          "title": "0 COMPARATIVE STUDY OF RESEARCH FUNDS Public Disclosure Authorized",
+          "url": "https://documents1.worldbank.org/curated/en/099062123024511492/pdf/P1704080a2d4ca0d709efe022e0e1d1b456.pdf"
+        },
+        {
+          "title": "Research funding in different SCI disciplines: A comparison analysis based on Web of Science | Quantitative Science Studies | MIT Press",
+          "url": "https://direct.mit.edu/qss/article/5/3/757/121845/Research-funding-in-different-SCI-disciplines-A"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "counterfactual impact of research funding structure on discoveries measurement problem",
+      "cache_key": "7024ad491c7fbc2431a65d973d960e6b",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:32",
+      "results": [
+        {
+          "title": "The Usefulness and Limitations of Metrics in Measuring the Returns on Publicly Funded Research - Furthering America's Research Enterprise - NCBI Bookshelf",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK253898/"
+        },
+        {
+          "title": "What is research funding, how does it influence research, and how is it recorded? Key dimensions of variation | Scientometrics | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s11192-023-04836-w"
+        },
+        {
+          "title": "The Effects of Research & Development Funding on Scientific Productivity: Academic Chemistry, 1990-2009 | PLOS One",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0138176"
+        },
+        {
+          "title": "The value of research funding for knowledge creation and dissemination: A study of SNSF Research Grants | Humanities and Social Sciences Communications",
+          "url": "https://www.nature.com/articles/s41599-021-00891-x"
+        },
+        {
+          "title": "Multidimensional bibliometric assessment of science funding effectiveness - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S1751157725000938"
+        },
+        {
+          "title": "How Competition for Funding Impacts Scientific Practice - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10864468/"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "new research organization models FRO focused research organization outcome evaluation metric",
+      "cache_key": "8d3392a4e1f57242ab55b18195d899f7",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:34",
+      "results": [
+        {
+          "title": "3-Minute Read | Focused Research Organizations: A New Model for Building Scientific Infrastructure - UIDP",
+          "url": "https://uidp.org/3-minute-read-focused-research-organizations-a-new-model-for-building-scientific-infrastructure/"
+        },
+        {
+          "title": "Kirkpatrick Partners, LLC. What is The Kirkpatrick Model? / Kirkpatrick",
+          "url": "https://www.kirkpatrickpartners.com/the-kirkpatrick-model/"
+        },
+        {
+          "title": "Focused Research Organizations: A New Model for Scientific Research - Federation of American Scientists",
+          "url": "https://fas.org/publication/focused-research-organizations-a-new-model-for-scientific-research/"
+        },
+        {
+          "title": "Measuring quality and outcomes of research collaborations",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6813516/"
+        },
+        {
+          "title": "Quality Metrics for Clinical Trials | Applied Clinical Trials Online",
+          "url": "https://www.appliedclinicaltrialsonline.com/view/quality-metrics-clinical-trials"
+        },
+        {
+          "title": "Evaluating impact from research: A methodological framework - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0048733320302225"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "indicator for institutional innovation in science funding how would you know it worked",
+      "cache_key": "14da55912ccd3a81f64e3d350385a4ae",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:35",
+      "results": [
+        {
+          "title": "1 OUTCOMES FROM INSTITUTIONAL INTERACTION:",
+          "url": "https://mackinstitute.wharton.upenn.edu/wp-content/uploads/2018/03/Rathje-Jason-Katila-Riitta_Outcomes-from-Institutional-Interaction.-Does-Government-Funding-Help-Firm-Innovation.pdf"
+        },
+        {
+          "title": "Report - S&E Indicators 2018 | NSF - National Science Foundation",
+          "url": "https://www.nsf.gov/statistics/2018/nsb20181/report/sections/invention-knowledge-transfer-and-innovation/innovation-indicators-united-states-and-other-major-economies"
+        },
+        {
+          "title": "Science, technology and innovation indicators | OECD",
+          "url": "https://www.oecd.org/en/topics/sub-issues/science-technology-and-innovation-indicators.html"
+        },
+        {
+          "title": "Institutional funding for public research - STIP Compass - OECD",
+          "url": "https://stip.oecd.org/stip/interactive-dashboards/policy-instruments/Institutional_funding_for_public_research"
+        },
+        {
+          "title": "Science, Technology and Innovation Indicators Research Papers - Academia.edu",
+          "url": "https://www.academia.edu/Documents/in/Science_Technology_and_Innovation_Indicators/MostCited"
+        },
+        {
+          "title": "Innovation output – Open Science Impact Indicator Handbook",
+          "url": "https://handbook.pathos-project.eu/sections/4_economic_impact/innovation_output.html"
+        }
+      ]
+    },
+    {
+      "phase": "3",
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "provider": "brave",
+      "query": "science of science funding experiments randomized controlled trial grant allocation evidence",
+      "cache_key": "0e78d2ef8ffbe11d7be789f71269797c",
+      "n_results": 6,
+      "created_at": "2026-08-23 17:49:36",
+      "results": [
+        {
+          "title": "Funding What Works: The Importance of Low-cost Randomized Controlled Trials | whitehouse.gov",
+          "url": "https://obamawhitehouse.archives.gov/blog/2014/07/09/funding-what-works-importance-low-cost-randomized-controlled-trials"
+        },
+        {
+          "title": "The impact of winning funding on researcher productivity, results from a randomized trial",
+          "url": "https://academic.oup.com/spp/article/51/6/1042/7729313"
+        },
+        {
+          "title": "The trouble in comparing different approaches to science funding",
+          "url": "https://scienceplusplus.org/trouble_with_rcts/index.html"
+        },
+        {
+          "title": "NBER WORKING PAPER SERIES SCIENTIFIC GRANT FUNDING Pierre Azoulay Danielle Li",
+          "url": "https://www.nber.org/system/files/working_papers/w26889/w26889.pdf"
+        },
+        {
+          "title": "Randomized controlled trial - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Randomized_controlled_trial"
+        },
+        {
+          "title": "Why We Still Need Many More RCTs in Education – Good Science Project",
+          "url": "https://goodscienceproject.org/articles/why-we-still-need-many-more-rcts-in-education/"
+        }
+      ]
+    }
+  ]
+}

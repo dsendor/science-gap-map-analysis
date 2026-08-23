@@ -17,7 +17,14 @@ const run = (script, ...args) =>
 
 run('import-gapmap.mjs');
 
-for (const [dir, script] of [['research-log/labels', 'ingest-labels.mjs'], ['research-log/audits', 'ingest-audits.mjs']]) {
+for (const [dir, script] of [
+  ['research-log/labels', 'ingest-labels.mjs'],
+  ['research-log/audits', 'ingest-audits.mjs'],
+  ['research-log/indicators', 'ingest-indicators.mjs'],
+  ['research-log/new-gaps', 'ingest-new-gaps.mjs'],
+  ['research-log/critical-paths', 'ingest-critical-paths.mjs'],
+  ['research-log/ledger', 'ingest-ledger.mjs'],
+]) {
   const path = `${root}${dir}`;
   if (!existsSync(path) || !existsSync(`${root}engine/${script}`)) continue;
   const files = readdirSync(path).filter((f) => f.endsWith('.json')).sort();

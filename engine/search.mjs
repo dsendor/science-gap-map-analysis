@@ -22,6 +22,15 @@ import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 
 const root = new URL('..', import.meta.url).pathname;
+
+// Load .env if present, so the documented one-liner works without --env-file.
+// Never overwrite a value already in the environment.
+if (existsSync(`${root}.env`)) {
+  for (const line of readFileSync(`${root}.env`, 'utf8').split('\n')) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+}
 const CACHE_DIR = `${root}research-cache`;
 const ENDPOINT = 'https://api.search.brave.com/res/v1/web/search';
 

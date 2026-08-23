@@ -32,14 +32,6 @@ db.exec('PRAGMA foreign_keys = ON');
 // in defer_foreign_keys: constraints are checked at COMMIT, by which point the
 // same ids have been re-inserted. If the snapshot ever drops a gap that carries
 // labels, that COMMIT fails loudly — which is the correct outcome.
-db.exec('BEGIN');
-db.exec('PRAGMA defer_foreign_keys = ON');
-for (const t of [
-  'gm_capability_resources', 'gm_gap_capabilities',
-  'gm_resources', 'gm_capabilities', 'gm_gaps', 'gm_fields',
-]) db.exec(`DELETE FROM ${t}`);
-db.exec('COMMIT');
-
 const data = JSON.parse(readFileSync(SRC, 'utf8'));
 const { fields, gaps, capabilities, resources, metadata } = data;
 
@@ -47,6 +39,18 @@ const ins = (sql) => db.prepare(sql);
 const J = (v) => JSON.stringify(v ?? []);
 
 db.exec('BEGIN');
+db.exec('PRAGMA defer_foreign_keys = ON');
+
+// The clear and the re-insert have to sit in ONE transaction. Every augmentation
+// table holds foreign keys into gm_gaps, so a COMMIT taken between them is checked
+// against an empty baseline and fails. Deferring to the single COMMIT below means
+// constraints are checked once the same ids are back. If the snapshot ever drops a
+// gap that carries labels, indicators or logged searches, that COMMIT fails loudly
+// — which is the correct outcome.
+for (const t of [
+  'gm_capability_resources', 'gm_gap_capabilities',
+  'gm_resources', 'gm_capabilities', 'gm_gaps', 'gm_fields',
+]) db.exec(`DELETE FROM ${t}`);
 
 const insField = ins('INSERT INTO gm_fields (id, name, slug, description) VALUES (?, ?, ?, ?)');
 for (const f of fields) insField.run(f.id, f.name, f.slug, f.description ?? null);

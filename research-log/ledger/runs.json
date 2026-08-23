@@ -1,0 +1,38 @@
+[
+  {
+    "phase": "phase-0",
+    "kind": "agent",
+    "started_at": "2026-08-22 14:05:00",
+    "ended_at": "2026-08-22 15:10:00",
+    "model": "claude-opus-5",
+    "n_units": 103,
+    "note": "baseline import, schema, additive-only guardrail, integrity report (remote session)"
+  },
+  {
+    "phase": "phase-1",
+    "kind": "agent",
+    "started_at": "2026-08-22 15:10:00",
+    "ended_at": "2026-08-22 18:40:00",
+    "model": "claude-opus-5",
+    "n_units": 103,
+    "note": "label all 103 gaps: outcome, AI type + maturity, measurability tier (remote session)"
+  },
+  {
+    "phase": "phase-2",
+    "kind": "agent",
+    "started_at": "2026-08-22 18:40:00",
+    "ended_at": "2026-08-22 20:25:00",
+    "model": "claude-opus-5",
+    "n_units": 36,
+    "note": "blind relabel of a stratified 36-gap sample, adjudication, findings (remote session)"
+  },
+  {
+    "phase": "phase-3",
+    "kind": "agent",
+    "started_at": "2026-08-23 17:46:30",
+    "ended_at": "2026-08-23 17:54:59",
+    "model": "claude-opus-5",
+    "n_units": 8,
+    "note": "progress indicators: 8 rows across 4 tiers, 2 honest nulls, 29 logged searches"
+  }
+]
