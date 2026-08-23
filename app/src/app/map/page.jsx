@@ -36,6 +36,9 @@ export default function MapPage() {
         <section>
           <div className="col">
             <h1>The extended map</h1>
+            <p className="tag on" style={{ display: 'inline-block', marginBottom: 14 }}>
+              David Sendor&rsquo;s annotations over Convergent Research&rsquo;s data
+            </p>
             <p className="lead">
               All {s.n_gaps} of Convergent Research&rsquo;s gaps in their own export order, with the
               four added attributes and the reasoning behind each one. Filter it, or take the CSV —
@@ -43,8 +46,8 @@ export default function MapPage() {
               to their data.
             </p>
             <p>
-              <a href="./gap-map-augmented.csv">Download the CSV</a> ·{' '}
-              <a href="./data.json">Download the JSON</a> · <a href="../">Back to the argument</a>
+              <a href="../gap-map-augmented.csv">Download the CSV</a> ·{' '}
+              <a href="../data.json">Download the JSON</a> · <a href="../">Back to the argument</a>
             </p>
           </div>
         </section>
@@ -315,7 +318,7 @@ export default function MapPage() {
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
             <a href="../">Back to the argument</a> ·{' '}
-            <a href="./gap-map-augmented.csv">CSV</a> · <a href="./data.json">JSON</a> · David
+            <a href="../gap-map-augmented.csv">CSV</a> · <a href="../data.json">JSON</a> · David
             Sendor, <a href="mailto:david@sendorai.com">david@sendorai.com</a>
           </p>
         </div>

@@ -186,6 +186,7 @@ CREATE TABLE IF NOT EXISTS new_gaps (
     tension_test   TEXT NOT NULL,             -- agreed transformative + genuine feasibility debate
     unlock_test    TEXT NOT NULL,             -- which downstream dominoes fall
     dedup_check    TEXT NOT NULL,             -- what was searched, what came closest, why it is distinct
+    nearest        TEXT,                      -- the one-line version, named explicitly rather than excerpted
     funding_check  TEXT NOT NULL,             -- confirmation it is not already funded and under construction
     rationale      TEXT NOT NULL,
     confidence     TEXT NOT NULL CHECK (confidence IN ('confident', 'guess')),

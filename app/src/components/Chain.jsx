@@ -9,6 +9,7 @@ export default function Chain({ path }) {
   const total = path.links.reduce((a, l) => a + (l.duration_years ?? 0), 0);
   const bind = path.links.filter((l) => l.is_binding);
   const bindYears = bind.reduce((a, l) => a + (l.duration_years ?? 0), 0);
+  const maxYears = Math.max(...path.links.map((l) => l.duration_years ?? 0), 1);
 
   return (
     <div className="card" style={{ marginBottom: 22 }}>
@@ -45,6 +46,20 @@ export default function Chain({ path }) {
                   <span style={{ display: 'block', fontWeight: 400, fontSize: 11, color: 'var(--ink-3)' }}>
                     {l.duration_span}
                   </span>
+                  <span
+                    className="bar"
+                    style={{ width: `${Math.max((100 * l.duration_years) / maxYears, 3)}%` }}
+                  />
+                </span>
+              )}
+              {l.duration_years == null && l.figure && (
+                <span
+                  style={{
+                    display: 'block', marginTop: 6, fontSize: 11.5, lineHeight: 1.35,
+                    color: l.is_binding ? 'var(--ink)' : 'var(--ink-3)',
+                  }}
+                >
+                  {l.figure}
                 </span>
               )}
             </div>
@@ -114,13 +129,20 @@ export default function Chain({ path }) {
             On the argument page the working goes behind a click, because a reader who
             disagrees with the claim will open it and a reader who does not will not. */}
         <h4 style={{ marginTop: 0 }}>What the chain showed</h4>
-        <p style={{ fontSize: 16 }}>{path.finding.split('\n\n')[0]}</p>
+        {path.finding
+          .split('\n\n')
+          .slice(0, 2)
+          .map((para, i) => (
+            <p key={i} style={{ fontSize: 16 }}>
+              {para}
+            </p>
+          ))}
         <details>
           <summary>The rest of what it showed, and what I predicted before running it</summary>
           <div className="body">
             {path.finding
               .split('\n\n')
-              .slice(1)
+              .slice(2)
               .map((para, i) => (
                 <p key={i} style={{ fontSize: 15.5 }}>
                   {para}

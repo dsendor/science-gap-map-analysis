@@ -36,11 +36,11 @@ try {
     db.prepare('DELETE FROM new_gaps WHERE id = ?').run(g.id);
     db.prepare(`INSERT INTO new_gaps
       (id, name, slug, description, field_id, outcome, ai_type, maturity, tier,
-       tension_test, unlock_test, dedup_check, funding_check, rationale, confidence)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+       tension_test, unlock_test, dedup_check, nearest, funding_check, rationale, confidence)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
       .run(g.id, g.name, g.slug, g.description, g.field_id, g.outcome, g.ai_type,
            g.maturity, g.tier, g.tension_test, g.unlock_test, g.dedup_check,
-           g.funding_check, g.rationale, g.confidence);
+           g.nearest ?? null, g.funding_check, g.rationale, g.confidence);
     n++;
     console.log(`  ${g.id.padEnd(34)} ${String(w).padStart(2)}w  ${g.tier}`);
   }

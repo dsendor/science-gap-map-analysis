@@ -1,5 +1,6 @@
 import data from '../../public/data.json';
 import Masthead from '../components/Masthead';
+import MaturityGradient from '../components/MaturityGradient';
 import { StackedMaturity } from '../components/Charts';
 import Chain from '../components/Chain';
 import { MATURITY_ORDER } from '../lib/constants';
@@ -114,10 +115,11 @@ export default function Page() {
                 what is on the other side.
               </li>
               <li>
-                <strong>An AI capability type, and how mature it is:</strong> which kind of AI
-                would actually move this gap — seven named kinds — and whether that kind is
-                working now, two-to-five years out, or speculative. This is the attribute the
-                hypothesis lives or dies on.
+                <strong>What kind of work is in the way, and how mature the AI for it is:</strong>{' '}
+                seven named kinds of work — five with an AI analogue, two without — and whether the
+                relevant capability is working now, two-to-five years out, or speculative. This is
+                the attribute the hypothesis lives or dies on, and the one I would most like torn
+                apart.
               </li>
               <li>
                 <strong>A measurability tier:</strong> whether the gap has an agreed observable at
@@ -151,7 +153,7 @@ export default function Page() {
 
         <section>
           <div className="col">
-            <h2>What the labelling says about the hypothesis</h2>
+            <h2>What your map says about the hypothesis</h2>
             <p>
               This is the part I would most like you to push back on, because it is the whole
               argument in one chart. For each kind of AI capability, the share of the gaps it is
@@ -161,10 +163,10 @@ export default function Page() {
 
           <figure className="card" style={{ marginTop: 22 }}>
             <div className="pad">
-              <StackedMaturity rows={byCount(s.ai_type).map(([t]) => [t, s.maturity_by_ai_type[t] ?? {}])} />
+              <MaturityGradient aiTypes={s.ai_type} maturityByType={s.maturity_by_ai_type} />
               <figcaption>
-                All {s.n_gaps} gaps, one primary capability type each. Segments carry their counts;
-                bar length is the number of gaps, not a share.
+                Share of the gaps each kind of work is the primary blocker for where the relevant AI
+                capability is already working today. All {s.n_gaps} gaps, one primary each.
               </figcaption>
             </div>
           </figure>
@@ -172,30 +174,48 @@ export default function Page() {
           <div className="col">
             <p style={{ marginTop: 26 }}>
               The gradient runs from <strong>{Math.round((100 * llm.now) / llm.tot)}%</strong> for
-              LLM reasoning and synthesis down to <strong>zero</strong> for physical build and
+              LLM reasoning and synthesis to <strong>zero</strong> for physical build and
               manipulation. Not one gap in your map has physical build as a working-now primary —
-              all {build.tot} sit at two-to-five years or speculative. Coordination and
-              institutional manages {coord.now} of {coord.tot}.
+              all {build.tot} sit at two-to-five years or speculative. Coordination and institutional
+              manages {coord.now} of {coord.tot}.
             </p>
             <p>
               That is the hypothesis, visible in your own data. Where the feedback loop is fast and
               the answer is checkable, AI has arrived. Where it is slow, contested, or a matter of
               what an institution agrees to do, it has not — and there is no sign it is about to.
+              Across the whole map, {nowTotal} of {s.n_gaps} gaps ({Math.round((100 * nowTotal) / s.n_gaps)}%)
+              have a primary capability that works today.
             </p>
-            <p>
-              Two numbers I&rsquo;d put in front of a funder. <strong>{nowTotal} of {s.n_gaps}</strong>{' '}
-              gaps ({Math.round((100 * nowTotal) / s.n_gaps)}%) have a primary capability that works
-              today. And <strong>{nonCognitive} of {s.n_gaps}</strong> are primarily blocked by
-              physical build, institutional coordination, or autonomous experimentation — against{' '}
-              {s.ai_type['LLM reasoning and synthesis']} for LLM reasoning. The count is
-              interesting; the maturity gradient is the finding.
-            </p>
-            <p className="note" style={{ fontSize: 15, color: 'var(--ink-3)' }}>
-              The seven capability types are mine, not a standard, and the blind audit found three
-              cases they handle badly — closed-loop control of a physical system, gaps where AI is
-              the object rather than the instrument, and composite gaps that would take different
-              types for different sub-problems. If the taxonomy is wrong, this chart is wrong, so
-              it is the first thing worth arguing about.
+            <div className="pull">
+              <p>
+                <strong>Three reasons to distrust this chart, in descending order.</strong>
+              </p>
+              <p>
+                <strong>Maturity was never audited.</strong> The blind second pass covered the
+                capability type, the tier and the outcome. It did not cover maturity — which is the
+                axis this entire gradient is made of. That is a hole, and it is not visible from how
+                thorough the audit section looks.
+              </p>
+              <p>
+                <strong>The category carrying the most weight is the one I was least sure about.</strong>{' '}
+                Gaps whose primary blocker is coordination and institutional carry a confidence flag
+                on some dimension {Math.round((100 * 11) / 15)}% of the time ({11} of {coord.tot}),
+                against {Math.round((100 * 5) / 17)}% for physical build. Most of that comes from the
+                measurability tier rather than the capability label, but the argument leans hardest
+                where the labelling is weakest.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                <strong>Two of the seven categories are not AI capabilities at all.</strong>{' '}
+                Coordination and institutional, and physical build and manipulation, are kinds of
+                non-AI blocker. Calling the axis &ldquo;AI capability type&rdquo; and then listing
+                two things AI does not do is a category error I would fix by renaming the axis to
+                what it actually measures: what kind of work is in the way.
+              </p>
+            </div>
+            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
+              The audit also found three gap types the seven categories handle badly: closed-loop
+              control of a physical system, gaps where AI is the object rather than the instrument,
+              and composite gaps that would need different categories for different sub-problems.
             </p>
           </div>
         </section>
@@ -344,7 +364,7 @@ export default function Page() {
 
         <section id="gaps">
           <div className="col">
-            <h2>Four gaps I think are missing</h2>
+            <h2>Four gaps I&rsquo;d propose</h2>
             <p>
               Written to your format — title-case declarative name, 30&ndash;60 words, no urgency
               language, no named vendors — and kept in a separate table so they are never mixed
@@ -369,7 +389,7 @@ export default function Page() {
                 <div className="pad">
                   <div className="why" style={{ margin: 0 }}>
                     <div className="k">Nearest thing already in your map</div>
-                    <div className="t">{n.dedup_check.split('. ').slice(-2).join('. ')}</div>
+                    <div className="t">{n.nearest}</div>
                   </div>
                   <details>
                     <summary>Both tests, the full dedup, and the funding check</summary>

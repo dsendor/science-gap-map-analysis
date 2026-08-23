@@ -244,3 +244,28 @@ details .body { padding: 0 2px 16px; }
 
 .footer { padding: 44px 0 70px; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 14.5px; }
 .footer a { font-size: 14.5px; }
+
+/* Share-of-working-now gradient. One row per kind of work, length = share, so the
+   shape of the picture is the shape of the claim. Labels sit above the bars below
+   720px, where a right-aligned label column would leave the bar 20px wide. */
+.gradient { display: flex; flex-direction: column; gap: 9px; }
+.grow { display: grid; grid-template-columns: 250px 1fr 108px; gap: 14px; align-items: center; }
+.glbl { font-size: 14.5px; color: var(--ink-2); text-align: right; }
+.gtrack { position: relative; background: var(--surface-2); border-radius: 4px; height: 20px; }
+.gfill { height: 20px; border-radius: 4px; background: var(--accent); }
+.gzero { position: absolute; left: 9px; top: 1px; font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; }
+.gval { font-size: 15px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.gval .gn { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-3); }
+@media (max-width: 720px) {
+  /* Label and value share the first row; the bar takes the full width underneath,
+     so the measure is the screen rather than what is left after a label column. */
+  .grow { grid-template-columns: 1fr max-content; gap: 5px 10px; }
+  .glbl { grid-column: 1 / -1; text-align: left; font-size: 14px; }
+  .gtrack { grid-column: 1; }
+  .gval { grid-column: 2; text-align: right; font-size: 14.5px; }
+  .gval .gn { display: inline; margin-left: 7px; }
+}
+/* Duration weight inside a chain step, so a 9-year link does not look like a
+   6-month one. */
+.node .bar { display: block; height: 4px; border-radius: 2px; background: var(--rule); margin-top: 7px; }
+.node.bind .bar { background: var(--bind); }

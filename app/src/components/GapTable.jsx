@@ -111,11 +111,11 @@ export default function GapTable({ gaps, newGaps }) {
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="name, description, outcome" />
         </label>
         <label style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 14 }}>
-          <input type="checkbox" checked={onlyGuess} onChange={(e) => setOnlyGuess(e.target.checked)} />
+          <input type="checkbox" aria-label="Show only rows with a label flagged as a guess" checked={onlyGuess} onChange={(e) => setOnlyGuess(e.target.checked)} />
           only rows with a guess
         </label>
         <label style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 14 }}>
-          <input type="checkbox" checked={showProposed} onChange={(e) => setShowProposed(e.target.checked)} />
+          <input type="checkbox" aria-label="Include the four proposed additions in the list" checked={showProposed} onChange={(e) => setShowProposed(e.target.checked)} />
           include proposed additions
         </label>
       </div>
