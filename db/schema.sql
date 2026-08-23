@@ -245,6 +245,29 @@ CREATE TABLE IF NOT EXISTS audits (
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- v1 against v2 for the AI-type relabel: a complete independent second pass over all
+-- 103 gaps after 'Real-time control of physical systems' was added. Kept separate from
+-- `audits`, which holds a 36-gap stratified sample — mixing a census with a sample
+-- would make both rates uninterpretable.
+CREATE TABLE IF NOT EXISTS relabels (
+    gap_id              TEXT PRIMARY KEY REFERENCES gm_gaps(id),
+    v1_type             TEXT NOT NULL,
+    v1_maturity         TEXT NOT NULL,
+    v2_type             TEXT NOT NULL,
+    v2_maturity         TEXT NOT NULL,
+    type_agreed         INTEGER NOT NULL CHECK (type_agreed IN (0, 1)),
+    maturity_agreed     INTEGER NOT NULL CHECK (maturity_agreed IN (0, 1)),
+    discriminating_test TEXT,
+    nearest_alternative TEXT,
+    v2_rationale        TEXT,
+    v2_confidence       TEXT CHECK (v2_confidence IN ('confident', 'guess')),
+    adjudicated_type    TEXT,
+    adjudicated_maturity TEXT,
+    adjudication_note   TEXT,
+    labeled_by          TEXT,
+    created_at          TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 -- Ported from ai-science-gap-map. Every non-obvious call gets a row: taxonomy
 -- revisions, tier calls that could reasonably have gone the other way, gaps
 -- dropped from the indicator sample. Labeled AI-set, pending review.

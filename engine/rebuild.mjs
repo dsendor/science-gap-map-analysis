@@ -36,4 +36,16 @@ if (existsSync(`${root}research-log/decisions.json`)) run('ingest-decisions.mjs'
 if (existsSync(`${root}research-log/runs.json`)) run('ingest-runs.mjs');
 if (existsSync(`${root}research-log/frames.json`)) run('ingest-frames.mjs');
 
+// v2 relabel comparison, then the adjudication that acts on it. Order matters: the
+// comparison must be recorded against v1 before adjudication rewrites the primaries.
+const v2dir = `${root}research-log/labels-v2`;
+if (existsSync(v2dir) && existsSync(`${root}engine/ingest-relabels.mjs`)) {
+  const files = readdirSync(v2dir).filter((f) => f.endsWith('.json')).sort();
+  for (const f of files) run('ingest-relabels.mjs', `${v2dir}/${f}`);
+  if (files.length) {
+    console.log(`ingested ${files.length} relabel file(s)`);
+    if (existsSync(`${root}research-log/relabel-adjudication.json`)) run('apply-relabel.mjs');
+  }
+}
+
 run('verify-additive.mjs');

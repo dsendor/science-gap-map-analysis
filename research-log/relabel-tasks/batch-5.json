@@ -1,0 +1,244 @@
+{
+  "batch": 5,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8031-b79b-c13cca53b9c9",
+      "field": "Biophysics",
+      "name": "Difficulty Delivering Physical Probes for Imaging into Living Cells",
+      "description": "Delivering physical probes for imaging into living cells is challenging due to barriers in cell membranes and potential perturbation of cellular function. New approaches are required to enable high-dimensional biosensing without invasive probes.",
+      "convergent_capabilities": [
+        "Label-Free High-Dimensional Biosensing",
+        "Metabolically Incorporated Labels"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cd-aef2-fe6e9d360328",
+      "field": "Biophysics",
+      "name": "Some Proteins Are Still Recalcitrant to Experimental Structure Analysis",
+      "description": "Membrane proteins are notoriously difficult to analyze experimentally and to incorporate into technological applications due to their inherent insolubility in aqueous environments. Their recalcitrance limits our capacity to study their structure and function in detail. Other challenges include the difficulty of studying small proteins with cryo-EM.",
+      "convergent_capabilities": [
+        "Make it Easier to Map Orientations of Small Proteins in Cryo-Em",
+        "Recode Membrane Proteins for Solubility"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8027-9ab6-d431ec43d57f",
+      "field": "Biosecurity",
+      "name": "Microbes Quickly Out-Evolve Our Defenses",
+      "description": "Pathogenic microbes evolve quickly, and bad actors may exploit biotechnology for harmful purposes. Our current defenses struggle to keep pace with these evolving threats.",
+      "convergent_capabilities": [
+        "Decentralized, Low-Resource Vaccine Production",
+        "Improved Antibiotics Discovery",
+        "Improved Broad-Spectrum Antiviral Discovery",
+        "Novel Methods for Rapid Antibody or Antibody-Like Molecule Discovery",
+        "Novel Vaccine Technologies",
+        "Prototype Medical Countermeasures",
+        "Self-Administrable Nasal Sprays"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fb-9bbd-cbbe06f1776e",
+      "field": "Chemistry",
+      "name": "In-Silico Molecular Simulation Is Slow and Kludgy",
+      "description": "In-silico molecular simulation has not received the necessary push, despite the promise of machine learning-based surrogate models. Moreover, advancements in quantum chemistry—both AI accelerated and quantum/ASIC-enabled—remain underexploited.",
+      "convergent_capabilities": [
+        "AI-Accelerated Quantum Chemistry",
+        "AI-Enabled Molecular Dynamics",
+        "ASIC-Enabled Quantum Chemistry",
+        "Ab-Initio Calculation of Heavier Elements",
+        "High-Quality Experimental Chemistry Benchmarks",
+        "High-Quality Open Reaction and Structure Datasets",
+        "Machine Learning Force Fields for Electrochemistry",
+        "Quantum Computing-Enabled Quantum Chemistry"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8043-bb0a-f10b4d7f65c8",
+      "field": "Chemistry",
+      "name": "We Can’t Yet Replicate Animal Olfaction Synthetically as a Sensing and Classification Modality",
+      "description": "We currently lack a comprehensive model explaining how biological systems decode and classify chemical signals through olfaction. Understanding this process is critical for applications ranging from flavor science to disease diagnostics to understanding and harnessing animal communication.",
+      "convergent_capabilities": [
+        "Build an Olfaction Decoding Model",
+        "Map of Odorant Receptor Binding"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "field": "Computation",
+      "name": "Biological Life is Our Only Working Example of Complex Evolved Computation",
+      "description": "Biological systems are the sole example we have of complex, evolved computation. Replicating this level of complexity in digital systems could unlock entirely new computational paradigms.",
+      "convergent_capabilities": [
+        "Virtual Life Enabled by Learning and GPUs"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-90aa-fcb685877ee5",
+      "field": "Ecology",
+      "name": "Challenges in Tracking and Restoring Resilient Ecosystems",
+      "description": "Regenerating degraded environments and designing self-sustaining systems require a unified understanding of ecological dynamics. Our current models fall short in predicting complex interactions—such as feedback loops and stability thresholds—that determine ecosystem behavior. \n\nTo close this gap, we need better datasets and models of biodiversity and animal movements, as well as tools to predict and contain invasive species. We also need the ability to experiment with restoration strategies, and validate approaches ranging from rewilding to engineering de-extinction technologies.",
+      "convergent_capabilities": [
+        "Build Robust Ecosystem Testbeds (Closed & Open)",
+        "Leverage Stem Cell and Genome Editing Technologies for De-Extinction",
+        "Protecting Ocean Ecosystems",
+        "Study Closed Ecosystems",
+        "Tools to Predict and Contain Invasive Species "
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8037-9a36-c2081290cac8",
+      "field": "Geophysics and Climate",
+      "name": "Inadequate Interventions for Greenhouse Gas Removal",
+      "description": "We need more effective approaches to removing greenhouse gases from the atmosphere to mitigate climate impacts. However, challenges remain in harnessing natural carbon removal systems—due to difficulties in accurately measuring their environmental impact—and in reducing methane emissions from sources like the cow rumen. Innovative strategies, including modifying cow microbiomes and deploying scalable measurement and validation platforms, are essential to advance greenhouse gas removal efforts.\n\nSee also:  https://www.bezosearthfund.org/news-and-insights/bezos-earth-fund-releases-global-roadmap-to-scale-greenhouse-gas-removal-technologies and https://gaps.frontierclimate.com/ ",
+      "convergent_capabilities": [
+        "Develop Scaled Platforms for Validation & Measurement",
+        "Integrated Methane and N2O Monitoring in Natural Systems",
+        "Modify the Cow Microbiome",
+        "Precise Methane Production Measurement",
+        "Removal of Methane and N2O from the Atmosphere"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c0-aae9-fc48f6ef2af6",
+      "field": "Global Health",
+      "name": "Lack of Infrastructure Technologies and Strategies Optimized for Low-Resource Settings",
+      "description": "Global health outcomes are compromised by insufficient health systems and infrastructure that limit our ability to prevent and control infectious diseases. Key deficiencies include the lack of cost-effective antimicrobial materials to block pathogen transmission, underdeveloped intervention models for effective public health strategies, and outdated sanitation solutions that fail to meet the needs of vulnerable populations.",
+      "convergent_capabilities": [
+        "Better PPE",
+        "Decentralized, Low-Resource Vaccine Production",
+        "Enhanced Sanitation Solutions",
+        "Improved Antibiotics Discovery",
+        "Improved Broad-Spectrum Antiviral Discovery",
+        "Improved Modeled Intervention Strategies",
+        "Improved Vaccine Distribu",
+        "Transmission Reduction Through Surfaces and Textiles"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80f5-b3d1-d19cab7aeec3",
+      "field": "Materials Science",
+      "name": "Limited Ability to Design and Scalably Synthesize Macroscale Materials",
+      "description": "While many promising materials have been discovered in the lab, current synthesis methods are often too expensive to produce these materials in sufficient quantities. Some examples of novel materials that would be highly enabling include: \n\n• Low activation, thermally conductive materials that are resistant to radiation damage are needed to enable fusion reactors (the first wall material is currently a limitation), spacecraft, etc.\n• Materials that emit at the transparency window of the atmosphere (that were easy to apply like paint) to drastically diminish solar earth heating (example)\n• Hyper-efficient thermoelectrics that could directly turn heat into electricity. \n• Materials that autonomously heal to improve our infrastructure and prevent system failures due to material defects.\n• Materials that have the insulating properties and high melting points of ceramics but the formability and ductility of metals for jet engines and atmospheric reentry vehicles.",
+      "convergent_capabilities": [
+        "Macroscale Bioprinting",
+        "Novel Design and Processing of Textile Fibers",
+        "Scalable Synthesis of Carbon-Based Materials "
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "field": "Mechanical Engineering",
+      "name": "Designing Buildings is Hard",
+      "description": "Architectural design and construction planning are complex and labor-intensive. Advanced computational design and AI-driven optimization have the potential to revolutionize how buildings and construction plans are generated.",
+      "convergent_capabilities": [
+        "AI Design of Buildings and Construction Plans"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c5-921e-de69ffaca475",
+      "field": "Mechanical Engineering",
+      "name": "Sim-to-Real Transfer for Robots is Hard",
+      "description": "Bridging the gap between simulated robot behavior and real-world performance remains a significant challenge, particularly for tactile interactions and complex environments.",
+      "convergent_capabilities": [
+        "Combine Physics Models and Generative AI",
+        "Large-Scale Data Collection for Tactile Interaction",
+        "Robot Foundation Model"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-ae64-f8ff6f67ee0b",
+      "field": "Metascience",
+      "name": "Inability to Comprehend and Synthesize the Entire Scientific Literature at Scale",
+      "description": "The volume of scientific publications is overwhelming, making it difficult for humans to read, comprehend, and synthesize the entire body of literature. How can AI-generated knowledge become cumulative? What should a machine-human shared Wikipedia look like? We should collect and synthesize all the world’s knowledge, accelerate its development, and make it universally available in a compelling form.",
+      "convergent_capabilities": [
+        "AI Scientific Literature Agents",
+        "Infrastructure for Research Curation",
+        "Intelligent Databases",
+        "Knowledge Synthesis Infrastructure",
+        "Large Knowledge Models"
+      ]
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "field": "Neuroscience",
+      "name": "Most Brain Circuitry is Still Invisible",
+      "description": "Understanding the complete wiring of the brain at single–cell resolution, along with detailed molecular annotations, is critical for revealing how neural circuits support learning, memory, and behavior. Current technologies are prohibitively expensive and lack scalability, limiting our ability to link molecular composition with circuit connectivity and to understand the alterations present in brain disorders. This gap fundamentally makes diagnosis, treatment, and prevention of many brain disorders more difficult. Beyond the biomedical applications, maps of brain circuitry could play a fundamental role in grounding principles of safety for brain-like AI systems.\n\nInitiatives like the NIH BRAIN Initiative’s transformative projects (the BRAIN Initiative Cell Atlas Network (BICAN), the BRAIN Initiative Connectivity Across Scales (BRAIN CONNECTS) Network, and the Armamentarium for Precision Brain Cell Access) represent important efforts to illuminate foundational principles governing the circuit basis of behavior and to inform new approaches to treating human brain disorders by radically enhancing our understanding of brain cell types and the tools needed to access them (The BRAIN Initiative® 2.0: From Cells to Circuits, Toward Cures).",
+      "convergent_capabilities": [
+        "Faster Electron Microscopy for Connectomics",
+        "Rapid High–Resolution Neural Circuit Visualization",
+        "Scalable, Anatomically and Molecularly Dense Brain Mapping Technology"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ad-a913-d3a908406535",
+      "field": "Physics",
+      "name": "Inadequate Imaging of Material Structures",
+      "description": "Many materials’ internal structures are difficult to image with current technologies, limiting our understanding of their properties at the nanoscale.",
+      "convergent_capabilities": [
+        "Neutron Microscopy"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "field": "Physics",
+      "name": "Uncertainty and Noise in the Science of Room-Temperature Superconductivity",
+      "description": "There remains significant uncertainty over whether metallic hydrogen can exhibit room-temperature superconductivity at reasonable pressures, and measurements of other systems have been irreproducible and fragmented.",
+      "convergent_capabilities": [
+        "Conduct Rigorous, Non-Fraudulent Experiments"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8086-9443-f719d9caef36",
+      "field": "Physiology and Medicine",
+      "name": "We Can’t Safely and Controllably Deliver Complex Molecular Payloads to the Targets We Want in the Body",
+      "description": "Current in-vivo delivery systems (viral vectors, nanoparticles, microchips) face challenges such as off-target accumulation and inefficiency, particularly in delivering therapies to the brain. Novel delivery approaches are needed to improve targeting and performance.",
+      "convergent_capabilities": [
+        "Delivery Systems that “De-Target” the Liver and Macrophages",
+        "Improved & New Gene Therapy Delivery Vehicles",
+        "Map of Cell-Type or Tissue Specific Targets",
+        "Map the Determinants of Cellular Migration in the Body",
+        "Microelectronics for Tissue-Targeted Delivery"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "field": "Social Science",
+      "name": "Limited Tools for Improving Individual, Social and Societal Epistemics in the Face of Misinformation ",
+      "description": "In an era of relentless information overload and pervasive misinformation—fueled by algorithms that prioritize fleeting engagement over meaningful value—we have the opportunity to reshape our digital spaces. By leveraging AI and more intentional design of social media spaces for epistemic improvement, we can empower users to curate, evaluate, and contextualize content more effectively to create a healthier digital world.",
+      "convergent_capabilities": [
+        "Content Curation Tools",
+        "Contextualization Engines",
+        "Crowd-Sourced Fact-Checking ",
+        "Detection of Coordinated Misinformation and Scams",
+        "Improved Observatory of the Information Environment",
+        "Incentives for Verification and Accountability",
+        "Privacy Preserving Identity Verification",
+        "Projects to Crowdsource Ground Truth Information",
+        "Structured Transparency",
+        "Tools to Promote Constructive Dynamics in Social Media Spaces",
+        "“System 2” Recommenders in Social Media Spaces"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
+      "field": "Social Science",
+      "name": "Underdevelopment of Modern Tools in the Social Sciences",
+      "description": "The social sciences need new tools to help researchers identify and prioritize important questions that will have an impact, and better infrastructure to collect qualitative data. Qualitative methods are powerful for understanding the how and why behind social outcomes, yet even the most comprehensive surveys don’t capture all the factors that contribute to social outcomes. AI-enabled qualitative methods could super-charge the social sciences, but there is much work to be done.\n\nSimilarly, many archaeological methods remain manual and lack the technological revolution seen in other fields, limiting discovery and analysis.",
+      "convergent_capabilities": [
+        "Infrastructure for Problem-Driven Research",
+        "Modernize Survey Infrastructure",
+        "Satellite and Machine Learning-Enabled Archaeology"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8008-8543-ca3099dae993",
+      "field": "Synthetic Biology",
+      "name": "Lack of Applied Synthetic Biology Platforms",
+      "description": "Applied synthetic biology is underutilized in applications such as building sustainable food systems and repairing the environmental damage caused by conventional agriculture and industry. Despite advances in tools and chassis engineering, there are few robust platforms that translate synthetic biology into scalable, field-ready solutions. This includes not only the production of low-impact proteins and agricultural inputs but also bioremediation technologies for legacy pollutants—such as pesticide-laden soils, heavy metals, and nutrient runoff—that degrade ecosystems and constrain land use. A new generation of synthetic biology platforms is needed to address both sides of the problem: replacing harmful production methods and cleaning up their long-term consequences.",
+      "convergent_capabilities": [
+        "Bioremediation",
+        "Ethical Food Production Interventions",
+        "Synthetic Meat Production via Fungus Engineering"
+      ]
+    }
+  ]
+}

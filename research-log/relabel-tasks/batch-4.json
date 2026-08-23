@@ -1,0 +1,254 @@
+{
+  "batch": 4,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "field": "Astrophysics",
+      "name": "Major Planetary Science and Astrobiology Missions Are Not Realized by Existing Government Space Agencies",
+      "description": "Some of the most important planetary science and astrobiology missions remain unrealized by traditional government agencies like NASA. Alternative, independent initiatives are needed to explore these high-priority scientific questions.",
+      "convergent_capabilities": [
+        "Independent Planetary Missions"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808d-9e6c-d7c767eee358",
+      "field": "Biophysics",
+      "name": "Live Cell Imaging at Deep Nanoscale Resolution is Destructive",
+      "description": "Techniques that achieve deep nanoscale resolution in live cell imaging often destroy the sample, limiting the ability to conduct longitudinal studies on the same specimen.",
+      "convergent_capabilities": [
+        "Quantum Electron Microscopy",
+        "Quantum Non-Demolition X-Ray (Ghost) Imaging"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80be-82f0-c671a80de28e",
+      "field": "Biosecurity",
+      "name": "Insufficient Surveillance of Bio-Threats",
+      "description": "Rapid detection of emerging bio-threats is critical for effective intervention and containment. However, many pathogens are detected only after widespread transmission has occurred. In addition, attributing the source of these threats remains challenging.",
+      "convergent_capabilities": [
+        "Early Detection via Sequencing",
+        "Emerging Bio-Threat Forensics",
+        "Enhanced Epidemiology and Epidemic Tracking",
+        "Fine-Grained Economic Modeling of Policy Options",
+        "Rapidly Adaptable Rapid Test Platforms ",
+        "Universal Detection and Modulation of the Host Response to Infections",
+        "Volatilomics for Early Detection"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
+      "field": "Cellular and Molecular Biology",
+      "name": "Limited Ability to Image Molecules in Their Native Contexts",
+      "description": "We are currently limited in our ability to image molecules in their native contexts—for example, within live 3D tissues. Achieving scalable, high-resolution imaging of biomolecules in situ would de-risk many areas of biomedical science by enabling integrative, comprehensive molecular mapping within intact specimens.",
+      "convergent_capabilities": [
+        "Binders for Every Epitope",
+        "Freezing and Unfreezing Time for Living\n  Cells",
+        "Live Cell Subcellular Imaging &\n  Foundation Models",
+        "Molecular 3D Scanning",
+        "Multiplexed Live-Cell Dynamics Recordings"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a3fb-ffd7b5bf54f1",
+      "field": "Chemistry",
+      "name": "Manual and Laborious Nature of Chemical Synthesis",
+      "description": "Chemical synthesis remains largely manual, limiting throughput and reproducibility. The field requires robust automation to accelerate discovery and production of new molecules.",
+      "convergent_capabilities": [
+        "Broader Chemistry Automation",
+        "Cheap Enzymatic DNA Synthesis",
+        "Cheap Long Peptide\n  Synthesis",
+        "Chemputers for Automated Synthesis",
+        "Generative Model\n  Based Parallel Library Synthesis",
+        "In-Vivo Externally Programmable DNA/RNA Synthesis",
+        "Modular Synthesis Using Improved Building Blocks"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "field": "Computation",
+      "name": "AI is Still Narrow in its Reasoning and Planning",
+      "description": "Current AI systems exhibit narrow reasoning and planning capabilities compared to human cognition. Broadening AI training methods to include holistic, brain-inspired architectures and cognitive frameworks can advance general intelligence (flagging that there is an AI safety risk here).",
+      "convergent_capabilities": [
+        "Bayesian Cognitive Architectures  and Program Synthesis",
+        "Developmentally Realistic AI Training",
+        "Holistic Brain-Inspired Architectures",
+        "Improve Out of Context Reasoning in Large Language Models",
+        "Mimic Human Evolution in Silico"
+      ]
+    },
+    {
+      "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
+      "field": "Computation",
+      "name": "Silicon-Based Electronics Face Fundamental Limits in Dimensional Scaling",
+      "description": "For over five decades, silicon-based CMOS technology has driven unprecedented progress in computing and information technology through dimensional scaling following Moore's Law. This miniaturization has led to exponential increases in transistor density, performance, and energy efficiency. However, as transistor channel dimensions shrink below a few nanometers, silicon and conventional bulk semiconductors (e.g., SiGe, III-V materials) are encountering insurmountable fundamental physical and material limits (heat dissipation, short-channel effects, etc.).",
+      "convergent_capabilities": [
+        "Atomically Thin 2D Semiconductors for Integrated Circuits",
+        "Next-Gen 3D Integration of Discrete Components"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fa-9903-df046affff97",
+      "field": "Geophysics and Climate",
+      "name": "Inadequate Emergency Climate Interventions and Response",
+      "description": "There is a critical need for more precise, rapid, and localized climate intervention strategies. Current approaches lack the fine-grained models and rapid response mechanisms required to adapt to diverse climate impacts, such as heatwaves, which demand swift and effective action. The ability to control local weather phenomena—including cloud formation and hurricanes—could help mitigate climate risks.",
+      "convergent_capabilities": [
+        "Backup Power Transformer Protection",
+        "Cloud Seeding",
+        "Dynamic Ecosystem Feedback Modeling",
+        "Earthquake Prediction",
+        "Equip Ships and Planes as Sensors or Modulators of Climate",
+        "Fine-Grained Impact Modeling and Response",
+        "Hurricane Diversion or Mitigation",
+        "Improve Solar Flare Models",
+        "Improved Remote Sensing of Aerosol Particle Size and Composition",
+        "Ocean Heat and Circulation Modeling",
+        "Starlink Atmospheric Tomography",
+        "Stratospheric Observation Platforms",
+        "Subduction Zone Observation"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fe-9540-c14ef07e4d85",
+      "field": "Geophysics and Climate",
+      "name": "Outdated and Fragmented Recycling, Cleanup and Bioremediation Systems",
+      "description": "We need to improve our management of natural systems. The world's oceans suffer from extensive pollution, undermining marine ecosystems and disrupting global climate processes. Inefficient wildfire management is a prime example of problematic management of natural fire cycles.",
+      "convergent_capabilities": [
+        "Advanced Recycling Capabilities",
+        "Efficient Ocean Cleaning Technologies"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b5-a4f1-f702c75399f8",
+      "field": "Immunology",
+      "name": "Our Immune System Can Uniquely Recognize Nearly Any Molecule but We Don’t Know the Recognition Code",
+      "description": "A better understanding of how the immune system interacts at the molecular level with threats and triggers is critical. This knowledge would enable the development of predictive tools and technologies to augment immune responses—improving interventions against infections, cancers, and autoimmune disorders.",
+      "convergent_capabilities": [
+        "T-cell and B-cell Receptor Antigen Mapping"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8039-a26b-ea2d3b4f9bd6",
+      "field": "Mechanical Engineering",
+      "name": "Bioengineering is Still Done Manually",
+      "description": "Despite advances in automation, many bioengineering processes remain highly manual, limiting throughput and reproducibility in laboratory settings.",
+      "convergent_capabilities": [
+        "AI-Assisted Programming of Lab Robots",
+        "Bio Lab of the Future"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8050-bea1-ffeab17c0e7b",
+      "field": "Mechanical Engineering",
+      "name": "Robot Hardware and Software is Still Clunky",
+      "description": "Robots have the potential to revolutionize manufacturing, logistics, and many other industries—but only if they are both affordable and capable of high performance. Today’s robotic hardware is often prohibitively expensive and built using legacy designs that do not prioritize cost reduction, modularity, or scalability. Moreover, many robots struggle with dexterity and tactile sensing, and current design practices decouple hardware and software, preventing a co-evolution that could unlock new performance regimes. Overcoming these limitations requires a rethinking of both robot morphology and control, with an emphasis on integrated design, cost-effective production, and enhanced functionality.\r\n",
+      "convergent_capabilities": [
+        "Co-Design of Morphology and Control",
+        "Dexterous Robots",
+        "Improved Robot Actuation",
+        "Nanoscale Robots",
+        "Non-Humanoid Mobile Robots",
+        "Robot Tactile Perception",
+        "Underactuated Robots"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0",
+      "field": "Metascience",
+      "name": "Fraud in the Scientific Literature",
+      "description": "Scientific literature is plagued by fraudulent publications, undermining trust and slowing progress.",
+      "convergent_capabilities": [
+        "Automated Scientific Fraud Detection"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "field": "Neuroscience",
+      "name": "Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain",
+      "description": "Current in vivo and in vitro models often fail to capture human brain function. Innovative model systems—including digital reconstructions, embodied simulations, and new biological models—are needed.",
+      "convergent_capabilities": [
+        "Datasets that Quantitatively Capture the Full Space of Behavior",
+        "Data–Driven AI Models of Brain Systems",
+        "Digital Replicas of the Whole Brain of a Model Organism",
+        "Embodied Testbeds for Neuro–Cognitive Models",
+        "Ex Vivo Human Brains",
+        "In Vitro Models of the Human Cortex",
+        "Mapping the Hypothalamus and Brainstem"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "field": "Physics",
+      "name": "Inability to Model Turbulence",
+      "description": "Modeling turbulence remains one of the most challenging problems in physics due to its nonlinear and chaotic nature.",
+      "convergent_capabilities": [
+        "Develop New Modeling Frameworks for Turbulence"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "field": "Physics",
+      "name": "Robust and Compact Plasma Confinement for Fusion is Still Not Solved",
+      "description": "Stable plasma confinement is a major obstacle in achieving practical fusion energy. Advanced control systems and novel confinement techniques are needed.",
+      "convergent_capabilities": [
+        "AI-Driven Control Systems for Plasma Confinement",
+        "Magneto-Inertial Confinement"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ac-842e-e5f6ea4906cb",
+      "field": "Physiology and Medicine",
+      "name": "Our Measurements and Tests Aren’t Revealing What Is Actually Causing Many Diseases",
+      "description": "Our understanding of human physiology and disease remains incomplete. In the last century, we have developed cures for many diseases with well-defined root causes (polio, smallbox, cholera, SMA, cervical cancer, etc.). However, a wide array of conditions still eludes cures and treatments. We have yet to fully decipher the dynamic interplay between brain and peripheral systems, the bioenergetic processes underlying chronic conditions, and the multifactorial pathways that drive aging. The biological mechanisms driving complex diseases and the aging process are multifactorial, involving multiple interacting pathways. \n\nAlthough we understand some individual aging mechanisms, we do not yet have line of sight to comprehensively rejuvenating mammals or extending lifespan. To overcome these challenges, we need combinatorial approaches that can modulate multiple mechanisms simultaneously, allowing us to measure multi-system impacts and develop effective interventions.",
+      "convergent_capabilities": [
+        "Better Systems Measurements",
+        "Chemical and Cell-Type Resolved Mapping of Brain Activation",
+        "Combinatorial Aging Interventions Screening",
+        "Developing Immortal Biological Models",
+        "Engineering Endosymbionts",
+        "Epidemiological Tools to Identify the Root Causes of Disease",
+        "In-Vivo/ In-Situ Pooled Screening",
+        "Long-Term Multimorbidity Endpoints",
+        "Understudied Biological Systems",
+        "Whole Body Connectomes"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
+      "field": "Social Science",
+      "name": "Labor-Replacing AI Could Lead to Human Disempowerment",
+      "description": "As AI systems become the cornerstone of competitive advantage, they can inadvertently marginalize human roles and decision-making. The drive for efficiency and cost reduction may lead organizations to rely predominantly on AI, sidelining human judgment, creativity, and accountability. This dynamic risks creating environments where economic and social inequities widen, and the intrinsic value of human input is systematically undermined (see examples). The gradual disempowerment of individuals under such competitive pressures poses significant challenges for societal well-being and democratic governance. \n\nSee: https://gradual-disempowerment.ai/",
+      "convergent_capabilities": [
+        "AI Agents to Advocate for Human Interests",
+        "Early Warning Signs for Human Disempowerment",
+        "Improved Voting and Auditing Protocols",
+        "Interventions for Maintaining Human Oversight",
+        "Metrics to Track Human Influence",
+        "Technology to Augment Humans",
+        "Tools for Deliberative Democracy"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c2-a1bb-c735bf51fdd9",
+      "field": "Social Science",
+      "name": "Underdevelopment of Deep Tooling for Economic Modeling and Future Forecasting",
+      "description": "Current economic models are often too simplistic to capture the intricate dynamics of our global economy, limiting effective policy-making and forecasting. Experimentation with innovative economic models—such as those incorporating universal basic income or alternative market systems—is rare, leaving us unprepared for emerging trends. The inherent complexity of global systems further complicates accurate forecasting, underscoring the urgent need for more sophisticated, adaptive tools that can better predict and navigate the economic landscape of tomorrow.",
+      "convergent_capabilities": [
+        "Complex Systems Simulation Techniques for Economics",
+        "Model Radical Economic Transformations",
+        "Prediction Markets and AI-Based Forecasting",
+        "Real-World SimCity with AI Agents"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-807e-b924-fe555253617a",
+      "field": "Synthetic Biology",
+      "name": "Inability to Program Complex Organisms and Developmental Pathways",
+      "description": "Current genetic tools primarily enable modification of simple organisms. Programming more complex organisms and orchestrating entire developmental pathways remains a major challenge.",
+      "convergent_capabilities": [
+        "Developmental Biology Read-Write Platforms",
+        "Easier Genetic Access to Plants",
+        "Map of Cell Adhesion Codes"
+      ]
+    }
+  ]
+}
