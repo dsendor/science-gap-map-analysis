@@ -1,0 +1,306 @@
+{
+  "batch": 2,
+  "audited_by": "claude-opus-5",
+  "labels": [
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Would a well-controlled null result close the question for the people asking it? No — the gap statement itself says that despite decades of measurement and no good evidence, 'other mechanisms or parameter combinations' remain, which is exactly the structure of a question no measurement settles. Calorimetric excess-heat and He-4 observables exist and have been taken repeatedly; what is disputed is whether any of them (positive or null) is dispositive.",
+      "nearest_alternative": "Directly measurable",
+      "note": "Genuinely hard call. Excess heat per unit input and nuclear-ash yield are observable quantities with a direction, which is the tier-1 test verbatim. Rejected because the field's disagreement is not about instrument precision but about whether a measurement in a given parameter regime licenses any general verdict. Not tier 4: an instrument can be pointed at a cell today."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "dimension": "ai_type",
+      "value": "Autonomous experimentation",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the binding constraint proposing which conditions to try, or physically running enough well-controlled trials to cover the space? The gap says the space is underexplored, not that nobody knows what to try — so the constraint is closed-loop throughput of loading/electrochemistry/calorimetry runs at bench scale, which is the autonomous-experimentation category.",
+      "nearest_alternative": "Design and optimization search",
+      "note": "Design search would only help if candidate generation were the bottleneck; here candidate conditions are cheap to name and expensive to test. Not Physical build and manipulation: this is bench-scale apparatus in a lab, not fabrication or field deployment. Maturity 2-5 years — self-driving labs work now in chemistry and formulation, but no closed-loop rig currently couples the calorimetry and materials handling this needs at the required control standard."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "dimension": "outcome",
+      "value": "Whether anomalous low-energy nuclear effects exist anywhere in the accessible materials-and-loading space becomes a bounded, closed question rather than one that survives every null result.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Outcome is exclusion, not discovery — the informative result here is most likely a defensible negative, which is still something that becomes knowable."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Does a candidate discriminator between living and nonliving already exist and get argued over? Yes — assembly-index measurements from mass spectrometry, entropy-production and dissipation measures, and information-theoretic criteria are all published as candidate criteria, and there is live literature denying that any of them separates life from abiotic chemistry. A measurement can be taken; the field will not agree what it showed.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only would say dissipation rates are adjacent effects and 'aliveness' itself is unmeasurable. Rejected because the candidate quantities are advanced as direct criteria, not as proxies, and the dispute is over their verdict rather than their relevance."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "discriminating_test": "What stands between the current state and a usable formal framework — generating candidate definitions, or being able to compute the behaviour of a nonequilibrium many-body system large enough for a candidate definition to be tested on it? The latter: candidate frameworks already outrun the systems we can simulate, and learned emulators of nonequilibrium dynamics are what change that.",
+      "nearest_alternative": "LLM reasoning and synthesis",
+      "note": "LLM reasoning is the tempting pick because the gap names 'formal frameworks', i.e. theory. Rejected because proposing formalisms is not the scarce step; adjudicating them against simulated dynamics at biological scale is. Maturity 2-5 years: neural potentials and learned coarse-grained dynamics are working now at small scale, whole-organism nonequilibrium scale is not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "dimension": "outcome",
+      "value": "A physical criterion that separates living from nonliving matter becomes computable on real systems, turning 'is this alive' from a definitional argument into a measurement — including for candidate biosignatures with no shared ancestry with us.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Stated as what becomes decidable, not as 'we would understand life better'."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Could a measurement in principle be taken with the field still disagreeing about what it showed? Yes, and it repeatedly has been: artificial-life systems have existed for decades and the open-endedness literature has never agreed on a criterion by which any of them counts as complex evolved computation. There is an object to point at; the verdict is what is contested.",
+      "nearest_alternative": "Counterfactual required",
+      "note": "Hard call, and the one most likely to be a coin flip. The counterfactual reading — 'the forms of computation evolution could have produced but did not' — is real, and with n=1 you cannot separate necessary from contingent features. Rejected because the listed capability is to build the second instance, and once built it is observable; tier 4 requires there to be nothing to point an instrument at."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "dimension": "ai_type",
+      "value": "Design and optimization search",
+      "maturity": "Speculative",
+      "discriminating_test": "Is the missing thing a cheaper way to compute a known dynamics, or a way to find substrates and dynamics that generate open-ended complexity at all? The latter — the search over candidate computational substrates is the whole problem, which is generative proposal over a space rather than emulation of an expensive simulator.",
+      "nearest_alternative": "ML surrogates and prediction",
+      "note": "The capability name ('Learning and GPUs') pulls toward surrogates/large-scale learned simulation; rejected because throughput is not the reported blocker, the absence of any substrate showing open-ended evolution is. Maturity Speculative: no artificial system has produced complexity growth resembling biology, and nothing in the current trajectory dates that within five years. Strains the taxonomy slightly — the category says 'over a defined space', and open-ended search is by construction not over a defined space."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "dimension": "outcome",
+      "value": "A second, non-biological instance of evolved complex computation exists, so which properties of biological computation are universal and which are contingencies of carbon chemistry becomes separable for the first time.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "The outcome is escaping n=1, not 'new computing paradigms', which is downstream and speculative."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Could a measurement be taken with the field still disagreeing about what it showed? Yes — sub-scale field trials (marine cloud brightening plumes, glacier-scale interventions, stratospheric perturbation experiments) are being built and instrumented right now, and the entire dispute is whether a detectable sub-scale response tells you anything about planetary-scale deployment against natural variability.",
+      "nearest_alternative": "Counterfactual required",
+      "note": "The hardest tier call in this batch. The quantity people actually care about — what the climate would have done with and without a planetary intervention — is a counterfactual with no observation set, which is a serious tier-4 argument. Rejected on the taxonomy's own instruction: an instrument can in principle be pointed at a sub-scale trial, and the disagreement is about extrapolation from it, which is the tier-3 signature. Low confidence; I would not defend this over tier 4 strongly."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "discriminating_test": "If robotic deployment hardware appeared tomorrow, would the gap close? No — nobody could say what the intervention would do, and no one would authorise it. The scarce object is a fast enough emulator of the earth system to run the large ensembles that detection, attribution and side-effect bounding require; that is learned emulation of expensive simulation.",
+      "nearest_alternative": "Physical build and manipulation",
+      "note": "Physical build is genuinely applicable (pumps on glaciers, dispersal fleets, ocean deployment) and I considered it primary. Rejected because that engineering is not AI-limited, while the evaluation problem is squarely AI-addressable. Maturity 2-5 years: learned weather emulators are operational now, climate-scale and intervention-scenario emulators with credible regional skill are not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "dimension": "outcome",
+      "value": "Emergency climate interventions become a costed, side-effect-bounded option set that can be evaluated before a tipping point is crossed, instead of a class of actions whose consequences are first learned by performing them.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Deliberately not 'we could stop glacier melt' — what becomes knowable is whether and at what cost, which is the decision-relevant object."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Do candidate observables exist that people measure and then argue about? Yes, continuously: jailbreak attack-success rates, dangerous-capability evaluations and red-team pass rates are reported for every frontier release, and the standing dispute is whether clearing them predicts anything about misuse in deployment. Measurement happens; agreement on the verdict does not.",
+      "nearest_alternative": "Counterfactual required",
+      "note": "Tier 4 is arguable — the quantity of ultimate interest is harm that did not occur, which has no observation set. Rejected because the gap as written is about whether safeguards hold, and safeguard robustness is measured today under active dispute. Tier 1 also considered and rejected: attack-success rate has a direction but no one treats it as settling the question."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "dimension": "ai_type",
+      "value": "LLM reasoning and synthesis",
+      "maturity": "Working now",
+      "discriminating_test": "Is the named blocker a technique or an organisation? The two capabilities attached are jailbreak resistance and decentralized training — both are engineering programs, and jailbreak resistance in particular advances through models attacking and critiquing models (automated red-teaming, adversarial training, model-based monitoring), which is the LLM reasoning category applied reflexively.",
+      "nearest_alternative": "Coordination and institutional",
+      "note": "Poorest taxonomy fit in the batch: the taxonomy is built for AI-as-instrument-for-science, and here AI is the object of study rather than the tool. Coordination and institutional is a defensible primary — access policy, liability and compute governance plausibly bind harder than technique — and I would accept it on adjudication. Maturity Working now: automated red-teaming and adversarial hardening are in production today, whatever their sufficiency."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "dimension": "outcome",
+      "value": "Whether a model's safeguards actually hold against a determined adversary becomes checkable before release rather than discovered after it, and capable systems become trainable without concentrating misuse-relevant control in a handful of actors.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Covers both attached capabilities; the pre-deployment/post-deployment inversion is the thing that becomes knowable."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an observation set for the thing that did not happen? Unusually, yes: decadal surveys enumerate the prioritized planetary and astrobiology missions by name, so unflown-versus-flown, cost per mission and time from prioritization to launch are all countable, with an unambiguous direction of improvement.",
+      "nearest_alternative": "Counterfactual required",
+      "note": "Hard call, and structurally close to the taxonomy's own tier-4 calibration example about organizational structures constraining what R&D gets done. The difference that decided it: for organizational forms there is no list of the research that would have happened, whereas here the missions are named in advance by an existing prioritization process. Only the discoveries those missions would have made are counterfactual, and those are downstream of the gap rather than the gap."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "dimension": "ai_type",
+      "value": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the blocker a missing technique or a missing organisation? The gap names the blocker outright — existing government agencies do not realize these missions and 'alternative, independent initiatives are needed'. Nothing about the physics or the hardware is stated as unsolved; who decides, funds and carries risk is.",
+      "nearest_alternative": "Physical build and manipulation",
+      "note": "Physical build is the tempting technical read — autonomous spacecraft and cheap fabrication lower the cost of an independent mission. Rejected because cost is not the stated blocker and launch costs have already fallen by an order of magnitude without the missions appearing. Maturity 2-5 years: AI for portfolio allocation and review exists but has not been shown to change who funds and flies a planetary mission."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "dimension": "outcome",
+      "value": "High-priority astrobiology targets — ocean-world plumes, Venus cloud chemistry — become reachable on philanthropic budgets and timescales, so whether there is life elsewhere in this solar system stops being gated on a decadal queue.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Names what becomes answerable rather than 'more missions get flown', which would restate the gap."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Have measurements actually been taken, with the field then disagreeing about what they showed? Yes, at the sharpest possible scale: platform-scale randomized experiments on feed ranking and their effects on beliefs and polarization have been run and published, and the interpretation fight over them is unresolved. Candidate observables exist; agreement that they settle 'epistemic health' does not.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only is close — engagement, sharing rates and fact-check volumes are plainly adjacent to the quantity of interest. Rejected because belief accuracy and behavioural outcomes are measured directly in this literature; the failure is agreement about the verdict, not availability of the measurement. Tier 4 considered (what people would otherwise have believed) and rejected for the same reason."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "dimension": "ai_type",
+      "value": "Coordination and institutional",
+      "maturity": "Working now",
+      "discriminating_test": "If the best available contextualization and detection models were handed to the ecosystem tomorrow, would the gap close? No — most of that capability already exists and is not deployed, because ranking is optimized for engagement. Conversely, a governance and incentive change with 2026-level technology already produces measurable effect, as crowd-sourced note systems on major platforms show. The blocker is the incentive structure, which is the coordination category by definition.",
+      "nearest_alternative": "LLM reasoning and synthesis",
+      "note": "LLM reasoning covers most of the named capabilities individually (contextualization engines, System 2 recommenders, misinformation detection) and would be the pick if adoption were free. Maturity Working now: the mechanism design and the model quality required both exist today."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "dimension": "outcome",
+      "value": "Whether a claim reaching a reader is true, and whether its spread is organic or coordinated, becomes visible at the moment of exposure rather than in a fact-check published days later to a different audience.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Point-of-exposure visibility is the thing that becomes possible; 'better information environment' would restate the gap."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an observable with a direction of improvement? Yes and it is already the field's scoreboard: prediction error on held-out perturbations and unseen cell types, measured against matched experimental readouts. A model is better or worse by a number that everyone computes the same way.",
+      "nearest_alternative": "Verification contested",
+      "note": "Considered seriously: there is a live argument that current perturbation-prediction benchmarks are uninformative because trivial baselines match learned models. Rejected because that is a dispute about benchmark construction, resolvable by better benchmarks, not a dispute about whether measurement can settle the question — nobody argues that a model correctly predicting unseen perturbations would fail to demonstrate the capability."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the missing thing an extraction of signal from raw instrument output, or a learned model that predicts state and behaviour? The gap names 'predictive modeling of cell behavior' and the attached capability is a universal latent-variable model of cellular state — an emulator of the cell standing in for the experiment, which is the surrogate category.",
+      "nearest_alternative": "Sensing and signal processing",
+      "note": "Sensing is a real contender given the multimodal-measurement framing (segmentation, deconvolution, cross-modal registration of omics layers). Rejected because those are inputs to the model rather than the gap itself. Maturity 2-5 years: single-cell foundation models exist now, but generalization to unseen perturbations and cell types is not there."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "dimension": "outcome",
+      "value": "A cell's response to a perturbation it has never seen becomes predictable in silico, so wet-lab capacity shifts from screening candidates to confirming them.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Prediction of the unseen perturbation is the specific thing that becomes possible; 'better understanding of cells' would not be an outcome."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there a ground truth against which a candidate answer can be scored? Yes — fraction of unknown spectra assigned to the correct structure, benchmarked against independently confirmed structures, with an unambiguous direction. The field agrees in advance what counts as a correct assignment.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only would apply if only database coverage or spectral quality were measurable. Rejected because assignment accuracy on held-out unknowns measures the gap itself. No tier-3 tension at all: there is no dispute about what a correct structure determination is."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "dimension": "ai_type",
+      "value": "Sensing and signal processing",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the task recovering a hidden object from instrument output, or emulating an expensive calculation? The gap frames it explicitly as an inverse problem on spectral data with information loss — reconstruction of structure from instrument signal, which the taxonomy places squarely under sensing and signal processing.",
+      "nearest_alternative": "ML surrogates and prediction",
+      "note": "Surrogates is close because the standard attack is a fast forward model (structure to predicted spectrum) used inside a search. Rejected because the forward direction is comparatively solved and the binding step is the inversion, plus one attached capability (microwave spectroscopy for 1:1 mapping) is instrument-side, reinforcing the sensing read. Maturity 2-5 years: NMR and MS elucidation models are strong on drug-like space now, general de novo elucidation of true unknowns is not solved."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "dimension": "outcome",
+      "value": "An unknown compound in a complex mixture — a metabolite, an environmental contaminant, a natural product — becomes identifiable from its spectrum alone, with no authentic standard required.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "The 'no authentic standard' clause is what makes it an outcome rather than a speed-up: it removes a hard precondition, not just effort."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Can the unknown fraction itself be quantified rather than only gestured at? Yes — coverage and rarefaction estimators give a defensible figure for the share of diversity still unsampled, alongside straightforward counts of taxa, genomes and volume of ocean and atmosphere sampled, all with a clear direction.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only is arguable on 'unknown unknowns' grounds — you cannot count what you have not seen. Rejected because estimating unseen diversity from sampling curves is standard practice and directly targets the gap, not an adjacent effect."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "dimension": "ai_type",
+      "value": "Physical build and manipulation",
+      "maturity": "2-5 years",
+      "discriminating_test": "Autonomous experimentation versus physical build, decided explicitly: does the system choose and run experiments in a closed loop at bench scale, or does it deploy hardware into the field? The attached capabilities are ocean exploration systems, dense ocean DNA sampling and atmospheric extremophile mapping — platforms that must be built and deployed into the deep ocean and stratosphere, which the taxonomy assigns to physical build and field deployment.",
+      "nearest_alternative": "Sensing and signal processing",
+      "note": "Sensing (metagenomic assembly, annotating sequence dark matter) is real but is not the throughput limit; getting samplers to depth and altitude at density is. Maturity 2-5 years: autonomous underwater vehicles and robotic samplers work now, sustained global-density autonomous sampling does not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "dimension": "outcome",
+      "value": "The unsampled majority of Earth's genetic diversity enters the record before habitat change erases it, making lineages and biochemistries that currently have no representative in any database available as objects of study.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "The irreversibility framing (information loss) is part of the gap, so the outcome names what stops being lost, not merely what is catalogued."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an observable with an agreed direction? Yes, several and all conventional: existence and efficacy of a licensed vaccine for each named disease, time and cost from candidate to licensure, and burden averted. Nobody disputes what a successful trial endpoint means for these pathogens.",
+      "nearest_alternative": "Proxy only",
+      "note": "Considered Counterfactual required on the 'under-provisioning' framing — the shortfall is against products that should exist but do not. Rejected because the named diseases give an explicit target list, so the gap is a census, not an unobservable. Proxy only rejected because trial efficacy measures the gap directly."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+      "dimension": "ai_type",
+      "value": "Design and optimization search",
+      "maturity": "2-5 years",
+      "discriminating_test": "If funding were unlimited tomorrow, would these products exist? No — TB, Group A Strep and hepatitis C vaccines have absorbed sustained non-market funding and still failed on immunological grounds, so the binding constraint is proposing immunogens and regimens that elicit protection, which is inverse design over a candidate space rather than allocation.",
+      "nearest_alternative": "Coordination and institutional",
+      "note": "Coordination is the obvious read of the word 'under-provisioning' and is correct for some of the portfolio (low-cost therapeutics for low-resource settings, malnutrition interventions). Rejected as primary because the flagship named diseases are scientific failures, not funding failures. Maturity 2-5 years: de novo binder and immunogen design work now in narrow cases, designing protection against an antigenically variable chronic pathogen does not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+      "dimension": "outcome",
+      "value": "Pathogens that have defeated vaccinology for decades — TB, Group A Strep, hepatitis C — move from 'no candidate mechanism of protection is known' to having a development timeline.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Names the state change (unknown to scheduled) rather than 'more vaccines exist', which restates the gap."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an observable with a direction? Yes and it is routinely tracked in the industry: design and documentation hours per project, code-compliance error and rework rates, and cost and schedule variance from tender to completion. There is no dispute about what improvement looks like.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only rejected because labour hours and rework are the gap itself ('complex and labor-intensive'), not an adjacent effect. No tier-3 tension: nobody argues about whether a design satisfies a building code."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "dimension": "ai_type",
+      "value": "Design and optimization search",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the output a document or a design satisfying hard constraints? A building must simultaneously satisfy structural, code, cost, energy and site constraints, so the task is constrained generative search over a defined space, not synthesis of text about buildings.",
+      "nearest_alternative": "LLM reasoning and synthesis",
+      "note": "LLM reasoning genuinely covers a large share of the labour (specifications, code interpretation, drawing annotation, contract documents) and would be the pick if paperwork were the whole gap. Rejected because the attached capability is design of buildings and construction plans, i.e. the artifact itself. Physical build and manipulation rejected outright: the gap is design and planning, not on-site construction robotics. Maturity 2-5 years — generative layout and structural optimization tools exist, end-to-end constructible code-compliant generation does not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "dimension": "outcome",
+      "value": "Hundreds of fully costed, code-compliant building designs become generatable and comparable per project, so how much of the design space gets explored stops being set by available drafting labour.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Weakest outcome in the batch — this gap is closer to an efficiency gain than to something becoming knowable, so the outcome is phrased as the constraint that is removed."
+    }
+  ]
+}

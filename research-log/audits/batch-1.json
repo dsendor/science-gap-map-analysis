@@ -1,0 +1,306 @@
+{
+  "batch": 1,
+  "audited_by": "claude-opus-5",
+  "labels": [
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Does the field agree in advance on what observation would settle the question? Yes: zero resistance plus Meissner flux expulsion plus an independently reproduced isotope effect at a stated T and P is an accepted verdict criterion, and Tc and critical pressure are observables with an unambiguous direction of improvement. The disputes (retracted CSH work, background-subtraction fights) are about data integrity and diamond-anvil-cell sample quality, not about whether the criterion decides the case.",
+      "nearest_alternative": "Verification contested",
+      "note": "Close call. Tier 3 is tempting because the literature is genuinely contested, but tier 3 requires that the field would still disagree after a clean measurement. Here a clean, reproduced Meissner measurement would end the argument, which is why fraud detection rather than verifier ambiguity is what Convergent flags. Rejected tier 3 on that ground."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "Working now",
+      "discriminating_test": "Is the binding constraint generating candidate compositions, or evaluating them accurately enough to spend a scarce megabar experiment? Evaluating. Chemical intuition already supplies more superhydride candidates than can be tested; what decides which of them are worth a diamond-anvil run is predicted electron-phonon coupling and Tc, which is now done with ML interatomic potentials and DFT-based screening at throughput no ab initio pipeline could reach. The hydride predictions that were later confirmed experimentally came from this route.",
+      "nearest_alternative": "Coordination and institutional",
+      "note": "Convergent's only linked capability, 'Conduct Rigorous, Non-Fraudulent Experiments', is an incentive and replication problem, which argues Coordination. Rejected because AI has no traction on fraud incentives, whereas prediction directly answers the gap's own stated question (whether metallic hydrogen superconducts at reachable pressures). Design and optimization search was the third candidate, rejected for the same reason as Coordination: proposal is not the bottleneck."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "dimension": "outcome",
+      "value": "It becomes knowable which hydrogen-rich compositions, if any, superconduct near room temperature at pressures a device could actually sustain, turning a contested and fragmented literature into a screenable design space.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Stated as what becomes knowable (which compositions, at what pressures) rather than the activity (running better experiments)."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Could a measurement in principle be taken with the field still disagreeing about what it showed? Yes. Critical-slowing-down early-warning indicators (rising variance, rising lag-1 autocorrelation, spatial skewness) are actively computed on real ecological time series, and there is live literature arguing they produce false positives and miss real transitions in noisy, spatially extended systems. The gap statement itself concedes the second half: we do not know 'what metrics to use to determine that restoration is effective'.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only would say species counts and biomass are measurable while the tipping point is not. Rejected because candidate discriminating observables are not merely absent, they exist and are being built and argued over, which is the tier 3 wording. Counterfactual required was considered on 'prevent' (a collapse that did not happen) and rejected: regime shifts are observed events (fishery collapses, lake eutrophication, reef bleaching), so an observation set exists."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the blocker seeing the system or modelling its dynamics? The gap names 'the underlying dynamics, feedback loops, and thresholds' as the object, and anticipation requires a model that maps current state to distance-from-threshold. Detection alone cannot do this: you can count every bee and still not know where the pollination network breaks. Maturity is 2-5 years because learned ecosystem dynamics models validated against observed regime shifts do not yet exist at the scale or with the skill the gap requires, unlike the detection layer.",
+      "nearest_alternative": "Sensing and signal processing",
+      "note": "Two of Convergent's three capabilities are monitoring, so Sensing is the obvious pick. Rejected because bioacoustic, eDNA and remote-sensing classification are largely working now and feed the anticipation problem rather than constituting it. This is a defensible disagreement point."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+      "dimension": "outcome",
+      "value": "Which ecosystems are approaching an irreversible transition becomes knowable early enough to intervene, and whether a restoration actually worked becomes checkable against a threshold rather than asserted.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Covers both halves of the gap statement (anticipation and restoration verification) in one sentence."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Could a measurement be taken with the field still disagreeing about what it showed? This is the paradigm case. Reasoning and planning benchmarks exist and are run constantly, and every strong result is immediately followed by an argument over construct validity: contamination, whether the benchmark measures generality or pattern coverage, whether held-out abstraction tests probe cognition. The dispute survives the measurement, which is the tier 3 test.",
+      "nearest_alternative": "Directly measurable",
+      "note": "Directly measurable is superficially right: benchmark scores are numbers with a direction of improvement. Rejected because the contested thing is whether the score is about the construct at all, not whether the score is accurate. Distinguish this from gap 1c1cb37e-2a00-8012 (theorem proving), where a proof checker makes the verdict machine-decidable and the tier drops to 1."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "dimension": "ai_type",
+      "value": "LLM reasoning and synthesis",
+      "maturity": "Speculative",
+      "discriminating_test": "The gap's object is AI reasoning and planning itself, so the type is fixed by subject matter; the real call is maturity. Would this be closed on a 2-5 year horizon? The gap defines closure as breadth comparable to human cognition, and every route Convergent lists (mimic human evolution in silico, developmentally realistic training, holistic brain-inspired architectures, Bayesian cognitive architectures) is an unvalidated research programme rather than a scaling curve. Incremental breadth is shipping now, but 'no longer narrow compared to human cognition' has no demonstrated path, so Speculative.",
+      "nearest_alternative": "2-5 years (same type)",
+      "note": "Taxonomy fit issue: this gap is reflexive. Every other gap asks which AI would move a science problem; here the science problem is AI. The type table has no entry for 'AI capability research itself', and LLM reasoning and synthesis is the least-bad container rather than a clean match. Flagging rather than inventing a value."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "dimension": "outcome",
+      "value": "It becomes knowable whether general planning and reasoning emerge from scaling current training or require architecturally distinct, developmentally grounded systems, and if the latter, such systems become buildable.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Framed as a disjunction that gets resolved, because the gap's own uncertainty is about which route works, not only about the endpoint."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Applying the taxonomy's explicit tiebreaker: could a measurement in principle be taken, with people still disagreeing about what it showed? Yes, and it is taken routinely. Scheming, sandbagging and deceptive-alignment evaluations, and interpretability probes for internal goal representations, are run today, and the field argues hard about whether a passing or failing result tells you anything about a deployed system's behaviour under distribution shift. The instrument exists; the verdict is what is contested.",
+      "nearest_alternative": "Counterfactual required",
+      "note": "This is the hardest tier call in the batch and I expect disagreement here. The tier 4 reading is strong: catastrophic loss of control is an event that has not occurred, so safety-in-deployment has no observation set, exactly like the calibration example of research that never happened. I went tier 3 only because the taxonomy instructs that when torn, the existence of a takeable-in-principle measurement decides it, and eval suites plus mechanistic interpretability are precisely that. If the adjudicator prefers tier 4 here I would not argue hard, and would accept a downgrade to guess."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "dimension": "ai_type",
+      "value": "LLM reasoning and synthesis",
+      "maturity": "2-5 years",
+      "discriminating_test": "Which capability, if it arrived, would let you tell a safe system from an unsafe one? Six of Convergent's eight sub-capabilities (automated interpretability, guaranteed safe architectures, understanding AI psychology, data-poisoning mitigation, non-agentic AI scientists) are AI systems doing reasoning, proof and code at a scale humans cannot match over model internals and specifications. That is the LLM reasoning and synthesis row, applied reflexively. Maturity 2-5 years: automated interpretability agents already produce usable feature explanations, while formally guaranteed safe architectures do not exist at frontier scale.",
+      "nearest_alternative": "Coordination and institutional",
+      "note": "Coordination has a real case: hardware governance is on Convergent's list, and even perfect interpretability closes nothing if no institution requires its use. Rejected because the R&D gap as stated is the inability to see inside and to guarantee, which is a technique deficit; the governance layer is the second-order blocker. Reasonable people land the other way."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "dimension": "outcome",
+      "value": "Whether a given model harbours goals or dispositions its developers did not intend becomes checkable before deployment, rather than inferable only after a failure.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Deliberately an epistemic outcome (what becomes checkable) rather than 'AI becomes safe', which would restate the gap."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "dimension": "measurability",
+      "value": "Verification contested",
+      "discriminating_test": "Could a measurement be taken with the field still disagreeing? Yes. Candidate observables for 'is this model system representative' exist and are being built: predictivity of held-out human neural recordings, representational similarity to human cortex, behavioural match in embodied testbeds. The field does not agree that hitting them establishes validity, because a system can match recorded responses through a different mechanism, and the organoid-versus-human-cortex argument is exactly a dispute about what a match would prove.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only would say we can measure adjacent things (expression similarity, firing statistics) but not representativeness. Rejected on the tier 3 wording 'a candidate observable exists or is being built': digital replicas are being benchmarked against human data right now, so the deficit is verdict agreement, not instrument availability."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "dimension": "ai_type",
+      "value": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the model system that closes this gap a learned emulator or a physical construct? Four of Convergent's seven capabilities (data-driven AI models of brain systems, digital replicas of a whole model-organism brain, embodied testbeds, behaviour-space datasets) are learned emulators standing in for an inaccessible human brain, which is the ML surrogates row verbatim. The wet capabilities (ex vivo human brains, in vitro cortex) are biology where AI is supporting rather than substantive. Maturity 2-5 years: whole-brain digital replicas of a model organism are in progress, not delivered.",
+      "nearest_alternative": "Autonomous experimentation",
+      "note": "Autonomous experimentation would fit if organoid and in vitro cortical model development were the primary route, since that is bench-scale closed-loop work. Rejected because the gap's framing (digital reconstructions, embodied simulations) puts the emulator half first, and because a self-driving lab does not solve 'this model is not human'."
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "dimension": "outcome",
+      "value": "Human-specific brain mechanisms that no rodent or dish currently reproduces become experimentally accessible, so results stop being stranded in the model organism and become testable claims about human brains.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "The outcome is transferability of findings, which is what a non-representative model system destroys."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "dimension": "measurability",
+      "value": "Proxy only",
+      "discriminating_test": "Is there a specific measurement the field would accept as decisive, or only an accumulation of indicators? For quantum gravity, the tier 3 calibration case, the field can name the experiment it is arguing about. Here it cannot: there is no observation whose result would settle whether a polity's collective decision-making is better informed. What can be measured is adoption, turnout, participant counts, cryptographic audit properties and post-deliberation opinion shift, all of which are inputs or adjacent effects. That is the Proxy only definition.",
+      "nearest_alternative": "Verification contested",
+      "note": "The tier 3 case is that deliberative-poll instruments exist and their construct validity is disputed. Rejected because the dispute is not organised around a candidate discriminator anyone expects to be decisive; it is the ordinary condition of a construct with no agreed operationalisation. I flag that this is the second-hardest tier call in the batch, and that a labeler using the literal 'could a measurement be taken' tiebreaker would land on tier 3."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "dimension": "ai_type",
+      "value": "LLM reasoning and synthesis",
+      "maturity": "Working now",
+      "discriminating_test": "What does AI actually contribute here, as opposed to what the gap needs overall? The gap needs cryptography for voting (not AI at all) and language understanding for deliberation. The deliberation half is eliciting, clustering and fairly summarising the positions of a large population and finding statements that bridge factions, which is language synthesis. Working now: consensus-statement generation and opinion-clustering deployments already run at population scale, so the constraint is deployment rather than capability.",
+      "nearest_alternative": "Coordination and institutional",
+      "note": "Coordination is arguable, since the actual blocker is that election authorities and legislatures do not adopt these tools. Rejected because Coordination in this taxonomy covers AI applied to allocation and review, and here AI is doing linguistic work while the institution is the passive adopter. Taxonomy fit note: 'Improved Voting and Auditing Protocols' is cryptography with no AI content, so one of the two capabilities under this gap is outside the taxonomy's frame entirely."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "dimension": "outcome",
+      "value": "What a large public actually thinks after being informed and hearing the strongest objections becomes elicitable at population scale, rather than approximated by polling a sample on unconsidered opinions.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Names the thing that becomes knowable (considered population-scale preferences) rather than the activity (better civic platforms)."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+      "dimension": "measurability",
+      "value": "Proxy only",
+      "discriminating_test": "Is there an observable that moves when and only when the gap closes? No. Supplier concentration, stockpile days, single-points-of-failure counts and drill recovery times all move without robustness necessarily improving, because reducing one dependency commonly relocates the fragility rather than removing it. Those quantities are structural inputs to robustness; robustness itself shows up only under severe shocks, which are rare and not chosen by the analyst.",
+      "nearest_alternative": "Directly measurable",
+      "note": "Directly measurable is defensible if you accept concentration indices as the gap's own quantity. Rejected on the input-versus-outcome test above. Counterfactual required was also weighed and rejected: real disruptions (pandemic, semiconductor shortage, grid failures) supply an observation set, so the gap is not about something that never happened. The exception is Convergent's 'Civilization Reboot Toolkit', which taken alone is genuinely tier 4 since no observation set for a civilizational restart exists; the gap as written is broader than that component."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+      "dimension": "ai_type",
+      "value": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "discriminating_test": "If a perfect robust-supply-chain optimizer existed tomorrow, would supply chains become robust? No, because each firm optimizes its own cost and no actor owns system-level resilience; the optimum the optimizer finds is not the one anyone is paid to implement. Run it the other way: with today's tools plus strategic reserves, mandated redundancy and shared visibility requirements, fragility falls immediately. The blocker is an organisation rather than a technique, which is the Coordination row verbatim.",
+      "nearest_alternative": "Design and optimization search",
+      "note": "Convergent's named capability is literally 'Optimize Circular and Robust Supply Chains', so Design and optimization search is the obvious pick and I expect the original labeler took it. I rejected it under the taxonomy's own instruction that the primary is the type that would move the gap most, not the one most obviously applicable. Maturity 2-5 years: n-tier supplier graph mapping from trade and text data is working now, but AI-assisted allocation and reserve policy is not."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+      "dimension": "outcome",
+      "value": "Which local failures propagate into loss of a critical societal function becomes knowable before the failure, and substitutable, restartable production paths for critical goods become buildable in advance.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Two-clause outcome covering both the fragility-mapping and the backup-mechanism halves of the gap."
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an observable quantity with a direction of improvement that is the gap itself? Yes, several, and they are unambiguous: cubic millimetres reconstructed at synapse resolution, cost and imaging time per unit volume, segmentation and proofreading error rate, fraction of cells with molecular annotation. Nobody disputes what a completed wiring diagram is or how to tell a better one from a worse one; the gap is cost and throughput, which are numbers.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only rejected because reconstructed volume and cost per volume are the gap's own quantities, not adjacent effects. Note the contrast with the model-systems gap in the same field: 'is this map complete and accurate' is decidable, 'is this model representative of a human brain' is not, and that is why the two neuroscience gaps land in different tiers."
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "dimension": "ai_type",
+      "value": "Sensing and signal processing",
+      "maturity": "Working now",
+      "discriminating_test": "Where in the pipeline does AI change the achievable scale? Both places, and both are the same row. Turning terabyte-to-petabyte electron microscopy volumes into a segmented, synapse-annotated graph is detection and reconstruction from instrument data, and the route to faster microscopy is largely reconstruction from sparser, lower-dose acquisition rather than a faster stage. Working now: automated segmentation carried a whole-brain insect connectome to completion, with humans proofreading rather than tracing.",
+      "nearest_alternative": "Physical build and manipulation",
+      "note": "Physical build is arguable via 'Faster Electron Microscopy for Connectomics' as an instrument-engineering problem (automated sectioning, multibeam stages). Rejected because that row is about robotics for fabrication and field deployment, and because the scaling gains AI supplies here are computational reconstruction, not manipulation. Deliberately kept distinct from Autonomous experimentation, which does not apply: nothing here chooses its own experiments."
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "dimension": "outcome",
+      "value": "Synapse-resolution wiring diagrams with molecular cell identity become obtainable for mammalian brains at a price a normal lab can pay, making circuit-level explanations of behaviour and circuit-level signatures of brain disorders testable rather than hypothesised.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "The outcome is that circuit-level claims become testable, which is what invisibility currently prevents."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is the verdict machine-decidable? Yes, uniquely so in this batch. A proof assistant kernel accepts or rejects; there is no version of this field in which a verified proof is disputed, and progress is counted in benchmark pass rates, formalized theorem counts and open conjectures closed. This is the cleanest tier 1 in the batch and the sharpest contrast with the other Computation gaps, where the measurement exists but the verdict does not follow from it.",
+      "nearest_alternative": "Verification contested",
+      "note": "Verification contested would be the reflex for anything about AI reasoning, and it is exactly wrong here: formal verification is what removes the contest. Interesting that the reasoning gap and the theorem-proving gap sit in the same field and different tiers purely because one has a checker."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "dimension": "ai_type",
+      "value": "LLM reasoning and synthesis",
+      "maturity": "Working now",
+      "discriminating_test": "What is the new ingredient, given that automated proof search has existed for decades? Tactic search and SMT solving are old and did not close this gap; what changed is language-model generation of candidate lemmas, informal-to-formal statement translation, and reinforcement learning against prover feedback. That is the reasoning-and-synthesis row, and the taxonomy names mathematical reasoning in it explicitly. Working now: systems already reach competition-olympiad level with machine-checked proofs.",
+      "nearest_alternative": "Design and optimization search",
+      "note": "Design and optimization search fits the shape of proof search over a defined space, and Convergent's capability name ('RL from Interactive Theorem Prover Feedback') has an optimization flavour. Rejected because the search machinery was never the missing piece; the proposal distribution was."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "dimension": "outcome",
+      "value": "Open conjectures become attackable at scale with machine-checked certainty, and large results become verifiable without anyone trusting a referee's reading of a hundred-page argument.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Second clause is the underrated outcome: formalization changes who has to be trusted, not just how fast proofs arrive."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Does an observable with a direction of improvement exist for the gap itself? Yes: kcat, kcat/KM, success rate of designs that fold and function, thermostability under the target extreme condition, and incorporation efficiency of non-canonical residues. A designed enzyme is assayed and either turns over substrate or does not; no one disputes what the assay showed.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only rejected: in vitro activity is the quantity of interest, not an adjacent effect. The 'novelty' half of the gap (is this design truly non-biomimetic?) is fuzzier, but it is not what determines whether the gap has closed."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "dimension": "ai_type",
+      "value": "Design and optimization search",
+      "maturity": "2-5 years",
+      "discriminating_test": "Is the blocker predicting properties of given candidates, or generating candidates outside the natural distribution? Generating. Structure prediction on natural-like sequences is solved well enough that it is no longer what limits novel function; the gap explicitly says designs are stuck being bio-mimetic, which is a statement about the proposal distribution, and inverse design methods (backbone generation conditioned on a catalytic geometry, sequence design onto that backbone) are what move it. Maturity 2-5 years, not Working now: de novo binders and static scaffolds work today, but long-range dynamic and allosteric mechanisms have not been recapitulated de novo, and that is precisely the 'static' limitation this gap names.",
+      "nearest_alternative": "ML surrogates and prediction",
+      "note": "This is the pressure point the protocol predicts (design search versus surrogates), and the two are genuinely coupled because the design loop scores candidates with predictors. Split on which side the gap statement locates the failure: it says designs are too conservative, not that scoring is inaccurate, so the generator is primary. Maturity checked against current literature rather than assumed."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "dimension": "outcome",
+      "value": "Enzymes with catalytic mechanisms, conformational dynamics and chemistries that no natural protein exhibits become buildable, opening reaction space that evolution never explored.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "'Reaction space evolution never explored' is the buildable outcome; 'better protein design tools' would have been the activity."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Is there an agreed observable with a direction of improvement? Yes, and fusion has unusually well-policed ones: energy confinement time, the triple product, Q, disruption rate per shot, and time sustained before an instability terminates the discharge. The field argues about which machine concept will get there, not about what the numbers mean when a shot ends.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only rejected because confinement time and Q are the gap's own quantities, not adjacent ones. Note the contrast with the superconductivity gap in the same field: both are tier 1, and both have contested claims about specific results, which is a reminder that contested results are not the same thing as contested verification."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "dimension": "ai_type",
+      "value": "Design and optimization search",
+      "maturity": "Working now",
+      "discriminating_test": "The gap asks for confinement that is both robust and compact, and compactness is set at design time by the magnetic geometry, not at run time by the controller. Optimized-stellarator and coil-set design is inverse design over a defined configuration space, and it is the route by which AI enlarges the set of confinement geometries that are buildable at all; actuator-trajectory planning for a discharge falls into the same row as 'experiment planning over a defined space'. Working now: both optimized-geometry design pipelines and learned magnetic control on real tokamaks have been demonstrated on hardware.",
+      "nearest_alternative": "ML surrogates and prediction",
+      "note": "Fast learned MHD and turbulent-transport emulators are indispensable and could be argued as primary. Rejected because they serve the search loop; the leverage is in which configurations get searched, not in emulating one configuration faster. Taxonomy fit issue worth recording: real-time closed-loop control of a physical system has no home in the seven types. It is not Autonomous experimentation (the controller does not choose experiments) and not Physical build. I placed it under Design and optimization search as least-bad; a control row would be a defensible taxonomy revision."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "dimension": "outcome",
+      "value": "Confinement geometries that hold a burning plasma stably at a size and cost a utility could build become identifiable before a device is constructed, making the engineering case for fusion decidable on hardware rather than in argument.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Compactness is the load-bearing word: a stable plasma in an arbitrarily large machine is not what closes this gap."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "dimension": "measurability",
+      "value": "Directly measurable",
+      "discriminating_test": "Does an observable exist for each of the three named sub-problems? Yes: separation factor and energy per kilogram for acquiring and concentrating, recovery yield and purity for waste streams, and maximum energy product plus coercivity at operating temperature for substituting neodymium. Every one has an undisputed direction of improvement, and a separation either achieves the factor or does not.",
+      "nearest_alternative": "Proxy only",
+      "note": "Proxy only rejected: these are the gap's own quantities. The economic framing ('cost of materials is dominated by cost to obtain elements') might suggest cost is a proxy, but cost here is a direct readout of separation energy and yield."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "dimension": "ai_type",
+      "value": "Autonomous experimentation",
+      "maturity": "Working now",
+      "discriminating_test": "Is the shortage candidates or measured results? Candidates. Generative materials screening already produces far more predicted compositions and extractant ligands than anyone can test, and predicted selectivity for lanthanide separation is unreliable because solvation thermodynamics between adjacent f-block elements are nearly degenerate, so the loop only closes by measuring. The required work is bench-scale and in a well-defined parameter space (pH, ligand equivalents, solvent, temperature), which is exactly where closed-loop platforms operate today and where high-throughput rare-earth precipitation screens already separate Nd/Dy and La/Nd at lab scale.",
+      "nearest_alternative": "Design and optimization search",
+      "note": "Explicitly checked against Physical build and manipulation, the pair the protocol warns about, and it is not close: this is liquid handling and small-sample synthesis on a bench, not fabrication, assembly or field deployment. Design and optimization search is the real nearest alternative and was rejected on the candidates-versus-measurement test above. Maturity Working now is qualified: most deployed platforms are supervised rather than fully autonomous, so 'Working now' means the bench-scale narrow-domain sense the taxonomy itself specifies. Separately, industrial scale-up of a separation process is plant engineering that no row in the taxonomy covers."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "dimension": "outcome",
+      "value": "Which functions genuinely require a scarce element and which can be delivered by an abundant substitute becomes knowable, turning element supply from a geological constraint into a design variable.",
+      "discriminating_test": "n/a",
+      "nearest_alternative": "n/a",
+      "note": "Captures the gap's own claim that the critical-minerals framing masks a scientific question about substitution."
+    }
+  ]
+}

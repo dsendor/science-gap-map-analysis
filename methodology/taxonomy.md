@@ -47,9 +47,37 @@ the finding.
 
 Maturity, for the type identified: `Working now` | `2-5 years` | `Speculative`.
 
+**Maturity is always relative to this gap, never to the capability class in general.**
+Both readings are defensible and they give different answers, so the convention is
+fixed here: ask *how mature is this capability class for moving this particular gap*,
+not *how mature is this capability class somewhere*. Autonomous experimentation is
+`Working now` in chemical formulation and `Speculative` for anything requiring a robot
+to assemble an observatory — same class, different gap, different answer. This was
+raised independently by two blind auditors as ambiguous in an earlier revision; the
+existing labels already follow the for-this-gap reading, so pinning it down changes no
+label but makes the disagreement rate on maturity interpretable.
+
 Multiple types per gap are allowed and expected. Exactly one is marked primary — the
 one that would move the gap *most*, which is not always the one most obviously
 applicable. The primary is what the cross-tabs use.
+
+### Known limits of this dimension
+
+Two cases where the taxonomy is a poor fit rather than a hard call, both surfaced by
+blind audit. Label the dominant component, flag `guess`, and say so in the notes —
+do not force a clean answer:
+
+- **Gaps where AI is the object rather than the instrument.** "AI Could Be Misused" and
+  "AI Could Go Rogue" ask which AI capability would move a gap *about AI*. There is no
+  safety-and-robustness-research category among the seven, and the nearest fits
+  (`LLM reasoning and synthesis` for automated red-teaming, `Coordination and
+  institutional` for governance) are both partial.
+- **Composite gaps.** "We Can Learn More from Nature's Biological Designs" spans
+  nanostructure imaging, animal communication, Hadean geology and an Europa mission;
+  "Underdevelopment of Modern Tools in the Social Sciences" spans qualitative methods,
+  question prioritisation and satellite archaeology. Their sub-components would take
+  different types *and different tiers*. A single primary is a real loss of information
+  and the artifact should say so rather than pretend otherwise.
 
 Revise the taxonomy if the data argues for it. Any revision writes a `decisions` row
 with the runner-up and a reversal condition.

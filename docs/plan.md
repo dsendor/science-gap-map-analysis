@@ -44,7 +44,7 @@ Confirmed all five of the brief's "known holes", and found three more — most u
 that **`capabilities[].gaps` is empty for all 369 capabilities** despite being
 documented in their own `schema.json`. All 389 edges live only on the gap side.
 
-### Phase 1 — Full coverage (outcomes 1–3)
+### Phase 1 — Full coverage (outcomes 1–3) ✅ complete
 
 All 103 gaps get an outcome sentence, an AI capability type + maturity, and a
 measurability tier, each with a rationale and a confidence flag. Fanned out by field
@@ -55,7 +55,7 @@ Full coverage on one cheap dimension is the strongest part of the demo, so this 
 where the budget goes. Taxonomy revisions are permitted where the data argues for
 them, and each writes a `decisions` row.
 
-### Phase 2 — Audit
+### Phase 2 — Audit ✅ complete
 
 `agents/auditor.md` blind-relabels a stratified sample. The disagreement rate is
 computed per dimension and **published**, not tuned. Unresolved disagreements downgrade
@@ -66,6 +66,19 @@ that LLM-shaped work is largely saturated and most remaining gaps are limited by
 physical build, fabrication, or institutions. **If the data shows that, it is a
 quantitative version of the claim using someone else's dataset. If it does not, that is
 a genuine and reportable surprise, and it gets reported as one.**
+
+**Result: confirmed, by a sharper mechanism than predicted.** See `docs/findings.md`.
+The count is real — physical build, institutional coordination and autonomous
+experimentation take 37 of 103 primaries against 10 for LLM reasoning — but the stronger
+result is the maturity gradient: the share of each capability type already working now
+runs monotonically from 60% for LLM reasoning to **0% for physical build**, which never
+reaches working-now anywhere in the map.
+
+Population-weighted tier disagreement was 15%; AI-type disagreement 33%. The audit also
+established that the **`Proxy only` tier cannot be applied reliably** (78% disagreement,
+against 0% for `Directly measurable` and 9% for `Verification contested`), so every
+`Proxy only` assignment was downgraded to `guess`. The two tiers that carry the argument
+are the two that held up.
 
 ### Phase 3 — Progress indicators (outcome 4)
 

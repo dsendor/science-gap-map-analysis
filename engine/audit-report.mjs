@@ -128,6 +128,59 @@ for (const dim of ['measurability', 'ai_type']) {
   }
 }
 
+w('## What this shows');
+w();
+const wn = {}, tot = {};
+for (const r of all("SELECT ai_type, maturity, count(*) c FROM gap_ai_types WHERE is_primary=1 GROUP BY ai_type, maturity")) {
+  tot[r.ai_type] = (tot[r.ai_type] || 0) + r.c;
+  if (r.maturity === 'Working now') wn[r.ai_type] = r.c;
+}
+const gradient = Object.keys(tot)
+  .map((t) => ({ type: t, wn: wn[t] || 0, tot: tot[t], pct: 100 * (wn[t] || 0) / tot[t] }))
+  .sort((a, b) => b.pct - a.pct);
+
+w('### AI maturity tracks verifiability, not importance');
+w();
+w('Share of each capability type\'s primary assignments that are already **working now**:');
+w();
+w('| Primary AI type | Working now | Total | Share |');
+w('|---|---:|---:|---:|');
+for (const g of gradient) w(`| ${g.type} | ${g.wn} | ${g.tot} | ${g.pct.toFixed(0)}% |`);
+w();
+const top = gradient[0], bottom = gradient[gradient.length - 1];
+w(`The gradient runs from **${top.type}** at ${top.pct.toFixed(0)}% down to **${bottom.type}** at ${bottom.pct.toFixed(0)}%. Not one gap in the entire map has physical build and manipulation as a working-now primary: all ${tot['Physical build and manipulation']} of them sit at 2-5 years or speculative. Coordination and institutional manages ${wn['Coordination and institutional'] || 0} of ${tot['Coordination and institutional']}.`);
+w();
+w('This is the ordering the verifier\'s-law framing predicts. Where feedback is fast and objective, AI has arrived. Where it is slow, contested, or absent, it has not.');
+w();
+
+const llmWn = one("SELECT count(*) c FROM gap_ai_types WHERE is_primary=1 AND ai_type='LLM reasoning and synthesis' AND maturity='Working now'").c;
+const llmWnProxy = one("SELECT count(*) c FROM gap_ai_types a JOIN gap_measurability m ON m.gap_id=a.gap_id WHERE a.is_primary=1 AND a.ai_type='LLM reasoning and synthesis' AND a.maturity='Working now' AND m.tier!='Directly measurable'").c;
+w('### Where the cognitive tools have arrived, the field often cannot tell whether they helped');
+w();
+w(`LLM reasoning and synthesis is the primary capability for only ${tot['LLM reasoning and synthesis']} of 103 gaps, and ${llmWn} of those are working now — the highest working-now share of any type. But ${llmWnProxy} of those ${llmWn} sit outside tier 1, mostly at proxy-only measurability.`);
+w();
+w('Metascience is the clearest instance. Its two gaps with a working-now LLM primary, literature synthesis and fraud detection, are both proxy-only: retractions measure detection capability, not fraud prevalence, and synthesis benchmarks do not measure whether knowledge became cumulative. Its one gap with a purely institutional primary is the map\'s only counterfactual-required case.');
+w();
+
+const nonCog = one("SELECT count(*) c FROM gap_ai_types WHERE is_primary=1 AND ai_type IN ('Physical build and manipulation','Coordination and institutional','Autonomous experimentation')").c;
+w('### The expected finding, tested');
+w();
+w(`The prediction recorded before labeling was that LLM-shaped work would prove largely saturated and that most remaining gaps would be limited by physical build, fabrication, or institutions. **Confirmed, and by a sharper mechanism than expected.** Physical build, institutional coordination and autonomous experimentation together take ${nonCog} of 103 primaries (${(100 * nonCog / 103).toFixed(0)}%), against ${tot['LLM reasoning and synthesis']} for LLM reasoning. The stronger result is not the count but the maturity gradient above: the constraint is not that few gaps are cognitive, it is that the non-cognitive categories never reach working-now at all.`);
+w();
+w('### A category that does not work');
+w();
+w('The audit found that **Proxy only cannot be applied reliably.** It ran 78% disagreement against 0% for Directly measurable and 9% for Verification contested, and all three auditors independently reported it was repeatedly the nearest alternative and almost never won. Every Proxy only assignment has therefore been downgraded to `guess`, including the ones the auditor did not sample.');
+w();
+w('This matters for reading everything above: the tiers that carry the argument are the two that held up. Tier 1 and tier 3 are reliable; the residual category between them is not, and a future version should either define it more sharply or drop it.');
+w();
+w('### Taxonomy gaps found by audit');
+w();
+w('Three cases where the seven-type taxonomy has no right answer, all surfaced independently by blind auditors:');
+w();
+w('- **Closed-loop control of a physical system** has no home. Fusion plasma control chooses no experiments, so it is not autonomous experimentation, and it builds nothing, so it is not physical build. This is a defensible eighth category.');
+w('- **Gaps where AI is the object rather than the instrument** (AI misuse, rogue AI, narrow reasoning) have no safety-and-robustness-research bucket.');
+w('- **Composite gaps** bundle sub-problems that would take different types *and different tiers*, so a single primary loses real information.');
+w();
 w('## Confidence flags');
 w();
 w('| Dimension | Confident | Guess |');
