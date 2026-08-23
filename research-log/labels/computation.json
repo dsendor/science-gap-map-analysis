@@ -34,7 +34,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
       "outcome": {
-        "outcome": "You can check a claim about an AI system against its internals, rather than infer it from behaviour on tests the system may recognise.",
+        "outcome": "You can check a claim about an AI system against its internals. Today the evidence is behavior on tests the system may recognize.",
         "rationale": "Their capability list leads with automated interpretability and guaranteed-safe architectures, both aimed at making assurance verifiable.",
         "confidence": "confident"
       },
@@ -85,7 +85,7 @@
     {
       "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
       "outcome": {
-        "outcome": "We get a second example of complex evolved computation to generalise from. At present biology is the only one.",
+        "outcome": "We get a second example of complex evolved computation to generalize from. At present biology is the only one.",
         "rationale": "Their description states the problem as biology being the sole example; the unlock is a second one.",
         "confidence": "confident"
       },
@@ -107,7 +107,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80b3-aab7-d6e108c54123",
       "outcome": {
-        "outcome": "Whole classes of vulnerability stop being possible, rather than being found and patched one at a time.",
+        "outcome": "Whole classes of vulnerability stop being possible. Today they are found and patched one at a time.",
         "rationale": "Their description names formal methods and verification as the route, and the unlock is elimination rather than detection.",
         "confidence": "confident"
       },

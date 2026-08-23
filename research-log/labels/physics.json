@@ -34,7 +34,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
       "outcome": {
-        "outcome": "Turbulence gets predicted at engineering cost. That removes the largest single source of uncertainty in climate, aerospace and fusion modelling at once.",
+        "outcome": "Turbulence gets predicted at engineering cost. That removes the largest single source of uncertainty in climate, aerospace and fusion modeling at once.",
         "rationale": "Turbulence is a shared upstream dependency, so the downstream unlock spans several fields at once.",
         "confidence": "confident"
       },
@@ -56,7 +56,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ad-a913-d3a908406535",
       "outcome": {
-        "outcome": "Look inside a material at the nanoscale and trace its bulk behaviour to the internal features that cause it.",
+        "outcome": "Look inside a material at the nanoscale and trace its bulk behavior to the internal features that cause it.",
         "rationale": "Their description names understanding properties at the nanoscale as the loss from inadequate imaging.",
         "confidence": "confident"
       },
@@ -187,7 +187,7 @@
     {
       "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
       "outcome": {
-        "outcome": "A superconductivity claim can be settled in weeks rather than argued for years and retracted.",
+        "outcome": "A superconductivity claim can be settled in weeks. The current alternative is years of argument and a retraction.",
         "rationale": "Their capability is stated as conducting rigorous, non-fraudulent experiments, which makes adjudication the unlock rather than discovery.",
         "confidence": "confident"
       },

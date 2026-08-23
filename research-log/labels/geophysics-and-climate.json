@@ -63,7 +63,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ff-986f-d66a6d646d7d",
       "outcome": {
-        "outcome": "Climate interventions get evaluated before anyone commits to them, because Earth system models can represent tipping behaviour and the human feedbacks that drive it.",
+        "outcome": "Climate interventions get evaluated before anyone commits to them, because Earth system models can represent tipping behavior and the human feedbacks that drive it.",
         "rationale": "Their description names both halves: tipping-point prediction and the nonlinear economic and social coupling.",
         "confidence": "confident"
       },
@@ -85,7 +85,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8058-9458-d04c0edfd1b8",
       "outcome": {
-        "outcome": "Aerosol-cloud interaction and ocean heat transport dominate climate uncertainty. Observe them at model resolution and they stop having to be parameterised.",
+        "outcome": "Aerosol-cloud interaction and ocean heat transport dominate climate uncertainty. Observe them at model resolution and they stop having to be parameterized.",
         "rationale": "Their description ties poor prediction directly to insufficient observation of specific named processes.",
         "confidence": "confident"
       },
@@ -107,7 +107,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
       "outcome": {
-        "outcome": "Emergency climate intervention is either a real option or ruled out, decided at meaningful scale and in advance rather than under duress.",
+        "outcome": "Emergency climate intervention is either a real option or ruled out, decided at meaningful scale and while nobody is under duress.",
         "rationale": "Their description frames the loss as preparedness: untested principles mean no usable option in a rapid-change scenario.",
         "confidence": "confident"
       },

@@ -63,7 +63,7 @@
     {
       "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
       "outcome": {
-        "outcome": "Molecular identity and position get read inside intact three-dimensional tissue, so spatial maps describe real organs rather than dissociated cells.",
+        "outcome": "Molecular identity and position get read inside intact three-dimensional tissue, so spatial maps describe real organs.",
         "rationale": "Their description names the loss caused by dissociation and the value of measuring within intact specimens.",
         "confidence": "confident"
       },

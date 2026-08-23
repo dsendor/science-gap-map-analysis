@@ -5,7 +5,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80fb-9bbd-cbbe06f1776e",
       "outcome": {
-        "outcome": "Quantum-chemical accuracy at molecular-dynamics cost. Reaction energetics get screened computationally instead of measured one system at a time.",
+        "outcome": "Quantum-chemical accuracy at molecular-dynamics cost. Reaction energetics get screened computationally, a system at a time no longer being the unit.",
         "rationale": "Their description names surrogate models and AI-accelerated quantum chemistry as the underexploited route; the unlock is the accuracy-cost tradeoff collapsing.",
         "confidence": "confident"
       },
@@ -27,7 +27,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80fb-9659-f73deeec29c5",
       "outcome": {
-        "outcome": "You can look at where the atoms actually are, instead of inferring arrangement from bulk averages, and tie a material's properties to its real structure.",
+        "outcome": "You can see where the atoms actually sit, and tie a material's properties to that arrangement. Today those properties are inferred from bulk averages.",
         "rationale": "Their description frames the loss as understanding properties at the most fundamental level.",
         "confidence": "confident"
       },
@@ -49,7 +49,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80f9-8c4d-fa70c0da8ada",
       "outcome": {
-        "outcome": "Synthesis routes get planned rather than discovered. Most of chemical space has never been tested, and reaction outcomes across it turn predictable.",
+        "outcome": "Most of chemical space has never been tested. Reaction outcomes across it turn predictable, and a synthesis route becomes something you plan.",
         "rationale": "Their description names the missing ingredient as large synthesis and processing datasets enabling predictive models.",
         "confidence": "confident"
       },
@@ -78,7 +78,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
       "outcome": {
-        "outcome": "Read the structure straight off the spectrum. Crystallisation and purification drop out of the critical path for structure determination.",
+        "outcome": "Read the structure straight off the spectrum. Crystallization and purification drop out of the critical path for structure determination.",
         "rationale": "Their description frames it as an inverse problem where information is lost; recovering it removes the slow experimental step.",
         "confidence": "confident"
       },
@@ -136,7 +136,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8043-bb0a-f10b4d7f65c8",
       "outcome": {
-        "outcome": "Smell turns into a measurement. Predict perceived odour from structure and chemical sensing becomes diagnostic rather than descriptive.",
+        "outcome": "Smell turns into a measurement. Predict perceived odor from structure and chemical sensing becomes diagnostic.",
         "rationale": "Their description names flavour science, disease diagnostics and animal communication as the downstream unlocks.",
         "confidence": "confident"
       },

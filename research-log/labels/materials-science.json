@@ -5,7 +5,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80f5-b3d1-d19cab7aeec3",
       "outcome": {
-        "outcome": "Fusion first walls, radiative cooling coatings and high-temperature ductile ceramics get made in tonnes rather than in grams.",
+        "outcome": "Fusion first walls, radiative cooling coatings and high-temperature ductile ceramics get made in tons rather than in grams.",
         "rationale": "Their description lists concrete blocked applications and names cost of scaled synthesis, not discovery, as the obstacle.",
         "confidence": "confident"
       },
@@ -34,7 +34,7 @@
     {
       "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
       "outcome": {
-        "outcome": "Crystallisation gets planned instead of attempted. The trial-and-error step that currently gates structure determination for hard molecules goes away.",
+        "outcome": "Crystallization becomes something you plan. The trial-and-error step that currently gates structure determination for hard molecules goes away.",
         "rationale": "Their description names computational models of crystal growth as the route to guiding experiment.",
         "confidence": "confident"
       },

@@ -34,7 +34,7 @@
     {
       "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
       "outcome": {
-        "outcome": "Complete wiring diagrams with molecular annotation, affordable at brain scale. Circuit-level explanations of behaviour and disorder turn testable rather than assumed.",
+        "outcome": "Complete wiring diagrams with molecular annotation, affordable at brain scale. Circuit-level explanations of behavior and disorder become testable.",
         "rationale": "Their description ties the gap directly to diagnosis, treatment and grounding safety principles for brain-like AI.",
         "confidence": "confident"
       },
@@ -92,7 +92,7 @@
     {
       "gap_id": "1b4cb37e-2a00-80da-94b7-d6c79e96cf17",
       "outcome": {
-        "outcome": "Watch large neural populations at single-neuron resolution and behavioural timescales in a living brain, instead of reconstructing circuits from averages.",
+        "outcome": "Watch large neural populations at single-neuron resolution and behavioral timescales in a living brain.",
         "rationale": "Their description names fast, high-resolution, non-destructive recording as the requirement for unravelling circuit interplay in real time.",
         "confidence": "confident"
       },

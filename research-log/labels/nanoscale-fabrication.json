@@ -27,7 +27,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
       "outcome": {
-        "outcome": "Put atoms where you want them rather than where chemistry prefers. Arbitrary molecular structures turn buildable instead of merely discoverable.",
+        "outcome": "Put atoms where you want them, not where chemistry prefers. Arbitrary molecular structures turn buildable.",
         "rationale": "Their description traces the ambition from Feynman and Drexler through DNA origami to protein carpentry, and the unlock is positional control itself.",
         "confidence": "confident"
       },
@@ -56,7 +56,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
       "outcome": {
-        "outcome": "Cells get built from specified parts. Synthetic biology stops inheriting mechanisms that nobody has characterised.",
+        "outcome": "Cells get built from specified parts, so synthetic biology stops inheriting mechanisms nobody has characterized.",
         "rationale": "Their description names the reliance on kludgy evolved cells as the limit on fully customisable biological systems.",
         "confidence": "confident"
       },

@@ -34,7 +34,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8099-b97a-ce85f02ab5a5",
       "outcome": {
-        "outcome": "Whether quantum coherence does anything functional in biology gets settled experimentally rather than argued theoretically.",
+        "outcome": "Whether quantum coherence does anything functional in biology gets settled in a lab.",
         "rationale": "Their description is explicit that predictions exist and direct evidence does not; the unlock is adjudication.",
         "confidence": "confident"
       },
@@ -107,7 +107,7 @@
     {
       "gap_id": "1c1cb37e-2a00-808d-9e6c-d7c767eee358",
       "outcome": {
-        "outcome": "Image the same living cell at nanoscale again and again. Subcellular dynamics get watched directly rather than reconstructed from fixed snapshots of different cells.",
+        "outcome": "Image the same living cell at nanoscale again and again. Subcellular dynamics get watched as they happen.",
         "rationale": "Their description names the loss precisely: destruction forecloses longitudinal study of one specimen.",
         "confidence": "confident"
       },
@@ -165,7 +165,7 @@
     {
       "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
       "outcome": {
-        "outcome": "Origin-of-life research and biosignature detection get a testable target instead of a definitional argument, because there is an operational line between living and nonliving matter.",
+        "outcome": "There is an operational line between living and nonliving matter, so origin-of-life research and biosignature detection get a testable target.",
         "rationale": "Their description asks precisely for a framework precise enough to be practically useful, which is what biosignature work currently lacks.",
         "confidence": "confident"
       },

@@ -1,5 +1,6 @@
 const PAGES = [
   { href: '', label: 'The argument' },
+  { href: 'attributes/', label: 'The attributes' },
   { href: 'map/', label: 'The extended map' },
   { href: 'chains/', label: 'Critical paths' },
   { href: 'indicators/', label: 'Indicators' },

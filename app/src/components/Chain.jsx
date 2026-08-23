@@ -8,7 +8,8 @@ export default function Chain({ path }) {
   const isTime = path.links.some((l) => l.duration_years != null);
   const total = path.links.reduce((a, l) => a + (l.duration_years ?? 0), 0);
   const bind = path.links.filter((l) => l.is_binding);
-  const bindYears = bind.reduce((a, l) => a + (l.duration_years ?? 0), 0);
+  const aiYears = path.links.filter((l) => l.ai_acts).reduce((a, l) => a + (l.duration_years ?? 0), 0);
+  const restYears = total - aiYears;
   const maxYears = Math.max(...path.links.map((l) => l.duration_years ?? 0), 1);
 
   return (
@@ -30,7 +31,10 @@ export default function Chain({ path }) {
             <div key={l.seq} className={l.is_binding ? 'node bind' : 'node'}>
               <span className="seq">
                 {l.seq}
-                {l.is_binding ? ' · binding' : ''}
+                {[l.ai_acts && 'AI acts here', l.is_binding && l.duration_years == null && 'carries the cost']
+                  .filter(Boolean)
+                  .map((m) => ` · ${m}`)
+                  .join('')}
               </span>
               {l.link.includes(' (') ? (
                 <>
@@ -68,20 +72,19 @@ export default function Chain({ path }) {
         {isTime ? (
           <p style={{ fontSize: 15, marginTop: 16, marginBottom: 0 }}>
             <strong>
-              {bindYears} of {total} years sit in the {bind.length} binding steps.
+              AI acts on {aiYears} of the {total} years.
             </strong>{' '}
-            The four non-binding steps come to {(total - bindYears).toFixed(1)} years, and those are
-            the only ones any current AI capability touches. Making every one of them instant leaves
-            a frontier telescope taking {bindYears} years.
+            Zero all of it and a frontier telescope still takes {restYears}. No vocabulary needed
+            beyond addition: the steps run one after another, so every one of them adds.
           </p>
         ) : (
           <p style={{ fontSize: 15, marginTop: 16, marginBottom: 0 }}>
             <strong>
-              {bind.length} of {path.links.length} steps bind.
+              {bind.length} of the {path.links.length} steps carry the cost,
             </strong>{' '}
-            A step that does not bind can be made free without changing the total — which is what
-            makes the first two steps here, the ones AI has already taken over, the wrong place to
-            have won.
+            and AI acts on {path.links.filter((l) => l.ai_acts).length} steps, two of which are not
+            among them. Cost here is additive rather than sequential, so &ldquo;carries the cost&rdquo;
+            means where the labor concentrates.
           </p>
         )}
       </div>

@@ -24,9 +24,10 @@ export default function Page() {
             <h1>AI is accelerating science. The Gap Map should show where.</h1>
             <p className="lead">
               You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I added four
-              attributes to every one of them to see where AI has already arrived, then traced two
-              gaps step by step to check that answer. The two methods disagree, and the disagreement
-              is the useful part.
+              attributes to every one of them to see what kind of work is actually in the way, then
+              decomposed two gaps into their steps to test whether a one-line label can be trusted.
+              The labels held. What the traces added was where the AI speedup is going, and why some
+              of it is not being collected.
             </p>
             <p>
               What I would like is your feedback on whether these are the right attributes, and a
@@ -56,6 +57,10 @@ export default function Page() {
         <section>
           <div className="col">
             <h2>What I added</h2>
+            <p>
+              Four attributes on all {s.n_gaps} gaps.{' '}
+              <a href="./attributes/">What each one is, and where each one breaks</a>.
+            </p>
             <ul>
               <li>
                 <strong>An outcome.</strong> What becomes knowable or buildable if this gap closes.
@@ -90,8 +95,12 @@ export default function Page() {
           <div className="col">
             <h2>What I found</h2>
             <p>
-              {workingNow} of the {s.n_gaps} gaps have a primary blocker that current AI can already
-              work on, and the arrival tracks how fast you can check an answer.
+              {workingNow - 1} of the {s.n_gaps} gaps have a primary blocker that current AI can act
+              on today. That is a snapshot and a coarse one: I labelled what kind of work each gap
+              needs and whether the relevant capability works, and I did not measure how much faster
+              anything actually got. Working out the size of the speedup is the obvious next piece of
+              work, and a single primary label also hides both AI and non-AI opportunities across the
+              other {s.n_gaps - workingNow + 1}.
             </p>
           </div>
 
@@ -100,8 +109,11 @@ export default function Page() {
               <MaturityGradient aiTypes={s.ai_type} maturityByType={s.maturity_by_ai_type} />
               <figcaption>
                 For each kind of work, the share of the gaps it primarily blocks where the relevant AI
-                capability already works. All {s.n_gaps} gaps, one primary kind each. This is a
-                snapshot, not a trend: I did not label these gaps at any earlier date.
+                capability already works. All {s.n_gaps} gaps, one primary kind each. A snapshot, not
+                a trend: I did not label these gaps at any earlier date. The single working-now case
+                under coordination and institutional is <em>Ephemeral Societal Data on Proprietary
+                Platforms</em>, where the archiving is technically solved and the blocker is entirely
+                legal and financial, so I leave it out of the count above.
               </figcaption>
             </div>
           </figure>
@@ -110,19 +122,29 @@ export default function Page() {
             <p style={{ marginTop: 22 }}>
               {llm['Working now']} of the {llmTot} gaps blocked by reading and synthesis are served
               today. All {buildTot} blocked by physical build sit at two-to-five years or speculative.
+              What separates the top of that list from the bottom is how much physical world is
+              involved.
             </p>
 
-            <h3 style={{ marginTop: 34 }}>Then the chains disagree with the attributes</h3>
+            <h3 style={{ marginTop: 34 }}>Then the chains show what a one-line label compresses</h3>
             <p>
-              An attribute describes a gap from outside. A critical path describes it from the inside,
-              by breaking the gap into the steps that have to happen and putting a duration or a cost
-              on each. <strong>The step that sets the total is the binding one.</strong> Shorten a
-              binding step and the total moves. Make any other step free and nothing happens.
+              An attribute is one line. A critical path breaks the gap into the steps that have to
+              happen and puts a duration or a cost on each of them.
             </p>
             <p>
-              Take a gap where AI has visibly arrived:{' '}
-              <em>Doing and publishing research is expensive and subject to structural roadblocks</em>.
-              Reading and synthesis on it already works. Drafting and screening are done.
+              Take <em>Doing and publishing research is expensive and subject to structural
+              roadblocks</em>. My label says the work in the way is coordination and institutional.
+              Seven steps later the trace agrees, and says where: the cost sits in finding reviewers,
+              agreeing what a review means, and getting institutions to count the work. A one-line
+              label predicted where a seven-step decomposition would land, which is the result I would
+              want before adopting the attribute.
+            </p>
+            <p>
+              The surprise is elsewhere. AI has arrived on this gap, and it arrived on the two steps
+              that carry no cost. Where it reaches a step that does carry cost, it reaches the wrong
+              half: it can match a reviewer to a paper, and it cannot make that reviewer say yes. One
+              step got actively worse. Submissions rose 42% over five years in the one corpus where a
+              journal has published full figures, and that load landed on reviewer recruitment.
             </p>
           </div>
 
@@ -130,25 +152,24 @@ export default function Page() {
             <div className="pad">
               <ChainMini path={publishing} />
               <figcaption style={{ marginTop: 14 }}>
-                Cost, measured in reviewer and editor labour. Three of the seven steps set the total,
-                and the two AI has taken over are not among them.
+                Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI
+                acts on the first four steps, but on steps 3 and 4 it reaches only the tractable
+                half: matching a reviewer to a paper, not persuading them to say yes.
               </figcaption>
             </div>
           </div>
 
           <div className="col">
-            <p style={{ marginTop: 22 }}>
-              Three steps set the cost: finding reviewers, agreeing what a review means, and getting
-              institutions to count the work. None is cognitive. And the step AI took over made one of
-              them worse. Submissions rose 42% over five years in the one corpus where a journal has
-              published full figures, and that load landed on reviewer recruitment, which was already
-              binding.
-            </p>
             <div className="pull">
+              <p>
+                The speedup on this gap is real and mostly uncollectable. Publishing did not get
+                cheaper, because the steps AI took over were not the ones setting the cost.
+              </p>
               <p style={{ marginBottom: 0 }}>
-                A gap can look partly solved from its attributes and stay blocked in practice. That is
-                the argument for tracing gaps individually rather than scoring them, and it is what I
-                would most like to work on with you.{' '}
+                That is what makes the remaining steps worth more than they used to be. Clearing
+                reviewer recruitment now returns the recruitment saving <em>and</em> lets the drafting
+                speedup finally show up. The more of a process AI accelerates, the more of that gain
+                is waiting behind whatever it did not touch.{' '}
                 <a href="./chains/">Both chains, with the evidence →</a>
               </p>
             </div>
@@ -190,10 +211,11 @@ export default function Page() {
               feedback is the one I want most.
             </p>
             <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
-              This is not comprehensive and some of it is wrong. It was built in a few days, mostly by
-              AI, and no human has reviewed the labels. The disagreement rates from a blind second
-              pass, the limitations, and the calls that could have gone the other way are on the{' '}
-              <a href="./method/">method page</a>.
+              This is not comprehensive and some of it is wrong. All {s.n_gaps} gaps were labelled in
+              about 80 minutes of agent time across six phases, and no human has reviewed any of it.
+              A second pass relabelled a stratified sample blind and disagreed on 15% of tiers once
+              weighted to the population. That figure, the limitations, and the calls that could have
+              gone the other way are on the <a href="./method/">method page</a>.
             </p>
           </div>
         </section>

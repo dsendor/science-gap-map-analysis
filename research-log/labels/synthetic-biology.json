@@ -56,7 +56,7 @@
     {
       "gap_id": "1c1cb37e-2a00-805f-8b53-dd343406ab07",
       "outcome": {
-        "outcome": "Bioproduction escapes the handful of domesticated microbes it currently runs on, and with it the biochemistry those few hosts cannot perform.",
+        "outcome": "Bioproduction escapes the handful of Domesticated microbes it currently runs on, and with it the biochemistry those few hosts cannot perform.",
         "rationale": "Their description names novel biochemical pathways and wider biomolecule range as the unlock.",
         "confidence": "confident"
       },
@@ -107,7 +107,7 @@
     {
       "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
       "outcome": {
-        "outcome": "Enzymes get designed for jobs evolution never had to solve, rather than adapted from something that already exists.",
+        "outcome": "Enzymes get designed for jobs evolution never had to solve. Today protein engineering starts from something nature already built.",
         "rationale": "Their description names the constraint as static, biomimetic design limiting truly novel or highly functional enzymes.",
         "confidence": "confident"
       },

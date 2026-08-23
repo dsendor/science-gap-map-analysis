@@ -34,7 +34,7 @@
     {
       "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
       "outcome": {
-        "outcome": "An ecosystem under stress gives a usable warning before it collapses, and management turns pre-emptive rather than reactive.",
+        "outcome": "An ecosystem under stress gives a usable warning before it collapses, and management gets to act first.",
         "rationale": "Their capability list leads with detecting early-warning signals of collapse, which is the whole value of anticipation.",
         "confidence": "confident"
       },
@@ -92,7 +92,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
       "outcome": {
-        "outcome": "Biological nanostructures, animal communication and the chemistry of early Earth become readable as engineering precedent rather than admired as curiosities.",
+        "outcome": "Biological nanostructures, animal communication and the chemistry of early Earth become readable as engineering precedent.",
         "rationale": "Their description bundles several searches under one heading; the shared unlock is converting nature's existing solutions into usable knowledge.",
         "confidence": "guess"
       },

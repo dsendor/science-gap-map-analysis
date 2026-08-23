@@ -39,32 +39,60 @@ export default function IndicatorsPage() {
 
         <section style={{ paddingTop: 10 }}>
           {found.map((r, n) => (
-            <div className="card" key={n} style={{ marginBottom: 14 }}>
-              <div className="pad">
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
-                  <span className="field-pill" style={{ borderColor: fieldColor(r.field) }}>
-                    {r.field}
-                  </span>
-                  <span className="tag">{r.tier}</span>
-                  <span className="tag">source {r.source_checked}</span>
-                  {r.confidence === 'guess' && <span className="tag flag">guess</span>}
+            <div className="ind" key={n}>
+              <div className="ind__head">
+                <div>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 9 }}>
+                    <span className="field-pill" style={{ borderColor: fieldColor(r.field) }}>
+                      {r.field}
+                    </span>
+                    <span className="tag">{r.tier}</span>
+                    {r.confidence === 'guess' && <span className="tag flag">guess</span>}
+                  </div>
+                  <h2 style={{ fontSize: 19, margin: 0 }}>{r.gap}</h2>
                 </div>
-                <h2 style={{ fontSize: 19, margin: '0 0 4px' }}>{r.gap}</h2>
-                <p style={{ fontSize: 15, color: 'var(--ink-3)', margin: '0 0 14px' }}>{r.quantity}</p>
-                <p style={{ fontSize: 26, fontFamily: 'var(--font-serif)', color: 'var(--ink)', margin: '0 0 6px' }}>
-                  {r.current_value}{' '}
-                  <span style={{ fontSize: 16, color: 'var(--ink-2)' }}>{r.unit}</span>
-                </p>
-                <p style={{ fontSize: 14.5, color: 'var(--ink-3)', marginBottom: 0 }}>
-                  as of {r.as_of} ·{' '}
-                  <a href={r.source_url} target="_blank" rel="noreferrer">
-                    {r.source_title}
-                  </a>
-                  {r.target_value ? ` · target: ${r.target_value}` : ' · no defensible target recorded'}
-                </p>
+                <div className="ind__num">
+                  <span className="v">{r.current_value}</span>
+                  <span className="u">{r.unit}</span>
+                  <span className="dir">{r.direction}</span>
+                </div>
               </div>
-              <div className="pad">
-                <p style={{ fontSize: 15, marginBottom: 0 }}>{r.rationale}</p>
+
+              <div className="ind__body">
+                <p className="ind__reads">{r.reads_as}</p>
+                <dl className="ind__dl">
+                  <dt>For scale</dt>
+                  <dd>{r.context}</dd>
+                  <dt>The catch</dt>
+                  <dd>{r.caveat}</dd>
+                  <dt>Target</dt>
+                  <dd>
+                    {r.target_value ? (
+                      <>
+                        {r.target_value}
+                        {r.target_basis ? <span className="src"> {r.target_basis}</span> : null}
+                      </>
+                    ) : (
+                      <span className="src">None recorded. Nobody publishes one for this quantity.</span>
+                    )}
+                  </dd>
+                  <dt>Source</dt>
+                  <dd>
+                    <a href={r.source_url} target="_blank" rel="noreferrer">
+                      {r.source_title}
+                    </a>
+                    <span className="src">
+                      {' '}
+                      as of {r.as_of}, {r.source_checked === 'verified' ? 'verified against Crossref or arXiv' : 'reachable but not scholarly-verified'}
+                    </span>
+                  </dd>
+                </dl>
+                <details>
+                  <summary>How this quantity was chosen</summary>
+                  <div className="body">
+                    <p style={{ fontSize: 15 }}>{r.rationale}</p>
+                  </div>
+                </details>
               </div>
             </div>
           ))}

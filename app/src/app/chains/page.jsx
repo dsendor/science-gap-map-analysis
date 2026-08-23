@@ -20,10 +20,16 @@ export default function ChainsPage() {
               cost on each one.
             </p>
             <p>
-              <strong>The binding step is the one that sets the total.</strong> If a step is binding,
-              shortening it shortens the whole thing. If a step is not binding, you can make it free
-              and the total does not move. Binding steps are outlined in orange below and labelled in
-              the tables.
+              <strong>Orange marks where the cost concentrates, and a step is tagged where a current
+              AI capability acts on it.</strong> On the telescope chain the steps run strictly one
+              after another, so every step adds to the total, concentration is shown by the bar under
+              each step, and the useful question is how many of the years AI can reach. On the
+              publishing chain three of the seven steps carry most of the labor.
+            </p>
+            <p>
+              I originally called some steps &ldquo;binding&rdquo; and some not. On a strictly
+              sequential chain that is circular, because removing any step shortens the total. The
+              arithmetic below replaces it.
             </p>
             <p>
               I did two, picked to be as unalike as possible so the method had a chance to fail: a

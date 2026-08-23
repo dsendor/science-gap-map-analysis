@@ -148,6 +148,14 @@ CREATE TABLE IF NOT EXISTS gap_indicators (
     source_url     TEXT,
     source_doi     TEXT,
     source_checked TEXT CHECK (source_checked IN ('verified', 'unreachable', 'metadata-mismatch', 'unchecked')),
+    -- A number on its own is not an indicator. These four say what it means, which way
+    -- is good, what it should be compared against, and what is wrong with it. Written
+    -- as separate short fields because a reader scans them and does not read a
+    -- paragraph of rationale.
+    reads_as       TEXT,   -- the number restated in one plain sentence
+    direction      TEXT CHECK (direction IN ('lower is better', 'higher is better', 'ambiguous')),
+    context        TEXT,   -- the comparison that gives it scale
+    caveat         TEXT,   -- the honest problem with it, in one line
     is_null_result INTEGER NOT NULL DEFAULT 0 CHECK (is_null_result IN (0, 1)),
     rationale      TEXT NOT NULL,
     confidence     TEXT NOT NULL CHECK (confidence IN ('confident', 'guess')),
@@ -232,6 +240,7 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     duration_span   TEXT,   -- the two milestones the figure is measured between
     duration_note   TEXT,
     figure          TEXT,   -- for a non-time axis, the published quantity for this link
+    ai_acts         INTEGER NOT NULL DEFAULT 0 CHECK (ai_acts IN (0, 1)),
     PRIMARY KEY (path_id, seq)
 );
 

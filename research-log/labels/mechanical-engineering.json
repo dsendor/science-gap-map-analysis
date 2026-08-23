@@ -27,7 +27,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
       "outcome": {
-        "outcome": "Architects can explore many building designs cheaply and pick on cost, energy and buildability, instead of settling the design early and living with it.",
+        "outcome": "Architects can explore many building designs cheaply and pick on cost, energy and buildability. Today the design is settled early and everyone lives with it.",
         "rationale": "Their description names labour-intensity as the constraint that computational design would lift.",
         "confidence": "confident"
       },
@@ -49,7 +49,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80a7-86dd-d2672b519acf",
       "outcome": {
-        "outcome": "A new production line gets designed around the task it has to do, rather than inheriting the layout of the last one.",
+        "outcome": "A new production line gets designed around the task it has to do. Today it inherits the layout of the last one.",
         "rationale": "Their description explicitly rejects designing around humanoid-robot legacy assumptions.",
         "confidence": "confident"
       },
@@ -93,7 +93,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8007-8f03-ea967970cb8f",
       "outcome": {
-        "outcome": "Mechanical design iterates in simulation rather than in hardware, because coupled multiphysics behaviour can be predicted without a bespoke model per system.",
+        "outcome": "Coupled multiphysics behavior can be predicted without a bespoke model per system, so mechanical design iterates in simulation.",
         "rationale": "Their capability is a transferrable multiphysics foundation model, and transferability is the whole point.",
         "confidence": "confident"
       },

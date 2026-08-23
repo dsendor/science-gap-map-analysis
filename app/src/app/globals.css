@@ -326,3 +326,38 @@ details .body { padding: 0 2px 16px; }
 }
 .fieldfilter .swatch { width: 9px; height: 9px; border-radius: 2px; flex: none; }
 .fieldfilter .n { color: var(--ink-3); font-size: 12px; }
+
+/* Indicator card. The number is the headline and the four labelled rows carry what a
+   number on its own cannot: what it means, what to compare it against, what is wrong
+   with it, and where it came from. The long rationale goes behind a click. */
+.ind { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; margin-bottom: 16px; }
+.ind__head {
+  display: flex; gap: 20px; justify-content: space-between; align-items: flex-start;
+  padding: 20px 22px; border-bottom: 1px solid var(--rule);
+}
+.ind__num { text-align: right; flex: none; }
+.ind__num .v {
+  font-family: var(--font-serif, Georgia, serif); font-size: 40px; line-height: 1;
+  color: var(--ink); letter-spacing: -0.02em; display: block;
+}
+.ind__num .u { font-size: 14px; color: var(--ink-2); display: block; margin-top: 5px; }
+.ind__num .dir {
+  display: inline-block; margin-top: 8px; font-size: 11.5px; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 2px 7px;
+}
+.ind__body { padding: 18px 22px 6px; }
+.ind__reads { font-size: 17px; color: var(--ink); margin: 0 0 16px; max-width: none; }
+.ind__dl { display: grid; grid-template-columns: 108px 1fr; gap: 9px 18px; margin: 0 0 6px; }
+.ind__dl dt {
+  font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-3); padding-top: 3px;
+}
+.ind__dl dd { margin: 0; font-size: 15px; color: var(--ink-2); }
+.ind__dl dd .src { color: var(--ink-3); font-size: 13.5px; }
+@media (max-width: 620px) {
+  .ind__head { flex-direction: column; }
+  .ind__num { text-align: left; }
+  .ind__dl { grid-template-columns: 1fr; gap: 3px 0; }
+  .ind__dl dt { padding-top: 10px; }
+}
