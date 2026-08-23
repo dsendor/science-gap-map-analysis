@@ -70,5 +70,32 @@
     "confidence": "high",
     "reversal_condition": "None.",
     "created_at": "2026-08-23 18:02:00"
+  },
+  {
+    "phase": "phase-5",
+    "decision": "Gave the chain 1 headline two accountings rather than one, and reported the weaker of the two as the honest figure.",
+    "rationale": "The expectation recorded in advance was that closing every cognitive link would change the total duration 'very little'. Counting JWST's seven-year science-case period as compressible cognitive work makes the saving nine and a half of thirty-two years, which is under a third but not 'very little'. Counting it as community consensus formation \u2014 which is what the milestone record shows it was \u2014 makes the saving two and a half years. Both are stated. Tuning the classification to protect the prediction would have been the easy move and would have destroyed the value of recording the prediction in advance.",
+    "runner_up": "Report only the realistic accounting. Rejected: the generous one is the number a skeptical reader would compute, and pre-empting it is worth more than winning on it.",
+    "confidence": "high",
+    "reversal_condition": "Evidence that the 1989-1996 period was analysis-limited rather than consensus-limited.",
+    "created_at": "2026-08-23 18:09:06"
+  },
+  {
+    "phase": "phase-5",
+    "decision": "Split chain 2's reviewer recruitment link into matching and willingness inside a single link rather than making them two links.",
+    "rationale": "They are sequentially inseparable \u2014 an editor cannot recruit before identifying \u2014 so two links would imply an ordering that does not exist. But the whole finding of the chain lives in the split: matching is a prediction problem AI is applicable to and, on the published evidence, not even best at; willingness is labour supply that no matching system touches. The split is carried in the blocker and rationale fields of one link.",
+    "runner_up": "Two links, 'matching' then 'recruitment'. Rejected as a false serialisation.",
+    "confidence": "medium",
+    "reversal_condition": "A venue is found where identification and invitation are genuinely separate stages with separate durations.",
+    "created_at": "2026-08-23 18:09:06"
+  },
+  {
+    "phase": "phase-5",
+    "decision": "Verified Aaron Tohuvavohu against both the export and the live site before relying on the association.",
+    "rationale": "The plan flagged it as needing checking. Confirmed twice: resource 1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee, type Individual, is cited by the capability 'Space Telescope Factory', which is attached to the telescope gap; and the name appears in the acknowledgments list on gap-map.org/about.",
+    "runner_up": "Rely on the plan's statement. Rejected \u2014 the plan itself asked for the check.",
+    "confidence": "high",
+    "reversal_condition": "The site's acknowledgments change.",
+    "created_at": "2026-08-23 18:09:06"
   }
 ]

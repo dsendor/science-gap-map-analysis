@@ -43,5 +43,14 @@
     "model": "claude-opus-5",
     "n_units": 4,
     "note": "new gaps: 4 proposed, 1 candidate dropped; dedup over full export plus funding checks"
+  },
+  {
+    "phase": "phase-5",
+    "kind": "agent",
+    "started_at": "2026-08-23 18:36:00",
+    "ended_at": "2026-08-23 18:09:06",
+    "model": "claude-opus-5",
+    "n_units": 2,
+    "note": "two critical paths, 15 links, 7 binding, plus the cross-field intersection"
   }
 ]
