@@ -36,6 +36,8 @@ w(`| Maturity | ${mAgree} | ${n - mAgree} | ${pct(n - mAgree, n)} |`);
 w();
 w('This is a census, not a sample, so it supersedes the 33% AI-type figure from the Phase 2 stratified audit for this dimension.');
 w();
+w('**The maturity figure needs a caveat and probably deserves more weight than the type figure.** v1 maturity was assigned before the per-gap-versus-per-class semantics were pinned down, so part of any disagreement is the specification change rather than labeler variance. But only part: both v1 and the Phase 2 auditors were already using the per-gap reading, which is why pinning it changed no label. A large residual disagreement means maturity is the least reliable thing on this dimension, and any claim resting on it — the working-now gradient above all — has to carry that caveat.');
+w();
 
 // P1 — uptake of the new category
 const controlRows = all('SELECT gap_id, v1_type, v2_maturity FROM relabels WHERE v2_type = ?', CONTROL);

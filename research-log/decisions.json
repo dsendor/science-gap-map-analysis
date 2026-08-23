@@ -22,7 +22,7 @@
       "rationale": "The brief requires the artifact to be auditable rather than confident. A tuned agreement rate would defeat the purpose of running the audit, and a near-zero rate would be evidence the audit was not independent rather than evidence the labels are good.",
       "runner_up": "Adjudicate every disagreement to a single answer and report only the post-adjudication labels.",
       "confidence": "high",
-      "reversal_condition": "Never — if this is reversed the audit stops measuring anything."
+      "reversal_condition": "Never \u2014 if this is reversed the audit stops measuring anything."
     },
     {
       "phase": "phase-2",
@@ -39,6 +39,30 @@
       "runner_up": "Add the eighth category now and relabel all 103 gaps against it.",
       "confidence": "medium",
       "reversal_condition": "If a re-run is scheduled anyway, add the category first and relabel from scratch."
+    },
+    {
+      "phase": "phase-2b",
+      "decision": "Withdraw the working-now maturity gradient as a finding. Report maturity per gap with its disagreement rate, and make no aggregate claim resting on it.",
+      "rationale": "An independent relabel of all 103 gaps did not reproduce it. Coordination and institutional inverted from 7 percent working-now to 67 percent, physical build stopped being zero, and maturity agreement between the two passes was 63 of 103 with 23 of 40 disagreements moving the same direction. The cause is an unresolved ambiguity between availability and efficacy readings of Working now, which diverge completely for institutional capability. The gradient was the most striking thing this analysis produced, which is exactly why publishing it after it failed replication would be indefensible.",
+      "runner_up": "Keep the gradient with a caveat, on the grounds that v1 applied the efficacy reading consistently. Rejected: consistency within one labeler is not reliability, and a reader cannot tell which reading produced a published number.",
+      "confidence": "high",
+      "reversal_condition": "If a forced-choice maturity rubric is written and a third independent pass reproduces an ordering, the gradient can be reinstated on that measurement."
+    },
+    {
+      "phase": "phase-2b",
+      "decision": "Adjudicate relabel disagreements mechanically: agreement keeps the label as confident, disagreement takes v2 and is flagged guess. No case-by-case adjudication.",
+      "rationale": "I authored v1, so I am not a neutral adjudicator and picking winners case by case would reintroduce exactly the bias the blind pass was built to remove. v2 wins ties because it alone had the complete eight-category taxonomy. A guess flag is the honest record of two independent labelers failing to converge on the same text.",
+      "runner_up": "Adjudicate each of the 57 disagreements on the merits, which yields more confident labels but launders my prior judgement through a process that looks independent and is not.",
+      "confidence": "high",
+      "reversal_condition": "If a third independent labeler is run, majority vote across three passes would be a legitimate adjudication rule and would restore confidence to the cases where two of three agree."
+    },
+    {
+      "phase": "phase-2b",
+      "decision": "Define the ai-as-object frame by a criterion (the gap would still exist if AI did not) rather than by enumeration, and add Labor-Replacing AI Could Lead to Human Disempowerment as a fourth member.",
+      "rationale": "The first revision listed three gaps instead of stating a test. A blind relabeler immediately found a fourth meeting the same description and correctly noted that by the letter of the rule it stayed ai-as-instrument. An enumeration cannot be applied to a gap nobody thought of, which is the thing a labeler has to do.",
+      "runner_up": "Keep the enumeration and extend it as cases arise, which fails the same way again on the next unanticipated gap.",
+      "confidence": "high",
+      "reversal_condition": "If the criterion admits gaps that are clearly not about AI, tighten it rather than reverting to a list."
     }
   ]
 }

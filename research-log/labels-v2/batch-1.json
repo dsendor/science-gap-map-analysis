@@ -1,0 +1,476 @@
+{
+  "batch": 1,
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "ai_types": [
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "The named capabilities are modular assembly, a telescope 'factory' and commercial-component integration — the gap closes when an aperture that did not exist assembled gets assembled, on orbit or on a production line. Robotic in-space assembly of a frontier aperture is not demonstrated (the flagship servicing/assembly demos were cancelled before flight), so Speculative for this gap.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "The description names the blocker explicitly — 'organizational structure and hunger to adopt such methods'. Procurement and mission-class culture are available to change now with no new technique.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Real-time control of physical systems",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "A modular/segmented aperture only works if segments are co-phased — closed-loop wavefront sensing driving actuators on hardware that already exists. Learned control is working now in ground adaptive optics; extending to a modular space aperture is 2-5 years.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "If a perfect learned controller held an already-assembled modular aperture on-figure, would the gap close? No — the decades and the cost are in getting the aperture built and launched at all, not in holding it stable. Construction, not station-keeping, is the binding step, so Physical build over Real-time control.",
+      "nearest_alternative": "Coordination and institutional"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8099-b97a-ce85f02ab5a5",
+      "ai_types": [
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The stated deficit is measurement, not theory: coherence signatures in warm wet systems sit under thermal noise, so the AI leverage is extracting a weak, short-lived signature from ultrafast spectroscopy and magnetometry traces. Maturity for this gap is 2-5 years because the instrument side is still moving and ML denoising alone does not yet resolve the disputed signals.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Open-quantum-system simulation of biomolecular environments predicts what signature to look for and how it should decohere, narrowing the search.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is the missing thing a prediction of which quantum effects should exist, or the ability to pull an existing-but-buried signature out of an instrument record? The description says predictions already exist ('despite theoretical predictions') and that direct experimental evidence is what is absent — that is a detection problem, not a prediction problem.",
+      "nearest_alternative": "ML surrogates and prediction"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "ai_types": [
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The single linked capability is 'Simulating Nonequilibrium Systems at Scale' — learned emulators for driven, dissipative many-body dynamics are exactly the class that makes far-from-equilibrium phenomenology computable, and machine-learned force fields and neural coarse-graining are close but not yet at organism-relevant scales.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "The gap as written is the absence of a formal framework distinguishing living from nonliving — an act of mathematical theory construction. AI producing a genuinely new physical formalism is speculative.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Does the gap close by being able to compute the behaviour of nonequilibrium systems, or by someone writing down the right definition? Both readings are live. I picked simulation because the only capability Convergent attached is a simulation capability, and because a usable framework is normally extracted from accessible phenomenology rather than invented ahead of it — but this is the weakest primary in the batch.",
+      "nearest_alternative": "LLM reasoning and synthesis"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8084-a877-c83d9b9c3ece",
+      "ai_types": [
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "The description states the constraint itself: screening 'must be coordinated and universal'. Screening tools, hardware interlocks and watermarking schemes are all buildable today; what is missing is that every synthesiser and provider participates, which is a standards-and-incentives problem.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Sequence-of-concern detection that generalises to AI-redesigned or paraphrased hazardous sequences is a function-from-sequence prediction problem and is not solved.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "If a perfect hazard classifier existed tomorrow, would the gap close? No — unscreened benchtop synthesisers and non-participating providers remain, and the description says so. A technique alone cannot deliver universality, so the blocker is organisational.",
+      "nearest_alternative": "ML surrogates and prediction"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fb-9659-f73deeec29c5",
+      "ai_types": [
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Atomic-resolution imaging is a reconstruction problem — inverting sparse, dose-limited, phase-less measurements into structure. ML ptychographic and cryo-EM reconstruction already buys real resolution, but atom-by-atom on arbitrary materials still waits on the source hardware the capabilities name.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Structure priors from learned interatomic potentials constrain the inversion where the data alone underdetermines atom positions.",
+          "confidence": "guess"
+        }
+      ],
+      "discriminating_test": "Does the gap need something new to be constructed, or the existing measurement record to be decoded further? The compact X-ray laser is instrument engineering rather than AI robotics; the part AI actually moves is turning photons/ions already collected into atom positions. Hence sensing, not physical build.",
+      "nearest_alternative": "Physical build and manipulation"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8069-8477-e0e62e56db05",
+      "ai_types": [
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Programmable synthesis of a new polymer class is blocked on coupling chemistry, protecting groups and stepwise-yield optimisation — a bench-scale, small-volume, well-instrumented search where self-driving labs already close the loop today.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Proposing candidate monomers, linkers and protecting-group schemes over a defined chemical space feeds the loop.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Does something choose what to try next? Yes — the bottleneck is iterating chemistry variants at high stepwise yield, and the choice of the next variant is the expensive decision. That is autonomous experimentation, not merely a ranked candidate list (design search) and not fabrication of a novel object (physical build).",
+      "nearest_alternative": "Design and optimization search"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b3-aab7-d6e108c54123",
+      "ai_types": [
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "'Formally Verified Software Synthesis' is code plus proof generation — squarely the code and mathematical-reasoning cell. Machine-assisted proof and spec synthesis works today at component scale; a verified stack is 2-5 years.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Verified components only reduce risk if the ecosystem adopts them; liability, procurement and standards decide that.",
+          "confidence": "guess"
+        }
+      ],
+      "discriminating_test": "Is the missing artefact found by searching a defined space of designs, or produced by generating code and a machine-checkable proof about it? Verification is proof construction against a specification, not optimisation over a design space, so LLM reasoning over Design and optimization search.",
+      "nearest_alternative": "Design and optimization search"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+      "ai_types": [
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The description leads with missing models: dynamics, feedback loops and thresholds. Predicting where a threshold sits, and whether restoration is working, is a learned-dynamics problem over ecological state, and it is not solved at ecosystem scale.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "The monitoring half — bioacoustic species ID, camera-trap and satellite biodiversity extraction, pollinator detection — is deployed now and supplies the state estimates the models lack.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Given perfect present-tense observation of every species, would we know when the system tips? No — the thresholds and feedbacks are unknown, so observation alone does not anticipate collapse. Prediction is the binding constraint; sensing is the enabler that already partly works.",
+      "nearest_alternative": "Sensing and signal processing"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ff-986f-d66a6d646d7d",
+      "ai_types": [
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Next-generation Earth system models and tipping-point prediction are the canonical learned-emulator case; ML weather and hybrid climate emulators are operational now, but coupled Earth-system tipping prediction at useful fidelity is 2-5 years.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "The second half of the description — 'designing optimal climate control strategies' across economic, technological and social factors — is optimisation over an integrated-assessment space, with contested objectives and no clean evaluator.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is 'climate control strategy' the real-time control category? No — it is policy choice over decades with no sensor-to-actuator loop at machine timescales. Nothing here holds a physical system on a trajectory, so control is rejected and the primary stays with the emulator that makes the prediction possible at all.",
+      "nearest_alternative": "Design and optimization search"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8045-ad83-cb1081a2eaf1",
+      "ai_types": [
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Every named capability turns a cheap physical measurement into a diagnosis — multiplexed molecular readout, colorimetric lead assays, volatilome patterns. Learned readout of noisy low-cost sensor arrays and phone-camera assays already works and is the thing that makes a cheap test informative.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "The description's second clause — fragmented early-detection systems for emerging pathogens — is a surveillance-network and data-sharing problem, not a technique problem.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Would the gap move more by inventing a new assay chemistry (physical build / autonomous experimentation) or by extracting more information from measurements the cheap hardware can already take? The description's complaint is that tests 'offer only limited information', which is a decoding deficit — sensing.",
+      "nearest_alternative": "Coordination and institutional"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
+      "ai_types": [
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The description names the need directly: 'improved computational models of crystal growth ... to guide experimental efforts'. Nucleation and polymorph selection need learned potentials and rare-event surrogates; current MLIPs help but do not yet predict crystallisability.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Robotic crystallisation screening across solvents, additives and conditions is routine today and is the fastest empirical route while the models mature.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Does the gap need something to choose what to try, or a model that says why a molecule resists crystallising? Screening robots already choose and try at scale and the gap persists — so the binding constraint is predictive understanding, and the primary is the surrogate rather than the closed loop.",
+      "nearest_alternative": "Autonomous experimentation"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-86dd-d2672b519acf",
+      "ai_types": [
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The gap and its single capability are both about designing the manufacturing system — generative layout, process-flow and machine-architecture search freed from humanoid-robot legacy assumptions. That is inverse design over a defined space.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "The designed system is itself fabrication robotics, so realising any non-humanoid design depends on manipulation hardware maturing.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is the deficit in what gets built or in choosing what to build? The description says design 'remains complex, with traditional methods relying on outdated processes' — the artefact is buildable once specified. Also checked against real-time control: the gap is not that existing lines cannot be held on-spec, so control is rejected.",
+      "nearest_alternative": "Physical build and manipulation"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "ai_types": [
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "The gap names itself as a meta-bottleneck of incentive structures, funding models and organisational form; all three linked capabilities are new funding and org designs. Nothing technical is missing — these are changeable today.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "The specific complaint that scientists spend their time not doing science — grant writing, reporting, review — is directly reduced by drafting and synthesis tools available now.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "If every scientist had a perfect writing and review assistant, would the constrained forms of R&D appear? No — the forms are constrained by what funders will fund and what institutions can host, so the blocker is the organisation rather than the technique.",
+      "nearest_alternative": "LLM reasoning and synthesis"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-809a-a069-c93e72813eb6",
+      "ai_types": [
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "The capability list is dominated by fabrication modalities — digital assembly, laser direct write, nano modular electronics, DNA-templated chip assembly — all of which construct assemblies that do not exist assembled. Programmable molecular-scale assembly at chip complexity is not demonstrated, so Speculative for this gap.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Getting any of these modalities to acceptable yield is a process-development search over deposition, exposure and assembly parameters, well suited to closed-loop platforms.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Inverse design of masks, direct-write paths and DNA-origami templates is a defined search space with a computable objective.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Does it construct something that did not exist assembled? Yes — the whole gap is that fabs can only assemble a narrow class of structures. Real-time control was considered (in-situ closed-loop control of direct-write and litho tools is genuine control) and rejected because holding today's tools on-spec does not widen what they can make. Maturity is a guess: laser direct write is real now, molecular digital assembly is not, and the gap spans both.",
+      "nearest_alternative": "Autonomous experimentation"
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e4-bb14-ecc39aa04c12",
+      "ai_types": [
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The stated need is 'real-time brain state information' from noninvasive or minimally invasive access — decoding from functional ultrasound, skull-limited electromagnetics and blood biomarkers. That is signal extraction from instruments against severe attenuation and mixing.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Real-time control of physical systems",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "The 'write' half is closed-loop neuromodulation on hardware that already exists — transcranial ultrasound steered by real-time aberration correction, actuated on decoded state. Sense-decide-actuate in a loop, but not demonstrated as whole-brain closed loop.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Micro-to-nano transducers and access through very tiny skull holes need fabrication and minimally invasive placement that does not currently exist.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is the loop the point, or is the readout the point? A control loop needs a state estimate first, and the description's binding phrase is 'capture real-time brain state information' — inaccessibility of the read is what blocks everything downstream, including the write. So sensing is primary and control is a real but dependent secondary.",
+      "nearest_alternative": "Real-time control of physical systems"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "ai_types": [
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "The gap is stated purely as unexplored parameter combinations with no credible theory to guide them — the case for high-throughput closed-loop screening of materials, loading conditions and drive parameters, which bench-scale self-driving platforms in electrochemistry and metal hydrides can do today.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Choosing which corners of a huge, low-prior parameter space to spend runs on is an active-learning problem with a strong exploration component.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is the missing thing a ranked list of conditions, or the throughput to actually run thousands of them and update? With no good evidence and no mechanism to model, ranking is nearly uninformative and execution volume is what settles the question — so autonomous experimentation over design search. Guess flag is on the primary because the gap is really about whether to spend runs at all.",
+      "nearest_alternative": "Design and optimization search"
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80af-8e6b-ff088bc25396",
+      "ai_types": [
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "A clinical trial is an experiment plan over a defined space — arms, endpoints, adaptive rules, enrichment, sample size — and the taxonomy places experiment planning here. Adaptive and platform designs with ML-assisted planning are in use now.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Digital twins, synthetic control arms and faster proxy biomarkers are learned predictions substituting for expensive observation; regulatory-grade versions are not here yet.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Recruitment infrastructure, decentralised study plumbing, trial prioritisation and regulator acceptance of novel designs are organisational, and several linked capabilities are exactly these.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Would a better-designed trial help if regulators and sites would not run it? This is genuinely close — I asked which single capability moves the most trials, and design search wins because adaptive designs cut cost and time inside the existing regulatory envelope, whereas the institutional fixes are slower and partly downstream of demonstrating better designs. Marked guess: a defensible labeler puts Coordination first here.",
+      "nearest_alternative": "Coordination and institutional"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8022-8d55-d645dc19dcf6",
+      "ai_types": [
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "ADME/Tox, immunogenicity, immunodominance and drug-safety models are property prediction over molecules and their interaction with human biology. Partial performance exists today; prediction reliable enough to replace an animal or clinical readout is 2-5 years.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "The foodome, pharm-ome, toxin and microplastics mapping half is untargeted mass-spectrometry annotation — identifying unknown molecules from spectra, where ML annotation works now and is the rate limiter on coverage.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Is the gap that we cannot see what is in the sample, or that we cannot say what a known molecule will do once inside a person? The title fixes it: 'we can't predict what it will do' — prediction. The foodome clause is a second component and takes sensing, which is why it is carried as a secondary rather than dropped.",
+      "nearest_alternative": "Sensing and signal processing"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "ai_types": [
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "The description's own mechanism is 'harnessing AI to facilitate clearer expression of public opinion' — summarising, clustering and bridging thousands of statements into legible collective positions. Deliberation tooling of this kind is deployed and evaluated today.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Voting and auditing protocols are cryptographic rather than AI, and whether any platform is adopted is decided by electoral authorities and civic institutions.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Which half of the gap is blocked on a missing technique versus a missing decision to adopt? Secure voting and auditing protocols already exist and are unadopted (institutional); scalable sensemaking over mass deliberation is a capability that only recently became possible, and it is the one the description credits. Genuine coin flip — flagged guess.",
+      "nearest_alternative": "Coordination and institutional"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
+      "ai_types": [
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "The gap is literally the absence of a field — no venues, no funding line, no community. Both linked capabilities are 'directed work on ...', i.e. someone deciding to fund and organise it. No technique is missing to start.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Once a field exists, its core tool is planetary-scale coupled climate/geochemistry/ecology simulation of intervention scenarios, which is far beyond validated capability.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Would any AI capability, made perfect today, create this field? No — the deficit is that nobody is organised to ask the questions, which the taxonomy assigns to the organisational category. Physical build was considered (transport, energy, civil engineering at planetary scale) and rejected because none of that work is even scoped yet.",
+      "nearest_alternative": "ML surrogates and prediction"
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-805f-8b53-dd343406ab07",
+      "ai_types": [
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Domesticating a new chassis is design-build-test-learn: transformation protocols, promoter and RBS parts characterisation, growth and pathway tuning, iterated. Biofoundries close this loop now for model organisms; the whole point of this gap is the non-model hosts where the automated tooling does not yet exist, so 2-5 years for this gap.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Genome-scale metabolic models and protein function/expression prediction narrow which organisms are worth domesticating and which pathways will carry flux.",
+          "confidence": "confident"
+        }
+      ],
+      "discriminating_test": "Does something choose what to try? Yes — the expensive decision is which knockouts, parts and conditions to test next in an organism with almost no prior characterisation, and that choice must be made against wet-lab feedback rather than in silico. Physical build was rejected: nothing is being assembled that did not exist, the organism does the building.",
+      "nearest_alternative": "Design and optimization search"
+    }
+  ],
+  "notes": "Primary counts: ML surrogates and prediction 5; Sensing and signal processing 4; Coordination and institutional 3; Autonomous experimentation 3; Design and optimization search 2; Physical build and manipulation 2; LLM reasoning and synthesis 2; Real-time control of physical systems 0 as primary. Real-time control appears twice as a secondary: gap 1c1cb37e-2a00-8008 (co-phasing a modular/segmented aperture is closed-loop wavefront sensing and actuation on hardware that exists) and gap 1b4cb37e-2a00-80e4 (closed-loop neuromodulation: decode state, drive a transducer, at machine timescales). I deliberately did not take it as any primary in this batch: no gap here is fundamentally about holding an existing system on a trajectory. The nearest miss was chip fabrication, where in-situ closed-loop control of litho and direct-write tools is real control but does not widen what the tools can make, which is the actual gap; that reasoning is recorded in that gap's discriminating_test.\n\nTaxonomy strain and low-confidence calls:\n(1) 'Understanding Life as a Far-From-Equilibrium Physical Phenomenon' is the weakest primary in the batch. The gap is the absence of a formal framework — a theory-construction task — while the only attached capability is large-scale nonequilibrium simulation. Those take different types (LLM reasoning vs ML surrogates) and arguably different maturities. Flagged guess.\n(2) 'Clinical Trials are Inefficient, Slow and Scarce' is a composite in the same sense the taxonomy's known-limits note describes: its ten capabilities split cleanly into measurement (biomarkers, noninvasive patient measurement), prediction (digital twins, synthetic controls), design (new trial designs) and institutional (recruitment, decentralised infrastructure, prioritisation). A single primary loses real information here; I took design search and flagged guess, with Coordination named as the alternative a reasonable labeler would pick.\n(3) 'Civic Engagement Platforms' splits between a cryptographic/institutional half (voting and auditing protocols, which exist and are unadopted) and an AI half (deliberation sensemaking). Coin flip, flagged guess.\n(4) 'Chip Fabrication' spans laser direct write (working now) and molecular digital assembly (speculative) under one gap; the maturity field cannot represent that spread, so the primary maturity is flagged guess.\n(5) 'Risks of Malicious Bioengineering' is close to needing the ai-as-object frame — watermarking AI-generated protein sequences is a gap about AI outputs — but the gap's subject matter is biosecurity, not AI itself, so I kept ai-as-instrument per section 2b's closed list.\n(6) Maturity for 'Quantum Effects in Biological Systems' turns on whether current ultrafast/magnetometry hardware is good enough for ML denoising to settle disputed signals; I judged not yet, flagged guess.\n\nNo contamination: I read only methodology/taxonomy.md and research-log/relabel-tasks/batch-1.json, plus a directory listing of research-log/. I did not open research-log/labels/, audits/, docs/, or the database."
+}

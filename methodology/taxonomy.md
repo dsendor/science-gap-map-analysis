@@ -62,7 +62,10 @@ where AI already works.
 
 Maturity, for the type identified: `Working now` | `2-5 years` | `Speculative`.
 
-**Maturity is always relative to this gap, never to the capability class in general.**
+**Maturity has two ambiguities. The first is fixed below; the second was not, and it
+broke the project's headline finding — read both before assigning one.**
+
+**(a) Relative to this gap, never to the capability class in general.**
 Both readings are defensible and they give different answers, so the convention is
 fixed here: ask *how mature is this capability class for moving this particular gap*,
 not *how mature is this capability class somewhere*. Autonomous experimentation is
@@ -71,6 +74,23 @@ to assemble an observatory — same class, different gap, different answer. This
 raised independently by two blind auditors as ambiguous in an earlier revision; the
 existing labels already follow the for-this-gap reading, so pinning it down changes no
 label but makes the disagreement rate on maturity interpretable.
+
+**(b) Availability versus efficacy — unresolved, and the reason maturity cannot carry a
+conclusion.** Does `Working now` mean *the capability exists and can be applied today*,
+or *applying it today would actually move this gap*? For technical categories the two
+readings mostly coincide. For `Coordination and institutional` they diverge completely:
+convening a standards body is a mature capability available this afternoon, while getting
+universal DNA-synthesis screening adopted is not.
+
+An independent relabel of all 103 gaps found this empirically. Coordination's working-now
+share went from **7% under the efficacy reading to 67% under the availability reading** —
+a complete inversion at the top of the ordering — and overall maturity agreement between
+two independent passes was only 63/103. Twenty-three of the forty disagreements moved in
+the same direction, `2-5 years` to `Working now`.
+
+Until this is resolved with a rubric that forces one reading, **maturity is the least
+reliable field in this taxonomy and no aggregate claim should rest on it.** Assign it,
+record it, and report it with its disagreement rate attached. See `docs/relabel-report.md`.
 
 Multiple types per gap are allowed and expected. Exactly one is marked primary — the
 one that would move the gap *most*, which is not always the one most obviously
@@ -82,9 +102,22 @@ The AI-type dimension asks *which AI capability would move this gap*. That presu
 AI is the instrument and the gap is a science problem. A few gaps are **about AI**, and
 for those the question is ill-posed.
 
-`frame` is `ai-as-instrument` by default. Set `ai-as-object` only when the gap's subject
-matter is AI itself — on this map that is *AI Could Be Misused*, *AI Could Go Rogue*,
-and *AI is Still Narrow in its Reasoning and Planning*.
+`frame` is `ai-as-instrument` by default. Set `ai-as-object` when **the gap would still
+exist if AI did not** — that is, when AI is the subject matter rather than a possible
+remedy.
+
+The criterion matters more than the list. An earlier revision enumerated three gaps
+instead of stating a test, and a blind relabeler immediately found a fourth that meets
+the same description and was not on it: *Labor-Replacing AI Could Lead to Human
+Disempowerment*. An enumeration cannot be applied to a gap nobody thought of, which is
+exactly what a labeler needs to do. The test is the definition; the list below is its
+current output, not its boundary.
+
+Applying the test: *AI Could Be Misused*, *AI Could Go Rogue*, *AI is Still Narrow in its
+Reasoning and Planning*, and *Labor-Replacing AI Could Lead to Human Disempowerment* all
+disappear if AI does not exist. *Risks of Malicious Bioengineering* does not — it is a
+biosecurity gap that happens to have an AI-mediated capability attached, and DNA synthesis
+screening would be needed regardless. It stays `ai-as-instrument`.
 
 **Why this is a frame flag and not a ninth capability type.** The obvious fix is to add
 something like "AI safety and assurance research" to the list above. That would be a

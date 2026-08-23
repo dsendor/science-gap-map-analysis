@@ -18,6 +18,12 @@
       "name": "AI is Still Narrow in its Reasoning and Planning",
       "frame": "ai-as-object",
       "rationale": "The gap is the AI capability itself, so 'which AI capability would move it' is circular and its maturity label means something different from every other row: the capability and the gap are the same object."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
+      "name": "Labor-Replacing AI Could Lead to Human Disempowerment",
+      "frame": "ai-as-object",
+      "rationale": "Found by a blind relabeler applying the criterion rather than the enumeration, and it meets the test cleanly: the gap does not exist if AI does not. Its tier-3 measurability is contested for the same reason as the other ai-as-object gaps \u2014 we are arguing about a technology we are building \u2014 so it is not comparable to the natural-science tier-3 cases."
     }
   ]
 }

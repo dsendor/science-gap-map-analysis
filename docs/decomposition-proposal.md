@@ -107,7 +107,24 @@ Small but genuinely composite: AI-enabled qualitative methods, infrastructure fo
 choosing which questions to work on, and satellite-plus-ML archaeology. The last has no
 relationship to the first two beyond both being under-tooled.
 
-### 6. Lack of Infrastructure Technologies and Strategies Optimized for Low-Resource Settings
+### 6. We Lack Basic Capabilities that Are Necessary for Travel Far Beyond Earth
+*Space Engineering · 4 capabilities · surfaced by a blind relabeler, not by the original pass*
+
+Air-breathing fusion propulsion, cryosleep, interstellar probes and pressurised habitation
+domes. Cryosleep is a biology problem — suspended metabolism in mammals — sitting beside
+three propulsion and structures problems. It takes a different primary type and a
+different maturity, and it would be funded by different people.
+
+Proposed split: **(a)** propulsion and structures for missions beyond the solar system,
+and **(b)** long-duration human biological stasis. Both speculative, but they are not the
+same speculation.
+
+Worth noting how this one was found: the original labeling pass did not flag it, and an
+independent relabeler did. Composite structure is easier to see when you have not already
+committed to a single answer, which is an argument for the blind second pass as a
+standing part of the method rather than a one-off check.
+
+### 7. Lack of Infrastructure Technologies and Strategies Optimized for Low-Resource Settings
 *Global Health · 8 capabilities*
 
 Mixes discovery (improved antibiotics, broad-spectrum antivirals) with deployment (PPE,
@@ -118,7 +135,7 @@ on cost and logistics. Splitting these separates a research agenda from a delive
 
 ## Multi-axis gaps
 
-### 7. Doing and publishing research is expensive and subject to structural roadblocks
+### 8. Doing and publishing research is expensive and subject to structural roadblocks
 *Metascience · 4 capabilities*
 
 One coherent object, three axes: **cost**, **speed**, and **inclusiveness**. Progress on
@@ -136,7 +153,7 @@ decomposition and preserves their structure.
 
 Not a reorganisation. Three additive suggestions, in increasing order of cost:
 
-1. **A `composite: true` flag** on the seven gaps above. Costs nothing, changes no
+1. **A `composite: true` flag** on the eight gaps above. Costs nothing, changes no
    structure, and warns any downstream consumer that a single attribute cannot describe
    the record. This is the one worth doing.
 2. **Sub-gap records** under the existing gap id for the six multi-programme cases,
@@ -145,6 +162,24 @@ Not a reorganisation. Three additive suggestions, in increasing order of cost:
    addresses rather than silently mixing them.
 
 Ranking these gaps, or reordering them, is not proposed and would not be appropriate.
+
+## A related proposal from the relabel pass
+
+A blind relabeler observed that several gaps — gravitational wave detection across the
+spectrum, travel beyond Earth, quantum gravity — are instrument-and-hardware problems
+where AI is a real but distinctly second-order lever. Forcing a primary AI type onto
+them makes the cross-tabs read as though AI were the binding constraint, which it is not.
+
+The suggested fix is a per-gap **"is AI actually the binding constraint"** flag, separate
+from which capability type applies. That is information the current three dimensions
+genuinely cannot express: the type field says *which* AI would help, and nothing says
+*whether AI is where the gap binds at all*.
+
+This is recorded as a proposal, not implemented. It would be a fourth dimension, and
+adding one after the labeling and audit are complete would invalidate both. It belongs in
+a future version, and it is arguably the single most useful addition suggested by any part
+of this work — for a map whose purpose is locating bottlenecks, "AI is not the bottleneck
+here" is a first-class finding rather than a missing value.
 
 ## Related upstream limitation
 
