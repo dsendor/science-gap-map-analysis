@@ -38,3 +38,23 @@ node engine/integrity-report.mjs
 ```
 
 Requires Node 22+ (uses the built-in `node:sqlite`). No dependencies.
+
+## The artifact
+
+```bash
+cd app && npm install && npm run build     # -> app/out/, a self-contained static site
+npx serve app/out                          # or any static host
+```
+
+`npm run build` runs `engine/export-artifact.mjs` first, which regenerates
+`app/public/data.json` and `app/public/gap-map-augmented.csv` from the database. Both
+are gitignored for the same reason `db/gapmap.sqlite` is: the sources of record are the
+pinned snapshot and the JSON files under `research-log/`, which are reviewable in a
+diff.
+
+The CSV is one row per gap keyed on **their** `id` and `slug`, so it joins straight back
+to Convergent's export.
+
+Written outputs: `docs/findings.md` (regenerate with `engine/audit-report.mjs`),
+`docs/critical-paths.md`, `docs/integrity-report.md`, and `docs/cover-note.md` — a
+**draft**, not sent.

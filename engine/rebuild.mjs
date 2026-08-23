@@ -32,4 +32,10 @@ for (const [dir, script] of [
   if (files.length) console.log(`ingested ${files.length} file(s) from ${dir}`);
 }
 
+// Adjudication rewrites confidence flags on the ingested labels and must run after
+// the audits are in. It was previously invoked by hand, which meant a clean rebuild
+// silently dropped every downgrade — including the blanket 'Proxy only' one — and
+// produced a database that did not match the published findings. It is idempotent.
+if (existsSync(`${root}engine/adjudicate.mjs`)) run('adjudicate.mjs');
+
 run('verify-additive.mjs');

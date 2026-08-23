@@ -97,5 +97,41 @@
     "confidence": "high",
     "reversal_condition": "The site's acknowledgments change.",
     "created_at": "2026-08-23 18:09:06"
+  },
+  {
+    "phase": "phase-6",
+    "decision": "Cut all three 3ie figures from the cover note rather than softening them: the count of evidence gap maps, the Development Evidence Portal totals, and the absolute-gap versus synthesis-gap terminology.",
+    "rationale": "The plan flagged them as needing verification and they did not verify. 3ie's own gap maps page states no total; their own blog posts give portal figures that disagree by roughly a factor of three (3,745 impact evaluations in one, 'more than 11,000' in another) and nothing found states 21,800 or 1,700; and neither the gap maps page nor the working paper page uses the terms 'absolute gap' or 'synthesis gap'. The substance of the distinction is on their page verbatim and is kept as a quote in the notes, so a later comparison has a defensible form.",
+    "runner_up": "Keep the figures with an 'approximately'. Rejected outright: the cover note's entire argument is that this work checks things, and an unverified number in it would be the one thing a reader could puncture.",
+    "confidence": "high",
+    "reversal_condition": "3ie publishes a stated total, or the Development Evidence Portal exposes counts to a non-JavaScript client.",
+    "created_at": "2026-08-23 18:36:38"
+  },
+  {
+    "phase": "phase-6",
+    "decision": "Rendered the two chains as HTML/SVG in the artifact and shipped the Mermaid source alongside, rather than running a Mermaid renderer in the page.",
+    "rationale": "Each diagram is eight boxes and an arrow. A client-side Mermaid runtime would have been the single largest dependency in the build, for output that is less accessible than the HTML version \u2014 which also carries the binding flag as a word in the link table, so the distinction never rests on colour. The Mermaid source is in docs/critical-paths.md and in a copy block under each chain, so nothing is lost for anyone who wants to paste it elsewhere.",
+    "runner_up": "Add mermaid as a dependency and render client-side. Rejected on build weight and accessibility, not on effort.",
+    "confidence": "high",
+    "reversal_condition": "A reviewer wants the diagrams to match Convergent's own tooling exactly.",
+    "created_at": "2026-08-23 18:36:38"
+  },
+  {
+    "phase": "phase-6",
+    "decision": "Wired engine/adjudicate.mjs into engine/rebuild.mjs after finding that a clean rebuild silently dropped every Phase 2 confidence downgrade.",
+    "rationale": "adjudicate.mjs writes confidence flags directly to SQLite and had only ever been run by hand. Because db/gapmap.sqlite is gitignored, a rebuild from files produced 5 tier guesses and 10 AI-type guesses where the published findings say 24 and 20 \u2014 including the blanket downgrade of every 'Proxy only' assignment, which is one of the project's headline results. The artifact was reading those wrong numbers before this was caught. The script is idempotent, so running it inside rebuild is safe.",
+    "runner_up": "Bake the downgrades into the label files. Rejected: the labels are what the labeler wrote, and overwriting them would erase the fact that adjudication changed something.",
+    "confidence": "high",
+    "reversal_condition": "None. This was a defect.",
+    "created_at": "2026-08-23 18:36:38"
+  },
+  {
+    "phase": "phase-6",
+    "decision": "Kept the JAMA article page as the source URL for the clinical trial indicator even though it returns HTTP 403 to programmatic clients, and recorded that in the row's rationale.",
+    "rationale": "It is the page the number was actually read off, the DOI verifies against Crossref, and a human clicking the link sees the paper. Swapping to a URL that passes an automated check but is not where the number was read would make the link check pass and the provenance worse.",
+    "runner_up": "Point at the PubMed record, which returns 203. Rejected: the PubMed abstract does not carry the IQR or the design breakdown the rationale relies on.",
+    "confidence": "medium",
+    "reversal_condition": "JAMA stops blocking, or an open-access copy with the same figures appears.",
+    "created_at": "2026-08-23 18:36:38"
   }
 ]

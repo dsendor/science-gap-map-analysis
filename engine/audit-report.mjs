@@ -128,6 +128,92 @@ for (const dim of ['measurability', 'ai_type']) {
   }
 }
 
+// The two sections below are Phase 6 additions: the contrasting pair the brief asks
+// for, and the elapsed-time figure split into agent and human review. A single
+// blended time number invites the obvious objection, so it is never computed.
+w('## The clearest contrasting pair');
+w();
+{
+  const pick = (tier, mat, type) => one(`
+    SELECT g.name, f.name AS field, m.tier, a.ai_type, a.maturity, o.outcome
+    FROM gm_gaps g JOIN gm_fields f ON f.id=g.field_id
+    JOIN gap_measurability m ON m.gap_id=g.id
+    JOIN gap_ai_types a ON a.gap_id=g.id AND a.is_primary=1
+    JOIN gap_outcomes o ON o.gap_id=g.id
+    WHERE m.tier=? AND a.maturity=? AND a.ai_type=? LIMIT 1`, tier, mat, type);
+  const easy = pick('Directly measurable', 'Working now', 'Design and optimization search')
+            ?? pick('Directly measurable', 'Working now', 'LLM reasoning and synthesis');
+  const hard = pick('Counterfactual required', 'Speculative', 'Coordination and institutional')
+            ?? pick('Verification contested', 'Speculative', 'Coordination and institutional');
+  if (easy && hard) {
+    w(`Two gaps sitting in the same catalogue, one row apart in structure and a category apart in what can be known about them.`);
+    w();
+    w('| | Most tractable end | Least tractable end |');
+    w('|---|---|---|');
+    w(`| Gap | ${easy.name.replace(/\s+/g, ' ')} | ${hard.name.replace(/\s+/g, ' ')} |`);
+    w(`| Field | ${easy.field} | ${hard.field} |`);
+    w(`| Measurability | ${easy.tier} | ${hard.tier} |`);
+    w(`| Primary AI type | ${easy.ai_type} | ${hard.ai_type} |`);
+    w(`| Maturity | ${easy.maturity} | ${hard.maturity} |`);
+    w();
+    w(`A catalogue treats these as two rows of equal standing, which for a catalogue is correct — it is not claiming otherwise. The four added columns are what make the difference visible: one has a quantity, a direction and a tool that works today; the other has none of the three, and the honest thing to record is that its progress indicator search returned a null.`);
+    w();
+  }
+}
+
+w('## Progress indicators, and the two nulls');
+w();
+{
+  const ind = all(`SELECT i.*, g.name AS gap, m.tier FROM gap_indicators i
+                   JOIN gm_gaps g ON g.id=i.gap_id
+                   LEFT JOIN gap_measurability m ON m.gap_id=i.gap_id ORDER BY i.id`);
+  const nulls = ind.filter((i) => i.is_null_result);
+  w(`A **sample** of ${ind.length} gaps across all four tiers, ${nulls.length} of them honest nulls. Not coverage, and not to be extrapolated to the other ${103 - ind.length}. Every non-null value was read off a page that was actually fetched; the \`source_checked\` column records whether the source verified against arXiv or Crossref, or was merely reachable.`);
+  w();
+  w('| Gap | Tier | Quantity | Current | Source check |');
+  w('|---|---|---|---|---|');
+  for (const i of ind)
+    w(`| ${i.gap.replace(/\s+/g, ' ')} | ${i.tier} | ${i.quantity} | ${i.is_null_result ? '**null**' : `${i.current_value} ${i.unit ?? ''}`} | ${i.source_checked ?? 'n/a'} |`);
+  w();
+  w(`The nulls are the load-bearing rows. Each has six logged, cached searches behind it and each names its closest near-miss: a real and improving Fermi/LHAASO bound on the quantum-gravity energy scale that no one agrees settles anything, and the ~42% administrative-burden figure that measures a symptom of institutional rigidity rather than the research it prevents. See \`search_log\` and \`research-log/searches/phase-3.json\`.`);
+  w();
+}
+
+w('## Critical paths');
+w();
+{
+  for (const p of all('SELECT * FROM critical_paths ORDER BY id')) {
+    const links = all('SELECT * FROM critical_path_links WHERE path_id=? ORDER BY seq', p.id);
+    const bind = links.filter((l) => l.is_binding);
+    w(`- **${p.title}** — axis: ${p.axis}. ${bind.length} of ${links.length} links bind: ${bind.map((l) => l.link).join(', ')}.`);
+  }
+  w();
+  w('Both expectations were committed before the link analysis existed, in a separate commit, so the ordering is checkable in git. Full chains, evidence and the cross-field intersection: `docs/critical-paths.md`.');
+  w();
+}
+
+w('## Elapsed time');
+w();
+{
+  // Sum in milliseconds and round once. Rounding each phase and then summing gives a
+  // different total from the artifact's, and two published figures that disagree by a
+  // minute is exactly the kind of thing that costs more trust than the minute is worth.
+  const ms = (r) => new Date(r.ended_at.replace(' ', 'T') + 'Z') - new Date(r.started_at.replace(' ', 'T') + 'Z');
+  const runs = all('SELECT phase, kind, started_at, ended_at, n_units, note FROM runs ORDER BY id');
+  w('| Phase | Kind | Units | Elapsed |');
+  w('|---|---|---:|---:|');
+  let agentMs = 0, humanMs = 0;
+  for (const r of runs) {
+    const d = r.ended_at ? ms(r) : null;
+    if (d !== null) (r.kind === 'agent' ? (agentMs += d) : (humanMs += d));
+    w(`| ${r.phase} | ${r.kind} | ${r.n_units ?? '—'} | ${d === null ? 'open' : Math.round(d / 60000) + ' min'} |`);
+  }
+  const agent = Math.round(agentMs / 60000), human = Math.round(humanMs / 60000);
+  w();
+  w(`**Agent time: ${agent} minutes. Human review time: ${human} minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.`);
+  w();
+}
+
 w('## What this shows');
 w();
 const wn = {}, tot = {};

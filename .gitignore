@@ -10,3 +10,4 @@ app/out/
 app/node_modules/
 .DS_Store
 db/*.sqlite
+.playwright-mcp/

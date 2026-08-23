@@ -1,0 +1,202 @@
+#!/usr/bin/env node
+// Emit the two artifacts a stranger can use without this repo:
+//
+//   app/public/data.json   everything the static site renders
+//   app/public/gap-map-augmented.csv
+//     one row per gap, keyed on THEIR id and slug so it joins straight back to
+//     their source export. That is the whole point of preserving their keys.
+//
+// No ordering anywhere is by anything that could read as a rank. Gaps come out in
+// the order their export has them.
+//
+// Usage: node engine/export-artifact.mjs
+
+import { DatabaseSync } from 'node:sqlite';
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
+
+const root = new URL('..', import.meta.url).pathname;
+const db = new DatabaseSync(`${root}db/gapmap.sqlite`);
+const all = (s, ...p) => db.prepare(s).all(...p);
+
+// Their export order, preserved. Any other default order is an editorial act.
+const exportOrder = JSON.parse(readFileSync(`${root}data/baseline/2026-07-29/gapmap-data.json`, 'utf8'))
+  .gaps.map((g) => g.id);
+const rank = Object.fromEntries(exportOrder.map((id, i) => [id, i]));
+
+const gaps = all(`
+  SELECT g.id, g.slug, g.name, g.description, f.name AS field,
+         o.outcome, o.rationale AS outcome_rationale, o.confidence AS outcome_confidence,
+         m.tier, m.rationale AS tier_rationale, m.confidence AS tier_confidence
+  FROM gm_gaps g
+  LEFT JOIN gm_fields f ON f.id = g.field_id
+  LEFT JOIN gap_outcomes o ON o.gap_id = g.id
+  LEFT JOIN gap_measurability m ON m.gap_id = g.id`);
+
+const aiTypes = all('SELECT * FROM gap_ai_types');
+const byGap = (rows) => rows.reduce((a, r) => ((a[r.gap_id] ??= []).push(r), a), {});
+const aiByGap = byGap(aiTypes);
+const indByGap = byGap(all('SELECT * FROM gap_indicators'));
+const capsByGap = byGap(all(`
+  SELECT gc.gap_id, c.id, c.name, c.description
+  FROM gm_gap_capabilities gc JOIN gm_capabilities c ON c.id = gc.capability_id`));
+
+const enriched = gaps
+  .map((g) => {
+    const types = (aiByGap[g.id] ?? []).map(({ gap_id, created_at, labeled_by, ...t }) => t);
+    const primary = types.find((t) => t.is_primary === 1) ?? null;
+    return {
+      ...g,
+      is_new: 0,
+      ai_types: types,
+      primary_ai_type: primary?.ai_type ?? null,
+      primary_maturity: primary?.maturity ?? null,
+      primary_rationale: primary?.rationale ?? null,
+      primary_confidence: primary?.confidence ?? null,
+      indicators: (indByGap[g.id] ?? []).map(({ gap_id, created_at, ...i }) => i),
+      capabilities: (capsByGap[g.id] ?? []).map(({ gap_id, ...c }) => c),
+    };
+  })
+  .sort((a, b) => rank[a.id] - rank[b.id]);
+
+const newGaps = all(`
+  SELECT n.*, f.name AS field FROM new_gaps n JOIN gm_fields f ON f.id = n.field_id
+  ORDER BY n.created_at, n.id`);
+
+const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
+  ...p,
+  gap_name: gaps.find((g) => g.id === p.gap_id)?.name ?? null,
+  gap_field: gaps.find((g) => g.id === p.gap_id)?.field ?? null,
+  links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id),
+}));
+
+const count = (rows, key) => rows.reduce((a, r) => ((a[r[key]] = (a[r[key]] ?? 0) + 1), a), {});
+const crosstab = (rows, rk, ck) => rows.reduce((a, r) => {
+  ((a[r[rk]] ??= {})[r[ck]] ??= 0), a[r[rk]][r[ck]]++;
+  return a;
+}, {});
+
+const withPrimary = enriched.filter((g) => g.primary_ai_type);
+const summary = {
+  n_gaps: enriched.length,
+  n_fields: new Set(enriched.map((g) => g.field)).size,
+  n_capabilities: db.prepare('SELECT count(*) c FROM gm_capabilities').get().c,
+  n_edges: db.prepare('SELECT count(*) c FROM gm_gap_capabilities').get().c,
+  n_new_gaps: newGaps.length,
+  n_indicators: db.prepare('SELECT count(*) c FROM gap_indicators').get().c,
+  n_indicator_nulls: db.prepare('SELECT count(*) c FROM gap_indicators WHERE is_null_result=1').get().c,
+  tier: count(enriched.filter((g) => g.tier), 'tier'),
+  ai_type: count(withPrimary, 'primary_ai_type'),
+  maturity: count(withPrimary, 'primary_maturity'),
+  tier_by_ai_type: crosstab(withPrimary.filter((g) => g.tier), 'primary_ai_type', 'tier'),
+  tier_by_field: crosstab(enriched.filter((g) => g.tier), 'field', 'tier'),
+  maturity_by_ai_type: crosstab(withPrimary, 'primary_ai_type', 'primary_maturity'),
+  confidence: {
+    outcome: count(enriched.filter((g) => g.outcome_confidence), 'outcome_confidence'),
+    tier: count(enriched.filter((g) => g.tier_confidence), 'tier_confidence'),
+    primary_ai_type: count(withPrimary, 'primary_confidence'),
+  },
+};
+
+const audits = all(`
+  SELECT a.gap_id, a.dimension, a.original, a.audit, a.agreed, a.adjudicated, a.auditor_note, g.name AS gap_name
+  FROM audits a JOIN gm_gaps g ON g.id = a.gap_id`);
+
+// Audit rates, computed the same way as engine/audit-report.mjs. The sample
+// deliberately oversamples the rare tiers, so the raw rate is biased upward and the
+// population-weighted figure is the one that means anything. Both are exported;
+// publishing only the flattering one would defeat the point of running the audit.
+const manifest = JSON.parse(readFileSync(`${root}research-log/audit-tasks/manifest.json`, 'utf8'));
+const stratumOf = Object.fromEntries(manifest.map((m) => [m.gap_id, m.stratum]));
+const TIERS = ['Directly measurable', 'Proxy only', 'Verification contested', 'Counterfactual required'];
+
+const auditSummary = { n_sampled: manifest.length, n_population: enriched.length, dimensions: {} };
+for (const dim of ['measurability', 'ai_type']) {
+  const rows = audits.filter((a) => a.dimension === dim);
+  if (!rows.length) continue;
+  const agreed = rows.filter((r) => r.agreed).length;
+  const entry = {
+    n: rows.length,
+    agreed,
+    raw_disagreement: (rows.length - agreed) / rows.length,
+    strata: [],
+    weighted_disagreement: null,
+    disagreements: rows.filter((r) => !r.agreed).map((r) => ({ gap: r.gap_name.replace(/\s+/g, ' '), original: r.original, audit: r.audit })),
+  };
+  if (dim === 'measurability') {
+    let weighted = 0, popTotal = 0;
+    for (const tier of TIERS) {
+      const inStratum = rows.filter((r) => stratumOf[r.gap_id] === tier);
+      if (!inStratum.length) continue;
+      const pop = summary.tier[tier] ?? 0;
+      const a = inStratum.filter((r) => r.agreed).length;
+      const dis = (inStratum.length - a) / inStratum.length;
+      weighted += dis * pop; popTotal += pop;
+      entry.strata.push({ stratum: tier, population: pop, sampled: inStratum.length, agreed: a, disagreement: dis });
+    }
+    entry.weighted_disagreement = weighted / popTotal;
+  }
+  auditSummary.dimensions[dim] = entry;
+}
+
+const out = {
+  generated_at: new Date().toISOString().slice(0, 10),
+  source: {
+    name: 'Convergent Research — Fundamental Development Gap Map',
+    version: 'v1.0',
+    url: 'https://www.gap-map.org/',
+    snapshot: '2026-07-29',
+  },
+  summary,
+  gaps: enriched,
+  new_gaps: newGaps,
+  critical_paths: paths,
+  audits,
+  audit_summary: auditSummary,
+  decisions: all('SELECT phase, decision, rationale, runner_up, confidence, reversal_condition FROM decisions ORDER BY id'),
+  runs: all('SELECT phase, kind, started_at, ended_at, n_units, note FROM runs ORDER BY id'),
+};
+
+mkdirSync(`${root}app/public`, { recursive: true });
+writeFileSync(`${root}app/public/data.json`, JSON.stringify(out));
+
+// ---- CSV: one row per gap, keyed on their id and slug ------------------------
+const csvCell = (v) => {
+  const s = v === null || v === undefined ? '' : String(v);
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+};
+const cols = [
+  'gap_id', 'gap_slug', 'gap_name', 'field', 'is_new_proposed_gap',
+  'outcome', 'outcome_rationale', 'outcome_confidence',
+  'primary_ai_type', 'primary_ai_maturity', 'primary_ai_rationale', 'primary_ai_confidence',
+  'measurability_tier', 'measurability_rationale', 'measurability_confidence',
+  'secondary_ai_types', 'indicator_quantity', 'indicator_value', 'indicator_unit',
+  'indicator_as_of', 'indicator_source_url', 'indicator_is_null_result',
+];
+const rows = [
+  ...enriched.map((g) => {
+    const i = g.indicators[0] ?? {};
+    return [
+      g.id, g.slug, g.name, g.field, 0,
+      g.outcome, g.outcome_rationale, g.outcome_confidence,
+      g.primary_ai_type, g.primary_maturity, g.primary_rationale, g.primary_confidence,
+      g.tier, g.tier_rationale, g.tier_confidence,
+      g.ai_types.filter((t) => !t.is_primary).map((t) => `${t.ai_type} (${t.maturity})`).join('; '),
+      i.quantity ?? '', i.current_value ?? '', i.unit ?? '',
+      i.as_of ?? '', i.source_url ?? '', i.is_null_result ?? '',
+    ];
+  }),
+  ...newGaps.map((n) => [
+    n.id, n.slug, n.name, n.field, 1,
+    n.outcome, n.rationale, n.confidence,
+    n.ai_type, n.maturity, n.rationale, n.confidence,
+    n.tier, n.rationale, n.confidence,
+    '', '', '', '', '', '', '',
+  ]),
+];
+writeFileSync(
+  `${root}app/public/gap-map-augmented.csv`,
+  [cols.join(','), ...rows.map((r) => r.map(csvCell).join(','))].join('\n') + '\n'
+);
+
+console.log(`data.json: ${enriched.length} gaps, ${newGaps.length} proposed, ${paths.length} chains, ${summary.n_indicators} indicators`);
+console.log(`csv: ${rows.length} rows, ${cols.length} columns, keyed on their id and slug`);

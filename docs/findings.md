@@ -93,14 +93,14 @@ Disagreements:
 
 | Gap | Original | Audit |
 |---|---|---|
+| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Verification contested | Directly measurable |
+| Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain | Proxy only | Verification contested |
 | AI Could Be Misused | Proxy only | Verification contested |
 | Major Planetary Science and Astrobiology Missions Are Not Realized by Existing Government Space Agencies | Proxy only | Directly measurable |
 | Limited Tools for Improving Individual, Social and Societal Epistemics in the Face of Misinformation  | Proxy only | Verification contested |
 | Underdevelopment of Modern Tools in the Social Sciences | Proxy only | Directly measurable |
 | Lack of a Dedicated Field for Planetary Terraforming | Proxy only | Counterfactual required |
 | We Can Learn More from Nature’s Biological Designs | Proxy only | Verification contested |
-| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Verification contested | Directly measurable |
-| Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain | Proxy only | Verification contested |
 
 ### Primary AI capability type
 
@@ -110,6 +110,10 @@ Disagreements:
 
 | Gap | Original | Audit |
 |---|---|---|
+| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Coordination and institutional | ML surrogates and prediction |
+| Our Platforms for Civic Engagement and Democratic Decision-Making Don’t Take Advantage of 21st Century Scalable Technology | Coordination and institutional | LLM reasoning and synthesis |
+| Robust and Compact Plasma Confinement for Fusion is Still Not Solved | ML surrogates and prediction | Design and optimization search |
+| We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes | Design and optimization search | Autonomous experimentation |
 | Biological Life is Our Only Working Example of Complex Evolved Computation | ML surrogates and prediction | Design and optimization search |
 | Intervening in Earth Systems at Scale is Largely Untested | Physical build and manipulation | ML surrogates and prediction |
 | AI Could Be Misused | Coordination and institutional | LLM reasoning and synthesis |
@@ -118,10 +122,59 @@ Disagreements:
 | Difficulty Delivering Physical Probes for Imaging into Living Cells | Design and optimization search | Sensing and signal processing |
 | Synthetic Biology Platforms Are Over-Reliant on Evolved Cells That We Don’t Fully Understand or Control | Design and optimization search | Autonomous experimentation |
 | Poor Scalability of Bioreactors Limits Biomanufacturing | Physical build and manipulation | ML surrogates and prediction |
-| Uncertainty and Noise in the Science of Room-Temperature Superconductivity | Coordination and institutional | ML surrogates and prediction |
-| Our Platforms for Civic Engagement and Democratic Decision-Making Don’t Take Advantage of 21st Century Scalable Technology | Coordination and institutional | LLM reasoning and synthesis |
-| Robust and Compact Plasma Confinement for Fusion is Still Not Solved | ML surrogates and prediction | Design and optimization search |
-| We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes | Design and optimization search | Autonomous experimentation |
+
+## The clearest contrasting pair
+
+Two gaps sitting in the same catalogue, one row apart in structure and a category apart in what can be known about them.
+
+| | Most tractable end | Least tractable end |
+|---|---|---|
+| Gap | Microbes Quickly Out-Evolve Our Defenses | A Limited Set of Rigid Organizational Structures for Organizing and Funding Research Constrains the Forms of R&D That Get Done |
+| Field | Biosecurity | Metascience |
+| Measurability | Directly measurable | Counterfactual required |
+| Primary AI type | Design and optimization search | Coordination and institutional |
+| Maturity | Working now | Speculative |
+
+A catalogue treats these as two rows of equal standing, which for a catalogue is correct — it is not claiming otherwise. The four added columns are what make the difference visible: one has a quantity, a direction and a tool that works today; the other has none of the three, and the honest thing to record is that its progress indicator search returned a null.
+
+## Progress indicators, and the two nulls
+
+A **sample** of 8 gaps across all four tiers, 2 of them honest nulls. Not coverage, and not to be extrapolated to the other 95. Every non-null value was read off a page that was actually fetched; the `source_checked` column records whether the source verified against arXiv or Crossref, or was merely reachable.
+
+| Gap | Tier | Quantity | Current | Source check |
+|---|---|---|---|---|
+| Frontier Telescopes Are Expensive and Take Decades to Build | Directly measurable | Elapsed time from first concept study to launch, flagship space observatory | 32 years | unchecked |
+| Searching Through the Vast, Underexplored Space of Materials is Slow and Expensive | Directly measurable | Novel inorganic compounds experimentally realised per day of autonomous laboratory operation | 2.4 compounds per day | verified |
+| Most Brain Circuitry is Still Invisible | Directly measurable | Volume of brain tissue reconstructed at synaptic resolution in a single dataset | 1.0 mm³ | verified |
+| Clinical Trials Are Poorly Optimized for Evidence Gathering | Directly measurable | Median estimated cost of a pivotal clinical trial supporting a new FDA approval | 19.0 million USD | verified |
+| Silicon-Based Electronics Face Fundamental Limits in Dimensional Scaling | Directly measurable | Contacted gate pitch at volume production | 45 nm | unchecked |
+| Fraud in the Scientific Literature | Proxy only | Retractions per 10,000 published articles | 11.04 retractions per 10,000 articles | verified |
+| Quantum Gravity is Experimentally Hard to Constrain  | Verification contested | Progress toward experimentally constraining quantum gravity | **null** | n/a |
+| A Limited Set of Rigid Organizational Structures for Organizing and Funding Research Constrains the Forms of R&D That Get Done | Counterfactual required | Progress toward less rigid organizational and funding structures for research | **null** | n/a |
+
+The nulls are the load-bearing rows. Each has six logged, cached searches behind it and each names its closest near-miss: a real and improving Fermi/LHAASO bound on the quantum-gravity energy scale that no one agrees settles anything, and the ~42% administrative-burden figure that measures a symptom of institutional rigidity rather than the research it prevents. See `search_log` and `research-log/searches/phase-3.json`.
+
+## Critical paths
+
+- **From draft to credited contribution: what sets the cost of publishing research** — axis: Cost, measured as reviewer and editor labour per published paper. 3 of 7 links bind: Reviewer recruitment and matching, Review judgment, Credit and legitimacy.
+- **From science case to first light: what sets the elapsed time of a frontier telescope** — axis: Elapsed time from first concept study to first light. 4 of 8 links bind: Strategic ranking (decadal survey or council priority), Funding authorisation, Fabrication, Integration and test.
+
+Both expectations were committed before the link analysis existed, in a separate commit, so the ordering is checkable in git. Full chains, evidence and the cross-field intersection: `docs/critical-paths.md`.
+
+## Elapsed time
+
+| Phase | Kind | Units | Elapsed |
+|---|---|---:|---:|
+| phase-0 | agent | 103 | 0 min |
+| phase-1 | agent | 103 | 23 min |
+| phase-2 | agent | 36 | 6 min |
+| phase-3 | agent | 8 | 9 min |
+| phase-4 | agent | 4 | 6 min |
+| phase-5 | agent | 2 | 7 min |
+| phase-6 | agent | 1 | 27 min |
+| all | human-review | 0 | 0 min |
+
+**Agent time: 79 minutes. Human review time: 0 minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.
 
 ## What this shows
 
