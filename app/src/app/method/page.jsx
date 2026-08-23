@@ -16,7 +16,7 @@ export default function MethodPage() {
     runs
       .filter((r) => r.kind === 'agent' && r.ended_at && !r.phase.startsWith('revision'))
       .reduce(
-        (a, r) => a + (new Date(`${r.ended_at.replace(' ', 'T')}Z`) - new Date(`${r.started_at.replace(' ', 'T')}Z`)),
+        (a, r) => a + (new Date(r.ended_at.replace(' ', 'T').replace(/Z?$/, 'Z')) - new Date(r.started_at.replace(' ', 'T').replace(/Z?$/, 'Z'))),
         0
       ) / 60000
   );
@@ -41,7 +41,7 @@ export default function MethodPage() {
               on this page.
             </p>
             <p>
-              The split matters. The first seven rows below are the build: all {s.n_gaps} gaps
+              The split matters. The build rows below cover phases 0 to 6: all {s.n_gaps} gaps
               labelled, audited and written up in {mins} minutes with <strong>no human review at
               all</strong>. Everything after that is the revision cycle, where an agent role-playing
               one of you read the artifact cold three times and I rewrote it against what came back.
@@ -71,7 +71,7 @@ export default function MethodPage() {
                 dimension {coordFlagged} times out of {coordTotal}.
               </li>
               <li>
-                <strong>The seven kinds of work fuse two questions.</strong> What kind of work is in
+                <strong>The kinds of work fuse two questions.</strong> What kind of work is in
                 the way, and how mature the AI for it is, are separate facts sharing one axis. Every
                 kind has an AI analogue, robotics included, so the axis is really about maturity and
                 should probably be split in two.
@@ -163,7 +163,8 @@ export default function MethodPage() {
               {pct(audit.dimensions.ai_type.raw_disagreement)}, and the audit found three gap types the
               seven-value list handles badly: closed-loop control of a physical system, gaps where AI
               is the object rather than the instrument, and composite gaps that would need different
-              values for different sub-problems.
+              values for different sub-problems. The first became an eighth category, real-time
+              control of physical systems, which four gaps took as primary in the relabel.
             </p>
             <details>
               <summary>Every disagreement, both dimensions</summary>
@@ -314,8 +315,8 @@ export default function MethodPage() {
                   {runs.map((r, n) => {
                     const el = r.ended_at
                       ? Math.round(
-                          (new Date(`${r.ended_at.replace(' ', 'T')}Z`) -
-                            new Date(`${r.started_at.replace(' ', 'T')}Z`)) /
+                          (new Date(r.ended_at.replace(' ', 'T').replace(/Z?$/, 'Z')) -
+                            new Date(r.started_at.replace(' ', 'T').replace(/Z?$/, 'Z'))) /
                             60000
                         )
                       : null;

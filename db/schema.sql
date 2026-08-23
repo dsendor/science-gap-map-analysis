@@ -184,6 +184,7 @@ CREATE TABLE IF NOT EXISTS new_gaps (
                        'Design and optimization search',
                        'Sensing and signal processing',
                        'Autonomous experimentation',
+                       'Real-time control of physical systems',
                        'Physical build and manipulation',
                        'Coordination and institutional'
                    )),

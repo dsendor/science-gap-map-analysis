@@ -1,19 +1,11 @@
 import data from '../../public/data.json';
 import Nav from '../components/Nav';
-import MaturityGradient from '../components/MaturityGradient';
+import RelabelCompare from '../components/RelabelCompare';
 import ChainMini from '../components/ChainMini';
-import { MATURITY_ORDER } from '../lib/constants';
 
 export default function Page() {
   const { summary: s, gaps, critical_paths: paths } = data;
-  const workingNow = gaps.filter((g) => g.primary_maturity === 'Working now').length;
   const publishing = paths.find((p) => p.id === 'path-publishing-cost');
-  const llm = s.maturity_by_ai_type['LLM reasoning and synthesis'] ?? {};
-  const llmTot = MATURITY_ORDER.reduce((a, k) => a + (llm[k] ?? 0), 0);
-  const buildTot = MATURITY_ORDER.reduce(
-    (a, k) => a + ((s.maturity_by_ai_type['Physical build and manipulation'] ?? {})[k] ?? 0),
-    0
-  );
 
   return (
     <>
@@ -76,10 +68,10 @@ export default function Page() {
                 version that recruits people. <a href="./attributes/#outcome">How I wrote them</a>
               </li>
               <li>
-                <strong>The kind of work in the way, and how mature the AI for it is.</strong> Seven
+                <strong>The kind of work in the way, and how mature the AI for it is.</strong> Eight
                 kinds of work, each with an AI analogue and each at working now, two-to-five years,
-                or speculative. Robotics is the analogue for physical build and nothing in the map is
-                served by it yet. <a href="./attributes/">What the seven are</a>
+                or speculative. Robotics is the analogue for physical build.{' '}
+                <a href="./attributes/">What the eight are</a>
               </li>
               <li>
                 <strong>A measurability tier.</strong> Whether the gap has an agreed observable, only
@@ -102,40 +94,62 @@ export default function Page() {
 
         <section>
           <div className="col">
-            <h2>What I found</h2>
+            <h2>What I found, and what did not survive</h2>
             <p>
-              {workingNow - 1} of the {s.n_gaps} gaps have a primary blocker that current AI can act
-              on today. That is a snapshot and a coarse one: I labelled what kind of work each gap
-              needs and whether the relevant capability works, and I did not measure how much faster
-              anything actually got. Working out the size of the speedup is the obvious next piece of
-              work, and a single primary label also hides both AI and non-AI opportunities across the
-              other {s.n_gaps - workingNow + 1}.
+              The first pass produced a clean result: the share of gaps each kind of work blocks where
+              the AI for it already works ran from 60% for reading and synthesis down to 0% for
+              physical build. It was the most striking thing this analysis produced.
+            </p>
+            <p>
+              A second pass relabelled all {s.n_gaps} gaps blind, against a revised taxonomy, by
+              labelers who never saw the first set, with predictions registered in a commit
+              beforehand. It did not reproduce that result.
             </p>
           </div>
 
           <figure className="card" style={{ marginTop: 18 }}>
             <div className="pad">
-              <MaturityGradient aiTypes={s.ai_type} maturityByType={s.maturity_by_ai_type} />
+              <RelabelCompare relabel={data.relabel} />
               <figcaption>
-                For each kind of work, the share of the gaps it primarily blocks where the relevant AI
-                capability already works. All {s.n_gaps} gaps, one primary kind each. A snapshot, not
-                a trend: I did not label these gaps at any earlier date. The single working-now case
-                under coordination and institutional is <em>Ephemeral Societal Data on Proprietary
-                Platforms</em>, where the archiving is technically solved and the blocker is entirely
-                legal and financial, so I leave it out of the count above.
+                Share of each kind of work whose gaps have an AI capability that works today, in both
+                passes. The two agreed on the kind of work for {data.relabel.type_agreed} of{' '}
+                {data.relabel.n} gaps and on maturity for only {data.relabel.maturity_agreed}.
               </figcaption>
             </div>
           </figure>
 
           <div className="col">
             <p style={{ marginTop: 22 }}>
-              {llm['Working now']} of the {llmTot} gaps blocked by reading and synthesis are served
-              today. All {buildTot} blocked by physical build sit at two-to-five years or speculative.
-              What separates the top of that list from the bottom is how much physical world is
-              involved, and that ordering should move: robotics is the AI analogue for physical build,
-              and it is advancing quickly.
+              The ordering inverts at the top. Coordination and institutional goes from last place to
+              first. Physical build is no longer zero. So the gradient is withdrawn.
             </p>
+            <p>
+              The cause is a definitional hole I left open. Does &ldquo;working now&rdquo; mean the
+              capability exists, or that applying it would move this gap? For technical categories
+              those coincide. For institutional ones they come apart completely: convening a standards
+              body is available this afternoon, and getting universal DNA-synthesis screening adopted
+              is not. I labelled institutional gaps on efficacy and the relabelers read availability.
+              Both are defensible, and a reader of the published number could not tell which they were
+              getting.
+            </p>
+            <div className="pull">
+              <p>
+                <strong>What survived is weaker and better supported.</strong> Reading and synthesis
+                is the primary blocker for 10 of {s.n_gaps} gaps, identical in both passes, at 60%
+                working-now in both. Coordination is primary for 15 of {s.n_gaps} in both passes. The
+                two passes disagree sharply about how mature institutional capability is, and not at
+                all about how often it is the constraint.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                So: the cognitive layer is a small, stable slice of this map, and the rest spreads
+                across sensing, prediction, design, build and institutions. The sharper claim is not
+                supported at this measurement reliability.{' '}
+                <a href="./method/">The full scoring</a>
+              </p>
+            </div>
+          </div>
 
+          <div className="col">
             <h3 style={{ marginTop: 34 }}>Then the chains show what a one-line label compresses</h3>
             <p>
               An attribute is one line. A critical path breaks the gap into the steps that have to
@@ -200,7 +214,7 @@ export default function Page() {
             </p>
             <ul>
               <li>
-                <strong>Tell me which attributes are wrong.</strong> The seven kinds of work most of
+                <strong>Tell me which attributes are wrong.</strong> The kinds of work most of
                 all. The audit already found three gap types it handles badly.
               </li>
               <li>

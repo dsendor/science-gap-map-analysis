@@ -15,9 +15,11 @@ const KINDS = [
     what: 'Getting a usable measurement out of a noisy or indirect one.' },
   { k: 'Autonomous experimentation', ai: 'Self-driving labs. Early, and real.',
     what: 'Choosing the next experiment and running it with nobody in the loop.' },
+  { k: 'Real-time control of physical systems', ai: 'Learned control. Working today for plasma and adaptive optics.',
+    what: 'Closed-loop sense, decide and actuate on hardware that already exists, at machine timescales. Added after a blind audit found it had no home in the original seven.' },
   { k: 'Physical build and manipulation', ai: 'Robotics, and it is moving fast. Not one gap in the map is served by it yet.',
     what: 'Fabricating, assembling, or handling matter.' },
-  { k: 'Coordination and institutional', ai: 'Hardest of the seven, and not empty: matching, scheduling, drafting and forecasting all apply.',
+  { k: 'Coordination and institutional', ai: 'Hardest of the eight, and not empty: matching, scheduling, drafting and forecasting all apply.',
     what: 'Approval, funding, agreement, incentives, and who counts what.' },
 ];
 
@@ -69,10 +71,10 @@ export default function AttributesPage() {
           <div className="col">
             <h2>2. What kind of work is in the way</h2>
             <p>
-              Seven values, naming kinds of work and not kinds of model. Every one of them has an AI
+              Eight values, naming kinds of work and not kinds of model. Every one of them has an AI
               analogue. What separates them is how mature that analogue is and how hard the work is
               to automate: language models are here, robotics is arriving, and the institutional
-              category is the hardest of the seven without being empty.
+              category is the hardest of the eight without being empty.
             </p>
           </div>
           <div className="scroll" style={{ marginTop: 16 }}>
@@ -110,15 +112,18 @@ export default function AttributesPage() {
                 <strong>Where it breaks, and this is the attribute I would most like torn apart.</strong>
               </p>
               <p>
-                The blind audit disagreed on 33% of these in the raw sample. It found three gap types
-                the seven values handle badly: closed-loop control of a physical system, which is
-                neither experimentation nor build; gaps where AI is the object rather than the
-                instrument, such as AI misuse; and composite gaps that would need different values for
-                different sub-problems.
+                A full independent relabel of all 103 gaps put type disagreement at 25%. It also
+                confirmed the eighth category was worth adding: four gaps took real-time control as
+                their primary. Two problems the audit found are still open. Gaps where AI is the
+                object rather than the instrument now carry a separate frame flag instead of a type.
+                Composite gaps, which bundle sub-problems needing different values, are still recorded
+                under one label.
               </p>
               <p>
-                The audit never covered maturity at all, and maturity is the axis the headline chart
-                is built from.
+                Maturity is the weakest thing measured here. The two passes agreed on the kind of work
+                for 77 of 103 gaps and on maturity for only 63, and the disagreements moved
+                overwhelmingly in one direction. The working-now gradient the first pass produced did
+                not replicate and has been withdrawn.
               </p>
               <p style={{ marginBottom: 0 }}>
                 Fusing &ldquo;what kind of blocker&rdquo; with &ldquo;how mature is the AI for

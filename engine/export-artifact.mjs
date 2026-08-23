@@ -139,6 +139,32 @@ for (const dim of ['measurability', 'ai_type']) {
   auditSummary.dimensions[dim] = entry;
 }
 
+// The v1/v2 relabel comparison. The working-now gradient was the headline of the first
+// pass and did not survive an independent full-coverage relabel, so the two passes are
+// exported side by side rather than the surviving one being shown alone.
+const relabelRows = all('SELECT * FROM relabels');
+let relabel = null;
+if (relabelRows.length) {
+  const share = (rows, typeKey, matKey) => {
+    const by = {};
+    for (const r of rows) {
+      const t = r[typeKey];
+      if (!t) continue;
+      (by[t] ??= { n: 0, now: 0 });
+      by[t].n++;
+      if (r[matKey] === 'Working now') by[t].now++;
+    }
+    return by;
+  };
+  relabel = {
+    n: relabelRows.length,
+    type_agreed: relabelRows.filter((r) => r.type_agreed).length,
+    maturity_agreed: relabelRows.filter((r) => r.maturity_agreed).length,
+    v1: share(relabelRows, 'v1_type', 'v1_maturity'),
+    v2: share(relabelRows, 'adjudicated_type', 'adjudicated_maturity'),
+  };
+}
+
 const out = {
   generated_at: new Date().toISOString().slice(0, 10),
   source: {
@@ -153,6 +179,7 @@ const out = {
   critical_paths: paths,
   audits,
   audit_summary: auditSummary,
+  relabel,
   decisions: all('SELECT phase, decision, rationale, runner_up, confidence, reversal_condition FROM decisions ORDER BY id'),
   runs: all('SELECT phase, kind, started_at, ended_at, n_units, note FROM runs ORDER BY id'),
 };

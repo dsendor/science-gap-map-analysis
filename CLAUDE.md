@@ -85,6 +85,34 @@ stack. That machinery exists to score and rank, and ranking is forbidden here. P
 `aggregate.mjs` would drag this project toward exactly the prioritisation Convergent
 deferred on purpose. This is the main trap in reusing that repo.
 
+## Branching: one track of work, one branch
+
+**Start a new branch for every new track of work, and fetch before you start.**
+
+This is not style advice. On 2026-08-23 two sessions worked this repo in parallel on
+the same branch. One cloned at Phase 2 and never fetched; the other pushed seven
+commits in the meantime, including a rewrite of the very plan the first was executing
+and a full relabel that withdrew the finding the first was building its artifact on.
+Five hours of work went into an argument that had already been retracted. Nothing was
+lost, because both lines were committed, but the reconciliation cost more than the
+branch would have.
+
+So:
+
+1. **`git fetch` before starting any phase**, and again before any commit that follows
+   a long gap. A stale clone is silent; nothing warns you.
+2. **One track, one branch.** A relabel, an artifact build and a deployment are three
+   tracks. Name them for the work (`relabel-v2`, `artifact-rebuild`), not for the agent.
+3. **Merge into `main` deliberately**, resolving conflicts by hand. Two agents working
+   the same files will independently make the same fixes with different wording, and
+   they will also make *incompatible* ones — the adjudication ordering in
+   `engine/rebuild.mjs` is the example: running `adjudicate.mjs` after `apply-relabel.mjs`
+   silently re-downgrades labels the relabel had just resolved.
+4. **Say in the commit which session produced it.** The `Claude-Session` trailer is how
+   the provenance of those seven commits was established after the fact.
+5. **If you find commits you did not make, stop and report before merging.** Do not
+   assume they are yours, and do not assume they are stale.
+
 ## Autonomous decision protocol
 
 Whenever a decision would previously have gone to David: decide per the methodology
