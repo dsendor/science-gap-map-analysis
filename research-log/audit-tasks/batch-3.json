@@ -1,0 +1,135 @@
+{
+  "batch": 3,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "field": "Physics",
+      "name": "Quantum Gravity is Experimentally Hard to Constrain\n",
+      "description": "Quantum gravity remains elusive, with experimental constraints hindered by the need for extremely large-scale or prohibitively expensive experiments.",
+      "convergent_capabilities": [
+        "Targeted Experiments for Quantum Gravity"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
+      "field": "Social Science",
+      "name": "Labor-Replacing AI Could Lead to Human Disempowerment",
+      "description": "As AI systems become the cornerstone of competitive advantage, they can inadvertently marginalize human roles and decision-making. The drive for efficiency and cost reduction may lead organizations to rely predominantly on AI, sidelining human judgment, creativity, and accountability. This dynamic risks creating environments where economic and social inequities widen, and the intrinsic value of human input is systematically undermined (see examples). The gradual disempowerment of individuals under such competitive pressures poses significant challenges for societal well-being and democratic governance. \n\nSee: https://gradual-disempowerment.ai/",
+      "convergent_capabilities": [
+        "AI Agents to Advocate for Human Interests",
+        "Early Warning Signs for Human Disempowerment",
+        "Improved Voting and Auditing Protocols",
+        "Interventions for Maintaining Human Oversight",
+        "Metrics to Track Human Influence",
+        "Technology to Augment Humans",
+        "Tools for Deliberative Democracy"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8099-b97a-ce85f02ab5a5",
+      "field": "Biophysics",
+      "name": "Lack of Direct Measurement of Quantum Effects in Biological Systems",
+      "description": "Despite theoretical predictions, quantum effects in biological systems remain largely unmeasured. Direct experimental evidence is needed to explore how quantum phenomena influence biomolecular interactions.",
+      "convergent_capabilities": [
+        "Quantum Biology Measurements"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+      "field": "Metascience",
+      "name": "A Limited Set of Rigid Organizational Structures for Organizing and Funding Research Constrains the Forms of R&D That Get Done",
+      "description": "This is more of a meta-bottleneck. But scientists are spending a lot of time not doing science, and the institutional structures in which they work are often set up with incentive structures that hinder certain kinds of outcomes, like more coordinated research.",
+      "convergent_capabilities": [
+        "Decentralized Science Funding",
+        "New Models to Reduce Fundraising Burden of Scientists",
+        "Novel and Diverse Research Organization Structures "
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
+      "field": "Social Science",
+      "name": "Underdevelopment of Modern Tools in the Social Sciences",
+      "description": "The social sciences need new tools to help researchers identify and prioritize important questions that will have an impact, and better infrastructure to collect qualitative data. Qualitative methods are powerful for understanding the how and why behind social outcomes, yet even the most comprehensive surveys don’t capture all the factors that contribute to social outcomes. AI-enabled qualitative methods could super-charge the social sciences, but there is much work to be done.\n\nSimilarly, many archaeological methods remain manual and lack the technological revolution seen in other fields, limiting discovery and analysis.",
+      "convergent_capabilities": [
+        "Infrastructure for Problem-Driven Research",
+        "Modernize Survey Infrastructure",
+        "Satellite and Machine Learning-Enabled Archaeology"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
+      "field": "Space Engineering",
+      "name": "Lack of a Dedicated Field for Planetary Terraforming",
+      "description": "There is currently no established field for systematically studying and applying planetary terraforming methods, leaving key challenges in transport, energy supply, and civil engineering largely unaddressed.",
+      "convergent_capabilities": [
+        "Directed Work on Biological Approaches",
+        "Directed Work on Non-Biological Approaches"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
+      "field": "Ecology",
+      "name": "We Can Learn More from Nature’s Biological Designs",
+      "description": "Nature’s blueprints span from the unseen nanoworld to the enigmatic origins of life. Despite the incredible diversity of nanostructures, many remain hidden due to current imaging limitations. Likewise, the mysteries of animal communication—crucial for decoding behavioral cues and social structures—await breakthrough insights. Moreover, the primordial conditions of our planet, essential for understanding life’s genesis, are obscured by the absence of rocks from before 4.1 Ga and fossils before 3.5 Ga (although life almost certainly established itself on our planet before that). Addressing these challenges can unlock new understandings in biology, ecology, and more.",
+      "convergent_capabilities": [
+        "Advanced Imaging of Natural Nanostructures",
+        "Develop Missions to Search for Life on Europa and/or Enceladus",
+        "Leverage Modern Machine Learning to Communicate with Animals",
+        "Massive-Scale Search and Screening of Hadean Zircons",
+        "Rake Ancient Lunar Regolith - “Earth’s Attic” - to Find Fragments of Hadean Rock from Earth",
+        "Understand Ancient Proteins"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
+      "field": "Cellular and Molecular Biology",
+      "name": "Limited Ability to Image Molecules in Their Native Contexts",
+      "description": "We are currently limited in our ability to image molecules in their native contexts—for example, within live 3D tissues. Achieving scalable, high-resolution imaging of biomolecules in situ would de-risk many areas of biomedical science by enabling integrative, comprehensive molecular mapping within intact specimens.",
+      "convergent_capabilities": [
+        "Binders for Every Epitope",
+        "Freezing and Unfreezing Time for Living\n  Cells",
+        "Live Cell Subcellular Imaging &\n  Foundation Models",
+        "Molecular 3D Scanning",
+        "Multiplexed Live-Cell Dynamics Recordings"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8031-b79b-c13cca53b9c9",
+      "field": "Biophysics",
+      "name": "Difficulty Delivering Physical Probes for Imaging into Living Cells",
+      "description": "Delivering physical probes for imaging into living cells is challenging due to barriers in cell membranes and potential perturbation of cellular function. New approaches are required to enable high-dimensional biosensing without invasive probes.",
+      "convergent_capabilities": [
+        "Label-Free High-Dimensional Biosensing",
+        "Metabolically Incorporated Labels"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
+      "field": "Nanoscale Fabrication",
+      "name": "Synthetic Biology Platforms Are Over-Reliant on Evolved Cells That We Don’t Fully Understand or Control",
+      "description": "We currently perform synthetic biology using naturally evolved (“kludgy”) cells rather than truly bottom-up engineered cells. This bottleneck limits our ability to design fully customizable biological systems.",
+      "convergent_capabilities": [
+        "Bottom-Up Synthetic Cells"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
+      "field": "Materials Science",
+      "name": "Many Molecules Can’t Easily Be Crystallized",
+      "description": "Crystallization is crucial for determining molecular structure, yet many molecules resist forming crystals. Improved computational models of crystal growth are needed to guide experimental efforts.",
+      "convergent_capabilities": [
+        " Computational Crystal Growth"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
+      "field": "Synthetic Biology",
+      "name": "Poor Scalability of Bioreactors Limits Biomanufacturing",
+      "description": "Current bioreactor designs are inefficient when scaling up production processes, limiting the ability to produce bioproducts at industrial scales.",
+      "convergent_capabilities": [
+        "Modularization of Bioreactors",
+        "Novel Materials and Sterilization of Bioreactors "
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "field": "Social Science",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8097-9eca-e48345e90acc",
+      "outcome": { "outcome": "Individualised instruction becomes available at the cost of group instruction, so teaching quality stops being rationed by teacher hours per student.", "rationale": "Their description names administrative burden and class size as the structural limits that technology would lift.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "Digital tutoring and administrative assistance are working language-model applications; all three of their capabilities are this.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Learning gains against control, teacher hours reclaimed and cost per student are measurable and routinely trialled.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bd01-c3b284abeb44",
+      "outcome": { "outcome": "Societally significant data on private platforms survives the platform, so longitudinal social research stops depending on corporate retention decisions.", "rationale": "Their description names long-term research and reproducibility as what disappearing data forecloses.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "Working now", "is_primary": 1, "rationale": "Archiving is technically solved; access rights, legal permission and who funds preservation are the entire blocker.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Datasets successfully archived is countable, but the quantity of interest is what has already been lost, which by construction left no record.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
+      "outcome": { "outcome": "Human influence over consequential decisions can be observed and defended as AI capability grows, so erosion becomes visible while it is still reversible.", "rationale": "Their capability list includes metrics to track human influence and early-warning signs, which makes visibility the near-term unlock.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "Speculative", "is_primary": 1, "rationale": "The mechanism they describe is competitive pressure on organisations, so the intervention point is incentives and governance, not a technique.", "confidence": "confident" },
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 0, "rationale": "Their proposed AI agents advocating for human interests and deliberation tools are language-model applications.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Candidate metrics for human influence are named in their own capability list and could be computed, but no agreement exists that any of them would establish disempowerment rather than ordinary automation. Sits close to counterfactual-required, since the comparison is a world that did not occur, hence the guess.", "confidence": "guess" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "outcome": { "outcome": "Information environments can be designed to reward accuracy rather than engagement, giving platform operators an alternative objective that is actually implementable.", "rationale": "Their description contrasts algorithms optimising for fleeting engagement with design for epistemic improvement.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "Contextualisation, fact-check assistance and content curation are working language-model applications, and most of their eleven capabilities are these.", "confidence": "confident" },
+        { "ai_type": "Coordination and institutional", "maturity": "Speculative", "is_primary": 0, "rationale": "Whether platforms adopt an objective that reduces engagement is a business-incentive question no technique settles.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Belief accuracy, exposure diversity and correction uptake are measurable, but collective epistemic health is inferred from these rather than observed.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "outcome": { "outcome": "Public preferences can be elicited and aggregated at population scale with verifiable integrity, so deliberation stops being limited to sample sizes that fit in a room.", "rationale": "Their description names survey infrastructure, voting security and deliberative tools as the three limits.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Adoption by actual electoral and civic bodies is the binding step; the tooling is not the hard part.", "confidence": "confident" },
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 0, "rationale": "Deliberation support and preference summarisation at scale are demonstrated language-model applications.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Participation rates and demographic representativeness are measurable, but whether collective decisions improved has no agreed observable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8013-a845-c84eb5cde804",
+      "outcome": { "outcome": "Policy can be expressed formally enough to be checked automatically for consistency and compliance, so human review stops being the throughput limit on implementation.", "rationale": "Their description identifies human reviewers becoming a bottleneck as the specific failure.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 1, "rationale": "Formalisation of policy is translation from natural language into checkable structure, which is a language and reasoning task.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Time from draft to cleared policy, and detected inconsistencies per document, are direct process metrics.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e6-a011-db27cb962cd8",
+      "outcome": { "outcome": "Development economics findings reach implementation at the scale they were validated for, so evidence stops accumulating faster than it is used.", "rationale": "Their description names the disconnect between academic research and practical implementation as the gap itself.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "The stated failure is translation into policy and delivery mechanisms, which is an institutional handoff rather than a research capability.", "confidence": "confident" },
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 0, "rationale": "Cost-effectiveness modelling and large-scale economic experiments in their capability list are prediction and simulation work.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Adoption counts and programme reach are measurable, but the welfare gain forgone by non-translation is not observed.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c2-a1bb-c735bf51fdd9",
+      "outcome": { "outcome": "Economic models become able to represent structural transformation rather than only marginal change, so policy for unprecedented conditions can be tested before it is lived through.", "rationale": "Their description names modelling radical transformations and unpreparedness for emerging trends as the loss.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Agent-based and complex-systems simulation with learned components is the route their capability list describes.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Forecast accuracy is measurable at short horizons, but models of radical transformation cannot be validated against an economy that has not undergone one.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
+      "outcome": { "outcome": "Qualitative and survey evidence becomes collectable and analysable at the scale quantitative data already is, so the how and why of social outcomes stops being the underpowered half of the field.", "rationale": "Their description names qualitative methods as powerful but unscaled, and archaeology as similarly un-modernised.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "AI-enabled qualitative coding and interview analysis are working applications; their own text calls this out as the opportunity.", "confidence": "confident" },
+        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Satellite and machine-learning-enabled archaeology is a detection problem already producing results.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Interviews coded per researcher-hour and inter-coder agreement are measurable, but whether the field is asking better questions has no observable.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Six of nine are proxy-only or worse, the weakest measurability of any field. Four take an LLM primary at working-now maturity, and every one of those four is proxy-only or contested. This is the pattern the thesis predicts, in its purest form: the tooling has arrived and the field still cannot tell whether it helped."
+}

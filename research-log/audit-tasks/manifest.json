@@ -1,0 +1,146 @@
+[
+  {
+    "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8099-b97a-ce85f02ab5a5",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+    "stratum": "Verification contested"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
+    "stratum": "Counterfactual required"
+  },
+  {
+    "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
+    "stratum": "Proxy only"
+  },
+  {
+    "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8031-b79b-c13cca53b9c9",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+    "stratum": "Directly measurable"
+  },
+  {
+    "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
+    "stratum": "Directly measurable"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "field": "Space Engineering",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
+      "outcome": { "outcome": "Terraforming acquires a research community and a shared problem list, so its transport, energy and civil engineering questions get worked on deliberately rather than incidentally.", "rationale": "Their description states the gap as the absence of an established field, not the absence of a technique.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "Speculative", "is_primary": 1, "rationale": "Founding a field is an institutional act: funding lines, venues and a shared agenda, none of which any technical capability supplies.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Researchers, funded programmes and publications are countable as inputs, but whether the field is producing useful knowledge is not measurable from those counts.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c6-88ec-c73d91a62be4",
+      "outcome": { "outcome": "Orbital habitats become buildable outside government megaproject structures, so pressurised volume in orbit stops being limited to one facility per generation.", "rationale": "Their description makes the point with a single statistic: one new station this century.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "In-situ resource utilisation and new construction approaches are fabrication and assembly capabilities.", "confidence": "confident" },
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 0, "rationale": "Their own framing blames reliance on traditional government-led megaprojects, which is a procurement structure.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Cost per habitable cubic metre in orbit and stations launched per decade are direct and countable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-a10f-e4099f056390",
+      "outcome": { "outcome": "Missions beyond the solar system become physically survivable and propulsively reachable, extending direct observation past the boundary that currently confines it.", "rationale": "Their description names confinement to the solar system as the limit on understanding the broader cosmos.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 1, "rationale": "Air-breathing fusion propulsion, cryosleep and habitation domes are all hardware with no working precedent.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Achievable delta-v, supported mission duration and life-support closure fraction are direct engineering quantities even where the capability is far off.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Small field, and two of three take a physical-build primary at speculative maturity. The terraforming gap is unusual in the map: the stated deficiency is the absence of a research community, which no technical capability addresses."
+}

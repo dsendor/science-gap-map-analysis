@@ -1,0 +1,139 @@
+{
+  "batch": 2,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "field": "Physics",
+      "name": "Incomplete Resolution of the Possibility of Low-Energy Nuclear Reactions",
+      "description": "While low-energy nuclear reactions (LENRs) have received substantial attention and there is no good evidence they exist, there may still be other mechanisms or parameter combinations that are underexplored.",
+      "convergent_capabilities": [
+        "Possibility of LENR Experiments"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
+      "field": "Biophysics",
+      "name": "Understanding Life as a Far-From-Equilibrium Physical Phenomenon",
+      "description": "Our ability to analyze organisms holistically as systems which emerge from fundamental physics is limited by our lack of formal frameworks for distinguishing living and nonliving systems which are precise enough to be useful for practical scientific problems",
+      "convergent_capabilities": [
+        "Simulating Nonequilibrium Systems at Scale"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "field": "Computation",
+      "name": "Biological Life is Our Only Working Example of Complex Evolved Computation",
+      "description": "Biological systems are the sole example we have of complex, evolved computation. Replicating this level of complexity in digital systems could unlock entirely new computational paradigms.",
+      "convergent_capabilities": [
+        "Virtual Life Enabled by Learning and GPUs"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
+      "field": "Geophysics and Climate",
+      "name": "Intervening in Earth Systems at Scale is Largely Untested",
+      "description": "There are currently no direct interventions to address climate tipping points such as glacier melt, leaving some critical processes unmitigated. The fundamental science and engineering principles behind emergency climate interventions remain largely untested at relevant scales, limiting our preparedness for rapid climate change.\n\nSee: https://www.outlierprojects.org/",
+      "convergent_capabilities": [
+        "Arctic Interventions",
+        "Glacial Climate Intervention",
+        "Glacier Measurement Tools",
+        "Planetary Sunshade Fundamentals",
+        "Protecting Ocean Ecosystems",
+        "Removal of Methane and N2O from the Atmosphere",
+        "Safely Testing Emergency Atmospheric Interventions",
+        "Solar Radiation Modification Fundamentals"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "field": "Computation",
+      "name": "AI Could Be Misused",
+      "description": "The risk of AI being misused—whether through malicious intent or unintended consequences—necessitates robust safeguards and countermeasures.",
+      "convergent_capabilities": [
+        "Decentralized Training",
+        "Jailbreak Resistance"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "field": "Astrophysics",
+      "name": "Major Planetary Science and Astrobiology Missions Are Not Realized by Existing Government Space Agencies",
+      "description": "Some of the most important planetary science and astrobiology missions remain unrealized by traditional government agencies like NASA. Alternative, independent initiatives are needed to explore these high-priority scientific questions.",
+      "convergent_capabilities": [
+        "Independent Planetary Missions"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
+      "field": "Social Science",
+      "name": "Limited Tools for Improving Individual, Social and Societal Epistemics in the Face of Misinformation ",
+      "description": "In an era of relentless information overload and pervasive misinformation—fueled by algorithms that prioritize fleeting engagement over meaningful value—we have the opportunity to reshape our digital spaces. By leveraging AI and more intentional design of social media spaces for epistemic improvement, we can empower users to curate, evaluate, and contextualize content more effectively to create a healthier digital world.",
+      "convergent_capabilities": [
+        "Content Curation Tools",
+        "Contextualization Engines",
+        "Crowd-Sourced Fact-Checking ",
+        "Detection of Coordinated Misinformation and Scams",
+        "Improved Observatory of the Information Environment",
+        "Incentives for Verification and Accountability",
+        "Privacy Preserving Identity Verification",
+        "Projects to Crowdsource Ground Truth Information",
+        "Structured Transparency",
+        "Tools to Promote Constructive Dynamics in Social Media Spaces",
+        "“System 2” Recommenders in Social Media Spaces"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "field": "Cellular and Molecular Biology",
+      "name": "Cellular and Biomolecular States Are\n  Highly Multimodal and Complex",
+      "description": "Cellular state is a multifaceted and complex phenomenon, involving multiple overlapping omics layers that vary in time and space. Capturing and representing this multimodal complexity is essential for predictive modeling of cell behavior and for advancing our understanding of cellular function. ",
+      "convergent_capabilities": [
+        "Automated Mechanistic Interpretability of Generative AI Models Trained on Biological Data",
+        "Models for Dynamic Cellular and Subcellular Data",
+        "Universal Latent Variable Model of\n  Cellular State"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "field": "Chemistry",
+      "name": "Limited ability to identify molecular structures through spectroscopy",
+      "description": "Most molecular structure determination methods lose critical information, and solving the inverse problem remains challenging. This limits our ability to accurately reconstruct molecular structures from spectral data.",
+      "convergent_capabilities": [
+        "Microwave Spectroscopy for 1:1 Mapping",
+        "Universal Spectroscopic Databases"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
+      "field": "Ecology",
+      "name": "Much of the Biosphere Remains Uncharted and Vulnerable to Information Loss",
+      "description": "Much of Earth's biosphere—from the deep ocean to atmospheric bioaerosols—remains unexplored, with the microbial majority largely uncharted. Advancing new exploration technologies and systematically cataloging the Earth's microbiome could unlock discoveries of new life forms and biological insights that could impact health, climate, geoengineering, agriculture, and fundamental biology.",
+      "convergent_capabilities": [
+        "Dense Ocean DNA Sampling",
+        "Efficient Ocean Exploration Systems",
+        "Genomic Maps of Global Microbiomes",
+        "Map Atmospheric Extremophiles"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
+      "field": "Global Health",
+      "name": "Under-Provisioning of Antibiotics, Vaccines and Other Interventions for Major Global Health Challenges",
+      "description": "Many of the world’s most deadly diseases—such as tuberculosis, Group A Streptococcus, hepatitis C, hepatitis B, and syphilis—lack effective vaccines or cures. Additionally, the pace of developing effective, low-cost, therapeutics for emerging pathogens in low resource settings is too slow to meet global health needs. Malnutrition exacerbates susceptibility to disease and impedes recovery; food security is important especially for early child development. Understanding the basic science of malnutrition during development is important for the development of more effective interventions.",
+      "convergent_capabilities": [
+        "Effective Vaccines for Global Health Challenges",
+        "Improved Interventions for Malnutrition",
+        "Novel Therapeutic Approaches for Chronic Infections"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "field": "Mechanical Engineering",
+      "name": "Designing Buildings is Hard",
+      "description": "Architectural design and construction planning are complex and labor-intensive. Advanced computational design and AI-driven optimization have the potential to revolutionize how buildings and construction plans are generated.",
+      "convergent_capabilities": [
+        "AI Design of Buildings and Construction Plans"
+      ]
+    }
+  ]
+}

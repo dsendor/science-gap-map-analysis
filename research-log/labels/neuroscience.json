@@ -1,0 +1,42 @@
+{
+  "field": "Neuroscience",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "outcome": { "outcome": "Findings from model systems start transferring to the human brain, so neuroscience results stop failing at the species boundary.", "rationale": "Their description frames the loss as models failing to capture human brain function, which is a transfer failure.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Digital replicas and data-driven models of brain systems are learned simulation, and four of their seven capabilities are modelling or dataset work.", "confidence": "confident" },
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Ex vivo human brains and in vitro cortex models are biological engineering capabilities rather than computational ones.", "confidence": "guess" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Correspondence on specific named measures can be scored, but representativeness of the human brain overall has no single observable and is argued rather than measured.", "confidence": "guess" }
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "outcome": { "outcome": "Complete wiring diagrams with molecular annotation become affordable at brain scale, so circuit-level explanations of behaviour and disorder become testable rather than assumed.", "rationale": "Their description ties the gap directly to diagnosis, treatment and grounding safety principles for brain-like AI.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 1, "rationale": "Automated segmentation and reconstruction of electron-microscopy volumes is one of the most mature applications of learned vision in science.", "confidence": "confident" },
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Their stated blocker is that the imaging hardware is prohibitively expensive and unscalable, which is instrument throughput.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Cubic millimetres reconstructed per dollar, synapses annotated and error rate per reconstructed neuron are direct and published.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e4-bb14-ecc39aa04c12",
+      "outcome": { "outcome": "Brain state becomes readable and modifiable across the whole living human brain without craniotomy, extending neural interfaces from a few thousand patients to a general population.", "rationale": "Their description names safer, noninvasive or minimally invasive real-time access as the specific requirement.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Every listed capability is a transducer, interface or access route, which is device fabrication and deployment.", "confidence": "confident" },
+        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Decoding intent from noisy neural signal is the mature half of the problem and is not what limits deployment.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Channels recorded, spatial and temporal resolution, depth reached and invasiveness are direct device specifications.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80da-94b7-d6c79e96cf17",
+      "outcome": { "outcome": "Large neural populations become observable at single-neuron resolution and behavioural timescales in the living brain, so circuit computation can be watched rather than reconstructed from averages.", "rationale": "Their description names fast, high-resolution, non-destructive recording as the requirement for unravelling circuit interplay in real time.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Fast volumetric imaging at depth is a photon-limited inverse problem where learned reconstruction directly buys speed and depth.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Neurons recorded simultaneously, volume rate and imaging depth are direct instrument metrics with published records.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Connectomics is a rare case where the AI half genuinely works and the instrument half is the constraint, and their own description says so. The model-systems gap is the weakest label in this field and is flagged on both the primary type and the tier."
+}

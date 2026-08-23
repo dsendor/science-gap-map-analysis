@@ -1,0 +1,68 @@
+{
+  "field": "Chemistry",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-80fb-9bbd-cbbe06f1776e",
+      "outcome": { "outcome": "Quantum-chemical accuracy becomes available at molecular-dynamics cost, so reaction energetics can be screened computationally instead of measured one system at a time.", "rationale": "Their description names surrogate models and AI-accelerated quantum chemistry as the underexploited route; the unlock is the accuracy-cost tradeoff collapsing.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Machine-learned force fields and neural wavefunction methods are in production use; six of their eight capabilities are surrogate or dataset work.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Error against high-level reference calculations at a stated compute budget is the field's standard benchmark.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fb-9659-f73deeec29c5",
+      "outcome": { "outcome": "Material structure becomes readable atom by atom, so structure-property relationships can be grounded in observed atomic arrangement rather than inferred from bulk averages.", "rationale": "Their description frames the loss as understanding properties at the most fundamental level.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Atomic-resolution reconstruction from sparse, dose-limited signal is an inverse problem where learned reconstruction directly buys resolution.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Whether individual atoms are resolved, and at what dose and field of view, is a direct instrument specification.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80f9-8c4d-fa70c0da8ada",
+      "outcome": { "outcome": "Reaction outcomes and catalyst behaviour become predictable across the untested majority of chemical space, so synthesis routes can be planned rather than discovered.", "rationale": "Their description names the missing ingredient as large synthesis and processing datasets enabling predictive models.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 1, "rationale": "The stated blocker is missing data, not missing algorithms, and closed-loop synthesis is the only route to generating it at the required scale.", "confidence": "confident" },
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Reaction prediction models already work where data exists, which is exactly why data generation is the binding link.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Held-out reaction yield and product prediction accuracy, and coverage of reaction classes, are countable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a0fa-ff9d396d425a",
+      "outcome": { "outcome": "Molecular structure becomes recoverable from spectra alone, removing crystallisation and purification from the critical path of structure determination.", "rationale": "Their description frames it as an inverse problem where information is lost; recovering it removes the slow experimental step.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Structure-from-spectrum is a classic ill-posed inversion, and learned priors are the standard way such inversions become tractable.", "confidence": "confident" },
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Forward spectrum prediction from structure works now and supplies the training signal for the inverse direction.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Structure elucidation accuracy on held-out spectra with known answers is a direct, already-used benchmark.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8026-a3fb-ffd7b5bf54f1",
+      "outcome": { "outcome": "Novel molecules can be made without a skilled human at the bench, so the number of compounds that can be tested stops being set by the size of the synthetic chemistry workforce.", "rationale": "Their description names throughput and reproducibility as the losses from manual synthesis.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Autonomous experimentation", "maturity": "Working now", "is_primary": 1, "rationale": "Chemputers and automated synthesis platforms are operating today; this is the domain where closed-loop labs are most mature.", "confidence": "confident" },
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "General-purpose manipulation of arbitrary glassware and solids remains the limit on what automation can cover.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Compounds synthesised per instrument-day and human hours per compound are direct throughput measures.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8043-bb0a-f10b4d7f65c8",
+      "outcome": { "outcome": "Perceived odour becomes predictable from molecular structure, making chemical sensing usable as a diagnostic and classification modality rather than a descriptive one.", "rationale": "Their description names flavour science, disease diagnostics and animal communication as the downstream unlocks.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Structure-to-percept mapping is a supervised prediction problem, already partly demonstrated on olfaction benchmark datasets.", "confidence": "confident" },
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 0, "rationale": "Receptor-binding maps require multiplexed assay readout at a scale current sensing does not reach.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Predicted versus panel-rated odour descriptors on held-out molecules is a direct and already-run evaluation.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8069-8477-e0e62e56db05",
+      "outcome": { "outcome": "Non-nucleic-acid polymers become programmably synthesisable, extending the design-build-test loop that transformed DNA and protein work to the rest of polymer chemistry.", "rationale": "Their description sets up the contrast explicitly: nucleic acid synthesis advancing rapidly, everything else underdeveloped.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "The single listed capability is a solid-phase synthesiser for other polymers, which is instrument construction rather than a computational problem.", "confidence": "guess" },
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 0, "rationale": "Coupling chemistry and protecting-group strategy for new monomer classes is a search problem over reaction conditions.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Achievable chain length, per-step coupling efficiency and monomer diversity are direct synthesis metrics.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Taxonomy strain on the last gap: building a synthesiser is instrument engineering, which sits between 'Physical build and manipulation' and nothing else in the taxonomy. Marked as a guess. Chemistry is the field where 'Autonomous experimentation' is genuinely 'Working now', consistent with the brief's framing."
+}

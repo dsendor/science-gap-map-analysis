@@ -1,0 +1,65 @@
+{
+  "field": "Mechanical Engineering",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8039-a26b-ea2d3b4f9bd6",
+      "outcome": { "outcome": "Biological experiments run without a human at the bench, so experimental throughput stops being set by trained-hands availability and results become reproducible by construction.", "rationale": "Their description names throughput and reproducibility as the two losses from manual work.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Autonomous experimentation", "maturity": "Working now", "is_primary": 1, "rationale": "Automated bio labs with AI-assisted protocol programming are operating today; both listed capabilities are exactly this.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Experiments per instrument-day, human hours per experiment and replicate variance are direct operational metrics.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
+      "outcome": { "outcome": "Building and construction-plan design becomes cheap enough to explore many alternatives, so buildings get optimised for cost, energy and buildability rather than settled early.", "rationale": "Their description names labour-intensity as the constraint that computational design would lift.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their single capability is AI design of buildings and construction plans, a constrained search over a well-specified objective.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Design hours per project, alternatives evaluated and resulting cost or energy performance are all directly recorded.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-86dd-d2672b519acf",
+      "outcome": { "outcome": "Manufacturing systems get designed around the task rather than inherited from legacy layouts, so new production lines stop carrying the assumptions of the last century.", "rationale": "Their description explicitly rejects designing around humanoid-robot legacy assumptions.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "System-level layout and process design is a combinatorial search problem with measurable throughput objectives.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Throughput, capital cost per unit capacity and changeover time are the standard manufacturing figures.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8018-8a8c-f42f50d9229a",
+      "outcome": { "outcome": "Manufacturing stops requiring machines larger than the parts they make, so high-performance fabrication becomes deployable at low capital cost and near the point of use.", "rationale": "Their description names the paradigm precisely and gives titanium machining and desalination as blocked examples.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Universal robotic construction systems and low-capital manufacturing are robotic fabrication capability, which is the category's core case.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Capital cost per unit capacity and cost per part in a named material are direct and comparable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8007-8f03-ea967970cb8f",
+      "outcome": { "outcome": "Coupled multiphysics behaviour becomes predictable without a bespoke model per system, so mechanical design iterates in simulation instead of in hardware.", "rationale": "Their capability is a transferrable multiphysics foundation model, and transferability is the whole point.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Learned surrogates for coupled PDE systems are the archetypal working case of this category.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Prediction error against high-fidelity simulation or experiment at a stated compute budget is a direct benchmark.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8050-bea1-ffeab17c0e7b",
+      "outcome": { "outcome": "Robots become cheap and dexterous at the same time, so physical tasks currently reserved for human hands become automatable at a price that justifies it.", "rationale": "Their description makes affordability and capability jointly necessary, and names dexterity and tactile sensing as the specific shortfalls.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Actuation, morphology and tactile hardware are the stated limits, and seven of seven capabilities are hardware or co-design.", "confidence": "confident" },
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 0, "rationale": "Their co-design of morphology and control capability is a joint search over body and controller.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Cost per degree of freedom, standard dexterity benchmark scores and mean time between failures are directly comparable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c5-921e-de69ffaca475",
+      "outcome": { "outcome": "Policies trained in simulation work on real hardware first time, so robot capability stops being gated by the cost of real-world data collection.", "rationale": "Their description identifies the simulation-to-reality boundary as the specific point of loss, especially for contact and tactile interaction.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Sim-to-real is fundamentally a model-mismatch problem, and their capability list pairs physics models with generative models to close it.", "confidence": "confident" },
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 0, "rationale": "Tactile perception is the modality where the reality gap is worst and where data collection is the named capability.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Task success rate on real hardware versus in simulation is a direct, standard and unambiguous comparison.", "confidence": "confident" }
+    }
+  ],
+  "notes": "All seven tier-1, which makes mechanical engineering the most measurable field in the map. Primaries split between physical build and design search; no LLM primary anywhere in the field."
+}

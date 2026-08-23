@@ -1,0 +1,130 @@
+{
+  "field": "Astrophysics",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
+      "outcome": {
+        "outcome": "Apertures that are currently unaffordable become buildable inside a single funding cycle, putting direct spectroscopy of Earth-like exoplanet atmospheres within reach of one generation of astronomers rather than two.",
+        "rationale": "The unlock is aperture per dollar per decade; everything downstream in observational astrophysics scales with it.",
+        "confidence": "confident"
+      },
+      "ai_types": [
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Modular in-orbit assembly and a telescope factory are robotic fabrication problems, and nothing at that scale is demonstrated.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Optical and structural design optimisation already works, which is precisely why it is not the binding link.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Their own description closes on needing 'the organizational structure and hunger to adopt such methods'.",
+          "confidence": "confident"
+        }
+      ],
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Cost per telescope and elapsed years from concept study to first light are published for every major observatory.",
+        "confidence": "confident"
+      }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8042-a5bd-ff3dc13b3998",
+      "outcome": {
+        "outcome": "Angular resolution becomes set by baseline separation rather than by primary mirror diameter, making surface features on nearby exoplanets resolvable from space.",
+        "rationale": "Their description states the physics directly: resolution is proportional to baseline once coherent combination works.",
+        "confidence": "confident"
+      },
+      "ai_types": [
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Sub-micron station-keeping between free-flying spacecraft is an actuation and optomechanics problem no demonstrated system solves.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Metrology and coherent signal combination are tractable learned-estimation problems; radio interferometry already does the analogous reconstruction.",
+          "confidence": "confident"
+        }
+      ],
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Achieved baseline, station-keeping precision in microns and delivered angular resolution are all direct instrument metrics.",
+        "confidence": "confident"
+      }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8762-c51aee94a680",
+      "outcome": {
+        "outcome": "Gravitational-wave astronomy extends past the audio band, making decihertz sources such as intermediate-mass black hole mergers and long early-inspiral binaries observable for the first time.",
+        "rationale": "Each new frequency band in GW detection has opened a distinct source population; the unlock is the population, not the instrument.",
+        "confidence": "confident"
+      },
+      "ai_types": [
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Decihertz sensitivity requires building and flying a space-based interferometer; no amount of analysis substitutes for the instrument.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "ML glitch classification and matched-filter acceleration are already deployed in LIGO-Virgo analysis pipelines.",
+          "confidence": "confident"
+        }
+      ],
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Strain sensitivity as a function of frequency is the instrument's defining curve, and detection counts per band follow from it.",
+        "confidence": "confident"
+      }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
+      "outcome": {
+        "outcome": "High-priority astrobiology targets, Europa and Enceladus plume sampling among them, get flown on a timescale set by mission design rather than by position in an agency queue.",
+        "rationale": "Their framing is explicitly about missions remaining unrealized by existing agencies, so the unlock is realisation, not capability.",
+        "confidence": "confident"
+      },
+      "ai_types": [
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "The stated blocker is that agencies do not fly these missions, which is an allocation and funding-structure problem, not a technical one.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Commercial launch and spacecraft manufacture have moved fast enough that hardware is no longer the constraint they describe.",
+          "confidence": "guess"
+        }
+      ],
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Decadal-survey priorities left unflown after N years is countable, but the science forgone by not flying them is not observable.",
+        "confidence": "confident"
+      }
+    }
+  ],
+  "notes": "All four astrophysics gaps take a physical or institutional primary and none takes an LLM primary. Small field (n=4), so this is suggestive, not evidence."
+}

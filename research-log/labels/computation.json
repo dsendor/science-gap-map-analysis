@@ -1,0 +1,75 @@
+{
+  "field": "Computation",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "outcome": { "outcome": "Capable models can be deployed without their capabilities being straightforwardly redirectable to harm, so capability release stops being coupled to misuse risk.", "rationale": "Their two capabilities target robustness and decentralised control, both aimed at decoupling capability from misusability.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Jailbreak resistance is a research problem with measurable progress; what binds is whether safeguards are adopted uniformly across providers.", "confidence": "guess" },
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 0, "rationale": "Adversarial robustness training and automated red-teaming are working techniques already in production.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Proxy only", "rationale": "Jailbreak success rates on benchmark suites are measurable, but misuse actually averted is unobserved, so the gap itself is measured only through adjacent indicators.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "outcome": { "outcome": "Claims about an AI system's disposition become checkable against its internals rather than inferred from its behaviour on tests it may recognise.", "rationale": "Their capability list leads with automated interpretability and guaranteed-safe architectures, both aimed at making assurance verifiable.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 1, "rationale": "Automating interpretability means using models to explain models, which is a reasoning task over learned representations.", "confidence": "confident" },
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 0, "rationale": "Hardware governance appears in their own capability list and is a control-and-allocation mechanism, not a technique.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Evaluations and interpretability probes exist and are run, but there is no agreement in the field that any of them would settle whether a system is safe. This is a verifier problem rather than a measurement problem.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "outcome": { "outcome": "AI systems become able to plan and reason across domains they were not trained on, removing the need to rebuild scaffolding for each new task.", "rationale": "Their description contrasts narrow current capability with human cognition and names general intelligence as the target.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 1, "rationale": "This gap is definitionally about the reasoning capability itself; all five listed capabilities are training or architecture approaches to it.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Reasoning benchmarks exist and are run constantly, but the field openly disputes whether benchmark performance measures general reasoning or contamination and pattern coverage. A measurement can always be taken; what it shows is what is argued about.", "confidence": "guess" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-808e-bcac-eb5bcdc8f23c",
+      "outcome": { "outcome": "Open-ended evolutionary computation becomes reproducible in silico, giving a second example of complex evolved computation to generalise from instead of one.", "rationale": "Their description states the problem as biology being the sole example; the unlock is a second one.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "Speculative", "is_primary": 1, "rationale": "The listed capability is virtual life on GPUs, which is large-scale simulation of evolving systems; nothing at the required open-endedness has been demonstrated.", "confidence": "guess" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Complexity and open-endedness metrics exist and can be computed on any simulation, but there is no agreement that any of them distinguishes genuine evolved complexity from an artifact of the fitness landscape.", "confidence": "guess" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b3-aab7-d6e108c54123",
+      "outcome": { "outcome": "Critical software can be synthesised with machine-checked correctness proofs, so whole vulnerability classes stop being possible rather than being found and patched.", "rationale": "Their description names formal methods and verification as the route, and the unlock is elimination rather than detection.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 1, "rationale": "Proof synthesis paired with a checker is the archetypal verifiable task, and models are already competitive on it at small scale.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Proportion of a critical codebase carrying machine-checked proofs, and vulnerability counts in verified versus unverified components, are directly countable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "outcome": { "outcome": "Machine-assisted proof becomes routine for research-level mathematics, so formal verification stops costing more than the original proof.", "rationale": "Their capability is reinforcement learning from theorem-prover feedback, aimed at making proof search practical.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "A theorem prover is a perfect verifier, which is exactly the condition under which AI progress has been fastest, and competition-level results are already in hand.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "A proof either checks in a formal system or it does not, and benchmark theorem sets with formalisation rates already exist.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ed-8131-ede48bd0d654",
+      "outcome": { "outcome": "Computation per joule improves by orders of magnitude, so energy stops setting the ceiling on how much inference and simulation science can afford to run.", "rationale": "Their description names scalability and sustainability as the losses, and energy is the shared constraint across all eleven capabilities.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Architecture and chip design search is where AI acts on this; their own list opens with AI-based design of AI chips.", "confidence": "guess" },
+        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 0, "rationale": "Neuromorphic, reversible and thermodynamic computing all require fabricating device physics that no production process supports.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Joules per operation at a stated workload is a direct and universally reported figure.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
+      "outcome": { "outcome": "Transistor scaling continues past the point where silicon channel physics fails, so compute cost per operation keeps falling instead of flattening.", "rationale": "Their description is unusually specific that the limits are fundamental and material, not engineering.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Identifying and optimising 2D semiconductor stacks is a materials search problem with a well-specified objective.", "confidence": "guess" },
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Process development for a new channel material is an iterative fabricate-and-measure loop, which is what closed-loop experimentation automates.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Gate length, carrier mobility and on-off ratio at manufacturable yield are direct device metrics.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Real taxonomy strain: semiconductor process and device-physics development has no clean home, sitting between 'Design and optimization search' and 'Physical build and manipulation'. Affects both silicon gaps; both marked guess on the primary. Three tier-3 calls here, all on AI-about-AI questions where the field cannot agree what would count as evidence — the same verifier problem as quantum gravity, in a different domain."
+}

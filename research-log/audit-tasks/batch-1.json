@@ -1,0 +1,143 @@
+{
+  "batch": 1,
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "field": "Physics",
+      "name": "Uncertainty and Noise in the Science of Room-Temperature Superconductivity",
+      "description": "There remains significant uncertainty over whether metallic hydrogen can exhibit room-temperature superconductivity at reasonable pressures, and measurements of other systems have been irreproducible and fragmented.",
+      "convergent_capabilities": [
+        "Conduct Rigorous, Non-Fraudulent Experiments"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
+      "field": "Ecology",
+      "name": "Inability to Anticipate or Prevent Ecosystem Tipping Points",
+      "description": "We lack the models and infrastructure to monitor and predict how ecosystems behave under stress or when they might collapse, as well as what metrics to use to determine that restoration is effective. We need to understand the underlying dynamics, feedback loops, and thresholds that lead to ecosystem degradation/ collapse, as well as to secure essential systems like pollination.",
+      "convergent_capabilities": [
+        "Detect Early-Warning Signals of Collapse",
+        "Foundational Datasets and Models of Biodiversity and Species Interaction",
+        "Pollination Network Monitoring and Recovery"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "field": "Computation",
+      "name": "AI is Still Narrow in its Reasoning and Planning",
+      "description": "Current AI systems exhibit narrow reasoning and planning capabilities compared to human cognition. Broadening AI training methods to include holistic, brain-inspired architectures and cognitive frameworks can advance general intelligence (flagging that there is an AI safety risk here).",
+      "convergent_capabilities": [
+        "Bayesian Cognitive Architectures  and Program Synthesis",
+        "Developmentally Realistic AI Training",
+        "Holistic Brain-Inspired Architectures",
+        "Improve Out of Context Reasoning in Large Language Models",
+        "Mimic Human Evolution in Silico"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "field": "Computation",
+      "name": "AI Could Go Rogue",
+      "description": "The potential for AI systems to behave unpredictably or dangerously (“go rogue”) is a critical concern. Ensuring safe and controllable AI architectures is essential for reliable operation. \n\nSee also: \n• https://www.lesswrong.com/posts/fAW6RXLKTLHC3WXkS/shallow-review-of-technical-ai-safety-2024\n• https://deepmind.google/discover/blog/taking-a-responsible-path-to-agi/",
+      "convergent_capabilities": [
+        "Automate AI Interpretability",
+        "Guaranteed Safe AI Architectures",
+        "Hardware Governance",
+        "Mitigating (Indirect) Data Poisoning",
+        "Non-Agentic AI Scientists",
+        "Secure and Privacy-Preserving Local AI Enclaves",
+        "Understand AI Psychology without Assuming Human-Like Psychology",
+        "Understanding Neural Design Principles of Social Instincts"
+      ]
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
+      "field": "Neuroscience",
+      "name": "Current “Model Systems” for Brain Function are Not Representative of the Real Human Brain",
+      "description": "Current in vivo and in vitro models often fail to capture human brain function. Innovative model systems—including digital reconstructions, embodied simulations, and new biological models—are needed.",
+      "convergent_capabilities": [
+        "Datasets that Quantitatively Capture the Full Space of Behavior",
+        "Data–Driven AI Models of Brain Systems",
+        "Digital Replicas of the Whole Brain of a Model Organism",
+        "Embodied Testbeds for Neuro–Cognitive Models",
+        "Ex Vivo Human Brains",
+        "In Vitro Models of the Human Cortex",
+        "Mapping the Hypothalamus and Brainstem"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
+      "field": "Social Science",
+      "name": "Our Platforms for Civic Engagement and Democratic Decision-Making Don’t Take Advantage of 21st Century Scalable Technology",
+      "description": "Our current systems for democratic participation are hindered by outdated platforms and tools that fail to scale with modern needs. Limited survey infrastructure, insecure voting methods, and under-informative deliberative tools restrict our capacity for informed, collective decision-making. By harnessing AI to facilitate clearer expression of public opinion and leveraging innovative technologies for secure, scalable engagement, we can transform civic participation into a more robust, effective, and inclusive process.",
+      "convergent_capabilities": [
+        "Improved Voting and Auditing Protocols",
+        "Tools for Deliberative Democracy"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
+      "field": "Biosecurity",
+      "name": "Fragile Supply Chains and Lack of Backup for Critical Infrastructure",
+      "description": "Many critical supply chains and infrastructure systems are fragile and lack robust backup mechanisms, leaving society vulnerable.",
+      "convergent_capabilities": [
+        "Civilization Reboot Toolkit",
+        "Optimize Circular and Robust Supply Chains"
+      ]
+    },
+    {
+      "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
+      "field": "Neuroscience",
+      "name": "Most Brain Circuitry is Still Invisible",
+      "description": "Understanding the complete wiring of the brain at single–cell resolution, along with detailed molecular annotations, is critical for revealing how neural circuits support learning, memory, and behavior. Current technologies are prohibitively expensive and lack scalability, limiting our ability to link molecular composition with circuit connectivity and to understand the alterations present in brain disorders. This gap fundamentally makes diagnosis, treatment, and prevention of many brain disorders more difficult. Beyond the biomedical applications, maps of brain circuitry could play a fundamental role in grounding principles of safety for brain-like AI systems.\n\nInitiatives like the NIH BRAIN Initiative’s transformative projects (the BRAIN Initiative Cell Atlas Network (BICAN), the BRAIN Initiative Connectivity Across Scales (BRAIN CONNECTS) Network, and the Armamentarium for Precision Brain Cell Access) represent important efforts to illuminate foundational principles governing the circuit basis of behavior and to inform new approaches to treating human brain disorders by radically enhancing our understanding of brain cell types and the tools needed to access them (The BRAIN Initiative® 2.0: From Cells to Circuits, Toward Cures).",
+      "convergent_capabilities": [
+        "Faster Electron Microscopy for Connectomics",
+        "Rapid High–Resolution Neural Circuit Visualization",
+        "Scalable, Anatomically and Molecularly Dense Brain Mapping Technology"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",
+      "field": "Computation",
+      "name": "Proving Math Theorems is Challenging for Both Humans and AI",
+      "description": "Both human mathematicians and current AI systems struggle with proving complex math theorems. Enhancing theorem proving through interactive and automated methods could push the boundaries of mathematical reasoning.",
+      "convergent_capabilities": [
+        "Reinforcement Learning from Interactive Theorem Prover Feedback"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
+      "field": "Synthetic Biology",
+      "name": "Protein Design Has Been Limited to Static, Bio-mimetic Structures",
+      "description": "Protein engineering has largely focused on designing static structures that closely mimic natural proteins. This narrow approach limits the creation of truly novel or highly functional enzymes.",
+      "convergent_capabilities": [
+        "AI Enzyme Design and De Novo Design of Novel Protein Functions",
+        "Biosynthesis of Inorganic Materials",
+        "Enzyme Stabilization in Extreme Environments",
+        "Non-Canonical Amino Acids",
+        "Protein Carpentry"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "field": "Physics",
+      "name": "Robust and Compact Plasma Confinement for Fusion is Still Not Solved",
+      "description": "Stable plasma confinement is a major obstacle in achieving practical fusion energy. Advanced control systems and novel confinement techniques are needed.",
+      "convergent_capabilities": [
+        "AI-Driven Control Systems for Plasma Confinement",
+        "Magneto-Inertial Confinement"
+      ]
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "field": "Materials Science",
+      "name": "We Have a Limited Ability to Acquire, Concentrate and Substitute Chemical Elements in Processes",
+      "description": "The cost of materials is often dominated by the cost to obtain their constituent elements. What presents commercially as the “critical minerals problem” masks a larger scientific bottleneck on how we acquire, concentrate, and substitute chemical elements.",
+      "convergent_capabilities": [
+        "Efficient Chemical Separation of Lanthanides",
+        "High-Strength, Non-Neodymium Magnets",
+        "Recovering Metals and Rare Minerals from Waste"
+      ]
+    }
+  ]
+}

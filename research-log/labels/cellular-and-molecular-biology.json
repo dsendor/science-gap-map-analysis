@@ -1,0 +1,34 @@
+{
+  "field": "Cellular and Molecular Biology",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
+      "outcome": { "outcome": "Cell state becomes representable in one model that predicts response to perturbations it has never seen, replacing a stack of per-assay descriptions with a predictive representation.", "rationale": "Their description names predictive modelling of cell behaviour as the goal; the unlock is generalisation to unseen perturbations.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Single-cell foundation models over multimodal omics exist today; the open question is generalisation, not feasibility.", "confidence": "confident" },
+        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 0, "rationale": "Their capability list includes automated mechanistic interpretability of those models, which is a reasoning task over learned representations.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Held-out perturbation prediction accuracy is a direct benchmark and is already the field's standard evaluation.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-8060-a0b6-cc4e1c0e782b",
+      "outcome": { "outcome": "Proteins, lipids and metabolites become measurable at single-cell resolution and at scale, closing the gap between deep transcriptomic coverage and the molecules that actually do the work.", "rationale": "Their description names the asymmetry directly: the fundamental actors remain invisible while RNA is routinely profiled.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Single-cell proteomics and metabolomics are limited by signal recovery from vanishing sample amounts, which is a detection and deconvolution problem.", "confidence": "confident" },
+        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 0, "rationale": "Affinity reagent design for broader molecular coverage is a working protein-design capability.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Molecules quantified per cell, cells processed per run and cost per cell are the field's routine reported figures.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
+      "outcome": { "outcome": "Molecular identity and position become readable inside intact three-dimensional tissue, making spatial molecular maps of real organs possible rather than of dissociated cells.", "rationale": "Their description names the loss caused by dissociation and the value of measuring within intact specimens.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Multiplexed in-situ readout at depth is limited by optical crowding and scattering, both inverse problems with active learned solutions.", "confidence": "confident" },
+        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 0, "rationale": "Their listed 'binders for every epitope' capability is de novo binder design, which works now at increasing hit rates.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Species multiplexed, spatial resolution and imaging depth are direct instrument metrics with published benchmarks.", "confidence": "confident" }
+    }
+  ],
+  "notes": "All three are instrumentation-limited with a sensing primary; none is institutionally blocked. A cleanly tier-1 field."
+}

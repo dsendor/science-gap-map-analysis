@@ -1,0 +1,76 @@
+{
+  "field": "Physics",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1f0cb37e-2a00-803f-80fe-cb4166e4f94b",
+      "outcome": { "outcome": "Techniques such as ultracold atoms become usable outside the small set of labs that built them, so experimental physics capability spreads to applied and adjacent fields.", "rationale": "Their description asks precisely this: can these platforms be leveraged by people outside a small set of quantum physics labs.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "The blocker is standardisation, documentation and shared tooling norms, not a missing technical capability.", "confidence": "confident" },
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Turning bespoke apparatus into a reproducible instrument is hardware engineering with a manufacturability objective.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Count of groups outside the originating labs operating a standardised platform is a direct measure of the stated goal.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "outcome": { "outcome": "Turbulent flow becomes predictable at engineering cost, removing the largest single source of uncertainty in climate, aerospace and fusion modelling simultaneously.", "rationale": "Turbulence is a shared upstream dependency, so the downstream unlock spans several fields at once.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Learned closure models and flow surrogates are the active approach, with direct numerical simulation supplying exact training targets.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Prediction error against direct numerical simulation and experiment at a stated Reynolds number and compute budget is a direct benchmark.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80ad-a913-d3a908406535",
+      "outcome": { "outcome": "Internal material structure becomes imageable at nanoscale, so bulk properties can be traced to the internal features that produce them.", "rationale": "Their description names understanding properties at the nanoscale as the loss from inadequate imaging.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Neutron microscopy is flux-starved, and learned reconstruction from sparse counts is the standard route to usable resolution.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Achieved spatial resolution and contrast for a named material class are direct instrument specifications.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801a-bbfd-cd37c0419eca",
+      "outcome": { "outcome": "The remaining unexplored parameter space for low-energy nuclear reactions gets closed out, so the question stops absorbing attention either way.", "rationale": "Their description is careful that there is no good evidence but some parameter combinations remain underexplored; the unlock is resolution, not confirmation.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Systematically sweeping an underexplored parameter space with consistent instrumentation is exactly what closed-loop experimentation is for.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Calorimetry can be performed and has been, but the field's history is that results are disputed rather than accepted, so no agreement exists that a given measurement settles the claim. Arguably tier 1 with sufficiently rigorous controls, which is why this is marked a guess.", "confidence": "guess" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
+      "outcome": { "outcome": "High-energy particle beams become available at benchtop scale and cost, so accelerator-dependent research and medical isotope production stop being rationed by facility access.", "rationale": "Their description names democratisation of high-energy physics and isotope production as the two unlocks.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "A benchtop accelerator is a hardware achievement; plasma wakefield approaches exist but must be built and made reliable.", "confidence": "confident" },
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Learned control and tuning of accelerator parameters already works and is not the constraint.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Beam energy per metre, achieved current and cost per GeV are direct and comparable across designs.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
+      "outcome": { "outcome": "Quantum gravity acquires an experimental constraint that the field accepts as one, moving it from a purely theoretical to a partly empirical subject.", "rationale": "The unlock is not any single measurement but the existence of a result the community treats as evidence.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 1, "rationale": "Their capability is targeted experiments, and the candidate designs require mesoscopic-mass interferometry hardware nobody has built.", "confidence": "confident" },
+        { "ai_type": "Sensing and signal processing", "maturity": "Speculative", "is_primary": 0, "rationale": "Any such experiment would be limited by extracting a minute signal from overwhelming decoherence.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Candidate discriminators exist and are actively pursued, including gravitationally induced entanglement between mesoscopic masses, tabletop interferometry and Lorentz-invariance violation searches. What is contested is whether observing them would settle anything: there is live literature arguing gravity-mediated entanglement can be reproduced by classical gravitational fields, so reading it as proof requires further assumptions about local mediators. The blockage is the absence of agreement about what counts as a verdict, not the absence of an instrument.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
+      "outcome": { "outcome": "Plasma stays confined for as long as the reactor needs rather than as long as the instability allows, removing the last physics obstacle between fusion devices and sustained operation.", "rationale": "Their description names stable confinement as the major obstacle to practical fusion energy.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Learned plasma control has been demonstrated on real tokamaks, and their own capability list leads with AI-driven control systems.", "confidence": "confident" },
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Magneto-inertial approaches require building confinement hardware that does not yet exist at the required performance.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Confinement time, energy gain factor and sustained stable duration are direct and universally reported fusion metrics.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
+      "outcome": { "outcome": "Claims of high-temperature superconductivity become adjudicable, so the field can distinguish a real result from an artifact without waiting years for retraction.", "rationale": "Their capability is stated as conducting rigorous, non-fraudulent experiments, which makes adjudication the unlock rather than discovery.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their own single capability is literally to conduct rigorous, non-fraudulent experiments, which is a research-integrity and replication-norms problem, not a technique.", "confidence": "confident" },
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Automated, instrumented synthesis and measurement would remove the human discretion where irreproducibility and fraud enter.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Verification contested", "rationale": "Measurements have repeatedly been taken and repeatedly retracted; the field disputes which signature, resistance drop or Meissner expulsion under pressure, actually establishes superconductivity. The instrument is not the blocker, agreement about the verdict is.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Physics carries three of the map's tier-3 calls, including quantum gravity, which is the sharpest instance of verifier's law available. Note the pattern: two of the three tier-3 gaps take an institutional or integrity primary, because when nobody agrees what settles a question, the binding constraint moves from the instrument to the community."
+}

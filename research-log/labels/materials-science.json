@@ -1,0 +1,43 @@
+{
+  "field": "Materials Science",
+  "labeled_by": "claude-opus-5",
+  "gaps": [
+    {
+      "gap_id": "1c1cb37e-2a00-80f5-b3d1-d19cab7aeec3",
+      "outcome": { "outcome": "Materials that work in the lab become makeable in tonnes, so fusion first walls, radiative cooling coatings and high-temperature ductile ceramics stop being demonstrations and become deployable.", "rationale": "Their description lists concrete blocked applications and names cost of scaled synthesis, not discovery, as the obstacle.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "The stated gap is scaled synthesis and processing, which is manufacturing capability rather than a search or prediction problem.", "confidence": "confident" },
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Process-parameter optimisation for scale-up is an iterative make-and-measure loop that closed-loop platforms can run.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Cost per kilogram at a stated property specification is the direct and decisive quantity.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
+      "outcome": { "outcome": "Crystallisation becomes predictable enough to plan, removing the trial-and-error step that currently gates structure determination for hard molecules.", "rationale": "Their description names computational models of crystal growth as the route to guiding experiment.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Crystal structure and polymorph prediction is an active, benchmarked learned-prediction problem.", "confidence": "confident" },
+        { "ai_type": "Autonomous experimentation", "maturity": "Working now", "is_primary": 0, "rationale": "High-throughput crystallisation screening is already automated in structural biology facilities.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Crystallisation success rate and predicted-versus-observed polymorph are directly scorable, with blind tests already run in the field.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80cb-8db6-e28439779875",
+      "outcome": { "outcome": "Materials can be specified by required engineering property and found, rather than discovered and then checked for usefulness, at industrial cost and scale.", "rationale": "Their description states the core challenge as inability to reliably design and manufacture materials meeting specific engineering requirements.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 1, "rationale": "Inverse materials design over property targets works now; their own capability list pairs it with property prediction and self-driving labs.", "confidence": "confident" },
+        { "ai_type": "Autonomous experimentation", "maturity": "Working now", "is_primary": 0, "rationale": "Iterative self-driving materials labs are named explicitly in their capability set and are operating today.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Candidates screened per unit time, hit rate against a property specification and cost per validated material are all countable.", "confidence": "confident" }
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80b4-a5fa-cd97b7b1bed6",
+      "outcome": { "outcome": "Element supply stops setting material cost, because separation gets cheaper and constrained elements become substitutable by design.", "rationale": "Their description reframes the critical minerals problem as a scientific bottleneck in acquisition, concentration and substitution.", "confidence": "confident" },
+      "ai_types": [
+        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Separation chemistry and non-neodymium magnet design are both searches over composition with a hard performance target.", "confidence": "confident" },
+        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Lanthanide separation ligand screening is a bench-scale formulation loop of exactly the kind closed-loop platforms run.", "confidence": "confident" }
+      ],
+      "measurability": { "tier": "Directly measurable", "rationale": "Separation factor, energy per kilogram and magnet energy product without neodymium are direct performance quantities.", "confidence": "confident" }
+    }
+  ],
+  "notes": "Materials is the clearest 'AI is working now' field in the map, and the primary types are design and autonomous experimentation rather than LLM work. All four tier-1."
+}
