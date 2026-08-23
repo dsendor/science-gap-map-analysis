@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS gap_ai_types (
                    'Design and optimization search',
                    'Sensing and signal processing',
                    'Autonomous experimentation',
+                   'Real-time control of physical systems',
                    'Physical build and manipulation',
                    'Coordination and institutional'
                )),
@@ -199,6 +200,7 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
                    'Design and optimization search',
                    'Sensing and signal processing',
                    'Autonomous experimentation',
+                   'Real-time control of physical systems',
                    'Physical build and manipulation',
                    'Coordination and institutional'
                )),
@@ -207,6 +209,19 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     evidence   TEXT,
     rationale  TEXT NOT NULL,
     PRIMARY KEY (path_id, seq)
+);
+
+-- Frame. The AI-type dimension asks which AI capability would move a gap, which
+-- presupposes AI is the instrument and the gap is a science problem. A few gaps are
+-- ABOUT AI, where the question is ill-posed. Adding an 'AI safety research' capability
+-- type would be a category error — the other types are capabilities applied to science,
+-- not research fields — so these gaps are marked and reported separately instead.
+-- Default is ai-as-instrument; only exceptions get a row.
+CREATE TABLE IF NOT EXISTS gap_frame (
+    gap_id     TEXT PRIMARY KEY REFERENCES gm_gaps(id),
+    frame      TEXT NOT NULL CHECK (frame IN ('ai-as-instrument', 'ai-as-object')),
+    rationale  TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
 --------------------------------------------------------------------------------

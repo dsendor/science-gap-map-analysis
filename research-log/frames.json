@@ -1,0 +1,23 @@
+{
+  "_comment": "Gaps where AI is the object of the gap rather than the instrument that would move it. Default is ai-as-instrument; only exceptions are listed. See methodology/taxonomy.md section 2b.",
+  "frames": [
+    {
+      "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
+      "name": "AI Could Be Misused",
+      "frame": "ai-as-object",
+      "rationale": "Asks which AI capability would move a gap about AI misuse. The dimension presupposes AI is the instrument acting on a science problem; here AI is the subject matter, and the two independent labelers split between Coordination and institutional and LLM reasoning precisely because neither is a real answer."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
+      "name": "AI Could Go Rogue",
+      "frame": "ai-as-object",
+      "rationale": "Tier 3 here means the field cannot agree what evidence would establish an AI system is safe. That is a different phenomenon from quantum gravity's tier 3, where physicists disagree about what would settle a question about nature, so its tier is not comparable to the rest of the map."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
+      "name": "AI is Still Narrow in its Reasoning and Planning",
+      "frame": "ai-as-object",
+      "rationale": "The gap is the AI capability itself, so 'which AI capability would move it' is circular and its maturity label means something different from every other row: the capability and the gap are the same object."
+    }
+  ]
+}

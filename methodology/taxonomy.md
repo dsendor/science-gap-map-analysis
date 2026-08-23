@@ -37,6 +37,7 @@ different gaps are blocked on AI at wildly different maturities.
 | `Design and optimization search` | Inverse design, generative proposal of candidates, experiment planning over a defined space |
 | `Sensing and signal processing` | Extracting signal from instrument data: detection, denoising, anomaly finding, reconstruction |
 | `Autonomous experimentation` | Closed-loop self-driving labs that choose and run their own experiments. Bench scale, narrow domains, working now in chemistry and materials formulation |
+| `Real-time control of physical systems` | Closed-loop sense-decide-actuate on hardware that already exists, at machine timescales. Learned plasma control, adaptive optics, station-keeping, accelerator tuning |
 | `Physical build and manipulation` | Robotics for fabrication, assembly, installation, field deployment. The category that would build a detector, a beamline, an observatory |
 | `Coordination and institutional` | Allocation, review, funding decisions, standards, incentives — anything where the blocker is an organisation rather than a technique |
 
@@ -44,6 +45,20 @@ different gaps are blocked on AI at wildly different maturities.
 not be collapsed.** A self-driving lab pipetting into well plates and a robot
 assembling a space telescope differ by decades of maturity. Conflating them destroys
 the finding.
+
+**Real-time control is a third thing again, and was added after blind audit found it
+had no home.** The discriminator is a two-part test:
+
+- Does it *choose what to try*? Then autonomous experimentation.
+- Does it *construct or move something that did not exist assembled*? Then physical build.
+- Does it *hold an existing system on a trajectory*, reading sensors and driving
+  actuators in a loop? Then real-time control.
+
+Learned tokamak plasma control chooses no experiments and builds no tokamak; it keeps
+an existing one stable. Two independent labelers disagreed on it precisely because the
+category was missing. Control is a highly verifiable task class — feedback arrives in
+milliseconds — so leaving it folded into ML surrogates and design search understates
+where AI already works.
 
 Maturity, for the type identified: `Working now` | `2-5 years` | `Speculative`.
 
@@ -61,23 +76,44 @@ Multiple types per gap are allowed and expected. Exactly one is marked primary �
 one that would move the gap *most*, which is not always the one most obviously
 applicable. The primary is what the cross-tabs use.
 
+## 2b. Frame: is AI the instrument or the object?
+
+The AI-type dimension asks *which AI capability would move this gap*. That presupposes
+AI is the instrument and the gap is a science problem. A few gaps are **about AI**, and
+for those the question is ill-posed.
+
+`frame` is `ai-as-instrument` by default. Set `ai-as-object` only when the gap's subject
+matter is AI itself — on this map that is *AI Could Be Misused*, *AI Could Go Rogue*,
+and *AI is Still Narrow in its Reasoning and Planning*.
+
+**Why this is a frame flag and not a ninth capability type.** The obvious fix is to add
+something like "AI safety and assurance research" to the list above. That would be a
+category error. The eight types are *capabilities applied to science*; safety research
+is a research field. A ninth entry of a different kind would silently change what the
+dimension means and would make the cross-tabs incomparable.
+
+These gaps still get a type and a tier — they are still real gaps — but they are
+reported separately and **excluded from the headline maturity gradient**, because a
+capability's maturity "for this gap" means something different when the gap is the
+capability. Their tiers are also not comparable to the rest: *AI Could Go Rogue* is
+`Verification contested` because we are arguing about a technology we are building,
+where quantum gravity is contested because physicists disagree about what would settle
+a question about nature. Both are tier 3; they are not the same phenomenon.
+
 ### Known limits of this dimension
 
 Two cases where the taxonomy is a poor fit rather than a hard call, both surfaced by
 blind audit. Label the dominant component, flag `guess`, and say so in the notes —
 do not force a clean answer:
 
-- **Gaps where AI is the object rather than the instrument.** "AI Could Be Misused" and
-  "AI Could Go Rogue" ask which AI capability would move a gap *about AI*. There is no
-  safety-and-robustness-research category among the seven, and the nearest fits
-  (`LLM reasoning and synthesis` for automated red-teaming, `Coordination and
-  institutional` for governance) are both partial.
 - **Composite gaps.** "We Can Learn More from Nature's Biological Designs" spans
   nanostructure imaging, animal communication, Hadean geology and an Europa mission;
   "Underdevelopment of Modern Tools in the Social Sciences" spans qualitative methods,
   question prioritisation and satellite archaeology. Their sub-components would take
   different types *and different tiers*. A single primary is a real loss of information
-  and the artifact should say so rather than pretend otherwise.
+  and the artifact should say so rather than pretend otherwise. Splitting them is not
+  available to us — that would mean authoring gap records Convergent did not write —
+  so the decomposition is offered as a proposal in `docs/decomposition-proposal.md`.
 
 Revise the taxonomy if the data argues for it. Any revision writes a `decisions` row
 with the runner-up and a reversal condition.

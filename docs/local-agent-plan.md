@@ -22,39 +22,41 @@ prompt, a commit message, or an issue.
 expands `${BRAVE_API_KEY}` from the **shell environment**, not from `.env`, so if you
 want the Brave MCP tool as well as the script, export it in your shell first.
 
-Remaining setup:
+Remaining setup — **run these yourself, they are all machine-checkable:**
 
 ```bash
 cd science-gap-map-analysis
 git checkout claude/science-gap-map-analysis-yu3wek && git pull
-
-node --version                # 22+ required (node:sqlite); 24 recommended, as CI uses it
-cp .mcp.json.example .mcp.json    # only if you want the Brave MCP tool too
-
-node engine/rebuild.mjs       # import baseline + all label files + verify additive
+node engine/rebuild.mjs       # import baseline + all label/audit/decision files + verify additive
+node engine/preflight.mjs     # checks everything below in one command; exits non-zero if blocked
 ```
+
+`preflight.mjs` verifies the Node version, that the database is built and complete, that
+the additive guardrail passes, that the Brave key resolves from either the environment or
+`.env`, and that arXiv, Crossref and the Brave API are actually reachable. It treats an
+HTTP 403 as **blocked**, not reachable, because that is how an egress proxy answers — a
+naive reachability check passes a fully blocked environment, which is the exact false
+green that would let Phase 3 run and produce unsourced numbers.
+
+Do not start a phase while it exits non-zero. The only step needing a human is
+`cp .mcp.json.example .mcp.json` plus a shell `export`, and only if you want the Brave
+MCP tool in addition to the script.
 
 `db/gapmap.sqlite` is gitignored on purpose — the pinned snapshot and the JSON files in
 `research-log/` are the sources of record, and `rebuild.mjs` reconstructs the database
-from them. So **`rebuild.mjs` is not optional**; nothing works before it runs. Expect
-it to report 20 fields, 103 gaps, 369 capabilities, 1080 resources, 389 edges, then
-ingest 20 label files and 3 audit files.
+from them. So **`rebuild.mjs` is not optional**; nothing works before it runs. Expect it
+to report 20 fields, 103 gaps, 369 capabilities, 1080 resources and 389 edges, then
+ingest 20 label files, 3 audit files, the adjudication, and the decision, run and frame
+ledgers. It must end with **"additive-only check passed"**.
 
-It must end with **"additive-only check passed"**. If it does not, stop and fix that
-before doing anything else — every later phase depends on Convergent's data being
-untouched.
-
-Then confirm the network is actually open, because the remote session's was not:
+Then confirm search really works end to end, since preflight only checks reachability:
 
 ```bash
-curl -sS -o /dev/null -w "%{http_code}\n" https://arxiv.org/     # expect 200
 node engine/search.mjs "gravitational wave detector coating thermal noise" --count 3
 ```
 
-Both must succeed. If `search.mjs` returns a 403 naming a blocked host, you are behind
-an egress proxy and Phase 3 cannot be done properly — say so rather than producing
-unsourced numbers. Note that the first real search costs a Brave query; results cache to
-`research-cache/` (gitignored), so re-runs are free.
+The first real search costs a Brave query; results cache to `research-cache/`
+(gitignored), so re-runs are free.
 
 Nothing else is needed to start. Phase 6 additionally needs `npm` and will create the
 `app/` directory, which does not exist yet.

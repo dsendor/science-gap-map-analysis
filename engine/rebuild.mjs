@@ -34,5 +34,6 @@ if (audited) run('adjudicate.mjs');
 
 if (existsSync(`${root}research-log/decisions.json`)) run('ingest-decisions.mjs');
 if (existsSync(`${root}research-log/runs.json`)) run('ingest-runs.mjs');
+if (existsSync(`${root}research-log/frames.json`)) run('ingest-frames.mjs');
 
 run('verify-additive.mjs');
