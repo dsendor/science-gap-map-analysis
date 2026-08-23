@@ -53,6 +53,12 @@ unsourced numbers.
    Track `agent` and `human-review` separately. The elapsed-time figure is part of the
    argument, and a single blended number invites the obvious objection.
 6. **Commit per phase**, with `verify-additive` passing at every commit.
+7. **Every phase has a mandatory independent review gate.** Phases 1-2 had one and it
+   materially changed the output — it found that a whole measurability tier could not be
+   applied reliably, and 23% of tier labels and 19% of AI-type labels ended up flagged
+   as guesses that were not flagged before. Do not skip these. The reviewer must never
+   be the agent that produced the work, and must form its own view before reading
+   yours. Reviewers report; they do not fix. See `agents/reviewer.md`.
 
 ---
 
@@ -126,11 +132,25 @@ If a number is real but you could only get it from a secondary source, set
 commitment, a stated programme goal, or a physical limit are all acceptable. An invented
 round number is not. If no defensible target exists, leave both NULL and say why.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode A** of `agents/reviewer.md`. It must not be the
+agent that produced the rows and must not see their reasoning first.
+
+It re-fetches every source and confirms the number is really on the page and really
+measures the stated quantity, and — the important part — **it runs its own independent
+search for every null before reading yours.** A null two independent searchers reach
+separately is the strongest row in the artifact. A null the reviewer breaks by finding
+an indicator you missed is a false claim, and must be fixed before anything ships.
+
+Resolve every `blocking` finding. Record unresolved ones in `decisions`.
+
 ### Acceptance
 
 - 6–8 `gap_indicators` rows, spanning at least three different tiers.
 - At least one `is_null_result = 1` with at least five logged searches behind it.
 - Every non-null row has a `source_url` that you actually fetched.
+- Reviewer Mode A run, `research-log/reviews/phase-3.json` written, no unresolved `blocking`.
 - The artifact must label this a **sample** and must not extrapolate it to coverage.
 
 ---
@@ -204,12 +224,36 @@ maturity, measurability tier. If a new gap lands in tier 3 or 4, **say so plainl
 rather than dressing it up as tier 1. Their own roadmapping criterion asks whether
 success is unambiguously measurable, and the honest answer is part of the contribution.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode B** of `agents/reviewer.md`. Its instruction is
+to **refute novelty, not confirm it** — it greps the export with its own search terms
+and hunts for funded work, defaulting to "already covered". You have every incentive to
+conclude your own gap is novel, which is exactly why you do not get to be the one who
+checks.
+
+It also runs the **house-format blind test**:
+
+```bash
+node engine/make-format-test.mjs
+```
+
+This writes `research-log/format-test.json` — your proposed gaps shuffled among real
+Convergent ones with identifying markers stripped — and a key the reviewer only opens
+after answering. If the reviewer reliably picks yours out, the voice does not match and
+the finding says what gave them away: length, hedging, vocabulary, sentence shape,
+numbers. Revise and re-run until recall on your items is near chance.
+
+A `covered-by-existing-gap`, `covered-by-existing-capability`, or `already-funded`
+verdict is blocking. Drop or replace that gap.
+
 ### Acceptance
 
 - 3–5 rows, each 30–60 words, title-case declarative name, no urgency language, no
   inline citations, no named vendors.
 - `dedup_check` and `funding_check` both populated with what was actually searched.
 - IDs prefixed `new-`. **Never** mint a Convergent-style UUID.
+- Reviewer Mode B run, format test at near-chance recall, no unresolved `blocking`.
 
 ---
 
@@ -305,14 +349,29 @@ Two gaps in different fields sharing a binding link demonstrates something a cat
 structurally cannot: **that bottlenecks recur across fields and can be counted.** Give it
 its own section in the findings.
 
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode C** of `agents/reviewer.md`. Two things it does
+that you cannot do for yourself:
+
+1. **Verifies the expectation was really pre-registered**, by checking that the commit
+   containing `expectation` precedes the one containing `finding` in git history. This
+   is why you commit the expectation on its own before starting the analysis — the git
+   log is the evidence, and without it the pre-registration claim is unfalsifiable.
+2. **Argues that a different link binds.** It takes the strongest case it can for at
+   least two non-binding links using the same evidence. If it can make a serious case,
+   your conclusion is not established and the chain needs more work.
+
+It also checks axis discipline, the intersection claim, and the tone rule.
+
 ### Acceptance
 
 - Exactly two chains. Not three. Doing this across the map is the collaboration being
   proposed, not the thing being given away.
 - Every link has `blocker` and `rationale`; `is_binding` set on the ones that bind.
-- `expectation` written before the analysis; `finding` written after, and honest about
-  divergence.
+- `expectation` committed **in an earlier commit** than `finding`, and honest about divergence.
 - Tone check: every statement about their capability set reads as observation, not critique.
+- Reviewer Mode C run, no unresolved `blocking`.
 
 ---
 
@@ -397,6 +456,15 @@ Include:
   and impact attributes they have already said they want.
 
 **Draft it. Do not send it.** External communication is David's.
+
+### Review gate — mandatory
+
+Spawn an independent reviewer in **Mode D** of `agents/reviewer.md`. It traces every
+quantitative claim in `docs/findings.md` and the cover note back to a database row and
+lists the ones that do not trace — the check that catches a confident sentence written
+from memory. It also hunts for ranking, which re-enters through the side door as a
+default sort, a "top" list, or a chart ordered by magnitude, and it opens the built page
+to confirm `guess` labels are visually distinct rather than merely present in the data.
 
 ### Verify before anything goes outside the repo
 
