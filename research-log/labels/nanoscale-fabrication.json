@@ -4,28 +4,76 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-809a-a069-c93e72813eb6",
-      "outcome": { "outcome": "Small-batch and molecularly diverse devices become fabricable without a multi-billion-dollar fab, so nanoscale device research stops being rationed by access to a handful of facilities.", "rationale": "Their description names versatility and small-scale assembly as what current fabs foreclose.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Nanoscale device research stops being rationed by access to a handful of multi-billion-dollar fabs. Small batches and odd materials become fabricable.",
+        "rationale": "Their description names versatility and small-scale assembly as what current fabs foreclose.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Digital assembly, laser direct write and modular nano-electronics are all fabrication-hardware capabilities.", "confidence": "confident" }
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Digital assembly, laser direct write and modular nano-electronics are all fabrication-hardware capabilities.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Capital cost per wafer start, minimum economic batch size and feature size achievable are direct facility metrics.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Capital cost per wafer start, minimum economic batch size and feature size achievable are direct facility metrics.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
-      "outcome": { "outcome": "Atoms can be placed where they are specified rather than where chemistry prefers, making arbitrary molecular structures buildable rather than only discoverable.", "rationale": "Their description traces the ambition from Feynman and Drexler through DNA origami to protein carpentry, and the unlock is positional control itself.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Put atoms where you want them rather than where chemistry prefers. Arbitrary molecular structures turn buildable instead of merely discoverable.",
+        "rationale": "Their description traces the ambition from Feynman and Drexler through DNA origami to protein carpentry, and the unlock is positional control itself.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Speculative", "is_primary": 1, "rationale": "Their proposed route is designing modular protein building blocks with programmable binding, which is de novo design at a scale and precision not demonstrated.", "confidence": "confident" },
-        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 0, "rationale": "Molecular 3D printing and vacuum mechanosynthesis are fabrication capabilities with no working instance.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Their proposed route is designing modular protein building blocks with programmable binding, which is de novo design at a scale and precision not demonstrated.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Molecular 3D printing and vacuum mechanosynthesis are fabrication capabilities with no working instance.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Positional placement accuracy and per-step assembly yield are direct and unambiguous, which is why their own text can be candid about the risk of failing.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Positional placement accuracy and per-step assembly yield are direct and unambiguous, which is why their own text can be candid about the risk of failing.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
-      "outcome": { "outcome": "Cells become buildable from specified parts rather than borrowed from evolution, so synthetic biology stops inheriting mechanisms nobody has characterised.", "rationale": "Their description names the reliance on kludgy evolved cells as the limit on fully customisable biological systems.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Cells get built from specified parts. Synthetic biology stops inheriting mechanisms that nobody has characterised.",
+        "rationale": "Their description names the reliance on kludgy evolved cells as the limit on fully customisable biological systems.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Speculative", "is_primary": 1, "rationale": "A bottom-up synthetic cell requires designing a compatible full parts list, which is a design problem far past current demonstrated scope.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "A bottom-up synthetic cell requires designing a compatible full parts list, which is a design problem far past current demonstrated scope.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Whether a bottom-up construct self-replicates, and how many functions are supplied by designed rather than borrowed components, are direct and countable.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Whether a bottom-up construct self-replicates, and how many functions are supplied by designed rather than borrowed components, are direct and countable.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "All three tier-1 but all with speculative-maturity primaries: the goals are unambiguous and the capability is absent. The cleanest example in the map of measurable-but-far, which is the opposite failure mode to the origins questions."

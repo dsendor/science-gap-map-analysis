@@ -4,48 +4,148 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-80b5-8594-d53ea33db290",
-      "outcome": { "outcome": "Critical supply chains gain mapped failure points and pre-positioned fallbacks, so a shock to one node stops propagating into cascading loss of industrial capability.", "rationale": "Their framing is fragility plus absent backup; the unlock is that a single-node failure stops being systemic.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "A shock to one node stops cascading into lost industrial capability, because the failure points are mapped and the fallbacks are already in place.",
+        "rationale": "Their framing is fragility plus absent backup; the unlock is that a single-node failure stops being systemic.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Redundancy is technically simple and economically unrewarded; the binding constraint is who pays to hold slack nobody is billed for.", "confidence": "confident" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Network cascade modelling to locate single points of failure works now and is not what is missing.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Redundancy is technically simple and economically unrewarded; the binding constraint is who pays to hold slack nobody is billed for.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Network cascade modelling to locate single points of failure works now and is not what is missing.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Single-source dependence and inventory depth are measurable inputs, but resilience itself only reveals under a shock that has not happened.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Single-source dependence and inventory depth are measurable inputs, but resilience itself only reveals under a shock that has not happened.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-802e-bd40-dd7361f31518",
-      "outcome": { "outcome": "Airborne and surface transmission can be interrupted by the built environment and by materials, decoupling outbreak control from voluntary behavioural compliance.", "rationale": "Every listed capability acts on the physical environment rather than on behaviour, which is where the leverage sits.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Buildings and materials interrupt transmission on their own, so outbreak control no longer depends on everybody complying.",
+        "rationale": "Every listed capability acts on the physical environment rather than on behaviour, which is where the leverage sits.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Antimicrobial surfaces, textiles and better PPE are materials and geometry design problems with well-specified objectives.", "confidence": "confident" },
-        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Surface and coating screening is exactly the bench-scale formulation loop self-driving labs already run in adjacent domains.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Antimicrobial surfaces, textiles and better PPE are materials and geometry design problems with well-specified objectives.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Surface and coating screening is exactly the bench-scale formulation loop self-driving labs already run in adjacent domains.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Filtration efficiency, air changes per hour and chamber-trial transmission reduction are direct, standardised quantities.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Filtration efficiency, air changes per hour and chamber-trial transmission reduction are direct, standardised quantities.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80be-82f0-c671a80de28e",
-      "outcome": { "outcome": "Novel pathogens are detected while transmission is still containable, and their source can be attributed after the fact.", "rationale": "Their description names both halves, detection latency and attribution, and both are needed for intervention to be possible.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "A novel pathogen gets caught while transmission is still containable, and its source can be attributed afterwards.",
+        "rationale": "Their description names both halves, detection latency and attribution, and both are needed for intervention to be possible.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 1, "rationale": "Metagenomic anomaly detection over sequencing and wastewater streams is deployed today; the science is ahead of the deployment.", "confidence": "confident" },
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 0, "rationale": "Sample sharing and cross-border reporting agreements gate how much of the working detection capability actually gets used.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Metagenomic anomaly detection over sequencing and wastewater streams is deployed today; the science is ahead of the deployment.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Sample sharing and cross-border reporting agreements gate how much of the working detection capability actually gets used.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Time from emergence to first detection and estimated case count at detection are both reconstructable for past outbreaks.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Time from emergence to first detection and estimated case count at detection are both reconstructable for past outbreaks.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8027-9ab6-d431ec43d57f",
-      "outcome": { "outcome": "Countermeasure development outpaces pathogen evolution, so resistance emergence stops setting the shelf life of the antimicrobial arsenal.", "rationale": "Their framing is a race; the unlock is winning it, which means development time falling below evolution time.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Countermeasures outpace resistance. Right now resistance sets the shelf life of the entire antimicrobial arsenal.",
+        "rationale": "Their framing is a race; the unlock is winning it, which means development time falling below evolution time.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 1, "rationale": "Generative antibody and antiviral design against a named target works now; seven of their listed capabilities are discovery-side.", "confidence": "confident" },
-        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Closing the design-test loop for candidate validation is the near-term extension of working self-driving chemistry.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Generative antibody and antiviral design against a named target works now; seven of their listed capabilities are discovery-side.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Closing the design-test loop for candidate validation is the near-term extension of working self-driving chemistry.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Time from pathogen sequence to validated candidate, and resistance prevalence over time, are both tracked surveillance quantities.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Time from pathogen sequence to validated candidate, and resistance prevalence over time, are both tracked surveillance quantities.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8084-a877-c83d9b9c3ece",
-      "outcome": { "outcome": "Synthesis screening becomes universal and hard to evade, closing the cheapest route from a dangerous sequence to physical material.", "rationale": "Their description states the requirement itself: implementation must be coordinated and universal to reduce risk at all.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Synthesis screening becomes universal and hard to evade, closing the cheapest route from a dangerous sequence to physical material.",
+        "rationale": "Their description states the requirement itself: implementation must be coordinated and universal to reduce risk at all.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their own text makes universality the binding condition; partial screening simply relocates demand to unscreened providers.", "confidence": "confident" },
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 0, "rationale": "Sequence-level hazard screening and watermarking are working techniques; coverage, not capability, is the shortfall.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Their own text makes universality the binding condition; partial screening simply relocates demand to unscreened providers.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Sequence-level hazard screening and watermarking are working techniques; coverage, not capability, is the shortfall.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Share of global synthesis capacity under screening is measurable; misuse prevented is not, since the counterfactual attacks are unobserved.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Share of global synthesis capacity under screening is measurable; misuse prevented is not, since the counterfactual attacks are unobserved.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Two of five take an institutional primary despite every gap being framed technically. Their capability lists are consistently discovery-side while the stated blocker is deployment or coverage."

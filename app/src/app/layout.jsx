@@ -14,7 +14,7 @@ const serif = Shippori_Mincho({
 });
 
 export const metadata = {
-  title: 'AI has reached about a fifth of the Gap Map in four years',
+  title: 'AI is accelerating science. The Gap Map should show where.',
   description:
     "David Sendor's extension of Convergent Research's Fundamental Development Gap Map v1.0: an outcome, the kind of work in the way, and a measurability tier for all 103 gaps, plus two worked critical paths and four proposed gaps. An independent contribution, offered for feedback.",
 };

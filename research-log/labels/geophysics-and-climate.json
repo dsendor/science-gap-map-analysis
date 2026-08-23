@@ -4,55 +4,163 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-80fa-9903-df046affff97",
-      "outcome": { "outcome": "Localised climate hazards can be forecast and acted on within the window where action still changes the outcome, rather than only attributed afterwards.", "rationale": "Their description emphasises precision, speed and locality, all of which matter only if response is possible inside the event window.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "A local climate hazard gets forecast while there is still time to act on it, not attributed afterwards.",
+        "rationale": "Their description emphasises precision, speed and locality, all of which matter only if response is possible inside the event window.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Fine-grained impact modelling and rapid local forecasting are the mature end of learned weather emulation.", "confidence": "confident" },
-        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 0, "rationale": "Hurricane diversion and cloud seeding at effective scale require deployed physical infrastructure that does not exist.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Fine-grained impact modelling and rapid local forecasting are the mature end of learned weather emulation.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Hurricane diversion and cloud seeding at effective scale require deployed physical infrastructure that does not exist.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Forecast skill and response latency are measurable, but the gap is about intervention capability whose efficacy at scale has no observation set.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Forecast skill and response latency are measurable, but the gap is about intervention capability whose efficacy at scale has no observation set.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8037-9a36-c2081290cac8",
-      "outcome": { "outcome": "Greenhouse gas removal becomes verifiable enough to pay for by results, so removal capacity stops being limited by the inability to prove it happened.", "rationale": "Their description names measurement difficulty as the specific obstacle to harnessing natural removal systems.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Removal gets paid for by verified result. Right now the inability to prove that carbon stayed removed is what limits capacity.",
+        "rationale": "Their description names measurement difficulty as the specific obstacle to harnessing natural removal systems.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their stated blocker is accurate measurement of environmental impact, and three of five capabilities are monitoring and validation platforms.", "confidence": "confident" },
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 0, "rationale": "Modifying the cow microbiome to suppress methanogenesis is a biological design objective.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Their stated blocker is accurate measurement of environmental impact, and three of five capabilities are monitoring and validation platforms.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Modifying the cow microbiome to suppress methanogenesis is a biological design objective.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Tonnes of CO2-equivalent removed and cost per tonne are the units the entire field already transacts in.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Tonnes of CO2-equivalent removed and cost per tonne are the units the entire field already transacts in.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80ff-986f-d66a6d646d7d",
-      "outcome": { "outcome": "Earth system models become able to represent tipping behaviour and coupled human-climate dynamics, so intervention strategies can be evaluated before commitment rather than after.", "rationale": "Their description names both halves: tipping-point prediction and the nonlinear economic and social coupling.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Climate interventions get evaluated before anyone commits to them, because Earth system models can represent tipping behaviour and the human feedbacks that drive it.",
+        "rationale": "Their description names both halves: tipping-point prediction and the nonlinear economic and social coupling.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 1, "rationale": "Learned emulators for Earth system components are in operational use and are the practical route to the resolution these models need.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Learned emulators for Earth system components are in operational use and are the practical route to the resolution these models need.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Hindcast skill against the historical record is measurable, but the quantity of interest is prediction of tipping events that have not occurred, so validation is indirect.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Hindcast skill against the historical record is measurable, but the quantity of interest is prediction of tipping events that have not occurred, so validation is indirect.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8058-9458-d04c0edfd1b8",
-      "outcome": { "outcome": "The processes that dominate climate uncertainty, aerosol-cloud interaction and ocean heat transport chief among them, get observed at the resolution the models need instead of parameterised.", "rationale": "Their description ties poor prediction directly to insufficient observation of specific named processes.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Aerosol-cloud interaction and ocean heat transport dominate climate uncertainty. Observe them at model resolution and they stop having to be parameterised.",
+        "rationale": "Their description ties poor prediction directly to insufficient observation of specific named processes.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 1, "rationale": "Every listed capability is an observation platform or a retrieval problem, and learned retrieval from remote sensing is mature.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Every listed capability is an observation platform or a retrieval problem, and learned retrieval from remote sensing is mature.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Observational coverage and retrieval uncertainty for each named process are direct, reported quantities.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Observational coverage and retrieval uncertainty for each named process are direct, reported quantities.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80ce-ba28-fe5226876f66",
-      "outcome": { "outcome": "The physical basis for emergency climate intervention gets established at a scale that means something, so the option is either available or ruled out before it is needed under duress.", "rationale": "Their description frames the loss as preparedness: untested principles mean no usable option in a rapid-change scenario.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Emergency climate intervention is either a real option or ruled out, decided at meaningful scale and in advance rather than under duress.",
+        "rationale": "Their description frames the loss as preparedness: untested principles mean no usable option in a rapid-change scenario.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 1, "rationale": "Glacial intervention and sunshade fundamentals require deployed physical systems at scales nobody has built.", "confidence": "confident" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Simulating intervention consequences works now and is not what is missing; their own framing is that the science is untested at scale, not unmodelled.", "confidence": "confident" }
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Glacial intervention and sunshade fundamentals require deployed physical systems at scales nobody has built.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Simulating intervention consequences works now and is not what is missing; their own framing is that the science is untested at scale, not unmodelled.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Verification contested", "rationale": "Small-scale field trials are technically possible and some have been proposed, but there is no agreement that results at trial scale would establish planetary-scale efficacy, and active dispute over whether testing is permissible at all. The blocker is agreement on what would count as a verdict.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Verification contested",
+        "rationale": "Small-scale field trials are technically possible and some have been proposed, but there is no agreement that results at trial scale would establish planetary-scale efficacy, and active dispute over whether testing is permissible at all. The blocker is agreement on what would count as a verdict.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80fe-9540-c14ef07e4d85",
-      "outcome": { "outcome": "Materials and pollutants get recovered or remediated at a rate comparable to the rate they are released, closing loops that currently run one way.", "rationale": "Their description names recycling, ocean cleanup and fire-cycle management as instances of the same management failure.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Materials and pollutants come back out at something like the rate they go in. The loops that currently run one way start closing.",
+        "rationale": "Their description names recycling, ocean cleanup and fire-cycle management as instances of the same management failure.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their framing is that these systems are outdated and fragmented, which is an organisation and incentive problem rather than a missing technique.", "confidence": "guess" },
-        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 0, "rationale": "Ocean cleaning and advanced sorting are robotic deployment problems where hardware is improving but unproven at scale.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Their framing is that these systems are outdated and fragmented, which is an organisation and incentive problem rather than a missing technique.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Ocean cleaning and advanced sorting are robotic deployment problems where hardware is improving but unproven at scale.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Recycling rates by material, tonnes of pollutant removed and acreage under managed burn are all directly reported.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Recycling rates by material, tonnes of pollutant removed and acreage under managed burn are all directly reported.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Climate splits cleanly: observation and modelling gaps are tier-1 with mature AI, intervention gaps are tier-3 or proxy with speculative physical primaries. The tier boundary tracks whether the thing has been done before."

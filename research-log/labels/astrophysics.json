@@ -5,7 +5,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
       "outcome": {
-        "outcome": "Apertures that are currently unaffordable become buildable inside a single funding cycle, putting direct spectroscopy of Earth-like exoplanet atmospheres within reach of one generation of astronomers rather than two.",
+        "outcome": "Direct spectroscopy of an Earth-like exoplanet atmosphere arrives within one generation of astronomers instead of two, because large apertures fit inside a single funding cycle.",
         "rationale": "The unlock is aperture per dollar per decade; everything downstream in observational astrophysics scales with it.",
         "confidence": "confident"
       },
@@ -41,7 +41,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8042-a5bd-ff3dc13b3998",
       "outcome": {
-        "outcome": "Angular resolution becomes set by baseline separation rather than by primary mirror diameter, making surface features on nearby exoplanets resolvable from space.",
+        "outcome": "Resolution comes from how far apart the spacecraft fly rather than how big the mirror is. Surface features on nearby exoplanets get resolved.",
         "rationale": "Their description states the physics directly: resolution is proportional to baseline once coherent combination works.",
         "confidence": "confident"
       },
@@ -70,7 +70,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ed-8762-c51aee94a680",
       "outcome": {
-        "outcome": "Gravitational-wave astronomy extends past the audio band, making decihertz sources such as intermediate-mass black hole mergers and long early-inspiral binaries observable for the first time.",
+        "outcome": "Gravitational-wave astronomy hears below the audio band. Intermediate-mass black hole mergers and long early inspirals become observable for the first time.",
         "rationale": "Each new frequency band in GW detection has opened a distinct source population; the unlock is the population, not the instrument.",
         "confidence": "confident"
       },
@@ -99,7 +99,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
       "outcome": {
-        "outcome": "High-priority astrobiology targets, Europa and Enceladus plume sampling among them, get flown on a timescale set by mission design rather than by position in an agency queue.",
+        "outcome": "Europa and Enceladus plume sampling fly on a schedule set by mission design rather than by position in an agency queue.",
         "rationale": "Their framing is explicitly about missions remaining unrealized by existing agencies, so the unlock is realisation, not capability.",
         "confidence": "confident"
       },

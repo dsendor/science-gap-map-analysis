@@ -4,45 +4,127 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
-      "outcome": { "outcome": "Research that current institutional forms cannot house, long-horizon and heavily coordinated work in particular, becomes fundable and organisable.", "rationale": "Their description names incentive structures that hinder certain kinds of outcomes, coordinated research specifically.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Long-horizon, heavily coordinated research that no current institutional form can house becomes fundable and organisable.",
+        "rationale": "Their description names incentive structures that hinder certain kinds of outcomes, coordinated research specifically.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "Speculative", "is_primary": 1, "rationale": "All three capabilities are new funding and organisational structures; no technical capability moves this gap at all.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "All three capabilities are new funding and organisational structures; no technical capability moves this gap at all.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Counterfactual required", "rationale": "The quantity of interest is research that never happened because no institution could house it. There is no observation set for unproposed work, and proposals never written leave no record.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Counterfactual required",
+        "rationale": "The quantity of interest is research that never happened because no institution could house it. There is no observation set for unproposed work, and proposals never written leave no record.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
-      "outcome": { "outcome": "Trials extract more evidence per patient and per dollar, so the number of clinical questions that can be answered in a decade rises without a proportional rise in cost.", "rationale": "Their description frames the loss as inefficiency in evidence gathering rather than as a shortage of trials.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "More evidence per patient and per dollar. The number of clinical questions answerable in a decade rises without a matching rise in cost.",
+        "rationale": "Their description frames the loss as inefficiency in evidence gathering rather than as a shortage of trials.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Adaptive design, arm allocation and enrichment are optimisation problems over an explicit information objective.", "confidence": "confident" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 0, "rationale": "Digital twins and synthetic control arms are prediction problems, and both appear in their capability list.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Adaptive design, arm allocation and enrichment are optimisation problems over an explicit information objective.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Digital twins and synthetic control arms are prediction problems, and both appear in their capability list.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Cost per trial, time to result, statistical power achieved and the share of trials ending inconclusive are all recorded in trial registries.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Cost per trial, time to result, statistical power achieved and the share of trials ending inconclusive are all recorded in trial registries.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
-      "outcome": { "outcome": "The cost of getting a result into the permanent record falls far enough that publication stops selecting on the resources of the authoring institution.", "rationale": "Axis chosen is cost; their sentence bundles cost, speed and inclusiveness, and the other two are separate chains.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Getting a result into the permanent record gets cheap enough that publication stops selecting on how well-resourced your institution is.",
+        "rationale": "Axis chosen is cost; their sentence bundles cost, speed and inclusiveness, and the other two are separate chains.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Drafting and screening are already automatable; what binds is reviewer recruitment, judgment consistency and whether a hiring committee counts the output.", "confidence": "confident" },
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 0, "rationale": "Drafting, screening and reviewer-matching assistance work today, which is precisely why they are not the binding link.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Drafting and screening are already automatable; what binds is reviewer recruitment, judgment consistency and whether a hiring committee counts the output.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Drafting, screening and reviewer-matching assistance work today, which is precisely why they are not the binding link.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Article processing charges, total publishing spend, time from submission to publication and reviewer invitations per accepted review are all directly reported.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Article processing charges, total publishing spend, time from submission to publication and reviewer invitations per accepted review are all directly reported.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0",
-      "outcome": { "outcome": "Fabricated and manipulated work gets caught before it is built on, so the literature stops accumulating results that later work silently depends on.", "rationale": "Their description names trust and slowed progress as the two losses, and both come from undetected fraud propagating.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Fabricated work gets caught before other work is built on top of it.",
+        "rationale": "Their description names trust and slowed progress as the two losses, and both come from undetected fraud propagating.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "Automated detection of image duplication, tortured phrases and statistical impossibility is deployed and finding real cases today.", "confidence": "confident" }
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Automated detection of image duplication, tortured phrases and statistical impossibility is deployed and finding real cases today.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Retractions and detected fraud are countable, but they measure detection capability rather than fraud prevalence. The denominator, undetected fraud, is by definition unobserved.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Retractions and detected fraud are countable, but they measure detection capability rather than fraud prevalence. The denominator, undetected fraud, is by definition unobserved.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8012-ae64-f8ff6f67ee0b",
-      "outcome": { "outcome": "The published literature becomes queryable as a single body of knowledge rather than as a collection of documents, so what is already known stops being rediscovered.", "rationale": "Their description asks how AI-generated knowledge becomes cumulative, which is the unlock beyond mere retrieval.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "The literature can be queried as one body of knowledge rather than searched as a pile of documents, and what is already known stops being rediscovered.",
+        "rationale": "Their description asks how AI-generated knowledge becomes cumulative, which is the unlock beyond mere retrieval.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "Working now", "is_primary": 1, "rationale": "This is the canonical working case for language models, and all five of their capabilities are literature agents, synthesis infrastructure or knowledge models.", "confidence": "confident" }
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "This is the canonical working case for language models, and all five of their capabilities are literature agents, synthesis infrastructure or knowledge models.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Synthesis quality on benchmark questions is measurable, but their actual target, whether machine-generated knowledge becomes cumulative, has no agreed observable.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Synthesis quality on benchmark questions is measurable, but their actual target, whether machine-generated knowledge becomes cumulative, has no agreed observable.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Metascience is the sharpest field for the thesis: the two gaps with a working-now LLM primary are the two whose measurability is only proxy or worse, and the gap with the pure institutional primary is the map's clearest counterfactual-required case. AI has arrived exactly where feedback is fastest and is absent where it is slowest."

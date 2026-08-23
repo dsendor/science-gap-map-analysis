@@ -4,39 +4,119 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-800c-90aa-fcb685877ee5",
-      "outcome": { "outcome": "Restoration strategies can be tested against a predictive model before being deployed on a real landscape, so ecological intervention stops being a one-shot bet.", "rationale": "Their description asks for the ability to experiment with and validate restoration strategies, which is what a testbed plus model buys.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Test a restoration strategy against a predictive model before betting a landscape on it.",
+        "rationale": "Their description asks for the ability to experiment with and validate restoration strategies, which is what a testbed plus model buys.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "The stated shortfall is models that fail to predict feedback loops and stability thresholds, which is a dynamics-prediction problem.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Biodiversity and animal-movement datasets come from camera traps, acoustics and satellite imagery, where automated classification already works.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The stated shortfall is models that fail to predict feedback loops and stability thresholds, which is a dynamics-prediction problem.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Biodiversity and animal-movement datasets come from camera traps, acoustics and satellite imagery, where automated classification already works.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Species counts and movement data are measurable, but ecosystem resilience is inferred from those indicators rather than observed directly.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Species counts and movement data are measurable, but ecosystem resilience is inferred from those indicators rather than observed directly.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-804b-bc6b-de7f4bc3adce",
-      "outcome": { "outcome": "Ecosystems under stress give a usable warning before they collapse, converting ecological management from post-hoc response to pre-emptive intervention.", "rationale": "Their capability list leads with detecting early-warning signals of collapse, which is the whole value of anticipation.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "An ecosystem under stress gives a usable warning before it collapses, and management turns pre-emptive rather than reactive.",
+        "rationale": "Their capability list leads with detecting early-warning signals of collapse, which is the whole value of anticipation.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Tipping-point anticipation is time-series prediction on nonlinear dynamics, which is where learned models plausibly beat mechanistic ones.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Pollination-network and biodiversity monitoring depend on automated detection from sensor streams, which works today.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Tipping-point anticipation is time-series prediction on nonlinear dynamics, which is where learned models plausibly beat mechanistic ones.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Pollination-network and biodiversity monitoring depend on automated detection from sensor streams, which works today.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Verification contested", "rationale": "Candidate early-warning indicators exist and are computed, critical slowing down among them, but the field disputes whether they reliably precede collapse or only appear so in hindsight. Their own text concedes it is unclear what metrics would show restoration worked.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Verification contested",
+        "rationale": "Candidate early-warning indicators exist and are computed, critical slowing down among them, but the field disputes whether they reliably precede collapse or only appear so in hindsight. Their own text concedes it is unclear what metrics would show restoration worked.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
-      "outcome": { "outcome": "The uncharted majority of Earth's biology, most of it microbial, gets catalogued before it is lost, turning an unknown reservoir of biochemistry into a searchable resource.", "rationale": "Their description names discovery of new life forms with impact across health, climate and agriculture as the unlock.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Most of Earth's biology is microbial and uncatalogued. It gets recorded before it is lost, and turns into something searchable.",
+        "rationale": "Their description names discovery of new life forms with impact across health, climate and agriculture as the unlock.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "The binding constraint is physical access to the deep ocean and atmosphere at scale; their capability list is dominated by sampling platforms.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Metagenomic classification of whatever is sampled already works and is not the limiting step.", "confidence": "confident" }
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The binding constraint is physical access to the deep ocean and atmosphere at scale; their capability list is dominated by sampling platforms.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Metagenomic classification of whatever is sampled already works and is not the limiting step.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Taxa catalogued, genomes assembled and ocean volume sampled are direct counts against a known-unknown denominator.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Taxa catalogued, genomes assembled and ocean volume sampled are direct counts against a known-unknown denominator.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
-      "outcome": { "outcome": "Biological design principles that are currently unreadable, from nanostructures to animal communication to the chemistry of early Earth, become legible as engineering precedent.", "rationale": "Their description bundles several searches under one heading; the shared unlock is converting nature's existing solutions into usable knowledge.", "confidence": "guess" },
+      "outcome": {
+        "outcome": "Biological nanostructures, animal communication and the chemistry of early Earth become readable as engineering precedent rather than admired as curiosities.",
+        "rationale": "Their description bundles several searches under one heading; the shared unlock is converting nature's existing solutions into usable knowledge.",
+        "confidence": "guess"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Most listed capabilities are detection problems, imaging nanostructures and screening zircons and regolith at scale for rare samples.", "confidence": "guess" },
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "2-5 years", "is_primary": 0, "rationale": "Decoding animal communication is a sequence-modelling problem and is the one component where language-model methods apply directly.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Most listed capabilities are detection problems, imaging nanostructures and screening zircons and regolith at scale for rare samples.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Decoding animal communication is a sequence-modelling problem and is the one component where language-model methods apply directly.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Each sub-question has its own countable output, such as Hadean zircons screened, but the gap as stated bundles four unrelated searches and has no single observable.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Each sub-question has its own countable output, such as Hadean zircons screened, but the gap as stated bundles four unrelated searches and has no single observable.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "The fourth gap bundles four unrelated research programmes under one heading, so its labels are the weakest in this batch and are flagged as guesses. Worth naming in the artifact as an example of where a gap statement is doing too much work."

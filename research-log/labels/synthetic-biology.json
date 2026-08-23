@@ -4,46 +4,134 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-807e-b924-fe555253617a",
-      "outcome": { "outcome": "Multicellular organisms and their developmental programmes become editable, extending genetic engineering from single-gene changes in simple organisms to whole body plans.", "rationale": "Their description names the boundary directly: simple organisms tractable, complex organisms and developmental pathways not.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Genetic engineering moves up from single genes in simple organisms to whole body plans and the developmental programmes that build them.",
+        "rationale": "Their description names the boundary directly: simple organisms tractable, complex organisms and developmental pathways not.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Speculative", "is_primary": 1, "rationale": "Specifying a developmental trajectory is a design problem over a system whose dynamics are not yet predictable.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "Specifying a developmental trajectory is a design problem over a system whose dynamics are not yet predictable.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Whether the specified developmental outcome occurs, and at what penetrance, is directly observable.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Whether the specified developmental outcome occurs, and at what penetrance, is directly observable.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8008-8543-ca3099dae993",
-      "outcome": { "outcome": "Synthetic biology reaches field deployment for food production and bioremediation, so laboratory-demonstrated capability starts acting on real land and real pollution.", "rationale": "Their description names the shortfall as few robust platforms translating to scalable, field-ready solutions.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Synthetic biology starts acting on real land and real pollution, not just on demonstrations in a lab.",
+        "rationale": "Their description names the shortfall as few robust platforms translating to scalable, field-ready solutions.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "The stated gap is field-readiness and scale rather than biological design, which makes it a deployment and manufacturing problem.", "confidence": "guess" },
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 0, "rationale": "Bioremediation pathway and chassis design remain genuine design problems for legacy pollutants.", "confidence": "confident" }
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The stated gap is field-readiness and scale rather than biological design, which makes it a deployment and manufacturing problem.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Bioremediation pathway and chassis design remain genuine design problems for legacy pollutants.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Tonnes produced, hectares remediated and cost per unit against the conventional alternative are direct.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Tonnes produced, hectares remediated and cost per unit against the conventional alternative are direct.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-805f-8b53-dd343406ab07",
-      "outcome": { "outcome": "Bioproduction stops being confined to a handful of domesticated microbes, unlocking biochemistry that those few hosts cannot perform.", "rationale": "Their description names novel biochemical pathways and wider biomolecule range as the unlock.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Bioproduction escapes the handful of domesticated microbes it currently runs on, and with it the biochemistry those few hosts cannot perform.",
+        "rationale": "Their description names novel biochemical pathways and wider biomolecule range as the unlock.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Domesticating a new chassis means designing a genetic toolkit for it, a search over regulatory parts against expression objectives.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Domesticating a new chassis means designing a genetic toolkit for it, a search over regulatory parts against expression objectives.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Number of chassis with production-grade toolkits, and achievable titre per host, are direct and countable.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Number of chassis with production-grade toolkits, and achievable titre per host, are direct and countable.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
-      "outcome": { "outcome": "Bioprocesses keep their laboratory yields at industrial volume, so biomanufacturing economics stop degrading exactly at the point of commercial relevance.", "rationale": "Their description names inefficiency on scale-up as the specific failure.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Bioprocess economics currently fall apart at exactly the volume where they start to matter commercially. Yields hold from bench to tank.",
+        "rationale": "Their description names inefficiency on scale-up as the specific failure.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Physical build and manipulation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Modularisation, materials and sterilisation of bioreactors are hardware engineering problems.", "confidence": "confident" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "Working now", "is_primary": 0, "rationale": "Mixing, oxygen transfer and process modelling for scale-up are simulation problems where surrogates already help.", "confidence": "confident" }
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Modularisation, materials and sterilisation of bioreactors are hardware engineering problems.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Mixing, oxygen transfer and process modelling for scale-up are simulation problems where surrogates already help.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Titre, rate and yield at stated working volume, and capital cost per litre, are the industry's own metrics.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Titre, rate and yield at stated working volume, and capital cost per litre, are the industry's own metrics.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
-      "outcome": { "outcome": "Enzymes and proteins can be designed for functions with no natural precedent, so protein engineering stops being limited to variations on what evolution already produced.", "rationale": "Their description names the constraint as static, biomimetic design limiting truly novel or highly functional enzymes.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Enzymes get designed for jobs evolution never had to solve, rather than adapted from something that already exists.",
+        "rationale": "Their description names the constraint as static, biomimetic design limiting truly novel or highly functional enzymes.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 1, "rationale": "De novo protein and enzyme design works now, with success rates rising; this is among the strongest working cases in the whole map.", "confidence": "confident" },
-        { "ai_type": "Autonomous experimentation", "maturity": "Working now", "is_primary": 0, "rationale": "Design-build-test-learn cycles for protein variants are already automated at high throughput.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "De novo protein and enzyme design works now, with success rates rising; this is among the strongest working cases in the whole map.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Design-build-test-learn cycles for protein variants are already automated at high throughput.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Catalytic efficiency of designed enzymes and design success rate per attempt are direct and published.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Catalytic efficiency of designed enzymes and design success rate per attempt are direct and published.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "All five tier-1. Design search dominates, and where the primary is physical build it is because the gap is about deployment and scale rather than about biology."

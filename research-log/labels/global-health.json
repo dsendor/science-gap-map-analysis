@@ -4,29 +4,83 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-80c0-aae9-fc48f6ef2af6",
-      "outcome": { "outcome": "Infection control stops depending on infrastructure that low-resource settings do not have, so prevention capability becomes decoupled from a country's health-system budget.", "rationale": "Their description frames every deficiency as an infrastructure mismatch rather than a missing scientific result.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Infection control no longer assumes infrastructure that low-resource settings do not have, so prevention decouples from a country's health budget.",
+        "rationale": "Their description frames every deficiency as an infrastructure mismatch rather than a missing scientific result.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Cost-constrained design of antimicrobial materials, PPE and sanitation is a search under an explicit cost objective.", "confidence": "confident" },
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 0, "rationale": "Vaccine distribution and decentralised production are logistics and allocation problems, not technical ones.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Cost-constrained design of antimicrobial materials, PPE and sanitation is a search under an explicit cost objective.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Vaccine distribution and decentralised production are logistics and allocation problems, not technical ones.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Cost per unit, coverage achieved and infection rates in served populations are all routinely reported by health systems.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Cost per unit, coverage achieved and infection rates in served populations are all routinely reported by health systems.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8045-ad83-cb1081a2eaf1",
-      "outcome": { "outcome": "Cause of disease becomes identifiable at the point of care rather than inferred from syndrome, so available treatments actually reach the patients they would help.", "rationale": "Their description names the specific loss: tests that do not reveal cause delay or prevent administration of treatments that already exist.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "A clinician learns the cause rather than the syndrome, at the point of care, and treatments that already exist reach the patients they would help.",
+        "rationale": "Their description names the specific loss: tests that do not reveal cause delay or prevent administration of treatments that already exist.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Multiplexed point-of-care readout and volatilomics are detection problems where learned signal extraction lifts sensitivity at fixed hardware cost.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Multiplexed point-of-care readout and volatilomics are detection problems where learned signal extraction lifts sensitivity at fixed hardware cost.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Sensitivity, specificity, cost per test and time to result are the standard diagnostic metrics.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Sensitivity, specificity, cost per test and time to result are the standard diagnostic metrics.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
-      "outcome": { "outcome": "Diseases that have resisted vaccines for decades, tuberculosis and Group A Streptococcus among them, get effective countermeasures, and malnutrition's developmental mechanism becomes a design target.", "rationale": "Their description names the specific pathogens and adds the basic science of malnutrition as a prerequisite for better intervention.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Tuberculosis and Group A Streptococcus have resisted vaccines for decades. They get effective countermeasures, and malnutrition's developmental mechanism turns into a design target.",
+        "rationale": "Their description names the specific pathogens and adds the basic science of malnutrition as a prerequisite for better intervention.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Immunogen design against hard targets is the core of their vaccine capability and is where generative design applies most directly.", "confidence": "confident" },
-        { "ai_type": "Coordination and institutional", "maturity": "Working now", "is_primary": 0, "rationale": "These are under-provisioned rather than undiscoverable; the market failure is well understood and pull mechanisms already exist.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Immunogen design against hard targets is the core of their vaccine capability and is where generative design applies most directly.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "These are under-provisioned rather than undiscoverable; the market failure is well understood and pull mechanisms already exist.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Vaccine efficacy in trial, disease incidence and cost per course are direct and long-tracked quantities.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Vaccine efficacy in trial, disease incidence and cost per course are direct and long-tracked quantities.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "All three tier-1. Global health gaps are unusually well instrumented because the outcome is a health statistic someone already collects."

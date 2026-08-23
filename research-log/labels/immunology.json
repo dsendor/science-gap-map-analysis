@@ -4,20 +4,54 @@
   "gaps": [
     {
       "gap_id": "1b4cb37e-2a00-80d3-b382-c445e2718659",
-      "outcome": { "outcome": "An individual's exposure history becomes readable from their immune repertoire, turning a record the body already keeps into a diagnostic for diseases with obscure aetiology.", "rationale": "Their gap title states it exactly: the history is there and unreadable, and their capability list targets links such as infection to neurodegeneration.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "The body already keeps a record of every exposure. Reading it turns immune repertoire into a diagnostic for diseases with obscure causes.",
+        "rationale": "Their gap title states it exactly: the history is there and unreadable, and their capability list targets links such as infection to neurodegeneration.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "Decoding repertoire sequence into exposure history is a supervised mapping problem waiting on labelled longitudinal cohorts.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Repertoire sequencing and multi-omic profiling are working assays; the interpretation layer is what is missing.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Decoding repertoire sequence into exposure history is a supervised mapping problem waiting on labelled longitudinal cohorts.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Repertoire sequencing and multi-omic profiling are working assays; the interpretation layer is what is missing.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Predicted exposure history can be scored against known infection records in existing longitudinal cohorts.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Predicted exposure history can be scored against known infection records in existing longitudinal cohorts.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1b4cb37e-2a00-80b5-a4f1-f702c75399f8",
-      "outcome": { "outcome": "Which receptor binds which antigen becomes predictable, making immune responses designable rather than discovered by screening.", "rationale": "Their description names predictive tools to augment immune responses across infection, cancer and autoimmunity as the unlock.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Predict which receptor binds which antigen, and immune responses get designed rather than found by screening.",
+        "rationale": "Their description names predictive tools to augment immune responses across infection, cancer and autoimmunity as the unlock.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "T-cell and B-cell receptor antigen mapping is a binding-prediction problem structurally similar to ones already solved for other interfaces.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "T-cell and B-cell receptor antigen mapping is a binding-prediction problem structurally similar to ones already solved for other interfaces.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Binding prediction accuracy on held-out receptor-antigen pairs is directly scorable against experimental assays.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Binding prediction accuracy on held-out receptor-antigen pairs is directly scorable against experimental assays.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Both are prediction problems with existing experimental ground truth, so both are tier-1 with an ML surrogate primary. A verifiable-feedback field, and AI is arriving accordingly."

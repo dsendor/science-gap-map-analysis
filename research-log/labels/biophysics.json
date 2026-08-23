@@ -4,64 +4,192 @@
   "gaps": [
     {
       "gap_id": "1c1cb37e-2a00-8031-b79b-c13cca53b9c9",
-      "outcome": { "outcome": "Intracellular molecular state becomes observable without perturbing the process being observed, making dynamic biochemistry measurable in living cells rather than inferred from fixed ones.", "rationale": "Their framing is that probes both fail to enter and perturb what they measure; removing both makes in-situ dynamics readable.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Watch biochemistry happen inside a living cell without disturbing the process you are watching.",
+        "rationale": "Their framing is that probes both fail to enter and perturb what they measure; removing both makes in-situ dynamics readable.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Both listed capabilities are design problems: engineering label-free contrast and metabolically incorporable reporters.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Label-free modalities are signal-starved by construction, and learned reconstruction already recovers usable contrast.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Both listed capabilities are design problems: engineering label-free contrast and metabolically incorporable reporters.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Label-free modalities are signal-starved by construction, and learned reconstruction already recovers usable contrast.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Species resolved per cell, perturbation magnitude and time to phototoxicity are standard reported instrument metrics.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Species resolved per cell, perturbation magnitude and time to phototoxicity are standard reported instrument metrics.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8099-b97a-ce85f02ab5a5",
-      "outcome": { "outcome": "Whether quantum coherence plays a functional role in biology becomes an experimentally settled question rather than a standing theoretical dispute.", "rationale": "Their description is explicit that predictions exist and direct evidence does not; the unlock is adjudication.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Whether quantum coherence does anything functional in biology gets settled experimentally rather than argued theoretically.",
+        "rationale": "Their description is explicit that predictions exist and direct evidence does not; the unlock is adjudication.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "The blocker is extracting a coherence signature from a warm, wet, fast-dephasing system, which is a signal-recovery problem.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "The blocker is extracting a coherence signature from a warm, wet, fast-dephasing system, which is a signal-recovery problem.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Verification contested", "rationale": "Candidate observables exist and have been measured, notably long-lived coherences in photosynthetic complexes, but the field disputes whether they are functional or artifacts of the spectroscopy, so measurement does not settle the question.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Verification contested",
+        "rationale": "Candidate observables exist and have been measured, notably long-lived coherences in photosynthetic complexes, but the field disputes whether they are functional or artifacts of the spectroscopy, so measurement does not settle the question.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-804b-8411-ee3977ce38e1",
-      "outcome": { "outcome": "Disordered and allosteric proteins become predictable from sequence, extending structure-based design to the large fraction of the proteome that AlphaFold-class tools currently cannot represent.", "rationale": "Their description names the boundary precisely: stable proteins solved, dynamic ones not.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Structure-based design extends to the disordered and allosteric proteins that AlphaFold-class tools currently cannot represent, which is a large share of the proteome.",
+        "rationale": "Their description names the boundary precisely: stable proteins solved, dynamic ones not.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "This is the same learned-prediction problem as static structure, retargeted at conformational ensembles rather than single structures.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "NMR ensemble mapping supplies the training and validation labels the prediction problem lacks.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "This is the same learned-prediction problem as static structure, retargeted at conformational ensembles rather than single structures.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "NMR ensemble mapping supplies the training and validation labels the prediction problem lacks.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Ensemble prediction is scorable against NMR and SAXS observables, and CASP-style blind assessment already exists for the static case.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Ensemble prediction is scorable against NMR and SAXS observables, and CASP-style blind assessment already exists for the static case.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8044-9b62-ef8af2ed2fa6",
-      "outcome": { "outcome": "Optical imaging reaches depths that currently require removing or sectioning the tissue, making neural activity and diagnostic imaging observable in intact organisms.", "rationale": "Their description names deep-tissue neural mapping and noninvasive diagnostics as the two downstream unlocks.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Optical imaging reaches depths that currently require cutting the tissue out, so neural activity and diagnostic imaging happen in intact organisms.",
+        "rationale": "Their description names deep-tissue neural mapping and noninvasive diagnostics as the two downstream unlocks.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Scattering is an inverse problem; computational descattering and wavefront shaping are learned-estimation approaches with working prototypes.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Scattering is an inverse problem; computational descattering and wavefront shaping are learned-estimation approaches with working prototypes.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Imaging depth in millimetres at a stated resolution and wavelength is the field's standard benchmark.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Imaging depth in millimetres at a stated resolution and wavelength is the field's standard benchmark.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-808d-9e6c-d7c767eee358",
-      "outcome": { "outcome": "The same living cell can be imaged at nanoscale repeatedly, making longitudinal subcellular dynamics directly observable instead of reconstructed from fixed snapshots of different cells.", "rationale": "Their description names the loss precisely: destruction forecloses longitudinal study of one specimen.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Image the same living cell at nanoscale again and again. Subcellular dynamics get watched directly rather than reconstructed from fixed snapshots of different cells.",
+        "rationale": "Their description names the loss precisely: destruction forecloses longitudinal study of one specimen.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 1, "rationale": "Destructiveness is a dose problem, and learned denoising and reconstruction directly reduce the dose needed for a given resolution.", "confidence": "confident" },
-        { "ai_type": "Physical build and manipulation", "maturity": "Speculative", "is_primary": 0, "rationale": "Quantum electron microscopy and ghost imaging require instruments that do not yet exist outside proof-of-principle.", "confidence": "confident" }
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Destructiveness is a dose problem, and learned denoising and reconstruction directly reduce the dose needed for a given resolution.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Physical build and manipulation",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Quantum electron microscopy and ghost imaging require instruments that do not yet exist outside proof-of-principle.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Resolution achieved against dose delivered against post-imaging viability is a three-way tradeoff that is routinely quantified.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Resolution achieved against dose delivered against post-imaging viability is a three-way tradeoff that is routinely quantified.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80cd-aef2-fe6e9d360328",
-      "outcome": { "outcome": "Membrane proteins and small proteins become structurally tractable, opening the largest drug-target class and the hardest cryo-EM case to structure-based design.", "rationale": "Their description names both sub-cases; membrane proteins are the majority of drug targets, which is where the downstream unlock sits.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Membrane proteins are the biggest drug-target class and small proteins are the hardest cryo-EM case. Both turn structurally tractable.",
+        "rationale": "Their description names both sub-cases; membrane proteins are the majority of drug targets, which is where the downstream unlock sits.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "Working now", "is_primary": 1, "rationale": "Recoding membrane proteins for solubility is de novo sequence design, which works now for this class of objective.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Orientation assignment for small particles in cryo-EM is a learned inference problem already being attacked.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "Working now",
+          "is_primary": 1,
+          "rationale": "Recoding membrane proteins for solubility is de novo sequence design, which works now for this class of objective.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Orientation assignment for small particles in cryo-EM is a learned inference problem already being attacked.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Structures deposited and resolution achieved below 50 kDa are directly countable in the PDB.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Structures deposited and resolution achieved below 50 kDa are directly countable in the PDB.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
-      "outcome": { "outcome": "A formal, operational criterion separating living from nonliving matter becomes available, giving origin-of-life research and biosignature detection a testable target rather than a definitional argument.", "rationale": "Their description asks precisely for a framework precise enough to be practically useful, which is what biosignature work currently lacks.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Origin-of-life research and biosignature detection get a testable target instead of a definitional argument, because there is an operational line between living and nonliving matter.",
+        "rationale": "Their description asks precisely for a framework precise enough to be practically useful, which is what biosignature work currently lacks.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "Speculative", "is_primary": 1, "rationale": "The listed capability is simulating nonequilibrium systems at scale, which is a surrogate-modelling problem far beyond current tractable system sizes.", "confidence": "guess" },
-        { "ai_type": "LLM reasoning and synthesis", "maturity": "Speculative", "is_primary": 0, "rationale": "Formal framework construction is theory work, where AI contribution remains unproven.", "confidence": "guess" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Speculative",
+          "is_primary": 1,
+          "rationale": "The listed capability is simulating nonequilibrium systems at scale, which is a surrogate-modelling problem far beyond current tractable system sizes.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "LLM reasoning and synthesis",
+          "maturity": "Speculative",
+          "is_primary": 0,
+          "rationale": "Formal framework construction is theory work, where AI contribution remains unproven.",
+          "confidence": "guess"
+        }
       ],
-      "measurability": { "tier": "Verification contested", "rationale": "Candidate measures exist and are computed on real molecules, assembly theory and free-energy dissipation among them, but the field actively disputes whether any of them settles what life is. A measurement can be taken; the verdict is what is contested.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Verification contested",
+        "rationale": "Candidate measures exist and are computed on real molecules, assembly theory and free-energy dissipation among them, but the field actively disputes whether any of them settles what life is. A measurement can be taken; the verdict is what is contested.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Two tier-3 calls in this field, both on foundational rather than applied questions. Quantum biology is the cleanest verifier's-law case outside physics: the instrument exists, the interpretation is the blocker."

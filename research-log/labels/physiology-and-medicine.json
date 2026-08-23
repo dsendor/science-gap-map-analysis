@@ -4,55 +4,163 @@
   "gaps": [
     {
       "gap_id": "1b4cb37e-2a00-80af-8e6b-ff088bc25396",
-      "outcome": { "outcome": "The number of therapies that can be evaluated per year rises without a proportional rise in cost or patient burden, so promising candidates stop dying in the trial queue.", "rationale": "Their description names cost, timeline and scarcity together, and their capability list is dominated by trial-design and recruitment tools.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "More therapies evaluated per year, without a matching rise in cost or patient burden. Promising candidates stop dying in the queue.",
+        "rationale": "Their description names cost, timeline and scarcity together, and their capability list is dominated by trial-design and recruitment tools.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Trial design, participant matching and prioritisation are optimisation problems over explicit objectives.", "confidence": "confident" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 0, "rationale": "Digital twins, synthetic control arms and proxy biomarkers are prediction problems, and all appear in their capability list.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Trial design, participant matching and prioritisation are optimisation problems over explicit objectives.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Digital twins, synthetic control arms and proxy biomarkers are prediction problems, and all appear in their capability list.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Cost per trial, enrolment time and trials completed per year are recorded in registries.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Cost per trial, enrolment time and trials completed per year are recorded in registries.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80fd-a046-f81466f201e7",
-      "outcome": { "outcome": "Preclinical results start predicting human outcomes, so the failure that currently happens in expensive late-stage trials happens cheaply on the bench instead.", "rationale": "Their description ties model inadequacy directly to costly drug-development failures in clinical trials.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Drugs fail cheaply on the bench instead of expensively in late-stage trials, because preclinical results start predicting human outcomes.",
+        "rationale": "Their description ties model inadequacy directly to costly drug-development failures in clinical trials.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Organoids, ex vivo organs and novel research models are engineered biological systems designed against a fidelity objective. The taxonomy has no clean category for wet-lab model-system engineering, so this is the nearest fit.", "confidence": "guess" },
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 0, "rationale": "Computational physiology models are the alternative route to the same predictive-validity goal.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Organoids, ex vivo organs and novel research models are engineered biological systems designed against a fidelity objective. The taxonomy has no clean category for wet-lab model-system engineering, so this is the nearest fit.",
+          "confidence": "guess"
+        },
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Computational physiology models are the alternative route to the same predictive-validity goal.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "The share of preclinical successes that survive to clinical success is a direct, historically tracked translation rate.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "The share of preclinical successes that survive to clinical success is a direct, historically tracked translation rate.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80fd-87e6-c92b83132c48",
-      "outcome": { "outcome": "Health trajectories become observable over decades in diverse populations, so developmental and environmental causes stop being inferred from cross-sections.", "rationale": "Their description names developmental, nutritional and environmental influences on long-term outcomes as the target.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Follow health trajectories across decades and diverse populations. Developmental and environmental causes stop being inferred from cross-sections.",
+        "rationale": "Their description names developmental, nutritional and environmental influences on long-term outcomes as the target.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Coordination and institutional", "maturity": "2-5 years", "is_primary": 1, "rationale": "Cohort access, biobank expansion and sustained multi-decade follow-up are funding and governance problems, not measurement ones.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "Working now", "is_primary": 0, "rationale": "Easy longitudinal sampling depends on low-burden assays, which is a working detection capability.", "confidence": "confident" }
+        {
+          "ai_type": "Coordination and institutional",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Cohort access, biobank expansion and sustained multi-decade follow-up are funding and governance problems, not measurement ones.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "Working now",
+          "is_primary": 0,
+          "rationale": "Easy longitudinal sampling depends on low-burden assays, which is a working detection capability.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Cohort size, years of follow-up, retention and demographic representativeness are direct and reported.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Cohort size, years of follow-up, retention and demographic representativeness are direct and reported.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-80ac-842e-e5f6ea4906cb",
-      "outcome": { "outcome": "Multifactorial diseases and ageing acquire identified causal mechanisms rather than correlates, making them targetable the way single-cause diseases already are.", "rationale": "Their description contrasts diseases with well-defined root causes, which were cured, against multifactorial ones, which were not.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Multifactorial disease and ageing get identified causal mechanisms rather than correlates, which makes them targetable the way single-cause diseases already are.",
+        "rationale": "Their description contrasts diseases with well-defined root causes, which were cured, against multifactorial ones, which were not.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Autonomous experimentation", "maturity": "2-5 years", "is_primary": 1, "rationale": "Their framing requires modulating multiple mechanisms simultaneously, which is a combinatorial screen far beyond manual throughput.", "confidence": "confident" },
-        { "ai_type": "Sensing and signal processing", "maturity": "2-5 years", "is_primary": 0, "rationale": "Better systems measurements and resolved brain-body mapping are detection capabilities their list names directly.", "confidence": "confident" }
+        {
+          "ai_type": "Autonomous experimentation",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Their framing requires modulating multiple mechanisms simultaneously, which is a combinatorial screen far beyond manual throughput.",
+          "confidence": "confident"
+        },
+        {
+          "ai_type": "Sensing and signal processing",
+          "maturity": "2-5 years",
+          "is_primary": 0,
+          "rationale": "Better systems measurements and resolved brain-body mapping are detection capabilities their list names directly.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Proxy only", "rationale": "Biomarkers and intervention effects are measurable, but the underlying causal structure of a multifactorial disease is inferred from those proxies rather than observed.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Proxy only",
+        "rationale": "Biomarkers and intervention effects are measurable, but the underlying causal structure of a multifactorial disease is inferred from those proxies rather than observed.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8086-9443-f719d9caef36",
-      "outcome": { "outcome": "Therapeutic payloads reach the tissue they are aimed at, including the brain, so the deliverable fraction of known-effective molecules stops being the limit on treatment.", "rationale": "Their description names off-target accumulation and brain delivery as the specific failures.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "Payloads reach the tissue they are aimed at, the brain included, so what can be delivered stops limiting what can be treated.",
+        "rationale": "Their description names off-target accumulation and brain delivery as the specific failures.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "Design and optimization search", "maturity": "2-5 years", "is_primary": 1, "rationale": "Delivery vehicle and targeting-ligand design is a search against a measurable biodistribution objective.", "confidence": "confident" }
+        {
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "Delivery vehicle and targeting-ligand design is a search against a measurable biodistribution objective.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Percent of injected dose reaching target tissue versus liver and other off-target organs is a direct, standard biodistribution readout.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Percent of injected dose reaching target tissue versus liver and other off-target organs is a direct, standard biodistribution readout.",
+        "confidence": "confident"
+      }
     },
     {
       "gap_id": "1c1cb37e-2a00-8022-8d55-d645dc19dcf6",
-      "outcome": { "outcome": "A molecule's fate and toxicity in the body become predictable before it is dosed, so ADME and toxicity failures stop being discovered in clinical trials.", "rationale": "Their description names ADME/Tox failures as the dominant cause of drug development failure.", "confidence": "confident" },
+      "outcome": {
+        "outcome": "ADME and toxicity failures show up before dosing rather than in clinical trials.",
+        "rationale": "Their description names ADME/Tox failures as the dominant cause of drug development failure.",
+        "confidence": "confident"
+      },
       "ai_types": [
-        { "ai_type": "ML surrogates and prediction", "maturity": "2-5 years", "is_primary": 1, "rationale": "ADME and toxicity prediction is a supervised problem with large existing labelled datasets, and most of their ten capabilities are mapping or prediction work.", "confidence": "confident" }
+        {
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "is_primary": 1,
+          "rationale": "ADME and toxicity prediction is a supervised problem with large existing labelled datasets, and most of their ten capabilities are mapping or prediction work.",
+          "confidence": "confident"
+        }
       ],
-      "measurability": { "tier": "Directly measurable", "rationale": "Prediction accuracy against measured pharmacokinetics and observed clinical toxicity is directly scorable on held-out compounds.", "confidence": "confident" }
+      "measurability": {
+        "tier": "Directly measurable",
+        "rationale": "Prediction accuracy against measured pharmacokinetics and observed clinical toxicity is directly scorable on held-out compounds.",
+        "confidence": "confident"
+      }
     }
   ],
   "notes": "Second instance of the same taxonomy strain seen in chemistry and computation: engineering a biological model system is neither design search nor physical build as defined. Flagged as a guess."
