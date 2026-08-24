@@ -137,7 +137,12 @@ So:
    running `rebuild.mjs` in one directory are writing the same file.
 5. **`preflight.mjs` stamps the branch; `rebuild.mjs` refuses if it moved.** That is
    the tripwire for the evening failure above. If you switch branches deliberately,
-   re-run `preflight.mjs` to re-stamp.
+   re-run `preflight.mjs` to re-stamp. One limitation, found by testing it: the check
+   lives in the working tree, so being switched onto a branch that predates it takes
+   the check with it and the rebuild runs clean. It protects you against a switch
+   between branches that both carry it, which is every branch cut after this one — so
+   merge this to `main` early, and treat a rebuild that suddenly stops mentioning the
+   workspace as a signal in itself.
 6. **Merge into `main` deliberately**, resolving conflicts by hand. Two agents working
    the same files will independently make the same fixes with different wording, and
    they will also make *incompatible* ones — the adjudication ordering in
