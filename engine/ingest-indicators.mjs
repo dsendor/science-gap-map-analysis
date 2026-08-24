@@ -23,9 +23,19 @@ const known = new Set(db.prepare('SELECT id FROM gm_gaps').all().map((r) => r.id
 db.exec('BEGIN');
 let n = 0, nulls = 0;
 try {
+  // Clear by gap, not by (gap_id, quantity). Keying the delete on the quantity string
+  // makes the ingest non-idempotent the moment a quantity is renamed: the old row is
+  // not matched, the new row is inserted beside it, and the count printed at the end
+  // still reads 8 while the table holds 11. Gate A's revisions renamed three
+  // quantities and did exactly that. The file is the whole sample for the gaps it
+  // names, so deleting per gap is the honest clear.
   for (const i of batch.indicators) {
     if (!known.has(i.gap_id)) throw new Error(`unknown gap id ${i.gap_id}`);
-    db.prepare('DELETE FROM gap_indicators WHERE gap_id = ? AND quantity = ?').run(i.gap_id, i.quantity);
+  }
+  for (const gapId of new Set(batch.indicators.map((i) => i.gap_id))) {
+    db.prepare('DELETE FROM gap_indicators WHERE gap_id = ?').run(gapId);
+  }
+  for (const i of batch.indicators) {
     db.prepare(`INSERT INTO gap_indicators
       (gap_id, quantity, current_value, unit, as_of, target_value, target_basis,
        source_title, source_url, source_doi, source_checked, reads_as, direction, context, caveat,

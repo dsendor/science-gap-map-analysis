@@ -46,7 +46,11 @@ console.log(`downgraded ${typeDis.length} sampled AI-type disagreements`);
 console.log(`downgraded ${proxy.changes} further 'Proxy only' tiers on category unreliability`);
 
 const q = (s) => db.prepare(s).get().c;
-console.log('\nconfidence after adjudication:');
+// Intermediate, not final. When rebuild.mjs runs the full pipeline, apply-relabel.mjs
+// runs after this and downgrades further, so these counts are superseded. rebuild.mjs
+// prints the settled figures at the end; a reader who stopped here saw 83/20 for what
+// is really 46/57.
+console.log('\nconfidence after adjudication (intermediate — see the final counts at the end of a full rebuild):');
 for (const [d, t, w] of [['measurability', 'gap_measurability', ''], ['ai_type (primary)', 'gap_ai_types', 'is_primary=1 AND']]) {
   const c = q(`SELECT count(*) c FROM ${t} WHERE ${w} confidence='confident'`);
   const g = q(`SELECT count(*) c FROM ${t} WHERE ${w} confidence='guess'`);

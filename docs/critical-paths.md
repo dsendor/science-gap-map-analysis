@@ -21,28 +21,31 @@ different set of links.
 
 ```mermaid
 flowchart LR
-    L1["1 Science case<br/>definition"] --> L2["2 Strategic ranking<br/>decadal / council"]
-    L2 --> L3["3 Funding<br/>authorisation"]
+    L1["1 Science case<br/>definition"] --> L2["2 Concept studies, ranking<br/>and design competition"]
+    L2 --> L3["3 Phase B start and<br/>funding authorisation"]
     L3 --> L4["4 Design<br/>maturation"]
     L4 --> L5["5 Fabrication"]
     L5 --> L6["6 Integration<br/>and test"]
     L6 --> L7["7 Launch"]
     L7 --> L8["8 Commissioning"]
 
-    classDef binding stroke-width:3px,stroke:#b45309,fill:#fef3c7,color:#111
+    classDef acts stroke-width:3px,stroke:#0f766e,fill:#ccfbf1,color:#111
     classDef free stroke-width:1px,stroke:#94a3b8,fill:#f8fafc,color:#111
-    class L2,L3,L5,L6 binding
-    class L1,L4,L7,L8 free
+    class L1,L4,L8 acts
+    class L2,L3,L5,L6,L7 free
 ```
 
-Shaded links bind. Their three capabilities for this gap — modular assembly with
-reduced launch costs, a space telescope factory, and leveraging commercial
-component advances — all act on links 5 to 7.
+Shaded links are the three a current AI capability acts on. No link is marked
+binding: on a strictly sequential chain every step adds to the total, so binding
+is not a property this chain can carry. Their three capabilities for this gap —
+modular assembly with reduced launch costs, a space telescope factory, and
+leveraging commercial component advances — all act on links 5 to 7.
 
 ### What the chain reveals
 
-Four links bind, and no current AI capability touches any of them. Which pair
-dominates depends on the programme, which was not predicted:
+AI acts on three of the eight links, and those three are 9.5 of the 32.5 years.
+Which part of the chain dominates depends on the programme, which was not
+predicted:
 
 | Programme | Concept → construction start | Construction → first light | Total |
 |---|---:|---:|---:|
@@ -54,24 +57,43 @@ JWST is build-dominated; Rubin is decision-dominated; the ELT sits between them
 with roughly two and a half years attributable to nothing but a funding condition
 on an already-approved design.
 
-Closing every cognitive link leaves a frontier telescope taking more than twenty
-years. The generous accounting, treating the whole seven-year science-case period
-as compressible, removes about nine and a half of JWST's thirty-two years. The
-realistic accounting, which notes those years went to community consensus rather
-than to analysis, removes about two and a half.
+Closing every cognitive link still leaves a frontier telescope taking well over a
+decade. The generous accounting, treating the whole seven-year science-case period
+as compressible, removes about nine and a half of JWST's thirty-two and a half
+years. The realistic accounting, which notes those years went to community
+consensus rather than to analysis, removes about two and a half.
+
+The residual of 23 is an upper bound, not a point estimate. Gate C
+(`research-log/reviews/gate-c.json`) found three intervals that count against AI
+more than the milestone record supports: link 2 bundles a decadal ranking with a
+Phase A design competition; link 3's appropriation blocker is demonstrated on
+Rubin and the ELT rather than in JWST's own 2002-2004 window; and design
+maturation demonstrably ran to the March 2010 mission critical design review,
+four years past the interval it is given. Correcting them as far as the record
+allows pulls the residual toward the mid-teens. It does not pull it to zero, and
+that is the part that survives.
+
+The 32.5 here and STScI's published 32 are not the same measurement — 32.5 runs
+to first images in July 2022, STScI's 32 to launch in December 2021 — so their
+near-agreement is rounding, not corroboration.
 
 ### Links
 
-| # | Link | Blocker | AI type | Maturity | Binding |
-|---|---|---|---|---|:-:|
-| 1 | Science case definition | Community consensus, not analysis capacity | LLM reasoning and synthesis | Working now | |
-| 2 | Strategic ranking | Fixed decadal cadence; miss it and wait ten years | Coordination and institutional | Speculative | ● |
-| 3 | Funding authorisation | Appropriation and conditions attached to it | Coordination and institutional | Speculative | ● |
-| 4 | Design maturation | Technology readiness for long-lead items | Design and optimization search | Working now | |
-| 5 | Fabrication | Long-lead optics, cryogenic qualification | Physical build and manipulation | 2-5 years | ● |
-| 6 | Integration and test | Serial single-string assembly, nothing parallelises | Physical build and manipulation | Speculative | ● |
-| 7 | Launch | Vehicle availability and window | Physical build and manipulation | Working now | |
-| 8 | Commissioning | On-orbit alignment of a segmented optic | Sensing and signal processing | Working now | |
+| # | Link | Blocker | AI type | Maturity | Years | AI acts |
+|---|---|---|---|---|---:|:-:|
+| 1 | Science case definition | Community consensus, not analysis capacity | LLM reasoning and synthesis | Working now | 7.0 | ● |
+| 2 | Concept studies, strategic ranking and design competition | Fixed decadal cadence, running alongside the Phase A competition | Coordination and institutional | Speculative | 6.0 | |
+| 3 | Phase B start and funding authorisation | Appropriation and conditions attached to it | Coordination and institutional | Speculative | 2.0 | |
+| 4 | Design maturation | Technology readiness for long-lead items | Design and optimization search | Working now | 2.0 | ● |
+| 5 | Fabrication | Long-lead optics, cryogenic qualification | Physical build and manipulation | 2-5 years | 5.0 | |
+| 6 | Integration and test | Serial assembly, plus the 2011 replan and 2018 rework | Physical build and manipulation | Speculative | 9.0 | |
+| 7 | Launch | Vehicle availability and window | Physical build and manipulation | Speculative | 1.0 | |
+| 8 | Commissioning | On-orbit alignment of a segmented optic | Sensing and signal processing | Working now | 0.5 | ● |
+
+Links 2 and 3 carry titles that describe only part of what their intervals
+contain, and link 6's block includes roughly 4.3 years of replan following the
+2011 near-termination. Those are Gate C's findings and they are recorded in the
+link rationales rather than smoothed away here.
 
 Link 8 is the chain in miniature: wavefront sensing across eighteen segments is
 the most demanding cognitive task in the sequence and it took under seven months.
@@ -95,7 +117,7 @@ flowchart LR
     P4 --> P5["5 Editorial<br/>decision"]
     P5 --> P6["6 Dissemination"]
     P6 --> P7["7 Credit and<br/>legitimacy"]
-    P1 -. "cheaper drafting<br/>adds load" .-> P3
+    P1 -. "cheaper drafting<br/>adds load" .-> P2
 
     classDef binding stroke-width:3px,stroke:#b45309,fill:#fef3c7,color:#111
     classDef free stroke-width:1px,stroke:#94a3b8,fill:#f8fafc,color:#111
@@ -104,7 +126,13 @@ flowchart LR
 ```
 
 The dotted edge is the result that was not predicted: relieving link 1 adds load
-to link 3.
+downstream. Gate C corrected where it lands. The Organization Science corpus puts
+the displaced load on volunteer editors at desk screening — among manuscripts
+scoring 70%+ on AI detection, nearly 70% are desk-rejected against 44% for low-AI
+submissions — and reports no invitation or recruitment figures at all. So the edge
+runs to link 2, not link 3. Recruitment strain is real and separately evidenced
+(4.5 invitations per accepted review; acceptance down from 43% in 2018 to 22% in
+2024), but it is not what the 42% surge is shown to have caused.
 
 ### What the chain reveals
 
@@ -138,7 +166,7 @@ directly on link 7, which binds.
 | 6 | Dissemination | Article processing charges, platform cost | Coordination and institutional | Working now | |
 | 7 | Credit and legitimacy | Committees decide what counts | Coordination and institutional | Speculative | ● |
 
-Evidence for link 3: roughly five invitations per accepted review (Silverchair,
+Evidence for link 3: 4.5 invitations per accepted review, nearly double 2018 (Silverchair,
 *Future of Peer Review* 2026); 55% of 139 surveyed editors rate finding reviewers
 a significant challenge, some sending 30 or more invitations to secure two
 (Jamali, Luca and Wakeling, 15 February 2026); 21 years of declining reviewer
@@ -173,7 +201,14 @@ about telescope time. DPR has run at ESO since Period 110 and was deployed at AL
 from Cycle 8 and in Gemini's Fast Turnaround channel before that.
 
 That is a live natural experiment in review capacity under load, at scale, with a
-before and after — and, as far as this search found, nobody funds it as research.
+before and after. An earlier draft added that nobody funds it as research. That was
+wrong twice over, and both corrections came from the gates. Gate B found the
+UK Metascience Unit — GBP 10 million across UKRI and the UK government science
+department, 2024 to 2027 — running randomised trials on funding processes, whose
+first published result is distributed peer review cutting time-to-decision by 53
+to 65 per cent. And Gate C noted that a claim of absence resting on not having
+found anything is not a claim this analysis is in a position to make, least of all
+to readers whose work is deciding what research to fund.
 
 ```mermaid
 flowchart TB
@@ -187,7 +222,6 @@ flowchart TB
     end
     SHARED["Peer review of proposals<br/>panel capacity · reviewer willingness · judgment consistency"]
     A2 --> SHARED
-    A3 --> SHARED
     B3 --> SHARED
     B4 --> SHARED
     SHARED --> DPR["Distributed Peer Review<br/>ESO P110+, ALMA Cycle 8+, Gemini FT<br/>a natural experiment nobody funds as research"]
@@ -196,7 +230,14 @@ flowchart TB
     class SHARED,DPR shared
 ```
 
-Two gaps, in two different fields of their map, sharing a binding link. A
+One qualification first, from Gate C. ESO's distributed peer review governs the
+allocation of telescope observing time, not decisions to build and fund a
+facility. Chain 1's link 3 is appropriation, and appropriation is not peer
+review, so the edge from it has been removed; the intersection is drawn from
+link 2 only, where a strategic ranking really is a panel judging proposals
+against each other. Narrowed that way it holds.
+
+Two gaps, in two different fields of their map, sharing a link. A
 catalogue cannot show this: it has one row per gap and no place to record that
 two rows are blocked by the same thing. Chains can, and once you have chains the
 recurrence is countable rather than anecdotal. That is the argument for doing this

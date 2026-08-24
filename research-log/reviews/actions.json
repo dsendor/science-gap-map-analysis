@@ -1,0 +1,335 @@
+{
+  "acted_at": "2026-08-23",
+  "acted_by": "claude-opus-5",
+  "branch": "review-gates",
+  "scope": "Gates A, B and C in full. Gate D deferred by instruction — the database changes again when the maturity repair lands on branch maturity-repair, so its findings would need redoing against a settled DB. Two mechanical Gate D bugs were fixed because they are independent of the data: the double-Z timestamp in engine/audit-report.mjs (14 of 15 runs rows were NaN; now 400 agent / 244 human minutes) and the confidence counts printed by engine/adjudicate.mjs before apply-relabel.mjs has run (83/20 for what settles at 46/57).",
+  "not_touched": [
+    "research-log/labels/",
+    "methodology/taxonomy.md",
+    "research-log/maturity-repair/",
+    "docs/findings.md and docs/cover-note.md (Gate D)",
+    "app/ build output (not regenerated)",
+    "app/src/app/**/page.jsx (not owned by this pass)",
+    "research-log/decisions.json (a concurrent agent may be writing it)"
+  ],
+  "gates": {
+    "a": [
+      {
+        "index": 0,
+        "target": "gap_indicators id=9 — 1c1cb37e-2a00-8008-9ca1-cf81d4b44116 — JWST 32 years",
+        "verdict": "confirmed",
+        "severity": "note",
+        "disposition": "no-change-needed",
+        "what_changed": "Confirmed by the reviewer against a source it re-fetched."
+      },
+      {
+        "index": 1,
+        "target": "gap_indicators id=10 — 1c1cb37e-2a00-80cb-8db6-e28439779875 — A-Lab 2.4 compounds/day",
+        "verdict": "confirmed",
+        "severity": "note",
+        "disposition": "no-change-needed",
+        "what_changed": "Confirmed."
+      },
+      {
+        "index": 2,
+        "target": "gap_indicators id=11 — 1b3cb37e-2a00-80cd-9213-c8eb788cc657 — MICrONS 1.0 mm³",
+        "verdict": "confirmed",
+        "severity": "note",
+        "disposition": "no-change-needed",
+        "what_changed": "Confirmed; target_basis verified verbatim in RFA-NS-22-049."
+      },
+      {
+        "index": 3,
+        "target": "gap_indicators id=12 — 1c1cb37e-2a00-80df-ae9c-cc561c437a83 — pivotal trial median $19.0M",
+        "verdict": "confirmed",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Values all confirmed. The rationale claim that JAMA returns 403 to automated clients did not reproduce and is corrected in place."
+      },
+      {
+        "index": 4,
+        "target": "gap_indicators id=13 — 1fccb37e-2a00-8071-859f-f25fac2df35c — contacted gate pitch 45 nm",
+        "verdict": "stale",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Quantity narrowed to \"most recent publicly disclosed volume-production node\"; reads_as no longer present-tense; N2 (Q4 2025) and 18A noted; target moved to the 12 nm IRDS channel-length limit so the nm unit is honoured."
+      },
+      {
+        "index": 5,
+        "target": "gap_indicators id=14 — 1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0 — retractions 11.04 per 10,000",
+        "verdict": "wrong-quantity",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. Re-fetched the source: v2 supersedes v1, giving 11.82 per 10,000 from over 49,000 retractions, not 11.04 from 55,000. Restated as a 2000-2024 average with as_of 2024-12-31, and the source's own 2022 figure of 42.58 added. One sub-point of the finding did not hold: the discipline range 0.035%-0.34% is the source abstract's own, and is correct."
+      },
+      {
+        "index": 6,
+        "target": "gap_indicators id=15 — 1c1cb37e-2a00-8027-8eda-e6f4a472c3ad — asserted null, Quantum Gravity is Experimentally Hard to Constrain",
+        "verdict": "wrong-value",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING, and the highest-value finding in the whole gate. The false null is replaced with a real indicator: highest benchmarked quantum-gravity figure-of-merit eta = 1.1e-7 against a physical threshold of eta = 1. Three of the reviewer's own specifics were wrong and were corrected against the source PDF read directly: the value is 4e-9 not 2.8e-9 for the pendulum, the denominator is hbar*gamma not hbar*omega_0, and the pendulum ranks fourth in Table S1, not second behind LIGO."
+      },
+      {
+        "index": 7,
+        "target": "gap_indicators id=16 — 1c1cb37e-2a00-80b5-8cf4-c8195273fa45 — asserted null, Rigid Organizational Structures Constrain the Forms of R&D That Get Done",
+        "verdict": "confirmed",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Null corroborated. Rationale now records the independent second search, concedes the 42% scoping objection on narrower grounds, and adds the NIH median-age-at-first-R01 series as a stronger near-miss with the correct figures (median ~42, mean 43-44, FY21-25)."
+      },
+      {
+        "index": 8,
+        "target": "provenance — search_log table vs research-log/searches/phase-3.json",
+        "verdict": "confirmed",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Every reference to search_log replaced with research-log/searches/phase-3.json, in the file note and in both null rationales. The table has 0 rows; the file is the provenance."
+      },
+      {
+        "index": 9,
+        "target": "process — working branch",
+        "verdict": "confirmed",
+        "severity": "note",
+        "disposition": "not-actioned",
+        "what_changed": "Process note about the working branch. Addressed by moving this work into a dedicated review-gates worktree."
+      }
+    ],
+    "b": [
+      {
+        "index": 0,
+        "target": "new-coating-thermal-noise",
+        "verdict": "novel",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Novelty confirmed by an independent grep of gaps and capabilities. Two problems fixed: the \"transfers poorly between instrument classes\" premise is refuted by Cole et al. 2013 and has been narrowed to what survives, and the formation-flying claim in unlock_test was wrong and is removed."
+      },
+      {
+        "index": 1,
+        "target": "new-record-of-what-did-not-work",
+        "verdict": "novel",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Novelty confirmed. Octopus added to the funding check with verified figures (GBP 650,000, Research England emerging priorities fund, Jisc and UKRN), and stated precisely: its eight types are research stages, not outcome categories, so it is not a negative-results record."
+      },
+      {
+        "index": 2,
+        "target": "new-simulation-fidelity-survey-astronomy",
+        "verdict": "already-funded",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. WITHDRAWN. SkAI Institute Pillar II confirmed verbatim at the primary source. Retained in full under \"withdrawn\" in proposed.json so the reasoning stays auditable and the call is reversible."
+      },
+      {
+        "index": 3,
+        "target": "new-facility-decision-latency",
+        "verdict": "already-funded",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. WITHDRAWN. UK Metascience Unit function 2 confirmed verbatim at ukri.org, GBP 10M 2024-2027. The dedup_check also never grepped the 369 capabilities. Retained in full under \"withdrawn\"."
+      },
+      {
+        "index": 4,
+        "target": "house-format compliance across all four",
+        "verdict": "novel",
+        "severity": "should-fix",
+        "disposition": "partly-fixed",
+        "what_changed": "Mechanical tells fixed: British spelling removed (their corpus has 0 \"programme\" against 4 \"program\"), first person introduced, the uniform aphoristic close broken, and both descriptions moved off the 49-60 band toward their median of 38 (now 52 and 43 words). Not re-tested — a fresh blind format test needs a new decoy draw and is producer work."
+      }
+    ],
+    "c": [
+      {
+        "index": 0,
+        "target": "path-telescope-elapsed-time, links seq 2 and seq 3 — duration labels vs the intervals assigned to them",
+        "verdict": "figure-wrong",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. Links 2 and 3 relabelled to describe the intervals they actually cover, blockers and evidence corrected. One sub-point overturned: the 2001 McKee-Taylor decadal survey does fall inside 1996-2002, so it is not true that the window contains no strategic-ranking event; it contains both that and the Phase A competition, which is the real defect and is now stated."
+      },
+      {
+        "index": 1,
+        "target": "path-telescope-elapsed-time, link seq 4 'Design maturation' — interval contradicted by its own evidence field",
+        "verdict": "figure-wrong",
+        "severity": "blocking",
+        "disposition": "partly-fixed",
+        "what_changed": "BLOCKING. The overlap is now stated explicitly in link 4's rationale and in duration_basis: design maturation ran to the March 2010 mission CDR, inside years labelled Fabrication. The interval is left at 2004-2006 because no milestone pair separates overlapping phases cleanly; the direction of the error is recorded instead of being silently corrected."
+      },
+      {
+        "index": 2,
+        "target": "path-telescope-elapsed-time, link seq 6 'Integration and test' — blocker 'strictly serial single-string assembly, so nothing can be parallelised'",
+        "verdict": "binding-link-contested",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. Link 6 blocker rewritten to name the 2011 replan (52-month slip after the House Appropriations Committee recommended termination) and the 2018 workmanship rework, with GAO-13-4 quoted in evidence. ai_acts stays 0 — no capability shortens a congressional replan either — but the stated reason for the zero was wrong."
+      },
+      {
+        "index": 3,
+        "target": "path-telescope-elapsed-time, links seq 2, 3, 5, 6 — rationale strings still assert the withdrawn binding claim, and the artifact ships them",
+        "verdict": "binding-link-contested",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. All four chain-1 rationales opening \"Binding\" rewritten. Chain 2's three remain and correctly so: its binding flags are still set and a cost chain can carry the concept a time chain cannot."
+      },
+      {
+        "index": 4,
+        "target": "docs/critical-paths.md and app/src/components/mermaid.js",
+        "verdict": "binding-link-contested",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. docs/critical-paths.md and app/src/components/mermaid.js both updated: the L2,L3,L5,L6 binding class is gone, replaced by an \"AI acts\" encoding on L1,L4,L8; \"Four links bind\" rewritten; the link table now carries years and an AI-acts column with link 7 maturity corrected to Speculative to match the database."
+      },
+      {
+        "index": 5,
+        "target": "path-publishing-cost — the dotted edge 'cheaper drafting adds load' from link 1 to link 3, and the finding 'the labor moved to reviewer recruitment, which is where the cost now concentrates'",
+        "verdict": "binding-link-contested",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. The dotted edge now runs P1 to P2 in both the doc and mermaid.js, and the chain finding says plainly that the source places the displaced load on volunteer editors at desk screening, not on recruitment."
+      },
+      {
+        "index": 6,
+        "target": "path-publishing-cost, link seq 3 — blocker 'Willingness to serve, not the ability to identify who should serve. These are different problems and only one of them is a matching problem.'",
+        "verdict": "binding-link-contested",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. Link 3 blocker rewritten to concede that ESO names matching difficulty beside the supply problem. The matching/willingness split survives as this analysis's distinction rather than the source's."
+      },
+      {
+        "index": 7,
+        "target": "The intersection claim — 'Chain 1's links 2 and 3 are an instance of chain 2's links 3 and 4' / 'Telescope time and facility approval are allocated by peer review of proposals' / the A3 → SHARED edge in the intersection Mermaid",
+        "verdict": "intersection-unsupported",
+        "severity": "blocking",
+        "disposition": "fixed",
+        "what_changed": "BLOCKING. The A3 edge is removed from the intersection in both the doc and mermaid.js, and the doc states the narrowing: DPR governs observing time, not construction decisions, so the intersection is drawn from link 2 only."
+      },
+      {
+        "index": 8,
+        "target": "path-publishing-cost, link seq 4 'Review judgment' — flagged binding on the axis 'Cost, measured as reviewer and editor labour per published paper'",
+        "verdict": "axis-violation",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "Chain-2 axis discipline. Deferred with 9, 10 and 11 — these contest chain 2's binding flags and axis choice, which is a re-derivation of the chain rather than a repair, and belongs with the producer."
+      },
+      {
+        "index": 9,
+        "target": "path-publishing-cost, link seq 2 evidence — \"ESO reports that classical triage 'has significantly degraded the quality of feedback for the triaged proposals' — screening under load trades feedback quality for throughput.\"",
+        "verdict": "axis-violation",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "As 8."
+      },
+      {
+        "index": 10,
+        "target": "path-publishing-cost — the axis choice itself, 'Cost, measured as reviewer and editor labour per published paper'",
+        "verdict": "axis-violation",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "As 8."
+      },
+      {
+        "index": 11,
+        "target": "path-publishing-cost, link seq 7 'Credit and legitimacy' — flagged binding",
+        "verdict": "binding-link-contested",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "As 8."
+      },
+      {
+        "index": 12,
+        "target": "path-publishing-cost — pre-registration quality, as distinct from pre-registration ordering",
+        "verdict": "pre-registration-confirmed",
+        "severity": "should-fix",
+        "disposition": "partly-fixed",
+        "what_changed": "Pre-registration confirmed by the gate against git. The caveat that chain 2's expectation already contained its key citation is recorded in the chains.json note rather than reworked."
+      },
+      {
+        "index": 13,
+        "target": "Phase 5 evidence trail — search_log and research-log/searches/",
+        "verdict": "binding-link-contested",
+        "severity": "should-fix",
+        "disposition": "partly-fixed",
+        "what_changed": "search_log is empty for every phase and there is no phase-5.json. Recorded in the chains.json note; generating a Phase 5 search log after the fact would be fabrication."
+      },
+      {
+        "index": 14,
+        "target": "'submissions rose 42% over five years in the one corpus where a journal has published full figures' (critical_paths.finding, link 1 evidence and rationale, docs/critical-paths.md, app/src/app/page.jsx)",
+        "verdict": "figure-wrong",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Restated as 42% since ChatGPT's release against the prior two-year window, within a five-year corpus, in chains.json and the doc."
+      },
+      {
+        "index": 15,
+        "target": "'Roughly five invitations per accepted review (Silverchair, Future of Peer Review 2026)'",
+        "verdict": "figure-wrong",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "4.5, not \"roughly five\", with the 43%-to-22% acceptance decline and the 407-days figure added."
+      },
+      {
+        "index": 16,
+        "target": "'A survey of 139 journal editors with 27 interviews finds 55% rate finding reviewers a significant or very significant challenge' (Jamali, Luca and Wakeling)",
+        "verdict": "figure-wrong",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Now \"139 editors of Australian journals\", cited to Learned Publishing doi 10.1002/leap.2034 and 10.1002/leap.2041 rather than The Conversation, with the small-journal sampling bias noted as running in the chain's favour."
+      },
+      {
+        "index": 17,
+        "target": "'Meyerson documents 21 years of declining reviewer acceptance, 2002-2024'",
+        "verdict": "figure-wrong",
+        "severity": "note",
+        "disposition": "not-actioned",
+        "what_changed": "Minor attribution note on the Meyerson series."
+      },
+      {
+        "index": 18,
+        "target": "'traditional statistical representations outperform generative AI at identifying expert peer reviewers, tested on NASA/ADS records and observatory DPR data across 379 researchers'",
+        "verdict": "figure-confirmed",
+        "severity": "note",
+        "disposition": "no-change-needed",
+        "what_changed": "Confirmed."
+      },
+      {
+        "index": 19,
+        "target": "path-telescope-elapsed-time, programmes_json and duration_basis — the ELT and Rubin figures and the '32.5 against STScI's stated 32'",
+        "verdict": "figure-confirmed",
+        "severity": "note",
+        "disposition": "no-change-needed",
+        "what_changed": "Confirmed."
+      },
+      {
+        "index": 20,
+        "target": "'Your export has one row per gap and nowhere to record that.' (app/src/app/chains/page.jsx)",
+        "verdict": "tone-violation",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "Tone. The sentence is in app/src/app/chains/page.jsx, which this pass does not own."
+      },
+      {
+        "index": 21,
+        "target": "'That is a natural experiment in review capacity under load, at scale, with a before and after, and as far as I can find nobody funds it as research.' (app/src/app/chains/page.jsx; same sentence in docs/critical-paths.md)",
+        "verdict": "tone-violation",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "Tone, and the claim was also false. The doc's \"nobody funds it as research\" is replaced with the UK Metascience Unit counterexample Gate B found, plus the point that an absence established by not having searched enough is not a claim to make to funders. The same phrase is removed from the mermaid DPR node."
+      },
+      {
+        "index": 22,
+        "target": "'those three are aimed at 14 of the 23 years AI does not reach, which is a better hit rate than three picked at random would manage.' (critical_paths.finding, chain 1)",
+        "verdict": "tone-violation",
+        "severity": "should-fix",
+        "disposition": "fixed",
+        "what_changed": "The \"14 of the 23 years AI does not reach\" sentence is gone; the finding now says the capabilities are aimed at the part of the chain where the years are."
+      },
+      {
+        "index": 23,
+        "target": "app/src/app/chains/page.jsx — section heading 'Both chains share a binding step'",
+        "verdict": "binding-link-contested",
+        "severity": "should-fix",
+        "disposition": "not-actioned",
+        "what_changed": "app/src/app/chains/page.jsx, not owned."
+      }
+    ]
+  }
+}
