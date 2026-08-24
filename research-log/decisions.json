@@ -191,6 +191,30 @@
       "runner_up": "Keep the mechanical rule and disclaim maturity in the artifact. Rejected: the labels are wrong, not merely uncertain, and a caveat a reader cannot act on is noise. The second runner-up was to re-run a third blind pass under the pinned definition, which is the more rigorous fix and was rejected on cost — it would relabel 103 gaps to correct a defect that provably reaches only 54, and every change here landed on a gap where the two existing passes already disagreed.",
       "confidence": "high",
       "reversal_condition": "A third independent pass under the pinned efficacy definition disagrees with this adjudication on more than about a fifth of the 54 reviewed gaps, or David rules the other way on the escalations in research-log/maturity-repair/escalations.md, in which case the affected entries revert individually rather than the method being abandoned."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Made agreement between the two labelling passes an overridable default in engine/apply-relabel.mjs, rather than a branch that always takes v1. An explicit entry in relabel-adjudication.json now wins even where both passes agreed, and the rebuild logs the override count separately.",
+      "rationale": "David ruled on four escalations and two of them — Ephemeral Societal Data and Inadequate Emergency Climate Interventions — were gaps both passes had agreed on, which the code had no way to express. Unoverridable agreement is the same defect as the unoverridable 'on disagreement take v2' rule, one layer down: two independent passes sharing a misreading is exactly how 'AI Could Be Misused' came out as Working now. Agreement is evidence, not proof. Logging the override count on its own line keeps it from happening quietly.",
+      "runner_up": "Edit the v1 maturity in research-log/labels/*.json so those gaps fall into the disagreement branch. Rejected: it would falsify the record of what the first pass actually said, and move the v1-v2 agreement figure from 63/103 to 61/103, a number both docs/relabel-report.md and methodology/taxonomy.md cite.",
+      "confidence": "high",
+      "reversal_condition": "The override count printed by rebuild stops being small. If explicit overrides on agreed gaps become routine rather than exceptional, the problem is in the labelling passes and not the adjudication layer, and the fix belongs upstream."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Did not add a '5-10 years' maturity value, despite 63 of 103 gaps now sitting in '2-5 years'. Recorded as a proposal for a later pass, together with a proposal to separate the time question from the has-a-path question that 'Speculative' actually asks.",
+      "rationale": "David raised it against 'AI is Still Narrow', and the diagnostic supports him — three fifths of the map in one bucket is barely a label, and 'Speculative' conflates 'slow' with 'no known route'. But adding a fourth value means re-reviewing all 63 gaps currently at '2-5 years', because a value nobody has applied to the whole set is worse than three honest ones: those 63 would silently mean '2-5 or 5-10, unexamined'. That is a full relabel, and this branch is a repair.",
+      "runner_up": "Add the value and apply it only to the gaps this pass touched. Rejected for exactly that reason — a partially applied enum value makes the distribution unreadable, which is a worse artifact than the pileup it fixes.",
+      "confidence": "medium",
+      "reversal_condition": "A pass is commissioned with a blind second reader to re-review all 63 gaps at '2-5 years', at which point the split should be done on both axes rather than by adding one bucket to one of them."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Recorded, and did not build, a blocked-on-adoption versus blocked-on-capability dimension. Eleven of this pass's downgrades turn on adoption rather than on whether the technique exists.",
+      "rationale": "David's note on the clinical-trials ruling. DNA synthesis screening exists and is not adopted; archiving works and permission is withheld; adaptive trials run and the field does not take them up. Maturity absorbs all of this and reports 'not ready', which is the wrong diagnosis for a funder, because the intervention for an unadopted capability is not more research. This is a genuine addition to Convergent's map rather than a correction to our own labels.",
+      "runner_up": "Encode it now as a fourth dimension on the augmentation tables. Rejected: it would need its own definition, its own labelling pass over 103 gaps and its own audit, and it would arrive in the same artifact as a repair — which is how a contribution turns into a rewrite of someone else's map.",
+      "confidence": "medium",
+      "reversal_condition": "Convergent asks what would be worth adding next, in which case this is the strongest candidate on the evidence this pass produced."
     }
   ]
 }

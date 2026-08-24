@@ -1,4 +1,24 @@
-# Maturity repair: questions for David
+# Maturity repair: questions for David — ANSWERED 2026-08-23
+
+**All four resolved to `2-5 years`, and all four are applied.** Coordination and
+institutional now has **zero** working-now gaps out of fifteen. The rulings and David's
+reasoning are recorded in the `note` field of each entry in
+`research-log/relabel-adjudication.json`; the open question he raised in passing — whether
+this taxonomy needs a `5-10 years` bucket — is in `notes.md` and `report.md`.
+
+| Gap | Was | Now | David's reason, in short |
+|---|---|---|---|
+| Ephemeral Societal Data on Proprietary Platforms | Working now | **2-5 years** | Tech solved for years and the data is still disappearing — that is the proof the blocker is institutional, not scale |
+| Clinical Trials Are Poorly Optimized for Evidence Gathering | Working now | **2-5 years** | Bayesian designs have run since 2010 and practitioners say they do not speed things up much |
+| Inadequate Emergency Climate Interventions and Response | Working now | **2-5 years** | The ML exists; the alerting and action layer does not, and AI is useless unless it helps us act faster |
+| AI is Still Narrow in its Reasoning and Planning | Speculative | **2-5 years** | The narrowness is receding fast; contested, and possibly really a 5-10 year answer |
+
+The original blocks are kept below unchanged, so the question can still be read before the
+answer.
+
+---
+
+# The questions as they were put
 
 Four gaps out of 54 reviewed. Everything else was decided on the branch; the reasoning
 for each decision is in `report.md` and in the `note` field of

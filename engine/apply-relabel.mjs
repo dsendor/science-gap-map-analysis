@@ -6,6 +6,12 @@
 //   - Disagree, adjudicated        -> take the adjudicated value, confidence per the entry
 //   - Disagree, unresolved         -> take the adjudicated value, confidence 'guess'
 //
+// Agreement is a DEFAULT, not a rule that cannot be overridden. An adjudication entry for
+// a gap both passes agreed on wins, and is logged separately so it cannot happen quietly.
+// Two independent passes sharing a misreading is exactly how "AI Could Be Misused" came
+// out as Working now; a branch that agreement can never leave reproduces that defect one
+// layer down. See research-log/maturity-repair/report.md.
+//
 // Adjudication lives in a file rather than being applied inline so it is reviewable in
 // a diff and reproducible by rebuild, like every other durable fact in this project.
 
@@ -23,13 +29,17 @@ const byGap = new Map(adjudications.map((a) => [a.gap_id, a]));
 
 const rows = db.prepare('SELECT * FROM relabels').all();
 db.exec('BEGIN');
-let agreed = 0, resolved = 0, unresolved = 0;
+let agreed = 0, resolved = 0, unresolved = 0, overridden = 0;
 for (const r of rows) {
   let type, maturity, confidence, note;
-  if (r.type_agreed && r.maturity_agreed) {
+  if (r.type_agreed && r.maturity_agreed && !byGap.has(r.gap_id)) {
     type = r.v1_type; maturity = r.v1_maturity; confidence = 'confident';
     note = 'both independent passes agreed';
     agreed++;
+  } else if (r.type_agreed && r.maturity_agreed) {
+    const a = byGap.get(r.gap_id);
+    type = a.type; maturity = a.maturity; confidence = a.confidence; note = a.note;
+    overridden++;
   } else {
     const a = byGap.get(r.gap_id);
     if (!a) { db.exec('ROLLBACK'); console.error(`no adjudication for disagreed gap ${r.gap_id}`); process.exit(1); }
@@ -48,3 +58,4 @@ for (const r of rows) {
 }
 db.exec('COMMIT');
 console.log(`relabel applied: ${agreed} agreed, ${resolved} adjudicated confident, ${unresolved} adjudicated guess`);
+if (overridden) console.log(`  ${overridden} gap(s) both passes AGREED on were overridden by an explicit adjudication entry`);

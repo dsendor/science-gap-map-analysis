@@ -1,6 +1,46 @@
 # Maturity repair: notes not required by the deliverable
 
-## Recommendations on the four escalations
+## The four escalations were answered — all four to `2-5 years`
+
+David ruled on 2026-08-23 and all four are applied. Three went the way this pass leaned;
+*Ephemeral Societal Data* went against the weak lean recorded below, on the strongest
+version of the argument: the technology has been solved for years and the data is still
+disappearing, which is itself the evidence that the blocker is institutional. The
+recommendations below are left as written, unedited, so the calibration is checkable.
+
+Two of the four were labels both independent passes had agreed on. See "Making agreement
+overridable" at the bottom.
+
+## Two things David raised that are not this branch's work
+
+**A `5-10 years` maturity value.** Raised against *AI is Still Narrow*, where he thought
+`2-5 years` was clearly better than `Speculative` but not obviously right either. The
+diagnostic supports him: after this repair **63 of 103 gaps sit in `2-5 years`**, 61% in
+one bucket, and a bucket holding three fifths of the data is barely a label. `Speculative`
+is also doing double duty — it means *no clear path*, which is a claim about kind, while
+`2-5 years` is a claim about time, so a gap with a perfectly clear path that simply takes
+fifteen years has nowhere to go.
+
+Recommendation is still **not now**, and the reason is not caution. Adding a fourth value
+means re-reviewing all 63 gaps currently at `2-5 years`, because a value nobody has applied
+to the whole set is worse than three honest ones — the 63 would silently mean "2-5 or
+5-10, unexamined". That is a full pass, on the scale of the v2 relabel, and it should be
+its own branch with its own blind second reader. It should also probably split the two
+axes rather than adding a bucket to one of them: *how long* and *is there a path* are
+different questions and the current three values conflate them. Recorded as a decision.
+
+**A "blocked on adoption, not capability" dimension.** David's note on the clinical-trials
+ruling — "there are similar institutional issues that we should investigate in a further
+version of the gap map." This repair kept running into it: the reason for eleven of the
+downgrades is not that the technique is missing but that nobody has adopted it. Malicious
+bioengineering (screening exists, adoption does not), scientific publishing, development
+economics, civic deliberation, longitudinal cohorts, ephemeral data, clinical trials.
+Maturity currently absorbs all of that and reports it as "not ready", which is the wrong
+diagnosis for a funder: the intervention for an unadopted capability is not more research.
+That would be a genuinely new contribution to their map rather than a correction to ours,
+and it is out of scope here.
+
+## Recommendations on the four escalations, as written before the answers
 
 Kept here rather than in `escalations.md` so the question is read before the answer.
 
@@ -75,3 +115,25 @@ statistics that `docs/relabel-report.md` and `methodology/taxonomy.md` both cite
 repair went into the adjudication file instead, which is also the more honest structure:
 v1 and v2 are records of two independent passes and should stay as they were written;
 adjudication is where judgement belongs. Detail in `report.md`.
+
+## Making agreement overridable
+
+Two of the four rulings — *Ephemeral Societal Data* and *Inadequate Emergency Climate
+Interventions* — were on gaps both independent passes agreed on, and `apply-relabel.mjs`
+had no way to express that. Its agreed branch took v1 unconditionally and never looked at
+the adjudication file, so agreement was a rule that could not be overridden.
+
+That is the same defect as "on disagreement take v2", one layer down, and it is how this
+project got here: two passes sharing a misreading is exactly what happened to *AI Could Be
+Misused*. Agreement is evidence, not proof.
+
+`engine/apply-relabel.mjs` now treats agreement as a default. An explicit adjudication
+entry wins even where the passes agreed, and the rebuild log prints the override count on
+its own line so it can never happen quietly. Current output:
+`44 agreed, 9 adjudicated confident, 48 adjudicated guess` plus `2 gap(s) both passes
+AGREED on were overridden`.
+
+`engine/` belongs to the review-gate branch for the duration of these two tracks, so this
+was checked first: `review-gates` modifies `adjudicate.mjs`, `audit-report.mjs`,
+`ingest-indicators.mjs`, `ingest-new-gaps.mjs` and `rebuild.mjs`, and not this file. The
+change is 13 lines in one file that branch does not touch.

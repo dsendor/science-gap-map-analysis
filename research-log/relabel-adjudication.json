@@ -200,9 +200,9 @@
     {
       "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
       "type": "LLM reasoning and synthesis",
-      "maturity": "Speculative",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Speculative). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23. Speculative means no clear path, and the narrowness is receding quickly enough that the claim will not survive contact with a reader. Recorded as contested: David notes many informed people would say otherwise, and the honest label may be a 5-10 year bucket this taxonomy does not have. See research-log/maturity-repair/notes.md."
     },
     {
       "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
@@ -354,9 +354,9 @@
     {
       "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (type: Design and optimization search vs Coordination and institutional; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23. Bayesian adaptive designs have existed since 2010 and are in live use, and practitioners running them report they do not speed things up much — so the mechanism being deployed somewhere is not the same as it moving this gap. The residual blocker is institutional, in the same way as scientific publishing and civic deliberation, and gets the same label."
     },
     {
       "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
@@ -399,6 +399,20 @@
       "maturity": "2-5 years",
       "confidence": "guess",
       "note": "Independent passes disagreed (type: Physical build and manipulation vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bd01-c3b284abeb44",
+      "type": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23, overriding a label both independent passes agreed on. Web-scale archiving has been technically solved for years and the data is still disappearing, which is the proof that the blocker is institutional rather than technical. Working now would say the problem is scaling a working solution; it is not, it is permission and who funds preservation."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fa-9903-df046affff97",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23, overriding a label both independent passes agreed on. The ML is real and is already covered by the AI for Good gap map; what is missing is the alerting and action layer that turns a forecast into a faster response. Prediction without an action path does not move an emergency-response gap."
     }
   ]
 }

@@ -4,29 +4,29 @@ Branch `maturity-repair`, off `main` at 386e2e8. Executes `docs/maturity-repair-
 
 ## Headline
 
-**Coordination and institutional went from 10 working-now gaps to 2, and both of those
-are open questions rather than settled labels.** "AI Could Be Misused", "Risks of
-Malicious Bioengineering" and "A Limited Set of Rigid Organizational Structures" are no
-longer labelled as problems AI can move today.
+**Coordination and institutional went from 10 working-now gaps to zero.** Of the fifteen
+gaps on the map whose blocker is an institution rather than a technique, not one is
+labelled as something AI moves today. "AI Could Be Misused", "Risks of Malicious
+Bioengineering" and "A Limited Set of Rigid Organizational Structures" no longer claim
+otherwise.
 
-Across all 103 gaps, `Working now` went from 39 to 29.
+Across all 103 gaps, `Working now` went from 39 to 26.
 
 | Maturity | Before | After |
 |---|---:|---:|
-| Working now | 39 | 29 |
-| 2-5 years | 52 | 59 |
-| Speculative | 12 | 15 |
+| Working now | 39 | 26 |
+| 2-5 years | 52 | 63 |
+| Speculative | 12 | 14 |
 
 | Coordination and institutional | Before | After |
 |---|---:|---:|
-| Working now | 10 | 2 |
-| 2-5 years | 3 | 9 |
+| Working now | 10 | **0** |
+| 2-5 years | 3 | 11 |
 | Speculative | 2 | 4 |
 
-That 2 is `Ephemeral Societal Data on Proprietary Platforms` and `Clinical Trials Are
-Poorly Optimized for Evidence Gathering`, both escalated. If David rules against both,
-coordination has no working-now gaps at all, which is the 7% figure the relabel report
-predicted for the efficacy reading — near enough to 0/15 to be the same claim.
+The relabel report predicted coordination's working-now share would be 7% under the
+efficacy reading against 67% under the availability reading. It landed at 0 of 15, which
+is the same claim.
 
 ## The review set: 54, not 63
 
@@ -40,10 +40,11 @@ independent passes disagreed.** Of the 11 gaps in the review set where both pass
 agreed, 10 were confirmed and 1 was escalated. The defect really did live in
 adjudication, not in either labelling pass.
 
-## Reviewed: 54. Changed: 17. Escalated: 4. Confirmed: 33.
+## Reviewed: 54. Changed: 21. Confirmed: 33.
 
-Direction of change: **13 down** (away from `Working now`), **4 up**. Eight of the 13
-downgrades are coordination gaps.
+Seventeen decided on the branch and four escalated to David, who ruled on all four and
+sent all four to `2-5 years` (`escalations.md`). Direction of change: **17 down** (away
+from `Working now`), **4 up**. Ten of the 17 downgrades are coordination gaps.
 
 | Gap | Type | From | To | Confidence |
 |---|---|---|---|---|
@@ -65,12 +66,25 @@ downgrades are coordination gaps.
 | We Don't Have Easy Programmable Synthesis of Bio Polymers... | Autonomous experimentation | Working now | **2-5 years** | guess |
 | Particle Accelerators Are Large and Expensive | Real-time control of physical systems | Working now | **2-5 years** | guess |
 
+And the four David ruled on, all `confident` because he decided them:
+
+| Gap | Type | From | To |
+|---|---|---|---|
+| Ephemeral Societal Data on Proprietary Platforms | Coordination and institutional | Working now | **2-5 years** |
+| Clinical Trials Are Poorly Optimized for Evidence Gathering | Coordination and institutional | Working now | **2-5 years** |
+| Inadequate Emergency Climate Interventions and Response | ML surrogates and prediction | Working now | **2-5 years** |
+| AI is Still Narrow in its Reasoning and Planning | LLM reasoning and synthesis | Speculative | **2-5 years** |
+
 Per-gap reasoning is in the `note` field of each entry in
 `research-log/relabel-adjudication.json`, so it travels with the label rather than
 living only in this report.
 
-The four escalations are in `escalations.md`. They are untouched in the data and still
-carry the mechanical label, so "leave it" needs no further work.
+Two of David's four were labels both passes had agreed on, which `apply-relabel.mjs`
+had no way to express — its agreed branch took v1 unconditionally and never consulted the
+adjudication file. Agreement is now a default rather than a rule that cannot be
+overridden, and the rebuild prints the override count on its own line. That is a 13-line
+change to `engine/apply-relabel.mjs`, a file the `review-gates` branch does not touch;
+detail and the reasoning in `notes.md`.
 
 ## The ten spot-checks
 
@@ -128,17 +142,32 @@ category and not the gap. The paragraph saying no aggregate claim should rest on
 is softened but not removed: maturity is still a judgement about the world and half the
 primaries are still flagged `guess`.
 
+## Two things worth carrying into the next version
+
+**Sixty-three of 103 gaps now sit in `2-5 years`.** Three fifths in one bucket is barely a
+label, and David asked in passing whether the taxonomy wants a `5-10 years` value. It
+probably does, and probably wants the time question separated from the has-a-path question
+that `Speculative` really asks. Not done here: a fourth value nobody has applied to the
+whole set is worse than three honest ones, so it needs its own pass with its own blind
+second reader.
+
+**Eleven of the downgrades are adoption, not capability.** Screening exists and nobody
+uses it; archiving works and permission is withheld; adaptive trials run and the field
+does not adopt them. Maturity absorbs all of that and reports "not ready", which is the
+wrong diagnosis for a funder, because the intervention for an unadopted capability is not
+more research. A blocked-on-adoption flag would be a real addition to their map rather
+than a correction to ours. Both recorded in `notes.md` and the decisions ledger.
+
 ## What a reader of the artifact would now see differently
 
 The map no longer says the coordination problems are the ones AI can already solve. It
-says close to the opposite: of the fifteen gaps whose blocker is an institution rather
-than a technique, at most two are moving today, and the rest are waiting on adoption
-rather than on capability. Where AI is working now is concentrated in sensing and signal
-processing, LLM synthesis, and bench-scale autonomous experimentation — nine of the
-twenty-nine working-now gaps are sensing, and none of the eight coordination downgrades
-was about whether the technology exists. The distribution has also shifted its centre of
-mass: fifty-nine gaps sit at `2-5 years`, which is a more useful thing to tell a funder
-than a working-now count inflated by counting capabilities that nobody has adopted.
+says the opposite, without hedging: of the fifteen gaps whose blocker is an institution
+rather than a technique, **none** is moving today. Where AI is working now is concentrated
+in sensing and signal processing, LLM synthesis, and bench-scale autonomous
+experimentation — nine of the twenty-six working-now gaps are sensing, and not one of the
+ten coordination downgrades was about whether the technology exists. That is a sharper and
+more useful thing to tell a funder than a working-now count inflated by capabilities
+nobody has adopted, and it is a claim about their map that they cannot currently make.
 
 ## One thing in the diff that is not mine
 
