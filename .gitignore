@@ -13,3 +13,4 @@ db/*.sqlite
 .playwright-mcp/
 research-log/format-test.json
 research-log/format-test-key.json
+.vercel

@@ -7,3 +7,4 @@ out/
 # the JSON in research-log/, both reviewable in a diff. A 500KB generated blob is not.
 public/data.json
 public/gap-map-augmented.csv
+.vercel

@@ -28,6 +28,23 @@ So: four separate agents, one per mode. Each forms its own view first, reads the
 producer's reasoning second, reports, and changes nothing. A fifth agent, or a human,
 acts on the reports.
 
+## Branch, and the other agent
+
+```bash
+git fetch
+git checkout main && git pull
+git checkout -b review-gates
+```
+
+**Work only on `review-gates`.** A separate agent is repairing the maturity dimension on
+`maturity-repair` at the same time (`docs/maturity-repair-plan.md`). It owns
+`research-log/labels/*.json`, `research-log/maturity-repair/*` and
+`methodology/taxonomy.md`. You own `research-log/reviews/*`. Do not write to its files and
+do not merge to `main`.
+
+Gate D will find maturity numbers that are wrong. They are already known wrong and are
+being fixed on that branch; note them and move on rather than re-deriving them.
+
 ## Preconditions
 
 ```bash
@@ -121,3 +138,7 @@ gate findings:
   probably be dropped, leaving three tiers.
 - Outcomes and measurability tiers were frozen at their Phase 1–2 values through the
   relabel and have had no full second pass.
+- **The maturity labels are wrong and are being repaired on a separate branch.** The
+  relabel read `Working now` as "the capability exists" rather than "applying it would
+  move this gap", which produced *AI Could Be Misused* at `Coordination and institutional`
+  / `Working now`. 63 gaps are under review. Do not spend gate time on this.
