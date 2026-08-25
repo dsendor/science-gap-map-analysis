@@ -5,21 +5,21 @@ import { TIER_ORDER } from '../../lib/constants';
 export const metadata = { title: 'The four attributes, and how to read them' };
 
 const KINDS = [
-  { k: 'LLM reasoning and synthesis', ai: 'Language models. Working today.',
+  { k: 'Reading and synthesis', ai: 'Language models. Working today.',
     what: 'Reading, summarizing, connecting, proposing. Work whose product is text or an argument.' },
-  { k: 'ML surrogates and prediction', ai: 'Learned surrogates. Working today in several fields.',
+  { k: 'Prediction and modeling', ai: 'Learned surrogates. Working today in several fields.',
     what: 'Learning a fast approximation of something slow to compute or measure, then using it in place of the slow thing.' },
-  { k: 'Design and optimization search', ai: 'Generative design and search. Working today for proteins and materials.',
+  { k: 'Design search', ai: 'Generative design and search. Working today for proteins and materials.',
     what: 'Searching a large space of candidate designs against a stated objective.' },
-  { k: 'Sensing and signal processing', ai: 'Learned reconstruction and denoising. Working today.',
+  { k: 'Measurement and sensing', ai: 'Learned reconstruction and denoising. Working today.',
     what: 'Getting a usable measurement out of a noisy or indirect one.' },
-  { k: 'Autonomous experimentation', ai: 'Self-driving labs. Early, and real.',
+  { k: 'Running experiments', ai: 'Self-driving labs. Early, and real.',
     what: 'Choosing the next experiment and running it with nobody in the loop.' },
-  { k: 'Real-time control of physical systems', ai: 'Learned control. Working today for plasma and adaptive optics.',
+  { k: 'Real-time control', ai: 'Learned control. Working today for plasma and adaptive optics.',
     what: 'Closed-loop sense, decide and actuate on hardware that already exists, at machine timescales. Added after a blind audit found it had no home in the original seven.' },
-  { k: 'Physical build and manipulation', ai: 'Robotics, and it is moving fast. Not one gap in the map is served by it yet.',
+  { k: 'Physical build', ai: 'Robotics, and it is moving fast. One of these gaps has a capability that works today; the rest are two-to-five years or speculative.',
     what: 'Fabricating, assembling, or handling matter.' },
-  { k: 'Coordination and institutional', ai: 'Hardest of the eight, and not empty: matching, scheduling, drafting and forecasting all apply.',
+  { k: 'Coordination and institutions', ai: 'Hardest of the eight, and not empty: matching, scheduling, drafting and forecasting all apply.',
     what: 'Approval, funding, agreement, incentives, and who counts what.' },
 ];
 
@@ -71,10 +71,17 @@ export default function AttributesPage() {
           <div className="col">
             <h2>2. What kind of work is in the way</h2>
             <p>
-              Eight values, naming kinds of work and not kinds of model. Every one of them has an AI
-              analogue. What separates them is how mature that analogue is and how hard the work is
-              to automate: language models are here, robotics is arriving, and the institutional
-              category is the hardest of the eight without being empty.
+              Eight values, naming <strong>kinds of work</strong> and not kinds of model. This column
+              answers one question only: what stands between here and the gap closing. It is not a
+              claim that AI does that work &mdash; that is the separate question in the last column.
+            </p>
+            <p>
+              Six of the eight were originally named after the AI that would do the work
+              (&ldquo;LLM reasoning and synthesis&rdquo;) and two after the work itself
+              (&ldquo;Physical build and manipulation&rdquo;). Read together, that made the
+              institutional category look out of place when it was the one naming the thing
+              consistently. All eight are now named for the work. The stored labels and every
+              recorded judgment are unchanged; only the words a reader sees moved.
             </p>
           </div>
           <div className="scroll" style={{ marginTop: 16 }}>

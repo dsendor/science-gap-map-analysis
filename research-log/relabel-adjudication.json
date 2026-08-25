@@ -326,9 +326,9 @@
     {
       "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
       "type": "Coordination and institutional",
-      "maturity": "2-5 years",
+      "maturity": "Speculative",
       "confidence": "confident",
-      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Evaluation regimes and deployment policy exist as mechanisms and some are running, but none is in force at a scale that constrains misuse. Convening on AI safety is available today; binding, enforced international controls are the gap and are not. Type unchanged from the mechanical adjudication."
+      "note": "Maturity re-adjudicated twice. v1 said 2-5 years, v2 said Working now, the mechanical rule took Working now, and the maturity repair moved it to 2-5 years on the grounds that evaluation regimes and deployment policy exist as mechanisms even if none is in force at a scale that constrains misuse. David ruled Speculative on 2026-08-25 and the ruling stands: misuse has many partial mitigations, but the one that would actually close this gap is alignment, and a substantial part of the field holds that it may not be solvable at all. A capability whose feasibility is itself contested is what Speculative is for. Convening on AI safety is available this afternoon; that is the availability reading of 'working now' the repair was built to reject. Type unchanged."
     },
     {
       "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",

@@ -223,6 +223,22 @@
       "runner_up": "Hardcode the post-repair numbers in the page copy. Rejected: it would make the site contradict itself until the artifact regenerates, which is worse than being briefly out of date, and it would need a second edit later that nobody would remember to make.",
       "confidence": "high",
       "reversal_condition": "The artifact track runs and the page still reads wrong, which would mean a number it needs is not in the data.json summary and should be added to engine/export-artifact.mjs rather than typed into the page."
+    },
+    {
+      "phase": "revision-7",
+      "decision": "Rename all eight AI-capability categories for display so every one names a kind of work, not a kind of model. Reading and synthesis, Prediction and modeling, Design search, Measurement and sensing, Running experiments, Real-time control, Physical build, Coordination and institutions.",
+      "rationale": "Six of the eight were named after the AI that would do the work and two after the work itself, so a column that means 'what stands in the way' read as 'which AI would do it'. That made Coordination and institutional look like a category error when it was one of the two naming the thing consistently. David raised it; the diagnosis is his. Applied at the export boundary in engine/export-artifact.mjs, which walks the emitted object rewriting values, object keys and category references inside rationale strings, so summary buckets, cross-tabs, chain links, per-gap labels and the CSV all move together and no render site can be missed by hand.",
+      "runner_up": "Add a second attribute naming which AI capability could accelerate each gap, and show blocker and accelerator as two sections. Rejected for now because that attribute has never been labelled: it would need a full pass over all 103 gaps plus an audit, and for coordination gaps the honest answer is often 'none'. Recorded in docs/todo.md as an open question rather than closed.",
+      "confidence": "high",
+      "reversal_condition": "One constant in engine/export-artifact.mjs. The stored enum, the CHECK constraints and every research-log judgment are unchanged, so reverting is deleting the map."
+    },
+    {
+      "phase": "revision-7",
+      "decision": "AI Could Be Misused is Speculative, not 2-5 years.",
+      "rationale": "David ruled on 2026-08-25. The gap has many partial mitigations -- evaluation regimes, deployment policy, convening -- and the maturity repair had moved it to 2-5 years on the strength of those existing as mechanisms. But the capability that would actually close the gap is alignment, and a substantial part of the field holds it may not be solvable at all. A capability whose feasibility is itself contested is what Speculative is for. This is the same distinction the maturity repair was built on: availability is not efficacy.",
+      "runner_up": "2-5 years, on the grounds that partial mitigation mechanisms exist and are being built. Rejected because partial mitigations do not close this gap, and the taxonomy asks what would move the gap rather than what is being attempted.",
+      "confidence": "high",
+      "reversal_condition": "A change in the state of alignment research such that the field stops treating the core problem as possibly unsolvable. Recorded in research-log/relabel-adjudication.json for this gap."
     }
   ]
 }

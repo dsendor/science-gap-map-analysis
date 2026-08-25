@@ -185,7 +185,55 @@ const out = {
 };
 
 mkdirSync(`${root}app/public`, { recursive: true });
-writeFileSync(`${root}app/public/data.json`, JSON.stringify(out));
+// ---------------------------------------------------------------------------
+// Display names for the eight categories.
+//
+// The stored enum names six of the eight after the AI that would do the work
+// ("LLM reasoning and synthesis") and two after the work itself ("Physical build
+// and manipulation"). The column means the second thing in both cases: the kind of
+// work standing in the way. Named the first way it reads as a claim that AI does
+// this, which is why "Coordination and institutional" looked out of place next to
+// the others -- it was the only pair naming the same thing consistently.
+//
+// Renamed here rather than in the schema so the CHECK constraints, the research-log
+// files and every stored judgment stay exactly as written and the change is one
+// line to revert. The walk below rewrites values AND object keys, so summary
+// buckets, cross-tab rows, chain links and per-gap labels all move together and no
+// render site can be missed by hand.
+const WORK_LABEL = {
+  'LLM reasoning and synthesis': 'Reading and synthesis',
+  'ML surrogates and prediction': 'Prediction and modeling',
+  'Design and optimization search': 'Design search',
+  'Sensing and signal processing': 'Measurement and sensing',
+  'Autonomous experimentation': 'Running experiments',
+  'Real-time control of physical systems': 'Real-time control',
+  'Physical build and manipulation': 'Physical build',
+  'Coordination and institutional': 'Coordination and institutions',
+};
+// Rationales refer to the categories by name too ("Independent passes disagreed
+// (type: Design and optimization search vs ML surrogates and prediction)"), so the
+// walk substitutes inside strings as well as replacing whole ones. Those are
+// category references, not prose, and leaving them would show a reader one name in
+// the label and a different one in the reason for it. The research-log files keep
+// the original wording; only this emitted copy is renamed.
+const WORK_PAIRS = Object.entries(WORK_LABEL);
+const relabelWork = (v) => {
+  if (typeof v === 'string') {
+    if (WORK_LABEL[v]) return WORK_LABEL[v];
+    let out = v;
+    for (const [from, to] of WORK_PAIRS) out = out.split(from).join(to);
+    return out;
+  }
+  if (Array.isArray(v)) return v.map(relabelWork);
+  if (v && typeof v === 'object') {
+    return Object.fromEntries(
+      Object.entries(v).map(([k, x]) => [WORK_LABEL[k] ?? k, relabelWork(x)])
+    );
+  }
+  return v;
+};
+
+writeFileSync(`${root}app/public/data.json`, JSON.stringify(relabelWork(out)));
 
 // ---- CSV: one row per gap, keyed on their id and slug ------------------------
 const csvCell = (v) => {
@@ -221,6 +269,12 @@ const rows = [
     '', '', '', '', '', '', '',
   ]),
 ];
+// The CSV carries the same display names as the site. The join key is their gap id
+// and slug, not the category, so renaming this column costs nothing downstream.
+for (const r of rows) {
+  for (let i = 0; i < r.length; i++) r[i] = relabelWork(r[i]);
+}
+
 writeFileSync(
   `${root}app/public/gap-map-augmented.csv`,
   [cols.join(','), ...rows.map((r) => r.map(csvCell).join(','))].join('\n') + '\n'

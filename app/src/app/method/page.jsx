@@ -24,10 +24,10 @@ export default function MethodPage() {
   const indicators = gaps.flatMap((g) => g.indicators.map((i) => ({ ...i, gap: g.name, tier: g.tier })));
   const coordFlagged = gaps.filter(
     (g) =>
-      g.primary_ai_type === 'Coordination and institutional' &&
+      g.primary_ai_type === 'Coordination and institutions' &&
       [g.outcome_confidence, g.tier_confidence, g.primary_confidence].includes('guess')
   ).length;
-  const coordTotal = gaps.filter((g) => g.primary_ai_type === 'Coordination and institutional').length;
+  const coordTotal = gaps.filter((g) => g.primary_ai_type === 'Coordination and institutions').length;
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function MethodPage() {
 
           <div className="col">
             <p style={{ marginTop: 22 }}>
-              The ordering inverts at the top. Coordination and institutional goes from last place to
+              The ordering inverts at the top. Coordination and institutions go from last place to
               first. Physical build is no longer zero. The gradient is withdrawn.
             </p>
             <p>
