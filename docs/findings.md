@@ -139,9 +139,9 @@ Two gaps sitting in the same catalogue, one row apart in structure and a categor
 
 A catalogue treats these as two rows of equal standing, which for a catalogue is correct — it is not claiming otherwise. The four added columns are what make the difference visible: one has a quantity, a direction and a tool that works today; the other has none of the three, and the honest thing to record is that its progress indicator search returned a null.
 
-## Progress indicators, and the two nulls
+## Progress indicators, and the null
 
-A **sample** of 8 gaps across all four tiers, 1 of them honest nulls. Not coverage, and not to be extrapolated to the other 95. Every non-null value was read off a page that was actually fetched; the `source_checked` column records whether the source verified against arXiv or Crossref, or was merely reachable.
+A **sample** of 8 gaps across all four tiers, 1 of them an honest null. Not coverage, and not to be extrapolated to the other 95. Every non-null value was read off a page that was actually fetched; the `source_checked` column records whether the source verified against arXiv or Crossref, or was merely reachable.
 
 | Gap | Tier | Quantity | Current | Source check |
 |---|---|---|---|---|

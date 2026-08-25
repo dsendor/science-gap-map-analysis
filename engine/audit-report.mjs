@@ -161,14 +161,20 @@ w();
   }
 }
 
-w('## Progress indicators, and the two nulls');
-w();
 {
   const ind = all(`SELECT i.*, g.name AS gap, m.tier FROM gap_indicators i
                    JOIN gm_gaps g ON g.id=i.gap_id
                    LEFT JOIN gap_measurability m ON m.gap_id=i.gap_id ORDER BY i.id`);
   const nulls = ind.filter((i) => i.is_null_result);
-  w(`A **sample** of ${ind.length} gaps across all four tiers, ${nulls.length} of them honest nulls. Not coverage, and not to be extrapolated to the other ${103 - ind.length}. Every non-null value was read off a page that was actually fetched; the \`source_checked\` column records whether the source verified against arXiv or Crossref, or was merely reachable.`);
+  // Count the nulls, do not assert them. This heading was the literal string "and the
+  // two nulls" while the table it introduces was generated from the database, so when
+  // Gate A replaced the false quantum-gravity null the heading went on claiming a
+  // second one. A generated document with a hand-written headline is a document that
+  // can contradict itself thirteen lines apart, and this one did.
+  const word = ['no nulls', 'the null', 'the two nulls', 'the three nulls'][nulls.length] ?? `the ${nulls.length} nulls`;
+  w(`## Progress indicators, and ${word}`);
+  w();
+  w(`A **sample** of ${ind.length} gaps across all four tiers, ${nulls.length} of them ${nulls.length === 1 ? 'an honest null' : 'honest nulls'}. Not coverage, and not to be extrapolated to the other ${103 - ind.length}. Every non-null value was read off a page that was actually fetched; the \`source_checked\` column records whether the source verified against arXiv or Crossref, or was merely reachable.`);
   w();
   w('| Gap | Tier | Quantity | Current | Source check |');
   w('|---|---|---|---|---|');
