@@ -215,6 +215,14 @@
       "runner_up": "Encode it now as a fourth dimension on the augmentation tables. Rejected: it would need its own definition, its own labelling pass over 103 gaps and its own audit, and it would arrive in the same artifact as a repair — which is how a contribution turns into a rewrite of someone else's map.",
       "confidence": "medium",
       "reversal_condition": "Convergent asks what would be worth adding next, in which case this is the strongest candidate on the evidence this pass produced."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Added docs/future-work.md and an app page at /missing/ (\"What's missing\") listing the nine pieces of open work, and did NOT regenerate app/public/data.json to go with it. The page reads every number it prints out of data.json instead of hardcoding them.",
+      "rationale": "The artifact regeneration is its own track and is meant to run once after both the maturity repair and the review gates land; regenerating a large derived JSON now would conflict with the review-gate branch, which changes indicators, new-gaps and critical-paths. Reading from data.json means the page cannot contradict the rest of the site today, and it picks up the repaired maturity distribution automatically when the artifact track runs — the middle-bucket share it cites goes from 50% to 61% with no edit to the page.",
+      "runner_up": "Hardcode the post-repair numbers in the page copy. Rejected: it would make the site contradict itself until the artifact regenerates, which is worse than being briefly out of date, and it would need a second edit later that nobody would remember to make.",
+      "confidence": "high",
+      "reversal_condition": "The artifact track runs and the page still reads wrong, which would mean a number it needs is not in the data.json summary and should be added to engine/export-artifact.mjs rather than typed into the page."
     }
   ]
 }
