@@ -10,12 +10,27 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { DatabaseSync } from 'node:sqlite';
+import { context, stamp } from './workspace.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const results = [];
 const ok = (name, detail) => results.push({ level: 'ok', name, detail });
 const warn = (name, detail) => results.push({ level: 'warn', name, detail });
 const fail = (name, detail) => results.push({ level: 'fail', name, detail });
+
+// 0. Where am I. Two agents in one directory share a HEAD, and a `git checkout` by
+// either one moves the other's files with no warning. This is the check that names
+// the workspace out loud before anything else runs, and stamps the branch so
+// rebuild.mjs can tell later if it moved.
+const ws = context();
+if (ws.isPrimary && ws.worktreeCount > 1) {
+  warn('workspace', `${ws.branch} in the PRIMARY clone, with ${ws.worktreeCount - 1} worktree(s) attached — `
+    + 'others may switch this HEAD under you. Take your own: node engine/worktree.mjs <track>');
+} else if (ws.isPrimary) {
+  ok('workspace', `${ws.branch} @ ${ws.head}, primary clone, sole worktree`);
+} else {
+  ok('workspace', `${ws.branch} @ ${ws.head}, isolated worktree at ${ws.toplevel}`);
+}
 
 // 1. Node version — node:sqlite needs 22+, and is stable from 24.
 const major = Number(process.versions.node.split('.')[0]);
@@ -95,4 +110,5 @@ if (failed.length) {
   console.error(`${failed.length} blocking issue(s). Do not start a phase until these are clear.`);
   process.exit(1);
 }
-console.log('preflight passed — safe to start.');
+stamp(ws);
+console.log(`preflight passed — safe to start on '${ws.branch}'.`);

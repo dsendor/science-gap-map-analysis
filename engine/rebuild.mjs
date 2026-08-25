@@ -10,10 +10,23 @@
 
 import { execFileSync } from 'node:child_process';
 import { readdirSync, existsSync } from 'node:fs';
+import { context, drift, driftMessage } from './workspace.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const run = (script, ...args) =>
   execFileSync(process.execPath, [`${root}engine/${script}`, ...args], { stdio: 'inherit' });
+
+// Before touching anything: is this still the branch preflight stamped? rebuild is
+// the right place for this check because it runs repeatedly through a session, so it
+// catches a mid-task switch within one command instead of at the next stray `ls`.
+{
+  const ws = context();
+  const d = drift(ws);
+  if (d) {
+    console.error(driftMessage(d, ws));
+    process.exit(1);
+  }
+}
 
 run('import-gapmap.mjs');
 
