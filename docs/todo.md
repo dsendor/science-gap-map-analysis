@@ -10,7 +10,7 @@ worktree you are in. If you are not in your own worktree, read
 
 | Owner | Track | Worktree | Status |
 |---|---|---|---|
-| Gate D agent | Rerun Gate D against the settled database | unknown — check | **in flight** |
+| Gate D agent | Rerun Gate D against the settled database | `scratchpad/wt-gd`, branch `gate-d-rerun` | **in flight** |
 | This session | Argument page rewrite, todo doc, CLAUDE.md rule | `../wt-site-story` | in progress |
 | Deployment agent | Vercel setup and access control | primary clone | **done**, merged |
 | Maturity agent | Maturity repair | primary clone | **done**, merged |
