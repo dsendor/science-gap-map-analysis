@@ -50,7 +50,37 @@ in "working now", the agreement rates → *Method & audit*. The withdrawn gradie
 - [ ] Move agreement rates and the definitional diagnosis to `method/`
 - [ ] Re-check every number on the page against the current database
 
-### 1.2 Simplify the rest of the site
+### 1.2 Open question: is one column enough? — **needs a decision**
+
+The eight categories are now named for the work rather than the AI
+(`Reading and synthesis` rather than `LLM reasoning and synthesis`), which fixed the
+immediate confusion: the column reads as *what stands in the way*, and the separate
+maturity column reads as *whether AI reaches it*.
+
+David is not sold that this is enough, and the objection is a real one. What the site
+still cannot say is **which AI capability could accelerate a given gap**. For a gap
+whose blocker is `Coordination and institutions`, the maturity column says "no
+capability that works today" — but it never says what the candidate capability
+*would* be. Matching? Forecasting? Drafting? The label is silent.
+
+Two ways to close that, and the choice is not obvious:
+
+- **Leave it at one column.** Cheap, already done, and honest about what was measured.
+  The cost is that a reader has to infer the AI story from the maturity value alone.
+- **Add a real second attribute** — "which AI capability could act here, if any" —
+  and label all 103 gaps against it, with an audit. This is what would let the site
+  show blocker and accelerator as genuinely separate things. The cost is a full pass
+  plus a gate, and for coordination gaps the honest answer is often "none", which may
+  make a thin second column.
+
+Worth noting it sits right next to the **typed capability edges** already being asked
+of Convergent — if they type their edges, this attribute becomes derivable rather than
+hand-labelled, which is an argument for asking rather than building.
+
+- [ ] Decide: one column, or two with a relabel
+- [ ] If two: write the taxonomy for the second axis before labelling anything
+
+### 1.3 Simplify the rest of the site
 
 - [ ] Eight pages is a lot. Decide whether *Indicators*, *Proposed gaps* and
       *Attributes* stay separate or fold together

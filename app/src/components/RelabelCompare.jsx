@@ -5,14 +5,14 @@
 // the two columns is more honest than showing either alone, and it is the clearest
 // evidence on the site that the method catches its own errors.
 const ORDER = [
-  'LLM reasoning and synthesis',
-  'Coordination and institutional',
-  'Sensing and signal processing',
-  'ML surrogates and prediction',
-  'Design and optimization search',
-  'Autonomous experimentation',
-  'Physical build and manipulation',
-  'Real-time control of physical systems',
+  'Reading and synthesis',
+  'Coordination and institutions',
+  'Measurement and sensing',
+  'Prediction and modeling',
+  'Design search',
+  'Running experiments',
+  'Physical build',
+  'Real-time control',
 ];
 
 export default function RelabelCompare({ relabel }) {

@@ -10,8 +10,8 @@ export default function Page() {
 
   // Every figure on this page is derived here from data.json, so a number cannot drift
   // out of step with the database by being retyped into prose.
-  const llm = s.ai_type['LLM reasoning and synthesis'];
-  const coord = s.ai_type['Coordination and institutional'];
+  const llm = s.ai_type['Reading and synthesis'];
+  const coord = s.ai_type['Coordination and institutions'];
   const workingNow = s.maturity['Working now'];
   const typeRows = Object.entries(s.maturity_by_ai_type).sort(
     (a, b) =>
@@ -58,8 +58,8 @@ export default function Page() {
             <p>
               Reading and synthesis &mdash; the thing usually meant by AI for science &mdash; is the
               primary kind of work in the way for {llm} of your {s.n_gaps} gaps. The other{' '}
-              {s.n_gaps - llm} are waiting on prediction, sensing, design search, coordination,
-              experiment automation, physical build and real-time control.
+              {s.n_gaps - llm} are waiting on prediction and modeling, measurement and sensing, design
+              search, coordination, running experiments, physical build and real-time control.
             </p>
             <p>
               {workingNow} of {s.n_gaps} gaps sit at a kind of work whose AI analogue works today.
