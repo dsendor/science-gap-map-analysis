@@ -1,0 +1,193 @@
+{
+  "phase": 6,
+  "mode": "D",
+  "gate": "D",
+  "reviewed_by": "claude-opus-5",
+  "reviewed_at": "2026-08-23",
+  "reviewed_from_branch": "vercel-deploy-prep",
+  "note_on_branch": "The gate brief names branch `review-gates`; the working tree was on `vercel-deploy-prep` at HEAD 386e2e8 with only `app/.gitignore` modified. Reviewed what was there. Flagging because CLAUDE.md's one-track-one-branch rule makes the mismatch worth confirming before anyone acts on this report.",
+  "findings": [
+    {
+      "target": "docs/cover-note.md — \"not one gap in the map has physical build and manipulation as a working-now primary capability. All 17 sit at two-to-five years or speculative, against 60% working-now for LLM reasoning and synthesis.\"",
+      "verdict": "withdrawn-claim-survives",
+      "evidence": "This is the withdrawn working-now gradient, stated as the email's headline result, on the withdrawn v1 numbers. Current DB: `select ai_type, sum(maturity='Working now'), count(*) from gap_ai_types where is_primary=1 group by 1` returns Physical build and manipulation = 1 of 8 Working now (13%), not 0 of 17. The one gap is `Outdated and Fragmented Recycling, Cleanup and Bioremediation Systems`, and its label is itself confidence=guess. 17 and 0 come from app/public/data.json `relabel.v1['Physical build and manipulation'] = {n:17, now:0}` — the first pass that failed replication. The 60% for LLM reasoning is still true in v2 (6/10), which makes the pairing worse rather than better: it reconstructs the gradient out of one live figure and one retracted one. The cover note is the only artifact that goes to a human directly and this sentence is the claim it leads on.",
+      "severity": "blocking"
+    },
+    {
+      "target": "docs/cover-note.md — Notes for David: \"Numbers in the email are regenerated from the database, not typed in: 103 / 17 / 60% / 369 / 389 / 6 / 2\"",
+      "verdict": "stale-number",
+      "evidence": "Asserts provenance the numbers do not have. 103, 369, 389, 6 and 2 all verify against the current DB (gm_gaps=103; gm_capabilities=369; gm_gap_capabilities=389; 6 gm_resources with no gm_capability_resources row; 2 gm_capabilities with null/blank description). 17 does not exist anywhere in the current DB — it is a v1 relabel figure. A note claiming the numbers are machine-generated is what would stop someone re-checking them by hand, so the false half of it is load-bearing.",
+      "severity": "blocking"
+    },
+    {
+      "target": "app/src/app/attributes/page.jsx:34 (KINDS, Physical build and manipulation) — \"Robotics, and it is moving fast. Not one gap in the map is served by it yet.\" — rendered at app/out/attributes/index.html",
+      "verdict": "withdrawn-claim-survives",
+      "evidence": "Hard-coded string in the JSX, so the relabel could not reach it. Extracted from the built HTML it reads, in one table row: `Physical build and manipulation | Fabricating, assembling, or handling matter. | 8 | Robotics, and it is moving fast. Not one gap in the map is served by it yet.` The count cell is data-driven and current; the prose cell is the withdrawn v1 zero. It is false against the DB (1 of 8 is Working now) and it visibly contradicts the same page's own text three sections down: \"The working-now gradient the first pass produced did not replicate and has been withdrawn.\"",
+      "severity": "blocking"
+    },
+    {
+      "target": "app/src/app/method/page.jsx — \"Maturity was never audited. The blind pass covered the kind of work, the measurability tier, and the outcome. It did not cover maturity, which is the axis the headline gradient is built from.\"",
+      "verdict": "withdrawn-claim-survives",
+      "evidence": "Two problems in one bullet. (a) \"the headline gradient\" asserts a live headline finding that was withdrawn; the same page's own decisions ledger below it renders \"Withdraw the working-now maturity gradient as a finding.\" (b) Maturity has been audited: `select sum(type_agreed), sum(maturity_agreed), count(*) from relabels` returns 77 / 63 / 103 — a full independent pass over all 103 gaps covering maturity. The attributes page reports exactly that figure. So the method page tells a reader maturity is unmeasured while another page reports its measurement, and the true limitation (maturity is the least reliable of the three at 63/103) is not stated here at all. This is the page a skeptical reader is sent to, which is the worst place for it.",
+      "severity": "blocking"
+    },
+    {
+      "target": "app/src/app/page.jsx:243 — \"All 103 gaps were labelled in about 80 minutes of agent time across six phases\"",
+      "verdict": "stale-number",
+      "evidence": "Hard-coded. The method page computes the same quantity from the same `runs` rows and renders 181 minutes (phase-0 46 + phase-1 11 + phase-2 19 + phase-2b 55 + phase-3 9 + phase-4 6 + phase-5 7 + phase-6 27). Two pages of one site give figures 2.3x apart for the same thing. \"Six phases\" is also wrong: the build is phase-0 through phase-6, seven rows.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "app/src/app/method/page.jsx:39 — \"About five hours of agent time and about four hours of mine\"",
+      "verdict": "stale-number",
+      "evidence": "Hard-coded lead over a data-driven table. Summing `runs`: agent rows with an end time total 400 min = 6.7 h (181 build + 219 revision), not five. The human figure checks out — the single human-review row runs 18:39:22 to 22:43:00 = 244 min = 4.1 h. So the sentence is half right, which is the version a reader is least likely to catch. revision-6 is still open, so the agent total will only grow.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/findings.md — \"## Elapsed time\" table, every row; and \"**Agent time: NaN minutes. Human review time: NaN minutes.**\"",
+      "verdict": "untraceable-claim",
+      "evidence": "Fifteen published cells reading `NaN min`. Cause is engine/audit-report.mjs:201: `new Date(r.ended_at.replace(' ', 'T') + 'Z')` appends a second Z to timestamps already stored as `2026-08-23T02:30:00Z`, giving Invalid Date. The app's copy of the same computation strips a trailing Z first and works, which is why only the markdown is broken. The underlying `runs` rows are fine.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/findings.md — \"Three cases where the seven-type taxonomy has no right answer\" / \"This is a defensible eighth category.\"",
+      "verdict": "taxonomy-inconsistent",
+      "evidence": "Written as a forward-looking proposal for work that has already shipped. db/schema.sql:97 lists eight values in the CHECK constraint including 'Real-time control of physical systems'; four gaps hold it as primary; the same document's own distribution table two screens up lists all eight. Elsewhere the phrasing is fine and historical — method/page.jsx says \"the seven-value list handles badly ... The first became an eighth category\", and attributes/page.jsx says \"had no home in the original seven\" — both correctly past tense. Only findings.md leaves it open.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/findings.md — \"0 of 8 links bind: .\"",
+      "verdict": "untraceable-claim",
+      "evidence": "Dangling empty list with a stray colon-period, from joining an empty set of binding links. `select count(*) from critical_path_links where path_id='path-telescope-elapsed-time' and is_binding=1` = 0, so the count is right and only the rendering is broken. Cosmetic, but it is on the first line a reader hits in the critical-paths section.",
+      "severity": "note"
+    },
+    {
+      "target": "search_log citations — app/out/indicators/index.html, app/out/method/index.html, app/out/map/index.html (\"after six logged searches (see search_log, phase 3, this gap)\"), and docs/findings.md (\"See `search_log` and `research-log/searches/phase-3.json`\")",
+      "verdict": "unreachable-citation",
+      "evidence": "`select count(*) from search_log` = 0. The site tells a reader to consult a table that is empty. The searches themselves are real and the count is honest — research-log/searches/phase-3.json holds 29 searches with cache keys and result URLs, and exactly 6 sit against each of the two null gaps (1c1cb37e-2a00-8027-8eda-e6f4a472c3ad and 1c1cb37e-2a00-80b5-8cf4-c8195273fa45), so the substance of the null claim survives. It is the named location that is wrong.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "Whole site — no repository link on any of the seven pages",
+      "verdict": "unreachable-citation",
+      "evidence": "Grepped every href in app/out: the only external links are gap-map.org, LinkedIn, and six indicator sources. No github.com anywhere, though the repo exists at github.com/dsendor/science-gap-map-analysis. Every internal reference the site makes is therefore dead to its reader: `search_log`, `research-log/searches/phase-3.json`, `methodology/taxonomy.md`, and the `db/...` paths that appear inside the rendered decision rows. Either link the repo or stop naming files.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "app/out/chains/index.html — every quantitative claim on the page",
+      "verdict": "unreachable-citation",
+      "evidence": "The chains page has zero external citation URLs; grepping its hrefs yields only gap-map.org and LinkedIn. Unlinked on it: the eight JWST step durations summing to the 32-year headline, the Rubin thirteen/twenty-two-year figures, the ELT 1,083 million euro / 90% funding condition, submissions +42%, NeurIPS 23% committee disagreement, 55% of 139 editors, roughly five invitations per accepted review, and the two-phrase ESO Distributed Peer Review quotation that the cross-field intersection rests on. This is the page carrying the argument and a reader cannot check a single number on it.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "app/src/app/page.jsx:171 — \"Submissions rose 42% over five years in the one corpus where a journal has published full figures\"",
+      "verdict": "untraceable-claim",
+      "evidence": "Traces to a DB row — critical_path_links(path-publishing-cost, seq 1).evidence = \"An Organization Science editorial with five-year full-submission-corpus access reports submissions up 42%.\" — so it is not written from memory. But the row names no author, year, DOI or URL, and neither does the site. \"An Organization Science editorial\" is not a citation a reader can resolve, and the sentence is doing real work in the home page's central argument about where the AI saving went.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/local-agent-plan.md Phase 6 acceptance — \"Cross-tab views: tier x field, tier x AI type, AI type x maturity\"",
+      "verdict": "missing-work",
+      "evidence": "Two of the three render on the method page. `summary.maturity_by_ai_type` is computed and present in app/public/data.json but no page imports it — grepping app/src for `maturity_by_ai_type` returns nothing. Both components that could show it are dead code: `StackedMaturity` is exported from Charts.jsx and never imported, and MaturityGradient.jsx is unreferenced anywhere in app/src or app/out. Note that MaturityGradient.jsx is the withdrawn-gradient chart still sitting in the tree, sorting rows by working-now share descending; it does not ship, but it is a live import away from shipping.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/local-agent-plan.md Phase 6 acceptance — \"The two critical paths rendered as Mermaid diagrams with their link tables\"",
+      "verdict": "missing-work",
+      "evidence": "`grep -c mermaid app/out/chains/index.html` = 0. app/src/components/mermaid.js exists, carries the diagram sources, and is imported by nothing. The bespoke Chain component that replaced it is arguably the better artifact — it puts durations on the diagram and marks binding links with border, wash, label and bold row rather than colour alone — so the substitution looks deliberate. The criterion is still unmet on its face and the orphaned module should either be wired up or deleted rather than left to imply the diagrams exist.",
+      "severity": "note"
+    },
+    {
+      "target": "research-log/reviews/ — empty before this report",
+      "verdict": "missing-work",
+      "evidence": "The directory contained no files. Phase 3, 4 and 5 acceptance in docs/local-agent-plan.md each require a reviewer report and \"no unresolved blocking\": \"Reviewer Mode A run, research-log/reviews/phase-3.json written\", \"Reviewer Mode B run, format test at near-chance recall\", \"Reviewer Mode C run\". None exists. Concretely unverified as a result: no second searcher has attempted the two nulls the artifact leans on hardest; no one has tried to defeat the novelty of the four new_gaps rows (two of which record funding_check as \"not clear\" themselves); research-log/format-test.json and format-test-key.json were generated but nobody answered the test, so Phase 4's near-chance-recall criterion has no evidence behind it at all; and the JWST per-step durations have not been re-derived independently.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "app/src/app/attributes/page.jsx:118 — \"Gaps where AI is the object rather than the instrument now carry a separate frame flag instead of a type.\"",
+      "verdict": "untraceable-claim",
+      "evidence": "True of the database and invisible in the artifact. `gap_frame` has 4 rows, but the key is absent from every gap object in app/public/data.json (gap keys are id, slug, name, description, field, outcome, outcome_rationale, outcome_confidence, tier, tier_rationale, tier_confidence, is_new, ai_types, primary_ai_type, primary_maturity, primary_rationale, primary_confidence, indicators, capabilities) and `frame` appears nowhere in app/src outside this one sentence. A reader is told a mechanism exists and cannot find an instance of it — including on the gap cards for the gaps that carry it.",
+      "severity": "should-fix"
+    },
+    {
+      "target": "docs/findings.md — \"## The clearest contrasting pair\", columns \"Most tractable end\" / \"Least tractable end\"",
+      "verdict": "ranking-detected",
+      "evidence": "Explicit most/least framing over two named gaps of Convergent's, which is the shape the brief forbids even though the axis is measurability rather than priority. Mitigating: it is an internal document, it does not appear on the site, and the surrounding paragraph says plainly that \"a catalogue treats these as two rows of equal standing, which for a catalogue is correct.\" Worth a rename rather than a rewrite.",
+      "severity": "note"
+    },
+    {
+      "target": "app/src/app/method/page.jsx — \"Kind of work in the way\" BarChart via byCount() descending; app/src/lib/constants.js TIER_COLOR",
+      "verdict": "ranking-detected",
+      "evidence": "Logged because the brief says flag every instance, not because either looks wrong. The AI-type bar chart sorts by descending count; Charts.jsx pre-empts this in a header comment (\"AI types in descending count, which is a count, not a ranking\") and the bars are one hue with direct labels, so nothing reads as good-to-bad. TIER_COLOR is a four-step light-to-dark single-hue ramp over an ordered variable, which is the right encoding, though light-to-dark over Directly measurable to Counterfactual required will read as good-to-bad to some viewers. No gap list anywhere is sorted.",
+      "severity": "note"
+    },
+    {
+      "target": "app/src/components/MapBrowser.jsx — gap ordering",
+      "verdict": "claim-confirmed",
+      "evidence": "The strongest anti-ranking result on the site. `rows` is a filter over the source array with no sort call anywhere in the component; filters are field, tier, kind, maturity and free text, all defaulting to unset; and the list header renders \"Showing 107 of 107. Your export order, not a ranking.\" Verified in the browser at http://localhost:8765/map/. Proposed gaps are appended after the 103 and separately toggleable rather than interleaved.",
+      "severity": "note"
+    },
+    {
+      "target": "guess labels in the rendered artifact",
+      "verdict": "claim-confirmed",
+      "evidence": "Verified visually, not from CSS. Served app/out over http://localhost:8765 and screenshotted app/out/indicators/index.html in the browser at 1280px in both colour schemes. The guess badge renders as amber text on an amber wash with an amber border, sitting immediately beside the neutral grey field pill and the neutral tier tag on the same row, and it is the only coloured element in that group; in dark mode it renders gold against blue-grey pills and is if anything more separated. Computed styles on app/out/map/index.html confirm the mechanism at scale: 70 elements matching .tag.flag at rgb(154,107,18) on rgba(154,107,18,0.1) with a matching border, against 329 plain .tag elements at rgb(99,99,90) on transparent. GapCard.jsx:13 sets the flag if any of outcome, primary-type or tier confidence is guess.",
+      "severity": "note"
+    },
+    {
+      "target": "GapCard.jsx:13 — single guess badge over three dimensions",
+      "verdict": "note",
+      "evidence": "`const flagged = [gap.outcome_confidence, gap.primary_confidence, gap.tier_confidence].includes('guess')` collapses three independent confidence values into one badge, so a card flagged guess does not say which label is the guess. The opened detail panel does resolve it — Why rows render as \"Outcome (confident)\" and \"{tier} ({tier_confidence})\" — so the information is present one click in. Given that the three rates differ sharply (102/1, 46/57, 79/24) the collapsed badge is lossy at a glance, in the conservative direction.",
+      "severity": "note"
+    },
+    {
+      "target": "app/src/app/method/page.jsx — the four required limitations",
+      "verdict": "claim-confirmed",
+      "evidence": "All four present and none softened. Outcomes not an entity: \"Outcomes are a text field on a gap. There are more outcomes than gaps ... Modelling them properly is a schema change.\" Indicators a sample: \"The indicators are a sample of eight ... Nothing about them supports a claim about the other 95\", repeated on the indicators and attributes pages. Labels are AI judgments with a published disagreement rate: \"Every label is an AI judgment, not expert consensus, and no human has reviewed any of them\", with the full stratified table and every individual disagreement rendered. Capability edges untyped: \"Capability edges are untyped upstream, so the chains reconstruct link semantics by hand.\" The page also volunteers two the brief did not ask for — the tier confidence flag being near-synonymous with proxy-only, and the type/maturity axis fusing two questions. The maturity bullet is the one exception and is filed separately above.",
+      "severity": "note"
+    },
+    {
+      "target": "docs/cover-note.md — the 3ie figures",
+      "verdict": "claim-confirmed",
+      "evidence": "Cut, not softened, and the reason is recorded rather than elided: the roughly 42 evidence gap maps, the 21,800 impact evaluations and 1,700 systematic reviews, and the absolute-gap versus synthesis-gap distinction are all absent from the email body, with a note explaining that 3ie's own blog posts disagree about the portal totals by a factor of three and that neither their gap maps page nor the Snilstveit working paper uses those two terms. The surviving substance is a short quoted definition, flagged as the defensible version. No other unverified external claim appears in the email body.",
+      "severity": "note"
+    },
+    {
+      "target": "docs/cover-note.md — the structural observations about the v1.0 export",
+      "verdict": "claim-confirmed",
+      "evidence": "Re-derived from the hash-pinned snapshot rather than the DB where possible. All 369 records in data/baseline/2026-07-29/capabilities.json carry a `gaps` key and all 369 are empty; exactly 2 have a missing or blank description; gm_gap_capabilities holds 389 rows, all gap-side; 6 gm_resources have no gm_capability_resources row. The Tohuvavohu entry point checks too: resource 1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee is \"Aaron Tohuvavohu\", tagged Individual, cited by capability \"Space Telescope Factory\", which attaches to \"Frontier Telescopes Are Expensive and Take Decades to Build\".",
+      "severity": "note"
+    },
+    {
+      "target": "docs/findings.md — every distribution, cross-tab and audit table; app/public/data.json summary",
+      "verdict": "claim-confirmed",
+      "evidence": "Re-ran each as a SELECT against db/gapmap.sqlite and every cell reproduced. Tier 72/19/11/1. AI type 22/19/16/15/10/9/8/4 summing to 103. Maturity 39/52/12. Both cross-tabs cell for cell. Audit strata 15/15, 9/2, 11/10, 1/1 with 28 of 36 agreeing and weighted disagreement 15.3%. Both disagreement lists match the `audits` rows. Confidence flags 102/1 outcome, 46/57 primary type, 79/24 tier. The v1/v2 working-now table matches relabel.v1 and relabel.v2 to the rounding. app/public/data.json agrees with the DB on every summary figure, so the export is post-relabel and current: the app's data pipeline is not the problem, the hard-coded prose is.",
+      "severity": "note"
+    },
+    {
+      "target": "engine/rebuild.mjs — the \"ai_type (primary) confident 83 guess 20\" line named in the gate brief",
+      "verdict": "claim-confirmed",
+      "evidence": "Checked for 83/20 across docs, app/src, app/public/data.json and app/out and found no occurrence. Every rendered confidence figure is 46/57 or is derived from data.json's `confidence.primary_ai_type`, which holds 46/57. The stale figure did not reach the artifact.",
+      "severity": "note"
+    },
+    {
+      "target": "gap_indicators — 2 of 6 numbered rows are source_checked = 'unchecked'",
+      "verdict": "claim-confirmed",
+      "evidence": "The 45 nm contacted gate pitch (semiwiki conference reporting) and the 32-year JWST concept-to-launch figure. The site discloses this accurately and in the right places: \"Four verify against Crossref or arXiv; two are reachable but not scholarly-verified, and are recorded that way rather than counted as passes\", with per-row wording on each card. Logged only because the 32-year figure is the single largest quantitative claim in the artifact — it is the telescope chain's total, the home page's framing, and the indicators page's lead row — and it is one of the two that did not verify. Gate A, not Gate D, is where that gets settled, and Gate A has not run.",
+      "severity": "note"
+    }
+  ],
+  "missing": [
+    "Gates A, B and C never ran. research-log/reviews/ was empty before this file. Phase 3, 4 and 5 acceptance each require a reviewer report and no unresolved blocking findings; none of the three has one.",
+    "No second searcher has attempted either null indicator. Both nulls are load-bearing in the artifact and in the cover note's implicit pitch, and a false null would be a false claim rather than a missing number.",
+    "The house-format test was generated (research-log/format-test.json plus its key) and never answered. Phase 4's near-chance-recall criterion has no evidence behind it, and the proposed page states the format claim to the reader as settled.",
+    "The four new_gaps rows have had no adversarial novelty check. Two record funding_check as \"not clear\" themselves; the other two have never been attacked.",
+    "The eight JWST per-step durations have not been re-derived from the milestone record by anyone but their author. They carry the telescope chain's only quantitative claim and its 32-year total.",
+    "The AI type x maturity cross-tab required by Phase 6 acceptance is computed into data.json and rendered nowhere.",
+    "Mermaid diagrams required by Phase 6 acceptance are not in the built output; app/src/components/mermaid.js is orphaned.",
+    "gap_frame (4 rows) is not exported to data.json and not rendered, though the attributes page tells readers the flag exists.",
+    "search_log has 0 rows. The Phase 3 searches live only in research-log/searches/phase-3.json, which no reader of the site can reach.",
+    "Outcomes and measurability tiers still have no full second pass; they were frozen at Phase 1-2 values through the relabel. Known and out of scope here, but it means two of the four attributes rest on one labeler.",
+    "No human has reviewed any label. The artifact says so plainly, which is the right handling, but it remains the largest unverified thing in the project."
+  ],
+  "summary": "The database is clean and the pipeline is honest: every table in findings.md and every figure in app/public/data.json reproduces exactly from the current DB, the stale 83/20 never reached the artifact, nothing anywhere is sorted in a way that reads as a ranking, and the guess badge is genuinely distinct on the rendered page in both colour schemes. What outran the data is the hard-coded prose: four sentences that the relabel could not reach still assert the withdrawn working-now gradient, and the two worst are the cover note's headline result (\"not one gap ... All 17\", against a DB that says 1 of 8) and the attributes page's robotics row, which contradicts the count sitting next to it. Fix those four, reconcile the 80-minutes-versus-181 and five-hours-versus-6.7 contradictions, unbreak the NaN table in findings.md, and either link the repository or stop citing files and an empty search_log that no reader can reach — then run Gates A, B and C, because none of them has ever run and the two null indicators and four proposed gaps are still standing on their author's word alone."
+}
