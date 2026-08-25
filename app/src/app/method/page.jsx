@@ -1,6 +1,7 @@
 import data from '../../../public/data.json';
 import Nav from '../../components/Nav';
 import { BarChart, CrossTab } from '../../components/Charts';
+import RelabelCompare from '../../components/RelabelCompare';
 import { TIER_ORDER, TIER_COLOR } from '../../lib/constants';
 
 const byCount = (o) => Object.entries(o).sort((a, b) => b[1] - a[1]);
@@ -54,12 +55,63 @@ export default function MethodPage() {
 
         <section>
           <div className="col">
+            <h2>The result that did not replicate</h2>
+            <p>
+              This was on the front page and is no longer, because it is a fact about this analysis
+              rather than about the map. It is here in full because withdrawing a finding quietly is
+              worse than never publishing it.
+            </p>
+            <p>
+              The first pass produced a clean gradient: the share of gaps each kind of work blocks
+              where the AI for it already works ran from 60% for reading and synthesis down to 0% for
+              physical build. A second pass relabelled all {data.relabel.n} gaps blind, against a
+              revised taxonomy, by labelers who never saw the first set, with predictions registered
+              in a commit beforehand. It did not reproduce that result.
+            </p>
+          </div>
+
+          <figure className="card" style={{ marginTop: 18 }}>
+            <div className="pad">
+              <RelabelCompare relabel={data.relabel} />
+              <figcaption style={{ marginTop: 14 }}>
+                Share of each kind of work whose gaps have an AI capability that works today, in both
+                passes. The two agreed on the kind of work for {data.relabel.type_agreed} of{' '}
+                {data.relabel.n} gaps and on maturity for only {data.relabel.maturity_agreed}.
+              </figcaption>
+            </div>
+          </figure>
+
+          <div className="col">
+            <p style={{ marginTop: 22 }}>
+              The ordering inverts at the top. Coordination and institutional goes from last place to
+              first. Physical build is no longer zero. The gradient is withdrawn.
+            </p>
+            <p>
+              The cause was a definitional hole I left open. Does &ldquo;working now&rdquo; mean the
+              capability exists, or that applying it would move this gap? For technical categories
+              those coincide. For institutional ones they come apart completely: convening a standards
+              body is available this afternoon, and getting universal DNA-synthesis screening adopted
+              is not. I labelled institutional gaps on efficacy and the relabelers read availability.
+            </p>
+            <p>
+              A third pass repaired maturity against the sharper definition &mdash; applying it would
+              move this gap &mdash; which is why coordination and institutional now has nothing in the
+              working-now column. That is a definition being fixed, not a result being found, and it
+              is the reason the argument page makes no claim about a gradient.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div className="col">
             <h2>What I would not rely on</h2>
             <ul>
               <li>
-                <strong>Maturity was never audited.</strong> The blind pass covered the kind of work,
-                the measurability tier, and the outcome. It did not cover maturity, which is the axis
-                the headline gradient is built from.
+                <strong>Maturity is the least reliable label here.</strong> The two independent passes
+                agreed on the kind of work for {data.relabel.type_agreed} of {data.relabel.n} gaps and
+                on maturity for only {data.relabel.maturity_agreed}. A third pass then repaired it
+                against a sharper definition. Treat a single gap&rsquo;s maturity as a judgment, and
+                the distribution as the thing worth reading.
               </li>
               <li>
                 <strong>Every label is an AI judgment</strong>, not expert consensus, and no human has

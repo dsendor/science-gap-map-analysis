@@ -1,11 +1,26 @@
 import data from '../../public/data.json';
 import Nav from '../components/Nav';
-import RelabelCompare from '../components/RelabelCompare';
+import { StackedMaturity } from '../components/Charts';
 import ChainMini from '../components/ChainMini';
 
 export default function Page() {
   const { summary: s, gaps, critical_paths: paths } = data;
   const publishing = paths.find((p) => p.id === 'path-publishing-cost');
+  const telescope = paths.find((p) => p.id === 'path-telescope-elapsed-time');
+
+  // Every figure on this page is derived here from data.json, so a number cannot drift
+  // out of step with the database by being retyped into prose.
+  const llm = s.ai_type['LLM reasoning and synthesis'];
+  const coord = s.ai_type['Coordination and institutional'];
+  const workingNow = s.maturity['Working now'];
+  const typeRows = Object.entries(s.maturity_by_ai_type).sort(
+    (a, b) =>
+      Object.values(b[1]).reduce((x, y) => x + y, 0) -
+      Object.values(a[1]).reduce((x, y) => x + y, 0)
+  );
+  const tYears = telescope.links.reduce((a, l) => a + (l.duration_years ?? 0), 0);
+  const tActs = telescope.links.filter((l) => l.ai_acts);
+  const tActsYears = tActs.reduce((a, l) => a + (l.duration_years ?? 0), 0);
 
   return (
     <>
@@ -17,9 +32,9 @@ export default function Page() {
             <p className="lead">
               You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I added four
               attributes to every one of them to see what kind of work is actually in the way, then
-              decomposed two gaps into their steps to test whether a one-line label can be trusted.
-              The labels held. What the traces added was where the AI speedup is going, and why some
-              of it is not being collected.
+              decomposed two gaps into their steps to check whether a one-line label can be trusted.
+              It can. What the labels show is that only {llm} of the {s.n_gaps} gaps are primarily
+              waiting on the kind of work AI is best at today.
             </p>
             <p>
               What I would like is your feedback on whether these are the right attributes, and a
@@ -39,18 +54,112 @@ export default function Page() {
 
         <section>
           <div className="col">
-            <h2>The hypothesis</h2>
+            <h2>What the map says once every gap is labelled</h2>
             <p>
-              AI is very good at one slice of scientific work: reading, predicting, and searching a
-              design space. As that slice gets cheap, whatever is left over starts to set the pace.
-              Software went through this. Writing code got cheap and code review turned into the
-              thing everybody complains about.
+              Reading and synthesis &mdash; the thing usually meant by AI for science &mdash; is the
+              primary kind of work in the way for {llm} of your {s.n_gaps} gaps. The other{' '}
+              {s.n_gaps - llm} are waiting on prediction, sensing, design search, coordination,
+              experiment automation, physical build and real-time control.
             </p>
             <p>
-              Science looks similar with a harder remainder, because much of what is left is
-              fabrication, funding, approval, and agreement. If that is right it changes what is
-              worth building.
+              {workingNow} of {s.n_gaps} gaps sit at a kind of work whose AI analogue works today.
+              For the other {s.n_gaps - workingNow}, the capability that would move the gap is two to
+              five years out, or speculative.
             </p>
+          </div>
+
+          <figure className="card" style={{ marginTop: 18 }}>
+            <div className="pad">
+              <StackedMaturity rows={typeRows} />
+              <figcaption style={{ marginTop: 14 }}>
+                Every gap&rsquo;s primary kind of work, and how mature the AI for it is. Bar length
+                is a count of gaps, not an order of importance &mdash; nothing here ranks your map.
+              </figcaption>
+            </div>
+          </figure>
+
+          <div className="col">
+            <div className="pull">
+              <p>
+                <strong>
+                  Coordination and institutional work is the primary blocker for {coord} of your
+                  gaps, and not one of them has an AI capability that works today.
+                </strong>{' '}
+                It is the only one of the eight kinds of work with nothing at all in the working-now
+                column.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                That is the shape worth arguing with: this map is not mostly waiting on the thing AI
+                is currently best at.{' '}
+                <a href="./map/">Every gap, with its labels</a> &middot;{' '}
+                <a href="./method/">How the labels were made, and how far to trust them</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="col">
+            <h2>What a one-line label compresses</h2>
+            <p>
+              An attribute is one line. A critical path breaks the gap into the steps that have to
+              happen and puts a duration or a cost on each of them. Two gaps are traced that way.
+            </p>
+            <p>
+              On <em>{telescope.gap_name}</em>, traced through JWST&rsquo;s published milestones, AI
+              acts on {tActs.length} of the {telescope.links.length} steps. Those {tActs.length} are{' '}
+              {tActsYears} of the {tYears} years. Close every one of them completely and a frontier
+              telescope still takes {tYears - tActsYears}. That figure is an upper bound and the
+              corrections run downward, but not to zero: more than a decade of it is elapsed time no
+              current AI capability reaches. <a href="./chains/">The full chain</a>
+            </p>
+            <p>
+              Take <em>Doing and publishing research is expensive and subject to structural
+              roadblocks</em>, tracing the publishing half. The cost of doing the research is the
+              other half, and it is most of what the rest of your map is about. My label for this gap
+              says the work in the way is coordination and institutional.
+              Seven steps later the trace agrees, and says where: the cost sits in finding reviewers,
+              agreeing what a review means, and getting institutions to count the work. A one-line
+              label predicted where a seven-step decomposition would land, which is the result I would
+              want before adopting the attribute.
+            </p>
+            <p>
+              The surprise is what happened to the saving. Drafting was one of the most expensive
+              steps here, measured in researcher weeks per paper, and AI has taken a large share of
+              that cost out. Publishing did not get cheaper. Submissions rose 42% after ChatGPT&rsquo;s
+              release against the prior two-year window, in the one corpus where a journal has
+              published full figures, and the labor the saving displaced landed downstream on
+              volunteer editors at desk screening. Where AI reaches a step that carries cost, it
+              reaches the tractable half: it can match a reviewer to a paper, and it cannot make that
+              reviewer say yes.
+            </p>
+          </div>
+
+          <div className="card" style={{ marginTop: 18 }}>
+            <div className="pad">
+              <ChainMini path={publishing} />
+              <figcaption style={{ marginTop: 14 }}>
+                Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI
+                acts on the first four steps, but on steps 3 and 4 it reaches only the tractable
+                half: matching a reviewer to a paper, not persuading them to say yes.
+              </figcaption>
+            </div>
+          </div>
+
+          <div className="col">
+            <div className="pull">
+              <p>
+                The speedup is real and currently uncollectable. Relieving a step upstream of where
+                the cost concentrates moves the cost along; it does not remove it.
+              </p>
+              <p style={{ marginBottom: 0 }}>
+                That is what makes the remaining steps worth more than they used to be. Clearing
+                reviewer recruitment now returns the recruitment saving <em>and</em> lets the drafting
+                speedup finally show up. The more of a process AI accelerates, the more of that gain
+                is waiting behind whatever it did not touch.{' '}
+                <a href="./chains/">Both chains, with the evidence →</a>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -80,127 +189,19 @@ export default function Page() {
               </li>
               <li>
                 <strong>A progress indicator</strong>, for eight gaps. The number you would watch to
-                know whether the gap is closing. Six have one, two do not.{' '}
+                know whether the gap is closing. {s.n_indicators - s.n_indicator_nulls} have one,
+                and for {s.n_indicator_nulls} a second searcher looked independently and also found
+                nothing.{' '}
                 <a href="./indicators/">All eight</a> · <a href="./attributes/">What it is for</a>
               </li>
               <li>
                 <strong>Two worked critical paths</strong> and{' '}
-                <strong>four proposed gaps</strong>. <a href="./chains/">Chains</a> ·{' '}
+                <strong>{s.n_new_gaps} proposed gaps</strong>, the two that survived an adversarial
+                check that tried to find the funded programme already building them.{' '}
+                <a href="./chains/">Chains</a> ·{' '}
                 <a href="./proposed/">Proposed gaps</a>
               </li>
             </ul>
-          </div>
-        </section>
-
-        <section>
-          <div className="col">
-            <h2>What I found, and what did not survive</h2>
-            <p>
-              The first pass produced a clean result: the share of gaps each kind of work blocks where
-              the AI for it already works ran from 60% for reading and synthesis down to 0% for
-              physical build. It was the most striking thing this analysis produced.
-            </p>
-            <p>
-              A second pass relabelled all {s.n_gaps} gaps blind, against a revised taxonomy, by
-              labelers who never saw the first set, with predictions registered in a commit
-              beforehand. It did not reproduce that result.
-            </p>
-          </div>
-
-          <figure className="card" style={{ marginTop: 18 }}>
-            <div className="pad">
-              <RelabelCompare relabel={data.relabel} />
-              <figcaption>
-                Share of each kind of work whose gaps have an AI capability that works today, in both
-                passes. The two agreed on the kind of work for {data.relabel.type_agreed} of{' '}
-                {data.relabel.n} gaps and on maturity for only {data.relabel.maturity_agreed}.
-              </figcaption>
-            </div>
-          </figure>
-
-          <div className="col">
-            <p style={{ marginTop: 22 }}>
-              The ordering inverts at the top. Coordination and institutional goes from last place to
-              first. Physical build is no longer zero. So the gradient is withdrawn.
-            </p>
-            <p>
-              The cause is a definitional hole I left open. Does &ldquo;working now&rdquo; mean the
-              capability exists, or that applying it would move this gap? For technical categories
-              those coincide. For institutional ones they come apart completely: convening a standards
-              body is available this afternoon, and getting universal DNA-synthesis screening adopted
-              is not. I labelled institutional gaps on efficacy and the relabelers read availability.
-              Both are defensible, and a reader of the published number could not tell which they were
-              getting.
-            </p>
-            <div className="pull">
-              <p>
-                <strong>What survived is weaker and better supported.</strong> Reading and synthesis
-                is the primary blocker for 10 of {s.n_gaps} gaps, identical in both passes, at 60%
-                working-now in both. Coordination is primary for 15 of {s.n_gaps} in both passes. The
-                two passes disagree sharply about how mature institutional capability is, and not at
-                all about how often it is the constraint.
-              </p>
-              <p style={{ marginBottom: 0 }}>
-                So: the cognitive layer is a small, stable slice of this map, and the rest spreads
-                across sensing, prediction, design, build and institutions. The sharper claim is not
-                supported at this measurement reliability.{' '}
-                <a href="./method/">The full scoring</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="col">
-            <h3 style={{ marginTop: 34 }}>Then the chains show what a one-line label compresses</h3>
-            <p>
-              An attribute is one line. A critical path breaks the gap into the steps that have to
-              happen and puts a duration or a cost on each of them.
-            </p>
-            <p>
-              Take <em>Doing and publishing research is expensive and subject to structural
-              roadblocks</em>, tracing the publishing half. The cost of doing the research is the
-              other half, and it is most of what the rest of your map is about. My label for this gap
-              says the work in the way is coordination and institutional.
-              Seven steps later the trace agrees, and says where: the cost sits in finding reviewers,
-              agreeing what a review means, and getting institutions to count the work. A one-line
-              label predicted where a seven-step decomposition would land, which is the result I would
-              want before adopting the attribute.
-            </p>
-            <p>
-              The surprise is what happened to the saving. Drafting was one of the most expensive
-              steps here, measured in researcher weeks per paper, and AI has taken a large share of
-              that cost out. Publishing did not get cheaper. Submissions rose 42% over five years in
-              the one corpus where a journal has published full figures, and the labor moved
-              downstream to reviewer recruitment, which is where the cost now concentrates. Where AI
-              reaches a step that carries cost, it reaches the tractable half: it can match a reviewer
-              to a paper, and it cannot make that reviewer say yes.
-            </p>
-          </div>
-
-          <div className="card" style={{ marginTop: 18 }}>
-            <div className="pad">
-              <ChainMini path={publishing} />
-              <figcaption style={{ marginTop: 14 }}>
-                Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI
-                acts on the first four steps, but on steps 3 and 4 it reaches only the tractable
-                half: matching a reviewer to a paper, not persuading them to say yes.
-              </figcaption>
-            </div>
-          </div>
-
-          <div className="col">
-            <div className="pull">
-              <p>
-                The speedup is real and currently uncollectable. Relieving a step upstream of where
-                the cost concentrates moves the cost along; it does not remove it.
-              </p>
-              <p style={{ marginBottom: 0 }}>
-                That is what makes the remaining steps worth more than they used to be. Clearing
-                reviewer recruitment now returns the recruitment saving <em>and</em> lets the drafting
-                speedup finally show up. The more of a process AI accelerates, the more of that gain
-                is waiting behind whatever it did not touch.{' '}
-                <a href="./chains/">Both chains, with the evidence →</a>
-              </p>
-            </div>
           </div>
         </section>
 
@@ -239,11 +240,13 @@ export default function Page() {
               feedback is the one I want most.
             </p>
             <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
-              This is not comprehensive and some of it is wrong. All {s.n_gaps} gaps were labelled in
-              about 80 minutes of agent time across six phases, and no human has reviewed any of it.
-              A second pass relabelled a stratified sample blind and disagreed on 15% of tiers once
-              weighted to the population. That figure, the limitations, and the calls that could have
-              gone the other way are on the <a href="./method/">method page</a>.
+              This is not comprehensive and some of it is wrong. Every label is an AI judgment, a
+              second pass relabelled all {s.n_gaps} gaps blind and disagreed often enough to be worth
+              publishing, and four independent reviews then went looking for errors in the numbers,
+              the proposed gaps and the chains &mdash; and found them. The disagreement rates, the
+              corrections, and the calls that could have gone the other way are on the{' '}
+              <a href="./method/">method page</a>. What this still does not do is on{' '}
+              <a href="./missing/">what&rsquo;s missing</a>.
             </p>
           </div>
         </section>

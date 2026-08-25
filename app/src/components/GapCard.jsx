@@ -6,6 +6,18 @@ import { fieldColor } from '../lib/fields';
 // Their card, with their problem statement kept intact and the added outcome beside
 // it. The "N Capabilities" disclosure copies the control on gap-map.org so the card
 // behaves the way a reader of their site expects.
+// Each tag used to sit in an unlabelled row, so a reader met "Coordination and
+// institutional / Working now / Proxy only / guess" with no way to tell which
+// question each one answered. The caption is the answer to "what is this?".
+function Attr({ cap, cls, title, children }) {
+  return (
+    <span className="attr" title={title}>
+      <span className="attr__cap">{cap}</span>
+      <span className={cls ? `tag ${cls}` : 'tag'}>{children}</span>
+    </span>
+  );
+}
+
 export default function GapCard({ gap }) {
   const [open, setOpen] = useState(false);
   const caps = gap.capabilities ?? [];
@@ -46,14 +58,24 @@ export default function GapCard({ gap }) {
       </div>
 
       <div className="gcard__attrs">
-        <span className="tag">{gap.primary_ai_type}</span>
-        <span className="tag">{gap.primary_maturity}</span>
-        <span className="tag">{gap.tier}</span>
-        {flagged && <span className="tag flag">guess</span>}
+        <Attr cap="Primary blocker" title="The kind of work standing between here and the gap closing. Not a claim that AI does this.">
+          {gap.primary_ai_type}
+        </Attr>
+        <Attr cap="AI acceleration" title="Whether an AI capability that would move this kind of work exists today, is two to five years out, or is speculative.">
+          {gap.primary_maturity}
+        </Attr>
+        <Attr cap="Measurability" title="Whether progress on this gap has an agreed observable.">
+          {gap.tier}
+        </Attr>
+        {flagged && (
+          <Attr cap="Confidence" cls="flag" title="At least one label on this gap is a judgment call rather than a confident read.">
+            guess
+          </Attr>
+        )}
         {ind && (
-          <span className="tag on">
-            {ind.is_null_result ? 'no indicator found' : `${ind.current_value} ${ind.unit ?? ''}`}
-          </span>
+          <Attr cap="Indicator" cls="on" title="The number to watch to know whether this gap is closing.">
+            {ind.is_null_result ? 'none found' : `${ind.current_value} ${ind.unit ?? ''}`}
+          </Attr>
         )}
       </div>
 
