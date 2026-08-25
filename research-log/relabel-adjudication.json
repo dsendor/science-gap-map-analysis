@@ -1,26 +1,26 @@
 {
-  "_comment": "Adjudication rule, applied mechanically. Agreement -> keep, confidence confident. Disagreement -> take v2 and mark guess. v2 wins because it alone had all eight categories. The disagreement is NOT resolved by argument: I authored v1 and am not a neutral adjudicator, so picking winners case by case would reintroduce exactly the bias the blind pass was built to remove. A guess flag is the honest record of two independent labelers failing to converge.",
+  "_comment": "Adjudication for the v1/v2 relabel. TYPE is adjudicated mechanically: on disagreement take v2, because v2 alone had all eight categories and the author of v1 is not a neutral adjudicator. MATURITY was adjudicated the same way and that was a mistake — a rule that cannot be wrong removes author bias and every check on validity together, and it adopted the availability reading of \"Working now\" 25 times in one direction, producing labels like \"AI Could Be Misused / Coordination and institutional / Working now\". The maturity field on 17 entries below has been re-adjudicated on the merits against the pinned per-gap definition in methodology/taxonomy.md; those entries carry their own reasoning in the note. See research-log/maturity-repair/report.md.",
   "adjudications": [
     {
       "gap_id": "1c1cb37e-2a00-804f-bf69-f232177933ce",
       "type": "ML surrogates and prediction",
-      "maturity": "2-5 years",
+      "maturity": "Speculative",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Speculative vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 Speculative / v2 2-5 years; mechanical rule had given 2-5 years). The gap asks for a formal framework precise enough to be useful, not for a faster calculation. Surrogates need a target function to approximate and this gap is the absence of one; there is no clear path from an emulator to a definition of life. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8084-a877-c83d9b9c3ece",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Screening technology exists and works — SecureDNA, IBBIS, the IGSC protocol. The gap is universal adoption, which the description itself names, and no synthesis provider outside the voluntary consortium screens today. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8069-8477-e0e62e56db05",
       "type": "Autonomous experimentation",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (type: Physical build and manipulation vs Autonomous experimentation; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Automation is not the binding constraint. Automated flow peptide synthesis already works; for glycans, polyketides and non-natural backbones there is no general programmable coupling chemistry for a self-driving lab to run. The loop is mature and has nothing to iterate on. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80ff-986f-d66a6d646d7d",
@@ -39,9 +39,9 @@
     {
       "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Speculative vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "Speculative",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 Speculative / v2 Working now; mechanical rule had given Working now). Redesigning how research is funded and organised has no demonstrated mechanism at all, AI-mediated or otherwise. This is the map's counterfactual-required gap: nothing applied today moves it, and no clear path runs from what exists to moving it. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-809a-a069-c93e72813eb6",
@@ -74,16 +74,16 @@
     {
       "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
       "type": "LLM reasoning and synthesis",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (type: Coordination and institutional vs LLM reasoning and synthesis; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). LLM-mediated deliberation works in pilots — vTaiwan, the Habermas Machine — but the gap names the platforms that actually carry civic decisions, and no national system has adopted any of it. Distinct from clinical trials, where the institutional innovation did reach scale. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
+      "maturity": "Speculative",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Speculative vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 Speculative / v2 Working now; mechanical rule had given Working now). Convening a terraforming workshop is available today and does not move this gap. What the gap names as unaddressed — transport, energy supply and civil engineering at planetary scale — has no clear path from anything that exists. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-805f-8b53-dd343406ab07",
@@ -102,9 +102,9 @@
     {
       "gap_id": "1c1cb37e-2a00-8044-9b62-ef8af2ed2fa6",
       "type": "Sensing and signal processing",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). The depth gains of the last decade came from three-photon excitation and adaptive optics hardware, not from algorithms. Learned descattering and computational wavefront correction are real but research-stage, and the ballistic-photon limit is physics. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1b4cb37e-2a00-8060-a0b6-cc4e1c0e782b",
@@ -123,9 +123,9 @@
     {
       "gap_id": "1c1cb37e-2a00-80ed-8131-ede48bd0d654",
       "type": "Design and optimization search",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Learned floorplanning and architecture search are deployed and deliver percent-scale efficiency gains. The gap sets its target against biological brains, which is orders of magnitude, and no design-search application applied today approaches that. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
@@ -144,16 +144,16 @@
     {
       "gap_id": "1c1cb37e-2a00-8007-8f03-ea967970cb8f",
       "type": "ML surrogates and prediction",
-      "maturity": "2-5 years",
+      "maturity": "Working now",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 Working now / v2 2-5 years; mechanical rule had given 2-5 years). Learned surrogates for CFD and structural analysis ship in commercial engineering tools and cut design-iteration time on exactly the coupled-multiphysics problems the gap names. Flagged guess because they do not yet stand in for high-fidelity solvers where certification is required. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Launching a cheap open platform is available this afternoon; shifting the prestige and incentive economy that keeps publishing expensive is not. Open access has moved real ground over a decade, so the path exists, but nothing applied today closes it. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1f0cb37e-2a00-803f-80fe-cb4166e4f94b",
@@ -172,23 +172,23 @@
     {
       "gap_id": "1c1cb37e-2a00-80fd-87e6-c92b83132c48",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). The mechanism is proven — UK Biobank and All of Us are coordination capability applied and running. What the gap asks for is diverse and globally representative cohorts, and standing those up in low- and middle-income settings is not possible at that scale today. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80e6-a011-db27cb962cd8",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Algorithmic targeting has worked where a government adopted it — Togo's Novissi transfers are a real instance. The blocker the gap names is that adoption, which depends on state capacity and political will, not on the technique. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-803c-a293-e7aa6da74419",
       "type": "Design and optimization search",
-      "maturity": "2-5 years",
+      "maturity": "Working now",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 Working now / v2 2-5 years; mechanical rule had given 2-5 years). RFdiffusion and ProteinMPNN are design search, and they produce folds with no natural template today; designed switches and hinges have escaped the static case too. Flagged guess because designed dynamics is far behind designed structure and the gap names both. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
@@ -200,9 +200,9 @@
     {
       "gap_id": "1c1cb37e-2a00-8072-a36f-f7ea8adace81",
       "type": "LLM reasoning and synthesis",
-      "maturity": "Speculative",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Speculative). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23. Speculative means no clear path, and the narrowness is receding quickly enough that the claim will not survive contact with a reader. Recorded as contested: David notes many informed people would say otherwise, and the honest label may be a 5-10 year bucket this taxonomy does not have. See research-log/maturity-repair/notes.md."
     },
     {
       "gap_id": "1fccb37e-2a00-8071-859f-f25fac2df35c",
@@ -221,9 +221,9 @@
     {
       "gap_id": "1c1cb37e-2a00-8039-a26b-ea2d3b4f9bd6",
       "type": "Autonomous experimentation",
-      "maturity": "2-5 years",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: Working now vs 2-5 years). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "Working now",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 Working now / v2 2-5 years; mechanical rule had given 2-5 years). Biofoundries and cloud labs — Ginkgo, the DOE Agile BioFoundry, Emerald — run design-build-test-learn cycles on strains today, and the throughput gain over manual work is the gap's own stated loss. Same standing as automated chemical synthesis, which both passes called Working now. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8066-824e-d4ec0d434c3d",
@@ -284,9 +284,9 @@
     {
       "gap_id": "1c1cb37e-2a00-800c-aafb-ec36c16025a8",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). A replication consortium and shared measurement standards could be convened today, but getting the high-pressure community to adopt them — and resolving the underlying physics of metallic hydrogen — is what the gap asks for and neither follows from convening. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
@@ -326,9 +326,9 @@
     {
       "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Evaluation regimes and deployment policy exist as mechanisms and some are running, but none is in force at a scale that constrains misuse. Convening on AI safety is available today; binding, enforced international controls are the gap and are not. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-8044-b547-ddba3202ee63",
@@ -354,9 +354,9 @@
     {
       "gap_id": "1c1cb37e-2a00-80df-ae9c-cc561c437a83",
       "type": "Coordination and institutional",
-      "maturity": "Working now",
-      "confidence": "guess",
-      "note": "Independent passes disagreed (type: Design and optimization search vs Coordination and institutional; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23. Bayesian adaptive designs have existed since 2010 and are in live use, and practitioners running them report they do not speed things up much — so the mechanism being deployed somewhere is not the same as it moving this gap. The residual blocker is institutional, in the same way as scientific publishing and civic deliberation, and gets the same label."
     },
     {
       "gap_id": "1c1cb37e-2a00-80d4-944d-f9dd2104cc6e",
@@ -375,9 +375,9 @@
     {
       "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
       "type": "Real-time control of physical systems",
-      "maturity": "Working now",
+      "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Independent passes disagreed (type: Physical build and manipulation vs Real-time control of physical systems; maturity: 2-5 years vs Working now). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Learned tuning is in operations at existing accelerators and makes them run better, not smaller. The gap is compactness and cost, which means laser-wakefield machines, where closed-loop optimisation is producing research results and no usable instrument. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80fd-a046-f81466f201e7",
@@ -399,6 +399,20 @@
       "maturity": "2-5 years",
       "confidence": "guess",
       "note": "Independent passes disagreed (type: Physical build and manipulation vs ML surrogates and prediction; ). v2 taken because it had the complete eight-category taxonomy available; flagged guess because two independent labelers reading the same text did not converge."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-801b-bd01-c3b284abeb44",
+      "type": "Coordination and institutional",
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23, overriding a label both independent passes agreed on. Web-scale archiving has been technically solved for years and the data is still disappearing, which is the proof that the blocker is institutional rather than technical. Working now would say the problem is scaling a working solution; it is not, it is permission and who funds preservation."
+    },
+    {
+      "gap_id": "1c1cb37e-2a00-80fa-9903-df046affff97",
+      "type": "ML surrogates and prediction",
+      "maturity": "2-5 years",
+      "confidence": "confident",
+      "note": "Maturity decided by David, 2026-08-23, overriding a label both independent passes agreed on. The ML is real and is already covered by the AI for Good gap map; what is missing is the alerting and action layer that turns a forecast into a faster response. Prediction without an action path does not move an emergency-response gap."
     }
   ]
 }

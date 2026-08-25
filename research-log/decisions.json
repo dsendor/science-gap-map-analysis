@@ -22,7 +22,7 @@
       "rationale": "The brief requires the artifact to be auditable rather than confident. A tuned agreement rate would defeat the purpose of running the audit, and a near-zero rate would be evidence the audit was not independent rather than evidence the labels are good.",
       "runner_up": "Adjudicate every disagreement to a single answer and report only the post-adjudication labels.",
       "confidence": "high",
-      "reversal_condition": "Never \u2014 if this is reversed the audit stops measuring anything."
+      "reversal_condition": "Never — if this is reversed the audit stops measuring anything."
     },
     {
       "phase": "phase-2",
@@ -68,7 +68,7 @@
       "phase": "phase-3",
       "decision": "Recorded the quantum gravity gap as an honest null even though a real, published, improving quantity exists (the lower bound on the QG energy scale from photon dispersion: Fermi-LAT E_QG,1 > 7.6 E_Planck, GRB 090510, 2013; extended by LHAASO on GRB 221009A, 2024).",
       "rationale": "The bound constrains linear-in-energy Lorentz violation, which most leading quantum-gravity programmes do not predict, and the community has no target and no shared claim about what any particular value of it would establish. A number that improves without agreement on what its improvement means is not a progress indicator for the gap. This is precisely what the Verification contested tier asserts, so recording it as an indicator would have contradicted our own tier label.",
-      "runner_up": "Record the Fermi/LHAASO bound as the indicator with confidence 'guess'. This would have been the more flattering choice \u2014 a tier-3 gap with a real number is a more interesting headline than a null \u2014 and it is why the decision is logged rather than assumed.",
+      "runner_up": "Record the Fermi/LHAASO bound as the indicator with confidence 'guess'. This would have been the more flattering choice — a tier-3 gap with a real number is a more interesting headline than a null — and it is why the decision is logged rather than assumed.",
       "confidence": "medium",
       "reversal_condition": "A published community statement, roadmap or review that names a target value for E_QG or an equivalent parameter and says what reaching it would settle. Reverse immediately if one exists."
     },
@@ -98,7 +98,7 @@
     },
     {
       "phase": "phase-4",
-      "decision": "Dropped the fifth candidate gap \u2014 queue and turnaround time at shared nanofabrication user facilities \u2014 rather than shipping four with one weak.",
+      "decision": "Dropped the fifth candidate gap — queue and turnaround time at shared nanofabrication user facilities — rather than shipping four with one weak.",
       "rationale": "Five logged searches turned up no published wait-time or turnaround data for NNCI or comparable facilities, so the gap could not be grounded in an observed rate limit. It also had the weakest funding check of the five: NSF's National Nanotechnology Coordinated Infrastructure exists precisely to provide open access across 16 sites, so proposing access latency as an unowned gap would have required arguing against a programme built for it, on no evidence.",
       "runner_up": "Include it with confidence 'guess' and an honest funding check. Rejected: the plan asks for 3-5 gaps, four are well grounded, and an ungrounded fifth costs more credibility than the count gains.",
       "confidence": "high",
@@ -107,7 +107,7 @@
     {
       "phase": "phase-4",
       "decision": "Proposed the coating thermal noise gap even though coatings research is funded, and said so in the funding check rather than around it.",
-      "rationale": "The NSF LSC Center for Coatings Research and Italy's ETIC project both fund this work as a detector subsystem inside one instrument programme. The gap proposed is the cross-instrument materials framing \u2014 the same loss angle bounds optical clocks and cavity-stabilised lasers, and no programme owns it at that level. Writing 'not clear of funding' in the funding_check and stating exactly what is funded is more useful than a claim of novelty a reader could puncture in one search.",
+      "rationale": "The NSF LSC Center for Coatings Research and Italy's ETIC project both fund this work as a detector subsystem inside one instrument programme. The gap proposed is the cross-instrument materials framing — the same loss angle bounds optical clocks and cavity-stabilised lasers, and no programme owns it at that level. Writing 'not clear of funding' in the funding_check and stating exactly what is funded is more useful than a claim of novelty a reader could puncture in one search.",
       "runner_up": "Drop it as already funded. Rejected: it would discard the strongest tier-1 candidate over a framing question, and the framing is the contribution.",
       "confidence": "medium",
       "reversal_condition": "A programme is found that funds low-mechanical-loss optical coatings as a materials target across instrument classes."
@@ -131,7 +131,7 @@
     {
       "phase": "phase-5",
       "decision": "Gave the chain 1 headline two accountings rather than one, and reported the weaker of the two as the honest figure.",
-      "rationale": "The expectation recorded in advance was that closing every cognitive link would change the total duration 'very little'. Counting JWST's seven-year science-case period as compressible cognitive work makes the saving nine and a half of thirty-two years, which is under a third but not 'very little'. Counting it as community consensus formation \u2014 which is what the milestone record shows it was \u2014 makes the saving two and a half years. Both are stated. Tuning the classification to protect the prediction would have been the easy move and would have destroyed the value of recording the prediction in advance.",
+      "rationale": "The expectation recorded in advance was that closing every cognitive link would change the total duration 'very little'. Counting JWST's seven-year science-case period as compressible cognitive work makes the saving nine and a half of thirty-two years, which is under a third but not 'very little'. Counting it as community consensus formation — which is what the milestone record shows it was — makes the saving two and a half years. Both are stated. Tuning the classification to protect the prediction would have been the easy move and would have destroyed the value of recording the prediction in advance.",
       "runner_up": "Report only the realistic accounting. Rejected: the generous one is the number a skeptical reader would compute, and pre-empting it is worth more than winning on it.",
       "confidence": "high",
       "reversal_condition": "Evidence that the 1989-1996 period was analysis-limited rather than consensus-limited."
@@ -139,7 +139,7 @@
     {
       "phase": "phase-5",
       "decision": "Split chain 2's reviewer recruitment link into matching and willingness inside a single link rather than making them two links.",
-      "rationale": "They are sequentially inseparable \u2014 an editor cannot recruit before identifying \u2014 so two links would imply an ordering that does not exist. But the whole finding of the chain lives in the split: matching is a prediction problem AI is applicable to and, on the published evidence, not even best at; willingness is labour supply that no matching system touches. The split is carried in the blocker and rationale fields of one link.",
+      "rationale": "They are sequentially inseparable — an editor cannot recruit before identifying — so two links would imply an ordering that does not exist. But the whole finding of the chain lives in the split: matching is a prediction problem AI is applicable to and, on the published evidence, not even best at; willingness is labour supply that no matching system touches. The split is carried in the blocker and rationale fields of one link.",
       "runner_up": "Two links, 'matching' then 'recruitment'. Rejected as a false serialisation.",
       "confidence": "medium",
       "reversal_condition": "A venue is found where identification and invitation are genuinely separate stages with separate durations."
@@ -148,7 +148,7 @@
       "phase": "phase-5",
       "decision": "Verified Aaron Tohuvavohu against both the export and the live site before relying on the association.",
       "rationale": "The plan flagged it as needing checking. Confirmed twice: resource 1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee, type Individual, is cited by the capability 'Space Telescope Factory', which is attached to the telescope gap; and the name appears in the acknowledgments list on gap-map.org/about.",
-      "runner_up": "Rely on the plan's statement. Rejected \u2014 the plan itself asked for the check.",
+      "runner_up": "Rely on the plan's statement. Rejected — the plan itself asked for the check.",
       "confidence": "high",
       "reversal_condition": "The site's acknowledgments change."
     },
@@ -163,7 +163,7 @@
     {
       "phase": "phase-6",
       "decision": "Rendered the two chains as HTML/SVG in the artifact and shipped the Mermaid source alongside, rather than running a Mermaid renderer in the page.",
-      "rationale": "Each diagram is eight boxes and an arrow. A client-side Mermaid runtime would have been the single largest dependency in the build, for output that is less accessible than the HTML version \u2014 which also carries the binding flag as a word in the link table, so the distinction never rests on colour. The Mermaid source is in docs/critical-paths.md and in a copy block under each chain, so nothing is lost for anyone who wants to paste it elsewhere.",
+      "rationale": "Each diagram is eight boxes and an arrow. A client-side Mermaid runtime would have been the single largest dependency in the build, for output that is less accessible than the HTML version — which also carries the binding flag as a word in the link table, so the distinction never rests on colour. The Mermaid source is in docs/critical-paths.md and in a copy block under each chain, so nothing is lost for anyone who wants to paste it elsewhere.",
       "runner_up": "Add mermaid as a dependency and render client-side. Rejected on build weight and accessibility, not on effort.",
       "confidence": "high",
       "reversal_condition": "A reviewer wants the diagrams to match Convergent's own tooling exactly."
@@ -171,7 +171,7 @@
     {
       "phase": "phase-6",
       "decision": "Wired engine/adjudicate.mjs into engine/rebuild.mjs after finding that a clean rebuild silently dropped every Phase 2 confidence downgrade.",
-      "rationale": "adjudicate.mjs writes confidence flags directly to SQLite and had only ever been run by hand. Because db/gapmap.sqlite is gitignored, a rebuild from files produced 5 tier guesses and 10 AI-type guesses where the published findings say 24 and 20 \u2014 including the blanket downgrade of every 'Proxy only' assignment, which is one of the project's headline results. The artifact was reading those wrong numbers before this was caught. The script is idempotent, so running it inside rebuild is safe.",
+      "rationale": "adjudicate.mjs writes confidence flags directly to SQLite and had only ever been run by hand. Because db/gapmap.sqlite is gitignored, a rebuild from files produced 5 tier guesses and 10 AI-type guesses where the published findings say 24 and 20 — including the blanket downgrade of every 'Proxy only' assignment, which is one of the project's headline results. The artifact was reading those wrong numbers before this was caught. The script is idempotent, so running it inside rebuild is safe.",
       "runner_up": "Bake the downgrades into the label files. Rejected: the labels are what the labeler wrote, and overwriting them would erase the fact that adjudication changed something.",
       "confidence": "high",
       "reversal_condition": "None. This was a defect."
@@ -183,6 +183,46 @@
       "runner_up": "Point at the PubMed record, which returns 203. Rejected: the PubMed abstract does not carry the IQR or the design breakdown the rationale relies on.",
       "confidence": "medium",
       "reversal_condition": "JAMA stops blocking, or an open-access copy with the same figures appears."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Replaced mechanical adjudication with adjudication on the merits for the maturity field only, re-deciding 17 of 54 reviewed gaps in research-log/relabel-adjudication.json. Type is still adjudicated mechanically by taking v2.",
+      "rationale": "The rule \"on disagreement take v2\" was chosen so the author of v1 could not launder his own judgement, and it worked for that. But a rule that cannot be wrong removes the bias and every check on validity together, and v2 read \"Working now\" as availability rather than efficacy, so the rule adopted the wrong reading 25 times in one direction. It produced \"AI Could Be Misused\" as Coordination and institutional / Working now, which no reader would accept. Efficacy is now pinned in methodology/taxonomy.md with the DNA-synthesis-screening example, and each re-adjudicated entry carries its own per-gap reasoning in its note, so the judgement is auditable row by row rather than resting on a rule.",
+      "runner_up": "Keep the mechanical rule and disclaim maturity in the artifact. Rejected: the labels are wrong, not merely uncertain, and a caveat a reader cannot act on is noise. The second runner-up was to re-run a third blind pass under the pinned definition, which is the more rigorous fix and was rejected on cost — it would relabel 103 gaps to correct a defect that provably reaches only 54, and every change here landed on a gap where the two existing passes already disagreed.",
+      "confidence": "high",
+      "reversal_condition": "A third independent pass under the pinned efficacy definition disagrees with this adjudication on more than about a fifth of the 54 reviewed gaps, or David rules the other way on the escalations in research-log/maturity-repair/escalations.md, in which case the affected entries revert individually rather than the method being abandoned."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Made agreement between the two labelling passes an overridable default in engine/apply-relabel.mjs, rather than a branch that always takes v1. An explicit entry in relabel-adjudication.json now wins even where both passes agreed, and the rebuild logs the override count separately.",
+      "rationale": "David ruled on four escalations and two of them — Ephemeral Societal Data and Inadequate Emergency Climate Interventions — were gaps both passes had agreed on, which the code had no way to express. Unoverridable agreement is the same defect as the unoverridable 'on disagreement take v2' rule, one layer down: two independent passes sharing a misreading is exactly how 'AI Could Be Misused' came out as Working now. Agreement is evidence, not proof. Logging the override count on its own line keeps it from happening quietly.",
+      "runner_up": "Edit the v1 maturity in research-log/labels/*.json so those gaps fall into the disagreement branch. Rejected: it would falsify the record of what the first pass actually said, and move the v1-v2 agreement figure from 63/103 to 61/103, a number both docs/relabel-report.md and methodology/taxonomy.md cite.",
+      "confidence": "high",
+      "reversal_condition": "The override count printed by rebuild stops being small. If explicit overrides on agreed gaps become routine rather than exceptional, the problem is in the labelling passes and not the adjudication layer, and the fix belongs upstream."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Did not add a '5-10 years' maturity value, despite 63 of 103 gaps now sitting in '2-5 years'. Recorded as a proposal for a later pass, together with a proposal to separate the time question from the has-a-path question that 'Speculative' actually asks.",
+      "rationale": "David raised it against 'AI is Still Narrow', and the diagnostic supports him — three fifths of the map in one bucket is barely a label, and 'Speculative' conflates 'slow' with 'no known route'. But adding a fourth value means re-reviewing all 63 gaps currently at '2-5 years', because a value nobody has applied to the whole set is worse than three honest ones: those 63 would silently mean '2-5 or 5-10, unexamined'. That is a full relabel, and this branch is a repair.",
+      "runner_up": "Add the value and apply it only to the gaps this pass touched. Rejected for exactly that reason — a partially applied enum value makes the distribution unreadable, which is a worse artifact than the pileup it fixes.",
+      "confidence": "medium",
+      "reversal_condition": "A pass is commissioned with a blind second reader to re-review all 63 gaps at '2-5 years', at which point the split should be done on both axes rather than by adding one bucket to one of them."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Recorded, and did not build, a blocked-on-adoption versus blocked-on-capability dimension. Eleven of this pass's downgrades turn on adoption rather than on whether the technique exists.",
+      "rationale": "David's note on the clinical-trials ruling. DNA synthesis screening exists and is not adopted; archiving works and permission is withheld; adaptive trials run and the field does not take them up. Maturity absorbs all of this and reports 'not ready', which is the wrong diagnosis for a funder, because the intervention for an unadopted capability is not more research. This is a genuine addition to Convergent's map rather than a correction to our own labels.",
+      "runner_up": "Encode it now as a fourth dimension on the augmentation tables. Rejected: it would need its own definition, its own labelling pass over 103 gaps and its own audit, and it would arrive in the same artifact as a repair — which is how a contribution turns into a rewrite of someone else's map.",
+      "confidence": "medium",
+      "reversal_condition": "Convergent asks what would be worth adding next, in which case this is the strongest candidate on the evidence this pass produced."
+    },
+    {
+      "phase": "maturity-repair",
+      "decision": "Added docs/future-work.md and an app page at /missing/ (\"What's missing\") listing the nine pieces of open work, and did NOT regenerate app/public/data.json to go with it. The page reads every number it prints out of data.json instead of hardcoding them.",
+      "rationale": "The artifact regeneration is its own track and is meant to run once after both the maturity repair and the review gates land; regenerating a large derived JSON now would conflict with the review-gate branch, which changes indicators, new-gaps and critical-paths. Reading from data.json means the page cannot contradict the rest of the site today, and it picks up the repaired maturity distribution automatically when the artifact track runs — the middle-bucket share it cites goes from 50% to 61% with no edit to the page.",
+      "runner_up": "Hardcode the post-repair numbers in the page copy. Rejected: it would make the site contradict itself until the artifact regenerates, which is worse than being briefly out of date, and it would need a second edit later that nobody would remember to make.",
+      "confidence": "high",
+      "reversal_condition": "The artifact track runs and the page still reads wrong, which would mean a number it needs is not in the data.json summary and should be added to engine/export-artifact.mjs rather than typed into the page."
     }
   ]
 }

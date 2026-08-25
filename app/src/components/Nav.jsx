@@ -6,6 +6,7 @@ const PAGES = [
   { href: 'indicators/', label: 'Indicators' },
   { href: 'proposed/', label: 'Proposed gaps' },
   { href: 'method/', label: 'Method & audit' },
+  { href: 'missing/', label: "What's missing" },
 ];
 
 // David's masthead, not a copy of theirs. The page borrows their visual language

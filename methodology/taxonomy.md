@@ -62,8 +62,9 @@ where AI already works.
 
 Maturity, for the type identified: `Working now` | `2-5 years` | `Speculative`.
 
-**Maturity has two ambiguities. The first is fixed below; the second was not, and it
-broke the project's headline finding — read both before assigning one.**
+**Maturity has two ambiguities. Both are now fixed below. The second one was left open
+in an earlier revision and it broke the project's headline finding — read both before
+assigning one.**
 
 **(a) Relative to this gap, never to the capability class in general.**
 Both readings are defensible and they give different answers, so the convention is
@@ -75,22 +76,50 @@ raised independently by two blind auditors as ambiguous in an earlier revision; 
 existing labels already follow the for-this-gap reading, so pinning it down changes no
 label but makes the disagreement rate on maturity interpretable.
 
-**(b) Availability versus efficacy — unresolved, and the reason maturity cannot carry a
-conclusion.** Does `Working now` mean *the capability exists and can be applied today*,
-or *applying it today would actually move this gap*? For technical categories the two
-readings mostly coincide. For `Coordination and institutional` they diverge completely:
-convening a standards body is a mature capability available this afternoon, while getting
-universal DNA-synthesis screening adopted is not.
+**(b) Availability versus efficacy — resolved in favour of efficacy, after the
+availability reading produced three absurd labels.** Does `Working now` mean *the
+capability exists and can be applied today*, or *applying it today would actually move
+this gap*? The convention is fixed here: **efficacy**. Both halves are required.
 
-An independent relabel of all 103 gaps found this empirically. Coordination's working-now
-share went from **7% under the efficacy reading to 67% under the availability reading** —
-a complete inversion at the top of the ordering — and overall maturity agreement between
-two independent passes was only 63/103. Twenty-three of the forty disagreements moved in
-the same direction, `2-5 years` to `Working now`.
+> **`Working now`** — a capability of this kind exists today *and applying it to this
+> specific gap would move it now*. Both halves are required.
+>
+> **`2-5 years`** — the capability exists or is close, and applying it to this gap at the
+> scale that would matter is not yet possible.
+>
+> **`Speculative`** — no clear path from what exists today to moving this gap.
 
-Until this is resolved with a rubric that forces one reading, **maturity is the least
-reliable field in this taxonomy and no aggregate claim should rest on it.** Assign it,
-record it, and report it with its disagreement rate attached. See `docs/relabel-report.md`.
+The discriminating example, which is the whole of the distinction:
+
+> **Convening a standards body is available this afternoon. Getting universal
+> DNA-synthesis screening adopted is not. Both are "coordination". Only the second is
+> the gap.**
+
+For technical categories the two readings mostly coincide. For `Coordination and
+institutional` they diverge completely, and that is where the damage was done.
+
+**The test for whether you have applied it: if your rationale would read the same for
+any gap in that category, you have labelled the category and not the gap.** A gap whose
+neighbour already carries the same claim needs a rationale that says what is left.
+
+Why this needed fixing rather than documenting. An independent relabel of all 103 gaps
+read `Working now` as availability. Coordination's working-now share went from **7% under
+the efficacy reading to 67% under the availability reading**; overall maturity agreement
+between the two passes was 63/103, and twenty-three of the forty disagreements moved the
+same way, `2-5 years` to `Working now`. Adjudication then took v2 on every disagreement by
+a rule chosen so the author of v1 could not launder his own judgement — a rule that cannot
+be wrong, which removed the bias and every check on validity with it. The output included
+**"AI Could Be Misused" as `Coordination and institutional` / `Working now`**, along with
+*Risks of Malicious Bioengineering* and *A Limited Set of Rigid Organizational Structures*.
+Nobody believes those coordination problems are solved today.
+
+The repair pass re-adjudicated maturity on the merits for the 54 gaps the defect could
+reach; coordination's working-now count went from 10 to 2, both of which are open
+questions rather than settled labels. See `research-log/maturity-repair/report.md`.
+
+**Maturity remains the least reliable field in this taxonomy** — it is a judgement about
+the world rather than a reading of the gap text, and half the primaries carry `guess`.
+Report it with its confidence attached. See `docs/relabel-report.md`.
 
 Multiple types per gap are allowed and expected. Exactly one is marked primary — the
 one that would move the gap *most*, which is not always the one most obviously
