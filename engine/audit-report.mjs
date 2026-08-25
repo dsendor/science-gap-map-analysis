@@ -198,7 +198,11 @@ w();
   // Sum in milliseconds and round once. Rounding each phase and then summing gives a
   // different total from the artifact's, and two published figures that disagree by a
   // minute is exactly the kind of thing that costs more trust than the minute is worth.
-  const ms = (r) => new Date(r.ended_at.replace(' ', 'T') + 'Z') - new Date(r.started_at.replace(' ', 'T') + 'Z');
+  // Some runs rows already carry a trailing Z, some do not. Appending one
+  // unconditionally produced '...ZZ', which Date parses as NaN and which printed
+  // fifteen NaN cells plus 'Agent time: NaN minutes' into docs/findings.md.
+  const iso = (t) => { const x = t.replace(' ', 'T'); return x.endsWith('Z') ? x : x + 'Z'; };
+  const ms = (r) => new Date(iso(r.ended_at)) - new Date(iso(r.started_at));
   const runs = all('SELECT phase, kind, started_at, ended_at, n_units, note FROM runs ORDER BY id');
   w('| Phase | Kind | Units | Elapsed |');
   w('|---|---|---:|---:|');

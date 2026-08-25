@@ -1,15 +1,15 @@
 {
   "phase": "phase-5",
-  "note": "Two chains only. Doing this across the map is the collaboration being proposed, not the thing being given away. Both expectations were committed before any link analysis existed (commit bbfa54f); links and findings were added afterwards, so the ordering is checkable in git rather than asserted.",
+  "note": "Two chains only. Doing this across the map is the collaboration being proposed, not the thing being given away. Both expectations were committed before any link analysis existed (commit bbfa54f); links and findings were added afterwards, so the ordering is checkable in git rather than asserted. Both chains were reviewed adversarially at Gate C (research-log/reviews/gate-c.json), which confirmed the pre-registration ordering against git and then contested the link boundaries, the JWST durations, the chain-2 displacement claim and the intersection. What it overturned is corrected here and marked in the rationale of the link it affects.",
   "paths": [
     {
       "id": "path-telescope-elapsed-time",
       "gap_id": "1c1cb37e-2a00-8008-9ca1-cf81d4b44116",
       "title": "From science case to first light: what sets the elapsed time of a frontier telescope",
       "axis": "Elapsed time from first concept study to first light",
-      "axes_excluded": "Cost per unit of collecting area, and cost per unit of science return. Their gap statement bundles cost with schedule \u2014 'cost-prohibitive and slow' \u2014 and the two run over a partly different set of links. Each is a separate chain, and a chain that mixes them produces a binding link that is an artifact of the mixing rather than a property of the world.",
-      "expectation": "Design and optimisation search helps at the concept and optics stages, and the binding links will fall on the physical build and on the funding decision, neither of which any current AI capability touches. If that holds, the demonstration is that closing every cognitive link in the chain changes the total duration very little. A second prediction, stated separately so it can fail separately: Convergent's three capabilities attached to this gap \u2014 modular assembly with reduced launch costs, leveraging commercial component advances, and a space telescope factory \u2014 all act on the fabrication and assembly links, and none acts on decision, approval or funding. Both predictions are recorded before any programme history was assembled, and both are testable against published JWST, Rubin and ELT milestone dates.",
-      "finding": "AI acts on three of the eight steps, and those three are 9.5 of the 32.5 years. Zero all of them and a frontier telescope still takes 23. That is the whole result, and it needs no vocabulary beyond addition.\n\nThe prediction about your capability set holds exactly. Modular assembly with reduced launch costs, a space telescope factory, and leveraging commercial component advances all act on fabrication, integration and launch. None acts on ranking or funding. Stated as an observation rather than a deficiency: those three are aimed at 14 of the 23 years AI does not reach, which is a better hit rate than three picked at random would manage.\n\nOne honest correction to how I first wrote this up. I originally called four of the eight steps binding, which was circular: a chain of steps that run strictly one after another has no non-binding steps, because removing any of them shortens the total. The set I had marked was really just the set AI does not touch. The arithmetic above is what survives.\n\nWhat was not predicted is that the split moves between programmes. JWST is build-dominated, with seventeen of its thirty-two years after construction started. Rubin is decision-dominated, twenty-two years to a construction award against eleven building. The ELT sits between, with about two and a half years attributable to nothing but a funding condition on a design already approved.",
+      "axes_excluded": "Cost per unit of collecting area, and cost per unit of science return. Their gap statement bundles cost with schedule — 'cost-prohibitive and slow' — and the two run over a partly different set of links. Each is a separate chain, and a chain that mixes them produces a binding link that is an artifact of the mixing rather than a property of the world.",
+      "expectation": "Design and optimisation search helps at the concept and optics stages, and the binding links will fall on the physical build and on the funding decision, neither of which any current AI capability touches. If that holds, the demonstration is that closing every cognitive link in the chain changes the total duration very little. A second prediction, stated separately so it can fail separately: Convergent's three capabilities attached to this gap — modular assembly with reduced launch costs, leveraging commercial component advances, and a space telescope factory — all act on the fabrication and assembly links, and none acts on decision, approval or funding. Both predictions are recorded before any programme history was assembled, and both are testable against published JWST, Rubin and ELT milestone dates.",
+      "finding": "AI acts on three of the eight steps, and those three are 9.5 of the 32.5 years. Zero all of them and a frontier telescope still takes 23. That is the shape of the result, and it needs no vocabulary beyond addition.\n\nThe 23 is an upper bound, not a point estimate, and Gate C is the reason it is now written that way. Three corrections push in the same direction. Link 2 bundles a decadal ranking with a Phase A design competition and counts all six years against AI. Link 3's two years carry an appropriation blocker that JWST's own record does not show in that window. Link 4's design maturation demonstrably ran to the 2010 mission critical design review, four years past the interval it is given, inside years the chain labels fabrication. Every one of those understates the AI-acts column. Reassign them as far as the milestone record allows and the residual falls toward the mid-teens. It does not fall to zero, and that is the part that survives: even on the most generous reading, more than a decade of a frontier telescope is elapsed time no current AI capability reaches.\n\nThe prediction about your capability set holds exactly. Modular assembly with reduced launch costs, a space telescope factory, and leveraging commercial component advances all act on fabrication, integration and launch. None acts on ranking or funding. Stated as an observation and not a deficiency: those three are aimed at the part of the chain where the years actually are.\n\nOne honest correction to how I first wrote this up. I originally called four of the eight steps binding, which was circular: a chain of steps that run strictly one after another has no non-binding steps, because removing any of them shortens the total. The set I had marked was really just the set AI does not touch. The arithmetic above is what survives, and Gate C found that the withdrawn framing had been left standing in four link rationales, in docs/critical-paths.md and in the Mermaid source; all three have been corrected.\n\nWhat was not predicted is that the split moves between programmes. JWST is build-dominated, with seventeen of its thirty-two years after construction started. Rubin is decision-dominated, twenty-two years to a construction award against eleven building. The ELT sits between, with about two and a half years attributable to nothing but a funding condition on a design already approved.",
       "links": [
         {
           "seq": 1,
@@ -21,35 +21,35 @@
           "evidence": "JWST: NGST workshop at STScI September 1989; an STScI committee recommends a larger infrared telescope in 1995-1996. Seven years. ESO: OWL concept pursued from 1998, OWL Blue Book published end of 2005. Seven years.",
           "rationale": "Not binding, and the reason matters for the whole chain. Synthesis and trade-study tools are mature and could compress the analytical content of these seven years substantially. They cannot compress the part that actually consumes them, which is a community converging. Treating the full seven years as AI-addressable is the most generous accounting available and is used below as an upper bound.",
           "duration_jwst_years": 7.0,
-          "duration_jwst_span": "1989 \u2192 1996",
+          "duration_jwst_span": "1989 → 1996",
           "duration_note": "NGST workshop at STScI to the STScI committee recommendation",
           "ai_acts": true
         },
         {
           "seq": 2,
-          "link": "Strategic ranking (decadal survey or council priority)",
-          "blocker": "A fixed external cadence. A project that misses a decadal survey waits for the next one, and the wait is ten years regardless of how ready the project is.",
+          "link": "Concept studies, strategic ranking and design competition",
+          "blocker": "Two things at once, and the interval does not separate them. A fixed external cadence — a project that misses a decadal survey waits for the next one, and the wait is ten years regardless of readiness — running alongside the Phase A design competition that occupies the same years.",
           "ai_type": "Coordination and institutional",
           "maturity": "Speculative",
           "is_binding": 0,
-          "evidence": "Rubin: planning from the early 1990s, recommended by a National Academies report in 2001, top-ranked large ground-based project only in the 2010 decadal survey, NSF construction award August 2014. Thirteen years from first national recommendation to construction start. ELT: ESO Council names ELTs its highest strategic priority in December 2004; construction green light December 2014. Ten years.",
-          "rationale": "Binding, and binding in an unusual way: the delay is quantised. No amount of readiness moves a project forward inside a decadal cycle, so the marginal value of accelerating everything upstream of this link is zero until a whole cycle is saved. No AI capability in the taxonomy acts on it.",
+          "evidence": "Rubin: planning from the early 1990s, recommended by a National Academies report in 2001, top-ranked large ground-based project only in the 2010 decadal survey, NSF construction award August 2014. Thirteen years from first national recommendation to construction start. ELT: ESO Council names ELTs its highest strategic priority in December 2004; construction green light December 2014. Ten years. JWST's own window, 1996 to 2002, contains the industry study teams (4 June 1997), the Yardstick Design report (6 August 1998), the Lockheed Martin and TRW Phase A selection (7 July 1999) and the TRW/Ball selection (14 August 2002), per STScI's mission timeline; the strategic ranking in it is the 2001 McKee-Taylor decadal survey, which STScI's timeline does not list. The Rubin and ELT figures above are the ones that isolate ranking cleanly; JWST's does not, and that is stated here rather than left for a reader to notice.",
+          "rationale": "Six years, and they are not six years of one thing. Gate C found that the duration_note attached to this link describes a design competition while the link title describes strategic ranking, and both happened in the window. The 2001 decadal survey ranked NGST top; the Phase A competition ran either side of it. ai_acts is recorded as 0 because the cadence is what sets the length — no amount of readiness moves a project forward inside a decadal cycle, so the marginal value of accelerating everything upstream is zero until a whole cycle is saved — but design and optimization search does act on the competition inside these years. This link is therefore the largest single source of uncertainty in the chain's arithmetic, and the finding now says so.",
           "duration_jwst_years": 6.0,
-          "duration_jwst_span": "1996 \u2192 2002",
+          "duration_jwst_span": "1996 → 2002",
           "duration_note": "concept studies and three funded teams to selection of the TRW/Ball design",
           "ai_acts": false
         },
         {
           "seq": 3,
-          "link": "Funding authorisation",
-          "blocker": "Appropriation, and conditions attached to it. A design can be complete, reviewed and approved and still wait on money.",
+          "link": "Phase B start and funding authorisation",
+          "blocker": "Appropriation, and conditions attached to it. A design can be complete, reviewed and approved and still wait on money. On JWST specifically this interval is the run-up from design selection to long-lead construction rather than a discrete appropriation event; the clean instances are ESO's and Rubin's.",
           "ai_type": "Coordination and institutional",
           "maturity": "Speculative",
           "is_binding": 0,
           "evidence": "ELT: ESO Council approved construction in June 2012 on the condition that contracts above 2 million euros could be awarded only once the total cost of 1,083 million euros (2012 prices) was 90% funded; the green light followed in December 2014. Roughly two and a half years of pure funding latency with the design frozen. Rubin: Final Design Review December 2013, National Science Board conditional approval May 2014, construction award August 2014.",
-          "rationale": "Binding, and the ELT case is the cleanest instance available anywhere in this analysis: the delay is explicitly and only about money, with every technical question already settled. Nothing in the capability taxonomy touches it.",
+          "rationale": "The ELT case is the cleanest instance available anywhere in this analysis: the delay is explicitly and only about money, with every technical question already settled. Nothing in the capability set acts on it. Gate C's correction, recorded rather than argued away: JWST's own 2002-2004 interval contains no identifiable appropriation event, only the run-up to a 3 March 2004 construction start, so the two years assigned here are carrying a blocker demonstrated on other programmes. The evidence field cites Rubin and the ELT for that reason, and it should be read that way.",
           "duration_jwst_years": 2.0,
-          "duration_jwst_span": "2002 \u2192 2004",
+          "duration_jwst_span": "2002 → 2004",
           "duration_note": "design selection to the start of long-lead construction",
           "ai_acts": false
         },
@@ -61,9 +61,9 @@
           "maturity": "Working now",
           "is_binding": 0,
           "evidence": "JWST: TRW/Ball design selected 2002, construction of long-lead components begins 2004, instrument critical design reviews 2006, mission critical design review 2010.",
-          "rationale": "Not binding. This is the link where design and optimisation search is most obviously useful and most obviously mature, which is exactly why it does not set the pace. Two years from contractor selection to construction start is the shortest interval in the chain.",
+          "rationale": "This is the link where design and optimization search is most obviously useful and most obviously mature, which is exactly why it does not set the pace. Two years from contractor selection to instrument critical design reviews. Gate C found the interval understates the activity: this link's own evidence runs to the mission critical design review, which STScI dates to 3 March 2010, with the preliminary design review in April 2008 and project confirmation in April 2009 — all inside the window the chain labels Fabrication. Design maturation on JWST ran to 2010. The interval is left at 2004-2006 because the phases genuinely overlap and no milestone pair separates them cleanly, but the overlap runs in one direction: it understates how much of the elapsed time design work occupies, and so understates the AI-acts column.",
           "duration_jwst_years": 2.0,
-          "duration_jwst_span": "2004 \u2192 2006",
+          "duration_jwst_span": "2004 → 2006",
           "duration_note": "long-lead start to instrument critical design reviews and flight construction",
           "ai_acts": true
         },
@@ -75,23 +75,23 @@
           "maturity": "2-5 years",
           "is_binding": 0,
           "evidence": "JWST: construction of long-lead components begins 2004; all 18 primary mirror segments complete and cryogenically tested in 2011. Seven years.",
-          "rationale": "Binding. All three of Convergent's capabilities attached to this gap act here or at the next link.",
+          "rationale": "All three of Convergent's capabilities attached to this gap act here or at the next link.",
           "duration_jwst_years": 5.0,
-          "duration_jwst_span": "2006 \u2192 2011",
+          "duration_jwst_span": "2006 → 2011",
           "duration_note": "flight instrument construction to all 18 mirror segments complete and cryo-tested",
           "ai_acts": false
         },
         {
           "seq": 6,
           "link": "Integration and test",
-          "blocker": "Strictly serial single-string assembly on hardware that cannot be duplicated, so nothing can be parallelised and every anomaly stops the line.",
+          "blocker": "Serial single-string assembly on hardware that cannot be duplicated, so little can be parallelised and every anomaly stops the line — but not only that. Gate C established that a substantial share of this block is funding latency and defect rework rather than assembly: the 2011 replan, after the House Appropriations Committee recommended termination, rebaselined the project and moved launch by 52 months, and the 2018 Independent Review Board followed sunshield tears and loose fasteners attributed to workmanship error.",
           "ai_type": "Physical build and manipulation",
           "maturity": "Speculative",
           "is_binding": 0,
-          "evidence": "JWST: mirror segments mounted into the backplane 2015-2016, optical and spacecraft elements mated 2019, final environmental testing complete 2020. Nine years from mirror completion.",
-          "rationale": "Binding, and the single longest link in the JWST chain. This is the link a space telescope factory is aimed at, and it is the one where the capability set is most clearly pointed at the right place.",
+          "evidence": "JWST: mirror segments mounted into the backplane 2015-2016, optical and spacecraft elements mated 2019, final environmental testing complete 2020. Nine years from mirror completion. GAO-13-4 (3 December 2012), p.4: 'the JWST project was reauthorized, but not before it was recommended for termination by the House Appropriations Committee... NASA announced that the project would be rebaselined at $8.835 billion — a 78 percent increase — and would launch in October 2018 — a delay of 52 months.' The interval endpoint is confirmed: STScI's 'final integrated testing completed, 1 December 2017' is the element-level OTIS cryo-vacuum test, while full-observatory environmental testing completed 6 October 2020.",
+          "rationale": "The single longest link in the JWST chain, and the one where the capability set is most clearly pointed at the right place — this is what a space telescope factory is aimed at. Gate C contested the blocker and the contest succeeds in part: roughly 4.3 years of this nine-year block are a near-termination and replan, and a further tranche is workmanship rework. On this chain's own taxonomy a replan is Coordination and institutional and defect detection is Sensing and signal processing, neither of which is physical assembly. ai_acts is left at 0 because no current capability shortens a congressional replan either, but the stated reason for the zero was wrong and is corrected here. It also exposes a limit of the model: a strictly sequential eight-link chain cannot represent funding delay recurring mid-build, and this chain places funding once, early.",
           "duration_jwst_years": 9.0,
-          "duration_jwst_span": "2011 \u2192 2020",
+          "duration_jwst_span": "2011 → 2020",
           "duration_note": "segments complete to final environmental testing complete",
           "ai_acts": false
         },
@@ -105,7 +105,7 @@
           "evidence": "JWST: final environmental testing complete 2020, launch 25 December 2021. Roughly one year. Ariane 5 selected as launch vehicle in 2005.",
           "rationale": "Not where the time is. Reduced launch cost, which two of the three capabilities attached to this gap depend on, acts on the cost axis and not on this one. No AI capability shortens a launch campaign.",
           "duration_jwst_years": 1.0,
-          "duration_jwst_span": "2020 \u2192 2021",
+          "duration_jwst_span": "2020 → 2021",
           "duration_note": "testing complete to launch on 25 December 2021",
           "ai_acts": false
         },
@@ -119,18 +119,18 @@
           "evidence": "JWST: launch 25 December 2021, first full-colour images and start of science operations 12 July 2022. Six and a half months.",
           "rationale": "Not binding, and the shortest link in the chain by an order of magnitude. Wavefront sensing on eighteen segments is the most technically demanding cognitive task in the whole sequence and it took under seven months, which is the chain in miniature.",
           "duration_jwst_years": 0.5,
-          "duration_jwst_span": "Dec 2021 \u2192 Jul 2022",
+          "duration_jwst_span": "Dec 2021 → Jul 2022",
           "duration_note": "launch to first full-colour images and start of science operations",
           "ai_acts": true
         }
       ],
-      "duration_basis": "Per-step durations are JWST's, because its milestone record is the most completely published of the three. Real phases overlap, design maturation and fabrication in particular, so each figure is the interval between the published milestones that best bracket that step, and the eight sum to 32.5 against STScI's stated 32 from conception to launch.",
+      "duration_basis": "Per-step durations are JWST's, because its milestone record is the most completely published of the three. Real phases overlap, design maturation and fabrication in particular, so each figure is the interval between the published milestones that best bracket that step, and the eight sum to 32.5 against STScI's stated 32 from conception to launch. Those two totals are not the same measurement — 32.5 runs to first images in July 2022 and STScI's 32 runs to launch in December 2021 — so their agreement is a coincidence of rounding and is not corroboration. Gate C's audit of the intervals is the reason the finding below is stated as a bound rather than a point: two links carry titles that describe only part of what their intervals contain, and the overlap between design maturation and fabrication is real and undated.",
       "programmes": [
         {
           "programme": "JWST",
           "concept": "1989 NGST workshop",
           "to_build": "2004 construction start",
-          "build": "2004 \u2192 Dec 2021",
+          "build": "2004 → Dec 2021",
           "years_to_build": 15,
           "years_build": 17,
           "total": 32,
@@ -140,7 +140,7 @@
           "programme": "Rubin Observatory",
           "concept": "early-1990s planning",
           "to_build": "Aug 2014 NSF construction award",
-          "build": "Aug 2014 \u2192 Jun 2025",
+          "build": "Aug 2014 → Jun 2025",
           "years_to_build": 22,
           "years_build": 11,
           "total": 33,
@@ -150,7 +150,7 @@
           "programme": "ESO ELT",
           "concept": "1998 OWL studies",
           "to_build": "Dec 2014 green light",
-          "build": "Dec 2014 \u2192 Mar 2029",
+          "build": "Dec 2014 → Mar 2029",
           "years_to_build": 16,
           "years_build": 14,
           "total": 31,
@@ -165,7 +165,7 @@
       "axis": "Cost, measured as reviewer and editor labour per published paper",
       "axes_excluded": "Speed, meaning elapsed time from submission to publication, and inclusiveness, meaning who can afford to publish and who can read the result. Their sentence bundles all three. Speed in particular behaves differently by venue: journal latency is reviewer-supply-driven while conference latency is set by a fixed programme committee calendar, so a chain mixing them would produce a cost concentration that is an artifact of the venue mix.\n\nAlso excluded: the 'doing' half of their gap statement. 'Doing and publishing research is expensive' covers the cost of the research itself, which is most of what the other 102 gaps in the map are about. Instruments, reagents, compute and staff are priced elsewhere. This chain runs from a finished result to a credited contribution.",
       "expectation": "This chain must produce a different answer from chain 1 or the pair demonstrates nothing. AI does act on several links here: drafting and screening work now, and reviewer-to-proposal matching is tractable, though there is published evidence that traditional statistical representations outperform generative AI at identifying expert reviewers. So the expectation is not that AI does nothing. It is that AI acts on the links that were never rate-limiting, while reviewer recruitment, judgment consistency and the credit and legitimacy step remain untouched. Stated explicitly so it cannot be read the other way: this is not a claim that publishing is a cognitive bottleneck. It is not, and asserting it would be wrong. Recorded before the link analysis.",
-      "finding": "Drafting was expensive, and AI has made it much cheaper. That saving is real and large. It has not arrived as cheaper publishing, because submissions rose 42% over five years in the one corpus where a journal has published full figures, and the labor moved to reviewer recruitment, which is where the cost now concentrates. Relieving a step upstream of the concentration moves cost downstream; it does not remove it.\n\nSo the prediction holds, in the shape the pair needs. AI is not absent here: it acts on the first four of seven steps, which is more than it touches anywhere in chain 1. Three steps carry most of the labor, and on the two of those that AI reaches it reaches the tractable half. It can match a reviewer to a paper. It cannot make that reviewer say yes, agree with the other reviewer, or persuade a hiring committee to count the work.\n\nRecruitment is where the axis choice earns itself. Splitting it into matching and willingness separates a well-posed prediction problem from a labor-supply problem. The published evidence goes further than the argument needs: on reviewer identification specifically, traditional statistical representations outperform generative AI.\n\nOne observation about your capability set, and it runs the other way from chain 1. Two of the four capabilities you attach to this gap, a post-publication peer review layer and new protocols for knowledge production and verification, act directly on credit and legitimacy, which carries cost. For the telescope gap none of the three touches a decision step; here half of them do.\n\nTo be plain about scope: this chain covers getting a finished result into the record and credited. The cost of doing the research is the other half of their gap statement and is most of what the rest of the map is about.",
+      "finding": "Drafting was expensive, and AI has made it much cheaper. That saving is real and large. It has not arrived as cheaper publishing: submissions rose 42% after ChatGPT's release relative to the prior two-year window, in the one corpus where a journal has published full figures, and the labour that the saving displaced landed further down the chain rather than disappearing.\n\nWhere exactly it landed is a correction Gate C forced, and it matters because it was this chain's marquee result. I wrote that the labour moved to reviewer recruitment. The source does not say that. Pierce, Gartenberg, Hasan and Murray put the displaced load on volunteer editors at desk screening — among manuscripts with 70%+ AI scores nearly 70% are desk-rejected, against 44% for low-AI submissions — and give no invitation or recruitment figures at all. So the arrow from cheaper drafting runs to screening, which is a step this chain calls tractable and AI-reached. Recruitment strain is real and separately evidenced, by Silverchair's 4.5 invitations per accepted review and the fall in acceptance from 43% to 22%; it is simply not what the 42% surge is shown to have caused. The general claim survives and the specific one does not: relieving a step upstream of a concentration moves cost downstream, and it moved to the nearest downstream step, not the furthest.\n\nThe prediction holds, in the shape the pair needs. AI is not absent here: it acts on the first four of seven steps, which is more than it touches anywhere in chain 1. It can match a reviewer to a paper. It cannot make that reviewer say yes, agree with the other reviewer, or persuade a hiring committee to count the work.\n\nRecruitment is where the axis choice earns itself. Splitting it into matching and willingness separates a well-posed prediction problem from a labour-supply problem. On reviewer identification specifically, published evidence finds traditional statistical representations outperform generative AI. Gate C's caveat is recorded with it: ESO names matching difficulty as a reason for distributed peer review too, so the split is this analysis's, not ESO's.\n\nOne observation about your capability set, and it runs the other way from chain 1. Two of the four capabilities you attach to this gap, a post-publication peer review layer and new protocols for knowledge production and verification, act directly on credit and legitimacy, which carries cost. For the telescope gap none of the three touches a decision step; here half of them do.\n\nTo be plain about scope: this chain covers getting a finished result into the record and credited. The cost of doing the research is the other half of their gap statement and is most of what the rest of the map is about.",
       "links": [
         {
           "seq": 1,
@@ -175,8 +175,8 @@
           "maturity": "Working now",
           "is_binding": 0,
           "evidence": "An Organization Science editorial with five-year full-submission-corpus access reports submissions up 42%.",
-          "rationale": "Drafting was one of the most expensive steps in this chain, measured in researcher weeks per paper, and AI has taken a large share of that cost out. The saving is real and it is big. It has not shown up as cheaper publishing: submissions rose 42% over five years in the one corpus with published full-submission figures, and the labor moved downstream to reviewer recruitment. Relieving a step upstream of where the cost concentrates moves the cost; it does not remove it.",
-          "figure": "was researcher-weeks per paper; a large share of that is now automatable. Submissions +42% over five years (Organization Science, full-submission corpus)",
+          "rationale": "Drafting was one of the most expensive steps in this chain, measured in researcher weeks per paper, and AI has taken a large share of that cost out. The saving is real and it is big. It has not shown up as cheaper publishing: submissions rose 42% after ChatGPT's release in November 2022 against the prior two-year window, in the one corpus with published full-submission figures, and the labour moved downstream to desk screening. Gate C corrected both halves of that sentence: the 42% is growth since ChatGPT within a five-year corpus, not growth over five years, and the source places the displaced load on volunteer editors at screening rather than on recruitment. Relieving a step upstream of where the cost concentrates moves the cost; it does not remove it.",
+          "figure": "was researcher-weeks per paper; a large share of that is now automatable. Submissions +42% since ChatGPT's release in November 2022 against the prior two-year window, within a five-year full-submission corpus (Organization Science)",
           "ai_acts": true
         },
         {
@@ -186,7 +186,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "Working now",
           "is_binding": 0,
-          "evidence": "ESO reports that classical triage 'has significantly degraded the quality of feedback for the triaged proposals' \u2014 screening under load trades feedback quality for throughput.",
+          "evidence": "ESO reports that classical triage 'has significantly degraded the quality of feedback for the triaged proposals' — screening under load trades feedback quality for throughput.",
           "rationale": "Not binding on the cost axis. Screening is genuinely tractable for current models, which is why it is already being done and why it does not set the cost.",
           "figure": "triage under load 'significantly degraded the quality of feedback' (ESO)",
           "ai_acts": true
@@ -194,13 +194,13 @@
         {
           "seq": 3,
           "link": "Reviewer recruitment and matching",
-          "blocker": "Willingness to serve, not the ability to identify who should serve. These are different problems and only one of them is a matching problem.",
+          "blocker": "Willingness to serve, and matching. The chain's argument turns on the first, and Gate C established that the source cannot be used to dismiss the second: ESO's own Phase 1 page lists 'it has become progressively more difficult to find optimal proposal-referee matches' as a distinct reason for deploying distributed peer review, beside the supply bullet the artifact quotes. Both are real. The claim that survives is narrower — AI reaches the matching half and not the willingness half — and it no longer rests on ESO having said matching is solved.",
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_binding": 1,
-          "evidence": "Roughly five invitations per accepted review (Silverchair, Future of Peer Review 2026). A survey of 139 journal editors with 27 interviews finds 55% rate finding reviewers a significant or very significant challenge, and some 'described having to send out 30 or more invitations to secure just two reviewers' (Jamali, Luca and Wakeling, 15 February 2026). Meyerson documents 21 years of declining reviewer acceptance, 2002-2024. ESO, introducing distributed peer review, states that 'it has become progressively harder to find scientists willing to serve in the panels and in the OPC'. And on the part AI could do: traditional statistical representations outperform generative AI at identifying expert peer reviewers, tested on NASA/ADS records and observatory DPR data across 379 researchers.",
-          "rationale": "Binding, and it is the link that most rewards being split in two. Matching is a well-posed prediction problem where AI is applicable and, on current evidence, not even the best method. Willingness is a labour-supply problem that no matching system addresses. The binding half is the half AI does not touch, which is the whole finding of this chain in one link.",
-          "figure": "~5 invitations per accepted review; 55% of 139 editors call recruitment a significant challenge; 21 years of declining acceptance",
+          "evidence": "4.5 invitations per accepted review, nearly double the 2018 rate, and reviewer acceptance down from 43% in 2018 to 22% in 2024 (Silverchair, Future of Peer Review 2026, from eight years of ScholarOne Manuscripts activity plus 2,000+ survey responses). Per 100 invitations sent, editors wait a combined 407 days on reviewers who ultimately decline or never answer. A survey of 139 editors of Australian journals, largely local and society titles, with 27 interviews, finds 55% rate finding reviewers a significant or very significant challenge, and some 'described having to send out 30 or more invitations to secure just two reviewers' (Jamali et al., Learned Publishing 2026, doi 10.1002/leap.2034, and Luca et al., doi 10.1002/leap.2041; popularised in The Conversation, 15 February 2026). The sample is national and small-journal weighted, which is where recruitment is hardest, so the bias runs in this chain's favour and is noted for that reason. Meyerson documents 21 years of declining reviewer acceptance, 2002-2024. ESO's Phase 1 page on distributed peer review states that 'it has become progressively harder to find scientists willing to serve in the panels and in the OPC'. And on the part AI could do: traditional statistical representations outperform generative AI at identifying expert peer reviewers, tested on NASA/ADS records and observatory DPR data across 379 researchers.",
+          "rationale": "Binding, and it is the link that most rewards being split in two. Matching is a well-posed prediction problem where AI is applicable and, on current evidence, not even the best method. Willingness is a labour-supply problem that no matching system addresses. The binding half is the half AI does not touch, which is the whole finding of this chain in one link. REVISED after Gate C. The previous version asserted that matching is not the problem and cited ESO for it; ESO says both. The split between a well-posed prediction problem and a labour-supply problem still does the work this chain needs, but it is now stated as this analysis's distinction rather than the source's.",
+          "figure": "4.5 invitations per accepted review, nearly double 2018 (Silverchair, Future of Peer Review 2026); reviewer acceptance fell from 43% in 2018 to 22% in 2024; 55% of 139 editors of Australian journals call recruitment a significant or very significant challenge; 21 years of declining acceptance",
           "ai_acts": true
         },
         {
@@ -210,7 +210,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "2-5 years",
           "is_binding": 1,
-          "evidence": "NeurIPS 2021 consistency experiment: two independent committees disagree on 23% of papers, and approximately half the accepted list would change on a random rerun \u2014 consistent with 26% in 2014. Cortes and Lawrence, revisiting the 2014 experiment, find no correlation between review scores and later citation impact for accepted papers, and a correlation for rejected ones: 'the reviewing process for the 2014 conference was good for identifying poor papers, but poor for identifying good papers.'",
+          "evidence": "NeurIPS 2021 consistency experiment: two independent committees disagree on 23% of papers, and approximately half the accepted list would change on a random rerun — consistent with 26% in 2014. Cortes and Lawrence, revisiting the 2014 experiment, find no correlation between review scores and later citation impact for accepted papers, and a correlation for rejected ones: 'the reviewing process for the 2014 conference was good for identifying poor papers, but poor for identifying good papers.'",
           "rationale": "Binding, and unusually well quantified for an institutional link. The Cortes and Lawrence result also sets the bar any automated reviewer has to clear, and it is a low bar in one direction and an unreachable one in the other: filtering bad work is where review already works, ranking good work is where it does not, and it is not established that the second is a solvable problem for anyone.",
           "figure": "23% committee disagreement; ~half the accept list changes on a rerun; scores predict impact for rejected papers only",
           "ai_acts": true
@@ -235,7 +235,7 @@
           "maturity": "Working now",
           "is_binding": 0,
           "evidence": "Three of Convergent's four capabilities for this gap act here or upstream of it: disrupting traditional publishing models, frugal science initiatives, and micro/nanopublishing protocols.",
-          "rationale": "Not binding on the labour-cost axis, and this deserves care because it is the link their gap sentence centres on. On the inclusiveness axis \u2014 explicitly excluded from this chain \u2014 it may well be binding. That is why the axes were separated.",
+          "rationale": "Not binding on the labour-cost axis, and this deserves care because it is the link their gap sentence centres on. On the inclusiveness axis — explicitly excluded from this chain — it may well be binding. That is why the axes were separated.",
           "figure": "article processing charges and platform cost",
           "ai_acts": false
         },
@@ -247,7 +247,7 @@
           "maturity": "Speculative",
           "is_binding": 1,
           "evidence": "A model can review a paper today; it cannot make a hiring committee count that review. The same asymmetry explains why reviewer supply falls: the labour is unpriced and uncredited, and pricing it is an institutional act.",
-          "rationale": "Binding, and the only link in either chain where the blocker is purely a matter of what institutions agree to recognise. Two of Convergent's four capabilities for this gap \u2014 a post-publication peer review layer, and new protocols for knowledge production and verification \u2014 act here.",
+          "rationale": "Binding, and the only link in either chain where the blocker is purely a matter of what institutions agree to recognise. Two of Convergent's four capabilities for this gap — a post-publication peer review layer, and new protocols for knowledge production and verification — act here.",
           "figure": "no published quantity, the blocker is what committees agree to count",
           "ai_acts": false
         }

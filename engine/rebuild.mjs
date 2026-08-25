@@ -9,6 +9,7 @@
 // Usage: node engine/rebuild.mjs
 
 import { execFileSync } from 'node:child_process';
+import { DatabaseSync } from 'node:sqlite';
 import { readdirSync, existsSync } from 'node:fs';
 import { context, drift, driftMessage } from './workspace.mjs';
 
@@ -65,6 +66,23 @@ if (existsSync(v2dir) && existsSync(`${root}engine/ingest-relabels.mjs`)) {
     console.log(`ingested ${files.length} relabel file(s)`);
     if (existsSync(`${root}research-log/relabel-adjudication.json`)) run('apply-relabel.mjs');
   }
+}
+
+// The settled confidence counts, printed last because they are the only ones that
+// describe the database a reader will actually query. adjudicate.mjs prints an
+// earlier set before apply-relabel.mjs has run; those are intermediate and say so.
+{
+  const db = new DatabaseSync(`${root}db/gapmap.sqlite`);
+  console.log('\nconfidence, settled:');
+  for (const [label, table, where] of [
+    ['measurability', 'gap_measurability', '1=1 AND'],
+    ['ai_type (primary)', 'gap_ai_types', 'is_primary=1 AND'],
+  ]) {
+    const n = (v) => db.prepare(`SELECT count(*) c FROM ${table} WHERE ${where} confidence='${v}'`).get().c;
+    const c = n('confident'), g = n('guess');
+    console.log(`  ${label.padEnd(18)} confident ${String(c).padStart(3)}  guess ${String(g).padStart(3)}  (${(100 * g / (c + g)).toFixed(0)}% flagged)`);
+  }
+  db.close();
 }
 
 run('verify-additive.mjs');
