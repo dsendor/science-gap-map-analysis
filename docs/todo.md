@@ -1,158 +1,138 @@
-# What is left, and who has it
+# What is left
 
-Living document. Update the status column when you pick something up, and say which
-worktree you are in. If you are not in your own worktree, read
-`CLAUDE.md` → *Isolation: one track of work, one worktree* before you start.
-
-**Last updated:** 2026-08-25, after all four branches merged to `main` (`82209a4`).
-
-## Who is working on what right now
-
-| Owner | Track | Worktree | Status |
-|---|---|---|---|
-| Gate D agent | Rerun Gate D against the settled database | `scratchpad/wt-gd`, branch `gate-d-rerun` | **in flight** |
-| This session | Argument page rewrite, todo doc, CLAUDE.md rule | `../wt-site-story` | in progress |
-| Deployment agent | Vercel setup and access control | primary clone | **done**, merged |
-| Maturity agent | Maturity repair | primary clone | **done**, merged |
-
-Two of those ran in the primary clone. That is what the isolation rule exists to stop;
-new work takes a worktree.
+**Updated 2026-08-25.** All four review gates have run. Gate D re-ran against the
+settled database: 38 findings, 9 blocking, 4 of those already fixed. The database
+itself is clean — every figure re-derives, no ranking anywhere, additive guardrail
+passes. What is left is text, one label problem, and two decisions.
 
 ---
 
-## 1. The website — the biggest item
+## Needs you
 
-The site is eight pages and the argument page does not currently make an argument.
+- [ ] **Review the argument page.** Rewritten, live at `http://localhost:4321`. Good
+      enough to send?
+- [ ] **Decide: one column or two.** Categories now name the work. Do we also need a
+      separate "which AI could accelerate this" attribute? Costs a full relabel.
+- [ ] **Decide: proposed gaps.** Two survived Gate B; Phase 4's own floor is 3–5.
+      Propose more, or record the shortfall and move on?
 
-### 1.1 Rewrite the argument page — **highest priority**
+## Must fix before anything is sent
 
-Kill the section headed *"What I found, and what did not survive"*. It opens with a
-striking result, spends three paragraphs retracting it, diagnoses the definitional
-error behind it, and closes with "what survived is weaker". Every sentence is true and
-the page is still about us. See `CLAUDE.md` → *The argument page carries one claim*.
+- [ ] **Chain link maturity — can move the headline.** 5 of 15 chain links still use
+      the "does the capability exist" reading. Telescope link 1 is the bad one: fixing
+      it takes *AI acts on 9.5 of 32.5 years* to about **2.5**.
+- [ ] **The email.** `docs/cover-note.md` still leads with the withdrawn gradient and
+      a number (17) that exists nowhere in the database.
+- [ ] **Withdrawn framing on the chains page** — heading still reads "Both chains
+      share a binding step".
+- [ ] **Three stale counts in docs** — `future-work.md` (eleven indicators / two nulls
+      → 8 and 1), `taxonomy.md` (coordination working-now 10 → 2), `findings.md`
+      pointing readers at the empty `search_log` table.
 
-**The claim the page should make**, which is about their map and is currently buried:
+## Site
 
-> Coordination and institutional work is the primary blocker for **15 of 103** gaps.
-> Reading and synthesis — the thing AI is best at — is primary for **10**. The
-> cognitive layer is a small slice of this map, and the critical paths show why:
-> on the telescope chain AI acts on three of eight steps, 9.5 of 32.5 years.
+- [ ] Eight pages is a lot. Fold *Indicators*, *Proposed gaps*, *Attributes* together?
+- [ ] No repository link anywhere, so every file citation on the site is dead.
+- [ ] `TIER_COLOR` light-to-dark ramp reads good-to-bad.
+- [ ] Cross-tabs are computed into `data.json` and rendered nowhere.
 
-That is accurate, repeatable, and needs no caveat to be understood.
+## Method debt
 
-**Where the current content goes:** the relabel non-replication, the definitional hole
-in "working now", the agreement rates → *Method & audit*. The withdrawn gradient →
-*What's missing*. Neither is deleted; both stop being the front page.
+- [ ] **Outcomes have never had a second pass.** 102 of 103 confident, one labeler, no
+      audit. Largest unverified thing in the project.
+- [ ] "Proxy only" ran 78% disagreement and probably should be dropped. 19 gaps hold it.
+- [ ] House-format test never re-run after the fixes.
+- [ ] Gate C deferred items: chain 2's binding flags and axis choice (C8–C11).
 
-- [ ] Rewrite `app/src/app/page.jsx` sections "What I found, and what did not survive"
-      and "The hypothesis" into one claim section
-- [ ] Move the withdrawn-gradient narrative to `missing/`
-- [ ] Move agreement rates and the definitional diagnosis to `method/`
-- [ ] Re-check every number on the page against the current database
+## Housekeeping
 
-### 1.2 Open question: is one column enough? — **needs a decision**
+- [ ] Delete merged branches: `worktree-isolation`, `vercel-deploy-prep`,
+      `review-gates`, `maturity-repair`, `site-story`, `gate-d-rerun`.
+- [ ] Re-run Gate D once more after the above. It is a verification gate and should be
+      the last thing that happens.
 
-The eight categories are now named for the work rather than the AI
-(`Reading and synthesis` rather than `LLM reasoning and synthesis`), which fixed the
-immediate confusion: the column reads as *what stands in the way*, and the separate
-maturity column reads as *whether AI reaches it*.
+---
+---
 
-David is not sold that this is enough, and the objection is a real one. What the site
-still cannot say is **which AI capability could accelerate a given gap**. For a gap
-whose blocker is `Coordination and institutions`, the maturity column says "no
-capability that works today" — but it never says what the candidate capability
-*would* be. Matching? Forecasting? Drafting? The label is silent.
+# Detail
 
-Two ways to close that, and the choice is not obvious:
+Only below this line if you want the reasoning behind a bullet.
 
-- **Leave it at one column.** Cheap, already done, and honest about what was measured.
-  The cost is that a reader has to infer the AI story from the maturity value alone.
-- **Add a real second attribute** — "which AI capability could act here, if any" —
-  and label all 103 gaps against it, with an audit. This is what would let the site
-  show blocker and accelerator as genuinely separate things. The cost is a full pass
-  plus a gate, and for coordination gaps the honest answer is often "none", which may
-  make a thin second column.
+## Why chain link maturity can move the headline
 
-Worth noting it sits right next to the **typed capability edges** already being asked
-of Convergent — if they type their edges, this attribute becomes derivable rather than
+`critical_path_links.maturity` was never in the maturity repair's scope. Five of the
+fifteen links still carry the availability reading — *does this capability exist* —
+rather than the efficacy reading the repair established, *would applying it move this
+step*.
+
+The worst is telescope link 1, *Science case definition*, labelled Reading and
+synthesis / Working now / AI acts. Its own blocker field says the constraint is
+**community consensus on what to build, not analysis capacity**. Those seven years are
+workshops and committee reports reaching agreement. Language models are excellent at
+the analytical content and cannot make a field agree.
+
+If that link flips, the front page's "AI acts on 3 of 8 steps, 9.5 of 32.5 years"
+becomes roughly 2.5 of 32.5. That is a *stronger* version of the argument, not a
+weaker one — but it is a different number, and the page currently states the old one.
+
+Gate D flags this as one reader's reading, unaudited. It wants a second labeler before
+it changes anything on the front page.
+
+## Why the proposed-gap count is a decision, not a bug
+
+Phase 4's acceptance criterion in `docs/local-agent-plan.md` is 3–5 proposed gaps.
+Four were written; Gate B found two already funded by named programmes (SkAI Institute,
+UK Metascience Unit) and both were withdrawn. Two remain, and both survived an
+adversarial check whose brief was to defeat them.
+
+Two gaps that survived an attack is arguably a better artifact than four where two are
+duplicates. But the plan's own floor says three and nothing on record acknowledges
+being below it. Either propose one or two more, or write down that the floor was
+traded for survivability.
+
+## One column or two
+
+The eight categories now name the work (`Reading and synthesis`, not `LLM reasoning
+and synthesis`), so the column reads as *what stands in the way* and the maturity
+column reads as *whether AI reaches it*.
+
+What the site still cannot say is **which** AI capability could accelerate a given
+gap. For a coordination gap, maturity says "nothing works today" and never says what
+the candidate would be — matching? forecasting? drafting?
+
+Closing that means a second attribute nobody has labelled: a full pass over 103 gaps
+plus a gate, and for coordination gaps the honest answer is often "none", which may
+make a thin column. It also sits right next to the **typed capability edges** already
+being asked of Convergent — if they type their edges it becomes derivable rather than
 hand-labelled, which is an argument for asking rather than building.
 
-- [ ] Decide: one column, or two with a relabel
-- [ ] If two: write the taxonomy for the second axis before labelling anything
+## What Gate D confirmed rather than found
 
-### 1.3 Simplify the rest of the site
+The part that needs no work: every distribution, cross-tab, audit rate and elapsed-time
+figure in `docs/findings.md` re-derives exactly from the database. There is no ranking
+anywhere on the site — `MapBrowser` has no sort call and prints "Your export order, not
+a ranking." The `guess` flag is genuinely distinct in both colour schemes, confirmed by
+looking at the rendered page rather than at the CSS.
 
-- [ ] Eight pages is a lot. Decide whether *Indicators*, *Proposed gaps* and
-      *Attributes* stay separate or fold together
-- [ ] `TIER_COLOR` runs a light-to-dark ramp that reads good-to-bad (Gate D). Correct
-      encoding for an ordered variable, wrong connotation
-- [ ] No repository link anywhere on the site, so every file citation on it is dead
-      (Gate D)
-- [ ] Three pages tell readers to see `search_log`; that table has **0 rows**. The
-      searches are real and live in `research-log/searches/phase-3.json`
+Nine blocking findings, and almost all of them were downstream of the database rather
+than in it.
 
-## 2. The email
+## The four blocking findings already fixed
 
-- [ ] Rewrite `docs/cover-note.md` — concise, gets them interested, one claim
-- [ ] Its headline currently asserts the **withdrawn gradient** on withdrawn v1 numbers
-      ("all 17 sit at two-to-five years or speculative"). 17 exists nowhere in the
-      current database. Gate D marked this blocking
-- [ ] The note claims its numbers are regenerated from the database, which is what
-      stops a reader hand-checking the one that is wrong
+Gate D ran at `82209a4`, before the site-story merges. On record as found, already
+gone: the attributes page's "not one gap in the map is served by robotics"; the method
+page's "Maturity was never audited"; the "80 minutes across six phases" runtime; and
+the built site still publishing the two withdrawn proposed gaps and the refuted
+quantum-gravity null.
 
-## 3. Gate D
+## What nobody has checked
 
-- [ ] **Rerun against the settled database.** The in-flight run was launched when
-      AI-type confidence was 46/57; it is now **55/48** after the maturity repair, so
-      every number in the existing report needs re-deriving
-- [ ] Then act on it — no acting pass has run for Gate D at all
-- [ ] Sequencing: Gate D is a verification gate. Run it *after* 1.1 and 2, not before,
-      or it verifies a page that is about to be replaced
+From Gate D's own `missing` list, roughly in order of how much it matters:
 
-## 4. Deferred review findings
-
-From `research-log/reviews/actions.json`. Twelve items, none blocking.
-
-- [ ] **C8–C11** — chain 2's binding flags and axis choice. These contest the
-      decomposition rather than a fact in it, so they are a re-derivation and belong
-      with the producer
-- [ ] **C1** — JWST link 4 interval. Design maturation ran to the 2010 mission CDR,
-      four years past the interval it is given. The direction of the error is recorded;
-      the interval is not moved because no milestone pair separates overlapping phases
-- [ ] **C20, C23** — tone and a heading in `app/src/app/chains/page.jsx`. Will be
-      touched anyway by item 1.2
-- [ ] **C17** — attribution note on the Meyerson series
-- [ ] **B4** — house-format test not re-run after the fixes. Needs a fresh decoy draw
-- [ ] **C12, C13** — pre-registration quality caveat, and the empty `search_log` /
-      absent `phase-5.json`. Recorded, not fixable after the fact
-
-## 5. Data and method debt
-
-- [ ] **`docs/findings.md` renders fifteen `NaN min` cells.** The bug in
-      `engine/audit-report.mjs` is fixed; the document has not been regenerated
-- [ ] **No `decisions` rows for the gate acting pass.** `research-log/decisions.json`
-      was outside that pass's file ownership and a concurrent agent was writing it.
-      The reasoning is in the files it did own, but the ledger is incomplete
-- [ ] **"Proxy only" ran 78% disagreement** in the Phase 2 audit and probably should be
-      dropped, leaving three tiers. **19 gaps** currently hold it
-- [ ] **Outcomes and measurability tiers were frozen at Phase 1–2 values** and have had
-      no full second pass. Maturity and type have both had two; these have had one
-- [ ] `docs/review-gate-plan.md` still states AI-type confidence as 46/57
-
-## 6. Housekeeping
-
-- [ ] Four merged branches can be deleted: `worktree-isolation`, `vercel-deploy-prep`,
-      `review-gates`, `maturity-repair`
-- [ ] The primary clone is on `maturity-repair` rather than `main`, so it is still
-      doubling as a workspace. Put it on `main` and leave it there
-- [ ] `engine/worktree.mjs` is only on `main`, so it is unavailable from any branch cut
-      before it — including the primary clone's current checkout
-
----
-
-## Sequencing
-
-The only hard ordering is that **Gate D runs last**. Everything in 1 and 2 changes the
-text it checks, and it has already been run once against numbers that have since moved.
-
-Items 4, 5 and 6 are independent and can go in parallel, in their own worktrees.
+- No human has reviewed any label except the four maturity escalations.
+- The outcome dimension has had no second pass of any kind.
+- `critical_path_links.maturity` has never had a second labeler.
+- The eight JWST per-step durations have been re-derived once, by Gate C, and carry the
+  telescope chain's only quantitative claim.
+- The two surviving proposed gaps have not been re-tested against the house format
+  since they were rewritten.

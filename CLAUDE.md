@@ -35,6 +35,34 @@ Failure modes, in order of how easily they happen here:
 2. **Shipping a number nobody sanity-checked.** See below.
 3. **Confessing at length.** One clear statement of a limitation beats four.
 
+## Progressive disclosure, everywhere, including to David
+
+**Lead with the answer. Put the detail underneath, where someone who wants it will
+find it.** This applies to every document, every page, and every message in a
+conversation — not only to the artifact.
+
+The shape:
+
+1. **A TL;DR or a short bulleted list of the things to know, at the top.** Short
+   enough to read in one pass and act on without scrolling.
+2. **Detail below**, clearly separated, for whoever wants the reasoning.
+3. **Never make someone read the working to find the conclusion.**
+
+In practice:
+
+- **Documents.** `docs/todo.md` is the model: bullets at the top saying what needs
+  doing, a `# Detail` section at the bottom holding the why. If a doc has grown to the
+  point where the first screen no longer says what matters, that is the signal to
+  restructure it, not to add a summary paragraph on top of the sprawl.
+- **Replies.** Open with what happened and what it means. Method, caveats, and the
+  route taken go after. A reply that opens with what was tried is a reply about the
+  agent.
+- **Length is a decision, not a default.** More detail is not more rigour. Detail that
+  nobody reads is worse than absent, because it hides the parts that matter.
+
+This is the same rule as the argument page below, applied one level up: the front page
+carries the claim, every other page carries the nuance. Do the same thing to David.
+
 ## The argument page carries one claim; every other page carries the nuance
 
 The front page is the only page most readers will finish. It exists so they can
