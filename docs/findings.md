@@ -139,22 +139,19 @@ Two gaps sitting in the same catalogue, one row apart in structure and a categor
 
 A catalogue treats these as two rows of equal standing, which for a catalogue is correct — it is not claiming otherwise. The four added columns are what make the difference visible: one has a quantity, a direction and a tool that works today; the other has none of the three, and the honest thing to record is that its progress indicator search returned a null.
 
-## Progress indicators, and the two nulls
+## Progress indicators, and the null
 
-A **sample** of 11 gaps across all four tiers, 2 of them honest nulls. Not coverage, and not to be extrapolated to the other 92. Every non-null value was read off a page that was actually fetched; the `source_checked` column records whether the source verified against arXiv or Crossref, or was merely reachable.
+A **sample** of 8 gaps across all four tiers, 1 of them an honest null. Not coverage, and not to be extrapolated to the other 95. Every non-null value was read off a page that was actually fetched; the `source_checked` column records whether the source verified against arXiv or Crossref, or was merely reachable.
 
 | Gap | Tier | Quantity | Current | Source check |
 |---|---|---|---|---|
-| Silicon-Based Electronics Face Fundamental Limits in Dimensional Scaling | Directly measurable | Contacted gate pitch, most recent publicly disclosed volume-production node | 45 nm | unchecked |
-| Fraud in the Scientific Literature | Proxy only | Retractions per 10,000 published articles, averaged over 2000-2024 | 11.82 retractions per 10,000 articles | verified |
-| Quantum Gravity is Experimentally Hard to Constrain  | Verification contested | Highest benchmarked quantum-gravity figure-of-merit eta across mechanical quantum-control platforms | 1.1e-7 dimensionless (eta) | verified |
 | Frontier Telescopes Are Expensive and Take Decades to Build | Directly measurable | Elapsed time from first concept study to launch, flagship space observatory | 32 years | unchecked |
 | Searching Through the Vast, Underexplored Space of Materials is Slow and Expensive | Directly measurable | Novel inorganic compounds experimentally realised per day of autonomous laboratory operation | 2.4 compounds per day | verified |
 | Most Brain Circuitry is Still Invisible | Directly measurable | Volume of brain tissue reconstructed at synaptic resolution in a single dataset | 1.0 mm³ | verified |
 | Clinical Trials Are Poorly Optimized for Evidence Gathering | Directly measurable | Median estimated cost of a pivotal clinical trial supporting a new FDA approval | 19.0 million USD | verified |
-| Silicon-Based Electronics Face Fundamental Limits in Dimensional Scaling | Directly measurable | Contacted gate pitch at volume production | 45 nm | unchecked |
-| Fraud in the Scientific Literature | Proxy only | Retractions per 10,000 published articles | 11.04 retractions per 10,000 articles | verified |
-| Quantum Gravity is Experimentally Hard to Constrain  | Verification contested | Progress toward experimentally constraining quantum gravity | **null** | n/a |
+| Silicon-Based Electronics Face Fundamental Limits in Dimensional Scaling | Directly measurable | Contacted gate pitch, most recent publicly disclosed volume-production node | 45 nm | unchecked |
+| Fraud in the Scientific Literature | Proxy only | Retractions per 10,000 published articles, averaged over 2000-2024 | 11.82 retractions per 10,000 articles | verified |
+| Quantum Gravity is Experimentally Hard to Constrain  | Verification contested | Highest benchmarked quantum-gravity figure-of-merit eta across mechanical quantum-control platforms | 1.1e-7 dimensionless (eta) | verified |
 | A Limited Set of Rigid Organizational Structures for Organizing and Funding Research Constrains the Forms of R&D That Get Done | Counterfactual required | Progress toward less rigid organizational and funding structures for research | **null** | n/a |
 
 The nulls are the load-bearing rows. Each has six logged, cached searches behind it and each names its closest near-miss: a real and improving Fermi/LHAASO bound on the quantum-gravity energy scale that no one agrees settles anything, and the ~42% administrative-burden figure that measures a symptom of institutional rigidity rather than the research it prevents. See `search_log` and `research-log/searches/phase-3.json`.
@@ -170,23 +167,23 @@ Both expectations were committed before the link analysis existed, in a separate
 
 | Phase | Kind | Units | Elapsed |
 |---|---|---:|---:|
-| phase-0 | agent | — | NaN min |
-| phase-1 | agent | 103 | NaN min |
-| phase-2 | agent | 36 | NaN min |
-| phase-2b | agent | 103 | NaN min |
-| phase-3 | agent | 8 | NaN min |
-| phase-4 | agent | 4 | NaN min |
-| phase-5 | agent | 2 | NaN min |
-| phase-6 | agent | 1 | NaN min |
-| revision-1 | agent | — | NaN min |
-| revision-2 | agent | — | NaN min |
-| revision-3 | agent | — | NaN min |
-| revision-4 | agent | — | NaN min |
-| revision-5 | agent | — | NaN min |
+| phase-0 | agent | — | 46 min |
+| phase-1 | agent | 103 | 11 min |
+| phase-2 | agent | 36 | 19 min |
+| phase-2b | agent | 103 | 55 min |
+| phase-3 | agent | 8 | 9 min |
+| phase-4 | agent | 4 | 6 min |
+| phase-5 | agent | 2 | 7 min |
+| phase-6 | agent | 1 | 27 min |
+| revision-1 | agent | — | 73 min |
+| revision-2 | agent | — | 50 min |
+| revision-3 | agent | — | 41 min |
+| revision-4 | agent | — | 22 min |
+| revision-5 | agent | — | 33 min |
 | revision-6 | agent | — | open |
-| all | human-review | — | NaN min |
+| all | human-review | — | 244 min |
 
-**Agent time: NaN minutes. Human review time: NaN minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.
+**Agent time: 400 minutes. Human review time: 244 minutes.** Tracked separately on purpose; a single blended number invites the obvious objection. Phase 0's start was never instrumented, so it counts as zero and the agent figure is a lower bound.
 
 ## What this shows
 
