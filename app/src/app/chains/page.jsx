@@ -45,7 +45,7 @@ export default function ChainsPage() {
         </section>
         <section>
           <div className="col">
-            <h2>Both chains share a binding step</h2>
+            <h2>Both chains run through the same step</h2>
             <p>
               Telescope time and facility approval are allocated by peer review of proposals. A
               decadal survey is a review panel, and so is a time allocation committee. That makes the

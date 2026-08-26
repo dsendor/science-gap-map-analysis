@@ -74,9 +74,12 @@ audit, which is why it is not here.
 
 ## 4. Indicators as coverage, and as a series rather than a reading
 
-**What exists.** A sample of eleven gaps across all four measurability tiers, two of them
-honest nulls, every non-null value read off a page that was actually fetched. It is
-explicitly not coverage and must not be extrapolated to the other ninety-two.
+**What exists.** A sample of eight gaps across all four measurability tiers, one of them
+an honest null, every non-null value read off a page that was actually fetched. It is
+explicitly not coverage and must not be extrapolated to the other ninety-five. (An
+earlier version of this document said eleven gaps and two nulls. Eleven was an artifact
+of duplicate rows left by a non-idempotent ingest, and the second null was the
+quantum-gravity row Gate A refuted.)
 
 **Two separate pieces of work, and the second is the valuable one.** Coverage means an
 indicator for every directly-measurable gap. But a one-time reading only says where a gap

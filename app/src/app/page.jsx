@@ -107,11 +107,18 @@ export default function Page() {
             </p>
             <p>
               On <em>{telescope.gap_name}</em>, traced through JWST&rsquo;s published milestones, AI
-              acts on {tActs.length} of the {telescope.links.length} steps. Those {tActs.length} are{' '}
-              {tActsYears} of the {tYears} years. Close every one of them completely and a frontier
-              telescope still takes {tYears - tActsYears}. That figure is an upper bound and the
-              corrections run downward, but not to zero: more than a decade of it is elapsed time no
-              current AI capability reaches. <a href="./chains/">The full chain</a>
+              acts on {tActs.length} of the {telescope.links.length} steps. How many of the {tYears}{' '}
+              years those three are is the part the chain cannot put one number on. As labelled they
+              are {tActsYears}, leaving {tYears - tActsYears}. Two independent reviews then found
+              corrections running in opposite directions &mdash; one moving years into the AI column,
+              one moving seven years out of it &mdash; which puts the residual somewhere between
+              about fifteen and about thirty.
+            </p>
+            <p>
+              That is a weaker claim than a single number and a more defensible one. What neither
+              reading disturbs is the shape: on every version of the arithmetic, most of the elapsed
+              time of a frontier telescope sits in steps no current AI capability reaches.{' '}
+              <a href="./chains/">The full chain, and both corrections</a>
             </p>
             <p>
               Take <em>Doing and publishing research is expensive and subject to structural

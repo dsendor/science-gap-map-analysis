@@ -9,10 +9,20 @@ import { fieldColor } from '../lib/fields';
 // Each tag used to sit in an unlabelled row, so a reader met "Coordination and
 // institutional / Working now / Proxy only / guess" with no way to tell which
 // question each one answered. The caption is the answer to "what is this?".
+//
+// The guess flag used to be its own pill, ORed across all three confidences, so a
+// reader could see that something on the card was a judgment call and never which.
+// It now sits on the tag it belongs to. Type and maturity share one confidence
+// because they are one labelled row, so they flag together, and the caption carries
+// the word rather than relying on colour alone.
 function Attr({ cap, cls, title, children }) {
+  const isGuess = cls === 'flag';
   return (
-    <span className="attr" title={title}>
-      <span className="attr__cap">{cap}</span>
+    <span className="attr" title={isGuess ? `${title} This one is a guess, not a confident read.` : title}>
+      <span className={isGuess ? 'attr__cap attr__cap--flag' : 'attr__cap'}>
+        {cap}
+        {isGuess ? ' · guess' : ''}
+      </span>
       <span className={cls ? `tag ${cls}` : 'tag'}>{children}</span>
     </span>
   );
@@ -22,7 +32,6 @@ export default function GapCard({ gap }) {
   const [open, setOpen] = useState(false);
   const caps = gap.capabilities ?? [];
   const ind = gap.indicators?.[0];
-  const flagged = [gap.outcome_confidence, gap.primary_confidence, gap.tier_confidence].includes('guess');
 
   return (
     <div className="gcard">
@@ -51,27 +60,36 @@ export default function GapCard({ gap }) {
         <p className="gcard__theirs">{gap.description}</p>
         {gap.outcome && (
           <p className="gcard__ours">
-            <span className="k">If this closes</span>
+            <span className={gap.outcome_confidence === 'guess' ? 'k k--flag' : 'k'}>
+              If this closes{gap.outcome_confidence === 'guess' ? ' · guess' : ''}
+            </span>
             {gap.outcome}
           </p>
         )}
       </div>
 
       <div className="gcard__attrs">
-        <Attr cap="Primary blocker" title="The kind of work standing between here and the gap closing. Not a claim that AI does this.">
+        <Attr
+          cap="Primary blocker"
+          cls={gap.primary_confidence === 'guess' ? 'flag' : undefined}
+          title="The kind of work standing between here and the gap closing. Not a claim that AI does this."
+        >
           {gap.primary_ai_type}
         </Attr>
-        <Attr cap="AI acceleration" title="Whether an AI capability that would move this kind of work exists today, is two to five years out, or is speculative.">
+        <Attr
+          cap="AI acceleration"
+          cls={gap.primary_confidence === 'guess' ? 'flag' : undefined}
+          title="Whether an AI capability that would move this kind of work exists today, is two to five years out, or is speculative."
+        >
           {gap.primary_maturity}
         </Attr>
-        <Attr cap="Measurability" title="Whether progress on this gap has an agreed observable.">
+        <Attr
+          cap="Measurability"
+          cls={gap.tier_confidence === 'guess' ? 'flag' : undefined}
+          title="Whether progress on this gap has an agreed observable."
+        >
           {gap.tier}
         </Attr>
-        {flagged && (
-          <Attr cap="Confidence" cls="flag" title="At least one label on this gap is a judgment call rather than a confident read.">
-            guess
-          </Attr>
-        )}
         {ind && (
           <Attr cap="Indicator" cls="on" title="The number to watch to know whether this gap is closing.">
             {ind.is_null_result ? 'none found' : `${ind.current_value} ${ind.unit ?? ''}`}

@@ -18,16 +18,13 @@ passes. What is left is text, one label problem, and two decisions.
 
 ## Must fix before anything is sent
 
-- [ ] **Chain link maturity — can move the headline.** 5 of 15 chain links still use
-      the "does the capability exist" reading. Telescope link 1 is the bad one: fixing
-      it takes *AI acts on 9.5 of 32.5 years* to about **2.5**.
 - [ ] **The email.** `docs/cover-note.md` still leads with the withdrawn gradient and
-      a number (17) that exists nowhere in the database.
-- [ ] **Withdrawn framing on the chains page** — heading still reads "Both chains
-      share a binding step".
-- [ ] **Three stale counts in docs** — `future-work.md` (eleven indicators / two nulls
-      → 8 and 1), `taxonomy.md` (coordination working-now 10 → 2), `findings.md`
-      pointing readers at the empty `search_log` table.
+      a number (17) that exists nowhere in the database. Last blocking item.
+- [ ] **Second labeler for `critical_path_links.maturity`.** 5 of 15 links carry the
+      old availability reading. Telescope link 1 is flagged contested in its rationale
+      and the front page now states a range instead of a point; flipping the label
+      needs a second reader, not one.
+- [ ] `findings.md` still points readers at the empty `search_log` table.
 
 ## Site
 

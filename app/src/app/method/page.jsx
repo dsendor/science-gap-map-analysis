@@ -37,7 +37,7 @@ export default function MethodPage() {
           <div className="col">
             <h1>Method, audit, and what is wrong with this</h1>
             <p className="lead">
-              About five hours of agent time and about four hours of mine, plus three blind cold
+              About six and a half hours of agent time and about four hours of mine, plus three blind cold
               reviews of the artifact itself. Everything that would make you trust the labels less is
               on this page.
             </p>

@@ -114,8 +114,11 @@ be wrong, which removed the bias and every check on validity with it. The output
 Nobody believes those coordination problems are solved today.
 
 The repair pass re-adjudicated maturity on the merits for the 54 gaps the defect could
-reach; coordination's working-now count went from 10 to 2, both of which are open
-questions rather than settled labels. See `research-log/maturity-repair/report.md`.
+reach; coordination's working-now count went from 10 to 0. It reached 2 during the
+repair and then 0, after David ruled AI Could Be Misused Speculative on the grounds
+that the capability which would actually close it is alignment, whose feasibility the
+field itself treats as open. Zero is the number to quote: no gap whose primary blocker
+is coordination has an AI capability that would move it today. See `research-log/maturity-repair/report.md`.
 
 **Maturity remains the least reliable field in this taxonomy** — it is a judgement about
 the world rather than a reading of the gap text, and half the primaries carry `guess`.
