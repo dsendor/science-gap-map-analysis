@@ -1,5 +1,28 @@
 # Gap Map augmentation
 
+## Always, in every session
+
+1. **Never commit or merge to `main` without asking David.** Work on a branch, push
+   the branch, and ask. This holds even when a change looks obviously right and even
+   when a task brief names `main` as the working branch. Asking costs one message.
+2. **Lead with the answer.** Every document, every page, every reply opens with a
+   TL;DR — a short bulleted list of the things to know, readable in one pass without
+   scrolling. Detail goes below, clearly separated. Never make someone read the
+   working to find the conclusion. Full rules: `methodology/writing.md`.
+3. **Additive only.** Never modify `gm_*` tables outside `engine/import-gapmap.mjs`.
+   `node engine/verify-additive.mjs` must pass before every commit. Do not "fix" their
+   typos.
+4. **Never rank.** No numeric score column exists in the schema, by design. They
+   deferred prioritisation deliberately; a stranger ranking their map is presumptuous.
+5. **Named values only.** Every taxonomy value is a CHECK constraint. An invented enum
+   value is a write failure, and that is the point.
+6. **Every judgment carries a rationale and a confidence.** `rationale` is NOT NULL;
+   `confidence` is `confident` or `guess`. A run that produces no guesses is not a
+   confident run, it is a dishonest one.
+7. **Preserve their IDs and slugs**, so the additions join back to their source data.
+8. **One track of work, one worktree.** `node engine/worktree.mjs <track>` before you
+   start anything. See below.
+
 ## What this project is
 
 An **additive** augmentation of Convergent Research's Fundamental Development Gap Map
@@ -14,38 +37,25 @@ invite contributions. Tone follows from that everywhere.
 
 **The goal: give Convergent Research a simple, clear story showing how an AI-focused
 update to their Gap Map would add value.** Accurate *and* clear. Those pull against
-each other and the resolution is not to retreat into hedging.
+each other and the resolution is not to retreat into hedging. A caveat a reader cannot
+act on is not honesty, it is noise.
 
-| Where to look | |
-|---|---|
-| What is outstanding and who has it | `docs/todo.md` — update it when you pick something up |
-| The six-phase plan | `docs/plan.md` |
-| How to write anything here | `methodology/writing.md` |
-| Taxonomy values and their discriminating examples | `methodology/taxonomy.md` |
-| Auditing and sanity-checking labels | `methodology/audit-protocol.md` |
-| Working in parallel without collisions | `docs/worktrees.md` |
-| Deployment, access control, the Vercel gotcha | `docs/vercel-deploy.md` |
+## The four failure modes, in order of how easily they happen here
 
-Source brief: Notion, *Claude Code brief: Gap Map augmentation*.
-
-## Non-negotiables
-
-1. **Additive only.** Never modify `gm_*` tables outside `engine/import-gapmap.mjs`.
-   `node engine/verify-additive.mjs` diffs the baseline against the hash-pinned
-   snapshot and fails CI on any edit to their gaps, capabilities, fields, resources or
-   edges. Do not "fix" their typos.
-2. **Never rank.** No numeric score column exists in the schema, by design. They
-   deferred prioritisation deliberately; a stranger ranking their map is presumptuous.
-3. **Named values only.** Every taxonomy value is a CHECK constraint. An invented enum
-   value is a write failure, and that is the point.
-4. **Every judgment carries a rationale and a confidence.** `rationale` is NOT NULL;
-   `confidence` is `confident` or `guess`. A run that produces no guesses is not a
-   confident run, it is a dishonest one.
-5. **Preserve their IDs and slugs**, so the additions join back to their source data.
-6. **Sanity-check labels against the gaps they describe** before any chart or
-   distribution ships. Agreement is not validity; the audit does not catch absurdity.
-   Sort by the new label, read the top and bottom ten rows. See
+1. **Burying the story in method.** A page that leads with how the labelling was
+   audited is a page about us. They want to know what their map looks like with the
+   attributes added. Lead with that.
+2. **Shipping a number nobody sanity-checked.** Agreement is not validity — a label
+   can survive the audit and still be absurd next to the gap it describes. Before any
+   chart or distribution ships, sort by the new label and read the top and bottom ten
+   rows. The instance that forced this rule, and the definitional error behind it:
    `methodology/audit-protocol.md`.
+3. **Confessing at length.** One clear statement of a limitation beats four. The
+   argument page carries one claim about *their map*; withdrawn findings, method and
+   nuance live on the pages behind it.
+4. **Acting where you should have asked.** Anything outward-facing or hard to reverse
+   — a push to `main`, a merge, a deploy, a message to Convergent — is David's call,
+   not a judgment call. Everything else, decide and proceed (see below).
 
 ## Start here: take a worktree
 
@@ -54,12 +64,12 @@ node engine/worktree.mjs <track-name>      # ../wt-<track>, new branch, .env cop
 cd ../wt-<track> && node engine/rebuild.mjs && node engine/preflight.mjs
 ```
 
-**One track of work, one worktree — a branch is a label, a directory is isolation.** A
-clone has exactly one HEAD, so two agents in one directory silently switch each other's
-checkout and carry uncommitted work onto someone else's branch. `git fetch` before
-starting; the primary clone is coordination space, not a workspace; merge to `main` by
-hand; if you find commits you did not make, stop and report before merging. The full
-rules and the two incidents behind them: `docs/worktrees.md`.
+A branch is a label; a directory is isolation. A clone has exactly one HEAD, so two
+agents in one directory silently switch each other's checkout and carry uncommitted
+work onto someone else's branch. `git fetch` before starting. The primary clone is
+coordination space, not a workspace. If you find commits you did not make, stop and
+report before merging. The nine rules and the two incidents behind them:
+`docs/worktrees.md`.
 
 ## Commands
 
@@ -71,13 +81,19 @@ node engine/integrity-report.mjs   # regenerate docs/integrity-report.md
 node engine/search.mjs "query" --phase 1 --gap <id>   # cached Brave search, logged to search_log
 ```
 
-## How we write
+## Where to look
 
-**Lead with the answer; put the detail underneath, where someone who wants it will find
-it.** Applies to the artifact, to every doc, and to every reply to David. The argument
-page carries one claim about *their map*; nuance, method and withdrawn findings live on
-the pages behind it. A caveat that a reader cannot act on is not honesty, it is noise.
-Full rules, and the worked example of getting this wrong: `methodology/writing.md`.
+| | |
+|---|---|
+| What is outstanding and who has it | `docs/todo.md` — update it when you pick something up |
+| The six-phase plan | `docs/plan.md` |
+| How to write anything here | `methodology/writing.md` |
+| Taxonomy values and their discriminating examples | `methodology/taxonomy.md` |
+| Auditing and sanity-checking labels | `methodology/audit-protocol.md` |
+| Working in parallel without collisions | `docs/worktrees.md` |
+| Deployment, access control, the Vercel gotcha | `docs/vercel-deploy.md` |
+
+Source brief: Notion, *Claude Code brief: Gap Map augmentation*.
 
 ## Research method
 
@@ -111,7 +127,6 @@ engine/                     import, verify-additive, integrity-report, search
 methodology/                taxonomy, writing, house-format, critical-path, audit-protocol
 agents/                     labeler, auditor sub-agent briefs
 research-log/labels/        one JSON per field batch, ingested serially
-research-log/audits/        blind relabels
 docs/plan.md                the six-phase plan
 ```
 
@@ -121,7 +136,9 @@ forbidden here. This is the main trap in reusing that repo.
 
 ## Autonomous decision protocol
 
-Whenever a decision would previously have gone to David: decide per the methodology
-docs, write a `decisions` row (decision, rationale, runner_up, confidence,
-reversal_condition), proceed immediately, prefer the reversible option. Never stall,
-never silently hard-code.
+Within a track, decide per the methodology docs, write a `decisions` row (decision,
+rationale, runner_up, confidence, reversal_condition), proceed immediately, prefer the
+reversible option. Never stall, never silently hard-code.
+
+This covers judgment calls about labels, wording and method. It does not cover the
+irreversible or outward-facing ones in failure mode 4 — those go to David, always.
