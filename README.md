@@ -24,8 +24,9 @@ to be confident.
 imported baseline and diffs it against a hash-pinned snapshot of their export. Any edit
 to their gaps, capabilities, fields, resources or edges fails the build.
 
-See `docs/plan.md` for the plan, `docs/integrity-report.md` for what the export
-actually contains, and `CLAUDE.md` for how to work in this repo.
+See `docs/plan.md` for the plan, `docs/conventions.md` for the reasoning behind the
+repo's rules, `docs/integrity-report.md` for what the export actually contains, and
+`CLAUDE.md` for how to work in this repo.
 
 ## Quick start
 
