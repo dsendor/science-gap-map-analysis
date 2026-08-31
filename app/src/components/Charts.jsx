@@ -38,6 +38,7 @@ export function StackedMaturity({ rows }) {
   // Normalising every row to full width would make 5 gaps look like 21.
   const totals = rows.map(([, c]) => MATURITY_ORDER.reduce((a, m) => a + (c[m] ?? 0), 0));
   const max = Math.max(...totals, 1);
+
   return (
     <>
       <div style={{ display: 'grid', gridTemplateColumns: 'max-content 1fr max-content', gap: '6px 12px', alignItems: 'center' }}>
@@ -60,7 +61,13 @@ export function StackedMaturity({ rows }) {
                   ) : null
                 )}
               </div>
-              <div className="val" style={{ fontSize: 14 }}>{t}</div>
+              <div className="val" style={{ fontSize: 14, whiteSpace: 'nowrap' }}>
+                {t}
+                <span style={{ color: 'var(--muted)' }}>
+                  {' '}
+                  · {Math.round((100 * (counts['Working now'] ?? 0)) / (t || 1))}% now
+                </span>
+              </div>
             </Fragment2>
           );
         })}

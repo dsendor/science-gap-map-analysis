@@ -1,6 +1,7 @@
 import data from '../../../public/data.json';
 import Nav from '../../components/Nav';
 import { TIER_ORDER } from '../../lib/constants';
+import { StackedMaturity } from '../../components/Charts';
 
 export const metadata = { title: 'The four attributes, and how to read them' };
 
@@ -25,6 +26,19 @@ const KINDS = [
 
 export default function AttributesPage() {
   const { summary: s } = data;
+  // Sorted by the share of each category's gaps whose AI analogue works today. This
+  // orders one of our own attributes by a property we measured; it is not an order over
+  // their gaps, which is the thing the brief rules out. Ties break on the larger n.
+  const shareNow = (c) => {
+    const t = Object.values(c).reduce((x, y) => x + y, 0);
+    return t ? (c['Working now'] ?? 0) / t : 0;
+  };
+  const typeRows = Object.entries(s.maturity_by_ai_type).sort(
+    (a, b) =>
+      shareNow(b[1]) - shareNow(a[1]) ||
+      Object.values(b[1]).reduce((x, y) => x + y, 0) -
+        Object.values(a[1]).reduce((x, y) => x + y, 0)
+  );
   const tierText = {
     'Directly measurable': 'An observable quantity exists and everyone agrees which direction is an improvement. Elapsed years, cost per trial, cubic millimeters reconstructed.',
     'Proxy only': 'You can measure inputs or side effects but not the thing itself. This tier failed its own audit at 78% disagreement and I would drop it.',
@@ -108,6 +122,20 @@ export default function AttributesPage() {
               </tbody>
             </table>
           </div>
+          <figure className="card" style={{ marginTop: 18 }}>
+            <div className="pad">
+              <StackedMaturity rows={typeRows} />
+              <figcaption style={{ marginTop: 14 }}>
+                Every gap&rsquo;s primary kind of work, and how mature the AI for it is, sorted by
+                the share of each row whose AI analogue works today. Bar length is a count of gaps.
+                The order is one of my attributes, not one of their gaps &mdash; nothing here ranks
+                the map. Read the small rows with care: real-time control is four gaps, so one gap
+                moves it twenty-five points. Coordination and institutions is the only row with
+                nothing at all in the working-now column.
+              </figcaption>
+            </div>
+          </figure>
+
           <div className="col">
             <p style={{ marginTop: 18 }}>
               Each gap gets exactly one primary and any number of secondaries. Alongside it sits a

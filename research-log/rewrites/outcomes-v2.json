@@ -1,5 +1,5 @@
 {
-  "note": "Second pass on the 103 outcome sentences. The first pass converged on one template — 'X becomes Y, so Z stops being W' — which appeared in more than half of them and made 103 distinct scientific consequences read as one voice with a variable slot. Rewritten for variation in form and length. Content is unchanged where the first pass had it right.",
+  "note": "Second pass on the 103 outcome sentences. The first pass converged on one template — 'X becomes Y, so Z stops being W' — which appeared in more than half of them and made 103 distinct scientific consequences read as one voice with a variable slot. Rewritten for variation in form and length. Content is unchanged where the first pass had it right. 2026-08-31: the publishing gap’s sentence was rewritten again, by David rather than by a model, after working the gap end to end. It is the one outcome on the map a human has read against its chain.",
   "outcomes": {
     "1fccb37e-2a00-8071-859f-f25fac2df35c": "Compute keeps getting cheaper per operation after silicon channel physics gives out.",
     "1f0cb37e-2a00-803f-80fe-cb4166e4f94b": "A materials group with no quantum optics background can run an ultracold atom experiment. Techniques currently locked inside the labs that invented them spread to applied fields.",
@@ -74,7 +74,7 @@
     "1c1cb37e-2a00-801b-bd01-c3b284abeb44": "Socially significant data outlives the platform that held it, and longitudinal research stops depending on corporate retention policy.",
     "1c1cb37e-2a00-8007-8b2a-c8c51e4c39d0": "Fabricated work gets caught before other work is built on top of it.",
     "1c1cb37e-2a00-8012-ae64-f8ff6f67ee0b": "The literature can be queried as one body of knowledge rather than searched as a pile of documents, and what is already known stops being rediscovered.",
-    "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50": "Getting a result into the permanent record gets cheap enough that publication stops selecting on how well-resourced your institution is.",
+    "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50": "Getting a result into the accepted, verified scientific record is cheap and quick.",
     "1c1cb37e-2a00-80df-ae9c-cc561c437a83": "More evidence per patient and per dollar. The number of clinical questions answerable in a decade rises without a matching rise in cost.",
     "1c1cb37e-2a00-80b5-8cf4-c8195273fa45": "Long-horizon, heavily coordinated research that no current institutional form can house becomes fundable and organisable.",
     "1c1cb37e-2a00-8089-a828-f143cf6f5c86": "Tuberculosis and Group A Streptococcus have resisted vaccines for decades. They get effective countermeasures, and malnutrition's developmental mechanism turns into a design target.",

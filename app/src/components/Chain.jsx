@@ -158,6 +158,43 @@ export default function Chain({ path }) {
       </div>
 
       <div className="pad">
+        <h4 style={{ margin: '0 0 4px', fontSize: 16 }}>The measure for each step</h4>
+        <p style={{ fontSize: 15, color: 'var(--ink-3)', marginTop: 0 }}>
+          One published quantity per step, so you can watch the constraint move rather than take the
+          decomposition on trust. Where no quantity exists, the cell says so.
+        </p>
+        <div className="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th className="num">#</th>
+                <th>Step</th>
+                <th>{isTime ? 'Elapsed' : 'Measure'}</th>
+                <th>Binding</th>
+              </tr>
+            </thead>
+            <tbody>
+              {path.links.map((l) => {
+                const m = isTime ? (l.duration_years != null ? `${l.duration_years} yr` : null) : l.figure;
+                return (
+                  <tr key={l.seq}>
+                    <td className="num">{l.seq}</td>
+                    <td>{l.is_binding ? <strong>{l.link}</strong> : l.link}</td>
+                    <td className={isTime ? 'num' : ''}>
+                      {m || (
+                        <em style={{ color: 'var(--ink-3)' }}>no published quantity exists</em>
+                      )}
+                    </td>
+                    <td>{l.is_binding ? <span className="tag new">binding</span> : ''}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="pad">
         <details open={false}>
           <summary>Every step: what blocks it, which AI capability touches it, and the evidence</summary>
           <div className="body">
@@ -168,7 +205,7 @@ export default function Chain({ path }) {
                 <th className="num">#</th>
                 <th>Step</th>
                 <th>What blocks it</th>
-                <th>{isTime ? 'Elapsed' : 'Published figure'}</th>
+                <th>{isTime ? 'Elapsed' : 'Measure for this step'}</th>
                 <th>AI capability</th>
                 <th>Binding</th>
               </tr>

@@ -1,52 +1,58 @@
 # What is left
 
-**Updated 2026-08-25.** All four review gates have run. Gate D re-ran against the
-settled database: 38 findings, 9 blocking, 4 of those already fixed. The database
-itself is clean — every figure re-derives, no ranking anywhere, additive guardrail
-passes. What is left is text, one label problem, and two decisions.
+**Updated 2026-08-31.** Front page rebuilt around the publishing gap as the single
+worked example. Chart moved to Attributes. Everything not human-reviewed now carries an
+"AI only" tag. What is left is three indicator rows and a cut pass.
 
 ---
 
-## Needs you
+## You do
 
-- [ ] **Review the argument page.** Rewritten, live at `http://localhost:4321`. Good
-      enough to send?
-- [ ] **Decide: one column or two.** Categories now name the work. Do we also need a
-      separate "which AI could accelerate this" attribute? Costs a full relabel.
-- [ ] **Decide: proposed gaps.** Two survived Gate B; Phase 4's own floor is 3–5.
-      Propose more, or record the shortfall and move on?
+- [ ] **Read the new front page.** `http://localhost:4321` after `npx next build`.
+      Shorter, one example, no chart. Is it the thing you would send?
+- [ ] **Pick the further cuts.** Options are in *What can still come out* below.
+- [ ] **Decide: publisher operating margin as the "accepted, verified" indicator?**
+      38.4%, RELX STM 2024, public and audited. The alternative is an honest null.
+- [ ] **Decide: proposed gaps.** Two survived the adversarial check; the plan's floor
+      was 3-5. Propose more, or record the shortfall?
 
-## Must fix before anything is sent
+## I do
 
-- [ ] **The email.** `docs/cover-note.md` still leads with the withdrawn gradient and
-      a number (17) that exists nowhere in the database. Last blocking item.
-- [ ] **Second labeler for `critical_path_links.maturity`.** 5 of 15 links carry the
-      old availability reading. Telescope link 1 is flagged contested in its rationale
-      and the front page now states a range instead of a point; flipping the label
-      needs a second reader, not one.
+- [ ] **Write the three indicator rows** for the publishing gap: cheap, quick,
+      accepted-and-verified. Research is done; see *What the measurement search found*.
+- [ ] **Fix the capability double-count in chain 2.** Link 6 says three of four
+      Convergent capabilities act at dissemination or upstream; the finding says two of
+      four act at credit and legitimacy. *New Protocols* is counted in both.
+- [ ] **The cover note.** `docs/cover-note.md` still leads with the withdrawn gradient
+      and a number (17) that exists nowhere in the database.
 - [ ] `findings.md` still points readers at the empty `search_log` table.
-
-## Site
-
-- [ ] Eight pages is a lot. Fold *Indicators*, *Proposed gaps*, *Attributes* together?
 - [ ] No repository link anywhere, so every file citation on the site is dead.
-- [ ] `TIER_COLOR` light-to-dark ramp reads good-to-bad.
-- [ ] Cross-tabs are computed into `data.json` and rendered nowhere.
-
-## Method debt
-
-- [ ] **Outcomes have never had a second pass.** 102 of 103 confident, one labeler, no
-      audit. Largest unverified thing in the project.
-- [ ] "Proxy only" ran 78% disagreement and probably should be dropped. 19 gaps hold it.
-- [ ] House-format test never re-run after the fixes.
-- [ ] Gate C deferred items: chain 2's binding flags and axis choice (C8–C11).
-
-## Housekeeping
-
 - [ ] Delete merged branches: `worktree-isolation`, `vercel-deploy-prep`,
       `review-gates`, `maturity-repair`, `site-story`, `gate-d-rerun`.
-- [ ] Re-run Gate D once more after the above. It is a verification gate and should be
-      the last thing that happens.
+- [ ] Re-run the verification review last, after everything above.
+
+## Done since 2026-08-28
+
+- Outcome for the publishing gap rewritten by David: *"Getting a result into the
+  accepted, verified scientific record is cheap and quick."* The one outcome on the map
+  a human has read against its chain.
+- **Fixed a silent rebuild bug.** `research-log/rewrites/outcomes-v2.json` held the real
+  wording of all 103 outcome sentences and nothing replayed it — a clean rebuild
+  reverted every one to the first pass with no error. `engine/ingest-outcome-rewrites.mjs`
+  now replays it and `rebuild.mjs` runs it after `ingest-labels.mjs`.
+- "The measure for each step" table on both chains, with an explicit *no published
+  quantity exists* cell where one is missing.
+- Telescope chain off the front page, referenced in one sentence.
+- Maturity chart moved to Attributes, sorted by share working now.
+- `AiOnly` / `HumanChecked` tags; front page carries five and one.
+
+## Known weak, not being fixed
+
+- Outcomes have never had a second pass. One labeller, no audit, except the one gap
+  David worked through.
+- "Proxy only" ran 78% disagreement and probably should be dropped. 19 gaps hold it.
+- Eight pages is a lot. *Indicators*, *Proposed gaps* and *Attributes* could fold together.
+- `TIER_COLOR` light-to-dark ramp reads good-to-bad.
 
 ---
 ---
@@ -86,6 +92,41 @@ Two gaps that survived an attack is arguably a better artifact than four where t
 duplicates. But the plan's own floor says three and nothing on record acknowledges
 being below it. Either propose one or two more, or write down that the floor was
 traded for survivability.
+
+## Gap level versus capability level
+
+The concern: we labelled *what kind of work is in the way* on the 103 gaps. Convergent
+already publish 369 foundational capabilities underneath those gaps, and a capability is
+one thing to build, where a gap is a bundle. Labelling the finer unit looks like the
+obvious move and we did not consider it.
+
+The diagnosis is right and the fix is not a relabel. Three reasons, in order.
+
+**Their capabilities are proposed projects, not capabilities.** *Muon Catalyzed Fusion*,
+*Open Synthesis Database*, *Frugal Science Initiatives*, *Earthquake Prediction*. The
+question our attribute asks — what kind of work stands between us and this — is a
+question about a problem. Asked of *Open Synthesis Database* it mostly answers itself:
+the work in the way is building the database. The attribute stops discriminating at that
+level for a large share of the 369.
+
+**The graph is a tree, so the finer labels would mostly restate the coarser ones.** 389
+edges over 369 capabilities: 347 capabilities attach to exactly one gap and 21 attach to
+two. There is no shared capability layer to discover. Relabelling at that level is 3.6x
+the work for a partition of the same gaps.
+
+**Where the gap really is a bundle, the honest fix is the chain, not a finer label.** The
+publishing gap bundles cost, speed and inclusiveness and the chain says so explicitly in
+`axes_excluded`. Its four capabilities do not resolve that bundle either — two act on
+credit and legitimacy, two on dissemination — which is the same split the chain found by
+decomposing into steps, arrived at with evidence rather than by inheriting their
+categories.
+
+What is worth taking from the concern, and is already the ask on the front page: **the
+capability edges are untyped.** Nothing marks a capability as necessary, sufficient or
+partial for its gap. Both chains had to reconstruct that by hand, and the observation
+Convergent are most likely to find useful in each — which of their capabilities act on
+the binding step and which do not — is exactly what typed edges would make derivable.
+That is a request to them, not 369 more of our labels.
 
 ## One column or two
 

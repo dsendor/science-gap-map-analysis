@@ -52,6 +52,11 @@ for (const [dir, script] of [
 // under-report its own uncertainty — the opposite of what the audit was for.
 if (audited) run('adjudicate.mjs');
 
+// The second pass over the outcome sentences. Must run after ingest-labels.mjs, which
+// writes the first-pass wording this replaces.
+if (existsSync(`${root}research-log/rewrites/outcomes-v2.json`))
+  run('ingest-outcome-rewrites.mjs');
+
 if (existsSync(`${root}research-log/decisions.json`)) run('ingest-decisions.mjs');
 if (existsSync(`${root}research-log/runs.json`)) run('ingest-runs.mjs');
 if (existsSync(`${root}research-log/frames.json`)) run('ingest-frames.mjs');
