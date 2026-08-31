@@ -12,8 +12,8 @@
 3. **Additive only.** Never modify `gm_*` tables outside `engine/import-gapmap.mjs`.
    `node engine/verify-additive.mjs` must pass before every commit. Do not "fix" their
    typos.
-4. **Never rank.** No numeric score column exists in the schema, by design. They
-   deferred prioritisation deliberately; a stranger ranking their map is presumptuous.
+4. **Never rank their gap map items.** No numeric score column exists in the schema, by design. They
+   deferred prioritisation deliberately; a stranger ranking their map is presumptuous. We can rank what we create.
 5. **Named values only.** Every taxonomy value is a CHECK constraint. An invented enum
    value is a write failure, and that is the point.
 6. **Every judgment carries a rationale and a confidence.** `rationale` is NOT NULL;
