@@ -11,7 +11,7 @@ export default function Page() {
   // with the database.
   const pubGap = gaps.find((g) => g.id === publishing.gap_id);
   const acts = publishing.links.filter((l) => l.ai_acts).length;
-  const binding = publishing.links.filter((l) => l.is_binding).length;
+  const steps = publishing.links.length;
 
   return (
     <>
@@ -21,17 +21,18 @@ export default function Page() {
           <div className="col">
             <h1>AI is accelerating science. The Gap Map should show where.</h1>
             <p className="lead">
-              You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I added four
-              attributes to every one of them: an outcome, the kind of work standing in the way, how
-              mature the AI for that work is, and how measurable the gap is. Then I took one gap apart
-              step by step to see whether the attributes survive contact with it. They do. The
-              decomposition also showed something a one-line label cannot: which step the cost
-              actually sits in, and which of your capabilities act on it.
+              You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I labelled all
+              of them for what kind of work stands in the way and whether AI reaches it, then took one
+              gap apart step by step. The step-by-step version is the part worth your time. It says
+              which step the cost actually sits in, which of your capabilities act on it, and where AI
+              stops. A one-line label on a whole gap cannot say any of that.
             </p>
             <p>
-              What I would like is your feedback on whether these are the right attributes, and a
-              conversation about what a version of the map built for the next few years should
-              record. <a href="mailto:david@sendorai.com">david@sendorai.com</a>.
+              <strong>
+                Decomposing gaps into their steps is the thing I think your map most needs next.
+              </strong>{' '}
+              Here is one gap done that way, so you can judge whether it is worth doing to the other{' '}
+              {s.n_gaps - 1}. <a href="mailto:david@sendorai.com">david@sendorai.com</a>
             </p>
           </div>
         </section>
@@ -43,8 +44,8 @@ export default function Page() {
               <HumanChecked />
             </h2>
             <p>
-              <em>{publishing.gap_name}</em>. Four attributes, then seven steps. Everything in this
-              section has been read against the gap by a person. Nothing else on this site has.
+              <em>{publishing.gap_name}</em>. Everything in this section has been read against the gap
+              by a person. Nothing else on this site has.
             </p>
 
             <div className="pull">
@@ -56,13 +57,6 @@ export default function Page() {
               </p>
             </div>
 
-            <p>
-              Your gap names what is wrong. The outcome names what is on the other side, which is the
-              version that recruits people to work on it. It also settles what to measure.{' '}
-              <em>Cheap</em> and <em>quick</em> are countable. <em>Accepted and verified</em> is the
-              part arXiv has not solved in thirty-five years of driving the cost of dissemination to
-              nothing.
-            </p>
             <p>
               My one-line label says the work in the way is coordination and institutional. Seven
               steps later the trace agrees, and says where: the cost sits in finding reviewers,
@@ -76,104 +70,69 @@ export default function Page() {
             <div className="pad">
               <ChainMini path={publishing} />
               <figcaption style={{ marginTop: 14 }}>
-                Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI
-                acts on {acts} of the {publishing.links.length} steps, and on steps 3 and 4 it
-                reaches only the tractable half: matching a reviewer to a paper, not persuading them
-                to say yes.
+                Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI acts
+                on {acts} of the {steps} steps, and on steps 3 and 4 it reaches only the tractable
+                half: matching a reviewer to a paper, not persuading them to say yes.
               </figcaption>
             </div>
           </div>
 
           <div className="col">
             <p>
-              Drafting was one of the most expensive
-              steps here, measured in researcher weeks per paper, and AI has taken a large share of
-              that cost out. Publishing did not get cheaper. Submissions rose 42% after ChatGPT&rsquo;s
-              release against the prior two-year window, in the one corpus where a journal has
-              published full figures, and the labor the saving displaced landed downstream on
-              volunteer editors at desk screening.
+              Drafting was one of the most expensive steps here, measured in researcher weeks per
+              paper, and AI has taken a large share of that cost out. Publishing did not get cheaper.
+              Submissions rose 42% after ChatGPT&rsquo;s release against the prior two-year window, in
+              the one corpus where a journal has published full figures, and the labor the saving
+              displaced landed downstream on volunteer editors at desk screening.
             </p>
 
             <div className="pull">
               <p>
-                The speedup is real and currently uncollectable. Relieving a step upstream of where
-                the cost concentrates moves the cost along; it does not remove it.
+                <strong>
+                  Your four capabilities for this gap act on steps 6 and 7. Two of the three binding
+                  steps have nothing attached to them at all.
+                </strong>
               </p>
               <p style={{ marginBottom: 0 }}>
-                Clearing reviewer recruitment now would return the recruitment saving <em>and</em>{' '}
-                let the drafting speedup finally show up. That is what makes the steps AI does not
-                reach worth more than they were.
+                That is the kind of thing only the decomposition shows, and it is the same shape on
+                the telescope gap, where all three of your capabilities act on fabrication and none on
+                the decision and funding steps that hold most of the years.{' '}
+                <a href="./chains/">Both chains, step by step, with the evidence &rarr;</a>
               </p>
             </div>
-
-            <h3>Every step carries a measure, and they thin out as the steps get more binding</h3>
-            <p>
-              Each step has one published quantity attached, so the constraint can be watched moving.
-              The first four have hard throughput numbers: submissions, desk-rejection rates,
-              invitations per accepted review, committee disagreement. The {binding} binding steps are
-              where the measurement thins, and the last of them, getting the work counted, has no
-              direct quantity at all. Only what institutions declare, and how researchers behave. The
-              step that most needs a measure is the one with none.{' '}
-              <a href="./chains/">The chain, its measures, and the evidence &rarr;</a>
-            </p>
-            <p>
-              A second gap, <em>Frontier telescopes are expensive and take decades to build</em>, is
-              traced the same way and lands somewhere different: there, none of your capabilities
-              touches a decision step, and here half of them do.
-            </p>
           </div>
         </section>
 
         <section>
           <div className="col">
-            <h2>The same four attributes, on the other {s.n_gaps - 1} gaps</h2>
+            <h2>On all {s.n_gaps} gaps</h2>
             <p>
-              One gap is a demonstration. The attributes are on all {s.n_gaps}, so the map can be
-              queried by them. None of these have been read by a person. Each is a model&rsquo;s
-              judgment, with a written rationale and a confidence flag on every row.
+              One gap is a demonstration. Three attributes are on the whole map, so it can be queried
+              by them. None have been read by a person. Each is a model&rsquo;s judgment, with a
+              written rationale and a confidence flag on every row.
             </p>
             <ul>
               <li>
-                <strong>An outcome, on all {s.n_gaps} gaps.</strong>
-                <AiOnly />
-                <br />
-                What becomes knowable or buildable if the gap closes.{' '}
+                <strong>The kind of work in the way, and whether AI reaches it.</strong>
+                <AiOnly />{' '}
+                Eight kinds of work, each at working now, two-to-five years, or speculative.{' '}
+                <a href="./attributes/">What the eight are</a>
+              </li>
+              <li>
+                <strong>An outcome.</strong>
+                <AiOnly /> What becomes knowable or buildable if the gap closes.{' '}
                 <a href="./attributes/#outcome">How I wrote them</a>
               </li>
               <li>
-                <strong>The kind of work in the way, and how mature the AI for it is.</strong>
-                <AiOnly />
-                <br />
-                Eight kinds of work, each with an AI analogue, each at working now, two-to-five
-                years, or speculative. <a href="./attributes/">What the eight are</a>
-              </li>
-              <li>
-                <strong>A measurability tier.</strong>
-                <AiOnly />
-                <br />
-                Whether the gap has an agreed observable, only a proxy, a contested observable, or a
-                quantity that is inherently counterfactual.{' '}
-                <a href="./attributes/">What the tiers are</a>
-              </li>
-              <li>
                 <strong>A progress indicator, on {s.n_indicators} gaps.</strong>
-                <AiOnly />
-                <br />
-                The number you would watch to know whether the gap is closing. For{' '}
-                {s.n_indicator_nulls} of them a second search found nothing, and the null is recorded
-                rather than dropped. <a href="./indicators/">All {s.n_indicators}</a>
-              </li>
-              <li>
-                <strong>{s.n_new_gaps} proposed gaps</strong>, written in your house format.
-                <AiOnly />
-                <br />
-                The two that survived an adversarial check that tried to find the funded programme
-                already building them. <a href="./proposed/">Proposed gaps</a>
+                <AiOnly /> The number you would watch to know whether the gap is closing.{' '}
+                <a href="./indicators/">All {s.n_indicators}</a>
               </li>
             </ul>
             <p>
               <a href="./map/">Every gap, with its labels</a> &middot;{' '}
-              <a href="./attributes/">What the attributes are, and how the map looks under them</a>
+              <a href="./attributes/">The attributes, and where each one breaks</a> &middot;{' '}
+              <a href="./proposed/">{s.n_new_gaps} proposed gaps</a>
             </p>
           </div>
         </section>
@@ -183,24 +142,23 @@ export default function Page() {
             <h2>What I would like</h2>
             <ul>
               <li>
-                <strong>Tell me which attributes are wrong</strong>, the kinds of work most of all.
-              </li>
-              <li>
-                <strong>Chains across the whole map.</strong> The value is in counting how often the
-                same binding step recurs across fields, and that needs all {s.n_gaps}.
+                <strong>Critical paths across the map.</strong> The value is in counting how often the
+                same binding step recurs across fields, and in seeing which steps have no capability
+                on them. That needs more than two.
               </li>
               <li>
                 <strong>Typed capability edges.</strong> Nothing marks a capability as necessary,
-                sufficient, or partial for its gap, so the chain reconstructed that by hand. Typed
-                edges would make chains generatable, and they lead straight to the urgency and impact
-                attributes you already want.
+                sufficient, or partial for its gap, so both chains reconstructed that by hand. Typed
+                edges would make the step mapping derivable instead of manual.
+              </li>
+              <li>
+                <strong>Tell me which labels are wrong</strong>, the kinds of work most of all.
               </li>
             </ul>
             <p>
-              <code>capabilities[].gaps</code> is empty for all{' '}
-              {s.n_capabilities} capabilities in the v1.0 export, though <code>schema.json</code>{' '}
-              documents it as populated. Anyone starting from <code>capabilities.json</code> builds an
-              empty graph and gets no error.
+              <code>capabilities[].gaps</code> is empty for all {s.n_capabilities} capabilities in the
+              v1.0 export, though <code>schema.json</code> documents it as populated. Anyone starting
+              from <code>capabilities.json</code> builds an empty graph and gets no error.
             </p>
             <p className="lead">
               <a href="mailto:david@sendorai.com">david@sendorai.com</a>. The critical version of this
@@ -209,9 +167,9 @@ export default function Page() {
             <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
               This is not comprehensive and some of it is wrong. Every label outside the worked gap is
               an AI judgment, and a second pass relabelled all {s.n_gaps} blind and disagreed often
-              enough to be worth publishing. The disagreement rates and the calls that could have gone
-              the other way are on the <a href="./method/">method page</a>; what this still does not
-              do is on <a href="./missing/">what&rsquo;s missing</a>.
+              enough to be worth publishing. The disagreement rates are on the{' '}
+              <a href="./method/">method page</a>; what this does not do is on{' '}
+              <a href="./missing/">what&rsquo;s missing</a>.
             </p>
           </div>
         </section>
@@ -220,8 +178,8 @@ export default function Page() {
       <div className="footer">
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
-            David Sendor. I spent 15+ years applying AI to hard problems in large organizations,
-            most recently leading Enterprise Data Science at Liberty Mutual. I am moving into AI for
+            David Sendor. I spent 15+ years applying AI to hard problems in large organizations, most
+            recently leading Enterprise Data Science at Liberty Mutual. I am moving into AI for
             science, working on where the binding constraint goes as AI dissolves the cognitive
             bottleneck.{' '}
             <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
