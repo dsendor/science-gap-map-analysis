@@ -22,23 +22,16 @@ export default function Page() {
             <h1>AI is accelerating science. The Gap Map should show where.</h1>
             <p className="lead">
               You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I added four
-              attributes to every one of them &mdash; an outcome, the kind of work standing in the
-              way, how mature the AI for that work is, and how measurable the gap is &mdash; and then
-              took one gap apart step by step to see whether the attributes survive contact with it.
-              They do, and the decomposition says something the one-line labels cannot.
+              attributes to every one of them: an outcome, the kind of work standing in the way, how
+              mature the AI for that work is, and how measurable the gap is. Then I took one gap apart
+              step by step to see whether the attributes survive contact with it. They do. The
+              decomposition also showed something a one-line label cannot: which step the cost
+              actually sits in, and which of your capabilities act on it.
             </p>
             <p>
               What I would like is your feedback on whether these are the right attributes, and a
               conversation about what a version of the map built for the next few years should
               record. <a href="mailto:david@sendorai.com">david@sendorai.com</a>.
-            </p>
-            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
-              I spent 15+ years applying AI to hard problems in large organizations, most recently
-              leading Enterprise Data Science at Liberty Mutual. I am moving into AI for science,
-              working on where the binding constraint goes as AI dissolves the cognitive bottleneck.{' '}
-              <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
             </p>
           </div>
         </section>
@@ -51,7 +44,7 @@ export default function Page() {
             </h2>
             <p>
               <em>{publishing.gap_name}</em>. Four attributes, then seven steps. Everything in this
-              section has been read against the gap by a person; nothing else on this site has.
+              section has been read against the gap by a person. Nothing else on this site has.
             </p>
 
             <div className="pull">
@@ -65,8 +58,8 @@ export default function Page() {
 
             <p>
               Your gap names what is wrong. The outcome names what is on the other side, which is the
-              version that recruits people to work on it. It also decides what to measure:{' '}
-              <em>cheap</em> and <em>quick</em> are countable, and <em>accepted, verified</em> is the
+              version that recruits people to work on it. It also settles what to measure.{' '}
+              <em>Cheap</em> and <em>quick</em> are countable. <em>Accepted and verified</em> is the
               part arXiv has not solved in thirty-five years of driving the cost of dissemination to
               nothing.
             </p>
@@ -74,9 +67,8 @@ export default function Page() {
               My one-line label says the work in the way is coordination and institutional. Seven
               steps later the trace agrees, and says where: the cost sits in finding reviewers,
               agreeing what a review means, and getting institutions to count the work. Those three
-              were named in the label&rsquo;s rationale before the decomposition existed &mdash; with
-              the caveat that the same author wrote both, so it is a consistency check and not an
-              independent test.
+              were named in the label&rsquo;s rationale before the decomposition existed. The same
+              author wrote both, so that is a consistency check rather than an independent test.
             </p>
           </div>
 
@@ -94,7 +86,7 @@ export default function Page() {
 
           <div className="col">
             <p>
-              The surprise is what happened to the saving. Drafting was one of the most expensive
+              Drafting was one of the most expensive
               steps here, measured in researcher weeks per paper, and AI has taken a large share of
               that cost out. Publishing did not get cheaper. Submissions rose 42% after ChatGPT&rsquo;s
               release against the prior two-year window, in the one corpus where a journal has
@@ -108,22 +100,20 @@ export default function Page() {
                 the cost concentrates moves the cost along; it does not remove it.
               </p>
               <p style={{ marginBottom: 0 }}>
-                That is what makes the remaining steps worth more than they used to be. Clearing
-                reviewer recruitment now returns the recruitment saving <em>and</em> lets the drafting
-                speedup finally show up. The more of a process AI accelerates, the more of that gain
-                is waiting behind whatever it did not touch.
+                Clearing reviewer recruitment now would return the recruitment saving <em>and</em>{' '}
+                let the drafting speedup finally show up. That is what makes the steps AI does not
+                reach worth more than they were.
               </p>
             </div>
 
             <h3>Every step carries a measure, and they thin out as the steps get more binding</h3>
             <p>
-              Each step has one published quantity attached, so the constraint can be watched moving
-              rather than taken on trust. The first four have hard throughput numbers &mdash;
-              submissions, desk-rejection rates, invitations per accepted review, committee
-              disagreement. The {binding} binding steps are where the measurement thins, and the last
-              of them, getting the work counted, has no direct quantity at all: only what
-              institutions declare and how researchers behave. That asymmetry is worth as much as the
-              decomposition.{' '}
+              Each step has one published quantity attached, so the constraint can be watched moving.
+              The first four have hard throughput numbers: submissions, desk-rejection rates,
+              invitations per accepted review, committee disagreement. The {binding} binding steps are
+              where the measurement thins, and the last of them, getting the work counted, has no
+              direct quantity at all. Only what institutions declare, and how researchers behave. The
+              step that most needs a measure is the one with none.{' '}
               <a href="./chains/">The chain, its measures, and the evidence &rarr;</a>
             </p>
             <p>
@@ -139,7 +129,7 @@ export default function Page() {
             <h2>The same four attributes, on the other {s.n_gaps - 1} gaps</h2>
             <p>
               One gap is a demonstration. The attributes are on all {s.n_gaps}, so the map can be
-              queried by them. These have not been read by a person &mdash; each is a model&rsquo;s
+              queried by them. None of these have been read by a person. Each is a model&rsquo;s
               judgment, with a written rationale and a confidence flag on every row.
             </p>
             <ul>
@@ -191,11 +181,6 @@ export default function Page() {
         <section>
           <div className="col">
             <h2>What I would like</h2>
-            <p>
-              Your About page says you are open to partners interested in meta analyses and new tools
-              that make the data more actionable, and that you hope to add attributes for urgency and
-              impact. That is what this is aiming at.
-            </p>
             <ul>
               <li>
                 <strong>Tell me which attributes are wrong</strong>, the kinds of work most of all.
@@ -212,7 +197,7 @@ export default function Page() {
               </li>
             </ul>
             <p>
-              One thing worth knowing either way. <code>capabilities[].gaps</code> is empty for all{' '}
+              <code>capabilities[].gaps</code> is empty for all{' '}
               {s.n_capabilities} capabilities in the v1.0 export, though <code>schema.json</code>{' '}
               documents it as populated. Anyone starting from <code>capabilities.json</code> builds an
               empty graph and gets no error.
@@ -235,14 +220,23 @@ export default function Page() {
       <div className="footer">
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
+            David Sendor. I spent 15+ years applying AI to hard problems in large organizations,
+            most recently leading Enterprise Data Science at Liberty Mutual. I am moving into AI for
+            science, working on where the binding constraint goes as AI dissolves the cognitive
+            bottleneck.{' '}
+            <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>{' '}
+            &middot; <a href="mailto:david@sendorai.com">david@sendorai.com</a>
+          </p>
+          <p style={{ color: 'var(--ink-3)' }}>
             Built on the {data.source.snapshot} export of{' '}
             <a href={data.source.url} target="_blank" rel="noreferrer">
               gap-map.org
             </a>
             . Nothing here reorders or ranks your gaps, and your data is unmodified.{' '}
             <a href="./gap-map-augmented.csv">CSV, keyed on your ids and slugs</a> &middot;{' '}
-            <a href="./data.json">JSON</a> &middot; David Sendor,{' '}
-            <a href="mailto:david@sendorai.com">david@sendorai.com</a>
+            <a href="./data.json">JSON</a>
           </p>
         </div>
       </div>
