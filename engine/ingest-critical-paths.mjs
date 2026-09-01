@@ -29,19 +29,20 @@ try {
     db.prepare('DELETE FROM critical_path_links WHERE path_id = ?').run(p.id);
     db.prepare('DELETE FROM critical_paths WHERE id = ?').run(p.id);
     db.prepare(`INSERT INTO critical_paths (id, gap_id, title, axis, axes_excluded, expectation, finding,
-                duration_basis, programmes_json)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+                duration_basis, programmes_json, reviewed)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
       .run(p.id, p.gap_id ?? null, p.title, p.axis, p.axes_excluded, p.expectation, p.finding ?? null,
-           p.duration_basis ?? null, JSON.stringify(p.programmes ?? []));
+           p.duration_basis ?? null, JSON.stringify(p.programmes ?? []), p.reviewed ?? 'ai-only');
     for (const [i, l] of (p.links ?? []).entries()) {
       db.prepare(`INSERT INTO critical_path_links
         (path_id, seq, link, blocker, ai_type, maturity, is_binding, evidence, rationale,
-         duration_years, duration_span, duration_note, figure, ai_acts)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+         duration_years, duration_span, duration_note, figure, ai_acts, capabilities_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
         .run(p.id, l.seq ?? i + 1, l.link, l.blocker, l.ai_type ?? null, l.maturity ?? null,
              l.is_binding ?? 0, l.evidence ?? null, l.rationale,
              l.duration_jwst_years ?? null, l.duration_jwst_span ?? null, l.duration_note ?? null,
-             l.figure ?? null, l.ai_acts ? 1 : 0);
+             l.figure ?? null, l.ai_acts ? 1 : 0,
+             JSON.stringify(l.capabilities ?? []));
       links++;
       if (l.is_binding) binding++;
     }

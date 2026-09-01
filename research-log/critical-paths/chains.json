@@ -23,7 +23,8 @@
           "duration_jwst_years": 7.0,
           "duration_jwst_span": "1989 → 1996",
           "duration_note": "NGST workshop at STScI to the STScI committee recommendation",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": []
         },
         {
           "seq": 2,
@@ -37,7 +38,8 @@
           "duration_jwst_years": 6.0,
           "duration_jwst_span": "1996 → 2002",
           "duration_note": "concept studies and three funded teams to selection of the TRW/Ball design",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": []
         },
         {
           "seq": 3,
@@ -51,7 +53,8 @@
           "duration_jwst_years": 2.0,
           "duration_jwst_span": "2002 → 2004",
           "duration_note": "design selection to the start of long-lead construction",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": []
         },
         {
           "seq": 4,
@@ -65,7 +68,10 @@
           "duration_jwst_years": 2.0,
           "duration_jwst_span": "2004 → 2006",
           "duration_note": "long-lead start to instrument critical design reviews and flight construction",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": [
+            "Leveraging Commercial Component Advances"
+          ]
         },
         {
           "seq": 5,
@@ -79,7 +85,12 @@
           "duration_jwst_years": 5.0,
           "duration_jwst_span": "2006 → 2011",
           "duration_note": "flight instrument construction to all 18 mirror segments complete and cryo-tested",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": [
+            "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes",
+            "Space Telescope Factory",
+            "Leveraging Commercial Component Advances"
+          ]
         },
         {
           "seq": 6,
@@ -93,7 +104,11 @@
           "duration_jwst_years": 9.0,
           "duration_jwst_span": "2011 → 2020",
           "duration_note": "segments complete to final environmental testing complete",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": [
+            "Space Telescope Factory",
+            "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes"
+          ]
         },
         {
           "seq": 7,
@@ -107,7 +122,10 @@
           "duration_jwst_years": 1.0,
           "duration_jwst_span": "2020 → 2021",
           "duration_note": "testing complete to launch on 25 December 2021",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": [
+            "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes"
+          ]
         },
         {
           "seq": 8,
@@ -121,7 +139,8 @@
           "duration_jwst_years": 0.5,
           "duration_jwst_span": "Dec 2021 → Jul 2022",
           "duration_note": "launch to first full-colour images and start of science operations",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": []
         }
       ],
       "duration_basis": "Per-step durations are JWST's, because its milestone record is the most completely published of the three. Real phases overlap, design maturation and fabrication in particular, so each figure is the interval between the published milestones that best bracket that step, and the eight sum to 32.5 against STScI's stated 32 from conception to launch. Those two totals are not the same measurement — 32.5 runs to first images in July 2022 and STScI's 32 runs to launch in December 2021 — so their agreement is a coincidence of rounding and is not corroboration. Gate C's audit of the intervals is the reason the finding below is stated as a bound rather than a point: two links carry titles that describe only part of what their intervals contain, and the overlap between design maturation and fabrication is real and undated.",
@@ -156,28 +175,30 @@
           "total": 31,
           "note": "Roughly two and a half of those years are a funding condition on an already-approved design."
         }
-      ]
+      ],
+      "reviewed": "ai-only"
     },
     {
       "id": "path-publishing-cost",
       "gap_id": "1c1cb37e-2a00-8063-9b9f-f3c2aa784e50",
       "title": "From draft to credited contribution: what sets the cost of publishing research",
       "axis": "Cost, measured as reviewer and editor labour per published paper",
-      "axes_excluded": "Speed, meaning elapsed time from submission to publication, and inclusiveness, meaning who can afford to publish and who can read the result. Their sentence bundles all three. Speed in particular behaves differently by venue: journal latency is reviewer-supply-driven while conference latency is set by a fixed programme committee calendar, so a chain mixing them would produce a cost concentration that is an artifact of the venue mix.\n\nAlso excluded: the 'doing' half of their gap statement. 'Doing and publishing research is expensive' covers the cost of the research itself, which is most of what the other 102 gaps in the map are about. Instruments, reagents, compute and staff are priced elsewhere. This chain runs from a finished result to a credited contribution.",
+      "axes_excluded": "Speed, meaning elapsed time from submission to publication, and inclusiveness, meaning who can afford to publish and who can read the result. Their sentence bundles all three. Speed in particular behaves differently by venue: journal latency is reviewer-supply-driven while conference latency is set by a fixed programme committee calendar, so a chain mixing them would produce a cost concentration that is an artifact of the venue mix.\n\nAlso excluded: the 'doing' half of their gap statement. 'Doing and publishing research is expensive' covers the cost of the research itself, which is most of what the other 102 gaps in the map are about. Instruments, reagents, compute and staff are priced elsewhere. This chain runs from a finished result to a credited contribution.\n\nAlso outside the axis, and worth stating because it is the biggest number in the room: author time. The axis counts reviewer and editor labour, so the weeks a researcher spends writing the paper are not in it. That is very likely the largest single cost in getting a result published, and this chain does not measure it.",
       "expectation": "This chain must produce a different answer from chain 1 or the pair demonstrates nothing. AI does act on several links here: drafting and screening work now, and reviewer-to-proposal matching is tractable, though there is published evidence that traditional statistical representations outperform generative AI at identifying expert reviewers. So the expectation is not that AI does nothing. It is that AI acts on the links that were never rate-limiting, while reviewer recruitment, judgment consistency and the credit and legitimacy step remain untouched. Stated explicitly so it cannot be read the other way: this is not a claim that publishing is a cognitive bottleneck. It is not, and asserting it would be wrong. Recorded before the link analysis.",
       "finding": "Drafting was expensive, and AI has made it much cheaper. That saving is real and large. It has not arrived as cheaper publishing: submissions rose 42% after ChatGPT's release relative to the prior two-year window, in the one corpus where a journal has published full figures, and the labour that the saving displaced landed further down the chain rather than disappearing.\n\nWhere exactly it landed is a correction Gate C forced, and it matters because it was this chain's marquee result. I wrote that the labour moved to reviewer recruitment. The source does not say that. Pierce, Gartenberg, Hasan and Murray put the displaced load on volunteer editors at desk screening — among manuscripts with 70%+ AI scores nearly 70% are desk-rejected, against 44% for low-AI submissions — and give no invitation or recruitment figures at all. So the arrow from cheaper drafting runs to screening, which is a step this chain calls tractable and AI-reached. Recruitment strain is real and separately evidenced, by Silverchair's 4.5 invitations per accepted review and the fall in acceptance from 43% to 22%; it is simply not what the 42% surge is shown to have caused. The general claim survives and the specific one does not: relieving a step upstream of a concentration moves cost downstream, and it moved to the nearest downstream step, not the furthest.\n\nThe prediction holds, in the shape the pair needs. AI is not absent here: it acts on the first four of seven steps, which is more than it touches anywhere in chain 1. It can match a reviewer to a paper. It cannot make that reviewer say yes, agree with the other reviewer, or persuade a hiring committee to count the work.\n\nRecruitment is where the axis choice earns itself. Splitting it into matching and willingness separates a well-posed prediction problem from a labour-supply problem. On reviewer identification specifically, published evidence finds traditional statistical representations outperform generative AI. Gate C's caveat is recorded with it: ESO names matching difficulty as a reason for distributed peer review too, so the split is this analysis's, not ESO's.\n\nOne observation about your capability set, and it runs the other way from chain 1. Two of the four capabilities you attach to this gap, a post-publication peer review layer and new protocols for knowledge production and verification, act directly on credit and legitimacy, which carries cost. For the telescope gap none of the three touches a decision step; here half of them do.\n\nTo be plain about scope: this chain covers getting a finished result into the record and credited. The cost of doing the research is the other half of their gap statement and is most of what the rest of the map is about.",
       "links": [
         {
           "seq": 1,
           "link": "Production and drafting",
-          "blocker": "Author time. Historically the most expensive step for the author and the cheapest for the system.",
+          "blocker": "Author time. Almost certainly the largest single cost in getting a paper published, and the one this chain's axis does not count.",
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "Working now",
           "is_binding": 0,
           "evidence": "An Organization Science editorial with five-year full-submission-corpus access reports submissions up 42%.",
-          "rationale": "Drafting was one of the most expensive steps in this chain, measured in researcher weeks per paper, and AI has taken a large share of that cost out. The saving is real and it is big. It has not shown up as cheaper publishing: submissions rose 42% after ChatGPT's release in November 2022 against the prior two-year window, in the one corpus with published full-submission figures, and the labour moved downstream to desk screening. Gate C corrected both halves of that sentence: the 42% is growth since ChatGPT within a five-year corpus, not growth over five years, and the source places the displaced load on volunteer editors at screening rather than on recruitment. Relieving a step upstream of where the cost concentrates moves the cost; it does not remove it.",
-          "figure": "was researcher-weeks per paper; a large share of that is now automatable. Submissions +42% since ChatGPT's release in November 2022 against the prior two-year window, within a five-year full-submission corpus (Organization Science)",
-          "ai_acts": true
+          "rationale": "Scope first, because it decides how to read this step. The axis is reviewer and editor labour per published paper, so author time sits outside it by construction. Writing the paper is very probably the most expensive thing that happens in this pipeline, and this chain does not measure it. What it can say is that AI has taken a large share out of the per-paper drafting cost, that the number of papers went up, and that the labour this displaced arrived downstream: submissions rose 42% after ChatGPT's release against the prior two-year window, in the one corpus with published full-submission figures, and the load landed on volunteer editors at desk screening. Whether total author cost across all papers fell is unknown and this chain has no way to find out. Two corrections from Gate C are folded in above: the 42% is growth since ChatGPT within a five-year corpus, and the source places the displaced load at screening.",
+          "figure": "author time, not counted on this axis; submissions +42% since ChatGPT's release in November 2022 against the prior two-year window, within a five-year full-submission corpus (Organization Science)",
+          "ai_acts": true,
+          "capabilities": []
         },
         {
           "seq": 2,
@@ -189,7 +210,8 @@
           "evidence": "ESO reports that classical triage 'has significantly degraded the quality of feedback for the triaged proposals' — screening under load trades feedback quality for throughput.",
           "rationale": "Not binding on the cost axis. Screening is genuinely tractable for current models, which is why it is already being done and why it does not set the cost.",
           "figure": "triage under load 'significantly degraded the quality of feedback' (ESO)",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": []
         },
         {
           "seq": 3,
@@ -201,7 +223,8 @@
           "evidence": "4.5 invitations per accepted review, nearly double the 2018 rate, and reviewer acceptance down from 43% in 2018 to 22% in 2024 (Silverchair, Future of Peer Review 2026, from eight years of ScholarOne Manuscripts activity plus 2,000+ survey responses). Per 100 invitations sent, editors wait a combined 407 days on reviewers who ultimately decline or never answer. A survey of 139 editors of Australian journals, largely local and society titles, with 27 interviews, finds 55% rate finding reviewers a significant or very significant challenge, and some 'described having to send out 30 or more invitations to secure just two reviewers' (Jamali et al., Learned Publishing 2026, doi 10.1002/leap.2034, and Luca et al., doi 10.1002/leap.2041; popularised in The Conversation, 15 February 2026). The sample is national and small-journal weighted, which is where recruitment is hardest, so the bias runs in this chain's favour and is noted for that reason. Meyerson documents 21 years of declining reviewer acceptance, 2002-2024. ESO's Phase 1 page on distributed peer review states that 'it has become progressively harder to find scientists willing to serve in the panels and in the OPC'. And on the part AI could do: traditional statistical representations outperform generative AI at identifying expert peer reviewers, tested on NASA/ADS records and observatory DPR data across 379 researchers.",
           "rationale": "Binding, and it is the link that most rewards being split in two. Matching is a well-posed prediction problem where AI is applicable and, on current evidence, not even the best method. Willingness is a labour-supply problem that no matching system addresses. The binding half is the half AI does not touch, which is the whole finding of this chain in one link. REVISED after Gate C. The previous version asserted that matching is not the problem and cited ESO for it; ESO says both. The split between a well-posed prediction problem and a labour-supply problem still does the work this chain needs, but it is now stated as this analysis's distinction rather than the source's.",
           "figure": "4.5 invitations per accepted review, nearly double 2018 (Silverchair, Future of Peer Review 2026); reviewer acceptance fell from 43% in 2018 to 22% in 2024; 55% of 139 editors of Australian journals call recruitment a significant or very significant challenge; 21 years of declining acceptance",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": []
         },
         {
           "seq": 4,
@@ -213,7 +236,10 @@
           "evidence": "NeurIPS 2021 consistency experiment: two independent committees disagree on 23% of papers, and approximately half the accepted list would change on a random rerun — consistent with 26% in 2014. Cortes and Lawrence, revisiting the 2014 experiment, find no correlation between review scores and later citation impact for accepted papers, and a correlation for rejected ones: 'the reviewing process for the 2014 conference was good for identifying poor papers, but poor for identifying good papers.'",
           "rationale": "Binding, and unusually well quantified for an institutional link. The Cortes and Lawrence result also sets the bar any automated reviewer has to clear, and it is a low bar in one direction and an unreachable one in the other: filtering bad work is where review already works, ranking good work is where it does not, and it is not established that the second is a solvable problem for anyone.",
           "figure": "23% committee disagreement; ~half the accept list changes on a rerun; scores predict impact for rejected papers only",
-          "ai_acts": true
+          "ai_acts": true,
+          "capabilities": [
+            "Post-Publication Peer Review Layer"
+          ]
         },
         {
           "seq": 5,
@@ -225,7 +251,8 @@
           "evidence": "Follows directly from the recruitment and judgment links; editors carry the residual cost when reviews do not arrive.",
           "rationale": "Not binding on the cost axis. Its cost is largely inherited from link 3.",
           "figure": "cost inherited from link 3",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": []
         },
         {
           "seq": 6,
@@ -237,7 +264,12 @@
           "evidence": "Three of Convergent's four capabilities for this gap act here: disrupting traditional publishing models, frugal science initiatives, and the micro/nanopublishing half of new protocols for knowledge production and verification. That third one is counted at link 7 as well, because its description covers both lowering the barrier to publishing and new norms for recognising work; it is one capability acting on two steps, not two capabilities.",
           "rationale": "Not binding on the labour-cost axis, and this deserves care because it is the link their gap sentence centres on. On the inclusiveness axis — explicitly excluded from this chain — it may well be binding. That is why the axes were separated.",
           "figure": "article processing charges and platform cost",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": [
+            "Disrupt Traditional Publishing Models",
+            "Frugal Science Initiatives",
+            "New Protocols for Knowledge Production and Verification"
+          ]
         },
         {
           "seq": 7,
@@ -249,9 +281,14 @@
           "evidence": "A model can review a paper today; it cannot make a hiring committee count that review. The same asymmetry explains why reviewer supply falls: the labour is unpriced and uncredited, and pricing it is an institutional act.",
           "rationale": "Binding, and the only link in either chain where the blocker is purely a matter of what institutions agree to recognise. Two of Convergent's four capabilities for this gap — a post-publication peer review layer, and new protocols for knowledge production and verification — act here.",
           "figure": "no published quantity, the blocker is what committees agree to count",
-          "ai_acts": false
+          "ai_acts": false,
+          "capabilities": [
+            "Post-Publication Peer Review Layer",
+            "New Protocols for Knowledge Production and Verification"
+          ]
         }
-      ]
+      ],
+      "reviewed": "human"
     }
   ]
 }

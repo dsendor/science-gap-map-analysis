@@ -217,6 +217,10 @@ CREATE TABLE IF NOT EXISTS critical_paths (
     -- without showing how long each one takes asks to be believed rather than checked.
     duration_basis  TEXT,
     programmes_json TEXT NOT NULL DEFAULT '[]',
+    -- Who has actually read this chain. One of the two was worked through end to end
+    -- with a person; the other is a model's first pass and nobody has checked it. Those
+    -- deserve different weight from a reader and the artifact says which is which.
+    reviewed      TEXT NOT NULL DEFAULT 'ai-only' CHECK (reviewed IN ('ai-only', 'human')),
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -244,6 +248,11 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     duration_note   TEXT,
     figure          TEXT,   -- for a non-time axis, the published quantity for this link
     ai_acts         INTEGER NOT NULL DEFAULT 0 CHECK (ai_acts IN (0, 1)),
+    -- Which of Convergent's own capabilities for this gap act on this step, by name.
+    -- A step with an empty array is a step nobody has proposed anything for, and that
+    -- is the most actionable thing either chain produces: it is derived entirely from
+    -- their data, so it is a statement about their map rather than about our labels.
+    capabilities_json TEXT NOT NULL DEFAULT '[]',
     PRIMARY KEY (path_id, seq)
 );
 

@@ -32,11 +32,29 @@ export default function ChainsPage() {
               arithmetic below replaces it.
             </p>
             <p>
+              Each step also carries a count of how many of Convergent&rsquo;s own capabilities for
+              that gap act on it. That number is theirs, not mine, and the zeroes are why it is
+              here: a step with no capability attached is a step nobody has proposed anything for.
+              On the publishing chain four of the seven steps are at zero, including the one where
+              the labour concentrates. On the telescope chain the first three steps are at zero, and
+              the first three steps hold most of the years.
+            </p>
+            <p>
               I did two, picked to be as unalike as possible so the method had a chance to fail: a
               space telescope measured in elapsed time, and research publishing measured in reviewer
               and editor labour. Where a gap bundles several axes, I picked one, said which, and left
               the others as separate chains.
             </p>
+            <div className="pull">
+              <p style={{ marginBottom: 0 }}>
+                <strong>The two chains have had very different amounts of scrutiny, and that is
+                deliberate.</strong> The publishing chain was worked through end to end by a person,
+                against the gap, step by step. The telescope chain is a model&rsquo;s first pass and
+                nobody has checked it. It is tagged that way below. Read it as a test of whether an
+                AI first pass at a critical path is worth having at all &mdash; you are better placed
+                to judge that on a telescope than I am.
+              </p>
+            </div>
           </div>
         </section>
         <section style={{ paddingTop: 20 }}>

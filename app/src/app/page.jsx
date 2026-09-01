@@ -24,8 +24,8 @@ export default function Page() {
               You put {s.n_gaps} R&amp;D gaps on one map and asked what needs building. I labelled all
               of them for what kind of work stands in the way and whether AI reaches it, then took one
               gap apart step by step. The step-by-step version is the part worth your time. It says
-              which step the cost actually sits in, which of your capabilities act on it, and where AI
-              stops. A one-line label on a whole gap cannot say any of that.
+              which step the cost actually sits in, where AI stops, and which steps none of your
+              capabilities touch. A one-line label on a whole gap cannot say any of that.
             </p>
             <p>
               <strong>
@@ -89,14 +89,16 @@ export default function Page() {
             <div className="pull">
               <p>
                 <strong>
-                  Your four capabilities for this gap act on steps 6 and 7. Two of the three binding
-                  steps have nothing attached to them at all.
-                </strong>
+                  Four of the seven steps have no capability of yours attached to them, including
+                  reviewer recruitment, where the labor actually concentrates.
+                </strong>{' '}
+                Your four capabilities for this gap act on the last two steps and on review judgment.
+                That count comes from your data, not from any label of mine.
               </p>
               <p style={{ marginBottom: 0 }}>
-                That is the kind of thing only the decomposition shows, and it is the same shape on
-                the telescope gap, where all three of your capabilities act on fabrication and none on
-                the decision and funding steps that hold most of the years.{' '}
+                It is the same shape on the telescope gap. Your three capabilities there act on design
+                maturation, fabrication, integration and launch. Nothing acts on the first three
+                steps, and the first three steps are where most of the years are.{' '}
                 <a href="./chains/">Both chains, step by step, with the evidence &rarr;</a>
               </p>
             </div>

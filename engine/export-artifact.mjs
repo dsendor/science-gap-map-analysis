@@ -67,7 +67,10 @@ const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   programmes: JSON.parse(p.programmes_json || '[]'),
   gap_name: gaps.find((g) => g.id === p.gap_id)?.name ?? null,
   gap_field: gaps.find((g) => g.id === p.gap_id)?.field ?? null,
-  links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id),
+  links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id).map((l) => ({
+    ...l,
+    capabilities: JSON.parse(l.capabilities_json || '[]'),
+  })),
 }));
 
 const count = (rows, key) => rows.reduce((a, r) => ((a[r[key]] = (a[r[key]] ?? 0) + 1), a), {});

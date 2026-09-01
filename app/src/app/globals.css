@@ -368,3 +368,11 @@ details .body { padding: 0 2px 16px; }
   .ind__dl { grid-template-columns: 1fr; gap: 3px 0; }
   .ind__dl dt { padding-top: 10px; }
 }
+
+/* Capability count on a chain step. Their data, not our labels — so it gets a neutral
+   weight, except at zero, where the absence is the finding and reads as a flag. */
+.chain .caps {
+  display: block; margin-top: 6px; font-size: 11.5px; letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+.chain .caps.none { color: var(--flag); font-weight: 500; }

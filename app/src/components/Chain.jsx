@@ -18,6 +18,15 @@ export default function Chain({ path }) {
         <div style={{ display: 'flex', gap: 7, flexWrap: 'wrap', marginBottom: 11 }}>
           <span className="tag on">{path.gap_field}</span>
           <span className="tag">axis: {path.axis}</span>
+          {path.reviewed === 'human' ? (
+            <span className="tag on" title="Worked through end to end by a person.">
+              Human-checked
+            </span>
+          ) : (
+            <span className="tag flag" title="A model's first pass. No person has checked it.">
+              AI only, unchecked
+            </span>
+          )}
         </div>
         <h3 style={{ margin: '0 0 8px', fontSize: 21 }}>{path.title}</h3>
         <p style={{ fontSize: 15.5, marginBottom: 0 }}>
@@ -44,6 +53,20 @@ export default function Chain({ path }) {
               ) : (
                 l.link
               )}
+              <span
+                className={l.capabilities?.length ? 'caps' : 'caps none'}
+                title={
+                  l.capabilities?.length
+                    ? l.capabilities.join(' · ')
+                    : 'No capability in the Gap Map acts on this step'
+                }
+              >
+                {!l.capabilities?.length
+                  ? 'no capability'
+                  : l.capabilities.length === 1
+                    ? '1 capability'
+                    : `${l.capabilities.length} capabilities`}
+              </span>
               {l.duration_years != null && (
                 <span className="yrs">
                   {l.duration_years} yr
@@ -207,6 +230,7 @@ export default function Chain({ path }) {
                 <th>What blocks it</th>
                 <th>{isTime ? 'Elapsed' : 'Measure for this step'}</th>
                 <th>AI capability</th>
+                <th>Their capabilities acting here</th>
                 <th>Binding</th>
               </tr>
             </thead>
@@ -222,6 +246,13 @@ export default function Chain({ path }) {
                   <td>
                     {l.ai_type}
                     <div style={{ color: 'var(--ink-3)', fontSize: 13 }}>{l.maturity}</div>
+                  </td>
+                  <td>
+                    {l.capabilities?.length ? (
+                      l.capabilities.join('; ')
+                    ) : (
+                      <span style={{ color: 'var(--flag)' }}>none</span>
+                    )}
                   </td>
                   <td>{l.is_binding ? <span className="tag new">binding</span> : ''}</td>
                 </tr>
