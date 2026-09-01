@@ -14,9 +14,9 @@ Subject: Your Gap Map, with one gap taken apart into the seven steps it runs thr
 
 Hi —
 
-I've spent a while inside the v1.0 export and built something on top of it I'd like you
-to shoot at. It's at **[link]**. Your data is untouched, the additions live in separate
-tables, and everything's keyed on your own ids and slugs so it joins straight back.
+I've built something on top of the v1.0 export that I'd like you to shoot at. It's at
+**[link]**. Your data is untouched, the additions live in separate tables, and
+everything's keyed on your own ids and slugs so it joins straight back.
 
 Here's what started it. I keep trying to work out where AI actually accelerates science,
 and I kept landing on questions your map had already framed better than I had. But a

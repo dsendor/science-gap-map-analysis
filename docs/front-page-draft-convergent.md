@@ -3,12 +3,11 @@
 *One of your gaps taken apart into the seven steps it actually runs through, and an
 AI-reach label on all 103.*
 
-I've spent a while inside the 2026-07-29 export and built two things on top of it that
-you can poke at right now. One is a label on every gap saying what kind of work is in
-the way and whether AI gets there. The other is a single gap broken all the way down
-into the ordered steps that have to happen, with a number on each one. Everything's
-keyed on your own ids and slugs, the CSV and the JSON are there to download, and none
-of your data has been touched.
+I've built two things on top of the 2026-07-29 export, and they're both downloadable as
+CSV and JSON, keyed on your own ids and slugs. One is a label on every gap saying what
+kind of work is in the way and whether AI gets there. The other is a single gap broken
+all the way down into the ordered steps that have to happen, with a number on each one.
+None of your data has been touched.
 
 The second thing is why I'm writing. A one-line label on a gap the size of "doing and
 publishing research is expensive" can't tell you which part of it is expensive. So which
@@ -20,12 +19,12 @@ done quickly, and a probe rather than a survey!
 
 ---
 
-## One gap, all the way down
+## One gap, all the way down `[Human-checked]`
 
 *Doing and publishing research is expensive and subject to structural roadblocks*,
 traced from a finished draft to a credited contribution. Seven steps. This is the one
-section a person has read line by line against the gap; everything else on the site is
-a model's first pass and is labelled that way.
+section a person has read line by line against the gap; everything else on the site
+carries an `[AI only]` badge and means it.
 
 A chain has to be a path to *something*, and your gap statement bundles three of them -
 cost, speed, and who can afford to take part. I picked cost, said so, and left the other
@@ -41,12 +40,12 @@ as a consistency check.
 
 `[Chain diagram: seven steps, with a capability count on each]`
 
-AI reaches four of those seven steps, which is more than I'd expected going in. It
-reaches the tractable half of each, though: it'll match a reviewer to a paper, and it
-won't make that reviewer say yes.
+AI reaches four of those seven steps, which is more than I'd expected going in. On
+steps 3 and 4 it only reaches the tractable half: it'll match a reviewer to a paper,
+and it won't make that reviewer say yes.
 
 Drafting used to eat researcher-weeks per paper and AI has taken a large share of that
-out, which is a real saving and a big one. Publishing didn't get cheaper. In the one
+out. Publishing didn't get cheaper. In the one
 journal with a published five-year full-submission corpus, submissions rose 42% after
 ChatGPT's release against the prior two-year window, and the load that came off the
 authors landed a step downstream on volunteer editors doing desk screening.
@@ -63,7 +62,8 @@ maturation, fabrication, integration and launch. Nothing acts on the first three
 which are the science case, the concept studies and ranking, and funding authorisation -
 and on JWST's record those first three steps are where most of the 32.5 years sit.
 
-That's the step-level finding, and I don't think there's another way to get at it.
+That's the step-level finding, and if I could get you to take one thing from this page
+it'd be the decomposition that produced it.
 
 [Both chains, step by step, with the evidence and the sources →](/chains/)
 
@@ -79,7 +79,9 @@ to five years out, or is speculative.
 
 Every one of those 103 is a model's judgment with a written rationale and a confidence
 flag, and no person has read them. A second pass relabelled all 103 blind and disagreed
-often enough that publishing the disagreement rate seemed more useful than hiding it.
+often enough that publishing the disagreement rate seemed more useful than hiding it -
+the rates are on the [method page](/method/), and what this still doesn't do is on
+[what's missing](/missing/).
 
 [Every gap, with its label](/map/) · [The eight kinds of work, and where the label breaks](/attributes/) · [2 proposed gaps, in your house format](/proposed/)
 
