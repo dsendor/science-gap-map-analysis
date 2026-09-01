@@ -1,45 +1,29 @@
-# Front page, proposed copy
-
-Run through `docs/check ai language.md`, plus the three cuts David approved on
-2026-08-31 (the "surprise" sentence, the About-page opener, and the bio to the footer).
-Read this, mark it up, and I will put it into `app/src/app/page.jsx`.
-
-Figures and components are marked in square brackets. Everything else is copy.
-
----
-
-## Hook
-
 # AI is accelerating science. The Gap Map should show where.
 
-You put 103 R&D gaps on one map and asked what needs building. I added four attributes
-to every one of them: an outcome, the kind of work standing in the way, how mature the
-AI for that work is, and how measurable the gap is. Then I took one gap apart step by
-step to see whether the attributes survive contact with it.
+You put 103 R&D gaps on one map and asked what needs building. I labelled all of them
+for what kind of work stands in the way and whether AI reaches it, then took one gap
+apart step by step. The step-by-step version is the part worth your time. It says which
+step the cost actually sits in, where AI stops, and which steps none of your
+capabilities touch. A one-line label on a whole gap cannot say any of that.
 
-They do. The decomposition also showed something a one-line label cannot: which step
-the cost actually sits in, and which of your capabilities act on it.
-
-What I would like is your feedback on whether these are the right attributes, and a
-conversation about what a version of the map built for the next few years should
-record. david@sendorai.com
+**Decomposing gaps into their steps is the thing I think your map most needs next.**
+Here is one gap done that way, so you can judge whether it is worth doing to the other
+102. david@sendorai.com
 
 ---
 
-## One gap, all the way down  `[Human-checked]`
+## One gap, all the way down `[Human-checked]`
 
-*Doing and publishing research is expensive and subject to structural roadblocks.* Four
-attributes, then seven steps. Everything in this section has been read against the gap
-by a person. 
+*Doing and publishing research is expensive and subject to structural roadblocks.*
+Everything in this section has been read against the gap by a person. Nothing else on
+this site has.
 
-> **The outcome we would add to your gap**
+> A chain has to be a path to something. This one runs to:
 >
 > **Getting a result into the accepted, verified scientific record is cheap and quick.**
-
-Your gap names what is wrong. The outcome names what is on the other side, which is the
-version that recruits people to work on it. It also settles what to measure. Cheap and
-quick are countable. Accepted and verified is the part arXiv has not solved in
-thirty-five years of driving the cost of dissemination to nothing.
+>
+> Your gap statement bundles cost, speed and inclusiveness. Picking one is what makes
+> the steps orderable, and the other two are named and left as separate chains.
 
 My one-line label says the work in the way is coordination and institutional. Seven
 steps later the trace agrees, and says where: the cost sits in finding reviewers,
@@ -47,7 +31,7 @@ agreeing what a review means, and getting institutions to count the work. Those 
 were named in the label's rationale before the decomposition existed. The same author
 wrote both, so that is a consistency check rather than an independent test.
 
-`[ChainMini: the seven-step publishing chain]`
+`[Chain diagram: the seven-step publishing chain, with a capability count on each step]`
 
 > Cost, in reviewer and editor labor. Orange marks where the labor concentrates. AI acts
 > on four of the seven steps, and on steps 3 and 4 it reaches only the tractable half:
@@ -59,65 +43,38 @@ Submissions rose 42% after ChatGPT's release against the prior two-year window, 
 one corpus where a journal has published full figures, and the labor the saving
 displaced landed downstream on volunteer editors at desk screening.
 
-> **The speedup is real and currently uncollectable.** Relieving a step upstream of
-> where the cost concentrates moves the cost along; it does not remove it.
+> **Four of the seven steps have no capability of yours attached to them, including
+> reviewer recruitment, where the labor actually concentrates.** Your four capabilities
+> for this gap act on the last two steps and on review judgment. That count comes from
+> your data, not from any label of mine.
 >
-> Clearing reviewer recruitment now would return the recruitment saving and let the
-> drafting speedup finally show up. That is what makes the steps AI does not reach worth
-> more than they were.
-
-### Every step carries a measure, and they thin out as the steps get more binding
-
-Each step has one published quantity attached, so the constraint can be watched moving.
-The first four have hard throughput numbers: submissions, desk-rejection rates,
-invitations per accepted review, committee disagreement. The three binding steps are
-where the measurement thins, and the last of them, getting the work counted, has no
-direct quantity at all. Only what institutions declare, and how researchers behave. The
-step that most needs a measure is the one with none.
-
-[The chain, its measures, and the evidence →](/chains/)
-
-A second gap, *Frontier telescopes are expensive and take decades to build*, is traced
-the same way and lands somewhere different: there, none of your capabilities touches a
-decision step, and here half of them do.
+> It is the same shape on the telescope gap. Your three capabilities there act on design
+> maturation, fabrication, integration and launch. Nothing acts on the first three steps,
+> and the first three steps are where most of the years are.
+> [Both chains, step by step, with the evidence →](/chains/)
 
 ---
 
-## The same four attributes, on the other 102 gaps
+## On all 103 gaps
 
-One gap is a demonstration. The attributes are on all 103, so the map can be queried by
-them. None of these have been read by a person. Each is a model's judgment, with a
-written rationale and a confidence flag on every row.
+One gap is a demonstration. The label is on the whole map, so it can be queried: **what
+kind of work stands in the way, and whether AI reaches it**. Eight kinds of work, each at
+working now, two-to-five years, or speculative. `[AI only]` None of the 103 has been read
+by a person. Each is a model's judgment, with a written rationale and a confidence flag.
 
-- **An outcome, on all 103 gaps.** `[AI only]`
-  What becomes knowable or buildable if the gap closes. [How I wrote them](/attributes/#outcome)
-- **The kind of work in the way, and how mature the AI for it is.** `[AI only]`
-  Eight kinds of work, each with an AI analogue, each at working now, two-to-five years,
-  or speculative. [What the eight are](/attributes/)
-- **A measurability tier.** `[AI only]`
-  Whether the gap has an agreed observable, only a proxy, a contested observable, or a
-  quantity that is inherently counterfactual. [What the tiers are](/attributes/)
-- **A progress indicator, on 8 gaps.** `[AI only]`
-  The number you would watch to know whether the gap is closing. For one of them a
-  second search found nothing, and the null is recorded rather than dropped.
-  [All eight](/indicators/)
-- **2 proposed gaps**, written in your house format. `[AI only]`
-  The two that survived an adversarial check that tried to find the funded programme
-  already building them. [Proposed gaps](/proposed/)
-
-[Every gap, with its labels](/map/) · [What the attributes are, and how the map looks under them](/attributes/)
+[Every gap, with its label](/map/) · [The eight kinds of work, and where the label breaks](/attributes/) · [2 proposed gaps](/proposed/)
 
 ---
 
 ## What I would like
 
-- **Tell me which attributes are wrong**, the kinds of work most of all.
-- **Chains across the whole map.** The value is in counting how often the same binding
-  step recurs across fields, and that needs all 103.
+- **Critical paths across the map.** The value is in counting how often the same binding
+  step recurs across fields, and in seeing which steps have no capability on them. That
+  needs more than two.
 - **Typed capability edges.** Nothing marks a capability as necessary, sufficient, or
-  partial for its gap, so the chain reconstructed that by hand. Typed edges would make
-  chains generatable, and they lead straight to the urgency and impact attributes you
-  already want.
+  partial for its gap, so both chains reconstructed that by hand. Typed edges would make
+  the step mapping derivable instead of manual.
+- **Tell me which labels are wrong**, the kinds of work most of all.
 
 `capabilities[].gaps` is empty for all 369 capabilities in the v1.0 export, though
 `schema.json` documents it as populated. Anyone starting from `capabilities.json` builds
@@ -127,16 +84,15 @@ an empty graph and gets no error.
 
 This is not comprehensive and some of it is wrong. Every label outside the worked gap is
 an AI judgment, and a second pass relabelled all 103 blind and disagreed often enough to
-be worth publishing. The disagreement rates and the calls that could have gone the other
-way are on the [method page](/method/); what this still does not do is on
-[what's missing](/missing/).
+be worth publishing. The disagreement rates are on the [method page](/method/); what this
+does not do is on [what's missing](/missing/).
 
 ---
 
 ## Footer
 
-David Sendor. I spent 15+ years applying AI to hard problems in large organizations,
-most recently leading Enterprise Data Science at Liberty Mutual. I am moving into AI for
+David Sendor. I spent 15+ years applying AI to hard problems in large organizations, most
+recently leading Enterprise Data Science at Liberty Mutual. I am moving into AI for
 science, working on where the binding constraint goes as AI dissolves the cognitive
 bottleneck. [LinkedIn](https://www.linkedin.com/in/dsendor/) · david@sendorai.com
 

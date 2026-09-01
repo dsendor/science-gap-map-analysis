@@ -3,63 +3,65 @@
 **Status: draft.** External communication is David's. Nothing here has been sent to
 anyone at Convergent Research.
 
-The page now carries the argument, the caveats and the ask, so this is deliberately
-short: its only job is to get the link opened.
+Written through `.claude/skills/writing-like-convergent`. The page carries the argument,
+the caveats and the ask, so this is deliberately short: its only job is to get the link
+opened.
 
 ---
 
 To: gapmap@convergentresearch.org
-Subject: An extended version of the Gap Map, and a hypothesis I'd like you to shoot at
+Subject: Your Gap Map, with one gap taken apart into the seven steps it runs through
 
 Hi —
 
-I've been trying to work out where AI can most accelerate science, and I kept landing
-on questions your Gap Map had already framed better than I had.
+I've spent a while inside the v1.0 export and built something on top of it I'd like you
+to shoot at. It's at **[link]**. Your data is untouched, the additions live in separate
+tables, and everything's keyed on your own ids and slugs so it joins straight back.
 
-One hypothesis I keep coming back to: as AI clears the cognitive bottlenecks in
-research, the bottlenecks that are left don't stay the same size — they become *the*
-constraint, and more visibly so. The software version is familiar: writing code got
-cheap, and now everyone's time goes into code review. Science has the same shape and a
-harder version of it, because most of what's left is fabrication, funding, approval and
-agreement rather than thinking.
+Here's what started it. I keep trying to work out where AI actually accelerates science,
+and I kept landing on questions your map had already framed better than I had. But a
+one-line gap statement can't tell you which part of the gap is the expensive part. So
+which step is the money actually in?
 
-If that's right it has a funding consequence, so rather than send you a suggestion I
-spent a few days testing it against your data. I added four attributes to all 103 of
-your gaps — a stated outcome, an AI capability type and maturity, a measurability tier,
-and a progress indicator for a sample of eight — plus four proposed gaps and two worked
-critical paths.
+To find out I took *Doing and publishing research is expensive and subject to structural
+roadblocks* apart into the seven steps it runs through, from a finished draft to a
+credited contribution, and did the same for frontier telescopes on elapsed time. Two
+things fell out, and the second is from your data rather than from any label of mine.
 
-**[link]**
+The first is that AI reaches four of those seven publishing steps, which is more than
+I'd expected, and it reaches the tractable half of each. It'll match a reviewer to a
+paper and it won't make that reviewer say yes.
 
-The short version of what came out: not one gap in the map has physical build and
-manipulation as a working-now primary capability. All 17 sit at two-to-five years or
-speculative, against 60% working-now for LLM reasoning and synthesis. And two gaps in
-two different fields — a space telescope and research publishing — turn out to share a
-binding link, which is peer review of proposals, evidenced by ESO's own account of why
-they moved to Distributed Peer Review.
+The second is the one I'd point you at. Map your own four foundational capabilities for
+that gap onto the seven steps and they cluster on the last two. Four of the seven have
+nothing attached at all, and one of those four is reviewer recruitment, where editors
+are now sending 4.5 invitations for every accepted review, nearly double the 2018 rate.
+On the telescope gap it's the same shape: your three capabilities act on fabrication,
+integration and launch, and nothing acts on the science case, the strategic ranking, or
+funding authorisation - which on JWST's record is where most of the 32.5 years sit.
 
-Two caveats up front. It isn't comprehensive, and parts of it are probably wrong: it
-was produced quickly and mostly by AI, and no human has reviewed the labels. The
-disagreement rates from a blind second pass are on the page, including the one category
-of my own that failed its own audit. Your data is untouched — the additions live in
-separate tables and the baseline is diffed against a hash-pinned copy of your
-2026-07-29 export on every build.
+The two chains also turn out to run through the same step. Telescope time and facility
+approval are allocated by peer review of proposals, and a decadal survey is a review
+panel in the same way a time allocation committee is. ESO's own account of why they
+moved to Distributed Peer Review is that "it has become progressively harder to find
+scientists willing to serve in the panels and in the OPC". Two gaps, two fields, one
+blocker - and your export has one row per gap with nowhere to record that.
 
-Also, one thing worth knowing regardless: `capabilities[].gaps` is empty for all 369
+Fair warning on scope, in your own spirit: one gap has been read line by line by a
+person and the other 102 are a model's first pass, labelled that way throughout. It's a
+probe, not a survey!
+
+One thing worth knowing either way. `capabilities[].gaps` is empty for all 369
 capabilities in the v1.0 export, though `schema.json` documents it as populated. All 389
 edges are on the gap side only, so anyone starting from `capabilities.json` builds an
-empty graph and gets no error. Two capability records are missing the `description` your
-schema marks required, and six resources are referenced by no capability.
+empty graph and gets no error at any point. Two capability records are also missing the
+`description` your schema marks required, and six resources are referenced by no
+capability.
 
-What I'd like is your feedback — particularly the critical version. The capability
-taxonomy is the part I'd most like torn apart. And I'd like to talk about whether a
-future version of the map should be built for a world where the cognitive work is cheap:
-chains across all 103 gaps so a recurring bottleneck can be counted rather than noticed,
-typed capability edges, and outcomes as a real entity rather than a text field.
-
-Your About page says you're open to partners interested in meta analyses and new tools
-that make the data more actionable, and that you hope to add attributes for urgency and
-impact. That's what this is aiming at.
+What I'd like is the critical version of your reaction, and one question in particular:
+is decomposing gaps into steps worth doing across the map? Typed capability edges would
+make that mapping derivable instead of manual, and they sit right next to the urgency
+and impact attributes you've said you'd like to add.
 
 David Sendor
 david@sendorai.com
@@ -68,24 +70,24 @@ david@sendorai.com
 
 ## Notes for David, not for sending
 
-- **Numbers in the email are regenerated from the database**, not typed in: 103 / 17 /
-  60% / 369 / 389 / 6 / 2, and the 2026-07-29 snapshot date.
-- **Three figures from the original brief were cut, not softened.** The 3ie comparison —
-  roughly 42 evidence gap maps, a Development Evidence Portal at roughly 21,800 impact
-  evaluations and 1,700 systematic reviews, and the absolute-gap versus synthesis-gap
-  distinction — did not survive verification. 3ie's own blog posts disagree with each
-  other about the portal totals by a factor of three, their gap maps page states no
-  total, and neither that page nor the Snilstveit working paper uses those two terms.
-  The substance of the distinction *is* on their page — gaps are where "few or no impact
-  evaluations or systematic reviews exist" versus "where there is a concentration of
-  impact evaluations but no recent high-quality systematic review" — so if a 3ie
-  comparison is wanted later, that quote is the defensible version and the numbers are
-  not.
+- **Every number is regenerated from the database**: 103, 7 steps, 4 of 7 with no
+  capability, 4.5 invitations, 32.5 years, 369, 389, 2, 6, and the 2026-07-29 snapshot.
+- **What was cut from the previous draft, and why.** The old note led on "not one gap has
+  physical build as a working-now primary capability, all 17 sit at two-to-five years or
+  speculative, against 60% working-now for LLM reasoning and synthesis." Both halves are
+  wrong against the settled database: physical build is 8 gaps, one of them working now,
+  and reading and synthesis is 5 of 10 rather than 60%. The gradient it rested on was
+  withdrawn after the blind relabel failed to reproduce it. It also described four
+  attributes and four proposed gaps; there are now two of each.
+- **The 3ie comparison stays cut.** Their own blog posts disagree with each other about
+  the portal totals by a factor of three, and neither their gap maps page nor the
+  Snilstveit working paper uses the absolute-gap versus synthesis-gap terms. If a 3ie
+  comparison is ever wanted, quote their page directly and drop the numbers.
 - **Aaron Tohuvavohu** is verified twice: as resource
   `1c3cb37e-2a00-80a1-8ddf-fb19d0b8b0ee` (type Individual) cited by the capability "Space
   Telescope Factory", which is attached to the telescope gap; and by name in the
-  acknowledgments on gap-map.org/about. If a first conversation needs a warm entry point,
-  there is a named person already associated with the gap the page leads on.
+  acknowledgments on gap-map.org/about. A named person already associated with one of the
+  two worked gaps, if a warm entry point is wanted.
 - **Who to send to.** `gapmap@convergentresearch.org` is the address on their About page
   for questions and suggestions. `sarah@convergentresearch.org` is listed separately for
   funders, which is a different conversation and probably the wrong door for this.
