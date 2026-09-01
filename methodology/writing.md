@@ -4,6 +4,11 @@ Two rules, one idea: **lead with the answer, put the detail where someone who wa
 will find it.** This governs the artifact, every doc in `docs/`, and every reply to
 David.
 
+This file is about *structure*. For *voice* — how a page reads to a Convergent reader,
+and how to keep it from reading as machine-written — use the
+`writing-like-convergent` skill in `.claude/skills/`. They compose: the skill changes
+the register, not what goes on which page.
+
 ## Progressive disclosure, everywhere, including to David
 
 The shape:
