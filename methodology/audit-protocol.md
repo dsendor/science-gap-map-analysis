@@ -47,3 +47,31 @@ alarming:
 
 A disagreement rate near zero on tier assignment would be evidence the audit is not
 independent, not evidence the labels are good. Say so if it happens.
+
+## Sanity-check every label against the gap it describes
+
+Agreement is not validity. A label can be internally consistent, survive this audit,
+and still be obviously wrong to anyone who reads it next to the gap. **Before any
+distribution or chart ships, read a sample of the actual rows** and ask whether a
+domain reader would accept them.
+
+The instance that forced this rule: the relabel marked **"AI Could Be Misused"** as
+`Coordination and institutional` / **`Working now`**, and *"Risks of Malicious
+Bioengineering"* and *"A Limited Set of Rigid Organizational Structures..."* the same
+way. Nobody believes the coordination problem around AI misuse is solved today. The
+labels were consistent, adjudicated, and absurd.
+
+Cause: `Working now` is defined per gap — *would applying this capability move this
+gap* — and the relabelers read it as *does this capability exist*. Those coincide for
+technical categories and come apart completely for institutional ones. Convening a
+standards body is available this afternoon; getting universal DNA-synthesis screening
+adopted is not.
+
+So:
+
+- **State the discriminating example in the taxonomy**, not just the definition.
+- **Never adjudicate disagreements by a rule that cannot be wrong.** "On disagreement,
+  take v2" removes author bias and also removes any check on validity. It adopted the
+  wrong reading 25 times in one direction.
+- **Read the extremes.** Sort by any new label and read the top and bottom ten rows. The
+  absurd ones surface immediately and cost minutes.
