@@ -1,8 +1,16 @@
-# Front page, proposed copy — Convergent voice
+# Front page, Convergent voice — a study, not current copy
 
-Same content and same claims as `front-page-draft.md`, rewritten against
-`.claude/skills/writing-like-convergent`. Read this, mark it up, and I'll put it into
-`app/src/app/page.jsx`.
+**This is a voice pass on the argument as it stood before 2026-09-01 08:34.** It is a
+line-for-line rewrite of `front-page-draft.md` against
+`.claude/skills/writing-like-convergent`, holding the content fixed so the only variable
+is the prose. That is what makes the A/B in the commit message mean anything.
+
+`app/src/app/page.jsx` has since moved past both files. It now leads on the
+step-by-step decomposition rather than on the four attributes, counts Convergent's own
+capabilities against each step ("four of the seven steps have no capability of yours
+attached to them"), and has cut the *uncollectable* framing that this draft keeps and
+sharpens. **Do not paste this into the page.** The transferable part is the voice; redo
+the pass against the live page when you want it there.
 
 Figures and components are marked in square brackets. Everything else is copy.
 
