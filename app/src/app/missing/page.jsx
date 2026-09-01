@@ -128,9 +128,9 @@ export default function MissingPage() {
       why: 'Every auditor independently reported it was the nearest alternative and almost never the winner. A correction rather than an expansion, and the cheapest thing on this page.',
     },
     {
-      h: 'Outcomes as a first-class entity',
-      what: 'Outcomes are one sentence stored on the gap, and they are not one-to-one with gaps.',
-      why: 'There are almost certainly more outcomes than gaps, and one capability unlocks outcomes across several fields. Modelling that means a join table and a schema change, which is not something a stranger should propose by doing it.',
+      h: 'Outcome sentences and progress indicators, built and withdrawn',
+      what: 'A one-sentence outcome on every gap, and a progress indicator on eight of them. Both were built, both are in the CSV and JSON, neither is proposed.',
+      why: 'The critical paths do the same two jobs better. A chain has to state the axis it runs on, which is what the outcome sentence was for, and it carries a sourced quantity on every step, which is what the indicator was for. Two attributes doing a job a third does better is a worse proposal than one, so they came out.',
     },
     {
       h: 'Decomposing composite gaps',

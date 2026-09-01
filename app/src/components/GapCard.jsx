@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { fieldColor } from '../lib/fields';
 
-// Their card, with their problem statement kept intact and the added outcome beside
+// Their card, with their problem statement kept intact and the added label beside
 // it. The "N Capabilities" disclosure copies the control on gap-map.org so the card
 // behaves the way a reader of their site expects.
 // Each tag used to sit in an unlabelled row, so a reader met "Coordination and
@@ -58,14 +58,6 @@ export default function GapCard({ gap }) {
 
       <div className="gcard__body">
         <p className="gcard__theirs">{gap.description}</p>
-        {gap.outcome && (
-          <p className="gcard__ours">
-            <span className={gap.outcome_confidence === 'guess' ? 'k k--flag' : 'k'}>
-              If this closes{gap.outcome_confidence === 'guess' ? ' · guess' : ''}
-            </span>
-            {gap.outcome}
-          </p>
-        )}
       </div>
 
       <div className="gcard__attrs">
@@ -139,7 +131,6 @@ export default function GapCard({ gap }) {
                 </>
               ) : (
                 <>
-                  <Why k={`Outcome (${gap.outcome_confidence})`} t={gap.outcome_rationale} />
                   <Why
                     k={`${gap.primary_ai_type}, ${gap.primary_maturity} (${gap.primary_confidence})`}
                     t={gap.primary_rationale}

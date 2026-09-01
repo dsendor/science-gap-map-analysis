@@ -252,7 +252,7 @@ export default function MethodPage() {
 
         <section>
           <div className="col">
-            <h2>Progress indicators, and the two that came back empty</h2>
+            <h2>Progress indicators, built and not proposed</h2>
             <p>
               Eight gaps across all four tiers. Every value was read off a page that was actually
               fetched. Four verify against Crossref or arXiv; two are reachable but not

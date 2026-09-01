@@ -50,10 +50,14 @@ export default function Page() {
 
             <div className="pull">
               <p style={{ marginBottom: 6, fontSize: 15, color: 'var(--ink-3)' }}>
-                The outcome we would add to your gap
+                A chain has to be a path to something. This one runs to:
               </p>
-              <p style={{ marginBottom: 0, fontSize: 19 }}>
+              <p style={{ marginBottom: 10, fontSize: 19 }}>
                 <strong>{pubGap?.outcome}</strong>
+              </p>
+              <p style={{ marginBottom: 0, fontSize: 15, color: 'var(--ink-3)' }}>
+                Your gap statement bundles cost, speed and inclusiveness. Picking one is what makes
+                the steps orderable, and the other two are named and left as separate chains.
               </p>
             </div>
 
@@ -109,32 +113,16 @@ export default function Page() {
           <div className="col">
             <h2>On all {s.n_gaps} gaps</h2>
             <p>
-              One gap is a demonstration. Three attributes are on the whole map, so it can be queried
-              by them. None have been read by a person. Each is a model&rsquo;s judgment, with a
-              written rationale and a confidence flag on every row.
+              One gap is a demonstration. The label is on the whole map, so it can be queried:{' '}
+              <strong>what kind of work stands in the way, and whether AI reaches it</strong>. Eight
+              kinds of work, each at working now, two-to-five years, or speculative.
+              <AiOnly /> None of the {s.n_gaps} has been read by a person. Each is a
+              model&rsquo;s judgment, with a written rationale and a confidence flag.
             </p>
-            <ul>
-              <li>
-                <strong>The kind of work in the way, and whether AI reaches it.</strong>
-                <AiOnly />{' '}
-                Eight kinds of work, each at working now, two-to-five years, or speculative.{' '}
-                <a href="./attributes/">What the eight are</a>
-              </li>
-              <li>
-                <strong>An outcome.</strong>
-                <AiOnly /> What becomes knowable or buildable if the gap closes.{' '}
-                <a href="./attributes/#outcome">How I wrote them</a>
-              </li>
-              <li>
-                <strong>A progress indicator, on {s.n_indicators} gaps.</strong>
-                <AiOnly /> The number you would watch to know whether the gap is closing.{' '}
-                <a href="./indicators/">All {s.n_indicators}</a>
-              </li>
-            </ul>
             <p>
-              <a href="./map/">Every gap, with its labels</a> &middot;{' '}
-              <a href="./attributes/">The attributes, and where each one breaks</a> &middot;{' '}
-              <a href="./proposed/">{s.n_new_gaps} proposed gaps</a>
+              <a href="./map/">Every gap, with its label</a> &middot;{' '}
+              <a href="./attributes/">The eight kinds of work, and where the label breaks</a>{' '}
+              &middot; <a href="./proposed/">{s.n_new_gaps} proposed gaps</a>
             </p>
           </div>
         </section>

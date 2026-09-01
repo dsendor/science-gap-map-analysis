@@ -1,9 +1,8 @@
 const PAGES = [
   { href: '', label: 'The argument' },
-  { href: 'attributes/', label: 'The attributes' },
+  { href: 'attributes/', label: 'The labels' },
   { href: 'map/', label: 'The extended map' },
   { href: 'chains/', label: 'Critical paths' },
-  { href: 'indicators/', label: 'Indicators' },
   { href: 'proposed/', label: 'Proposed gaps' },
   { href: 'method/', label: 'Method & audit' },
   { href: 'missing/', label: "What's missing" },

@@ -52,38 +52,26 @@ export default function AttributesPage() {
       <main className="wrap">
         <section>
           <div className="col">
-            <h1>The four attributes</h1>
+            <h1>The label on every gap</h1>
             <p className="lead">
-              What each one is, why it might be worth having, and where it breaks. Two of the four
-              have known failure modes and they are described here rather than buried.
+              What kind of work stands in the way of each gap, and whether AI reaches it. What the
+              label is, why it might be worth having, and where it breaks.
+            </p>
+            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
+              Two further attributes were built and are not proposed. A one-sentence outcome on every
+              gap, and a progress indicator on eight of them. Both are in{' '}
+              <a href="./gap-map-augmented.csv">the CSV</a> and{' '}
+              <a href="./data.json">the JSON</a> for anyone who wants them. They are left out here
+              because the critical paths do the same jobs better: a chain has to state the axis it
+              runs on, which is what the outcome was for, and it carries a sourced quantity on every
+              step, which is what the indicator was for.
             </p>
           </div>
         </section>
 
         <section>
           <div className="col">
-            <h2>1. The outcome</h2>
-            <p>
-              One sentence saying what becomes knowable or buildable if the gap closes.
-            </p>
-            <p>
-              Every gap name in the map is a deficit: <em>X is hard</em>, <em>we can&rsquo;t do Y</em>,{' '}
-              <em>Z is still invisible</em>. That is the right way to name a gap and the wrong way to
-              recruit someone into working on it. The outcome is the same fact stated from the far
-              side, and it is the line a person reads when deciding whether this is their problem.
-            </p>
-            <p>
-              <strong>Where it breaks.</strong> These are my interpretation of your descriptions, not
-              a restatement of them, and a few of them editorialize. {s.confidence.outcome.confident}{' '}
-              of {s.n_gaps} are marked confident, which is too tidy for the most interpretive of the
-              four. If you adopt this attribute, the field leads should write them.
-            </p>
-          </div>
-        </section>
-
-        <section>
-          <div className="col">
-            <h2>2. What kind of work is in the way</h2>
+            <h2>1. What kind of work is in the way</h2>
             <p>
               Eight values, naming <strong>kinds of work</strong> and not kinds of model. This column
               answers one question only: what stands between here and the gap closing. It is not a
@@ -172,7 +160,7 @@ export default function AttributesPage() {
 
         <section>
           <div className="col">
-            <h2>3. The measurability tier</h2>
+            <h2>2. The measurability tier</h2>
             <p>
               Whether the gap has something you could actually watch. Your own roadmapping criterion
               asks whether success is unambiguously measurable, and applying it to all{' '}
@@ -209,30 +197,7 @@ export default function AttributesPage() {
               alternative and almost never the winner. A category that two careful readers apply
               differently four times in five is not a category.
             </p>
-            <p>
-              The two tiers that held up are the ones carrying the argument, and the bottom tier is
-              where the attribute earns itself:{' '}
-              <a href="./indicators/">
-                the two gaps where a genuine search for a progress number came back empty
-              </a>{' '}
-              are both in it, and that is the tier being correct rather than the search failing.
-            </p>
-          </div>
-        </section>
 
-        <section>
-          <div className="col">
-            <h2>4. The progress indicator</h2>
-            <p>
-              The one number you would watch to know whether a gap is closing. Done for eight gaps,
-              spread across all four tiers so the set could not be read as picking the easy ones.
-            </p>
-            <p>
-              Six have a number. Two do not. Eight is a feasibility probe rather than an attribute you
-              could adopt today, and what it establishes is that indicators are buildable for tier-one
-              gaps and honestly are not for tier-four ones.{' '}
-              <a href="./indicators/">All eight, with sources and caveats</a>
-            </p>
           </div>
         </section>
 
