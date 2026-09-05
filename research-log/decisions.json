@@ -239,6 +239,14 @@
       "runner_up": "2-5 years, on the grounds that partial mitigation mechanisms exist and are being built. Rejected because partial mitigations do not close this gap, and the taxonomy asks what would move the gap rather than what is being attempted.",
       "confidence": "high",
       "reversal_condition": "A change in the state of alignment research such that the field stops treating the core problem as possibly unsolvable. Recorded in research-log/relabel-adjudication.json for this gap."
+    },
+    {
+      "phase": "revision-6",
+      "decision": "Dropped is_binding from the telescope chain entirely, and renamed what survives on the publishing chain to \"carries the cost\".",
+      "rationale": "A blind cold reviewer pointed out that the telescope chain is strictly sequential, so removing any step shortens the total and every step is on the critical path. Marking four of eight as binding claimed a distinction the structure does not contain, and the marked set turned out to be exactly the steps no AI capability acts on, which made the headline finding restate its own labelling. The textbook sense of binding needs parallel paths and neither chain has them. What survives is the cost sense on chain 2, where three of seven steps genuinely account for a disproportionate share of reviewer and editor labor. That is a claim about distribution rather than about slack, so it gets its own words.",
+      "runner_up": "Keep the vocabulary on both chains and explain the difference in a footnote. Rejected because the circularity was real rather than presentational: no wording rescues a flag that has no discriminating power on the chain it is applied to. The arithmetic that replaced it -- AI acts on 9.5 of the 32.5 years -- is stronger and needs no vocabulary at all.",
+      "confidence": "high",
+      "reversal_condition": "A chain is built with genuine parallel structure, where some steps run alongside others. is_binding then recovers its classic meaning on a time axis and methodology/critical-path.md needs a third case."
     }
   ]
 }
