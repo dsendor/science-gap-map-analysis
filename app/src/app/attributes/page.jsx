@@ -60,8 +60,8 @@ export default function AttributesPage() {
             <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
               Two further attributes were built and are not proposed. A one-sentence outcome on every
               gap, and a progress indicator on eight of them. Both are in{' '}
-              <a href="./gap-map-augmented.csv">the CSV</a> and{' '}
-              <a href="./data.json">the JSON</a> for anyone who wants them. They are left out here
+              <a href="../gap-map-augmented.csv">the CSV</a> and{' '}
+              <a href="../data.json">the JSON</a> for anyone who wants them. They are left out here
               because the critical paths do the same jobs better: a chain has to state the axis it
               runs on, which is what the outcome was for, and it carries a sourced quantity on every
               step, which is what the indicator was for.
@@ -214,7 +214,7 @@ export default function AttributesPage() {
               {s.tier['Proxy only']} of the {s.confidence.tier.guess} flagged tiers come from that one
               rule and only {s.confidence.tier.guess - (s.tier['Proxy only'] ?? 0)} are independent
               judgments. The tier flag is closer to a synonym for proxy-only than to a measure of my
-              uncertainty. <a href="./method/">The full audit</a>
+              uncertainty. <a href="../method/">The full audit</a>
             </p>
           </div>
         </section>
