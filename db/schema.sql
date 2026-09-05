@@ -217,6 +217,11 @@ CREATE TABLE IF NOT EXISTS critical_paths (
     -- without showing how long each one takes asks to be believed rather than checked.
     duration_basis  TEXT,
     programmes_json TEXT NOT NULL DEFAULT '[]',
+    -- What the chain measures. Until now the renderer inferred this from whether
+    -- duration_years was null, which methodology/critical-path.md flagged as a proxy
+    -- that would mislabel a cost chain carrying durations. The publishing chain now
+    -- carries durations, so the proxy would have broken exactly as predicted.
+    axis_kind     TEXT NOT NULL DEFAULT 'time' CHECK (axis_kind IN ('time', 'cost')),
     -- Who has actually read this chain. One of the two was worked through end to end
     -- with a person; the other is a model's first pass and nobody has checked it. Those
     -- deserve different weight from a reader and the artifact says which is which.
@@ -252,6 +257,13 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     duration_span   TEXT,   -- the two milestones the figure is measured between
     duration_note   TEXT,
     figure          TEXT,   -- for a non-time axis, the published quantity for this link
+    -- Elapsed days, for chains measured in days rather than years. Where a published
+    -- figure brackets several steps rather than one, the same value is carried on each
+    -- step it covers and duration_span_note says so, so a reader cannot mistake a span
+    -- for a per-step measurement. NULL means no published quantity exists, which for
+    -- steps 1 and 7 of the publishing chain is the finding rather than a gap in the work.
+    duration_days      REAL,
+    duration_span_note TEXT,
     ai_acts         INTEGER NOT NULL DEFAULT 0 CHECK (ai_acts IN (0, 1)),
     -- Which of Convergent's own capabilities for this gap act on this step, by name.
     -- A step with an empty array is a step nobody has proposed anything for, and that

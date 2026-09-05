@@ -1,27 +1,42 @@
-import { Shippori_Mincho } from 'next/font/google';
+import { Archivo, Public_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 
-// Their headings are Shippori Mincho 500. Loaded through next/font so the files are
-// emitted into out/ at build time — the exported directory stays self-contained and
-// works offline, which a CDN <link> would not.
-// Weight 500 only, and latin only. Shippori Mincho carries Japanese subsets, and
-// asking for three weights preloaded a few hundred font files that were never used.
-const serif = Shippori_Mincho({
-  weight: ['500'],
+// Three roles, three faces, all loaded through next/font so the exported directory
+// stays self-contained and works offline.
+//
+// Archivo for display: a grotesque drawn for signage and forms, tight and slightly
+// condensed at weight 700. It reads as a schedule header rather than an essay title,
+// which is what this page is. Public Sans for body: a civic face, plain and unfashionable.
+// Plex Mono for anything that is a measurement — step numbers, durations, counts — so a
+// number is visually a number and never prose.
+const display = Archivo({
+  weight: ['600', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-serif',
+  variable: '--font-display',
+});
+const body = Public_Sans({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+});
+const mono = IBM_Plex_Mono({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
 });
 
 export const metadata = {
-  title: 'AI is accelerating science. The Gap Map should show where.',
+  title: 'Where the constraint actually sits',
   description:
-    "David Sendor's extension of Convergent Research's Fundamental Development Gap Map v1.0: an outcome, the kind of work in the way, and a measurability tier for all 103 gaps, plus two worked critical paths and four proposed gaps. An independent contribution, offered for feedback.",
+    "David Sendor's extension of Convergent Research's Fundamental Development Gap Map v1.0: one gap decomposed into the steps it runs through, showing where AI reaches and which steps have no capability attached, plus a kind-of-work label on all 103 gaps. An independent contribution, offered for feedback.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={serif.variable}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

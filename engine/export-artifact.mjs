@@ -62,6 +62,11 @@ const newGaps = all(`
   SELECT n.*, f.name AS field FROM new_gaps n JOIN gm_fields f ON f.id = n.field_id
   ORDER BY n.created_at, n.id`);
 
+// Capability name -> slug, so a chain step can deep-link to their page for it.
+const capBySlugName = new Map(
+  all('SELECT name, slug FROM gm_capabilities').map((c) => [c.name, c])
+);
+
 const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   ...p,
   programmes: JSON.parse(p.programmes_json || '[]'),
@@ -70,6 +75,12 @@ const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id).map((l) => ({
     ...l,
     capabilities: JSON.parse(l.capabilities_json || '[]'),
+    // Their capability pages, built from the slug we preserved on import. Confirmed
+    // to resolve: https://www.gap-map.org/capabilities/<slug>/ returns 200.
+    capability_links: JSON.parse(l.capabilities_json || '[]').map((name) => {
+      const row = capBySlugName.get(name);
+      return { name, url: row ? `https://www.gap-map.org/capabilities/${row.slug}/` : null };
+    }),
   })),
 }));
 

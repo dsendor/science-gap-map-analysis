@@ -1,103 +1,155 @@
-/* Design tokens read directly off gap-map.org, light and dark, so this reads as an
-   extension of their portal rather than a different site making claims about it.
-   Their values: page #F3F2EB / ink #404137 / secondary #63635A / accent #41A0DF /
-   panels #E4E3D9 and #EEECE4; dark page #24283A / ink #D2D6B8 / secondary #A0A094 /
-   accent #3699DB / panels #1E2535 and #292D3E. Their h1 is Shippori Mincho 500 at
-   -0.0075em; their body is the system sans at 0.02em tracking.
+/* The subject is a project schedule: an ordered chain of steps, each with a duration,
+   a cost and something either acting on it or not. So the page is built like an
+   instrument that reads a schedule, not like an essay about one.
 
-   Deliberately NOT copied: their logo, wordmark and masthead. This is David's page
-   about their map, and it should never be mistakable for their page. */
+   Ground is a cool paper white with a blue cast, deliberately NOT the cream this site
+   used to carry. That cream was lifted from gap-map.org to read as an extension of
+   their portal, which was a real argument; it is also, coincidentally, the single most
+   common background in machine-generated design, and pairing it with a serif display
+   made the resemblance total.
+
+   Colour encodes one thing and is not otherwise spent. Blue means a current AI
+   capability acts on this step, and its intensity is how mature that capability is.
+   Gold means the step carries the cost. Slate means neither. Nothing else is coloured. */
 :root {
   color-scheme: light;
-  --page: #f3f2eb;
-  --surface: #eeece4;
-  --surface-2: #e4e3d9;
-  --ink: #404137;
-  --ink-2: #63635a;
-  --ink-3: #8a897e;
-  --accent: #41a0df;
-  --accent-ink: #1c6fa5;
-  --rule: rgba(64, 65, 55, 0.14);
-  --rule-soft: rgba(64, 65, 55, 0.08);
-  --bind: #c2622c;
-  --bind-wash: rgba(194, 98, 44, 0.09);
-  --flag: #9a6b12;
-  --flag-wash: rgba(154, 107, 18, 0.10);
-  --ord-1: #63acdf;
-  --ord-2: #2a7fbe;
-  --ord-3: #134d71;
-  --tier-1: #63acdf;
-  --tier-2: #3a8fc9;
-  --tier-3: #22699b;
-  --tier-4: #134d71;
-  --heat-0: #e4e3d9;
-  --heat-1: #d3e6f6;
-  --heat-2: #aed3ef;
-  --heat-3: #71b7e6;
-  --heat-4: #41a0df;
-  --heat-5: #1a5f8f;
+  --paper: #fbfcfd;
+  --paper-2: #f1f4f7;
+  --paper-3: #e6ebf0;
+  --panel: #101c27;
+  --panel-2: #1a2836;
+  --panel-ink: #e8eef3;
+  --panel-ink-2: #93a6b6;
+  --ink: #101c27;
+  --ink-2: #46586a;
+  --ink-3: #78889a;
+  --rule: #dbe3ea;
+  --rule-soft: #eaeff4;
+
+  /* AI reach, by maturity. One hue, three steps, brightest = available now. */
+  --reach-1: #1c6ef2;
+  --reach-2: #6ea3e8;
+  --reach-3: #b6cde8;
+  --reach-wash: rgba(28, 110, 242, 0.09);
+  /* The constraint. */
+  --cost: #b8830c;
+  --cost-wash: rgba(184, 131, 12, 0.11);
+  /* No AI capability acts here. */
+  --none: #64748b;
+
+  --accent: #1c6ef2;
+  --accent-ink: #1358c4;
+  --bind: #b8830c;
+  --bind-wash: rgba(184, 131, 12, 0.11);
+  --flag: #b8830c;
+  --flag-wash: rgba(184, 131, 12, 0.11);
+  --ord-1: #1c6ef2;
+  --ord-2: #6ea3e8;
+  --ord-3: #b6cde8;
+  --tier-1: #1c6ef2;
+  --tier-2: #5b95e2;
+  --tier-3: #94b8e0;
+  --tier-4: #c8d8e8;
+  --heat-0: #f1f4f7;
+  --heat-1: #dbe7f8;
+  --heat-2: #b9d1f2;
+  --heat-3: #8db4ea;
+  --heat-4: #4d8ae6;
+  --heat-5: #1c6ef2;
+
+  --page: var(--paper);
+  --surface: var(--paper-2);
+  --surface-2: var(--paper-3);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --page: #24283a;
-    --surface: #292d3e;
-    --surface-2: #1e2535;
-    --ink: #d2d6b8;
-    --ink-2: #a0a094;
-    --ink-3: #85857b;
-    --accent: #3699db;
-    --accent-ink: #6fb9e8;
-    --rule: rgba(210, 214, 184, 0.16);
-    --rule-soft: rgba(210, 214, 184, 0.09);
-    --bind: #e08a55;
-    --bind-wash: rgba(224, 138, 85, 0.13);
-    --flag: #d9a441;
-    --flag-wash: rgba(217, 164, 65, 0.13);
-    --ord-1: #bcdcf3;
-    --ord-2: #3699db;
-    --ord-3: #2a6f9e;
-    --tier-1: #bcdcf3;
-    --tier-2: #6fb3e4;
-    --tier-3: #3699db;
-    --tier-4: #2a6f9e;
-    --heat-0: #1e2535;
-    --heat-1: #16354e;
-    --heat-2: #1a4a6d;
-    --heat-3: #21688f;
-    --heat-4: #3699db;
-    --heat-5: #8fc9ee;
+    --paper: #0c151d;
+    --paper-2: #131f2a;
+    --paper-3: #1a2836;
+    --panel: #060d13;
+    --panel-2: #101c27;
+    --panel-ink: #e8eef3;
+    --panel-ink-2: #8496a6;
+    --ink: #dfe7ee;
+    --ink-2: #9db0c0;
+    --ink-3: #74889a;
+    --rule: #23323f;
+    --rule-soft: #1a2733;
+    --reach-1: #57a0ff;
+    --reach-2: #3b74c4;
+    --reach-3: #2b4a70;
+    --reach-wash: rgba(87, 160, 255, 0.13);
+    --cost: #e0aa3c;
+    --cost-wash: rgba(224, 170, 60, 0.14);
+    --none: #7d8fa0;
+    --accent: #57a0ff;
+    --accent-ink: #8cbcff;
+    --bind: #e0aa3c;
+    --bind-wash: rgba(224, 170, 60, 0.14);
+    --flag: #e0aa3c;
+    --flag-wash: rgba(224, 170, 60, 0.14);
+    --ord-1: #57a0ff;
+    --ord-2: #3b74c4;
+    --ord-3: #2b4a70;
+    --tier-1: #57a0ff;
+    --tier-2: #3f7fce;
+    --tier-3: #2f5f95;
+    --tier-4: #24425f;
+    --heat-0: #131f2a;
+    --heat-1: #16293c;
+    --heat-2: #1b3a58;
+    --heat-3: #235078;
+    --heat-4: #2f6ea8;
+    --heat-5: #57a0ff;
+    --page: var(--paper);
+    --surface: var(--paper-2);
+    --surface-2: var(--paper-3);
   }
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --page: #24283a;
-  --surface: #292d3e;
-  --surface-2: #1e2535;
-  --ink: #d2d6b8;
-  --ink-2: #a0a094;
-  --ink-3: #85857b;
-  --accent: #3699db;
-  --accent-ink: #6fb9e8;
-  --rule: rgba(210, 214, 184, 0.16);
-  --rule-soft: rgba(210, 214, 184, 0.09);
-  --bind: #e08a55;
-  --bind-wash: rgba(224, 138, 85, 0.13);
-  --flag: #d9a441;
-  --flag-wash: rgba(217, 164, 65, 0.13);
-  --ord-1: #bcdcf3;
-  --ord-2: #3699db;
-  --ord-3: #2a6f9e;
-  --tier-1: #bcdcf3;
-  --tier-2: #6fb3e4;
-  --tier-3: #3699db;
-  --tier-4: #2a6f9e;
-  --heat-0: #1e2535;
-  --heat-1: #16354e;
-  --heat-2: #1a4a6d;
-  --heat-3: #21688f;
-  --heat-4: #3699db;
-  --heat-5: #8fc9ee;
+  --paper: #0c151d;
+  --paper-2: #131f2a;
+  --paper-3: #1a2836;
+  --panel: #060d13;
+  --panel-2: #101c27;
+  --panel-ink: #e8eef3;
+  --panel-ink-2: #8496a6;
+  --ink: #dfe7ee;
+  --ink-2: #9db0c0;
+  --ink-3: #74889a;
+  --rule: #23323f;
+  --rule-soft: #1a2733;
+  --reach-1: #57a0ff;
+  --reach-2: #3b74c4;
+  --reach-3: #2b4a70;
+  --reach-wash: rgba(87, 160, 255, 0.13);
+  --cost: #e0aa3c;
+  --cost-wash: rgba(224, 170, 60, 0.14);
+  --none: #7d8fa0;
+  --accent: #57a0ff;
+  --accent-ink: #8cbcff;
+  --bind: #e0aa3c;
+  --bind-wash: rgba(224, 170, 60, 0.14);
+  --flag: #e0aa3c;
+  --flag-wash: rgba(224, 170, 60, 0.14);
+  --ord-1: #57a0ff;
+  --ord-2: #3b74c4;
+  --ord-3: #2b4a70;
+  --tier-1: #57a0ff;
+  --tier-2: #3f7fce;
+  --tier-3: #2f5f95;
+  --tier-4: #24425f;
+  --heat-0: #131f2a;
+  --heat-1: #16293c;
+  --heat-2: #1b3a58;
+  --heat-3: #235078;
+  --heat-4: #2f6ea8;
+  --heat-5: #57a0ff;
+  --page: var(--paper);
+  --surface: var(--paper-2);
+  --surface-2: var(--paper-3);
 }
 
 * { box-sizing: border-box; }
@@ -105,15 +157,17 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--page);
   color: var(--ink);
-  font: 400 17px/1.55 var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
-  letter-spacing: 0.02em;
+  font: 400 17px/1.62 var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent-ink); text-underline-offset: 2px; }
 a:hover { color: var(--accent); }
 
 h1, h2, h3, .serif {
-  font-family: var(--font-serif, Georgia, 'Times New Roman', serif);
+  font-family: var(--font-display, system-ui, sans-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   font-weight: 500;
   letter-spacing: -0.0075em;
   color: var(--ink);
@@ -376,3 +430,139 @@ details .body { padding: 0 2px 16px; }
   color: var(--ink-3);
 }
 .chain .caps.none { color: var(--flag); font-weight: 500; }
+
+/* ── The vertical schedule ──────────────────────────────────────────────────────
+   The signature element. A dark instrument panel embedded in a light document, so
+   the chain reads as the thing being measured rather than as more page. Four columns
+   on desktop; stacks to two on narrow, keeping the step number as the spine. */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--panel);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.step {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1.45fr) minmax(0, 1fr) 132px;
+  gap: 0 20px;
+  padding: 18px 22px 18px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  align-items: start;
+}
+.step:first-child { border-top: 0; }
+.step--cost { background: rgba(184, 131, 12, 0.10); }
+
+.step__seq {
+  font: 600 12px/1 var(--font-mono, ui-monospace, monospace);
+  color: var(--panel-ink-2);
+  padding-top: 4px;
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+.step--cost .step__seq { color: var(--cost); }
+
+.step__name {
+  /* The global h4 rule is a small uppercase utility label; a step name is a heading. */
+  font: 600 16px/1.3 var(--font-display, system-ui, sans-serif);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--panel-ink);
+  margin: 0 0 4px;
+}
+.step__blocker {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--panel-ink-2);
+  margin: 0 0 9px;
+}
+.step__marks { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.01em;
+}
+.mark i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.mark--reach { color: var(--panel-ink); }
+.mark--none { color: var(--panel-ink-2); }
+.mark--none i { background: var(--none); opacity: 0.55; }
+.mark--cost {
+  color: var(--cost);
+  border: 1px solid rgba(224, 170, 60, 0.4);
+  border-radius: 4px;
+  padding: 1px 7px;
+}
+
+.step__caps { padding-top: 2px; }
+.caps-list { list-style: none; margin: 0; padding: 0; }
+.caps-list li { margin-bottom: 3px; }
+.caps-list a, .caps-list li {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--panel-ink-2);
+}
+.caps-list a { color: #9dc4f5; text-decoration: none; border-bottom: 1px solid rgba(157, 196, 245, 0.3); }
+.caps-list a:hover { color: #c9dffb; border-bottom-color: currentColor; }
+.caps-none {
+  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--cost);
+  opacity: 0.85;
+}
+
+.step__time { padding-top: 2px; }
+.step__num {
+  display: block;
+  font: 600 20px/1 var(--font-mono, ui-monospace, monospace);
+  color: var(--panel-ink);
+  margin-bottom: 7px;
+}
+.step__num small { font-size: 11px; font-weight: 400; color: var(--panel-ink-2); margin-left: 3px; }
+.step__bar {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--reach-1), #9dc4f5);
+}
+.step--cost .step__bar { background: linear-gradient(90deg, var(--cost), #e8c477); }
+.step__nomeasure {
+  display: inline-block;
+  font: 400 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--panel-ink-2);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: help;
+}
+.step__spannote {
+  display: block;
+  margin-top: 7px;
+  font: 400 11px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--panel-ink-2);
+  cursor: help;
+}
+
+.steps--compact .step { padding: 14px 18px 14px 12px; }
+.steps--compact .step__name { font-size: 15px; }
+
+.steps-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink-3);
+}
+.steps-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.steps-legend i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+
+@media (max-width: 720px) {
+  .step {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 0 12px;
+    row-gap: 10px;
+  }
+  .step__caps, .step__time { grid-column: 2; }
+}

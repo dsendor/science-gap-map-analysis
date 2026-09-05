@@ -1,6 +1,6 @@
 import data from '../../public/data.json';
 import Nav from '../components/Nav';
-import ChainMini from '../components/ChainMini';
+import ChainSteps from '../components/ChainSteps';
 import { AiOnly, HumanChecked } from '../components/Reviewed';
 
 export default function Page() {
@@ -78,13 +78,14 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="card" style={{ marginTop: 18 }}>
-            <div className="pad">
-              <ChainMini path={publishing} />
-              <figcaption style={{ marginTop: 14 }}>
-                Cost, in reviewer and editor labour. Orange marks where the labour concentrates, and
-                each step carries how many of your own capabilities act on it.
-              </figcaption>
+          <div style={{ marginTop: 22 }}>
+            <ChainSteps path={publishing} />
+            <div className="steps-legend">
+              <span><i style={{ background: 'var(--reach-1)' }} />works now</span>
+              <span><i style={{ background: 'var(--reach-2)' }} />2–5 years</span>
+              <span><i style={{ background: 'var(--reach-3)' }} />speculative</span>
+              <span><i style={{ background: 'var(--none)', opacity: 0.55 }} />no AI reaches it</span>
+              <span style={{ color: 'var(--cost)' }}>gold row · carries the cost</span>
             </div>
           </div>
 

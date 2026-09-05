@@ -176,7 +176,8 @@
           "note": "Roughly two and a half of those years are a funding condition on an already-approved design."
         }
       ],
-      "reviewed": "ai-only"
+      "reviewed": "ai-only",
+      "axis_kind": "time"
     },
     {
       "id": "path-publishing-cost",
@@ -198,7 +199,9 @@
           "rationale": "Scope first, because it decides how to read this step. The axis is reviewer and editor labour per published paper, so author time sits outside it by construction. Writing the paper is very probably the most expensive thing that happens in this pipeline, and this chain does not measure it. What it can say is that AI has taken a large share out of the per-paper drafting cost, that the number of papers went up, and that the labour this displaced arrived downstream: submissions rose 42% after ChatGPT's release against the prior two-year window, in the one corpus with published full-submission figures, and the load landed on volunteer editors at desk screening. Whether total author cost across all papers fell is unknown and this chain has no way to find out. Two corrections from Gate C are folded in above: the 42% is growth since ChatGPT within a five-year corpus, and the source places the displaced load at screening.",
           "figure": "author time, not counted on this axis; submissions +42% since ChatGPT's release in November 2022 against the prior two-year window, within a five-year full-submission corpus (Organization Science)",
           "ai_acts": true,
-          "capabilities": []
+          "capabilities": [],
+          "duration_days": null,
+          "duration_span_note": "No published figure. Author time is outside this chain's axis and nobody reports a median."
         },
         {
           "seq": 2,
@@ -211,7 +214,9 @@
           "rationale": "Not binding on the cost axis. Screening is genuinely tractable for current models, which is why it is already being done and why it does not set the cost.",
           "figure": "triage under load 'significantly degraded the quality of feedback' (ESO)",
           "ai_acts": true,
-          "capabilities": []
+          "capabilities": [],
+          "duration_days": 119.0,
+          "duration_span_note": "Submission to acceptance, which brackets steps 2 to 5 together rather than any one of them. Median 119 days across ophthalmology journals in 2020, IQR 83-168. Carried on step 2 because that is where the span opens, and it is not a measurement of desk screening alone."
         },
         {
           "seq": 3,
@@ -224,7 +229,9 @@
           "rationale": "Binding, and it is the link that most rewards being split in two. Matching is a well-posed prediction problem where AI is applicable and, on current evidence, not even the best method. Willingness is a labour-supply problem that no matching system addresses. The binding half is the half AI does not touch, which is the whole finding of this chain in one link. REVISED after Gate C. The previous version asserted that matching is not the problem and cited ESO for it; ESO says both. The split between a well-posed prediction problem and a labour-supply problem still does the work this chain needs, but it is now stated as this analysis's distinction rather than the source's.",
           "figure": "4.5 invitations per accepted review, nearly double 2018 (Silverchair, Future of Peer Review 2026); reviewer acceptance fell from 43% in 2018 to 22% in 2024; 55% of 139 editors of Australian journals call recruitment a significant or very significant challenge; 21 years of declining acceptance",
           "ai_acts": true,
-          "capabilities": []
+          "capabilities": [],
+          "duration_days": null,
+          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
         },
         {
           "seq": 4,
@@ -239,7 +246,9 @@
           "ai_acts": true,
           "capabilities": [
             "Post-Publication Peer Review Layer"
-          ]
+          ],
+          "duration_days": null,
+          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
         },
         {
           "seq": 5,
@@ -252,7 +261,9 @@
           "rationale": "Not binding on the cost axis. Its cost is largely inherited from link 3.",
           "figure": "cost inherited from link 3",
           "ai_acts": false,
-          "capabilities": []
+          "capabilities": [],
+          "duration_days": null,
+          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
         },
         {
           "seq": 6,
@@ -269,7 +280,9 @@
             "Disrupt Traditional Publishing Models",
             "Frugal Science Initiatives",
             "New Protocols for Knowledge Production and Verification"
-          ]
+          ],
+          "duration_days": 30.0,
+          "duration_span_note": "Acceptance to first online release. Median 30 days, IQR 10-71, same 2020 ophthalmology cohort."
         },
         {
           "seq": 7,
@@ -285,10 +298,13 @@
           "capabilities": [
             "Post-Publication Peer Review Layer",
             "New Protocols for Knowledge Production and Verification"
-          ]
+          ],
+          "duration_days": null,
+          "duration_span_note": "No published figure, and probably not measurable. The quantity is how long it takes institutions to count a new kind of work."
         }
       ],
-      "reviewed": "human"
+      "reviewed": "human",
+      "axis_kind": "cost"
     }
   ]
 }
