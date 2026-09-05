@@ -1,19 +1,13 @@
 import data from '../../public/data.json';
 import Nav from '../components/Nav';
 import ChainSteps from '../components/ChainSteps';
+import Proposed from '../components/Proposed';
 import { AiOnly, HumanChecked } from '../components/Reviewed';
 
 export default function Page() {
-  const { summary: s, gaps, critical_paths: paths } = data;
+  const { summary: s, critical_paths: paths } = data;
   const publishing = paths.find((p) => p.id === 'path-publishing-cost');
-
-  // Derived here rather than retyped into prose, so a number cannot drift out of step
-  // with the database.
-  const pubGap = gaps.find((g) => g.id === publishing.gap_id);
-  const acts = publishing.links.filter((l) => l.ai_acts).length;
-  const steps = publishing.links.length;
   const empty = publishing.links.filter((l) => !l.capabilities?.length).length;
-  const nCaps = pubGap?.capabilities?.length ?? 4;
 
   return (
     <>
@@ -21,30 +15,23 @@ export default function Page() {
       <main className="wrap">
         <section>
           <div className="col">
-            <h1>AI is accelerating science. The Gap Map should show where.</h1>
+            <h1>The Gap Map is a good idea. I think it can be better.</h1>
             <p className="lead">
-              One of your gaps taken apart into the seven steps it actually runs through, and an
-              AI-reach label on all {s.n_gaps}.
+              I used Claude Code to try to make it better, and there are two places I would start.
             </p>
-            <p>
-              I&rsquo;ve built two things on top of the {data.source.snapshot} export, and
-              they&rsquo;re both downloadable as <a href="./gap-map-augmented.csv">CSV</a> and{' '}
-              <a href="./data.json">JSON</a>, keyed on your own ids and slugs. One is a label on every
-              gap saying what kind of work is in the way and whether AI gets there. The other is a
-              single gap broken all the way down into the ordered steps that have to happen, with a
-              number on each one. None of your data has been touched.
-            </p>
-            <p>
-              The second thing is why I&rsquo;m writing. A one-line label on a gap the size of
-              &ldquo;doing and publishing research is expensive&rdquo; can&rsquo;t tell you which part
-              of it is expensive. So which step is the money actually in? You can&rsquo;t answer that
-              without breaking the gap into steps &ndash; and once I did, something fell out of your
-              own data that I hadn&rsquo;t expected.
-            </p>
-            <p>
-              Treat this the way you ask people to treat the map itself: one gap done properly,{' '}
-              {s.n_gaps - 1} done quickly, and a probe rather than a survey!{' '}
-              <a href="mailto:david@sendorai.com">david@sendorai.com</a>
+            <ol className="bigsteps">
+              <li>
+                <strong>Break each gap into its critical path</strong>, and work out whether and how
+                each capability accelerates each step.
+              </li>
+              <li>
+                <strong>Identify how AI can and does affect each gap</strong>, and how mature that
+                AI is.
+              </li>
+            </ol>
+            <p className="proposed-key">
+              <i />
+              highlighted text is mine and not yet approved
             </p>
           </div>
         </section>
@@ -52,140 +39,102 @@ export default function Page() {
         <section>
           <div className="col">
             <h2>
-              One gap, all the way down
+              I did this for one gap: research publishing
               <HumanChecked />
             </h2>
             <p>
               <em>{publishing.gap_name}</em>, traced from a finished draft to a credited
-              contribution. Seven steps. This is the one section a person has read line by line
-              against the gap; everything else on the site carries an <AiOnly /> badge and means it.
-            </p>
-            <p>
-              A chain has to be a path to <em>something</em>, and your gap statement bundles three of
-              them &ndash; cost, speed, and who can afford to take part. I picked cost, said so, and
-              left the other two as separate chains. So the end of this one is:{' '}
-              {pubGap?.outcome
-                ? pubGap.outcome.charAt(0).toLowerCase() + pubGap.outcome.slice(1)
-                : null}
-            </p>
-            <p>
-              My one-line label for the gap said the work in the way was coordination and
-              institutional. Seven steps later the trace agreed and got specific: the cost sits in
-              finding reviewers, in agreeing what a review means, and in getting institutions to
-              count the work. Those three were written into the label&rsquo;s rationale before the
-              decomposition existed, which is a nice result and not an independent one &ndash; I
-              wrote both, so treat it as a consistency check.
+              contribution.{' '}
+              <Proposed note="Scope note — the gap bundles three axes and a chain needs one.">
+                Your gap statement bundles cost, speed and who can afford to take part. This chain
+                follows cost.
+              </Proposed>
             </p>
           </div>
 
-          <div style={{ marginTop: 22 }}>
+          <div style={{ marginTop: 20 }}>
             <ChainSteps path={publishing} />
-            <div className="steps-legend">
-              <span><i style={{ background: 'var(--reach-1)' }} />works now</span>
-              <span><i style={{ background: 'var(--reach-2)' }} />2–5 years</span>
-              <span><i style={{ background: 'var(--reach-3)' }} />speculative</span>
-              <span><i style={{ background: 'var(--none)', opacity: 0.55 }} />no AI reaches it</span>
-              <span style={{ color: 'var(--cost)' }}>gold row · carries the cost</span>
-            </div>
           </div>
 
           <div className="col">
+            <h3>Three takeaways</h3>
+            <ol className="bigsteps">
+              <li>
+                <strong>Production and drafting is where AI has had the biggest impact</strong>, and
+                where it will keep having one.{' '}
+                <Proposed note="The nuance David asked to lead with, plus the arXiv parallel.">
+                  The saving is real and large, and it has not arrived as cheaper publishing.
+                  Submissions rose 42% after ChatGPT&rsquo;s release, and the work that came off
+                  authors landed downstream on volunteer editors doing desk screening. This has
+                  happened before: arXiv made dissemination free more than thirty years ago and
+                  neither subscription prices nor the time to publish fell, because what journals
+                  sell is not distribution.
+                </Proposed>
+              </li>
+              <li>
+                <strong>Review is a clear blocker.</strong> AI can act on it, and it may stay hard
+                anyway.{' '}
+                <Proposed note="The specific reason review stays hard even with AI on it.">
+                  It can match a reviewer to a paper. It cannot make that reviewer say yes.
+                </Proposed>
+              </li>
+              <li>
+                <strong>Credit and legitimacy is the biggest challenge</strong>, and the one AI is
+                least able to move.{' '}
+                <Proposed note="Ties the takeaway to the capability finding above.">
+                  It is also the last step, it has no published measure, and until recently nobody
+                  had anything attached to it.
+                </Proposed>
+              </li>
+            </ol>
             <p>
-              AI reaches {acts} of those {steps} steps, which is more than I&rsquo;d expected going
-              in. On steps 3 and 4 it only reaches the tractable half: it&rsquo;ll match a reviewer to
-              a paper, and it won&rsquo;t make that reviewer say yes.
-            </p>
-            <p>
-              Drafting used to eat researcher-weeks per paper and AI has taken a large share of that
-              out. Publishing didn&rsquo;t get cheaper. In the one journal with a published five-year
-              full-submission corpus, submissions rose 42% after ChatGPT&rsquo;s release against the
-              prior two-year window, and the load that came off the authors landed a step downstream
-              on volunteer editors doing desk screening.
-            </p>
-            <p>
-              Then the part that comes out of your data rather than out of any label of mine. Open
-              this gap on your own site and you&rsquo;ll find {nCaps} foundational capabilities
-              hanging off it. Map those {nCaps} onto the {steps} steps and they cluster hard: two on
-              credit and legitimacy, three on dissemination, one on review judgment. {empty} of the{' '}
-              {steps} steps have nothing attached at all &ndash; and one of those {empty} is reviewer
-              recruitment, where editors are now sending 4.5 invitations for every accepted review,
-              nearly double the 2018 rate.
-            </p>
-            <p>
-              It&rsquo;s the same shape on the telescope gap. Your three capabilities there act on
-              design maturation, fabrication, integration and launch. Nothing acts on the first three
-              steps, which are the science case, the concept studies and ranking, and funding
-              authorisation &ndash; and on JWST&rsquo;s record those first three steps are where most
-              of the 32.5 years sit.
-            </p>
-            <p>
-              That&rsquo;s the step-level finding, and if I could get you to take one thing from this
-              page it&rsquo;d be the decomposition that produced it.{' '}
-              <a href="./chains/">Both chains, step by step, with the evidence and the sources →</a>
+              <Proposed note="This is the finding that comes from Convergent's own data rather than my labels. I think it is the strongest thing on the page, but it is my addition.">
+                One thing worth saying because it comes from your data and not from my labels:{' '}
+                {empty} of the {publishing.links.length} steps have no capability attached to them at
+                all, and one of those is reviewer recruitment.
+              </Proposed>{' '}
+              <a href="./chains/">Both chains, step by step, with the evidence</a>
             </p>
           </div>
         </section>
 
         <section>
           <div className="col">
-            <h2>The label, on all {s.n_gaps}</h2>
-            <p>
-              One gap is a demonstration, so the other attribute runs across the whole map and you can
-              query it. Eight kinds of work &ndash; reading and synthesis, prediction and modeling,
-              design search, measurement and sensing, running experiments, real-time control, physical
-              build, and coordination and institutions &ndash; each carrying whether the AI for it
-              works now, is two to five years out, or is speculative.
-            </p>
-            <p>
-              Every one of those {s.n_gaps} is a model&rsquo;s judgment with a written rationale and a
-              confidence flag, and no person has read them.
-              <AiOnly /> A second pass relabelled all {s.n_gaps} blind and disagreed often enough that
-              publishing the disagreement rate seemed more useful than hiding it &ndash; the rates are
-              on the <a href="./method/">method page</a>, and what this still doesn&rsquo;t do is on{' '}
-              <a href="./missing/">what&rsquo;s missing</a>.
-            </p>
-            <p>
-              <a href="./map/">Every gap, with its label</a> &middot;{' '}
-              <a href="./attributes/">The eight kinds of work, and where the label breaks</a>{' '}
-              &middot;{' '}
-              <a href="./proposed/">{s.n_new_gaps} proposed gaps, in your house format</a>
-            </p>
+            <h2>Next steps</h2>
+            <ol className="bigsteps">
+              <li>
+                <strong>Expand to the rest of the map.</strong> Cover all {s.n_gaps} gaps: identify
+                the critical paths, identify how much AI is affecting each one, and propose new
+                capabilities to close them based on that analysis.
+              </li>
+              <li>
+                <strong>Verify with experts.</strong>{' '}
+                <Proposed note="Says who, since 'experts' on its own is hard to act on.">
+                  One gap here has been read by a person. The rest is a model&rsquo;s first pass and
+                  is labelled that way throughout.
+                </Proposed>
+              </li>
+            </ol>
           </div>
         </section>
 
         <section>
           <div className="col">
             <h2>What I&rsquo;d like from you</h2>
-            <p>
-              The step-level view is the thing I&rsquo;d most like your reaction to, and there are
-              three specific ways you could tell me I&rsquo;m wrong.
-            </p>
-            <p>
-              Critical paths across the whole map, not two. The value isn&rsquo;t in any single chain,
-              it&rsquo;s in counting how often the same step recurs as the binding one across{' '}
-              {s.n_fields} fields, and in seeing which steps come up empty of capabilities again and
-              again. Two chains can suggest that; they can&rsquo;t establish it.
-            </p>
-            <p>
-              Typed capability edges. Nothing in the export marks a capability as necessary,
-              sufficient, or partial for its gap, so both chains reconstructed that by hand, one
-              capability at a time. If you typed the edges, the step mapping stops being manual and
-              starts being derivable &ndash; and it lands right next to the urgency and impact
-              attributes you&rsquo;ve said you want to add.
-            </p>
-            <p>
-              And tell me which labels are wrong. The kinds of work most of all, since that&rsquo;s
-              the one running across all {s.n_gaps}.
-            </p>
-            <p>
-              One thing you&rsquo;ll want to know either way: <code>capabilities[].gaps</code> is
-              empty for all {s.n_capabilities} capabilities in the v1.0 export, even though{' '}
-              <code>schema.json</code> documents it as populated. Anyone who starts from{' '}
-              <code>capabilities.json</code> builds an empty graph and gets no error at any point.
-            </p>
             <p className="lead">
-              <a href="mailto:david@sendorai.com">david@sendorai.com</a> &ndash; and the critical
-              version of this is the one I want most.
+              I&rsquo;d like to start collaborating. Does the approach resonate: expanding gaps into
+              critical paths, and identifying where AI is having an impact and where it could?
+            </p>
+            <p>
+              <a href="mailto:david@sendorai.com">david@sendorai.com</a>
+            </p>
+            <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>
+              The labels on all {s.n_gaps} gaps are a model&rsquo;s judgment, each with a written
+              rationale and a confidence flag, and no person has read them.
+              <AiOnly /> <a href="./map/">Every gap</a> &middot;{' '}
+              <a href="./attributes/">the eight kinds of work</a> &middot;{' '}
+              <a href="./method/">method and disagreement rates</a> &middot;{' '}
+              <a href="./missing/">what this does not do</a>
             </p>
           </div>
         </section>
@@ -195,9 +144,7 @@ export default function Page() {
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
             David Sendor. I spent 15+ years applying AI to hard problems in large organizations, most
-            recently leading Enterprise Data Science at Liberty Mutual. I&rsquo;m moving into AI for
-            science, and what I&rsquo;m chasing is where the binding constraint goes as AI dissolves
-            the cognitive bottleneck.{' '}
+            recently leading Enterprise Data Science at Liberty Mutual.{' '}
             <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>{' '}
@@ -209,8 +156,7 @@ export default function Page() {
               gap-map.org
             </a>
             . Nothing here reorders or ranks your gaps, and your data is unmodified.{' '}
-            <a href="./gap-map-augmented.csv">CSV, keyed on your ids and slugs</a> &middot;{' '}
-            <a href="./data.json">JSON</a>
+            <a href="./gap-map-augmented.csv">CSV</a> &middot; <a href="./data.json">JSON</a>
           </p>
         </div>
       </div>

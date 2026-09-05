@@ -67,6 +67,22 @@ const capBySlugName = new Map(
   all('SELECT name, slug FROM gm_capabilities').map((c) => [c.name, c])
 );
 
+// The named things already being built for each capability, from their own resource
+// table. A step showing "3 capabilities" is an abstraction; a step showing PREreview
+// and APPRAISE is a step a reader can go and check. Only resources typed Initiative,
+// because a paper about a capability is not somebody building it.
+const initiativesByCap = new Map();
+for (const r of all(`
+  SELECT c.name AS cap, r.title, r.url, r.types_json
+  FROM gm_capability_resources cr
+  JOIN gm_capabilities c ON c.id = cr.capability_id
+  JOIN gm_resources r ON r.id = cr.resource_id
+  ORDER BY c.name, r.title`)) {
+  if (!JSON.parse(r.types_json || '[]').includes('Initiative')) continue;
+  if (!initiativesByCap.has(r.cap)) initiativesByCap.set(r.cap, []);
+  initiativesByCap.get(r.cap).push({ title: r.title, url: r.url });
+}
+
 const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   ...p,
   programmes: JSON.parse(p.programmes_json || '[]'),
@@ -79,7 +95,11 @@ const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
     // to resolve: https://www.gap-map.org/capabilities/<slug>/ returns 200.
     capability_links: JSON.parse(l.capabilities_json || '[]').map((name) => {
       const row = capBySlugName.get(name);
-      return { name, url: row ? `https://www.gap-map.org/capabilities/${row.slug}/` : null };
+      return {
+        name,
+        url: row ? `https://www.gap-map.org/capabilities/${row.slug}/` : null,
+        initiatives: initiativesByCap.get(name) ?? [],
+      };
     }),
   })),
 }));
