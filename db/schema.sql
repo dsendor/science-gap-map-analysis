@@ -240,6 +240,11 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
                    'Coordination and institutional'
                )),
     maturity   TEXT CHECK (maturity IN ('Working now', '2-5 years', 'Speculative')),
+    -- Cost chains only: this step is where the labor concentrates. Rendered as
+    -- "carries the cost". Deliberately 0 throughout any strictly sequential time
+    -- chain, where every step adds to the total and the flag would only restate its
+    -- own labelling. Recovers the textbook meaning if a chain ever has parallel
+    -- paths. Independent of ai_acts, and meant to be. See methodology/critical-path.md.
     is_binding INTEGER NOT NULL DEFAULT 0 CHECK (is_binding IN (0, 1)),
     evidence   TEXT,
     rationale  TEXT NOT NULL,
