@@ -37,14 +37,15 @@ try {
       db.prepare(`INSERT INTO critical_path_links
         (path_id, seq, link, blocker, ai_type, maturity, is_binding, evidence, rationale,
          duration_years, duration_span, duration_note, figure, ai_acts, capabilities_json,
-         duration_days, duration_span_note)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+         duration_days, duration_span_note, duration_covers_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
         .run(p.id, l.seq ?? i + 1, l.link, l.blocker, l.ai_type ?? null, l.maturity ?? null,
              l.is_binding ?? 0, l.evidence ?? null, l.rationale,
              l.duration_jwst_years ?? null, l.duration_jwst_span ?? null, l.duration_note ?? null,
              l.figure ?? null, l.ai_acts ? 1 : 0,
              JSON.stringify(l.capabilities ?? []),
-             l.duration_days ?? null, l.duration_span_note ?? null);
+             l.duration_days ?? null, l.duration_span_note ?? null,
+             l.duration_covers ? JSON.stringify(l.duration_covers) : null);
       links++;
       if (l.is_binding) binding++;
     }

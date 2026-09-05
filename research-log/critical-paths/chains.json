@@ -24,7 +24,10 @@
           "duration_jwst_span": "1989 → 1996",
           "duration_note": "NGST workshop at STScI to the STScI committee recommendation",
           "ai_acts": true,
-          "capabilities": []
+          "capabilities": [],
+          "duration_covers": [
+            1
+          ]
         },
         {
           "seq": 2,
@@ -39,7 +42,10 @@
           "duration_jwst_span": "1996 → 2002",
           "duration_note": "concept studies and three funded teams to selection of the TRW/Ball design",
           "ai_acts": false,
-          "capabilities": []
+          "capabilities": [],
+          "duration_covers": [
+            2
+          ]
         },
         {
           "seq": 3,
@@ -54,7 +60,10 @@
           "duration_jwst_span": "2002 → 2004",
           "duration_note": "design selection to the start of long-lead construction",
           "ai_acts": false,
-          "capabilities": []
+          "capabilities": [],
+          "duration_covers": [
+            3
+          ]
         },
         {
           "seq": 4,
@@ -71,6 +80,9 @@
           "ai_acts": true,
           "capabilities": [
             "Leveraging Commercial Component Advances"
+          ],
+          "duration_covers": [
+            4
           ]
         },
         {
@@ -90,6 +102,9 @@
             "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes",
             "Space Telescope Factory",
             "Leveraging Commercial Component Advances"
+          ],
+          "duration_covers": [
+            5
           ]
         },
         {
@@ -108,6 +123,9 @@
           "capabilities": [
             "Space Telescope Factory",
             "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes"
+          ],
+          "duration_covers": [
+            6
           ]
         },
         {
@@ -125,6 +143,9 @@
           "ai_acts": false,
           "capabilities": [
             "Leveraging Modular Assembly & Reduced Launch Costs for Space Telescopes"
+          ],
+          "duration_covers": [
+            7
           ]
         },
         {
@@ -140,7 +161,10 @@
           "duration_jwst_span": "Dec 2021 → Jul 2022",
           "duration_note": "launch to first full-colour images and start of science operations",
           "ai_acts": true,
-          "capabilities": []
+          "capabilities": [],
+          "duration_covers": [
+            8
+          ]
         }
       ],
       "duration_basis": "Per-step durations are JWST's, because its milestone record is the most completely published of the three. Real phases overlap, design maturation and fabrication in particular, so each figure is the interval between the published milestones that best bracket that step, and the eight sum to 32.5 against STScI's stated 32 from conception to launch. Those two totals are not the same measurement — 32.5 runs to first images in July 2022 and STScI's 32 runs to launch in December 2021 — so their agreement is a coincidence of rounding and is not corroboration. Gate C's audit of the intervals is the reason the finding below is stated as a bound rather than a point: two links carry titles that describe only part of what their intervals contain, and the overlap between design maturation and fabrication is real and undated.",
@@ -201,7 +225,8 @@
           "ai_acts": true,
           "capabilities": [],
           "duration_days": null,
-          "duration_span_note": "No published figure. Author time is outside this chain's axis and nobody reports a median."
+          "duration_span_note": "No published figure. Author time sits outside this chain's axis and no one reports a median for it.",
+          "duration_covers": null
         },
         {
           "seq": 2,
@@ -216,7 +241,13 @@
           "ai_acts": true,
           "capabilities": [],
           "duration_days": 119.0,
-          "duration_span_note": "Submission to acceptance, which brackets steps 2 to 5 together rather than any one of them. Median 119 days across ophthalmology journals in 2020, IQR 83-168. Carried on step 2 because that is where the span opens, and it is not a measurement of desk screening alone."
+          "duration_span_note": "Submission to acceptance, which brackets steps 2 to 5 together rather than any one of them. Median 119 days across ophthalmology journals in 2020, IQR 83-168. Carried on step 2 because that is where the span opens, and it is not a measurement of desk screening alone.",
+          "duration_covers": [
+            2,
+            3,
+            4,
+            5
+          ]
         },
         {
           "seq": 3,
@@ -231,7 +262,8 @@
           "ai_acts": true,
           "capabilities": [],
           "duration_days": null,
-          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
+          "duration_span_note": "Measured inside the 119-day submission-to-acceptance span, which brackets steps 2 to 5 together. No figure separates this step from the others in that span.",
+          "duration_covers": null
         },
         {
           "seq": 4,
@@ -248,7 +280,8 @@
             "Post-Publication Peer Review Layer"
           ],
           "duration_days": null,
-          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
+          "duration_span_note": "Measured inside the 119-day submission-to-acceptance span, which brackets steps 2 to 5 together. No figure separates this step from the others in that span.",
+          "duration_covers": null
         },
         {
           "seq": 5,
@@ -263,7 +296,8 @@
           "ai_acts": false,
           "capabilities": [],
           "duration_days": null,
-          "duration_span_note": "Inside the 119-day submission-to-acceptance span carried on step 2."
+          "duration_span_note": "Measured inside the 119-day submission-to-acceptance span, which brackets steps 2 to 5 together. No figure separates this step from the others in that span.",
+          "duration_covers": null
         },
         {
           "seq": 6,
@@ -282,7 +316,10 @@
             "New Protocols for Knowledge Production and Verification"
           ],
           "duration_days": 30.0,
-          "duration_span_note": "Acceptance to first online release. Median 30 days, IQR 10-71, same 2020 ophthalmology cohort."
+          "duration_span_note": "Acceptance to first online release. Median 30 days, IQR 10-71, same 2020 ophthalmology cohort.",
+          "duration_covers": [
+            6
+          ]
         },
         {
           "seq": 7,
@@ -300,7 +337,8 @@
             "New Protocols for Knowledge Production and Verification"
           ],
           "duration_days": null,
-          "duration_span_note": "No published figure, and probably not measurable. The quantity is how long it takes institutions to count a new kind of work."
+          "duration_span_note": "No published figure, and probably not measurable. The quantity is how long institutions take to count a new kind of work.",
+          "duration_covers": null
         }
       ],
       "reviewed": "human",

@@ -1,110 +1,165 @@
-// The chain as a vertical schedule: one row per step, read top to bottom in the order
-// the work happens.
+// The chain as a schedule table.
 //
-// Four independent readings per row, and keeping them independent is the point. Whether
-// a current AI capability acts on the step; how mature that capability is; how many of
-// Convergent's own capabilities are attached, with links to their pages; and how long
-// the step takes. A row can be any combination, and the combination that matters is the
-// one where a step carries the cost, has no capability attached, and cannot be timed.
+// A table, not a grid of divs, for one concrete reason: the durations contain a real
+// rowspan. On the publishing chain a single published median, 119 days, brackets steps
+// 2 to 5 together and measures none of them individually. Rendering that as a number on
+// step 2 and "not measured" on steps 3, 4 and 5 states something false about the data on
+// a page whose whole argument is to look at the per-step data. A rowspan says what is
+// true: one figure, four steps, no split available.
 //
-// Durations render as a bar against the longest measured step. Where no published figure
-// exists the bar is deliberately absent rather than zero, because a zero-length bar reads
-// as "instant" and the truth is "nobody has measured this".
+// Three columns carry data and get headers. The step itself is the row header. "Carries
+// the cost" is a property of the row, so it is a rule down the row edge rather than a
+// fourth column pretending to be data.
+//
+// Maturity is a fill state, not a lightness ramp. The ramp's palest step was 1.6:1 on
+// this ground; fill survives greyscale, colour blindness and a contrast floor.
 
-const MATURITY_TOKEN = {
-  'Working now': 'var(--reach-1)',
-  '2-5 years': 'var(--reach-2)',
-  Speculative: 'var(--reach-3)',
-};
-// Short qualifier under a bar whose figure brackets more than the step it sits on.
-// The full provenance stays in duration_span_note and reaches the reader as a tooltip.
-function spanOf(l) {
-  const n = l.duration_span_note ?? '';
-  const m = n.match(/steps? (\d+) to (\d+)/i);
-  return m ? `covers steps ${m[1]}–${m[2]}` : null;
-}
-
-const MATURITY_LABEL = {
-  'Working now': 'works now',
-  '2-5 years': '2–5 years',
-  Speculative: 'speculative',
+const MATURITY = {
+  'Working now': { fill: 'full', label: 'works now' },
+  '2-5 years': { fill: 'half', label: '2–5 years' },
+  Speculative: { fill: 'hollow', label: 'speculative' },
 };
 
-export default function ChainSteps({ path, compact = false }) {
+// The first sentence of a blocker. Step 3's runs to 549 characters and triples the
+// height of its row; the full text is on the chains page.
+const firstSentence = (t) => {
+  if (!t) return null;
+  const m = t.match(/^.*?[.!?](?=\s|$)/);
+  return m ? m[0] : t;
+};
+
+export default function ChainSteps({ path, showBlockers = true }) {
   const isTime = path.axis_kind === 'time';
   const val = (l) => (isTime ? l.duration_years : l.duration_days);
-  const unit = isTime ? 'yr' : 'days';
-  const max = Math.max(...path.links.map((l) => val(l) ?? 0), 1);
+  const unit = isTime ? (v) => (v === 1 ? 'year' : 'years') : () => 'days';
+
+  // seq -> the link whose figure covers it, so a covered row renders no duration cell
+  // and the covering row spans them all.
+  const coveredBy = new Map();
+  for (const l of path.links) for (const n of l.duration_covers ?? []) coveredBy.set(n, l.seq);
+
+  const noCaps = path.links.filter((l) => !(l.capability_links ?? []).length).length;
 
   return (
-    <ol className={compact ? 'steps steps--compact' : 'steps'}>
-      {path.links.map((l) => {
-        const caps = l.capability_links ?? [];
-        const d = val(l);
-        const carries = l.is_binding === 1 && path.axis_kind === 'cost';
-        return (
-          <li key={l.seq} className={`step${carries ? ' step--cost' : ''}`}>
-            <div className="step__seq">{String(l.seq).padStart(2, '0')}</div>
+    <figure className="sched">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" className="sched__hstep">Step</th>
+            <th scope="col">AI reaches it</th>
+            <th scope="col">Gap Map capabilities</th>
+            <th scope="col" className="sched__htime">{isTime ? 'Elapsed' : 'Elapsed'}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {path.links.map((l) => {
+            const caps = l.capability_links ?? [];
+            const carries = l.is_binding === 1 && path.axis_kind === 'cost';
+            const d = val(l);
+            const covers = l.duration_covers ?? null;
+            const isCovered = coveredBy.has(l.seq) && coveredBy.get(l.seq) !== l.seq;
+            const m = MATURITY[l.maturity];
 
-            <div className="step__main">
-              <h4 className="step__name">{l.link}</h4>
-              {!compact && <p className="step__blocker">{l.blocker}</p>}
+            return (
+              <tr key={l.seq} className={carries ? 'is-cost' : undefined}>
+                <th scope="row" className="sched__step">
+                  <span className="sched__seq">{String(l.seq).padStart(2, '0')}</span>
+                  <span className="sched__name">{l.link}</span>
+                  {carries && <span className="sched__costflag">carries the cost</span>}
+                  {showBlockers && l.blocker && (
+                    <span className="sched__blocker">{firstSentence(l.blocker)}</span>
+                  )}
+                </th>
 
-              <div className="step__marks">
-                {l.ai_acts ? (
-                  <span className="mark mark--reach">
-                    <i style={{ background: MATURITY_TOKEN[l.maturity] ?? 'var(--reach-2)' }} />
-                    AI acts · {MATURITY_LABEL[l.maturity] ?? l.maturity}
-                  </span>
-                ) : (
-                  <span className="mark mark--none">
-                    <i />
-                    no AI capability reaches this
-                  </span>
+                <td className="sched__ai">
+                  {l.ai_acts ? (
+                    <>
+                      <i className={`fill fill--${m?.fill ?? 'half'}`} aria-hidden="true" />
+                      {m?.label ?? l.maturity}
+                    </>
+                  ) : (
+                    <span className="sched__no">— no</span>
+                  )}
+                </td>
+
+                <td className="sched__caps">
+                  {caps.length === 0 ? (
+                    <span className="sched__none">none</span>
+                  ) : (
+                    <>
+                      <span className="sched__capcount">
+                        {caps.length} {caps.length === 1 ? 'capability' : 'capabilities'}
+                      </span>
+                      <ul>
+                        {caps.map((c) => (
+                          <li key={c.name}>
+                            {c.url ? (
+                              <a href={c.url} target="_blank" rel="noreferrer">{c.name}</a>
+                            ) : (
+                              c.name
+                            )}
+                            {c.initiatives?.length > 0 && (
+                              <span className="sched__init">
+                                {c.initiatives.map((i, n) => (
+                                  <span key={i.title}>
+                                    {n > 0 && ', '}
+                                    {i.url ? (
+                                      <a href={i.url} target="_blank" rel="noreferrer">{i.title}</a>
+                                    ) : (
+                                      i.title
+                                    )}
+                                  </span>
+                                ))}
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </td>
+
+                {isCovered ? null : (
+                  <td className="sched__time" rowSpan={covers ? covers.length : 1}>
+                    {d != null ? (
+                      <>
+                        <span className="sched__num">
+                          {d} <small>{unit(d)}</small>
+                        </span>
+                        {covers && covers.length > 1 && (
+                          <span className="sched__span">
+                            one figure, steps {covers[0]}–{covers[covers.length - 1]}
+                          </span>
+                        )}
+                        {l.duration_span_note && (
+                          <span className="sched__note">{l.duration_span_note}</span>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        <span className="sched__nofig">no published figure</span>
+                        {l.duration_span_note && (
+                          <span className="sched__note">{l.duration_span_note}</span>
+                        )}
+                      </>
+                    )}
+                  </td>
                 )}
-                {carries && <span className="mark mark--cost">carries the cost</span>}
-              </div>
-            </div>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
 
-            <div className="step__caps">
-              {caps.length === 0 ? (
-                <span className="caps-none">no capability</span>
-              ) : (
-                <ul className="caps-list">
-                  {caps.map((c) => (
-                    <li key={c.name}>
-                      {c.url ? (
-                        <a href={c.url} target="_blank" rel="noreferrer">
-                          {c.name}
-                        </a>
-                      ) : (
-                        c.name
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-
-            <div className="step__time">
-              {d != null ? (
-                <>
-                  <span className="step__num" title={l.duration_span_note ?? undefined}>
-                    {d}
-                    <small>{unit}</small>
-                  </span>
-                  <span className="step__bar" style={{ width: `${Math.max((100 * d) / max, 4)}%` }} />
-                  {spanOf(l) && <span className="step__spannote">{spanOf(l)}</span>}
-                </>
-              ) : (
-                <span className="step__nomeasure" title={l.duration_span_note ?? undefined}>
-                  not measured
-                </span>
-              )}
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+      <figcaption className="sched__key">
+        <strong>
+          {noCaps} of {path.links.length} steps have no capability attached.
+        </strong>
+        <span><i className="fill fill--full" />works now</span>
+        <span><i className="fill fill--half" />2–5 years</span>
+        <span><i className="fill fill--hollow" />speculative</span>
+        <span className="sched__keycost">gold edge · carries the cost</span>
+      </figcaption>
+    </figure>
   );
 }

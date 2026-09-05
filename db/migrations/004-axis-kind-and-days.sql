@@ -15,3 +15,5 @@ ALTER TABLE critical_paths
 
 ALTER TABLE critical_path_links ADD COLUMN duration_days REAL;
 ALTER TABLE critical_path_links ADD COLUMN duration_span_note TEXT;
+
+ALTER TABLE critical_path_links ADD COLUMN duration_covers_json TEXT;

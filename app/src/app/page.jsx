@@ -52,9 +52,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div style={{ marginTop: 20 }}>
-            <ChainSteps path={publishing} />
-          </div>
+          <ChainSteps path={publishing} />
 
           <div className="col">
             <h3>Three takeaways</h3>

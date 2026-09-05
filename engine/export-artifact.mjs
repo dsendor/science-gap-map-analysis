@@ -91,6 +91,7 @@ const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
   links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id).map((l) => ({
     ...l,
     capabilities: JSON.parse(l.capabilities_json || '[]'),
+    duration_covers: JSON.parse(l.duration_covers_json || 'null'),
     // Their capability pages, built from the slug we preserved on import. Confirmed
     // to resolve: https://www.gap-map.org/capabilities/<slug>/ returns 200.
     capability_links: JSON.parse(l.capabilities_json || '[]').map((name) => {

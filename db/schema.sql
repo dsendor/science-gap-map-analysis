@@ -264,6 +264,11 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     -- steps 1 and 7 of the publishing chain is the finding rather than a gap in the work.
     duration_days      REAL,
     duration_span_note TEXT,
+    -- Which step numbers this figure actually covers, as a JSON array. A published
+    -- median that brackets four steps is not a measurement of any one of them, and the
+    -- renderer needs to know that to draw one bracket across four rows instead of a
+    -- number on one row and "not measured" on the other three, which is false.
+    duration_covers_json TEXT,
     ai_acts         INTEGER NOT NULL DEFAULT 0 CHECK (ai_acts IN (0, 1)),
     -- Which of Convergent's own capabilities for this gap act on this step, by name.
     -- A step with an empty array is a step nobody has proposed anything for, and that

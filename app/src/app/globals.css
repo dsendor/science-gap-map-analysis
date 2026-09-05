@@ -431,140 +431,163 @@ details .body { padding: 0 2px 16px; }
 }
 .chain .caps.none { color: var(--flag); font-weight: 500; }
 
-/* ── The vertical schedule ──────────────────────────────────────────────────────
-   The signature element. A dark instrument panel embedded in a light document, so
-   the chain reads as the thing being measured rather than as more page. Four columns
-   on desktop; stacks to two on narrow, keeping the step number as the spine. */
-.steps {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: var(--panel);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.step {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1.45fr) minmax(0, 1fr) 132px;
-  gap: 0 20px;
-  padding: 18px 22px 18px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  align-items: start;
-}
-.step:first-child { border-top: 0; }
-.step--cost { background: rgba(184, 131, 12, 0.10); }
+/* ── The schedule table ────────────────────────────────────────────────────────
+   On the page ground, not on a dark slab. The previous version put a near-black panel
+   on a white page, which is the second of the three looks the frontend-design skill
+   names as machine-generated defaults: the site escaped cream-and-serif and landed
+   next door to it. Weight comes from width instead — this is the only full-width
+   element in a column of 810px prose.
 
-.step__seq {
-  font: 600 12px/1 var(--font-mono, ui-monospace, monospace);
-  color: var(--panel-ink-2);
-  padding-top: 4px;
-  text-align: right;
-  letter-spacing: 0.04em;
-}
-.step--cost .step__seq { color: var(--cost); }
+   Maturity is a fill state rather than a lightness ramp. The palest step of the old
+   ramp measured 1.6:1 against this ground; fill survives greyscale, colour blindness
+   and a contrast floor, which a ramp on white does not.
 
-.step__name {
-  /* The global h4 rule is a small uppercase utility label; a step name is a heading. */
-  font: 600 16px/1.3 var(--font-display, system-ui, sans-serif);
-  letter-spacing: -0.01em;
+   Gold means one thing only: this row carries the cost. It used to also mark a step
+   with no capability attached, which merged two of the four readings the component
+   exists to keep apart. */
+.sched { margin: 22px 0 0; }
+.sched table { width: 100%; border-collapse: collapse; font-size: 15px; }
+
+.sched thead th {
+  font: 600 11px/1.4 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: left;
+  padding: 0 14px 9px;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.sched thead th:first-child { padding-left: 16px; }
+.sched__htime { width: 190px; }
+
+.sched tbody tr { border-bottom: 1px solid var(--rule-soft); }
+.sched tbody tr:last-child { border-bottom: 1px solid var(--rule); }
+.sched tbody td, .sched tbody th { padding: 15px 14px; vertical-align: top; text-align: left; }
+
+/* Carries the cost is a property of the row, so it is an edge, not a column. */
+.sched tbody tr.is-cost { background: var(--cost-wash); }
+.sched tbody tr.is-cost > :first-child { box-shadow: inset 3px 0 0 var(--cost); }
+
+/* The global th rule is a small uppercase column-label utility. A row header here is
+   a step name and a sentence, so it opts out of every part of that. */
+.sched__step {
+  font: 400 15px/1.55 var(--font-sans, system-ui, sans-serif);
+  letter-spacing: 0;
   text-transform: none;
-  color: var(--panel-ink);
-  margin: 0 0 4px;
+  color: var(--ink);
+  padding-left: 16px !important;
+  width: 40%;
 }
-.step__blocker {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--panel-ink-2);
-  margin: 0 0 9px;
+.sched__seq {
+  font: 600 11.5px/1 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink-3); letter-spacing: 0.05em;
+  display: block; margin-bottom: 5px;
 }
-.step__marks { display: flex; flex-wrap: wrap; gap: 6px 14px; }
-.mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
-  letter-spacing: 0.01em;
+.is-cost .sched__seq { color: var(--cost); }
+.sched__name {
+  display: block;
+  font: 600 16px/1.35 var(--font-display, system-ui, sans-serif);
+  letter-spacing: -0.01em; color: var(--ink);
 }
-.mark i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
-.mark--reach { color: var(--panel-ink); }
-.mark--none { color: var(--panel-ink-2); }
-.mark--none i { background: var(--none); opacity: 0.55; }
-.mark--cost {
-  color: var(--cost);
-  border: 1px solid rgba(224, 170, 60, 0.4);
-  border-radius: 4px;
-  padding: 1px 7px;
+.sched__costflag {
+  display: inline-block; margin-top: 6px;
+  font: 500 11px/1.4 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--cost);
+}
+.sched__blocker {
+  display: block; margin-top: 6px;
+  font-size: 13.5px; line-height: 1.5; color: var(--ink-2);
 }
 
-.step__caps { padding-top: 2px; }
-.caps-list { list-style: none; margin: 0; padding: 0; }
-.caps-list li { margin-bottom: 3px; }
-.caps-list a, .caps-list li {
-  font-size: 13px;
-  line-height: 1.4;
-  color: var(--panel-ink-2);
+.sched__ai { white-space: nowrap; font-size: 13.5px; color: var(--ink-2); width: 128px; }
+.fill {
+  width: 11px; height: 11px; border-radius: 2px;
+  border: 1.5px solid var(--accent-ink);
+  display: inline-block; margin-right: 7px; vertical-align: -1px;
 }
-.caps-list a { color: #9dc4f5; text-decoration: none; border-bottom: 1px solid rgba(157, 196, 245, 0.3); }
-.caps-list a:hover { color: #c9dffb; border-bottom-color: currentColor; }
-.caps-none {
-  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
-  color: var(--cost);
-  opacity: 0.85;
+.fill--full { background: var(--accent-ink); }
+.fill--half {
+  background: linear-gradient(135deg, var(--accent-ink) 0 50%, transparent 50% 100%);
 }
+.fill--hollow { background: transparent; }
+.sched__no { color: var(--none); font-family: var(--font-mono, ui-monospace, monospace); font-size: 12.5px; }
 
-.step__time { padding-top: 2px; }
-.step__num {
+.sched__caps { font-size: 13.5px; }
+.sched__capcount {
   display: block;
-  font: 600 20px/1 var(--font-mono, ui-monospace, monospace);
-  color: var(--panel-ink);
-  margin-bottom: 7px;
+  font: 600 11.5px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink-3); letter-spacing: 0.04em; margin-bottom: 5px;
 }
-.step__num small { font-size: 11px; font-weight: 400; color: var(--panel-ink-2); margin-left: 3px; }
-.step__bar {
-  display: block;
-  height: 5px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--reach-1), #9dc4f5);
-}
-.step--cost .step__bar { background: linear-gradient(90deg, var(--cost), #e8c477); }
-.step__nomeasure {
+.sched__caps ul { list-style: none; margin: 0; padding: 0; }
+.sched__caps li { margin-bottom: 6px; line-height: 1.45; }
+.sched__caps a { color: var(--accent-ink); text-decoration: none; border-bottom: 1px solid rgba(19, 88, 196, 0.28); }
+.sched__caps a:hover { border-bottom-color: currentColor; }
+.sched__init { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 2px; }
+.sched__init a { color: var(--ink-2); border-bottom-color: var(--rule); }
+.sched__none {
   display: inline-block;
-  font: 400 12px/1.4 var(--font-mono, ui-monospace, monospace);
-  color: var(--panel-ink-2);
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  border-radius: 4px;
-  padding: 3px 8px;
-  cursor: help;
+  font: 600 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink); background: var(--paper-3);
+  border-radius: 4px; padding: 2px 8px;
 }
-.step__spannote {
+
+/* The duration cell spans every row its figure actually covers. */
+.sched__time { border-left: 1px solid var(--rule-soft); width: 190px; }
+.sched__num {
   display: block;
-  margin-top: 7px;
-  font: 400 11px/1.4 var(--font-mono, ui-monospace, monospace);
-  color: var(--panel-ink-2);
-  cursor: help;
+  font: 600 21px/1 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.sched__num small { font: 400 12px/1 var(--font-sans, system-ui, sans-serif); color: var(--ink-3); }
+.sched__span {
+  display: block; margin-top: 6px;
+  font: 500 11px/1.4 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.04em; color: var(--accent-ink);
+}
+.sched__nofig {
+  display: inline-block;
+  font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
+  color: var(--ink-2); border: 1px dashed var(--rule);
+  border-radius: 4px; padding: 3px 8px;
+}
+/* Provenance is on the page, not in a title attribute. A tooltip is invisible to
+   touch, keyboard and print, and this is the most load-bearing caveat on the chart. */
+.sched__note {
+  display: block; margin-top: 7px;
+  font-size: 11.5px; line-height: 1.45; color: var(--ink-3);
 }
 
-.steps--compact .step { padding: 14px 18px 14px 12px; }
-.steps--compact .step__name { font-size: 15px; }
-
-.steps-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-top: 12px;
+.sched__key {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  margin-top: 14px;
   font: 500 12px/1.4 var(--font-mono, ui-monospace, monospace);
   color: var(--ink-3);
 }
-.steps-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.steps-legend i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.sched__key strong { color: var(--ink); font-weight: 600; }
+.sched__key span { display: inline-flex; align-items: center; }
+.sched__keycost { color: var(--cost); }
 
 @media (max-width: 720px) {
-  .step {
-    grid-template-columns: 34px minmax(0, 1fr);
-    gap: 0 12px;
-    row-gap: 10px;
+  /* Restructure the row rather than collapsing the table: headers become inline
+     labels per cell, using the same words so nothing has to be learned twice. */
+  .sched thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .sched table, .sched tbody, .sched tr, .sched td, .sched th { display: block; width: auto; }
+  .sched tbody tr { padding: 16px 0; }
+  .sched tbody td, .sched tbody th { padding: 0 14px; }
+  .sched__step { width: auto; margin-bottom: 10px; }
+  .sched__ai, .sched__caps, .sched__time {
+    display: grid !important;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 10px; padding-top: 7px !important; border-left: 0;
   }
-  .step__caps, .step__time { grid-column: 2; }
+  .sched__ai::before, .sched__caps::before, .sched__time::before {
+    font: 600 10.5px/1.6 var(--font-mono, ui-monospace, monospace);
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .sched__ai::before { content: 'AI reach'; }
+  .sched__caps::before { content: 'Capabilities'; }
+  .sched__time::before { content: 'Elapsed'; }
 }
 
 /* Proposed text, pending David's review. Temporary by design: this rule and the
