@@ -256,20 +256,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 figcaption { font-size: 14px; color: var(--ink-3); margin-top: 12px; max-width: 76ch; }
 
 /* chain */
-.chain {
-  display: grid; gap: 7px; margin: 6px 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
 @media (max-width: 720px) { .chain { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.node {
-  border-radius: 8px; padding: 10px 11px; font-size: 13px; line-height: 1.35;
-  border: 1px solid var(--rule); background: var(--page); color: var(--ink-2);
-}
-.node .qual { display: block; font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
-.node.bind { border: 2px solid var(--bind); background: var(--bind-wash); color: var(--ink); font-weight: 600; }
-.node .seq { display: block; font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 3px; }
-.node.bind .seq { color: var(--bind); }
-.node .yrs { display: block; margin-top: 5px; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
 
 details { border-top: 1px solid var(--rule-soft); }
 details > summary {
@@ -324,8 +311,6 @@ details .body { padding: 0 2px 16px; }
 }
 /* Duration weight inside a chain step, so a 9-year link does not look like a
    6-month one. */
-.node .bar { display: block; height: 4px; border-radius: 2px; background: var(--rule); margin-top: 7px; }
-.node.bind .bar { background: var(--bind); }
 
 /* Their gap card, rebuilt: 8px radius, 1px rule, the field pill carrying the field
    colour on its border, and the "N Capabilities" disclosure button. */
@@ -425,11 +410,6 @@ details .body { padding: 0 2px 16px; }
 
 /* Capability count on a chain step. Their data, not our labels — so it gets a neutral
    weight, except at zero, where the absence is the finding and reads as a flag. */
-.chain .caps {
-  display: block; margin-top: 6px; font-size: 11.5px; letter-spacing: 0.02em;
-  color: var(--ink-3);
-}
-.chain .caps.none { color: var(--flag); font-weight: 500; }
 
 /* ── The schedule table ────────────────────────────────────────────────────────
    On the page ground, not on a dark slab. The previous version put a near-black panel

@@ -4,6 +4,8 @@
 // Binding links carry a heavier border, a warmer wash, the word "binding" in the
 // step label, and a bold row in the table — never colour alone.
 
+import ChainSteps from './ChainSteps';
+
 export default function Chain({ path }) {
   const isTime = path.links.some((l) => l.duration_years != null);
   const total = path.links.reduce((a, l) => a + (l.duration_years ?? 0), 0);
@@ -35,63 +37,7 @@ export default function Chain({ path }) {
       </div>
 
       <div className="pad">
-        <div className="chain">
-          {path.links.map((l) => (
-            <div key={l.seq} className={l.is_binding ? 'node bind' : 'node'}>
-              <span className="seq">
-                {l.seq}
-                {[l.ai_acts && 'AI acts here', l.is_binding && l.duration_years == null && 'carries the cost']
-                  .filter(Boolean)
-                  .map((m) => ` · ${m}`)
-                  .join('')}
-              </span>
-              {l.link.includes(' (') ? (
-                <>
-                  {l.link.slice(0, l.link.indexOf(' ('))}
-                  <span className="qual">{l.link.slice(l.link.indexOf('(') + 1, -1)}</span>
-                </>
-              ) : (
-                l.link
-              )}
-              <span
-                className={l.capabilities?.length ? 'caps' : 'caps none'}
-                title={
-                  l.capabilities?.length
-                    ? l.capabilities.join(' · ')
-                    : 'No capability in the Gap Map acts on this step'
-                }
-              >
-                {!l.capabilities?.length
-                  ? 'no capability'
-                  : l.capabilities.length === 1
-                    ? '1 capability'
-                    : `${l.capabilities.length} capabilities`}
-              </span>
-              {l.duration_years != null && (
-                <span className="yrs">
-                  {l.duration_years} yr
-                  <span style={{ display: 'block', fontWeight: 400, fontSize: 11, color: 'var(--ink-3)' }}>
-                    {l.duration_span}
-                  </span>
-                  <span
-                    className="bar"
-                    style={{ width: `${Math.max((100 * l.duration_years) / maxYears, 3)}%` }}
-                  />
-                </span>
-              )}
-              {l.duration_years == null && l.figure && (
-                <span
-                  style={{
-                    display: 'block', marginTop: 6, fontSize: 11.5, lineHeight: 1.35,
-                    color: l.is_binding ? 'var(--ink)' : 'var(--ink-3)',
-                  }}
-                >
-                  {l.figure}
-                </span>
-              )}
-            </div>
-          ))}
-        </div>
+        <ChainSteps path={path} />
         {isTime ? (
           <p style={{ fontSize: 15, marginTop: 16, marginBottom: 0 }}>
             <strong>
