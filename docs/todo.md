@@ -1,58 +1,96 @@
 # What is left
 
-**Updated 2026-08-31.** Front page rebuilt around the publishing gap as the single
-worked example. Chart moved to Attributes. Everything not human-reviewed now carries an
-"AI only" tag. What is left is three indicator rows and a cut pass.
+**Updated 2026-09-05.** Branch `front-page-rewrite`. The page is too long (1,284 words
+of prose), reads as AI-written, and looks like a Claude artifact. Four tracks below, in
+the order they should happen: look, then the chain view, then the words. Nothing on this
+list is started.
 
 ---
 
-## You do
+## You decide first — these change the work
 
-- [ ] **Read the new front page.** `http://localhost:4321` after `npx next build`.
-      Shorter, one example, no chart. Is it the thing you would send?
-- [ ] **Pick the further cuts.** Options are in *What can still come out* below.
-- [ ] **Decide: publisher operating margin as the "accepted, verified" indicator?**
-      38.4%, RELX STM 2024, public and audited. The alternative is an honest null.
-- [ ] **Decide: proposed gaps.** Two survived the adversarial check; the plan's floor
-      was 3-5. Propose more, or record the shortfall?
+- [ ] **"Carries the cost" is undefined. Define it, rename it, or drop it?**
+      It is the `is_binding` flag. `methodology/critical-path.md` says to record
+      "whether it is binding" and never says what binding means, and the chains page
+      already half-disowns it: *"On a strictly sequential chain that is circular."*
+      On the publishing chain it means "this is where reviewer and editor labour
+      concentrates", which is a judgment with no per-step number behind it.
+      My recommendation: drop the flag from the step rows. Once each row shows AI
+      impact, AI maturity and a capability count, "carries the cost" is a fourth
+      unquantified opinion competing with three quantified facts.
+- [ ] **Accept a time bar with holes in it?** Four of the seven publishing steps have a
+      defensible published duration. Three do not, and one of those three is credit and
+      legitimacy. A bar that visibly stops at step 5 says *the steps we cannot measure
+      are the ones that bind*, which is the argument. The alternative is no bar.
+- [ ] **Which takeaway leads?** Your draft says drafting is where AI has had the biggest
+      impact. The chain currently says the drafting saving was real and did not show up
+      as cheaper publishing, because the load moved downstream to desk screening. Both
+      are true and the emphasis is opposite. Pick one.
+- [ ] **Does the telescope survive?** It is one sentence on the front page plus its own
+      chain. Your draft does not mention it.
+- [ ] **Any colour or type direction**, or do I take a swing and you react?
 
-## I do
+## 1. Look — `frontend-design`
 
-- [ ] **Write the three indicator rows** for the publishing gap: cheap, quick,
-      accepted-and-verified. Research is done; see *What the measurement search found*.
-- [ ] **Fix the capability double-count in chain 2.** Link 6 says three of four
-      Convergent capabilities act at dissemination or upstream; the finding says two of
-      four act at credit and legitimacy. *New Protocols* is counted in both.
-- [ ] **The cover note.** `docs/cover-note.md` still leads with the withdrawn gradient
-      and a number (17) that exists nowhere in the database.
+- [ ] **Replace the palette and the type.** Your read is right and it is specific:
+      `--page: #f3f2eb` is the Claude cream, and every heading is Georgia via
+      `--font-serif`. That pairing is the tell.
+- [ ] The `frontend-design` plugin skill is installed but is not being listed as
+      available (it registers with `version: unknown`). Its file is readable at
+      `~/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown/skills/`
+      and I will work from it directly.
+- [ ] Check both themes and both widths after. `TIER_COLOR`'s light-to-dark ramp still
+      reads good-to-bad and can be fixed in the same pass.
+
+## 2. The chain view — vertical scroll, one step per row
+
+- [ ] **One row per step**, replacing the current horizontal node strip.
+- [ ] Columns per row: step name · does AI impact it · **how mature that AI is** ·
+      capability count with links · duration bar (pending your call above).
+- [ ] **Step-level AI maturity is already in the database and has never been shown.**
+      Every link carries `ai_type` and `maturity`. Publishing runs: drafting and
+      screening *Working now*, recruitment and review judgment *2-5 years*, credit and
+      legitimacy *Speculative*. That is your gap-level measure at step level, already
+      labelled, free to display.
+- [ ] **Deep-link every capability to gap-map.org.**
+      `https://www.gap-map.org/capabilities/<slug>/` resolves 200, and we hold the
+      slugs. Confirmed against four publishing capabilities.
+- [ ] Capabilities may map to more than one step, and two already do.
+- [ ] Named initiatives per capability: their export carries resources per capability,
+      so the initiative links come from their data rather than from ours.
+
+## 3. Duration and investment per step (research)
+
+- [ ] Decide what is measurable, and publish the holes rather than filling them.
+      Candidate sources: submission-to-acceptance and acceptance-to-publication medians
+      (a systematic review of 69 studies gives 70-558 days across biomedicine), and the
+      per-step figures the chain already carries for steps 1-4.
+- [ ] Credit and legitimacy has no time measure and probably cannot have one. That is a
+      finding, not a gap in the research.
+
+## 4. The words
+
+- [ ] **Rewrite from your draft, not from the current page.** Yours is roughly 250 words
+      against 1,284 and the structure is better. Clean it up, do not expand it.
+- [ ] Anything I add beyond your draft goes on the page in a distinct colour for you to
+      accept or cut, and comes off before it ships.
+- [ ] Re-run `docs/check ai language.md` at the end, not during.
+
+## Still true from before
+
+- [ ] **The cover note.** `docs/cover-note.md` is the email and it is the last blocking
+      item. It also now describes a page that is about to change again.
+- [ ] No repository link anywhere, so file citations on the site are dead.
 - [ ] `findings.md` still points readers at the empty `search_log` table.
-- [ ] No repository link anywhere, so every file citation on the site is dead.
 - [ ] Delete merged branches: `worktree-isolation`, `vercel-deploy-prep`,
-      `review-gates`, `maturity-repair`, `site-story`, `gate-d-rerun`.
-- [ ] Re-run the verification review last, after everything above.
-
-## Done since 2026-08-28
-
-- Outcome for the publishing gap rewritten by David: *"Getting a result into the
-  accepted, verified scientific record is cheap and quick."* The one outcome on the map
-  a human has read against its chain.
-- **Fixed a silent rebuild bug.** `research-log/rewrites/outcomes-v2.json` held the real
-  wording of all 103 outcome sentences and nothing replayed it — a clean rebuild
-  reverted every one to the first pass with no error. `engine/ingest-outcome-rewrites.mjs`
-  now replays it and `rebuild.mjs` runs it after `ingest-labels.mjs`.
-- "The measure for each step" table on both chains, with an explicit *no published
-  quantity exists* cell where one is missing.
-- Telescope chain off the front page, referenced in one sentence.
-- Maturity chart moved to Attributes, sorted by share working now.
-- `AiOnly` / `HumanChecked` tags; front page carries five and one.
+      `review-gates`, `maturity-repair`, `site-story`, `gate-d-rerun`,
+      `front-page-one-example`, `convergent-voice`.
 
 ## Known weak, not being fixed
 
-- Outcomes have never had a second pass. One labeller, no audit, except the one gap
-  David worked through.
+- Outcomes have never had a second pass, except the one gap David worked through.
 - "Proxy only" ran 78% disagreement and probably should be dropped. 19 gaps hold it.
-- Eight pages is a lot. *Indicators*, *Proposed gaps* and *Attributes* could fold together.
-- `TIER_COLOR` light-to-dark ramp reads good-to-bad.
+- Outcomes and progress indicators are built, in the export, and not proposed.
 
 ---
 ---
