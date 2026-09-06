@@ -12,10 +12,20 @@ Root-level `vercel.json` handles this:
 
 ```json
 {
-  "buildCommand": "cd app && npm install && npm run build",
+  "buildCommand": "node engine/rebuild.mjs && cd app && npm install && npm run build",
   "outputDirectory": "app/out"
 }
 ```
+
+**The rebuild step is not optional.** `db/*.sqlite` is gitignored, so a git-triggered
+build starts with no database and `export-artifact.mjs` dies on `no such table:
+gm_gaps`. A CLI `vercel` deploy hides this, because it uploads the `app/out` you already
+built locally — so the CLI can be green while every push to `main` fails. That is
+exactly what happened on 2026-09-06: four failed Production builds, all from git, while
+the CLI deploys beside them succeeded.
+
+It also means the additive guardrail now runs in CI, because `rebuild.mjs` ends with
+`verify-additive.mjs`. A build that modified Convergent's baseline cannot deploy.
 
 `next.config.mjs` sets `output: 'export'`, so the deploy is a static export
 (`app/out`), not a Node server.
