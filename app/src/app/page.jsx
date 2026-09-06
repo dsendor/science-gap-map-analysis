@@ -44,11 +44,7 @@ export default function Page() {
             </h2>
             <p>
               <em>{publishing.gap_name}</em>, traced from a finished draft to a credited
-              contribution.{' '}
-              <Proposed note="Scope note — the gap bundles three axes and a chain needs one.">
-                Your gap statement bundles cost, speed and who can afford to take part. This chain
-                follows cost.
-              </Proposed>
+              contribution.
             </p>
           </div>
 
@@ -62,35 +58,34 @@ export default function Page() {
                 where it will keep having one.{' '}
                 <Proposed note="The nuance David asked to lead with, plus the arXiv parallel.">
                   The saving is real and large, and it has not arrived as cheaper publishing.
-                  Submissions rose 42% after ChatGPT&rsquo;s release, and the work that came off
-                  authors landed downstream on volunteer editors doing desk screening. This has
-                  happened before: arXiv made dissemination free more than thirty years ago and
-                  neither subscription prices nor the time to publish fell, because what journals
-                  sell is not distribution.
+                  Submissions rose 42% after ChatGPT&rsquo;s release &mdash; against a 20% bump
+                  during COVID &mdash; and the work that came off authors landed downstream on
+                  volunteer editors doing desk screening.{' '}
+                  <a
+                    href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.2026.ed.v37.n3"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Organization Science, 2026, ~7,000 manuscripts
+                  </a>
+                  . This has happened before: arXiv made dissemination free more than thirty years
+                  ago and neither subscription prices nor the time to publish fell, because what
+                  journals sell is not distribution.
                 </Proposed>
               </li>
               <li>
-                <strong>Review is a clear blocker.</strong> AI can act on it, and it may stay hard
-                anyway.{' '}
-                <Proposed note="The specific reason review stays hard even with AI on it.">
-                  It can match a reviewer to a paper. It cannot make that reviewer say yes.
-                </Proposed>
+                <strong>Review is a clear current blocker.</strong> AI can act on it, and it may
+                stay hard anyway.
               </li>
               <li>
                 <strong>Credit and legitimacy is the biggest challenge</strong>, and the one AI is
                 least able to move.{' '}
-                <Proposed note="Ties the takeaway to the capability finding above.">
-                  It is also the last step, it has no published measure, and until recently nobody
-                  had anything attached to it.
+                <Proposed note="Ties the takeaway to what the table shows.">
+                  It is also the last step and it has no published measure.
                 </Proposed>
               </li>
             </ol>
             <p>
-              <Proposed note="This is the finding that comes from Convergent's own data rather than my labels. I think it is the strongest thing on the page, but it is my addition.">
-                One thing worth saying because it comes from your data and not from my labels:{' '}
-                {empty} of the {publishing.links.length} steps have no capability attached to them at
-                all, and one of those is reviewer recruitment.
-              </Proposed>{' '}
               <a href="./chains/">Both chains, step by step, with the evidence</a>
             </p>
           </div>
