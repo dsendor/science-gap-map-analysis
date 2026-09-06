@@ -52,7 +52,8 @@ david@sendorai.com
 - **Voice check**: 1 question mark, 1 exclamation mark, no em dashes, ~200 words.
 - **Who to send to.** `gapmap@convergentresearch.org` is the address on their front page,
   and their contribute page is the other invitation this answers.
-  `sarah@convergentresearch.org` is for funders, which is a different conversation.
+  The separate address they list for funders is a different conversation and the wrong
+  door for this.
 - **Aaron Tohuvavohu** is a named person already attached to the telescope gap, verified
   in their export and in the acknowledgments on gap-map.org/about. A warm entry point if
   one is ever wanted.
