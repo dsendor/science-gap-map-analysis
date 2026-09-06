@@ -14,10 +14,15 @@ export default function Page() {
       <main className="wrap">
         <section>
           <div className="col">
-            <h1>The Gap Map is a good idea. I think it can be better.</h1>
+            <h1>
+              The Fundamental Development Gap Map is excellent. AI has moved fast enough since v1.0
+              that I think it&rsquo;s worth an update.
+            </h1>
             <p className="lead">
-              I used Claude Code to try to make it better, and there are two places I would start.
+              You&rsquo;ve said the map &ldquo;isn&rsquo;t comprehensive &ndash; at all&rdquo; and
+              asked for contributions. I got excited and built one with Claude Code.
             </p>
+            <p>There are two places I would start.</p>
             <ol className="bigsteps">
               <li>
                 <strong>Break each gap into its critical path</strong>, and work out whether and how

@@ -29,7 +29,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  title: 'Where the constraint actually sits',
+  title: 'The Gap Map, with two gaps broken into critical paths',
   description:
     "David Sendor's extension of Convergent Research's Fundamental Development Gap Map v1.0: one gap decomposed into the steps it runs through, showing where AI reaches and which steps have no capability attached, plus a kind-of-work label on all 103 gaps. An independent contribution, offered for feedback.",
 };
