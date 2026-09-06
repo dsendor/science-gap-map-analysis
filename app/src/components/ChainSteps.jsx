@@ -24,7 +24,8 @@ const MATURITY = {
 // height of its row; the full text is on the chains page.
 const firstSentence = (t) => {
   if (!t) return null;
-  const m = t.match(/^.*?[.!?](?=\s|$)/);
+  // A period between digits is a decimal, not a sentence end: "4.5 invitations…"
+  const m = t.match(/^.*?(?<!\d)[.!?](?=\s|$)/);
   return m ? m[0] : t;
 };
 
@@ -32,11 +33,24 @@ export default function ChainSteps({ path, showBlockers = true }) {
   const isTime = path.axis_kind === 'time';
   const val = (l) => (isTime ? l.duration_years : l.duration_days);
   const unit = isTime ? (v) => (v === 1 ? 'year' : 'years') : () => 'days';
+  const unitShort = isTime ? 'year' : 'day';
 
   // seq -> the link whose figure covers it, so a covered row renders no duration cell
   // and the covering row spans them all.
   const coveredBy = new Map();
-  for (const l of path.links) for (const n of l.duration_covers ?? []) coveredBy.set(n, l.seq);
+  for (const l of path.links) {
+    const c = l.duration_covers;
+    if (!c?.length) continue;
+    // rowSpan only ever spans downward from the cell that declares it, so a figure
+    // recorded on any row but the first one it covers would attach itself to unrelated
+    // steps and leave phantom cells. Fail loudly rather than render a wrong table.
+    if (c[0] !== l.seq) {
+      throw new Error(
+        `${path.id} step ${l.seq}: duration_covers starts at ${c[0]}, so the figure is not on the first row it covers`
+      );
+    }
+    for (const n of c) coveredBy.set(n, l.seq);
+  }
 
   const noCaps = path.links.filter((l) => !(l.capability_links ?? []).length).length;
 
@@ -48,7 +62,7 @@ export default function ChainSteps({ path, showBlockers = true }) {
             <th scope="col" className="sched__hstep">Step</th>
             <th scope="col">AI reaches it</th>
             <th scope="col">Gap Map capabilities</th>
-            <th scope="col" className="sched__htime">{isTime ? 'Elapsed' : 'Elapsed'}</th>
+            <th scope="col" className="sched__htime">Elapsed</th>
           </tr>
         </thead>
         <tbody>
@@ -119,7 +133,19 @@ export default function ChainSteps({ path, showBlockers = true }) {
                   )}
                 </td>
 
-                {isCovered ? null : (
+                {isCovered ? (
+                  // The rowspan cell lives only in the covering row's <tr>, and the
+                  // mobile rule turns table cells into blocks, which drops rowspan and
+                  // with it every covered row's duration. Without this the three rows
+                  // this component exists to stop mis-labelling would show nothing at
+                  // all on a phone.
+                  <td className="sched__time sched__time--covered">
+                    <span className="sched__note">
+                      Inside the {val(path.links.find((x) => x.seq === coveredBy.get(l.seq)))}-
+                      {unitShort} span carried on step {coveredBy.get(l.seq)}.
+                    </span>
+                  </td>
+                ) : (
                   <td className="sched__time" rowSpan={covers ? covers.length : 1}>
                     {d != null ? (
                       <>

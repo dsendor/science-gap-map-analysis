@@ -7,12 +7,15 @@
 import ChainSteps from './ChainSteps';
 
 export default function Chain({ path }) {
-  const isTime = path.links.some((l) => l.duration_years != null);
+  // One source of truth for the axis. This used to be derived from whether any link
+  // carried duration_years, which is the proxy methodology/critical-path.md warned
+  // would mislabel a cost chain that happened to carry durations. axis_kind exists to
+  // settle it, and the child component already reads it.
+  const isTime = path.axis_kind === 'time';
   const total = path.links.reduce((a, l) => a + (l.duration_years ?? 0), 0);
   const bind = path.links.filter((l) => l.is_binding);
   const aiYears = path.links.filter((l) => l.ai_acts).reduce((a, l) => a + (l.duration_years ?? 0), 0);
   const restYears = total - aiYears;
-  const maxYears = Math.max(...path.links.map((l) => l.duration_years ?? 0), 1);
 
   return (
     <div className="card" style={{ marginBottom: 22 }}>

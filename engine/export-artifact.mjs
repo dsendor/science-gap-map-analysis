@@ -79,8 +79,10 @@ for (const r of all(`
   JOIN gm_resources r ON r.id = cr.resource_id
   ORDER BY c.name, r.title`)) {
   if (!JSON.parse(r.types_json || '[]').includes('Initiative')) continue;
-  if (!initiativesByCap.has(r.cap)) initiativesByCap.set(r.cap, []);
-  initiativesByCap.get(r.cap).push({ title: r.title, url: r.url });
+  if (!initiativesByCap.has(r.cap)) initiativesByCap.set(r.cap, new Map());
+  // gm_capability_resources holds the same capability/title pair twice for three
+  // capabilities, so a plain push emits duplicate initiatives and duplicate React keys.
+  initiativesByCap.get(r.cap).set(r.title, { title: r.title, url: r.url });
 }
 
 const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
@@ -99,7 +101,7 @@ const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
       return {
         name,
         url: row ? `https://www.gap-map.org/capabilities/${row.slug}/` : null,
-        initiatives: initiativesByCap.get(name) ?? [],
+        initiatives: [...(initiativesByCap.get(name)?.values() ?? [])],
       };
     }),
   })),

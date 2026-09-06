@@ -605,3 +605,11 @@ details .body { padding: 0 2px 16px; }
   font: 600 13px/1.4 var(--font-mono, ui-monospace, monospace);
   color: var(--accent); letter-spacing: 0.03em;
 }
+
+/* A covered row's duration lives in the covering row's rowspan cell, which mobile's
+   display:block drops. This stand-in carries it, and is hidden wherever the real
+   rowspan works. */
+.sched__time--covered { display: none; }
+@media (max-width: 720px) {
+  .sched__time--covered { display: grid !important; }
+}
