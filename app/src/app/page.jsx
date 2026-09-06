@@ -145,7 +145,11 @@ export default function Page() {
               gap-map.org
             </a>
             . Nothing here reorders or ranks your gaps, and your data is unmodified.{' '}
-            <a href="./gap-map-augmented.csv">CSV</a> &middot; <a href="./data.json">JSON</a>
+            <a href="./gap-map-augmented.csv">CSV</a> &middot; <a href="./data.json">JSON</a>{' '}
+            &middot;{' '}
+            <a href="https://github.com/dsendor/science-gap-map-analysis" target="_blank" rel="noreferrer">
+              Source and every label on GitHub
+            </a>
           </p>
         </div>
       </div>

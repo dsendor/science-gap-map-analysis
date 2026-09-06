@@ -40,7 +40,14 @@ export default function MethodPage() {
             <PageProvenance>
               This page was written by Claude, and so was everything it describes.
             </PageProvenance>
-            <p className="lead">Everything that would make you trust the labels less is here.</p>
+            <p className="lead">
+              Everything that would make you trust the labels less is here, and{' '}
+              <a href="https://github.com/dsendor/science-gap-map-analysis" target="_blank" rel="noreferrer">
+                the whole thing is on GitHub
+              </a>{' '}
+              &mdash; every label, every rationale, and the scripts that rebuild the database from
+              Convergent&rsquo;s own export.
+            </p>
             <ul>
               <li>
                 <strong>No human reviewed any label.</strong> All {s.n_gaps} gaps were labelled,
