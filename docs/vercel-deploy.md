@@ -67,3 +67,26 @@ vercel ls             # list deployments
 vercel alias ls        # list aliases (check nothing points here that shouldn't)
 vercel rm <project> --yes   # nuke a project entirely
 ```
+
+## Deploying from a worktree
+
+`.vercel/` is gitignored, so a fresh worktree is **not linked to the project** and a
+plain `vercel` there creates a brand-new one named after the directory. A brand-new
+project has no Deployment Protection, and Vercel labels its first deploy Production and
+assigns two aliases automatically. That happened on 2026-09-06: `wt-front-page-rewrite.vercel.app`
+served the full site to anyone for a few minutes before the aliases were removed and the
+project deleted.
+
+Copy the link before deploying from a worktree:
+
+```bash
+cp ../science-gap-map-analysis/.vercel/project.json .vercel/project.json
+vercel --yes
+```
+
+Then check, every time, that the unique URL is gated and no bare name resolves:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" https://<deployment-url>          # expect 302
+curl -s -o /dev/null -w "%{http_code}\n" https://<project-name>.vercel.app  # expect 404
+```
