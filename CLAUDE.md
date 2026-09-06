@@ -94,13 +94,31 @@ node engine/search.mjs "query" --phase 1 --gap <id>   # cached Brave search, log
 | What the work actually found | `docs/findings.md` |
 | How to write anything here | `methodology/writing.md`, and the `writing-like-convergent` skill |
 | The critical-path method, and what "binding" means | `methodology/critical-path.md` |
-| Finished process records — history, not instructions | `docs/archive/` |
 | Taxonomy values and their discriminating examples | `methodology/taxonomy.md` |
 | Auditing and sanity-checking labels | `methodology/audit-protocol.md` |
 | Working in parallel without collisions | `docs/worktrees.md` |
 | Deployment, access control, the Vercel gotcha | `docs/vercel-deploy.md` |
 
-Source brief: Notion, *Claude Code brief: Gap Map augmentation*.
+The original brief lives in a private Notion doc and is not part of this repository.
+Everything it asked for that still stands is in this file and in `methodology/`.
+
+## What is not in the repository, and why
+
+`db/*.sqlite` is gitignored and that is deliberate. **Tested on 2026-09-06**: a fresh
+clone with no network and no cache runs `node engine/rebuild.mjs` and produces a
+database identical to the working one on every table, and an artifact whose only
+differences are autoincrement row ids and rebuild timestamps. The sources of record are
+`data/baseline/` and the JSON in `research-log/`, both reviewable in a diff, which a
+committed binary is not.
+
+`research-cache/` is gitignored too. It is the Brave disk cache, 47 files and about
+250K, and nothing in `engine/rebuild.mjs` reads it — the database does not need it. The
+search transcript that *does* back the honest nulls is committed, at
+`research-log/searches/`.
+
+`.vercel/project.json` **is** committed, deliberately. It holds a project id, an org id
+and a name, and no credentials. Committing it is what stops a fresh worktree deploying
+into a brand-new Vercel project with no deployment protection.
 
 ## Research method
 
@@ -134,7 +152,6 @@ engine/                     import, verify-additive, integrity-report, search
 methodology/                taxonomy, writing, house-format, critical-path, audit-protocol
 agents/                     labeler, auditor sub-agent briefs
 research-log/labels/        one JSON per field batch, ingested serially
-docs/archive/plan.md                the six-phase plan
 ```
 
 **Deliberately not ported from `ai-science-gap-map`:** the ToC / claims / DALY /

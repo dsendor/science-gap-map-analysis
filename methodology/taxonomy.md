@@ -20,7 +20,7 @@ outcome. Prefer the thing that becomes *possible* over the thing that becomes *e
 
 A single primary outcome per gap, stored as text on the gap. This is deliberately
 not a separate entity even though outcomes genuinely are many-to-many with gaps and
-capabilities — see the limitation note in `docs/archive/plan.md`. Naming that limitation is
+capabilities — see the limitation note in the original plan (removed from the working tree; in git history up to 7f77af9). Naming that limitation is
 part of the contribution; fixing it is scope creep and, from a stranger, a schema
 redesign that lands badly.
 
@@ -122,7 +122,7 @@ is coordination has an AI capability that would move it today. See `research-log
 
 **Maturity remains the least reliable field in this taxonomy** — it is a judgement about
 the world rather than a reading of the gap text, and half the primaries carry `guess`.
-Report it with its confidence attached. See `docs/archive/relabel-report.md`.
+Report it with its confidence attached. See the relabel report (removed from the working tree; in git history up to 7f77af9).
 
 Multiple types per gap are allowed and expected. Exactly one is marked primary — the
 one that would move the gap *most*, which is not always the one most obviously
@@ -178,7 +178,7 @@ do not force a clean answer:
   different types *and different tiers*. A single primary is a real loss of information
   and the artifact should say so rather than pretend otherwise. Splitting them is not
   available to us — that would mean authoring gap records Convergent did not write —
-  so the decomposition is offered as a proposal in `docs/archive/decomposition-proposal.md`.
+  so the decomposition is offered as a proposal (removed from the working tree; in git history up to 7f77af9).
 
 Revise the taxonomy if the data argues for it. Any revision writes a `decisions` row
 with the runner-up and a reversal condition.

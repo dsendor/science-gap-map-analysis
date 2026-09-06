@@ -13,7 +13,7 @@
 // to share a HEAD.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, copyFileSync } from 'node:fs';
+import { existsSync, copyFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
@@ -51,6 +51,16 @@ execFileSync('git', args, { cwd: root, stdio: 'inherit' });
 if (existsSync(`${root}.env`)) {
   copyFileSync(`${root}.env`, `${dest}/.env`);
   console.log('copied .env (gitignored, so it does not travel with the checkout)');
+}
+
+// .vercel/project.json is committed now, so a worktree is linked on checkout. This
+// stays as a belt-and-braces copy for a worktree cut before that change: an unlinked
+// worktree deploys into a brand-new Vercel project, and a brand-new project has no
+// deployment protection and publishes itself. See docs/vercel-deploy.md.
+if (existsSync(`${root}.vercel/project.json`) && !existsSync(`${dest}/.vercel/project.json`)) {
+  mkdirSync(`${dest}/.vercel`, { recursive: true });
+  copyFileSync(`${root}.vercel/project.json`, `${dest}/.vercel/project.json`);
+  console.log('copied .vercel/project.json (so a deploy from here cannot create a new, unprotected project)');
 }
 
 console.log(`

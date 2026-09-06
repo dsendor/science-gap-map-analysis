@@ -13,4 +13,8 @@ db/*.sqlite
 .playwright-mcp/
 research-log/format-test.json
 research-log/format-test-key.json
-.vercel
+.vercel/*
+# …except the project link. It holds a project id, an org id and a name, and no
+# credentials — auth lives in ~/.vercel. Committing it is what stops a worktree
+# deploying into a brand-new unprotected project, which happened on 2026-09-06.
+!.vercel/project.json

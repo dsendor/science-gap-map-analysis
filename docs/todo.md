@@ -87,7 +87,7 @@ it changes anything on the front page.
 
 ## Why the proposed-gap count is a decision, not a bug
 
-Phase 4's acceptance criterion in `docs/archive/local-agent-plan.md` is 3–5 proposed gaps.
+Phase 4's acceptance criterion in the phase 3-6 execution plan (removed from the working tree; in git history up to 7f77af9) is 3–5 proposed gaps.
 Four were written; Gate B found two already funded by named programmes (SkAI Institute,
 UK Metascience Unit) and both were withdrawn. Two remain, and both survived an
 adversarial check whose brief was to defeat them.

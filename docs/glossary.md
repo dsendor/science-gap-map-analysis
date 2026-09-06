@@ -46,5 +46,5 @@ theirs is the specific mistake this file exists to prevent.
 |---|---|
 | **Slug** | The URL form of a name: *Post-Publication Peer Review Layer* → `post-publication-peer-review-layer`. Web jargon. It matters only because their export preserves them, which is what lets a chain step deep-link to `gap-map.org/capabilities/<slug>/`. Do not use it in anything Convergent reads. |
 | **Worktree** | A second working directory on its own branch. `docs/worktrees.md`. |
-| **Gate** | One of four adversarial review passes, A to D, run over phases 3-6. All complete; see `docs/archive/review-gate-plan.md`. Do not use the letters in anything a reader outside this repo sees. |
+| **Gate** | One of four adversarial review passes, A to D, run over phases 3-6. All complete. Do not use the letters in anything a reader outside this repo sees. |
 | **Phase** | One of six stages of the original plan. Complete. Same warning as Gate. |
