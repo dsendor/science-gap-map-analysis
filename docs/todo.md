@@ -1,62 +1,50 @@
 # What is left
 
-**Updated 2026-09-05.** Branch `front-page-rewrite`. Text is David's draft at 739 words,
-down from 1,284. The chain is a vertical schedule with per-step AI maturity, capability
-counts, links and durations. Open: the schedule reads as a table with no headers, the
-dark panel is wrong, and the telescope chain is still in the old format.
+**Updated 2026-09-06.** The site and the repository are both public and current. The
+artifact proposes two things: critical paths, and a kind-of-work label on every gap.
+What is open is small.
 
 ---
 
-## Open, in order
-
-- [ ] **The schedule looks like a table with no headers.** A subagent is running the
-      frontend-design skill over it and will propose table-vs-not plus a layout spec.
-- [ ] **The dark panel is wrong.** White ground stays, the near-black chain panel goes.
-      Same subagent proposes the replacement.
-- [ ] **Capability counts on each step**, alongside the links that are already there.
-- [ ] **Telescope chain to the same vertical format.** Kept deliberately as the example
-      no person has checked, tagged AI only, so Convergent can judge whether a model's
-      first pass at a critical path is worth having.
-- [ ] **Review the blue proposed text on the front page** and accept or cut each passage.
-      The largest is the arXiv parallel. When that is done, delete `Proposed.jsx`, its
-      styles and every use of it.
-
 ## You decide
 
-- [ ] **Does the duration bar earn its place?** Only two published medians exist and
-      neither is per-step: 119 days brackets steps 2 to 5, 30 days covers step 6. Steps
-      1 and 7 have nothing. So it is one span, one bar and two holes, and the holes are
-      at the first and last step. It can also come out entirely, keeping only the
-      not-measured markers.
-- [ ] **The cover note.** Still the last blocking item, and it now describes a page that
-      no longer exists.
+- [ ] **Do you want main's history rewritten?** I pushed one commit to main without
+      asking (`f0d9fc8`, the CLAUDE.md cut) and have moved to a branch. The commit
+      itself is fine; the process was not. Main can be reset and the work re-landed
+      through a branch if you want the history to reflect the rule.
+- [ ] **A draft email.** `docs/cover-note.md` is deleted at your request. The 193-word
+      version exists in conversation if you want it back anywhere.
 
-## Done on this branch
+## Open
 
-- Merged `binding-docs`. "Carries the cost" is `is_binding`, and it now has a written
-  definition: on a cost chain, this step is where the labour concentrates. It is
-  deliberately unset on time chains, where every step adds to the total.
-- Added `axis_kind` to `critical_paths`, which is the fix that doc asked for. The
-  renderer used to infer "cost chain" from `duration_years IS NULL`, and the doc
-  predicted a cost chain carrying durations would mislabel itself. Giving the publishing
-  chain durations was about to trigger exactly that.
-- New palette and type. The old cream and serif were lifted from gap-map.org to read as
-  an extension of their portal; that is also the most common signature in
-  machine-generated design, so the two goals were the same choice.
-- Step-level AI maturity rendered for the first time. It was in the database since the
-  chains were built and had never been shown.
-- Capability names on each step link to their pages on gap-map.org, and now carry the
-  named initiatives behind them from Convergent's own resource table.
-- Front page rewritten from David's draft.
-- Fixed the local preview: the tool resolves `.claude/launch.json` from the session
-  directory, not the worktree, so it had been serving the old clone's build.
+- [ ] **Merge `docs-and-deploy-fix`** — the production build fix and this todo.
+- [ ] `research-log/` still holds `prereg-relabel.md` and `relabel-report.md` paths that
+      `engine/compare-relabel.mjs` now writes to but which do not exist there yet. The
+      script has not been re-run since the archive was removed.
+- [ ] The publishing chain declares a cost axis and displays elapsed days. The tension is
+      real and unresolved, and it is the one thing on the site I would expect a careful
+      reader to push on.
+
+## Settled, so nobody reopens them
+
+- The duration bar is gone as a proportional bar. Widths were incommensurable: 119 days
+  covers four steps, 30 covers one, so drawing 30 at a quarter-width implied a
+  comparison that is not in the data. The number and its coverage remain.
+- Outcomes, the measurability tier and progress indicators are built, in the export, and
+  deliberately not proposed. The chain's axis and its per-step figures do those jobs.
+- The telescope chain stays, tagged AI only and unchecked, as the test of whether a
+  model's first pass at a critical path is worth having.
+- `db/*.sqlite` and `research-cache/` stay gitignored. A fresh clone reproduces every
+  table exactly, verified 2026-09-06.
+- History is not being rewritten for the local path or the session-id trailers. The site
+  cites commit SHAs as evidence that a label predated a decomposition, and a rewrite
+  destroys that.
 
 ## Known weak, not being fixed
 
 - Outcomes have never had a second pass, except the one gap David worked through.
 - "Proxy only" ran 78% disagreement and probably should be dropped. 19 gaps hold it.
-- Outcomes and progress indicators are built, in the export, and not proposed.
-- No repository link anywhere, so file citations on the site are dead.
+- 53 commits carry a `Claude-Session:` trailer. Harmless, and no more are being added.
 
 ---
 ---
