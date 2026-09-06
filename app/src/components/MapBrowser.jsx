@@ -121,7 +121,7 @@ export default function MapBrowser({ gaps, newGaps }) {
           <label style={{ flexDirection: 'row', alignItems: 'center', gap: 7, marginTop: 15 }}>
             <input
               type="checkbox"
-              aria-label="Include the four proposed gaps in the list"
+              aria-label="Include the proposed gaps in the list"
               checked={showProposed}
               onChange={(e) => setShowProposed(e.target.checked)}
             />

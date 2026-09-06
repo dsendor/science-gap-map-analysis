@@ -1,5 +1,6 @@
 import data from '../../../public/data.json';
 import Nav from '../../components/Nav';
+import PageProvenance from '../../components/PageProvenance';
 import { TIER_ORDER } from '../../lib/constants';
 import { StackedMaturity } from '../../components/Charts';
 
@@ -53,6 +54,10 @@ export default function AttributesPage() {
         <section>
           <div className="col">
             <h1>The label on every gap</h1>
+            <PageProvenance>
+              This page was written by Claude, and every label it describes is a model&rsquo;s
+              judgment that no person has reviewed.
+            </PageProvenance>
             <p className="lead">
               What kind of work stands in the way of each gap, and whether AI reaches it. What the
               label is, why it might be worth having, and where it breaks.

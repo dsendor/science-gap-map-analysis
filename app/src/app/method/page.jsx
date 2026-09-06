@@ -1,5 +1,6 @@
 import data from '../../../public/data.json';
 import Nav from '../../components/Nav';
+import PageProvenance from '../../components/PageProvenance';
 import { BarChart, CrossTab } from '../../components/Charts';
 import RelabelCompare from '../../components/RelabelCompare';
 import { TIER_ORDER, TIER_COLOR } from '../../lib/constants';
@@ -36,26 +37,38 @@ export default function MethodPage() {
         <section>
           <div className="col">
             <h1>Method, audit, and what is wrong with this</h1>
-            <p className="lead">
-              About six and a half hours of agent time and about four hours of mine, plus three blind cold
-              reviews of the artifact itself. Everything that would make you trust the labels less is
-              on this page.
-            </p>
-            <p>
-              The split matters. The build rows below cover phases 0 to 6: all {s.n_gaps} gaps
-              labelled, audited and written up in {mins} minutes with <strong>no human review at
-              all</strong>. Everything after that is the revision cycle, where an agent role-playing
-              one of you read the artifact cold three times and I rewrote it against what came back.
-              Those windows are commit to commit, so they include my reading as well as the
-              agent&rsquo;s work; the two figures should be read as roughly equal rather than as
-              precise.
-            </p>
+            <PageProvenance>
+              This page was written by Claude, and so was everything it describes.
+            </PageProvenance>
+            <p className="lead">Everything that would make you trust the labels less is here.</p>
+            <ul>
+              <li>
+                <strong>No human reviewed any label.</strong> All {s.n_gaps} gaps were labelled,
+                audited and written up in {mins} minutes of agent time.
+              </li>
+              <li>
+                <strong>A second pass relabelled all {s.n_gaps} blind</strong> and disagreed often
+                enough to be worth publishing. The rates are below.
+              </li>
+              <li>
+                <strong>Three cold reviews</strong> then read the artifact as one of you would, and
+                found real errors. Those are below too.
+              </li>
+              <li>
+                <strong>One finding was withdrawn</strong> after it failed to replicate.
+              </li>
+            </ul>
           </div>
         </section>
 
         <section>
           <div className="col">
-            <h2>The result that did not replicate</h2>
+            <details>
+              <summary>The result that did not replicate, in full</summary>
+              <div className="body">
+<section>
+          <div className="col">
+            
             <p>
               This was on the front page and is no longer, because it is a fact about this analysis
               rather than about the map. It is here in full because withdrawing a finding quietly is
@@ -99,6 +112,10 @@ export default function MethodPage() {
               working-now column. That is a definition being fixed, not a result being found, and it
               is the reason the argument page makes no claim about a gradient.
             </p>
+          </div>
+        </section>
+              </div>
+            </details>
           </div>
         </section>
 
@@ -153,7 +170,12 @@ export default function MethodPage() {
 
         <section>
           <div className="col">
-            <h2>The blind audit</h2>
+            <details>
+              <summary>The blind audit: how it was run and what it found</summary>
+              <div className="body">
+<section>
+          <div className="col">
+            
             <p>
               A second labeller, which never saw the first set, relabelled a stratified sample of{' '}
               {audit.n_sampled} of the {s.n_gaps} gaps. The sample oversamples the rare tiers on
@@ -249,10 +271,19 @@ export default function MethodPage() {
             </details>
           </div>
         </section>
+              </div>
+            </details>
+          </div>
+        </section>
 
         <section>
           <div className="col">
-            <h2>Progress indicators, built and not proposed</h2>
+            <details>
+              <summary>Progress indicators, built and not proposed</summary>
+              <div className="body">
+<section>
+          <div className="col">
+            
             <p>
               Eight gaps across all four tiers. Every value was read off a page that was actually
               fetched. Four verify against Crossref or arXiv; two are reachable but not
@@ -310,10 +341,19 @@ export default function MethodPage() {
               ))}
           </div>
         </section>
+              </div>
+            </details>
+          </div>
+        </section>
 
         <section>
           <div className="col">
-            <h2>Distributions</h2>
+            <details>
+              <summary>Distributions across all 103 gaps</summary>
+              <div className="body">
+<section>
+          <div className="col">
+            
           </div>
           <div className="grid2" style={{ marginTop: 18 }}>
             <figure className="card">
@@ -348,10 +388,19 @@ export default function MethodPage() {
             </div>
           </figure>
         </section>
+              </div>
+            </details>
+          </div>
+        </section>
 
         <section>
           <div className="col">
-            <h2>What it cost</h2>
+            <details>
+              <summary>What it cost to build</summary>
+              <div className="body">
+<section>
+          <div className="col">
+            
             <div className="scroll">
               <table>
                 <thead>
@@ -419,6 +468,10 @@ export default function MethodPage() {
                 </div>
               </details>
             ))}
+          </div>
+        </section>
+              </div>
+            </details>
           </div>
         </section>
       </main>

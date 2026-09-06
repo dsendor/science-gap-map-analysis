@@ -2,7 +2,7 @@ import data from '../../../public/data.json';
 import Nav from '../../components/Nav';
 import GapCard from '../../components/GapCard';
 
-export const metadata = { title: 'Four proposed gaps' };
+export const metadata = { title: 'Two proposed gaps' };
 
 export default function ProposedPage() {
   const { new_gaps: newGaps, summary: s } = data;
@@ -12,7 +12,7 @@ export default function ProposedPage() {
       <main className="wrap">
         <section>
           <div className="col">
-            <h1>Four gaps I&rsquo;d propose</h1>
+            <h1>Two gaps I&rsquo;d propose</h1>
             <p className="lead">
               Written to your format: a title-case declarative name, 30 to 60 words, no urgency
               language, no named vendors.

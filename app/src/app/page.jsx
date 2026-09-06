@@ -82,7 +82,9 @@ export default function Page() {
               </li>
             </ol>
             <p>
-              <a href="./chains/">Both chains, step by step, with the evidence</a>
+              <a href="./chains/">
+                This chain step by step, plus a second gap (telescopes) that Claude did on its own
+              </a>
             </p>
           </div>
         </section>
@@ -130,7 +132,7 @@ export default function Page() {
       <div className="footer">
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
-            David Sendor. I spent 15+ years applying AI to hard problems in large organizations, most
+            David Sendor. I spent 20 years applying AI to hard problems in large organizations, most
             recently leading Enterprise Data Science at Liberty Mutual.{' '}
             <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
               LinkedIn

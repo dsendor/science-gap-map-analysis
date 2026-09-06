@@ -64,6 +64,7 @@ export default function Chain({ path }) {
       {path.programmes?.length > 0 && (
         <div className="pad">
           <h4 style={{ marginTop: 0 }}>The same chain, three programmes</h4>
+          {/* Supporting evidence for the duration basis, not the claim itself. */}
           <div className="scroll">
             <table>
               <thead>
@@ -106,7 +107,7 @@ export default function Chain({ path }) {
         <h4 style={{ marginTop: 0 }}>What the chain showed</h4>
         {path.finding
           .split('\n\n')
-          .slice(0, 2)
+          .slice(0, 1)
           .map((para, i) => (
             <p key={i} style={{ fontSize: 16 }}>
               {para}
@@ -117,7 +118,7 @@ export default function Chain({ path }) {
           <div className="body">
             {path.finding
               .split('\n\n')
-              .slice(2)
+              .slice(1)
               .map((para, i) => (
                 <p key={i} style={{ fontSize: 15.5 }}>
                   {para}
@@ -130,44 +131,7 @@ export default function Chain({ path }) {
       </div>
 
       <div className="pad">
-        <h4 style={{ margin: '0 0 4px', fontSize: 16 }}>The measure for each step</h4>
-        <p style={{ fontSize: 15, color: 'var(--ink-3)', marginTop: 0 }}>
-          One published quantity per step, so you can watch the constraint move rather than take the
-          decomposition on trust. Where no quantity exists, the cell says so.
-        </p>
-        <div className="scroll">
-          <table>
-            <thead>
-              <tr>
-                <th className="num">#</th>
-                <th>Step</th>
-                <th>{isTime ? 'Elapsed' : 'Measure'}</th>
-                <th>Binding</th>
-              </tr>
-            </thead>
-            <tbody>
-              {path.links.map((l) => {
-                const m = isTime ? (l.duration_years != null ? `${l.duration_years} yr` : null) : l.figure;
-                return (
-                  <tr key={l.seq}>
-                    <td className="num">{l.seq}</td>
-                    <td>{l.is_binding ? <strong>{l.link}</strong> : l.link}</td>
-                    <td className={isTime ? 'num' : ''}>
-                      {m || (
-                        <em style={{ color: 'var(--ink-3)' }}>no published quantity exists</em>
-                      )}
-                    </td>
-                    <td>{l.is_binding ? <span className="tag new">binding</span> : ''}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="pad">
-        <details open={false}>
+<details open={false}>
           <summary>Every step: what blocks it, which AI capability touches it, and the evidence</summary>
           <div className="body">
         <div className="scroll">

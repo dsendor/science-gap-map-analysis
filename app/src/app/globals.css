@@ -599,3 +599,14 @@ details .body { padding: 0 2px 16px; }
 @media (max-width: 720px) {
   .sched__time--covered { display: grid !important; }
 }
+
+/* Page-level provenance. Sits directly under the h1 so it is read before the content
+   it qualifies, not after. */
+.provenance {
+  display: flex; align-items: baseline; gap: 10px;
+  margin: 0 0 22px; padding: 11px 14px;
+  background: var(--flag-wash); border-left: 3px solid var(--flag);
+  border-radius: 4px;
+  font-size: 14.5px; line-height: 1.5; color: var(--ink-2);
+}
+.provenance .tag { flex: none; }
