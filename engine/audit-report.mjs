@@ -194,7 +194,7 @@ w();
     w(`- **${p.title}** — axis: ${p.axis}. ${bind.length} of ${links.length} links bind: ${bind.map((l) => l.link).join(', ')}.`);
   }
   w();
-  w('Both expectations were committed before the link analysis existed, in a separate commit, so the ordering is checkable in git. Full chains, evidence and the cross-field intersection: `docs/critical-paths.md`.');
+  w('Both expectations were committed before the link analysis existed, in a separate commit, so the ordering is checkable in git. Full chains, evidence and the cross-field intersection: `docs/chains-as-published.md`.');
   w();
 }
 

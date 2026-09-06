@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Score the relabel against docs/prereg-relabel.md and write docs/relabel-report.md.
+// Score the relabel against docs/archive/prereg-relabel.md and write docs/archive/relabel-report.md.
 //
 // The four predictions were fixed in an earlier commit. This scores them mechanically
 // so the outcome is not a matter of interpretation after the fact.
@@ -22,7 +22,7 @@ const pct = (a, b) => `${(100 * a / b).toFixed(0)}%`;
 
 w('# Relabel report — AI-type dimension, 8-category taxonomy');
 w();
-w(`Independent blind relabel of **all ${n} gaps** by labelers that never saw v1. Predictions were fixed in \`docs/prereg-relabel.md\` in an earlier commit; this report scores them mechanically.`);
+w(`Independent blind relabel of **all ${n} gaps** by labelers that never saw v1. Predictions were fixed in \`docs/archive/prereg-relabel.md\` in an earlier commit; this report scores them mechanically.`);
 w();
 
 const tAgree = one('SELECT count(*) c FROM relabels WHERE type_agreed = 1').c;
@@ -109,6 +109,6 @@ for (const r of all('SELECT gap_id, v1_type, v2_type FROM relabels WHERE type_ag
 }
 w();
 
-writeFileSync(`${root}docs/relabel-report.md`, L.join('\n'));
-console.log(`wrote docs/relabel-report.md`);
+writeFileSync(`${root}docs/archive/relabel-report.md`, L.join('\n'));
+console.log(`wrote docs/archive/relabel-report.md`);
 console.log(`type disagreement ${pct(dis, n)} | control uptake ${controlRows.length} | physical build working-now ${pb ? pb.wn : 'n/a'}`);

@@ -1,7 +1,6 @@
 import data from '../../public/data.json';
 import Nav from '../components/Nav';
 import ChainSteps from '../components/ChainSteps';
-import Proposed from '../components/Proposed';
 import { AiOnly, HumanChecked } from '../components/Reviewed';
 
 export default function Page() {
@@ -29,10 +28,6 @@ export default function Page() {
                 AI is.
               </li>
             </ol>
-            <p className="proposed-key">
-              <i />
-              highlighted text is mine and not yet approved
-            </p>
           </div>
         </section>
 
@@ -56,22 +51,20 @@ export default function Page() {
               <li>
                 <strong>Production and drafting is where AI has had the biggest impact</strong>, and
                 where it will keep having one.{' '}
-                <Proposed note="The nuance David asked to lead with, plus the arXiv parallel.">
-                  The saving is real and large, and it has not arrived as cheaper publishing.
-                  Submissions rose 42% after ChatGPT&rsquo;s release &mdash; against a 20% bump
-                  during COVID &mdash; and the work that came off authors landed downstream on
-                  volunteer editors doing desk screening.{' '}
-                  <a
-                    href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.2026.ed.v37.n3"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Organization Science, 2026, ~7,000 manuscripts
-                  </a>
-                  . This has happened before: arXiv made dissemination free more than thirty years
-                  ago and neither subscription prices nor the time to publish fell, because what
-                  journals sell is not distribution.
-                </Proposed>
+                The saving is real and large, and it has not arrived as cheaper publishing.
+                Submissions rose 42% after ChatGPT&rsquo;s release &mdash; against a 20% bump
+                during COVID &mdash; and the work that came off authors landed downstream on
+                volunteer editors doing desk screening.{' '}
+                <a
+                  href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.2026.ed.v37.n3"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Organization Science, 2026, ~7,000 manuscripts
+                </a>
+                . This has happened before: arXiv made dissemination free more than thirty years
+                ago and neither subscription prices nor the time to publish fell, because what
+                journals sell is not distribution.
               </li>
               <li>
                 <strong>Review is a clear current blocker.</strong> AI can act on it, and it may
@@ -80,9 +73,7 @@ export default function Page() {
               <li>
                 <strong>Credit and legitimacy is the biggest challenge</strong>, and the one AI is
                 least able to move.{' '}
-                <Proposed note="Ties the takeaway to what the table shows.">
-                  It is also the last step and it has no published measure.
-                </Proposed>
+                It is also the last step and it has no published measure.
               </li>
             </ol>
             <p>
@@ -102,10 +93,8 @@ export default function Page() {
               </li>
               <li>
                 <strong>Verify with experts.</strong>{' '}
-                <Proposed note="Says who, since 'experts' on its own is hard to act on.">
-                  One gap here has been read by a person. The rest is a model&rsquo;s first pass and
-                  is labelled that way throughout.
-                </Proposed>
+                One gap here has been read by a person. The rest is a model&rsquo;s first pass and
+                is labelled that way throughout.
               </li>
             </ol>
           </div>

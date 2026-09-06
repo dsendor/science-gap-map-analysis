@@ -27,9 +27,13 @@
 
 An **additive** augmentation of Convergent Research's Fundamental Development Gap Map
 (gap-map.org, v1.0, ~103 R&D gaps and 369 foundational capabilities across 20 fields).
-We add four things they do not have — a stated outcome per gap, an AI capability type
-and maturity per gap, a measurability tier per gap, and two worked critical paths — and
-ship it as an artifact plus a short cover note.
+We propose two things they do not have: **critical paths**, which decompose a gap into
+the ordered steps the work runs through and show which of their own capabilities act on
+each, and a **kind-of-work label** on every gap saying what stands in the way and
+whether AI reaches it. A per-gap outcome, a measurability tier and progress indicators
+were also built; they are in the export and are deliberately not proposed, because a
+chain's stated axis and its per-step figures do those jobs better. Ships as an artifact
+plus a short cover note.
 
 The deliverable is a **contribution to their map, not a critique of it.** They say
 repeatedly that the map is not comprehensive and not a prioritised roadmap, and they
@@ -86,8 +90,11 @@ node engine/search.mjs "query" --phase 1 --gap <id>   # cached Brave search, log
 | | |
 |---|---|
 | What is outstanding and who has it | `docs/todo.md` — update it when you pick something up |
-| The six-phase plan | `docs/plan.md` |
-| How to write anything here | `methodology/writing.md` |
+| **What every term means, and whose word it is** | `docs/glossary.md` — read this first if anything below uses a word oddly |
+| What the work actually found | `docs/findings.md` |
+| How to write anything here | `methodology/writing.md`, and the `writing-like-convergent` skill |
+| The critical-path method, and what "binding" means | `methodology/critical-path.md` |
+| Finished process records — history, not instructions | `docs/archive/` |
 | Taxonomy values and their discriminating examples | `methodology/taxonomy.md` |
 | Auditing and sanity-checking labels | `methodology/audit-protocol.md` |
 | Working in parallel without collisions | `docs/worktrees.md` |
@@ -127,7 +134,7 @@ engine/                     import, verify-additive, integrity-report, search
 methodology/                taxonomy, writing, house-format, critical-path, audit-protocol
 agents/                     labeler, auditor sub-agent briefs
 research-log/labels/        one JSON per field batch, ingested serially
-docs/plan.md                the six-phase plan
+docs/archive/plan.md                the six-phase plan
 ```
 
 **Deliberately not ported from `ai-science-gap-map`:** the ToC / claims / DALY /

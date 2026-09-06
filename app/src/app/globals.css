@@ -570,24 +570,6 @@ details .body { padding: 0 2px 16px; }
   .sched__time::before { content: 'Elapsed'; }
 }
 
-/* Proposed text, pending David's review. Temporary by design: this rule and the
-   component it styles come out once every passage is accepted or cut. */
-.proposed {
-  background: rgba(28, 110, 242, 0.09);
-  border-bottom: 1px solid rgba(28, 110, 242, 0.45);
-  color: var(--accent-ink);
-  padding: 0 2px;
-  border-radius: 2px;
-}
-.proposed-key {
-  display: inline-flex; align-items: center; gap: 7px;
-  font: 500 12.5px/1.4 var(--font-mono, ui-monospace, monospace);
-  color: var(--ink-3); margin-bottom: 18px;
-}
-.proposed-key i {
-  width: 26px; height: 12px; border-radius: 3px; display: inline-block;
-  background: rgba(28, 110, 242, 0.09); border-bottom: 1px solid rgba(28, 110, 242, 0.45);
-}
 
 /* Numbered lists that carry an argument rather than an inventory. The marker is a
    measurement-style numeral, because the order is the content. */

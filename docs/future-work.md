@@ -108,7 +108,7 @@ cheapest item on the list.
 
 Some gap statements bundle several unrelated research programmes under one heading, and a
 single tier and a single AI type cannot represent them. Written up in full, with the two
-distinct patterns and a worked proposal, in `docs/decomposition-proposal.md`. Not applied,
+distinct patterns and a worked proposal, in `docs/archive/decomposition-proposal.md`. Not applied,
 because splitting them means authoring gap records Convergent did not write.
 
 ## 8. Urgency and impact, if they ever want them
