@@ -10,7 +10,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { DatabaseSync } from 'node:sqlite';
-import { readdirSync, existsSync } from 'node:fs';
+import { readdirSync, existsSync, rmSync } from 'node:fs';
 import { context, drift, driftMessage } from './workspace.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
@@ -27,6 +27,20 @@ const run = (script, ...args) =>
     console.error(driftMessage(d, ws));
     process.exit(1);
   }
+}
+
+// Start from nothing. schema.sql uses CREATE TABLE IF NOT EXISTS, which creates a
+// missing table and silently does nothing to an existing one, so a column added to
+// schema.sql never reaches a database that already exists: a fresh clone worked and
+// every existing clone died on "table critical_paths has no column named axis_kind".
+//
+// Deleting is safe because this file is derived and gitignored. Everything in it comes
+// from data/baseline/ and research-log/, both in the repo, and a from-scratch rebuild
+// was verified on 2026-09-06 to reproduce every table exactly. db/migrations/ is kept
+// as a record of how the schema moved, not as something that runs.
+for (const f of ['', '-wal', '-shm']) {
+  const path = `${root}db/gapmap.sqlite${f}`;
+  if (existsSync(path)) rmSync(path);
 }
 
 run('import-gapmap.mjs');
