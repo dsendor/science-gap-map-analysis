@@ -63,13 +63,13 @@ export default function Chain({ path }) {
 
       {path.programmes?.length > 0 && (
         <div className="pad">
-          <h4 style={{ marginTop: 0 }}>The same chain, three programmes</h4>
+          <h4 style={{ marginTop: 0 }}>The same chain, three programs</h4>
           {/* Supporting evidence for the duration basis, not the claim itself. */}
           <div className="scroll">
             <table>
               <thead>
                 <tr>
-                  <th>Programme</th>
+                  <th>Program</th>
                   <th>Concept</th>
                   <th className="num">To construction start</th>
                   <th className="num">Construction to first light</th>

@@ -123,7 +123,7 @@ export default function GapCard({ gap }) {
               )}
               {gap.is_new ? (
                 <>
-                  <Why k="Nearest thing already in your map" t={gap.nearest} />
+                  <Why k="Nearest thing already in the map" t={gap.nearest} />
                   <Why k="Productive tension" t={gap.tension_test} />
                   <Why k="Downstream unlock" t={gap.unlock_test} />
                   <Why k="Near-duplicate check, in full" t={gap.dedup_check} />

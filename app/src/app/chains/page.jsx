@@ -26,7 +26,7 @@ export default function ChainsPage() {
             </p>
             <ul>
               <li>
-                <strong>Publishing</strong>, measured in reviewer and editor labour. Four of seven
+                <strong>Publishing</strong>, measured in reviewer and editor labor. Four of seven
                 steps have no capability attached, including the one where the cost concentrates.
               </li>
               <li>
@@ -67,7 +67,7 @@ export default function ChainsPage() {
               </cite>
             </blockquote>
             <p>
-              Two gaps, two fields, one blocker. Your export has one row per gap and nowhere to
+              Two gaps, two fields, one blocker. The Gap Map&rsquo;s export has one row per gap and nowhere to
               record that, and once gaps decompose into steps a recurring blocker becomes something
               you can count across all {s.n_gaps} rather than notice twice.
             </p>

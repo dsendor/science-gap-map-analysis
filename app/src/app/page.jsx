@@ -19,7 +19,7 @@ export default function Page() {
               that I think it&rsquo;s worth an update.
             </h1>
             <p className="lead">
-              You&rsquo;ve said the map &ldquo;isn&rsquo;t comprehensive &ndash; at all&rdquo; and
+              Convergent has said the map &ldquo;isn&rsquo;t comprehensive &ndash; at all&rdquo; and
               asked for contributions. I got excited and built one with Claude Code.
             </p>
             <p>There are two places I would start.</p>
@@ -114,7 +114,7 @@ export default function Page() {
               <li>
                 <strong>Verify with experts.</strong>{' '}
                 One gap here has been read by a person. The rest is a model&rsquo;s first pass and
-                is labelled that way throughout.
+                is labeled that way throughout.
               </li>
             </ol>
           </div>
@@ -122,7 +122,7 @@ export default function Page() {
 
         <section>
           <div className="col">
-            <h2>What I&rsquo;d like from you</h2>
+            <h2>What I&rsquo;m hoping for</h2>
             <p className="lead">
               I&rsquo;d like to start collaborating. Does the approach resonate: expanding gaps into
               critical paths, and identifying where AI is having an impact and where it could?
@@ -145,8 +145,9 @@ export default function Page() {
       <div className="footer">
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
-            David Sendor. I spent 20 years applying AI to hard problems in large organizations, most
-            recently leading Enterprise Data Science at Liberty Mutual.{' '}
+            David Sendor. I spent 20 years applying AI to hard problems in large organizations,
+            including previously leading Enterprise Data Science at Liberty Mutual. I&rsquo;m now
+            focusing on exploring this question.{' '}
             <a href="https://www.linkedin.com/in/dsendor/" target="_blank" rel="noreferrer">
               LinkedIn
             </a>{' '}
@@ -157,7 +158,7 @@ export default function Page() {
             <a href={data.source.url} target="_blank" rel="noreferrer">
               gap-map.org
             </a>
-            . Nothing here reorders or ranks your gaps, and your data is unmodified.{' '}
+            . Nothing here reorders or ranks the Gap Map&rsquo;s gaps, and the source data is unmodified.{' '}
             <a href="./gap-map-augmented.csv">CSV</a> &middot; <a href="./data.json">JSON</a>{' '}
             &middot;{' '}
             <a href="https://github.com/dsendor/science-gap-map-analysis" target="_blank" rel="noreferrer">

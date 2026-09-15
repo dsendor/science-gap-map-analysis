@@ -129,7 +129,7 @@ export default function MapBrowser({ gaps, newGaps }) {
           </label>
         </div>
         <p style={{ fontSize: 14.5, color: 'var(--ink-3)', margin: '0 0 16px' }}>
-          Showing {rows.length} of {all.length}. Your export order, not a ranking.
+          Showing {rows.length} of {all.length}. The Gap Map&rsquo;s export order, not a ranking.
         </p>
         {rows.map((g) => (
           <GapCard key={g.id} gap={g} />

@@ -18,19 +18,19 @@ export default function ProposedPage() {
               Claude wrote these gap statements, working from Convergent&rsquo;s own house format. Neither has been reviewed by a person.
             </PageProvenance>
             <p className="lead">
-              Written to your format: a title-case declarative name, 30 to 60 words, no urgency
+              Written to the Gap Map&rsquo;s format: a title-case declarative name, 30 to 60 words, no urgency
               language, no named vendors.
             </p>
             <p>
-              Each one was greped against all {s.n_gaps} of your gaps and all {s.n_capabilities} of
-              your capabilities for near-duplicates, and checked against current programmes to see
+              Each one was grepped against all {s.n_gaps} of the map&rsquo;s gaps and all {s.n_capabilities} of
+              its capabilities for near-duplicates, and checked against current programs to see
               whether it is already funded and under construction. Two of those funding checks came
               back &ldquo;not clear&rdquo;, and say so. Open a card for both tests, the full
               near-duplicate check, and the funding check.
             </p>
             <p>
               These live in their own table with ids prefixed <code>new-</code>. None of them is a
-              Convergent-style UUID, so nothing downstream can confuse a proposal with your data.
+              Convergent-style UUID, so nothing downstream can confuse a proposal with Convergent&rsquo;s data.
             </p>
           </div>
         </section>

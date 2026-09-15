@@ -4,7 +4,7 @@
 export const MERMAID = {
   'path-telescope-elapsed-time': `flowchart LR
     L1["1 Science case<br/>definition"] --> L2["2 Concept studies, ranking<br/>and design competition"]
-    L2 --> L3["3 Phase B start and<br/>funding authorisation"]
+    L2 --> L3["3 Phase B start and<br/>funding authorization"]
     L3 --> L4["4 Design<br/>maturation"]
     L4 --> L5["5 Fabrication"]
     L5 --> L6["6 Integration<br/>and test"]
@@ -31,7 +31,7 @@ export const MERMAID = {
   intersection: `flowchart TB
     subgraph C1["Chain 1 · Astrophysics · elapsed time"]
         A2["Strategic ranking"]
-        A3["Funding authorisation"]
+        A3["Funding authorization"]
     end
     subgraph C2["Chain 2 · Metascience · cost"]
         B3["Reviewer recruitment<br/>and matching"]

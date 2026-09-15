@@ -50,15 +50,15 @@ export default function MethodPage() {
             </p>
             <ul>
               <li>
-                <strong>No human reviewed any label.</strong> All {s.n_gaps} gaps were labelled,
+                <strong>No human reviewed any label.</strong> All {s.n_gaps} gaps were labeled,
                 audited and written up in {mins} minutes of agent time.
               </li>
               <li>
-                <strong>A second pass relabelled all {s.n_gaps} blind</strong> and disagreed often
+                <strong>A second pass relabeled all {s.n_gaps} blind</strong> and disagreed often
                 enough to be worth publishing. The rates are below.
               </li>
               <li>
-                <strong>Three cold reviews</strong> then read the artifact as one of you would, and
+                <strong>Three cold reviews</strong> then read the artifact as someone at Convergent would, and
                 found real errors. Those are below too.
               </li>
               <li>
@@ -84,7 +84,7 @@ export default function MethodPage() {
             <p>
               The first pass produced a clean gradient: the share of gaps each kind of work blocks
               where the AI for it already works ran from 60% for reading and synthesis down to 0% for
-              physical build. A second pass relabelled all {data.relabel.n} gaps blind, against a
+              physical build. A second pass relabeled all {data.relabel.n} gaps blind, against a
               revised taxonomy, by labelers who never saw the first set, with predictions registered
               in a commit beforehand. It did not reproduce that result.
             </p>
@@ -111,7 +111,7 @@ export default function MethodPage() {
               capability exists, or that applying it would move this gap? For technical categories
               those coincide. For institutional ones they come apart completely: convening a standards
               body is available this afternoon, and getting universal DNA-synthesis screening adopted
-              is not. I labelled institutional gaps on efficacy and the relabelers read availability.
+              is not. I labeled institutional gaps on efficacy and the relabelers read availability.
             </p>
             <p>
               A third pass repaired maturity against the sharper definition &mdash; applying it would
@@ -160,7 +160,7 @@ export default function MethodPage() {
               </li>
               <li>
                 <strong>Outcomes are a text field on a gap.</strong> There are more outcomes than
-                gaps, and one capability unlocks outcomes across several fields. Modelling them
+                gaps, and one capability unlocks outcomes across several fields. Modeling them
                 properly is a schema change.
               </li>
               <li>
@@ -184,7 +184,7 @@ export default function MethodPage() {
           <div className="col">
             
             <p>
-              A second labeller, which never saw the first set, relabelled a stratified sample of{' '}
+              A second labeler, which never saw the first set, relabeled a stratified sample of{' '}
               {audit.n_sampled} of the {s.n_gaps} gaps. The sample oversamples the rare tiers on
               purpose, because that is where the taxonomy is hardest, so the raw rate is biased upward
               and the population-weighted figure is the one that means anything.
@@ -239,7 +239,7 @@ export default function MethodPage() {
               <strong>One of my four tiers does not work.</strong> &ldquo;Proxy only&rdquo; ran{' '}
               {pct(m.strata.find((r) => r.stratum === 'Proxy only')?.disagreement ?? 0)} disagreement
               against 0% for directly measurable, and every auditor independently reported it was the
-              nearest alternative and almost never the winner. If you adopt a measurability attribute,
+              nearest alternative and almost never the winner. If Convergent adopts a measurability attribute,
               three tiers would work better than four. On the kind of work, raw sample disagreement was{' '}
               {pct(audit.dimensions.ai_type.raw_disagreement)}, and the audit found three gap types the
               seven-value list handles badly: closed-loop control of a physical system, gaps where AI
@@ -256,7 +256,7 @@ export default function MethodPage() {
                       <tr>
                         <th>Gap</th>
                         <th>Dimension</th>
-                        <th>First labeller</th>
+                        <th>First labeler</th>
                         <th>Auditor</th>
                       </tr>
                     </thead>

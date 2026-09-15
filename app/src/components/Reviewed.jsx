@@ -13,7 +13,7 @@ export const HUMAN_REVIEWED = {
   'doing-and-publishing-research-is-expensive-and-subject-to-structural-roadblocks': true,
 };
 
-export function AiOnly({ title = 'Labelled by a model. No person has checked it.' }) {
+export function AiOnly({ title = 'Labeled by a model. No person has checked it.' }) {
   return (
     <span className="tag" title={title} style={{ marginLeft: 6, verticalAlign: '2px' }}>
       AI only

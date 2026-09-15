@@ -18,12 +18,12 @@ export default function MapPage() {
               Every label on this page is Claude&rsquo;s judgment, with a written rationale and a confidence flag. No person has reviewed any of them.
             </PageProvenance>
             <p className="lead">
-              All {s.n_gaps} gaps in your export order, each with your problem statement and the four
-              added attributes. Open a card for the reasoning behind every label and your own
-              foundational capabilities for that gap. Titles link back to gap-map.org.
+              All {s.n_gaps} gaps in the Gap Map&rsquo;s export order, each with its problem statement and the
+              four added attributes. Open a card for the reasoning behind every label and the map&rsquo;s
+              own foundational capabilities for that gap. Titles link back to gap-map.org.
             </p>
             <p>
-              <a href="../gap-map-augmented.csv">Download the CSV</a>, keyed on your{' '}
+              <a href="../gap-map-augmented.csv">Download the CSV</a>, keyed on the Gap Map&rsquo;s{' '}
               <code>id</code> and <code>slug</code>, or the{' '}
               <a href="../data.json">JSON</a> this page runs on.
             </p>

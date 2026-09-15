@@ -30,7 +30,7 @@ export default function MissingPage() {
         <>
           <p>
             There are {spell(nPaths)} chains here, built by hand, against {s.n_gaps} gaps. They
-            exist to show something a catalogue structurally cannot &mdash; that two gaps in
+            exist to show something a catalog structurally cannot &mdash; that two gaps in
             different fields can share one binding link, so bottlenecks recur across fields and can
             be counted. {Spell(nPaths)} chains prove the shape exists. They say nothing about where
             else it occurs.
@@ -72,7 +72,7 @@ export default function MissingPage() {
             Not fixed here, and the reason is not caution. Adding a fourth value means re-reviewing
             every gap already in the middle bucket, because a value nobody has applied to the whole
             set is worse than three honest ones &mdash; those rows would silently mean &ldquo;2-5 or
-            5-10, unexamined&rdquo;. That is a full labelling pass with a blind second reader.
+            5-10, unexamined&rdquo;. That is a full labeling pass with a blind second reader.
           </p>
           <div className="pull">
             <p>
@@ -134,13 +134,13 @@ export default function MissingPage() {
     },
     {
       h: 'Decomposing composite gaps',
-      what: 'Some gap statements bundle several unrelated research programmes under one heading, and one tier and one AI type cannot represent them.',
+      what: 'Some gap statements bundle several unrelated research programs under one heading, and one tier and one AI type cannot represent them.',
       why: 'Written up in full, with both patterns and a worked proposal. Not applied, because splitting them means authoring gap records Convergent did not write.',
     },
     {
       h: 'Urgency and impact, if they ever want them',
       what: 'There is no score column anywhere in this augmentation, by design.',
-      why: 'Convergent deferred prioritisation deliberately and a stranger ranking their map would be presumptuous. But the reason to build a gap map is eventually to choose. Listed because refusing to build it was a decision, not an oversight, and because the call is theirs.',
+      why: 'Convergent deferred prioritization deliberately and a stranger ranking their map would be presumptuous. But the reason to build a gap map is eventually to choose. Listed because refusing to build it was a decision, not an oversight, and because the call is theirs.',
     },
     {
       h: 'Coverage',

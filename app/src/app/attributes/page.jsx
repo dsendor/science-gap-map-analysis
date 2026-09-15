@@ -167,7 +167,7 @@ export default function AttributesPage() {
           <div className="col">
             <h2>2. The measurability tier</h2>
             <p>
-              Whether the gap has something you could actually watch. Your own roadmapping criterion
+              Whether the gap has something you could actually watch. Convergent&rsquo;s own roadmapping criterion
               asks whether success is unambiguously measurable, and applying it to all{' '}
               {s.n_gaps} gaps turns out to sort them sharply.
             </p>
