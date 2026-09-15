@@ -17,6 +17,8 @@ What is open is small.
 
 ## Open
 
+- [ ] **Merge `front-page-citation`** — the Organization Science source moves out of the
+      middle of a takeaway on the front page and into a numbered footnote.
 - [ ] **Merge `docs-and-deploy-fix`** — the production build fix and this todo.
 - [ ] `research-log/` still holds `prereg-relabel.md` and `relabel-report.md` paths that
       `engine/compare-relabel.mjs` now writes to but which do not exist there yet. The

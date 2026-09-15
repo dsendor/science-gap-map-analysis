@@ -59,15 +59,13 @@ export default function Page() {
                 The saving is real and large, and it has not arrived as cheaper publishing.
                 Submissions rose 42% after ChatGPT&rsquo;s release &mdash; against a 20% bump
                 during COVID &mdash; and the work that came off authors landed downstream on
-                volunteer editors doing desk screening.{' '}
-                <a
-                  href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.2026.ed.v37.n3"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Organization Science, 2026, ~7,000 manuscripts
-                </a>
-                . This has happened before: arXiv made dissemination free more than thirty years
+                volunteer editors doing desk screening.
+                <sup className="fn-ref">
+                  <a href="#fn-orgsci" id="fn-orgsci-ref" aria-label="Source, note 1">
+                    1
+                  </a>
+                </sup>{' '}
+                This has happened before: arXiv made dissemination free more than thirty years
                 ago and neither subscription prices nor the time to publish fell, because what
                 journals sell is not distribution.
               </li>
@@ -84,6 +82,21 @@ export default function Page() {
             <p>
               <a href="./chains/">
                 This chain step by step, plus a second gap (telescopes) that Claude did on its own
+              </a>
+            </p>
+            <p className="footnote" id="fn-orgsci">
+              <sup>1</sup> Organization Science AI Task Force,{' '}
+              <a
+                href="https://pubsonline.informs.org/doi/abs/10.1287/orsc.2026.ed.v37.n3"
+                target="_blank"
+                rel="noreferrer"
+              >
+                &ldquo;More Versus Better: Artificial Intelligence, Incentives, and the Emerging
+                Crisis in Peer Review&rdquo;
+              </a>
+              , <em>Organization Science</em> editorial, 2026. Covers roughly 7,000 manuscripts.{' '}
+              <a href="#fn-orgsci-ref" aria-label="Back to the text">
+                &#8617;
               </a>
             </p>
           </div>

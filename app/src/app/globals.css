@@ -258,6 +258,13 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; color: var(--ink-2); margin-top: 14px; }
 .legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; margin-right: 7px; vertical-align: -1px; }
 figcaption { font-size: 14px; color: var(--ink-3); margin-top: 12px; max-width: 76ch; }
+/* A source moved out of the prose into a numbered note, in figcaption's voice. */
+.footnote { font-size: 14px; color: var(--ink-3); margin-top: 24px; max-width: 76ch; }
+.footnote a { color: inherit; }
+.fn-ref { font-size: 0.72em; line-height: 0; margin-left: 1px; }
+.fn-ref a { text-decoration: none; }
+/* Land the jump with room above, not flush against the window edge. */
+.footnote, .fn-ref a { scroll-margin-top: 96px; }
 
 /* chain */
 @media (max-width: 720px) { .chain { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
