@@ -6,7 +6,7 @@
       "gap_id": "1c1cb37e-2a00-800b-8598-ea123934c801",
       "outcome": {
         "outcome": "Releasing a capable model stops meaning releasing its worst uses along with it.",
-        "rationale": "Their two capabilities target robustness and decentralised control, both aimed at decoupling capability from misusability.",
+        "rationale": "Their two capabilities target robustness and decentralized control, both aimed at decoupling capability from misusability.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -144,7 +144,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "A proof either checks in a formal system or it does not, and benchmark theorem sets with formalisation rates already exist.",
+        "rationale": "A proof either checks in a formal system or it does not, and benchmark theorem sets with formalization rates already exist.",
         "confidence": "confident"
       }
     },
@@ -189,7 +189,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Identifying and optimising 2D semiconductor stacks is a materials search problem with a well-specified objective.",
+          "rationale": "Identifying and optimizing 2D semiconductor stacks is a materials search problem with a well-specified objective.",
           "confidence": "guess"
         },
         {

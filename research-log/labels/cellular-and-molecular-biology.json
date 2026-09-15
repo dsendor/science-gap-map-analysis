@@ -6,7 +6,7 @@
       "gap_id": "1b4cb37e-2a00-80b8-a4f8-ee697b40331b",
       "outcome": {
         "outcome": "One model of cell state that predicts the response to a perturbation it has never seen, replacing a stack of per-assay descriptions.",
-        "rationale": "Their description names predictive modelling of cell behaviour as the goal; the unlock is generalisation to unseen perturbations.",
+        "rationale": "Their description names predictive modeling of cell behavior as the goal; the unlock is generalization to unseen perturbations.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -14,7 +14,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Single-cell foundation models over multimodal omics exist today; the open question is generalisation, not feasibility.",
+          "rationale": "Single-cell foundation models over multimodal omics exist today; the open question is generalization, not feasibility.",
           "confidence": "confident"
         },
         {

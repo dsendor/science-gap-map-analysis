@@ -14,7 +14,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "All three capabilities are new funding and organisational structures; no technical capability moves this gap at all.",
+          "rationale": "All three capabilities are new funding and organizational structures; no technical capability moves this gap at all.",
           "confidence": "confident"
         }
       ],
@@ -36,7 +36,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Adaptive design, arm allocation and enrichment are optimisation problems over an explicit information objective.",
+          "rationale": "Adaptive design, arm allocation and enrichment are optimization problems over an explicit information objective.",
           "confidence": "confident"
         },
         {

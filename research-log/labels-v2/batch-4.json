@@ -9,14 +9,14 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "The missions are scientifically specified and technically conceivable; what is missing is an agency willing to fly them and a funding/governance route for independent alternatives. The blocker is an organisation, which is the definition of this type. Speculative because nothing about current AI demonstrably reallocates decadal-survey priorities or stands up non-governmental planetary programmes.",
+          "rationale": "The missions are scientifically specified and technically conceivable; what is missing is an agency willing to fly them and a funding/governance route for independent alternatives. The blocker is an organization, which is the definition of this type. Speculative because nothing about current AI demonstrably reallocates decadal-survey priorities or stands up non-governmental planetary programs.",
           "confidence": "confident"
         },
         {
           "ai_type": "Design and optimization search",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "The lever AI does have on this gap is driving mission and spacecraft cost down through trajectory optimisation and instrument/bus co-design, which changes who can afford an independent mission.",
+          "rationale": "The lever AI does have on this gap is driving mission and spacecraft cost down through trajectory optimization and instrument/bus co-design, which changes who can afford an independent mission.",
           "confidence": "confident"
         },
         {
@@ -27,7 +27,7 @@
           "confidence": "guess"
         }
       ],
-      "discriminating_test": "Ask what would still be missing if every listed AI technique worked perfectly tomorrow. Answer: an appropriations line and a flight programme. No technique-shaped capability is the binding constraint, so the blocker is institutional rather than any of the seven technical types.",
+      "discriminating_test": "Ask what would still be missing if every listed AI technique worked perfectly tomorrow. Answer: an appropriations line and a flight program. No technique-shaped capability is the binding constraint, so the blocker is institutional rather than any of the seven technical types.",
       "nearest_alternative": "Design and optimization search"
     },
     {
@@ -44,7 +44,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "Speculative",
           "is_primary": 0,
-          "rationale": "Optimising the measurement scheme itself — which QND probe settings, illumination patterns and sampling maximise information per unit dose — is an inverse-design problem over a defined space.",
+          "rationale": "Optimizing the measurement scheme itself — which QND probe settings, illumination patterns and sampling maximize information per unit dose — is an inverse-design problem over a defined space.",
           "confidence": "guess"
         }
       ],
@@ -65,7 +65,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Epidemic tracking, transmission forecasting and fine-grained economic modelling of policy options are prediction problems on top of the detection layer.",
+          "rationale": "Epidemic tracking, transmission forecasting and fine-grained economic modeling of policy options are prediction problems on top of the detection layer.",
           "confidence": "confident"
         },
         {
@@ -114,7 +114,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Chemputers, broader chemistry automation and generative-model-driven parallel library synthesis are the canonical self-driving-lab case: bench-scale, narrow domain, closed loop from proposed molecule through executed synthesis to characterisation. This is the one field where the class is unambiguously working now.",
+          "rationale": "Chemputers, broader chemistry automation and generative-model-driven parallel library synthesis are the canonical self-driving-lab case: bench-scale, narrow domain, closed loop from proposed molecule through executed synthesis to characterization. This is the one field where the class is unambiguously working now.",
           "confidence": "confident"
         },
         {
@@ -170,7 +170,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "Wafer-scale growth of atomically thin semiconductors is a high-dimensional process-optimisation loop of exactly the kind self-driving materials labs run.",
+          "rationale": "Wafer-scale growth of atomically thin semiconductors is a high-dimensional process-optimization loop of exactly the kind self-driving materials labs run.",
           "confidence": "guess"
         }
       ],
@@ -184,7 +184,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Nine of the thirteen capabilities are modelling and forecasting — fine-grained impact modelling, ocean heat and circulation, ecosystem feedbacks, solar flares, earthquake prediction. Learned weather and climate emulators run operationally today at cost and latency that make localised rapid response feasible, which is precisely the 'lack fine-grained models and rapid response' the gap names.",
+          "rationale": "Nine of the thirteen capabilities are modeling and forecasting — fine-grained impact modeling, ocean heat and circulation, ecosystem feedbacks, solar flares, earthquake prediction. Learned weather and climate emulators run operationally today at cost and latency that make localized rapid response feasible, which is precisely the 'lack fine-grained models and rapid response' the gap names.",
           "confidence": "confident"
         },
         {
@@ -219,7 +219,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "The gap's own word is 'fragmented'. Recycling economics, jurisdictional splits in wildfire and ocean management, and standards for material streams are organisational blockers that no sorting robot removes.",
+          "rationale": "The gap's own word is 'fragmented'. Recycling economics, jurisdictional splits in wildfire and ocean management, and standards for material streams are organizational blockers that no sorting robot removes.",
           "confidence": "confident"
         },
         {
@@ -240,7 +240,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "The 'recognition code' is a learnable map from receptor sequence to antigen specificity — a property-prediction problem, and TCR/BCR–epitope binding prediction is exactly that. 2-5 years for this gap: within-repertoire prediction works, generalisation to unseen epitopes and unseen MHC alleles does not yet.",
+          "rationale": "The 'recognition code' is a learnable map from receptor sequence to antigen specificity — a property-prediction problem, and TCR/BCR–epitope binding prediction is exactly that. 2-5 years for this gap: within-repertoire prediction works, generalization to unseen epitopes and unseen MHC alleles does not yet.",
           "confidence": "confident"
         },
         {
@@ -268,7 +268,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Bench-scale lab automation running biological protocols end to end — the 'bio lab of the future' — is this type. 2-5 years rather than Working now because biology automation lags the chemistry case the class is mature in: living samples, brittle protocols, contamination and long assay latencies mean cloud labs and biofoundries exist but do not generalise across the bioengineering workflows this gap covers.",
+          "rationale": "Bench-scale lab automation running biological protocols end to end — the 'bio lab of the future' — is this type. 2-5 years rather than Working now because biology automation lags the chemistry case the class is mature in: living samples, brittle protocols, contamination and long assay latencies mean cloud labs and biofoundries exist but do not generalize across the bioengineering workflows this gap covers.",
           "confidence": "confident"
         },
         {
@@ -366,7 +366,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Turbulence is the archetypal case of an expensive simulation (DNS) that learned closures and emulators replace. 2-5 years for this gap: ML subgrid closures and neural solvers beat classical models in specific geometries and Reynolds regimes now, but generalising out of distribution — which is what 'modeling turbulence' means — is not there.",
+          "rationale": "Turbulence is the archetypal case of an expensive simulation (DNS) that learned closures and emulators replace. 2-5 years for this gap: ML subgrid closures and neural solvers beat classical models in specific geometries and Reynolds regimes now, but generalizing out of distribution — which is what 'modeling turbulence' means — is not there.",
           "confidence": "confident"
         },
         {
@@ -471,7 +471,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "The gap is that models are too simple to capture global dynamics and forecasts are unreliable: the lever is learned emulation of complex systems and better forecasting, covering complex-systems simulation techniques, radical-transformation modelling and AI forecasting. 2-5 years for this gap because AI forecasters are now competitive on short-horizon resolvable questions but nothing validates emulators of counterfactual macroeconomic regimes.",
+          "rationale": "The gap is that models are too simple to capture global dynamics and forecasts are unreliable: the lever is learned emulation of complex systems and better forecasting, covering complex-systems simulation techniques, radical-transformation modeling and AI forecasting. 2-5 years for this gap because AI forecasters are now competitive on short-horizon resolvable questions but nothing validates emulators of counterfactual macroeconomic regimes.",
           "confidence": "guess"
         },
         {
@@ -499,7 +499,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "'Program complex organisms and orchestrate developmental pathways' is inverse design: specify a desired morphology or trajectory, search for the genetic and signalling program that produces it. Speculative for this gap — de novo design of multicellular developmental programs has no working instance, unlike single-protein or single-circuit design.",
+          "rationale": "'Program complex organisms and orchestrate developmental pathways' is inverse design: specify a desired morphology or trajectory, search for the genetic and signaling program that produces it. Speculative for this gap — de novo design of multicellular developmental programs has no working instance, unlike single-protein or single-circuit design.",
           "confidence": "guess"
         },
         {

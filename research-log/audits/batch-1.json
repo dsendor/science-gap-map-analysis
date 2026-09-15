@@ -40,7 +40,7 @@
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the blocker seeing the system or modelling its dynamics? The gap names 'the underlying dynamics, feedback loops, and thresholds' as the object, and anticipation requires a model that maps current state to distance-from-threshold. Detection alone cannot do this: you can count every bee and still not know where the pollination network breaks. Maturity is 2-5 years because learned ecosystem dynamics models validated against observed regime shifts do not yet exist at the scale or with the skill the gap requires, unlike the detection layer.",
+      "discriminating_test": "Is the blocker seeing the system or modeling its dynamics? The gap names 'the underlying dynamics, feedback loops, and thresholds' as the object, and anticipation requires a model that maps current state to distance-from-threshold. Detection alone cannot do this: you can count every bee and still not know where the pollination network breaks. Maturity is 2-5 years because learned ecosystem dynamics models validated against observed regime shifts do not yet exist at the scale or with the skill the gap requires, unlike the detection layer.",
       "nearest_alternative": "Sensing and signal processing",
       "note": "Two of Convergent's three capabilities are monitoring, so Sensing is the obvious pick. Rejected because bioacoustic, eDNA and remote-sensing classification are largely working now and feed the anticipation problem rather than constituting it. This is a defensible disagreement point."
     },
@@ -65,7 +65,7 @@
       "dimension": "ai_type",
       "value": "LLM reasoning and synthesis",
       "maturity": "Speculative",
-      "discriminating_test": "The gap's object is AI reasoning and planning itself, so the type is fixed by subject matter; the real call is maturity. Would this be closed on a 2-5 year horizon? The gap defines closure as breadth comparable to human cognition, and every route Convergent lists (mimic human evolution in silico, developmentally realistic training, holistic brain-inspired architectures, Bayesian cognitive architectures) is an unvalidated research programme rather than a scaling curve. Incremental breadth is shipping now, but 'no longer narrow compared to human cognition' has no demonstrated path, so Speculative.",
+      "discriminating_test": "The gap's object is AI reasoning and planning itself, so the type is fixed by subject matter; the real call is maturity. Would this be closed on a 2-5 year horizon? The gap defines closure as breadth comparable to human cognition, and every route Convergent lists (mimic human evolution in silico, developmentally realistic training, holistic brain-inspired architectures, Bayesian cognitive architectures) is an unvalidated research program rather than a scaling curve. Incremental breadth is shipping now, but 'no longer narrow compared to human cognition' has no demonstrated path, so Speculative.",
       "nearest_alternative": "2-5 years (same type)",
       "note": "Taxonomy fit issue: this gap is reflexive. Every other gap asks which AI would move a science problem; here the science problem is AI. The type table has no entry for 'AI capability research itself', and LLM reasoning and synthesis is the least-bad container rather than a clean match. Flagging rather than inventing a value."
     },
@@ -81,7 +81,7 @@
       "gap_id": "1c1cb37e-2a00-80a7-ad9a-c209405e462d",
       "dimension": "measurability",
       "value": "Verification contested",
-      "discriminating_test": "Applying the taxonomy's explicit tiebreaker: could a measurement in principle be taken, with people still disagreeing about what it showed? Yes, and it is taken routinely. Scheming, sandbagging and deceptive-alignment evaluations, and interpretability probes for internal goal representations, are run today, and the field argues hard about whether a passing or failing result tells you anything about a deployed system's behaviour under distribution shift. The instrument exists; the verdict is what is contested.",
+      "discriminating_test": "Applying the taxonomy's explicit tiebreaker: could a measurement in principle be taken, with people still disagreeing about what it showed? Yes, and it is taken routinely. Scheming, sandbagging and deceptive-alignment evaluations, and interpretability probes for internal goal representations, are run today, and the field argues hard about whether a passing or failing result tells you anything about a deployed system's behavior under distribution shift. The instrument exists; the verdict is what is contested.",
       "nearest_alternative": "Counterfactual required",
       "note": "This is the hardest tier call in the batch and I expect disagreement here. The tier 4 reading is strong: catastrophic loss of control is an event that has not occurred, so safety-in-deployment has no observation set, exactly like the calibration example of research that never happened. I went tier 3 only because the taxonomy instructs that when torn, the existence of a takeable-in-principle measurement decides it, and eval suites plus mechanistic interpretability are precisely that. If the adjudicator prefers tier 4 here I would not argue hard, and would accept a downgrade to guess."
     },
@@ -106,7 +106,7 @@
       "gap_id": "1b4cb37e-2a00-807c-88c6-d543174bdbd2",
       "dimension": "measurability",
       "value": "Verification contested",
-      "discriminating_test": "Could a measurement be taken with the field still disagreeing? Yes. Candidate observables for 'is this model system representative' exist and are being built: predictivity of held-out human neural recordings, representational similarity to human cortex, behavioural match in embodied testbeds. The field does not agree that hitting them establishes validity, because a system can match recorded responses through a different mechanism, and the organoid-versus-human-cortex argument is exactly a dispute about what a match would prove.",
+      "discriminating_test": "Could a measurement be taken with the field still disagreeing? Yes. Candidate observables for 'is this model system representative' exist and are being built: predictivity of held-out human neural recordings, representational similarity to human cortex, behavioral match in embodied testbeds. The field does not agree that hitting them establishes validity, because a system can match recorded responses through a different mechanism, and the organoid-versus-human-cortex argument is exactly a dispute about what a match would prove.",
       "nearest_alternative": "Proxy only",
       "note": "Proxy only would say we can measure adjacent things (expression similarity, firing statistics) but not representativeness. Rejected on the tier 3 wording 'a candidate observable exists or is being built': digital replicas are being benchmarked against human data right now, so the deficit is verdict agreement, not instrument availability."
     },
@@ -115,7 +115,7 @@
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the model system that closes this gap a learned emulator or a physical construct? Four of Convergent's seven capabilities (data-driven AI models of brain systems, digital replicas of a whole model-organism brain, embodied testbeds, behaviour-space datasets) are learned emulators standing in for an inaccessible human brain, which is the ML surrogates row verbatim. The wet capabilities (ex vivo human brains, in vitro cortex) are biology where AI is supporting rather than substantive. Maturity 2-5 years: whole-brain digital replicas of a model organism are in progress, not delivered.",
+      "discriminating_test": "Is the model system that closes this gap a learned emulator or a physical construct? Four of Convergent's seven capabilities (data-driven AI models of brain systems, digital replicas of a whole model-organism brain, embodied testbeds, behavior-space datasets) are learned emulators standing in for an inaccessible human brain, which is the ML surrogates row verbatim. The wet capabilities (ex vivo human brains, in vitro cortex) are biology where AI is supporting rather than substantive. Maturity 2-5 years: whole-brain digital replicas of a model organism are in progress, not delivered.",
       "nearest_alternative": "Autonomous experimentation",
       "note": "Autonomous experimentation would fit if organoid and in vitro cortical model development were the primary route, since that is bench-scale closed-loop work. Rejected because the gap's framing (digital reconstructions, embodied simulations) puts the emulator half first, and because a self-driving lab does not solve 'this model is not human'."
     },
@@ -133,14 +133,14 @@
       "value": "Proxy only",
       "discriminating_test": "Is there a specific measurement the field would accept as decisive, or only an accumulation of indicators? For quantum gravity, the tier 3 calibration case, the field can name the experiment it is arguing about. Here it cannot: there is no observation whose result would settle whether a polity's collective decision-making is better informed. What can be measured is adoption, turnout, participant counts, cryptographic audit properties and post-deliberation opinion shift, all of which are inputs or adjacent effects. That is the Proxy only definition.",
       "nearest_alternative": "Verification contested",
-      "note": "The tier 3 case is that deliberative-poll instruments exist and their construct validity is disputed. Rejected because the dispute is not organised around a candidate discriminator anyone expects to be decisive; it is the ordinary condition of a construct with no agreed operationalisation. I flag that this is the second-hardest tier call in the batch, and that a labeler using the literal 'could a measurement be taken' tiebreaker would land on tier 3."
+      "note": "The tier 3 case is that deliberative-poll instruments exist and their construct validity is disputed. Rejected because the dispute is not organized around a candidate discriminator anyone expects to be decisive; it is the ordinary condition of a construct with no agreed operationalization. I flag that this is the second-hardest tier call in the batch, and that a labeler using the literal 'could a measurement be taken' tiebreaker would land on tier 3."
     },
     {
       "gap_id": "1c1cb37e-2a00-801b-bbfd-c904de35f2b4",
       "dimension": "ai_type",
       "value": "LLM reasoning and synthesis",
       "maturity": "Working now",
-      "discriminating_test": "What does AI actually contribute here, as opposed to what the gap needs overall? The gap needs cryptography for voting (not AI at all) and language understanding for deliberation. The deliberation half is eliciting, clustering and fairly summarising the positions of a large population and finding statements that bridge factions, which is language synthesis. Working now: consensus-statement generation and opinion-clustering deployments already run at population scale, so the constraint is deployment rather than capability.",
+      "discriminating_test": "What does AI actually contribute here, as opposed to what the gap needs overall? The gap needs cryptography for voting (not AI at all) and language understanding for deliberation. The deliberation half is eliciting, clustering and fairly summarizing the positions of a large population and finding statements that bridge factions, which is language synthesis. Working now: consensus-statement generation and opinion-clustering deployments already run at population scale, so the constraint is deployment rather than capability.",
       "nearest_alternative": "Coordination and institutional",
       "note": "Coordination is arguable, since the actual blocker is that election authorities and legislatures do not adopt these tools. Rejected because Coordination in this taxonomy covers AI applied to allocation and review, and here AI is doing linguistic work while the institution is the passive adopter. Taxonomy fit note: 'Improved Voting and Auditing Protocols' is cryptography with no AI content, so one of the two capabilities under this gap is outside the taxonomy's frame entirely."
     },
@@ -165,7 +165,7 @@
       "dimension": "ai_type",
       "value": "Coordination and institutional",
       "maturity": "2-5 years",
-      "discriminating_test": "If a perfect robust-supply-chain optimizer existed tomorrow, would supply chains become robust? No, because each firm optimizes its own cost and no actor owns system-level resilience; the optimum the optimizer finds is not the one anyone is paid to implement. Run it the other way: with today's tools plus strategic reserves, mandated redundancy and shared visibility requirements, fragility falls immediately. The blocker is an organisation rather than a technique, which is the Coordination row verbatim.",
+      "discriminating_test": "If a perfect robust-supply-chain optimizer existed tomorrow, would supply chains become robust? No, because each firm optimizes its own cost and no actor owns system-level resilience; the optimum the optimizer finds is not the one anyone is paid to implement. Run it the other way: with today's tools plus strategic reserves, mandated redundancy and shared visibility requirements, fragility falls immediately. The blocker is an organization rather than a technique, which is the Coordination row verbatim.",
       "nearest_alternative": "Design and optimization search",
       "note": "Convergent's named capability is literally 'Optimize Circular and Robust Supply Chains', so Design and optimization search is the obvious pick and I expect the original labeler took it. I rejected it under the taxonomy's own instruction that the primary is the type that would move the gap most, not the one most obviously applicable. Maturity 2-5 years: n-tier supplier graph mapping from trade and text data is working now, but AI-assisted allocation and reserve policy is not."
     },
@@ -197,7 +197,7 @@
     {
       "gap_id": "1b3cb37e-2a00-80cd-9213-c8eb788cc657",
       "dimension": "outcome",
-      "value": "Synapse-resolution wiring diagrams with molecular cell identity become obtainable for mammalian brains at a price a normal lab can pay, making circuit-level explanations of behaviour and circuit-level signatures of brain disorders testable rather than hypothesised.",
+      "value": "Synapse-resolution wiring diagrams with molecular cell identity become obtainable for mammalian brains at a price a normal lab can pay, making circuit-level explanations of behavior and circuit-level signatures of brain disorders testable rather than hypothesized.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "The outcome is that circuit-level claims become testable, which is what invisibility currently prevents."
@@ -217,7 +217,7 @@
       "maturity": "Working now",
       "discriminating_test": "What is the new ingredient, given that automated proof search has existed for decades? Tactic search and SMT solving are old and did not close this gap; what changed is language-model generation of candidate lemmas, informal-to-formal statement translation, and reinforcement learning against prover feedback. That is the reasoning-and-synthesis row, and the taxonomy names mathematical reasoning in it explicitly. Working now: systems already reach competition-olympiad level with machine-checked proofs.",
       "nearest_alternative": "Design and optimization search",
-      "note": "Design and optimization search fits the shape of proof search over a defined space, and Convergent's capability name ('RL from Interactive Theorem Prover Feedback') has an optimization flavour. Rejected because the search machinery was never the missing piece; the proposal distribution was."
+      "note": "Design and optimization search fits the shape of proof search over a defined space, and Convergent's capability name ('RL from Interactive Theorem Prover Feedback') has an optimization flavor. Rejected because the search machinery was never the missing piece; the proposal distribution was."
     },
     {
       "gap_id": "1c1cb37e-2a00-8012-aeb4-c0c2e9c20f46",

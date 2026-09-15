@@ -6,7 +6,7 @@
       "gap_id": "1c1cb37e-2a00-80fa-9903-df046affff97",
       "outcome": {
         "outcome": "A local climate hazard gets forecast while there is still time to act on it, not attributed afterwards.",
-        "rationale": "Their description emphasises precision, speed and locality, all of which matter only if response is possible inside the event window.",
+        "rationale": "Their description emphasizes precision, speed and locality, all of which matter only if response is possible inside the event window.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -14,7 +14,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Fine-grained impact modelling and rapid local forecasting are the mature end of learned weather emulation.",
+          "rationale": "Fine-grained impact modeling and rapid local forecasting are the mature end of learned weather emulation.",
           "confidence": "confident"
         },
         {
@@ -123,7 +123,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Simulating intervention consequences works now and is not what is missing; their own framing is that the science is untested at scale, not unmodelled.",
+          "rationale": "Simulating intervention consequences works now and is not what is missing; their own framing is that the science is untested at scale, not unmodeled.",
           "confidence": "confident"
         }
       ],
@@ -145,7 +145,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Their framing is that these systems are outdated and fragmented, which is an organisation and incentive problem rather than a missing technique.",
+          "rationale": "Their framing is that these systems are outdated and fragmented, which is an organization and incentive problem rather than a missing technique.",
           "confidence": "guess"
         },
         {
@@ -163,5 +163,5 @@
       }
     }
   ],
-  "notes": "Climate splits cleanly: observation and modelling gaps are tier-1 with mature AI, intervention gaps are tier-3 or proxy with speculative physical primaries. The tier boundary tracks whether the thing has been done before."
+  "notes": "Climate splits cleanly: observation and modeling gaps are tier-1 with mature AI, intervention gaps are tier-3 or proxy with speculative physical primaries. The tier boundary tracks whether the thing has been done before."
 }

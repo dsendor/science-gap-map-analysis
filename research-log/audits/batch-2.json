@@ -40,7 +40,7 @@
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "What stands between the current state and a usable formal framework — generating candidate definitions, or being able to compute the behaviour of a nonequilibrium many-body system large enough for a candidate definition to be tested on it? The latter: candidate frameworks already outrun the systems we can simulate, and learned emulators of nonequilibrium dynamics are what change that.",
+      "discriminating_test": "What stands between the current state and a usable formal framework — generating candidate definitions, or being able to compute the behavior of a nonequilibrium many-body system large enough for a candidate definition to be tested on it? The latter: candidate frameworks already outrun the systems we can simulate, and learned emulators of nonequilibrium dynamics are what change that.",
       "nearest_alternative": "LLM reasoning and synthesis",
       "note": "LLM reasoning is the tempting pick because the gap names 'formal frameworks', i.e. theory. Rejected because proposing formalisms is not the scarce step; adjudicating them against simulated dynamics at biological scale is. Maturity 2-5 years: neural potentials and learned coarse-grained dynamics are working now at small scale, whole-organism nonequilibrium scale is not."
     },
@@ -90,7 +90,7 @@
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "If robotic deployment hardware appeared tomorrow, would the gap close? No — nobody could say what the intervention would do, and no one would authorise it. The scarce object is a fast enough emulator of the earth system to run the large ensembles that detection, attribution and side-effect bounding require; that is learned emulation of expensive simulation.",
+      "discriminating_test": "If robotic deployment hardware appeared tomorrow, would the gap close? No — nobody could say what the intervention would do, and no one would authorize it. The scarce object is a fast enough emulator of the earth system to run the large ensembles that detection, attribution and side-effect bounding require; that is learned emulation of expensive simulation.",
       "nearest_alternative": "Physical build and manipulation",
       "note": "Physical build is genuinely applicable (pumps on glaciers, dispersal fleets, ocean deployment) and I considered it primary. Rejected because that engineering is not AI-limited, while the evaluation problem is squarely AI-addressable. Maturity 2-5 years: learned weather emulators are operational now, climate-scale and intervention-scenario emulators with credible regional skill are not."
     },
@@ -115,7 +115,7 @@
       "dimension": "ai_type",
       "value": "LLM reasoning and synthesis",
       "maturity": "Working now",
-      "discriminating_test": "Is the named blocker a technique or an organisation? The two capabilities attached are jailbreak resistance and decentralized training — both are engineering programs, and jailbreak resistance in particular advances through models attacking and critiquing models (automated red-teaming, adversarial training, model-based monitoring), which is the LLM reasoning category applied reflexively.",
+      "discriminating_test": "Is the named blocker a technique or an organization? The two capabilities attached are jailbreak resistance and decentralized training — both are engineering programs, and jailbreak resistance in particular advances through models attacking and critiquing models (automated red-teaming, adversarial training, model-based monitoring), which is the LLM reasoning category applied reflexively.",
       "nearest_alternative": "Coordination and institutional",
       "note": "Poorest taxonomy fit in the batch: the taxonomy is built for AI-as-instrument-for-science, and here AI is the object of study rather than the tool. Coordination and institutional is a defensible primary — access policy, liability and compute governance plausibly bind harder than technique — and I would accept it on adjudication. Maturity Working now: automated red-teaming and adversarial hardening are in production today, whatever their sufficiency."
     },
@@ -140,7 +140,7 @@
       "dimension": "ai_type",
       "value": "Coordination and institutional",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the blocker a missing technique or a missing organisation? The gap names the blocker outright — existing government agencies do not realize these missions and 'alternative, independent initiatives are needed'. Nothing about the physics or the hardware is stated as unsolved; who decides, funds and carries risk is.",
+      "discriminating_test": "Is the blocker a missing technique or a missing organization? The gap names the blocker outright — existing government agencies do not realize these missions and 'alternative, independent initiatives are needed'. Nothing about the physics or the hardware is stated as unsolved; who decides, funds and carries risk is.",
       "nearest_alternative": "Physical build and manipulation",
       "note": "Physical build is the tempting technical read — autonomous spacecraft and cheap fabrication lower the cost of an independent mission. Rejected because cost is not the stated blocker and launch costs have already fallen by an order of magnitude without the missions appearing. Maturity 2-5 years: AI for portfolio allocation and review exists but has not been shown to change who funds and flies a planetary mission."
     },
@@ -158,7 +158,7 @@
       "value": "Verification contested",
       "discriminating_test": "Have measurements actually been taken, with the field then disagreeing about what they showed? Yes, at the sharpest possible scale: platform-scale randomized experiments on feed ranking and their effects on beliefs and polarization have been run and published, and the interpretation fight over them is unresolved. Candidate observables exist; agreement that they settle 'epistemic health' does not.",
       "nearest_alternative": "Proxy only",
-      "note": "Proxy only is close — engagement, sharing rates and fact-check volumes are plainly adjacent to the quantity of interest. Rejected because belief accuracy and behavioural outcomes are measured directly in this literature; the failure is agreement about the verdict, not availability of the measurement. Tier 4 considered (what people would otherwise have believed) and rejected for the same reason."
+      "note": "Proxy only is close — engagement, sharing rates and fact-check volumes are plainly adjacent to the quantity of interest. Rejected because belief accuracy and behavioral outcomes are measured directly in this literature; the failure is agreement about the verdict, not availability of the measurement. Tier 4 considered (what people would otherwise have believed) and rejected for the same reason."
     },
     {
       "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
@@ -190,7 +190,7 @@
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the missing thing an extraction of signal from raw instrument output, or a learned model that predicts state and behaviour? The gap names 'predictive modeling of cell behavior' and the attached capability is a universal latent-variable model of cellular state — an emulator of the cell standing in for the experiment, which is the surrogate category.",
+      "discriminating_test": "Is the missing thing an extraction of signal from raw instrument output, or a learned model that predicts state and behavior? The gap names 'predictive modeling of cell behavior' and the attached capability is a universal latent-variable model of cellular state — an emulator of the cell standing in for the experiment, which is the surrogate category.",
       "nearest_alternative": "Sensing and signal processing",
       "note": "Sensing is a real contender given the multimodal-measurement framing (segmentation, deconvolution, cross-modal registration of omics layers). Rejected because those are inputs to the model rather than the gap itself. Maturity 2-5 years: single-cell foundation models exist now, but generalization to unseen perturbations and cell types is not there."
     },
@@ -250,7 +250,7 @@
       "value": "The unsampled majority of Earth's genetic diversity enters the record before habitat change erases it, making lineages and biochemistries that currently have no representative in any database available as objects of study.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
-      "note": "The irreversibility framing (information loss) is part of the gap, so the outcome names what stops being lost, not merely what is catalogued."
+      "note": "The irreversibility framing (information loss) is part of the gap, so the outcome names what stops being lost, not merely what is cataloged."
     },
     {
       "gap_id": "1c1cb37e-2a00-8089-a828-f143cf6f5c86",
@@ -283,7 +283,7 @@
       "value": "Directly measurable",
       "discriminating_test": "Is there an observable with a direction? Yes and it is routinely tracked in the industry: design and documentation hours per project, code-compliance error and rework rates, and cost and schedule variance from tender to completion. There is no dispute about what improvement looks like.",
       "nearest_alternative": "Proxy only",
-      "note": "Proxy only rejected because labour hours and rework are the gap itself ('complex and labor-intensive'), not an adjacent effect. No tier-3 tension: nobody argues about whether a design satisfies a building code."
+      "note": "Proxy only rejected because labor hours and rework are the gap itself ('complex and labor-intensive'), not an adjacent effect. No tier-3 tension: nobody argues about whether a design satisfies a building code."
     },
     {
       "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
@@ -292,12 +292,12 @@
       "maturity": "2-5 years",
       "discriminating_test": "Is the output a document or a design satisfying hard constraints? A building must simultaneously satisfy structural, code, cost, energy and site constraints, so the task is constrained generative search over a defined space, not synthesis of text about buildings.",
       "nearest_alternative": "LLM reasoning and synthesis",
-      "note": "LLM reasoning genuinely covers a large share of the labour (specifications, code interpretation, drawing annotation, contract documents) and would be the pick if paperwork were the whole gap. Rejected because the attached capability is design of buildings and construction plans, i.e. the artifact itself. Physical build and manipulation rejected outright: the gap is design and planning, not on-site construction robotics. Maturity 2-5 years — generative layout and structural optimization tools exist, end-to-end constructible code-compliant generation does not."
+      "note": "LLM reasoning genuinely covers a large share of the labor (specifications, code interpretation, drawing annotation, contract documents) and would be the pick if paperwork were the whole gap. Rejected because the attached capability is design of buildings and construction plans, i.e. the artifact itself. Physical build and manipulation rejected outright: the gap is design and planning, not on-site construction robotics. Maturity 2-5 years — generative layout and structural optimization tools exist, end-to-end constructible code-compliant generation does not."
     },
     {
       "gap_id": "1c1cb37e-2a00-80c4-b958-d7161b660b3e",
       "dimension": "outcome",
-      "value": "Hundreds of fully costed, code-compliant building designs become generatable and comparable per project, so how much of the design space gets explored stops being set by available drafting labour.",
+      "value": "Hundreds of fully costed, code-compliant building designs become generatable and comparable per project, so how much of the design space gets explored stops being set by available drafting labor.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "Weakest outcome in the batch — this gap is closer to an efficiency gain than to something becoming knowable, so the outcome is phrased as the constraint that is removed."

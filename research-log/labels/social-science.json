@@ -20,7 +20,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Learning gains against control, teacher hours reclaimed and cost per student are measurable and routinely trialled.",
+        "rationale": "Learning gains against control, teacher hours reclaimed and cost per student are measurable and routinely trialed.",
         "confidence": "confident"
       }
     },
@@ -58,7 +58,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "The mechanism they describe is competitive pressure on organisations, so the intervention point is incentives and governance, not a technique.",
+          "rationale": "The mechanism they describe is competitive pressure on organizations, so the intervention point is incentives and governance, not a technique.",
           "confidence": "confident"
         },
         {
@@ -79,7 +79,7 @@
       "gap_id": "1c1cb37e-2a00-80e2-a028-ebaa685df3da",
       "outcome": {
         "outcome": "Platform operators get an objective other than engagement that they can actually implement: information environments designed to reward being right.",
-        "rationale": "Their description contrasts algorithms optimising for fleeting engagement with design for epistemic improvement.",
+        "rationale": "Their description contrasts algorithms optimizing for fleeting engagement with design for epistemic improvement.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -87,7 +87,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Contextualisation, fact-check assistance and content curation are working language-model applications, and most of their eleven capabilities are these.",
+          "rationale": "Contextualization, fact-check assistance and content curation are working language-model applications, and most of their eleven capabilities are these.",
           "confidence": "confident"
         },
         {
@@ -123,7 +123,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Deliberation support and preference summarisation at scale are demonstrated language-model applications.",
+          "rationale": "Deliberation support and preference summarization at scale are demonstrated language-model applications.",
           "confidence": "confident"
         }
       ],
@@ -145,7 +145,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Formalisation of policy is translation from natural language into checkable structure, which is a language and reasoning task.",
+          "rationale": "Formalization of policy is translation from natural language into checkable structure, which is a language and reasoning task.",
           "confidence": "confident"
         }
       ],
@@ -174,13 +174,13 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "Cost-effectiveness modelling and large-scale economic experiments in their capability list are prediction and simulation work.",
+          "rationale": "Cost-effectiveness modeling and large-scale economic experiments in their capability list are prediction and simulation work.",
           "confidence": "confident"
         }
       ],
       "measurability": {
         "tier": "Proxy only",
-        "rationale": "Adoption counts and programme reach are measurable, but the welfare gain forgone by non-translation is not observed.",
+        "rationale": "Adoption counts and program reach are measurable, but the welfare gain forgone by non-translation is not observed.",
         "confidence": "confident"
       }
     },
@@ -188,7 +188,7 @@
       "gap_id": "1c1cb37e-2a00-80c2-a1bb-c735bf51fdd9",
       "outcome": {
         "outcome": "Economic models represent structural transformation, not just marginal change, so policy for unprecedented conditions can be tested before it is lived through.",
-        "rationale": "Their description names modelling radical transformations and unpreparedness for emerging trends as the loss.",
+        "rationale": "Their description names modeling radical transformations and unpreparedness for emerging trends as the loss.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -210,7 +210,7 @@
       "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
       "outcome": {
         "outcome": "Qualitative and survey evidence scales the way quantitative data already does, so the how and why of social outcomes stops being the underpowered half of the field.",
-        "rationale": "Their description names qualitative methods as powerful but unscaled, and archaeology as similarly un-modernised.",
+        "rationale": "Their description names qualitative methods as powerful but unscaled, and archaeology as similarly un-modernized.",
         "confidence": "confident"
       },
       "ai_types": [

@@ -174,7 +174,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "The listed capability is simulating nonequilibrium systems at scale, which is a surrogate-modelling problem far beyond current tractable system sizes.",
+          "rationale": "The listed capability is simulating nonequilibrium systems at scale, which is a surrogate-modeling problem far beyond current tractable system sizes.",
           "confidence": "guess"
         },
         {

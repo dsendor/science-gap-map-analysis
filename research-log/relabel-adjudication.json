@@ -41,7 +41,7 @@
       "type": "Coordination and institutional",
       "maturity": "Speculative",
       "confidence": "confident",
-      "note": "Maturity re-adjudicated on the merits (v1 Speculative / v2 Working now; mechanical rule had given Working now). Redesigning how research is funded and organised has no demonstrated mechanism at all, AI-mediated or otherwise. This is the map's counterfactual-required gap: nothing applied today moves it, and no clear path runs from what exists to moving it. Type unchanged from the mechanical adjudication."
+      "note": "Maturity re-adjudicated on the merits (v1 Speculative / v2 Working now; mechanical rule had given Working now). Redesigning how research is funded and organized has no demonstrated mechanism at all, AI-mediated or otherwise. This is the map's counterfactual-required gap: nothing applied today moves it, and no clear path runs from what exists to moving it. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-809a-a069-c93e72813eb6",
@@ -377,7 +377,7 @@
       "type": "Real-time control of physical systems",
       "maturity": "2-5 years",
       "confidence": "guess",
-      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Learned tuning is in operations at existing accelerators and makes them run better, not smaller. The gap is compactness and cost, which means laser-wakefield machines, where closed-loop optimisation is producing research results and no usable instrument. Type unchanged from the mechanical adjudication."
+      "note": "Maturity re-adjudicated on the merits (v1 2-5 years / v2 Working now; mechanical rule had given Working now). Learned tuning is in operations at existing accelerators and makes them run better, not smaller. The gap is compactness and cost, which means laser-wakefield machines, where closed-loop optimization is producing research results and no usable instrument. Type unchanged from the mechanical adjudication."
     },
     {
       "gap_id": "1c1cb37e-2a00-80fd-a046-f81466f201e7",

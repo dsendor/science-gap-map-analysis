@@ -21,7 +21,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Network cascade modelling to locate single points of failure works now and is not what is missing.",
+          "rationale": "Network cascade modeling to locate single points of failure works now and is not what is missing.",
           "confidence": "confident"
         }
       ],
@@ -35,7 +35,7 @@
       "gap_id": "1c1cb37e-2a00-802e-bd40-dd7361f31518",
       "outcome": {
         "outcome": "Buildings and materials interrupt transmission on their own, so outbreak control no longer depends on everybody complying.",
-        "rationale": "Every listed capability acts on the physical environment rather than on behaviour, which is where the leverage sits.",
+        "rationale": "Every listed capability acts on the physical environment rather than on behavior, which is where the leverage sits.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -56,7 +56,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Filtration efficiency, air changes per hour and chamber-trial transmission reduction are direct, standardised quantities.",
+        "rationale": "Filtration efficiency, air changes per hour and chamber-trial transmission reduction are direct, standardized quantities.",
         "confidence": "confident"
       }
     },

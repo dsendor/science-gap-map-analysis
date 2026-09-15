@@ -48,7 +48,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Is the input a target specification to be searched against (design) or a given molecule whose properties must be computed faster than physics allows (surrogate)? Here the sequence is given and the wanted output is its conformational behaviour: prediction, not search. No new protein is being proposed.",
+      "discriminating_test": "Is the input a target specification to be searched against (design) or a given molecule whose properties must be computed faster than physics allows (surrogate)? Here the sequence is given and the wanted output is its conformational behavior: prediction, not search. No new protein is being proposed.",
       "nearest_alternative": "Design and optimization search"
     },
     {
@@ -69,7 +69,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "If a perfect supply-network optimizer were handed to every firm tomorrow, would the gap close? No — resilience recommendations already exist and are declined because redundancy costs money. The residual blocker is an organisation, which is the definition of the coordination type.",
+      "discriminating_test": "If a perfect supply-network optimizer were handed to every firm tomorrow, would the gap close? No — resilience recommendations already exist and are declined because redundancy costs money. The residual blocker is an organization, which is the definition of the coordination type.",
       "nearest_alternative": "Design and optimization search"
     },
     {
@@ -79,7 +79,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "All three linked capabilities converge on a learned latent representation of cell state that predicts behaviour across omics layers and time — a virtual-cell emulator. Foundation models on single-cell data exist but their predictive generalisation to unseen perturbations is still weak, so 2-5 years for this gap.",
+          "rationale": "All three linked capabilities converge on a learned latent representation of cell state that predicts behavior across omics layers and time — a virtual-cell emulator. Foundation models on single-cell data exist but their predictive generalization to unseen perturbations is still weak, so 2-5 years for this gap.",
           "confidence": "confident"
         },
         {
@@ -125,7 +125,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Would the gap move more from a better predictor over existing data, or from a machine that decides which unexplored region of reaction space to sample and then samples it? Chemical space is under-covered rather than under-modelled, and coverage requires choosing what to try — the autonomous experimentation branch of the discriminator, not construction and not setpoint-holding.",
+      "discriminating_test": "Would the gap move more from a better predictor over existing data, or from a machine that decides which unexplored region of reaction space to sample and then samples it? Chemical space is under-covered rather than under-modeled, and coverage requires choosing what to try — the autonomous experimentation branch of the discriminator, not construction and not setpoint-holding.",
       "nearest_alternative": "ML surrogates and prediction"
     },
     {
@@ -223,7 +223,7 @@
           "confidence": "guess"
         }
       ],
-      "discriminating_test": "Does the gap ask for a system to be held on a trajectory, or for processes to be characterised and predicted? Nine of nine capabilities are observation and modeling; only the word modulators gestures at actuation, and it names an intervention to be assessed rather than a loop to be closed. Control stays secondary — this is exactly the place not to over-apply the new category.",
+      "discriminating_test": "Does the gap ask for a system to be held on a trajectory, or for processes to be characterized and predicted? Nine of nine capabilities are observation and modeling; only the word modulators gestures at actuation, and it names an intervention to be assessed rather than a loop to be closed. Control stays secondary — this is exactly the place not to over-apply the new category.",
       "nearest_alternative": "Sensing and signal processing"
     },
     {
@@ -261,7 +261,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "The linked capability is explicitly an iterative self-driving lab, and the throughput mismatch is real: in-silico candidate lists already run to millions while synthesis and characterisation run at human pace. Closing the make-measure-decide loop is both the largest lever and the taxonomy's working-now domain.",
+          "rationale": "The linked capability is explicitly an iterative self-driving lab, and the throughput mismatch is real: in-silico candidate lists already run to millions while synthesis and characterization run at human pace. Closing the make-measure-decide loop is both the largest lever and the taxonomy's working-now domain.",
           "confidence": "confident"
         },
         {
@@ -307,7 +307,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Applying the three-way test to the headline capability: a universal robotic construction system produces an artefact that did not exist assembled, so it is build, not control. The ECM sub-capability is control, but it is one of four and serves the build goal — so control is scored as secondary rather than allowed to capture the gap.",
+      "discriminating_test": "Applying the three-way test to the headline capability: a universal robotic construction system produces an artifact that did not exist assembled, so it is build, not control. The ECM sub-capability is control, but it is one of four and serves the build goal — so control is scored as secondary rather than allowed to capture the gap.",
       "nearest_alternative": "Real-time control of physical systems"
     },
     {
@@ -317,7 +317,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Adaptive, platform and Bayesian designs have existed for decades and remain a minority of trials. What binds is regulatory acceptance, sponsor risk aversion, site contracting, and data that cannot cross institutional walls — federated approaches and decentralized infrastructure are governance artefacts as much as software.",
+          "rationale": "Adaptive, platform and Bayesian designs have existed for decades and remain a minority of trials. What binds is regulatory acceptance, sponsor risk aversion, site contracting, and data that cannot cross institutional walls — federated approaches and decentralized infrastructure are governance artifacts as much as software.",
           "confidence": "confident"
         },
         {
@@ -335,7 +335,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "If an optimal design were computed for every trial tomorrow, would trials improve? Largely not — better designs are already available and declined. The blocker is who accepts them and who can pool the data, which is an organisation, so coordination outranks the design-search capability it would deploy.",
+      "discriminating_test": "If an optimal design were computed for every trial tomorrow, would trials improve? Largely not — better designs are already available and declined. The blocker is who accepts them and who can pool the data, which is an organization, so coordination outranks the design-search capability it would deploy.",
       "nearest_alternative": "Design and optimization search"
     },
     {
@@ -422,14 +422,14 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "The gap is defined by a prediction failure — preclinical results do not forecast human outcomes — so the AI lever is a learned model that maps model-system readouts to human physiology, and in-silico physiology standing in for models that do not generalise. Real but immature: no such model currently earns regulatory or go/no-go trust.",
+          "rationale": "The gap is defined by a prediction failure — preclinical results do not forecast human outcomes — so the AI lever is a learned model that maps model-system readouts to human physiology, and in-silico physiology standing in for models that do not generalize. Real but immature: no such model currently earns regulatory or go/no-go trust.",
           "confidence": "guess"
         },
         {
           "ai_type": "Sensing and signal processing",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "More information gleaned from single animals is deep phenotyping: behavioural video, continuous physiological telemetry and imaging analysed to extract more per subject, which works today.",
+          "rationale": "More information gleaned from single animals is deep phenotyping: behavioral video, continuous physiological telemetry and imaging analyzed to extract more per subject, which works today.",
           "confidence": "confident"
         },
         {
@@ -461,7 +461,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Are the three linked capabilities institutions to be reformed or artefacts to be built? All three are products — educator tools, digital tutors, learning-assistance architectures — and each is a language-model application. Coordination is the environment this lands in, not the capability that would move it.",
+      "discriminating_test": "Are the three linked capabilities institutions to be reformed or artifacts to be built? All three are products — educator tools, digital tutors, learning-assistance architectures — and each is a language-model application. Coordination is the environment this lands in, not the capability that would move it.",
       "nearest_alternative": "Coordination and institutional"
     },
     {
@@ -478,11 +478,11 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Who is accountable when review is automated, and which body certifies a formalisation as faithful, are institutional questions the tooling cannot answer for itself.",
+          "rationale": "Who is accountable when review is automated, and which body certifies a formalization as faithful, are institutional questions the tooling cannot answer for itself.",
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Does the gap describe an institution that must change, or a missing artefact? It says in terms that new tools are needed to streamline creation and evaluation and to check compliance before deployment — a tooling ask whose object is text and rules, hence reasoning and synthesis. The accountability framing keeps coordination close behind.",
+      "discriminating_test": "Does the gap describe an institution that must change, or a missing artifact? It says in terms that new tools are needed to streamline creation and evaluation and to check compliance before deployment — a tooling ask whose object is text and rules, hence reasoning and synthesis. The accountability framing keeps coordination close behind.",
       "nearest_alternative": "Coordination and institutional"
     },
     {
@@ -492,7 +492,7 @@
           "ai_type": "Physical build and manipulation",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "New construction approaches for space stations and in-situ resource utilisation both mean assembling large structures off-Earth without a standing human crew — the category the taxonomy describes as building an observatory. Speculative for this gap: on-orbit servicing and assembly demonstrations have been repeatedly descoped or cancelled and nothing station-scale has been robotically assembled.",
+          "rationale": "New construction approaches for space stations and in-situ resource utilization both mean assembling large structures off-Earth without a standing human crew — the category the taxonomy describes as building an observatory. Speculative for this gap: on-orbit servicing and assembly demonstrations have been repeatedly descoped or canceled and nothing station-scale has been robotically assembled.",
           "confidence": "guess"
         },
         {
@@ -513,7 +513,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Scale-up fails because mixing, oxygen transfer and shear gradients behave differently in a large vessel than in the bench reactor the process was developed in. The lever is a learned emulator of that scale-dependent behaviour — CFD surrogates coupled to cell-physiology models — good enough to predict performance before steel is cut. Emerging, not routine.",
+          "rationale": "Scale-up fails because mixing, oxygen transfer and shear gradients behave differently in a large vessel than in the bench reactor the process was developed in. The lever is a learned emulator of that scale-dependent behavior — CFD surrogates coupled to cell-physiology models — good enough to predict performance before steel is cut. Emerging, not routine.",
           "confidence": "guess"
         },
         {

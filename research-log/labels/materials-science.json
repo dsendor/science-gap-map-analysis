@@ -21,7 +21,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "Process-parameter optimisation for scale-up is an iterative make-and-measure loop that closed-loop platforms can run.",
+          "rationale": "Process-parameter optimization for scale-up is an iterative make-and-measure loop that closed-loop platforms can run.",
           "confidence": "confident"
         }
       ],
@@ -50,13 +50,13 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "High-throughput crystallisation screening is already automated in structural biology facilities.",
+          "rationale": "High-throughput crystallization screening is already automated in structural biology facilities.",
           "confidence": "confident"
         }
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Crystallisation success rate and predicted-versus-observed polymorph are directly scorable, with blind tests already run in the field.",
+        "rationale": "Crystallization success rate and predicted-versus-observed polymorph are directly scorable, with blind tests already run in the field.",
         "confidence": "confident"
       }
     },

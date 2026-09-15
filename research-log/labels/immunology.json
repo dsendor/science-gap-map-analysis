@@ -14,7 +14,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Decoding repertoire sequence into exposure history is a supervised mapping problem waiting on labelled longitudinal cohorts.",
+          "rationale": "Decoding repertoire sequence into exposure history is a supervised mapping problem waiting on labeled longitudinal cohorts.",
           "confidence": "confident"
         },
         {

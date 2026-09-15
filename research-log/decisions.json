@@ -11,7 +11,7 @@
     {
       "phase": "phase-2",
       "decision": "Keep a single primary AI type and a single tier per gap, and name composite gaps as a stated limitation rather than splitting them.",
-      "rationale": "Two gaps bundle several unrelated research programmes whose sub-components would take different types and tiers. Splitting them would mean creating gap records Convergent did not write, which violates the additive-only constraint and is exactly the schema redesign the brief forbids.",
+      "rationale": "Two gaps bundle several unrelated research programs whose sub-components would take different types and tiers. Splitting them would mean creating gap records Convergent did not write, which violates the additive-only constraint and is exactly the schema redesign the brief forbids.",
       "runner_up": "Allow multiple tiers per gap, or decompose composite gaps into sub-gaps.",
       "confidence": "medium",
       "reversal_condition": "If Convergent respond that they would welcome decomposition, split them in a later version."
@@ -52,7 +52,7 @@
       "phase": "phase-2b",
       "decision": "Adjudicate relabel disagreements mechanically: agreement keeps the label as confident, disagreement takes v2 and is flagged guess. No case-by-case adjudication.",
       "rationale": "I authored v1, so I am not a neutral adjudicator and picking winners case by case would reintroduce exactly the bias the blind pass was built to remove. v2 wins ties because it alone had the complete eight-category taxonomy. A guess flag is the honest record of two independent labelers failing to converge on the same text.",
-      "runner_up": "Adjudicate each of the 57 disagreements on the merits, which yields more confident labels but launders my prior judgement through a process that looks independent and is not.",
+      "runner_up": "Adjudicate each of the 57 disagreements on the merits, which yields more confident labels but launders my prior judgment through a process that looks independent and is not.",
       "confidence": "high",
       "reversal_condition": "If a third independent labeler is run, majority vote across three passes would be a legitimate adjudication rule and would restore confidence to the cases where two of three agree."
     },
@@ -67,7 +67,7 @@
     {
       "phase": "phase-3",
       "decision": "Recorded the quantum gravity gap as an honest null even though a real, published, improving quantity exists (the lower bound on the QG energy scale from photon dispersion: Fermi-LAT E_QG,1 > 7.6 E_Planck, GRB 090510, 2013; extended by LHAASO on GRB 221009A, 2024).",
-      "rationale": "The bound constrains linear-in-energy Lorentz violation, which most leading quantum-gravity programmes do not predict, and the community has no target and no shared claim about what any particular value of it would establish. A number that improves without agreement on what its improvement means is not a progress indicator for the gap. This is precisely what the Verification contested tier asserts, so recording it as an indicator would have contradicted our own tier label.",
+      "rationale": "The bound constrains linear-in-energy Lorentz violation, which most leading quantum-gravity programs do not predict, and the community has no target and no shared claim about what any particular value of it would establish. A number that improves without agreement on what its improvement means is not a progress indicator for the gap. This is precisely what the Verification contested tier asserts, so recording it as an indicator would have contradicted our own tier label.",
       "runner_up": "Record the Fermi/LHAASO bound as the indicator with confidence 'guess'. This would have been the more flattering choice — a tier-3 gap with a real number is a more interesting headline than a null — and it is why the decision is logged rather than assumed.",
       "confidence": "medium",
       "reversal_condition": "A published community statement, roadmap or review that names a target value for E_QG or an equivalent parameter and says what reaching it would settle. Reverse immediately if one exists."
@@ -82,7 +82,7 @@
     },
     {
       "phase": "phase-3",
-      "decision": "Left target_value NULL on five of the six non-null indicators, populating it only where a programme or roadmap states one (brain volume, silicon scaling).",
+      "decision": "Left target_value NULL on five of the six non-null indicators, populating it only where a program or roadmap states one (brain volume, silicon scaling).",
       "rationale": "The plan requires a target_basis for every target and rules out invented round numbers. For elapsed telescope time, materials-per-day, trial cost and retraction rate, no funder, roadmap or community body has published a figure. In two of those cases a plausible-looking number was available and rejected on inspection: the 2.5 million USD median for US-funded phase 3 trials is a different population from industry pivotal trials, and a lower retraction rate is not unambiguously better because the quantity measures detection.",
       "runner_up": "Derive targets from the best observed case in each series. Rejected: it manufactures an improvement factor out of a sampling difference and would read as analysis rather than as the arithmetic it is.",
       "confidence": "high",
@@ -99,7 +99,7 @@
     {
       "phase": "phase-4",
       "decision": "Dropped the fifth candidate gap — queue and turnaround time at shared nanofabrication user facilities — rather than shipping four with one weak.",
-      "rationale": "Five logged searches turned up no published wait-time or turnaround data for NNCI or comparable facilities, so the gap could not be grounded in an observed rate limit. It also had the weakest funding check of the five: NSF's National Nanotechnology Coordinated Infrastructure exists precisely to provide open access across 16 sites, so proposing access latency as an unowned gap would have required arguing against a programme built for it, on no evidence.",
+      "rationale": "Five logged searches turned up no published wait-time or turnaround data for NNCI or comparable facilities, so the gap could not be grounded in an observed rate limit. It also had the weakest funding check of the five: NSF's National Nanotechnology Coordinated Infrastructure exists precisely to provide open access across 16 sites, so proposing access latency as an unowned gap would have required arguing against a program built for it, on no evidence.",
       "runner_up": "Include it with confidence 'guess' and an honest funding check. Rejected: the plan asks for 3-5 gaps, four are well grounded, and an ungrounded fifth costs more credibility than the count gains.",
       "confidence": "high",
       "reversal_condition": "Facility-level turnaround statistics become available, from NNCI reporting or a user survey."
@@ -107,10 +107,10 @@
     {
       "phase": "phase-4",
       "decision": "Proposed the coating thermal noise gap even though coatings research is funded, and said so in the funding check rather than around it.",
-      "rationale": "The NSF LSC Center for Coatings Research and Italy's ETIC project both fund this work as a detector subsystem inside one instrument programme. The gap proposed is the cross-instrument materials framing — the same loss angle bounds optical clocks and cavity-stabilised lasers, and no programme owns it at that level. Writing 'not clear of funding' in the funding_check and stating exactly what is funded is more useful than a claim of novelty a reader could puncture in one search.",
+      "rationale": "The NSF LSC Center for Coatings Research and Italy's ETIC project both fund this work as a detector subsystem inside one instrument program. The gap proposed is the cross-instrument materials framing — the same loss angle bounds optical clocks and cavity-stabilized lasers, and no program owns it at that level. Writing 'not clear of funding' in the funding_check and stating exactly what is funded is more useful than a claim of novelty a reader could puncture in one search.",
       "runner_up": "Drop it as already funded. Rejected: it would discard the strongest tier-1 candidate over a framing question, and the framing is the contribution.",
       "confidence": "medium",
-      "reversal_condition": "A programme is found that funds low-mechanical-loss optical coatings as a materials target across instrument classes."
+      "reversal_condition": "A program is found that funds low-mechanical-loss optical coatings as a materials target across instrument classes."
     },
     {
       "phase": "phase-4",
@@ -122,7 +122,7 @@
     },
     {
       "phase": "phase-5",
-      "decision": "The Notion connector, unavailable at the start of this run, was authorised mid-run, so chain 2 is built from its named source of record after all.",
+      "decision": "The Notion connector, unavailable at the start of this run, was authorized mid-run, so chain 2 is built from its named source of record after all.",
       "rationale": "Recorded because a decision to substitute public sources was logged earlier in this same run and then reversed; the ledger should show the reversal rather than quietly drop it. Public sources gathered before the connector returned are kept and cited alongside the Notion page, since they are citable in the artifact and the page is not.",
       "runner_up": "Proceed on public sources only. No longer necessary.",
       "confidence": "high",
@@ -139,8 +139,8 @@
     {
       "phase": "phase-5",
       "decision": "Split chain 2's reviewer recruitment link into matching and willingness inside a single link rather than making them two links.",
-      "rationale": "They are sequentially inseparable — an editor cannot recruit before identifying — so two links would imply an ordering that does not exist. But the whole finding of the chain lives in the split: matching is a prediction problem AI is applicable to and, on the published evidence, not even best at; willingness is labour supply that no matching system touches. The split is carried in the blocker and rationale fields of one link.",
-      "runner_up": "Two links, 'matching' then 'recruitment'. Rejected as a false serialisation.",
+      "rationale": "They are sequentially inseparable — an editor cannot recruit before identifying — so two links would imply an ordering that does not exist. But the whole finding of the chain lives in the split: matching is a prediction problem AI is applicable to and, on the published evidence, not even best at; willingness is labor supply that no matching system touches. The split is carried in the blocker and rationale fields of one link.",
+      "runner_up": "Two links, 'matching' then 'recruitment'. Rejected as a false serialization.",
       "confidence": "medium",
       "reversal_condition": "A venue is found where identification and invitation are genuinely separate stages with separate durations."
     },
@@ -163,7 +163,7 @@
     {
       "phase": "phase-6",
       "decision": "Rendered the two chains as HTML/SVG in the artifact and shipped the Mermaid source alongside, rather than running a Mermaid renderer in the page.",
-      "rationale": "Each diagram is eight boxes and an arrow. A client-side Mermaid runtime would have been the single largest dependency in the build, for output that is less accessible than the HTML version — which also carries the binding flag as a word in the link table, so the distinction never rests on colour. The Mermaid source is in docs/critical-paths.md and in a copy block under each chain, so nothing is lost for anyone who wants to paste it elsewhere.",
+      "rationale": "Each diagram is eight boxes and an arrow. A client-side Mermaid runtime would have been the single largest dependency in the build, for output that is less accessible than the HTML version — which also carries the binding flag as a word in the link table, so the distinction never rests on color. The Mermaid source is in docs/critical-paths.md and in a copy block under each chain, so nothing is lost for anyone who wants to paste it elsewhere.",
       "runner_up": "Add mermaid as a dependency and render client-side. Rejected on build weight and accessibility, not on effort.",
       "confidence": "high",
       "reversal_condition": "A reviewer wants the diagrams to match Convergent's own tooling exactly."
@@ -187,18 +187,18 @@
     {
       "phase": "maturity-repair",
       "decision": "Replaced mechanical adjudication with adjudication on the merits for the maturity field only, re-deciding 17 of 54 reviewed gaps in research-log/relabel-adjudication.json. Type is still adjudicated mechanically by taking v2.",
-      "rationale": "The rule \"on disagreement take v2\" was chosen so the author of v1 could not launder his own judgement, and it worked for that. But a rule that cannot be wrong removes the bias and every check on validity together, and v2 read \"Working now\" as availability rather than efficacy, so the rule adopted the wrong reading 25 times in one direction. It produced \"AI Could Be Misused\" as Coordination and institutional / Working now, which no reader would accept. Efficacy is now pinned in methodology/taxonomy.md with the DNA-synthesis-screening example, and each re-adjudicated entry carries its own per-gap reasoning in its note, so the judgement is auditable row by row rather than resting on a rule.",
+      "rationale": "The rule \"on disagreement take v2\" was chosen so the author of v1 could not launder his own judgment, and it worked for that. But a rule that cannot be wrong removes the bias and every check on validity together, and v2 read \"Working now\" as availability rather than efficacy, so the rule adopted the wrong reading 25 times in one direction. It produced \"AI Could Be Misused\" as Coordination and institutional / Working now, which no reader would accept. Efficacy is now pinned in methodology/taxonomy.md with the DNA-synthesis-screening example, and each re-adjudicated entry carries its own per-gap reasoning in its note, so the judgment is auditable row by row rather than resting on a rule.",
       "runner_up": "Keep the mechanical rule and disclaim maturity in the artifact. Rejected: the labels are wrong, not merely uncertain, and a caveat a reader cannot act on is noise. The second runner-up was to re-run a third blind pass under the pinned definition, which is the more rigorous fix and was rejected on cost — it would relabel 103 gaps to correct a defect that provably reaches only 54, and every change here landed on a gap where the two existing passes already disagreed.",
       "confidence": "high",
       "reversal_condition": "A third independent pass under the pinned efficacy definition disagrees with this adjudication on more than about a fifth of the 54 reviewed gaps, or David rules the other way on the escalations in research-log/maturity-repair/escalations.md, in which case the affected entries revert individually rather than the method being abandoned."
     },
     {
       "phase": "maturity-repair",
-      "decision": "Made agreement between the two labelling passes an overridable default in engine/apply-relabel.mjs, rather than a branch that always takes v1. An explicit entry in relabel-adjudication.json now wins even where both passes agreed, and the rebuild logs the override count separately.",
+      "decision": "Made agreement between the two labeling passes an overridable default in engine/apply-relabel.mjs, rather than a branch that always takes v1. An explicit entry in relabel-adjudication.json now wins even where both passes agreed, and the rebuild logs the override count separately.",
       "rationale": "David ruled on four escalations and two of them — Ephemeral Societal Data and Inadequate Emergency Climate Interventions — were gaps both passes had agreed on, which the code had no way to express. Unoverridable agreement is the same defect as the unoverridable 'on disagreement take v2' rule, one layer down: two independent passes sharing a misreading is exactly how 'AI Could Be Misused' came out as Working now. Agreement is evidence, not proof. Logging the override count on its own line keeps it from happening quietly.",
       "runner_up": "Edit the v1 maturity in research-log/labels/*.json so those gaps fall into the disagreement branch. Rejected: it would falsify the record of what the first pass actually said, and move the v1-v2 agreement figure from 63/103 to 61/103, a number both docs/relabel-report.md and methodology/taxonomy.md cite.",
       "confidence": "high",
-      "reversal_condition": "The override count printed by rebuild stops being small. If explicit overrides on agreed gaps become routine rather than exceptional, the problem is in the labelling passes and not the adjudication layer, and the fix belongs upstream."
+      "reversal_condition": "The override count printed by rebuild stops being small. If explicit overrides on agreed gaps become routine rather than exceptional, the problem is in the labeling passes and not the adjudication layer, and the fix belongs upstream."
     },
     {
       "phase": "maturity-repair",
@@ -212,7 +212,7 @@
       "phase": "maturity-repair",
       "decision": "Recorded, and did not build, a blocked-on-adoption versus blocked-on-capability dimension. Eleven of this pass's downgrades turn on adoption rather than on whether the technique exists.",
       "rationale": "David's note on the clinical-trials ruling. DNA synthesis screening exists and is not adopted; archiving works and permission is withheld; adaptive trials run and the field does not take them up. Maturity absorbs all of this and reports 'not ready', which is the wrong diagnosis for a funder, because the intervention for an unadopted capability is not more research. This is a genuine addition to Convergent's map rather than a correction to our own labels.",
-      "runner_up": "Encode it now as a fourth dimension on the augmentation tables. Rejected: it would need its own definition, its own labelling pass over 103 gaps and its own audit, and it would arrive in the same artifact as a repair — which is how a contribution turns into a rewrite of someone else's map.",
+      "runner_up": "Encode it now as a fourth dimension on the augmentation tables. Rejected: it would need its own definition, its own labeling pass over 103 gaps and its own audit, and it would arrive in the same artifact as a repair — which is how a contribution turns into a rewrite of someone else's map.",
       "confidence": "medium",
       "reversal_condition": "Convergent asks what would be worth adding next, in which case this is the strongest candidate on the evidence this pass produced."
     },
@@ -228,7 +228,7 @@
       "phase": "revision-7",
       "decision": "Rename all eight AI-capability categories for display so every one names a kind of work, not a kind of model. Reading and synthesis, Prediction and modeling, Design search, Measurement and sensing, Running experiments, Real-time control, Physical build, Coordination and institutions.",
       "rationale": "Six of the eight were named after the AI that would do the work and two after the work itself, so a column that means 'what stands in the way' read as 'which AI would do it'. That made Coordination and institutional look like a category error when it was one of the two naming the thing consistently. David raised it; the diagnosis is his. Applied at the export boundary in engine/export-artifact.mjs, which walks the emitted object rewriting values, object keys and category references inside rationale strings, so summary buckets, cross-tabs, chain links, per-gap labels and the CSV all move together and no render site can be missed by hand.",
-      "runner_up": "Add a second attribute naming which AI capability could accelerate each gap, and show blocker and accelerator as two sections. Rejected for now because that attribute has never been labelled: it would need a full pass over all 103 gaps plus an audit, and for coordination gaps the honest answer is often 'none'. Recorded in docs/todo.md as an open question rather than closed.",
+      "runner_up": "Add a second attribute naming which AI capability could accelerate each gap, and show blocker and accelerator as two sections. Rejected for now because that attribute has never been labeled: it would need a full pass over all 103 gaps plus an audit, and for coordination gaps the honest answer is often 'none'. Recorded in docs/todo.md as an open question rather than closed.",
       "confidence": "high",
       "reversal_condition": "One constant in engine/export-artifact.mjs. The stored enum, the CHECK constraints and every research-log judgment are unchanged, so reverting is deleting the map."
     },
@@ -243,7 +243,7 @@
     {
       "phase": "revision-6",
       "decision": "Dropped is_binding from the telescope chain entirely, and renamed what survives on the publishing chain to \"carries the cost\".",
-      "rationale": "A blind cold reviewer pointed out that the telescope chain is strictly sequential, so removing any step shortens the total and every step is on the critical path. Marking four of eight as binding claimed a distinction the structure does not contain, and the marked set turned out to be exactly the steps no AI capability acts on, which made the headline finding restate its own labelling. The textbook sense of binding needs parallel paths and neither chain has them. What survives is the cost sense on chain 2, where three of seven steps genuinely account for a disproportionate share of reviewer and editor labor. That is a claim about distribution rather than about slack, so it gets its own words.",
+      "rationale": "A blind cold reviewer pointed out that the telescope chain is strictly sequential, so removing any step shortens the total and every step is on the critical path. Marking four of eight as binding claimed a distinction the structure does not contain, and the marked set turned out to be exactly the steps no AI capability acts on, which made the headline finding restate its own labeling. The textbook sense of binding needs parallel paths and neither chain has them. What survives is the cost sense on chain 2, where three of seven steps genuinely account for a disproportionate share of reviewer and editor labor. That is a claim about distribution rather than about slack, so it gets its own words.",
       "runner_up": "Keep the vocabulary on both chains and explain the difference in a footnote. Rejected because the circularity was real rather than presentational: no wording rescues a flag that has no discriminating power on the chain it is applied to. The arithmetic that replaced it -- AI acts on 9.5 of the 32.5 years -- is stronger and needs no vocabulary at all.",
       "confidence": "high",
       "reversal_condition": "A chain is built with genuine parallel structure, where some steps run alongside others. is_binding then recovers its classic meaning on a time axis and methodology/critical-path.md needs a third case."

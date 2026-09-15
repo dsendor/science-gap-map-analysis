@@ -20,14 +20,14 @@
       ],
       "measurability": {
         "tier": "Proxy only",
-        "rationale": "Researchers, funded programmes and publications are countable as inputs, but whether the field is producing useful knowledge is not measurable from those counts.",
+        "rationale": "Researchers, funded programs and publications are countable as inputs, but whether the field is producing useful knowledge is not measurable from those counts.",
         "confidence": "confident"
       }
     },
     {
       "gap_id": "1c1cb37e-2a00-80c6-88ec-c73d91a62be4",
       "outcome": {
-        "outcome": "Pressurised volume in orbit stops arriving one facility per generation, because habitats can be built outside government megaproject structures.",
+        "outcome": "Pressurized volume in orbit stops arriving one facility per generation, because habitats can be built outside government megaproject structures.",
         "rationale": "Their description makes the point with a single statistic: one new station this century.",
         "confidence": "confident"
       },
@@ -36,7 +36,7 @@
           "ai_type": "Physical build and manipulation",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "In-situ resource utilisation and new construction approaches are fabrication and assembly capabilities.",
+          "rationale": "In-situ resource utilization and new construction approaches are fabrication and assembly capabilities.",
           "confidence": "confident"
         },
         {
@@ -49,7 +49,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Cost per habitable cubic metre in orbit and stations launched per decade are direct and countable.",
+        "rationale": "Cost per habitable cubic meter in orbit and stations launched per decade are direct and countable.",
         "confidence": "confident"
       }
     },

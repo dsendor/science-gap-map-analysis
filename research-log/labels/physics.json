@@ -14,7 +14,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "The blocker is standardisation, documentation and shared tooling norms, not a missing technical capability.",
+          "rationale": "The blocker is standardization, documentation and shared tooling norms, not a missing technical capability.",
           "confidence": "confident"
         },
         {
@@ -27,7 +27,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Count of groups outside the originating labs operating a standardised platform is a direct measure of the stated goal.",
+        "rationale": "Count of groups outside the originating labs operating a standardized platform is a direct measure of the stated goal.",
         "confidence": "confident"
       }
     },
@@ -101,7 +101,7 @@
       "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
       "outcome": {
         "outcome": "High-energy beams on a benchtop. Accelerator-dependent research and medical isotope production stop queueing for facility time.",
-        "rationale": "Their description names democratisation of high-energy physics and isotope production as the two unlocks.",
+        "rationale": "Their description names democratization of high-energy physics and isotope production as the two unlocks.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -122,7 +122,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Beam energy per metre, achieved current and cost per GeV are direct and comparable across designs.",
+        "rationale": "Beam energy per meter, achieved current and cost per GeV are direct and comparable across designs.",
         "confidence": "confident"
       }
     },

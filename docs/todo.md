@@ -18,7 +18,7 @@ What is open is small.
 ## Open
 
 - [ ] **Merge `wider-audience-copy`** — the new bio, no second person aimed at Convergent, and US
-      spelling in the page copy and the chain text.
+      spelling in everything we wrote. Convergent's own text is untouched.
 - [ ] **Merge `docs-and-deploy-fix`** — the production build fix and this todo.
 - [ ] `research-log/` still holds `prereg-relabel.md` and `relabel-report.md` paths that
       `engine/compare-relabel.mjs` now writes to but which do not exist there yet. The

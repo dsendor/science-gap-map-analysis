@@ -9,7 +9,7 @@
           "ai_type": "Physical build and manipulation",
           "maturity": "Speculative",
           "is_primary": 1,
-          "rationale": "The named capabilities are modular assembly, a telescope 'factory' and commercial-component integration — the gap closes when an aperture that did not exist assembled gets assembled, on orbit or on a production line. Robotic in-space assembly of a frontier aperture is not demonstrated (the flagship servicing/assembly demos were cancelled before flight), so Speculative for this gap.",
+          "rationale": "The named capabilities are modular assembly, a telescope 'factory' and commercial-component integration — the gap closes when an aperture that did not exist assembled gets assembled, on orbit or on a production line. Robotic in-space assembly of a frontier aperture is not demonstrated (the flagship servicing/assembly demos were canceled before flight), so Speculative for this gap.",
           "confidence": "confident"
         },
         {
@@ -69,7 +69,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Does the gap close by being able to compute the behaviour of nonequilibrium systems, or by someone writing down the right definition? Both readings are live. I picked simulation because the only capability Convergent attached is a simulation capability, and because a usable framework is normally extracted from accessible phenomenology rather than invented ahead of it — but this is the weakest primary in the batch.",
+      "discriminating_test": "Does the gap close by being able to compute the behavior of nonequilibrium systems, or by someone writing down the right definition? Both readings are live. I picked simulation because the only capability Convergent attached is a simulation capability, and because a usable framework is normally extracted from accessible phenomenology rather than invented ahead of it — but this is the weakest primary in the batch.",
       "nearest_alternative": "LLM reasoning and synthesis"
     },
     {
@@ -86,11 +86,11 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "Sequence-of-concern detection that generalises to AI-redesigned or paraphrased hazardous sequences is a function-from-sequence prediction problem and is not solved.",
+          "rationale": "Sequence-of-concern detection that generalizes to AI-redesigned or paraphrased hazardous sequences is a function-from-sequence prediction problem and is not solved.",
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "If a perfect hazard classifier existed tomorrow, would the gap close? No — unscreened benchtop synthesisers and non-participating providers remain, and the description says so. A technique alone cannot deliver universality, so the blocker is organisational.",
+      "discriminating_test": "If a perfect hazard classifier existed tomorrow, would the gap close? No — unscreened benchtop synthesisers and non-participating providers remain, and the description says so. A technique alone cannot deliver universality, so the blocker is organizational.",
       "nearest_alternative": "ML surrogates and prediction"
     },
     {
@@ -121,7 +121,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "Programmable synthesis of a new polymer class is blocked on coupling chemistry, protecting groups and stepwise-yield optimisation — a bench-scale, small-volume, well-instrumented search where self-driving labs already close the loop today.",
+          "rationale": "Programmable synthesis of a new polymer class is blocked on coupling chemistry, protecting groups and stepwise-yield optimization — a bench-scale, small-volume, well-instrumented search where self-driving labs already close the loop today.",
           "confidence": "confident"
         },
         {
@@ -153,7 +153,7 @@
           "confidence": "guess"
         }
       ],
-      "discriminating_test": "Is the missing artefact found by searching a defined space of designs, or produced by generating code and a machine-checkable proof about it? Verification is proof construction against a specification, not optimisation over a design space, so LLM reasoning over Design and optimization search.",
+      "discriminating_test": "Is the missing artifact found by searching a defined space of designs, or produced by generating code and a machine-checkable proof about it? Verification is proof construction against a specification, not optimization over a design space, so LLM reasoning over Design and optimization search.",
       "nearest_alternative": "Design and optimization search"
     },
     {
@@ -191,7 +191,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "Speculative",
           "is_primary": 0,
-          "rationale": "The second half of the description — 'designing optimal climate control strategies' across economic, technological and social factors — is optimisation over an integrated-assessment space, with contested objectives and no clean evaluator.",
+          "rationale": "The second half of the description — 'designing optimal climate control strategies' across economic, technological and social factors — is optimization over an integrated-assessment space, with contested objectives and no clean evaluator.",
           "confidence": "confident"
         }
       ],
@@ -233,11 +233,11 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Robotic crystallisation screening across solvents, additives and conditions is routine today and is the fastest empirical route while the models mature.",
+          "rationale": "Robotic crystallization screening across solvents, additives and conditions is routine today and is the fastest empirical route while the models mature.",
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Does the gap need something to choose what to try, or a model that says why a molecule resists crystallising? Screening robots already choose and try at scale and the gap persists — so the binding constraint is predictive understanding, and the primary is the surrogate rather than the closed loop.",
+      "discriminating_test": "Does the gap need something to choose what to try, or a model that says why a molecule resists crystallizing? Screening robots already choose and try at scale and the gap persists — so the binding constraint is predictive understanding, and the primary is the surrogate rather than the closed loop.",
       "nearest_alternative": "Autonomous experimentation"
     },
     {
@@ -254,11 +254,11 @@
           "ai_type": "Physical build and manipulation",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "The designed system is itself fabrication robotics, so realising any non-humanoid design depends on manipulation hardware maturing.",
+          "rationale": "The designed system is itself fabrication robotics, so realizing any non-humanoid design depends on manipulation hardware maturing.",
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Is the deficit in what gets built or in choosing what to build? The description says design 'remains complex, with traditional methods relying on outdated processes' — the artefact is buildable once specified. Also checked against real-time control: the gap is not that existing lines cannot be held on-spec, so control is rejected.",
+      "discriminating_test": "Is the deficit in what gets built or in choosing what to build? The description says design 'remains complex, with traditional methods relying on outdated processes' — the artifact is buildable once specified. Also checked against real-time control: the gap is not that existing lines cannot be held on-spec, so control is rejected.",
       "nearest_alternative": "Physical build and manipulation"
     },
     {
@@ -268,7 +268,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "The gap names itself as a meta-bottleneck of incentive structures, funding models and organisational form; all three linked capabilities are new funding and org designs. Nothing technical is missing — these are changeable today.",
+          "rationale": "The gap names itself as a meta-bottleneck of incentive structures, funding models and organizational form; all three linked capabilities are new funding and org designs. Nothing technical is missing — these are changeable today.",
           "confidence": "confident"
         },
         {
@@ -279,7 +279,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "If every scientist had a perfect writing and review assistant, would the constrained forms of R&D appear? No — the forms are constrained by what funders will fund and what institutions can host, so the blocker is the organisation rather than the technique.",
+      "discriminating_test": "If every scientist had a perfect writing and review assistant, would the constrained forms of R&D appear? No — the forms are constrained by what funders will fund and what institutions can host, so the blocker is the organization rather than the technique.",
       "nearest_alternative": "LLM reasoning and synthesis"
     },
     {
@@ -380,7 +380,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "2-5 years",
           "is_primary": 0,
-          "rationale": "Recruitment infrastructure, decentralised study plumbing, trial prioritisation and regulator acceptance of novel designs are organisational, and several linked capabilities are exactly these.",
+          "rationale": "Recruitment infrastructure, decentralized study plumbing, trial prioritization and regulator acceptance of novel designs are organizational, and several linked capabilities are exactly these.",
           "confidence": "confident"
         }
       ],
@@ -415,7 +415,7 @@
           "ai_type": "LLM reasoning and synthesis",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "The description's own mechanism is 'harnessing AI to facilitate clearer expression of public opinion' — summarising, clustering and bridging thousands of statements into legible collective positions. Deliberation tooling of this kind is deployed and evaluated today.",
+          "rationale": "The description's own mechanism is 'harnessing AI to facilitate clearer expression of public opinion' — summarizing, clustering and bridging thousands of statements into legible collective positions. Deliberation tooling of this kind is deployed and evaluated today.",
           "confidence": "guess"
         },
         {
@@ -436,7 +436,7 @@
           "ai_type": "Coordination and institutional",
           "maturity": "Working now",
           "is_primary": 1,
-          "rationale": "The gap is literally the absence of a field — no venues, no funding line, no community. Both linked capabilities are 'directed work on ...', i.e. someone deciding to fund and organise it. No technique is missing to start.",
+          "rationale": "The gap is literally the absence of a field — no venues, no funding line, no community. Both linked capabilities are 'directed work on ...', i.e. someone deciding to fund and organize it. No technique is missing to start.",
           "confidence": "confident"
         },
         {
@@ -447,7 +447,7 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Would any AI capability, made perfect today, create this field? No — the deficit is that nobody is organised to ask the questions, which the taxonomy assigns to the organisational category. Physical build was considered (transport, energy, civil engineering at planetary scale) and rejected because none of that work is even scoped yet.",
+      "discriminating_test": "Would any AI capability, made perfect today, create this field? No — the deficit is that nobody is organized to ask the questions, which the taxonomy assigns to the organizational category. Physical build was considered (transport, energy, civil engineering at planetary scale) and rejected because none of that work is even scoped yet.",
       "nearest_alternative": "ML surrogates and prediction"
     },
     {
@@ -457,7 +457,7 @@
           "ai_type": "Autonomous experimentation",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Domesticating a new chassis is design-build-test-learn: transformation protocols, promoter and RBS parts characterisation, growth and pathway tuning, iterated. Biofoundries close this loop now for model organisms; the whole point of this gap is the non-model hosts where the automated tooling does not yet exist, so 2-5 years for this gap.",
+          "rationale": "Domesticating a new chassis is design-build-test-learn: transformation protocols, promoter and RBS parts characterization, growth and pathway tuning, iterated. Biofoundries close this loop now for model organisms; the whole point of this gap is the non-model hosts where the automated tooling does not yet exist, so 2-5 years for this gap.",
           "confidence": "confident"
         },
         {
@@ -468,9 +468,9 @@
           "confidence": "confident"
         }
       ],
-      "discriminating_test": "Does something choose what to try? Yes — the expensive decision is which knockouts, parts and conditions to test next in an organism with almost no prior characterisation, and that choice must be made against wet-lab feedback rather than in silico. Physical build was rejected: nothing is being assembled that did not exist, the organism does the building.",
+      "discriminating_test": "Does something choose what to try? Yes — the expensive decision is which knockouts, parts and conditions to test next in an organism with almost no prior characterization, and that choice must be made against wet-lab feedback rather than in silico. Physical build was rejected: nothing is being assembled that did not exist, the organism does the building.",
       "nearest_alternative": "Design and optimization search"
     }
   ],
-  "notes": "Primary counts: ML surrogates and prediction 5; Sensing and signal processing 4; Coordination and institutional 3; Autonomous experimentation 3; Design and optimization search 2; Physical build and manipulation 2; LLM reasoning and synthesis 2; Real-time control of physical systems 0 as primary. Real-time control appears twice as a secondary: gap 1c1cb37e-2a00-8008 (co-phasing a modular/segmented aperture is closed-loop wavefront sensing and actuation on hardware that exists) and gap 1b4cb37e-2a00-80e4 (closed-loop neuromodulation: decode state, drive a transducer, at machine timescales). I deliberately did not take it as any primary in this batch: no gap here is fundamentally about holding an existing system on a trajectory. The nearest miss was chip fabrication, where in-situ closed-loop control of litho and direct-write tools is real control but does not widen what the tools can make, which is the actual gap; that reasoning is recorded in that gap's discriminating_test.\n\nTaxonomy strain and low-confidence calls:\n(1) 'Understanding Life as a Far-From-Equilibrium Physical Phenomenon' is the weakest primary in the batch. The gap is the absence of a formal framework — a theory-construction task — while the only attached capability is large-scale nonequilibrium simulation. Those take different types (LLM reasoning vs ML surrogates) and arguably different maturities. Flagged guess.\n(2) 'Clinical Trials are Inefficient, Slow and Scarce' is a composite in the same sense the taxonomy's known-limits note describes: its ten capabilities split cleanly into measurement (biomarkers, noninvasive patient measurement), prediction (digital twins, synthetic controls), design (new trial designs) and institutional (recruitment, decentralised infrastructure, prioritisation). A single primary loses real information here; I took design search and flagged guess, with Coordination named as the alternative a reasonable labeler would pick.\n(3) 'Civic Engagement Platforms' splits between a cryptographic/institutional half (voting and auditing protocols, which exist and are unadopted) and an AI half (deliberation sensemaking). Coin flip, flagged guess.\n(4) 'Chip Fabrication' spans laser direct write (working now) and molecular digital assembly (speculative) under one gap; the maturity field cannot represent that spread, so the primary maturity is flagged guess.\n(5) 'Risks of Malicious Bioengineering' is close to needing the ai-as-object frame — watermarking AI-generated protein sequences is a gap about AI outputs — but the gap's subject matter is biosecurity, not AI itself, so I kept ai-as-instrument per section 2b's closed list.\n(6) Maturity for 'Quantum Effects in Biological Systems' turns on whether current ultrafast/magnetometry hardware is good enough for ML denoising to settle disputed signals; I judged not yet, flagged guess.\n\nNo contamination: I read only methodology/taxonomy.md and research-log/relabel-tasks/batch-1.json, plus a directory listing of research-log/. I did not open research-log/labels/, audits/, docs/, or the database."
+  "notes": "Primary counts: ML surrogates and prediction 5; Sensing and signal processing 4; Coordination and institutional 3; Autonomous experimentation 3; Design and optimization search 2; Physical build and manipulation 2; LLM reasoning and synthesis 2; Real-time control of physical systems 0 as primary. Real-time control appears twice as a secondary: gap 1c1cb37e-2a00-8008 (co-phasing a modular/segmented aperture is closed-loop wavefront sensing and actuation on hardware that exists) and gap 1b4cb37e-2a00-80e4 (closed-loop neuromodulation: decode state, drive a transducer, at machine timescales). I deliberately did not take it as any primary in this batch: no gap here is fundamentally about holding an existing system on a trajectory. The nearest miss was chip fabrication, where in-situ closed-loop control of litho and direct-write tools is real control but does not widen what the tools can make, which is the actual gap; that reasoning is recorded in that gap's discriminating_test.\n\nTaxonomy strain and low-confidence calls:\n(1) 'Understanding Life as a Far-From-Equilibrium Physical Phenomenon' is the weakest primary in the batch. The gap is the absence of a formal framework — a theory-construction task — while the only attached capability is large-scale nonequilibrium simulation. Those take different types (LLM reasoning vs ML surrogates) and arguably different maturities. Flagged guess.\n(2) 'Clinical Trials are Inefficient, Slow and Scarce' is a composite in the same sense the taxonomy's known-limits note describes: its ten capabilities split cleanly into measurement (biomarkers, noninvasive patient measurement), prediction (digital twins, synthetic controls), design (new trial designs) and institutional (recruitment, decentralized infrastructure, prioritization). A single primary loses real information here; I took design search and flagged guess, with Coordination named as the alternative a reasonable labeler would pick.\n(3) 'Civic Engagement Platforms' splits between a cryptographic/institutional half (voting and auditing protocols, which exist and are unadopted) and an AI half (deliberation sensemaking). Coin flip, flagged guess.\n(4) 'Chip Fabrication' spans laser direct write (working now) and molecular digital assembly (speculative) under one gap; the maturity field cannot represent that spread, so the primary maturity is flagged guess.\n(5) 'Risks of Malicious Bioengineering' is close to needing the ai-as-object frame — watermarking AI-generated protein sequences is a gap about AI outputs — but the gap's subject matter is biosecurity, not AI itself, so I kept ai-as-instrument per section 2b's closed list.\n(6) Maturity for 'Quantum Effects in Biological Systems' turns on whether current ultrafast/magnetometry hardware is good enough for ML denoising to settle disputed signals; I judged not yet, flagged guess.\n\nNo contamination: I read only methodology/taxonomy.md and research-log/relabel-tasks/batch-1.json, plus a directory listing of research-log/. I did not open research-log/labels/, audits/, docs/, or the database."
 }

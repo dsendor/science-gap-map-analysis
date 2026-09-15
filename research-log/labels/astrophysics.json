@@ -21,7 +21,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "Working now",
           "is_primary": 0,
-          "rationale": "Optical and structural design optimisation already works, which is precisely why it is not the binding link.",
+          "rationale": "Optical and structural design optimization already works, which is precisely why it is not the binding link.",
           "confidence": "confident"
         },
         {
@@ -100,7 +100,7 @@
       "gap_id": "1c1cb37e-2a00-8072-976d-fb7598c7401e",
       "outcome": {
         "outcome": "Europa and Enceladus plume sampling fly on a schedule set by mission design. Today it is set by position in an agency queue.",
-        "rationale": "Their framing is explicitly about missions remaining unrealized by existing agencies, so the unlock is realisation, not capability.",
+        "rationale": "Their framing is explicitly about missions remaining unrealized by existing agencies, so the unlock is realization, not capability.",
         "confidence": "confident"
       },
       "ai_types": [

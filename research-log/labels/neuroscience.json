@@ -14,7 +14,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Digital replicas and data-driven models of brain systems are learned simulation, and four of their seven capabilities are modelling or dataset work.",
+          "rationale": "Digital replicas and data-driven models of brain systems are learned simulation, and four of their seven capabilities are modeling or dataset work.",
           "confidence": "confident"
         },
         {
@@ -93,7 +93,7 @@
       "gap_id": "1b4cb37e-2a00-80da-94b7-d6c79e96cf17",
       "outcome": {
         "outcome": "Watch large neural populations at single-neuron resolution and behavioral timescales in a living brain.",
-        "rationale": "Their description names fast, high-resolution, non-destructive recording as the requirement for unravelling circuit interplay in real time.",
+        "rationale": "Their description names fast, high-resolution, non-destructive recording as the requirement for unraveling circuit interplay in real time.",
         "confidence": "confident"
       },
       "ai_types": [

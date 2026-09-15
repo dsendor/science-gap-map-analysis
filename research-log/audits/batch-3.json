@@ -22,7 +22,7 @@
     {
       "gap_id": "1c1cb37e-2a00-8027-8eda-e6f4a472c3ad",
       "dimension": "outcome",
-      "value": "Whether gravity is quantised becomes an empirically decidable question rather than a theoretical preference, because a laboratory-scale observable with an agreed interpretation would exist.",
+      "value": "Whether gravity is quantized becomes an empirically decidable question rather than a theoretical preference, because a laboratory-scale observable with an agreed interpretation would exist.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "Deliberately names the epistemic state that changes, not the activity (running more experiments)."
@@ -32,7 +32,7 @@
       "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
       "dimension": "measurability",
       "value": "Verification contested",
-      "discriminating_test": "Is there a candidate direct observable being built, whose interpretation the field would dispute? Yes — Convergent's own linked capabilities include 'Metrics to Track Human Influence' and 'Early Warning Signs for Human Disempowerment', i.e. the observable is under construction. Nobody would accept any single index (labour share, share of consequential decisions taken without human review, measured institutional responsiveness) as settling whether disempowerment is occurring.",
+      "discriminating_test": "Is there a candidate direct observable being built, whose interpretation the field would dispute? Yes — Convergent's own linked capabilities include 'Metrics to Track Human Influence' and 'Early Warning Signs for Human Disempowerment', i.e. the observable is under construction. Nobody would accept any single index (labor share, share of consequential decisions taken without human review, measured institutional responsiveness) as settling whether disempowerment is occurring.",
       "nearest_alternative": "Counterfactual required",
       "note": "Hardest tier call in this batch. The tier-4 reading is strong: the quantity of interest is arguably the world in which humans retained influence, which never happens. I rejected it because the claimed process is asserted to be underway now and produces present-tense observables; the disagreement is over interpretation, not over the absence of anything to measure. Proxy only was the third candidate and fails because the contest is precisely about whether the candidate direct measures are direct. Confidence here is closer to guess than confident."
     },
@@ -41,14 +41,14 @@
       "dimension": "ai_type",
       "value": "Coordination and institutional",
       "maturity": "Speculative",
-      "discriminating_test": "Is the blocker a missing technique or a missing organisational arrangement? Five of the seven linked capabilities (voting and auditing protocols, deliberative democracy tools, oversight interventions, influence metrics, early-warning indicators) are institutional artefacts, not model capabilities. A better model does not restore human influence if the competitive incentive to remove humans is unchanged.",
+      "discriminating_test": "Is the blocker a missing technique or a missing organizational arrangement? Five of the seven linked capabilities (voting and auditing protocols, deliberative democracy tools, oversight interventions, influence metrics, early-warning indicators) are institutional artifacts, not model capabilities. A better model does not restore human influence if the competitive incentive to remove humans is unchanged.",
       "nearest_alternative": "LLM reasoning and synthesis",
       "note": "LLM reasoning is the obvious reading of 'AI Agents to Advocate for Human Interests' and 'Technology to Augment Humans', and it is Working now — which is exactly why it is the wrong primary: those tools already exist in usable form and the gap is unmoved. Maturity Speculative rather than 2-5 years because AI-mediated deliberation and auditing exist at pilot scale (Polis/vTaiwan, collective-constitution exercises, the Habermas-machine line of work) but no demonstrated mechanism maintains human influence against the competitive pressure the gap describes."
     },
     {
       "gap_id": "1c1cb37e-2a00-8055-b34e-fe7956440682",
       "dimension": "outcome",
-      "value": "Erosion of human influence over economic and political decisions becomes detectable while it is still reversible, instead of being recognisable only in retrospect.",
+      "value": "Erosion of human influence over economic and political decisions becomes detectable while it is still reversible, instead of being recognizable only in retrospect.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "Outcome is detectability-in-time, which is what the linked early-warning and metrics capabilities actually buy; 'better governance' would have restated the gap."
@@ -86,21 +86,21 @@
       "value": "Counterfactual required",
       "discriminating_test": "Is there an observation set for the quantity of interest? No. The quantity is the R&D that rigid structures prevented — projects never proposed because no institution could host them. You can count what was funded; you cannot enumerate the suppressed alternatives, and no instrument could be pointed at them. Contrast the tier-3 test: there is no candidate measurement whose verdict people would argue about, because there is no candidate measurement.",
       "nearest_alternative": "Proxy only",
-      "note": "Proxy only is defensible — scientist time-on-admin, grant success rates, and organisational-form diversity are all measurable adjacent effects. Rejected because those measure the input side while the gap's claim is about suppressed output, which has no observation set. This gap is the taxonomy's tier-4 calibration anchor and the test reproduces it."
+      "note": "Proxy only is defensible — scientist time-on-admin, grant success rates, and organizational-form diversity are all measurable adjacent effects. Rejected because those measure the input side while the gap's claim is about suppressed output, which has no observation set. This gap is the taxonomy's tier-4 calibration anchor and the test reproduces it."
     },
     {
       "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
       "dimension": "ai_type",
       "value": "Coordination and institutional",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the blocker a technique or an organisation? All three linked capabilities (decentralised funding, reduced fundraising burden, novel research-organisation structures) are allocation and incentive designs. The taxonomy assigns 'anything where the blocker is an organisation rather than a technique' to this type by definition, and this gap is self-described as a meta-bottleneck about incentive structures.",
+      "discriminating_test": "Is the blocker a technique or an organization? All three linked capabilities (decentralized funding, reduced fundraising burden, novel research-organization structures) are allocation and incentive designs. The taxonomy assigns 'anything where the blocker is an organization rather than a technique' to this type by definition, and this gap is self-described as a meta-bottleneck about incentive structures.",
       "nearest_alternative": "LLM reasoning and synthesis",
       "note": "LLM reasoning is the strongest rival and is Working now: agents that absorb grant-writing and administrative load directly attack 'scientists spending a lot of time not doing science'. Rejected as primary because it relieves the symptom while leaving the incentive structure that produces the rigidity intact. Maturity 2-5 years: AI-assisted review, matching and allocation are running as pilots, not as institutions."
     },
     {
       "gap_id": "1c1cb37e-2a00-80b5-8cf4-c8195273fa45",
       "dimension": "outcome",
-      "value": "Research programmes that no current institution can host — long-horizon, tightly coordinated, or cross-disciplinary at scale — become fundable and therefore attemptable.",
+      "value": "Research programs that no current institution can host — long-horizon, tightly coordinated, or cross-disciplinary at scale — become fundable and therefore attemptable.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "The outcome is a class of work becoming possible, not scientists having more time."
@@ -112,14 +112,14 @@
       "value": "Directly measurable",
       "discriminating_test": "Does an observable quantity exist with a direction of improvement, for the gap itself rather than an adjacent effect? Yes — the gap is a tooling deficit, and tooling capability is directly observable: cost and throughput per qualitative interview, coverage and response rate of survey instruments, and archaeological sites detected per unit area surveyed (a quantity satellite-ML archaeology already reports and improves).",
       "nearest_alternative": "Proxy only",
-      "note": "Genuinely mixed gap. The 'identify and prioritise important questions that will have an impact' clause is not directly measurable — research impact is proxy-measured and arguably counterfactual — but two of the three linked capabilities and most of the description text are instrument deficits with direct metrics. I labelled on the dominant content and flag the heterogeneity; a labeller weighting the prioritisation clause would land on Proxy only and would not be unreasonable."
+      "note": "Genuinely mixed gap. The 'identify and prioritize important questions that will have an impact' clause is not directly measurable — research impact is proxy-measured and arguably counterfactual — but two of the three linked capabilities and most of the description text are instrument deficits with direct metrics. I labeled on the dominant content and flag the heterogeneity; a labeler weighting the prioritization clause would land on Proxy only and would not be unreasonable."
     },
     {
       "gap_id": "1c1cb37e-2a00-800f-9e2a-cf61f6212c7e",
       "dimension": "ai_type",
       "value": "LLM reasoning and synthesis",
       "maturity": "Working now",
-      "discriminating_test": "Which capability class do the linked capabilities fall into, and which one does the description's own emphasis name? Two of three ('Infrastructure for Problem-Driven Research', 'Modernize Survey Infrastructure') are synthesis-and-language problems — coding open-ended responses, conducting and analysing qualitative instruments, mapping a literature to identify tractable questions — and the description explicitly says AI-enabled qualitative methods could super-charge the field.",
+      "discriminating_test": "Which capability class do the linked capabilities fall into, and which one does the description's own emphasis name? Two of three ('Infrastructure for Problem-Driven Research', 'Modernize Survey Infrastructure') are synthesis-and-language problems — coding open-ended responses, conducting and analyzing qualitative instruments, mapping a literature to identify tractable questions — and the description explicitly says AI-enabled qualitative methods could super-charge the field.",
       "nearest_alternative": "Sensing and signal processing",
       "note": "Satellite-ML archaeology is unambiguously sensing and is the most mature single item here, but it covers one of three capabilities and is a secondary in a gap whose stated core is qualitative data and question selection. Maturity Working now: LLM coding of qualitative data and LLM-administered interviewing are in production use today; the gap is adoption and infrastructure, not capability."
     },
@@ -145,9 +145,9 @@
       "dimension": "ai_type",
       "value": "Coordination and institutional",
       "maturity": "2-5 years",
-      "discriminating_test": "Which blocker does the gap name? It names the absence of an established field, and both linked capabilities are 'Directed Work on ...' — that is agenda-setting, funding and coordination, which the taxonomy assigns to this type by definition ('the blocker is an organisation rather than a technique').",
+      "discriminating_test": "Which blocker does the gap name? It names the absence of an established field, and both linked capabilities are 'Directed Work on ...' — that is agenda-setting, funding and coordination, which the taxonomy assigns to this type by definition ('the blocker is an organization rather than a technique').",
       "nearest_alternative": "Physical build and manipulation",
-      "note": "The closest call on ai_type in this batch, and I want the disagreement recorded rather than smoothed. The counter-test is strong: if a fully funded terraforming institute existed tomorrow, the transport, energy and planetary civil-engineering challenges would remain physically unattainable, which says the real binding constraint is autonomous large-scale off-world construction (Physical build, Speculative). I labelled the blocker the gap description actually names. A labeller applying the binding-constraint test instead would say Physical build and manipulation / Speculative, and I would not call that wrong. Maturity 2-5 years for the coordination reading: AI-assisted roadmapping and research-agenda synthesis are near-term, not present, capabilities."
+      "note": "The closest call on ai_type in this batch, and I want the disagreement recorded rather than smoothed. The counter-test is strong: if a fully funded terraforming institute existed tomorrow, the transport, energy and planetary civil-engineering challenges would remain physically unattainable, which says the real binding constraint is autonomous large-scale off-world construction (Physical build, Speculative). I labeled the blocker the gap description actually names. A labeler applying the binding-constraint test instead would say Physical build and manipulation / Speculative, and I would not call that wrong. Maturity 2-5 years for the coordination reading: AI-assisted roadmapping and research-agenda synthesis are near-term, not present, capabilities."
     },
     {
       "gap_id": "1c1cb37e-2a00-8085-bd56-cdf566ac7e42",
@@ -173,7 +173,7 @@
       "maturity": "Working now",
       "discriminating_test": "Counting linked capabilities by class: advanced nanostructure imaging, ML animal-communication decoding, massive-scale zircon screening, and ancient-protein reconstruction are all extraction of structure from instrument data — four of six. The remaining two (Europa/Enceladus missions, raking lunar regolith) are physical deployment. The gap's recurring phrase is that things 'remain hidden due to current imaging limitations' — a detection-threshold problem.",
       "nearest_alternative": "LLM reasoning and synthesis",
-      "note": "Treating animal communication as a sequence-modelling or translation problem is the obvious LLM reading and I rejected it because that work bottlenecks upstream, on segmentation, source separation and detection in field recordings, before any language model has units to model. Physical build and manipulation is a genuine secondary here (Europa lander, lunar regolith raking) at Speculative maturity and I record it rather than fold it into sensing. Maturity Working now for the primary: ML detection and denoising in bioacoustics, microscopy and mineral screening are deployed today."
+      "note": "Treating animal communication as a sequence-modeling or translation problem is the obvious LLM reading and I rejected it because that work bottlenecks upstream, on segmentation, source separation and detection in field recordings, before any language model has units to model. Physical build and manipulation is a genuine secondary here (Europa lander, lunar regolith raking) at Speculative maturity and I record it rather than fold it into sensing. Maturity Working now for the primary: ML detection and denoising in bioacoustics, microscopy and mineral screening are deployed today."
     },
     {
       "gap_id": "1c1cb37e-2a00-80ea-93f0-c8ed8e7f2155",
@@ -190,7 +190,7 @@
       "value": "Directly measurable",
       "discriminating_test": "Does the gap name its own observable? Yes — resolution, imaging depth in intact 3D tissue, number of simultaneously resolved molecular species, and duration of live acquisition before phototoxicity, each with an unambiguous direction of improvement. No interpretive dispute exists about whether a higher-resolution in-situ molecular map is better.",
       "nearest_alternative": "Proxy only",
-      "note": "Proxy only would apply if the gap were 'we do not understand molecular organisation in tissue' and imaging metrics were the adjacent stand-in. It is not: the gap is stated as an imaging capability deficit, so the imaging metrics are the quantity itself."
+      "note": "Proxy only would apply if the gap were 'we do not understand molecular organization in tissue' and imaging metrics were the adjacent stand-in. It is not: the gap is stated as an imaging capability deficit, so the imaging metrics are the quantity itself."
     },
     {
       "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
@@ -204,7 +204,7 @@
     {
       "gap_id": "1b4cb37e-2a00-80e6-8b25-fd9e770fbb3f",
       "dimension": "outcome",
-      "value": "Molecular composition becomes mappable inside intact living tissue, so molecular state can be tied to cellular behaviour without destroying the context that produced it.",
+      "value": "Molecular composition becomes mappable inside intact living tissue, so molecular state can be tied to cellular behavior without destroying the context that produced it.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "The load-bearing clause is 'without destroying the context' — that is what becomes knowable that was not before."
@@ -240,7 +240,7 @@
       "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
       "dimension": "measurability",
       "value": "Directly measurable",
-      "discriminating_test": "Is there an agreed pass/fail observable? Yes — autonomous self-replication of a system assembled from defined, purified components, with intermediate metrics along the way (number of reconstituted functions, generations of division sustained, fraction of behaviour predicted by the design model). The field would not dispute a vesicle that divided for many generations from a specified parts list.",
+      "discriminating_test": "Is there an agreed pass/fail observable? Yes — autonomous self-replication of a system assembled from defined, purified components, with intermediate metrics along the way (number of reconstituted functions, generations of division sustained, fraction of behavior predicted by the design model). The field would not dispute a vesicle that divided for many generations from a specified parts list.",
       "nearest_alternative": "Verification contested",
       "note": "Tier 3 has some purchase — there is real argument about what counts as a minimal or truly bottom-up cell, and about whether JCVI-syn3.0-style work qualifies. Rejected because that is a definitional boundary dispute, not a dispute about whether an experiment would settle anything; the functional criteria are agreed even where the label is not."
     },
@@ -249,14 +249,14 @@
       "dimension": "ai_type",
       "value": "Autonomous experimentation",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the missing thing a design we cannot compute, or an empirical search over a combinatorial space no forward model can predict? Bottom-up cells fail on the emergent behaviour of reconstituted mixtures — component stoichiometry, crowding, membrane composition, energy regeneration — which no model predicts, so the loop has to close on the bench. That is closed-loop formulation optimisation, the taxonomy's stated home ground for this type.",
+      "discriminating_test": "Is the missing thing a design we cannot compute, or an empirical search over a combinatorial space no forward model can predict? Bottom-up cells fail on the emergent behavior of reconstituted mixtures — component stoichiometry, crowding, membrane composition, energy regeneration — which no model predicts, so the loop has to close on the bench. That is closed-loop formulation optimization, the taxonomy's stated home ground for this type.",
       "nearest_alternative": "Design and optimization search",
-      "note": "This is one of the two distinctions the protocol flags. Design search (in-silico minimal-genome and protein-component design) is the rival and I rejected it because there is no forward model good enough to make pure in-silico design meaningful here. I also explicitly checked Physical build and manipulation and rejected it: this is bench-scale liquid handling and reconstitution, not fabrication or assembly robotics, and collapsing the two would destroy the maturity distinction. Maturity 2-5 years: active-learning optimisation of cell-free expression systems is working now in narrow form, but closed-loop search over whole synthetic-cell assembly is not."
+      "note": "This is one of the two distinctions the protocol flags. Design search (in-silico minimal-genome and protein-component design) is the rival and I rejected it because there is no forward model good enough to make pure in-silico design meaningful here. I also explicitly checked Physical build and manipulation and rejected it: this is bench-scale liquid handling and reconstitution, not fabrication or assembly robotics, and collapsing the two would destroy the maturity distinction. Maturity 2-5 years: active-learning optimization of cell-free expression systems is working now in narrow form, but closed-loop search over whole synthetic-cell assembly is not."
     },
     {
       "gap_id": "1c1cb37e-2a00-8057-ae20-c47fd74df08d",
       "dimension": "outcome",
-      "value": "Living systems become buildable from specified parts, making cellular behaviour predictable from design rather than inferred after the fact from evolved organisms.",
+      "value": "Living systems become buildable from specified parts, making cellular behavior predictable from design rather than inferred after the fact from evolved organisms.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "The outcome is predictability-from-design, which is what distinguishes a bottom-up cell from a smaller evolved one."
@@ -268,24 +268,24 @@
       "value": "Directly measurable",
       "discriminating_test": "Does a binary observable with a direction exist? Yes — for a given compound, did a diffraction-quality crystal form and was a structure solved. Aggregated over a compound library this gives an uncontested success rate, and no one disputes what a solved structure shows.",
       "nearest_alternative": "Proxy only",
-      "note": "Rejected Proxy only because crystallisation outcome is the quantity itself, not an input standing in for something hidden. The clearest tier-1 case in the batch."
+      "note": "Rejected Proxy only because crystallization outcome is the quantity itself, not an input standing in for something hidden. The clearest tier-1 case in the batch."
     },
     {
       "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
       "dimension": "ai_type",
       "value": "ML surrogates and prediction",
       "maturity": "2-5 years",
-      "discriminating_test": "Is the blocker throughput of trying conditions, or the absence of a forward model of nucleation and growth? High-throughput robotic crystallisation screening already exists at scale and has not closed the gap, which rules out throughput. The description names the remedy itself: improved computational models of crystal growth — a learned emulator of a process too expensive to simulate from first principles.",
+      "discriminating_test": "Is the blocker throughput of trying conditions, or the absence of a forward model of nucleation and growth? High-throughput robotic crystallization screening already exists at scale and has not closed the gap, which rules out throughput. The description names the remedy itself: improved computational models of crystal growth — a learned emulator of a process too expensive to simulate from first principles.",
       "nearest_alternative": "Design and optimization search",
       "note": "This is the protocol's other flagged pressure point (surrogates vs design search). Design search would be right if the ask were for a proposer of co-formers, additives or solvent systems; the ask is for a forward model that says what will happen, and the proposer is only useful once that model exists. Autonomous experimentation was the third candidate and is rejected by the existing-screening-robots argument above. Maturity 2-5 years: crystal structure prediction is working now for small rigid organics, but predicting crystallisability and growth kinetics for recalcitrant molecules is not."
     },
     {
       "gap_id": "1c1cb37e-2a00-809e-8e26-e1c9f14f5143",
       "dimension": "outcome",
-      "value": "Atomic structures become determinable for the large class of molecules that currently resist crystallisation, bringing compound families invisible to structure-based work into it.",
+      "value": "Atomic structures become determinable for the large class of molecules that currently resist crystallization, bringing compound families invisible to structure-based work into it.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
-      "note": "Names the compound classes that become tractable rather than the crystallisation attempts that get cheaper."
+      "note": "Names the compound classes that become tractable rather than the crystallization attempts that get cheaper."
     },
 
     {
@@ -303,12 +303,12 @@
       "maturity": "2-5 years",
       "discriminating_test": "Is a design space defined and awaiting a proposer, or do we have candidate designs we cannot evaluate without prohibitively expensive pilot builds? Bioreactor scale-up fails at evaluation: mixing time, oxygen transfer and shear distribution at 100,000 L cannot be known without building the vessel, and coupled CFD-plus-kinetics simulation is too costly to sit inside a design loop. A learned emulator is what puts evaluation inside the loop.",
       "nearest_alternative": "Design and optimization search",
-      "note": "Design search is close and is the natural reading of 'Modularization of Bioreactors' — inverse design of geometry and module topology. Rejected on the evaluation-vs-proposal test: the proposer is cheap and already exists in engineering practice; the evaluator is what is missing. Physical build and manipulation was considered because the artefact is hardware, and rejected because the blocker is engineering knowledge, not the ability to fabricate vessels. Maturity 2-5 years: CFD surrogates are working in adjacent process industries but not validated across the scale range that matters here."
+      "note": "Design search is close and is the natural reading of 'Modularization of Bioreactors' — inverse design of geometry and module topology. Rejected on the evaluation-vs-proposal test: the proposer is cheap and already exists in engineering practice; the evaluator is what is missing. Physical build and manipulation was considered because the artifact is hardware, and rejected because the blocker is engineering knowledge, not the ability to fabricate vessels. Maturity 2-5 years: CFD surrogates are working in adjacent process industries but not validated across the scale range that matters here."
     },
     {
       "gap_id": "1c1cb37e-2a00-80cd-9ae4-ee6fa18c02ed",
       "dimension": "outcome",
-      "value": "Bioproducts that are economical at litre scale become economical at industrial scale, making biomanufacturing a live route to commodity chemicals and materials rather than to high-value niches only.",
+      "value": "Bioproducts that are economical at liter scale become economical at industrial scale, making biomanufacturing a live route to commodity chemicals and materials rather than to high-value niches only.",
       "discriminating_test": "n/a",
       "nearest_alternative": "n/a",
       "note": "Names the product class that becomes buildable, not the reactors that get better."

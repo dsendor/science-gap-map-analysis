@@ -14,7 +14,7 @@
           "ai_type": "Design and optimization search",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "Trial design, participant matching and prioritisation are optimisation problems over explicit objectives.",
+          "rationale": "Trial design, participant matching and prioritization are optimization problems over explicit objectives.",
           "confidence": "confident"
         },
         {
@@ -27,7 +27,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Cost per trial, enrolment time and trials completed per year are recorded in registries.",
+        "rationale": "Cost per trial, enrollment time and trials completed per year are recorded in registries.",
         "confidence": "confident"
       }
     },
@@ -92,7 +92,7 @@
     {
       "gap_id": "1c1cb37e-2a00-80ac-842e-e5f6ea4906cb",
       "outcome": {
-        "outcome": "Multifactorial disease and ageing get identified causal mechanisms, which makes them targetable the way single-cause diseases already are.",
+        "outcome": "Multifactorial disease and aging get identified causal mechanisms, which makes them targetable the way single-cause diseases already are.",
         "rationale": "Their description contrasts diseases with well-defined root causes, which were cured, against multifactorial ones, which were not.",
         "confidence": "confident"
       },
@@ -152,7 +152,7 @@
           "ai_type": "ML surrogates and prediction",
           "maturity": "2-5 years",
           "is_primary": 1,
-          "rationale": "ADME and toxicity prediction is a supervised problem with large existing labelled datasets, and most of their ten capabilities are mapping or prediction work.",
+          "rationale": "ADME and toxicity prediction is a supervised problem with large existing labeled datasets, and most of their ten capabilities are mapping or prediction work.",
           "confidence": "confident"
         }
       ],

@@ -129,7 +129,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Compounds synthesised per instrument-day and human hours per compound are direct throughput measures.",
+        "rationale": "Compounds synthesized per instrument-day and human hours per compound are direct throughput measures.",
         "confidence": "confident"
       }
     },
@@ -137,7 +137,7 @@
       "gap_id": "1c1cb37e-2a00-8043-bb0a-f10b4d7f65c8",
       "outcome": {
         "outcome": "Smell turns into a measurement. Predict perceived odor from structure and chemical sensing becomes diagnostic.",
-        "rationale": "Their description names flavour science, disease diagnostics and animal communication as the downstream unlocks.",
+        "rationale": "Their description names flavor science, disease diagnostics and animal communication as the downstream unlocks.",
         "confidence": "confident"
       },
       "ai_types": [
@@ -158,7 +158,7 @@
       ],
       "measurability": {
         "tier": "Directly measurable",
-        "rationale": "Predicted versus panel-rated odour descriptors on held-out molecules is a direct and already-run evaluation.",
+        "rationale": "Predicted versus panel-rated odor descriptors on held-out molecules is a direct and already-run evaluation.",
         "confidence": "confident"
       }
     },
