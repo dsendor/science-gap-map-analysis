@@ -1,121 +1,301 @@
-# Critical path method
+# Building a critical path
 
-- **`is_binding` means one thing: on a chain whose axis is cost, this step is where
-  the labor concentrates.** The artifact renders it as *"carries the cost"*.
-- **It is deliberately unset on every time chain.** On a strictly sequential chain,
-  removing any step shortens the total, so a flag that marks some steps and not others
-  has no discriminating power there.
-- **On a time chain, say the arithmetic instead.** "AI acts on 9.5 of the 32.5 years"
-  needs no vocabulary and cannot be circular.
-- **The textbook meaning needs parallel paths.** Neither of our two chains has any.
-  If a future chain does, `is_binding` recovers its classic sense and this file needs
-  a third case.
-- Currently set on 3 of 15 steps: publishing steps 3, 4 and 7. Chain 1 has it cleared
-  throughout.
+**A critical path decomposes one gap into the ordered steps the work actually runs
+through, and shows, step by step, whether AI reaches it and which of Convergent's own
+capabilities act on it.** This file is the procedure. The exact data format is
+`methodology/chain-schema.md`; how to find and cite evidence is
+`methodology/research-method.md`; the brief to hand a sub-agent is
+`agents/chain-builder.md`.
+
+## TL;DR
+
+- **Thirteen steps, three commits.** The prediction is committed before any step exists,
+  the chain second, review fixes third. The ingest enforces the first and refuses bad
+  data in the second.
+- **Choosing the gap is David's call.** Never present an ordered list of their gaps.
+  Offer candidates grouped by what they would test.
+- **One axis per chain: `time` or `cost`.** The number shown on each step must measure
+  that axis, or the chain says something it does not show.
+- **Maturity on a step means "would applying AI move this step", not "does the technique
+  exist".** This is the most common wrong call, and it has already been made on 5 of the
+  15 existing steps.
+- **Zero capabilities on a step is the finding.** Report it as an observation about the
+  capability set, never as something Convergent missed.
+- **Every chain ships `reviewed: "ai-only"`.** Only David changes that.
+- A new chain does **not** appear on the site until someone adds it deliberately. The
+  pages select chains by id.
 
 ---
 
-# Detail
+## The procedure
 
-## What the word was supposed to mean, and why it stopped working
+### 0. Set up
 
-The method was borrowed from project management, where **critical path** means the
-sequence of steps whose duration sets the duration of the whole project, and where the
-argument comes for free: *one link sets the pace, so speeding up any other link changes
-nothing.*
+```bash
+node engine/worktree.mjs chain-<short-name>
+cd ../wt-chain-<short-name> && node engine/rebuild.mjs && node engine/preflight.mjs
+```
 
-That sentence is true of a project **network** — a graph with parallel branches, where
-work on one branch runs alongside work on another. The path through the network with
-no slack is the critical one. Steps off it can absorb delay without moving the finish
-date, which is exactly what makes "binding" informative.
+Read, in this order: `docs/glossary.md`, this file, `methodology/chain-schema.md`,
+`methodology/research-method.md`. Then read both existing chains in
+`research-log/critical-paths/chains.json`. They are the only worked examples, and the
+publishing one has been checked by a person.
 
-Both chains we actually built are **strictly sequential**. The science case precedes
-the ranking, which precedes the funding, which precedes fabrication. Nothing runs
-alongside anything. In a serial chain there is no slack anywhere, every step is on the
-critical path, and the total is just the sum. Marking four of eight steps "binding"
-therefore claimed a distinction the structure does not contain.
+### 1. Choose the gap — ask David
 
-Worse, on the telescope chain the marked set turned out to be **exactly the set of
-steps no AI capability acts on**. So the finding "22 of the 32.5 years sit in the
-binding steps" was restating its own labelling. That is the circularity, and it is why
-the flag came off chain 1 entirely.
+This is a judgment about what the method should test next, and it is his.
 
-## The three cases
+Two chains exist, and both returned the same shape of answer: AI does not reach the
+steps where the time or cost concentrates. **Telescopes** (primary kind of work: Physical
+build, measured in time) and **research publishing** (Coordination, measured in cost).
+The method has never been tested somewhere it could return the opposite answer. That is
+the useful selection criterion, and it is about the method, not about which gap matters
+more.
 
-| Chain shape | Does `is_binding` mean anything? | What to write instead |
+What makes a gap a good candidate:
+
+- **A primary kind of work that neither chain covers**, especially one AI is good at:
+  Prediction and modeling, Design search, Measurement and sensing, Running experiments.
+- **At least three Convergent capabilities attached**, so "which steps have none"
+  can say something. 62 of 103 gaps qualify.
+- **A published record of how the work actually proceeds** — milestone dates,
+  program histories, turnaround data. A chain with no numbers is a guess.
+- **One dominant axis**, or a clear way to pick one.
+
+List the candidates with this query. Present them **grouped by kind of work and sorted
+by name**, never by a score or by your preference:
+
+```bash
+sqlite3 db/gapmap.sqlite "
+SELECT t.ai_type AS kind_of_work, g.name,
+       (SELECT count(*) FROM gm_gap_capabilities WHERE gap_id = g.id) AS capabilities, g.id
+FROM gm_gaps g JOIN gap_ai_types t ON t.gap_id = g.id AND t.is_primary = 1
+WHERE (SELECT count(*) FROM gm_gap_capabilities WHERE gap_id = g.id) >= 3
+  AND g.id NOT IN (SELECT gap_id FROM critical_paths)
+ORDER BY t.ai_type, g.name;"
+```
+
+### 2. Read everything Convergent already says
+
+Their text is the primary evidence and costs nothing:
+
+```bash
+GAP=<gap-id>
+sqlite3 db/gapmap.sqlite "SELECT name, description FROM gm_gaps WHERE id = '$GAP';"
+sqlite3 db/gapmap.sqlite "
+SELECT c.name, c.description, r.title, r.url, r.types_json
+FROM gm_gap_capabilities gc
+JOIN gm_capabilities c ON c.id = gc.capability_id
+LEFT JOIN gm_capability_resources cr ON cr.capability_id = c.id
+LEFT JOIN gm_resources r ON r.id = cr.resource_id
+WHERE gc.gap_id = '$GAP' ORDER BY c.name, r.title;"
+```
+
+Gap descriptions often name the blocker outright. The capabilities are Convergent's view
+of what would help, and resources typed `Initiative` are who is already building it.
+
+### 3. Pick one axis
+
+- **`time`** — elapsed time from the start of the work to its result. Use when a
+  milestone record exists.
+- **`cost`** — labor or money per unit of output. Use when the gap statement is about
+  expense and figures exist per step.
+
+**The number displayed on each step must measure the axis.** If the only figures you can
+find are durations, it is a time chain, whatever the gap title says. The publishing chain
+breaks this rule — it declares a cost axis and displays elapsed days — and it is the
+first thing a careful reader pushes on. Do not repeat it.
+
+A gap statement usually bundles several axes; the publishing gap bundles cost, speed and
+who can afford to take part. Choose one, and name the rest in `axes_excluded`. A chain
+that mixes axes produces a concentration that is an artifact of the mixing.
+
+### 4. Pre-register the prediction — commit 1
+
+Before any step exists, write
+`research-log/critical-paths/preregistered/<id>.json`:
+
+```json
+{
+  "id": "path-particle-accelerator-time",
+  "gap_id": "1c1cb37e-2a00-803c-84ea-fa89d39a8929",
+  "axis": "Elapsed time from design study to first beam",
+  "axis_kind": "time",
+  "axes_excluded": "Construction cost per unit of beam energy, which runs over a different set of steps.",
+  "expectation": "Which steps you expect AI to reach, where you expect the time to concentrate, and whether Convergent's capabilities act on those steps. Specific enough to be wrong.",
+  "registered_by": "<model id or name>",
+  "registered_on": "YYYY-MM-DD"
+}
+```
+
+```bash
+node engine/check-preregistration.mjs research-log/critical-paths/preregistered/<id>.json
+git add research-log/critical-paths/preregistered/<id>.json
+git commit -m "Pre-register <id>: <the prediction in a few words>"
+```
+
+The checker also prints the capabilities attached to the gap, with their exact names.
+
+**This file is never edited afterwards.** The ingest refuses the full chain if `gap_id`,
+`axis`, `axis_kind`, `axes_excluded` or `expectation` differ from it. A prediction
+written before the analysis and then confirmed is evidence; one written after is a story.
+If the chain contradicts the prediction, that is a result, and it goes in `finding`.
+
+### 5. Decompose into steps
+
+The steps are the work, in the order it happens, from the start of the axis to its end.
+
+- **Usually five to nine steps.** Fewer hides where the time goes; more splits steps that
+  share one blocker and one figure.
+- **Each step has one blocker**, stated as what actually holds it up. "Community
+  consensus on what to build", not "science case definition is slow".
+- **Name a step by what happens**, not by who does it.
+- **Split a step when its parts have different blockers.** The publishing chain's
+  reviewer step is really matching, which AI reaches, and willingness, which it does not.
+  It was kept as one step with the split stated in `blocker`, because no figure
+  separates them.
+- **Steps are strictly sequential in the schema.** If the real work has parallel tracks,
+  say so in `finding` and flag it for David; do not force a false order.
+
+### 6. Map Convergent's capabilities to steps
+
+For each capability attached to the gap, read its description and its resources, and
+decide which steps it acts on: none, one or several. Put its **exact name** in each of
+those steps' `capabilities` arrays. The ingest rejects any name not attached to the gap.
+
+This is the part of the chain that comes from their data rather than from our labels, and
+it is usually the strongest result: on the publishing chain, 4 of 7 steps have nothing
+attached, including the one where the labor concentrates.
+
+**Tone.** "None of the three capabilities acts on the approval step" is an observation.
+"They missed the real bottleneck" is a critique, and it loses the reader in one sentence.
+
+### 7. Research each step
+
+Follow `methodology/research-method.md`. For every step, find:
+
+- **Evidence for the blocker**, from a source you fetched and can cite.
+- **A quantity on the axis** — years for a time chain, days or cost for a cost chain —
+  with a citation a reader can resolve: title, year, and a DOI or URL.
+- **Or an honest null**: a genuine search that found nothing, logged. A null is a
+  finding. On the publishing chain, the step with no measure is the one that matters
+  most.
+
+When one published figure covers several steps, carry it on the first of them and list
+the steps in `duration_covers`. Never divide it between steps to make each one look
+measured.
+
+Save your searches before you rebuild, or they are lost:
+
+```bash
+node engine/export-searches.mjs chain-<short-name> --phase chain-<short-name>
+```
+
+### 8. Label AI reach on each step
+
+| Field | Question it answers |
+|---|---|
+| `ai_acts` | Does a current AI capability act on this step at all? |
+| `ai_type` | What kind of work stands in the way *at this step*? Stored name — see `methodology/chain-schema.md`. |
+| `maturity` | **Would applying that AI move this step?** `Working now`, `2-5 years`, `Speculative`. |
+| `is_binding` | Cost chains only. Does this step carry a disproportionate share of the cost, with evidence? |
+
+**Maturity is efficacy, not availability.** The telescope's first step is labeled
+`Working now` because language models are good at scientific synthesis, but the step's
+own blocker is a field reaching consensus, which models cannot do. Ask whether applying
+the capability would shorten or cheapen *this step*, and read the blocker before
+answering. The discriminating examples are in `methodology/taxonomy.md`.
+
+`ai_acts` and `is_binding` are independent. A step can be both, which is the interesting
+case. **If the steps AI reaches and the steps that carry the cost turn out to be exactly
+complementary sets, suspect the labeling before the world** — that was the circularity
+that removed `is_binding` from the telescope chain.
+
+### 9. Write the finding
+
+Lead with the claim, in one paragraph. Then:
+
+- Say explicitly whether the pre-registered expectation held, and where it did not.
+- What Convergent's capability set touches and does not, as an observation.
+- Where the evidence is thin, in one sentence, not a paragraph of caveats.
+
+The first paragraph is shown on the site; the rest is behind a click.
+
+### 10. Validate and commit — commit 2
+
+Write the full chain to `research-log/critical-paths/<id>.json`, one chain per file.
+
+```bash
+node engine/rebuild.mjs          # runs the ingest; every problem is listed at once
+node engine/export-artifact.mjs  # confirms the artifact builds with it
+git add research-log/critical-paths/<id>.json research-log/searches/
+git commit -m "<id>: <the finding in a few words>"
+git push -u origin <branch>
+```
+
+If rebuild fails, the message names the field and step. Fix the file; never the ingest.
+
+### 11. Review
+
+A different agent reviews the chain, using `agents/reviewer.md`, mode C. It must not see
+your reasoning before it forms its own. It argues that a different step dominates,
+re-fetches your figures, and checks tone. Record what it finds, fix what is right, and
+commit the fixes separately so the review stays visible.
+
+### 12. Hand to David
+
+Push the branch and ask. Do not merge it. `reviewed` stays `"ai-only"`: only David sets it
+to `"human"`, and only after reading the chain against the gap himself.
+
+### 13. Publishing is a separate change
+
+The site renders chains by hard-coded id in `app/src/app/chains/page.jsx` and
+`app/src/app/page.jsx`. Adding a chain to the site, and to the Mermaid source in
+`app/src/components/mermaid.js`, is a site change David approves on its own.
+
+---
+
+## Rules that change the answer
+
+1. **One axis, and the displayed number measures it.**
+2. **Maturity is efficacy on this step**, never whether the technique exists.
+3. **A published figure covering several steps is a span.** Use `duration_covers`; do not
+   split it.
+4. **An honest null is a result**, and usually the most important row in the chain.
+5. **The prediction is fixed once committed.** Contradictions go in `finding`.
+6. **Capability coverage is reported as observation**, never as omission.
+7. **Never rank their gaps**, and never call a step "the most important". Say where the
+   time or cost is, with the number.
+
+## Known issues in the existing chains
+
+- **Publishing declares `cost` and displays days.** Unresolved. The fix is either
+  per-step labor figures, or re-declaring it as a time chain, which would require a new
+  pre-registration and would say so.
+- **5 of 15 steps carry the availability reading of maturity.** The worst is the
+  telescope's science-case step. Correcting it moves the telescope headline from "AI
+  acts on 9.5 of 32.5 years" to roughly 2.5, a stronger claim, but a second reader has
+  not confirmed it.
+- **The schema is strictly sequential.** Neither chain has parallel tracks. A gap that
+  does will need `is_binding` in its textbook sense and a schema change.
+
+---
+
+## Reference: what "binding" and "carries the cost" mean
+
+The method borrows "critical path" from project management, where it means the sequence
+with no slack in a network of parallel tasks, so speeding up anything off it changes
+nothing. **That only works when there are parallel paths.** Both chains built so far are
+strictly sequential, and in a strictly sequential chain every step adds to the total, so
+marking some steps "binding" claims a distinction the structure does not contain.
+
+| Chain shape | Is `is_binding` meaningful? | Instead |
 |---|---|---|
-| **Time, with parallel paths** | Yes, the textbook sense: this step is on the longest path and has no slack. | Use it, and say which paths run in parallel. |
-| **Time, strictly sequential** | No. Every step adds to the total. | Arithmetic. "AI acts on 9.5 of the 32.5 years. Zero all of it and a telescope still takes 23." |
-| **Cost** | Yes, in a different sense: this is where the labor concentrates. | Use it. Say "carries the cost", never "binding". |
+| Time, strictly sequential | **No.** The ingest rejects it. | State the arithmetic: "AI acts on 9.5 of the 32.5 years." |
+| Time, with parallel tracks | Yes, in the textbook sense. Not yet supported by the schema. | Flag for a schema change. |
+| Cost | **Yes, differently:** this step carries a disproportionate share of the cost. | Set it, with evidence. The site shows "carries the cost". |
 
-The cost sense and the time sense are different claims wearing one word. Cost is
-additive rather than sequential: three steps carrying most of the labor is a statement
-about **distribution**, not about slack or ordering. Keeping the same column for both
-is a convenience, and the price of that convenience is this file.
-
-## Setting the flag
-
-Set `is_binding = 1` when **the axis is cost and this step accounts for a
-disproportionate share of it**, with evidence in `evidence` or `figure` saying so.
-Three of the seven publishing steps qualify:
-
-- **Reviewer recruitment and matching** — roughly five invitations per accepted review;
-  55% of 139 surveyed editors call recruitment a significant challenge.
-- **Review judgment** — 23% committee disagreement, about half the accept list changing
-  on a rerun.
-- **Credit and legitimacy** — no published quantity, and the blocker is what committees
-  agree to count.
-
-Leave it `0` on any time chain unless that chain has genuine parallel structure. If it
-does, record which steps run alongside which, because the reader cannot infer
-parallelism from an ordered list.
-
-`is_binding` and `ai_acts` are independent and are meant to be. Publishing step 3 is
-both: AI can match a reviewer to a paper, and recruitment still carries cost, because
-the half AI reaches is matching and the half that binds is willingness. A step being
-one is no evidence about the other, and the moment the two sets coincide, suspect the
-labelling rather than the world.
-
-## How the artifact renders it
-
-`Chain.jsx` and `ChainMini.jsx` show *"carries the cost"* when
-`is_binding && duration_years == null`, and colour a step by `ai_acts` alone.
-
-**Known weakness.** The `duration_years == null` test is a proxy for "this is a cost
-chain". A cost chain that happened to carry durations would silently render the wrong
-label, and a time chain with a stray `is_binding` would render nothing at all rather
-than failing. An explicit axis field on `critical_paths` would be the honest fix. It is
-not worth a schema change for two chains; it is worth one before a third.
-
-## Everything else about building a chain
-
-Decompose the gap from question to result as an explicit ordered chain. For each step
-record what blocks it, which kind of work is in the way, at what maturity, whether a
-current AI capability acts on it, and which of Convergent's own capabilities for that
-gap touch it.
-
-Record the **expectation before doing the analysis**, in `critical_paths.expectation`,
-and commit it separately. A prediction written down in advance and then confirmed is
-evidence; the same prediction written afterwards is a story. If the chain refutes the
-expectation, that is a genuine and reportable result, and it gets reported.
-
-Where a gap statement bundles several axes — cost, speed, inclusiveness — **pick one
-axis, say which, and note the others are separate chains** in `axes_excluded`. Chains
-that silently mix axes produce a cost concentration that is an artifact of the mixing.
-
-Two chains, chosen so the results differ: one measured in elapsed time, one in labor
-cost. A single chain shows the method works; a pair shows it discriminates, which is
-the stronger claim. Doing this across the whole map is the collaboration being
-proposed, not the thing being given away.
-
-Render as step cards plus a table: diagram, then what the chain reveals, then the
-per-step detail. The Mermaid source ships alongside for anyone who wants to paste a
-chain elsewhere, and is not the render path.
-
-## Tone
-
-Where a capability set does not touch a step, say so **as an observation about the
-capability set, not as a deficiency**. The whole artifact is a contribution, not a
-critique. "None of the three listed capabilities acts on the approval step" is an
-observation. "They missed the real bottleneck" is a critique, and it loses the reader
-in one sentence.
+The cost sense is about distribution, not slack. On the publishing chain it is set on
+three steps: reviewer recruitment (4.5 invitations per accepted review), review
+judgment (23% committee disagreement), and credit and legitimacy (no published quantity;
+the blocker is what committees agree to count).

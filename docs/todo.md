@@ -17,6 +17,13 @@ What is open is small.
 
 ## Open
 
+- [ ] **Merge `research-playbook`** — reorganizes how to build critical paths, label gaps
+      and research evidence, so another agent can pick the work up; makes the chain ingest
+      refuse bad input; saves searches across rebuilds; enforces pre-registration.
+      Proposed CLAUDE.md change, not made: add `methodology/README.md` to the pointer
+      table as the start point for extending the analysis.
+- [ ] **Choose the gap for the next critical path.** Task A1 in `docs/future-work.md`.
+
 - [ ] **Merge `docs-and-deploy-fix`** — the production build fix and this todo.
 - [ ] `research-log/` still holds `prereg-relabel.md` and `relabel-report.md` paths that
       `engine/compare-relabel.mjs` now writes to but which do not exist there yet. The
