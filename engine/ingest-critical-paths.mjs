@@ -51,11 +51,11 @@ const MATURITIES = ['Working now', '2-5 years', 'Speculative'];
 
 const PATH_KEYS = new Set([
   'id', 'gap_id', 'title', 'axis', 'axis_kind', 'axes_excluded', 'expectation', 'finding',
-  'duration_basis', 'programmes', 'reviewed', 'links',
+  'duration_basis', 'programmes', 'reviewed', 'status', 'links',
 ]);
 const LINK_KEYS = new Set([
   'seq', 'link', 'blocker', 'ai_acts', 'ai_type', 'maturity', 'is_binding', 'capabilities',
-  'evidence', 'rationale', 'figure',
+  'evidence', 'rationale', 'figure', 'confidence',
   'duration_years', 'duration_span', 'duration_note',
   'duration_days', 'duration_span_note', 'duration_covers',
   // Legacy names from the first chain, which was JWST-specific. Accepted so that file
@@ -71,6 +71,13 @@ const capsFor = (gapId) =>
   db.prepare(`SELECT c.name FROM gm_gap_capabilities gc
               JOIN gm_capabilities c ON c.id = gc.capability_id
               WHERE gc.gap_id = ? ORDER BY c.name`).all(gapId).map((r) => r.name);
+
+// Nine of Convergent's capability names contain a line break or a leading space, e.g.
+// "Universal Latent Variable Model of\n  Cellular State". Printed in a terminal they look
+// like ordinary names, so an agent typing what it sees was rejected. Names are matched
+// ignoring whitespace, and the exact stored name is what gets written, because the
+// export looks capabilities up by that name. Their data is never edited.
+const norm = (x) => String(x).replace(/\s+/g, ' ').trim();
 
 // Pre-registration. A new chain's axis and expectation are committed first, in
 // research-log/critical-paths/preregistered/<id>.json, before any step exists. rebuild
@@ -100,6 +107,10 @@ for (const p of batch.paths ?? []) {
   }
   if (p.reviewed !== undefined && !['ai-only', 'human'].includes(p.reviewed)) {
     err('reviewed must be "ai-only" or "human"');
+  }
+  const legacy = LEGACY_UNREGISTERED.has(p.id);
+  if (p.status !== undefined ? !['draft', 'complete'].includes(p.status) : !legacy) {
+    err('status is required and must be "draft" (not exported) or "complete"');
   }
   if (!LEGACY_UNREGISTERED.has(p.id) && /^path-[a-z0-9-]+$/.test(p.id ?? '')) {
     const regPath = `${root}research-log/critical-paths/preregistered/${p.id}.json`;
@@ -134,6 +145,10 @@ for (const p of batch.paths ?? []) {
     if (l.seq !== i + 1) lerr(`seq must be ${i + 1}; steps are numbered 1..${n} in order`);
     for (const k of ['link', 'blocker', 'rationale']) if (!text(l[k])) lerr(`${k} is required`);
     if (typeof l.ai_acts !== 'boolean') lerr('ai_acts is required and must be true or false');
+    if (l.confidence !== undefined ? !['confident', 'guess'].includes(l.confidence)
+        : !LEGACY_UNREGISTERED.has(p.id)) {
+      lerr('confidence is required and must be "confident" or "guess" (CLAUDE.md, rule 6)');
+    }
 
     if (l.ai_type !== undefined && !KINDS.includes(l.ai_type)) {
       const hint = DISPLAY_TO_STORED[l.ai_type]
@@ -150,9 +165,13 @@ for (const p of batch.paths ?? []) {
     }
 
     if (l.capabilities !== undefined && !Array.isArray(l.capabilities)) lerr('capabilities must be an array of names');
-    for (const c of l.capabilities ?? []) {
-      if (!validCaps.includes(c)) {
-        lerr(`capability "${c}" is not attached to this gap. Attached: ${validCaps.map((x) => `"${x}"`).join(', ') || '(none)'}`);
+    l._canonicalCaps = [];
+    for (const c of Array.isArray(l.capabilities) ? l.capabilities : []) {
+      const match = validCaps.find((v) => norm(v) === norm(c));
+      if (match) l._canonicalCaps.push(match);
+      else {
+        lerr(`capability ${JSON.stringify(c)} is not attached to this gap. Attached: ` +
+          (validCaps.map((x) => JSON.stringify(norm(x))).join(', ') || '(none)'));
       }
     }
 
@@ -204,24 +223,24 @@ try {
     db.prepare('DELETE FROM critical_path_links WHERE path_id = ?').run(p.id);
     db.prepare('DELETE FROM critical_paths WHERE id = ?').run(p.id);
     db.prepare(`INSERT INTO critical_paths (id, gap_id, title, axis, axes_excluded, expectation, finding,
-                duration_basis, programmes_json, reviewed, axis_kind)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+                duration_basis, programmes_json, reviewed, axis_kind, status)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
       .run(p.id, p.gap_id, p.title, p.axis, p.axes_excluded, p.expectation, p.finding ?? null,
            p.duration_basis ?? null, JSON.stringify(p.programmes ?? []), p.reviewed ?? 'ai-only',
-           p.axis_kind);
+           p.axis_kind, p.status ?? 'complete');
     for (const l of p.links) {
       db.prepare(`INSERT INTO critical_path_links
         (path_id, seq, link, blocker, ai_type, maturity, is_binding, evidence, rationale,
          duration_years, duration_span, duration_note, figure, ai_acts, capabilities_json,
-         duration_days, duration_span_note, duration_covers_json)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+         duration_days, duration_span_note, duration_covers_json, confidence)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
         .run(p.id, l.seq, l.link, l.blocker, l.ai_type ?? null, l.maturity ?? null,
              l.is_binding ?? 0, l.evidence ?? null, l.rationale,
              l.duration_years ?? l.duration_jwst_years ?? null,
              l.duration_span ?? l.duration_jwst_span ?? null, l.duration_note ?? null,
-             l.figure ?? null, l.ai_acts ? 1 : 0, JSON.stringify(l.capabilities ?? []),
+             l.figure ?? null, l.ai_acts ? 1 : 0, JSON.stringify(l._canonicalCaps ?? []),
              l.duration_days ?? null, l.duration_span_note ?? null,
-             l.duration_covers ? JSON.stringify(l.duration_covers) : null);
+             l.duration_covers ? JSON.stringify(l.duration_covers) : null, l.confidence ?? null);
       links++;
     }
     chains++;

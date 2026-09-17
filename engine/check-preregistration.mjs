@@ -45,7 +45,13 @@ if (errors.length) {
 const caps = db.prepare(`SELECT c.name, c.slug FROM gm_gap_capabilities gc
   JOIN gm_capabilities c ON c.id = gc.capability_id WHERE gc.gap_id = ? ORDER BY c.name`).all(reg.gap_id);
 console.log(`OK: ${reg.id}`);
-console.log(`gap: ${gap.name}`);
-console.log(`\nCapabilities attached to this gap (${caps.length}). Quote these names exactly in each step's "capabilities":`);
-for (const c of caps) console.log(`  - ${c.name}   https://www.gap-map.org/capabilities/${c.slug}/`);
+console.log(`gap: ${gap.name.replace(/\s+/g, " ").trim()}`);
+console.log(`\nCapabilities attached to this gap (${caps.length}). Use these names in each step's "capabilities".`);
+console.log('Shown as JSON strings: some of Convergent\'s names contain line breaks that a terminal hides.');
+console.log('The ingest matches ignoring whitespace, so the single-line form is fine.');
+for (const c of caps) {
+  const oneLine = c.name.replace(/\s+/g, ' ').trim();
+  const note = oneLine !== c.name ? '   (stored with hidden whitespace)' : '';
+  console.log(`  ${JSON.stringify(oneLine)}${note}\n      https://www.gap-map.org/capabilities/${c.slug}/`);
+}
 console.log('\nNext: commit this file on its own, before writing any step.');
