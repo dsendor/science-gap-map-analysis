@@ -17,7 +17,7 @@
 // Usage: node engine/ingest-critical-paths.mjs research-log/critical-paths/<file>.json
 
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 const file = process.argv[2];
 if (!file) {
@@ -72,6 +72,16 @@ const capsFor = (gapId) =>
               JOIN gm_capabilities c ON c.id = gc.capability_id
               WHERE gc.gap_id = ? ORDER BY c.name`).all(gapId).map((r) => r.name);
 
+// Pre-registration. A new chain's axis and expectation are committed first, in
+// research-log/critical-paths/preregistered/<id>.json, before any step exists. rebuild
+// does not read that folder. When the full chain arrives, these fields must match what
+// was registered exactly: changing the prediction after seeing the steps would turn
+// evidence back into a story, and if the chain refutes the expectation, the place to
+// say so is `finding`. The two original chains predate this folder; their ordering is
+// in git, at commit bbfa54f.
+const LEGACY_UNREGISTERED = new Set(['path-telescope-elapsed-time', 'path-publishing-cost']);
+const REGISTERED_FIELDS = ['gap_id', 'axis', 'axis_kind', 'axes_excluded', 'expectation'];
+
 const errors = [];
 const seenIds = new Set();
 
@@ -90,6 +100,21 @@ for (const p of batch.paths ?? []) {
   }
   if (p.reviewed !== undefined && !['ai-only', 'human'].includes(p.reviewed)) {
     err('reviewed must be "ai-only" or "human"');
+  }
+  if (!LEGACY_UNREGISTERED.has(p.id) && /^path-[a-z0-9-]+$/.test(p.id ?? '')) {
+    const regPath = `${root}research-log/critical-paths/preregistered/${p.id}.json`;
+    if (!existsSync(regPath)) {
+      err(`no pre-registration at research-log/critical-paths/preregistered/${p.id}.json. ` +
+        'Commit the axis and expectation there first (methodology/critical-path.md, step 4).');
+    } else {
+      const reg = JSON.parse(readFileSync(regPath, 'utf8'));
+      for (const k of REGISTERED_FIELDS) {
+        if (reg[k] !== p[k]) {
+          err(`${k} differs from the pre-registration. Do not edit a registered prediction; ` +
+            'if the chain contradicts it, say so in `finding`.');
+        }
+      }
+    }
   }
   if (!Array.isArray(p.links) || p.links.length === 0) {
     err('links must be a non-empty array');
