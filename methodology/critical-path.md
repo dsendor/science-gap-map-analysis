@@ -10,17 +10,21 @@ capabilities act on it.** This file is the procedure. The exact data format is
 ## TL;DR
 
 - **Thirteen steps, three commits.** The prediction is committed before any step exists,
-  the chain second, review fixes third. The ingest enforces the first and refuses bad
-  data in the second.
+  the chain second, review fixes third. The ingest refuses a chain that does not match
+  its registration or breaks the format; the reviewer checks in git that the registration
+  came first and never changed.
 - **Choosing the gap is David's call.** Never present an ordered list of their gaps.
   Offer candidates grouped by what they would test.
-- **One axis per chain: `time` or `cost`.** The number shown on each step must measure
-  that axis, or the chain says something it does not show.
+- **One axis per chain: `time` or `cost`.** On a time chain the number shown measures the
+  axis. A cost chain cannot show a cost yet — there is no numeric cost field — so money
+  goes in `figure` as words (step 3).
 - **Maturity on a step means "would applying AI move this step", not "does the technique
   exist".** This is the most common wrong call, and it has already been made on 5 of the
   15 existing steps.
 - **Zero capabilities on a step is the finding.** Report it as an observation about the
   capability set, never as something Convergent missed.
+- **Commit a partly researched chain as `status: "draft"`.** Drafts validate but never
+  reach the public data. Every step carries a `confidence`.
 - **Every chain ships `reviewed: "ai-only"`.** Only David changes that.
 - A new chain does **not** appear on the site until someone adds it deliberately. The
   pages select chains by id.
@@ -40,6 +44,16 @@ Read, in this order: `docs/glossary.md`, this file, `methodology/chain-schema.md
 `methodology/research-method.md`. Then read both existing chains in
 `research-log/critical-paths/chains.json`. They are the only worked examples, and the
 publishing one has been checked by a person.
+
+**The examples predate the current format, so do not copy their shape.** They have no
+`status`, `confidence` or pre-registration file; the telescope uses the legacy
+`duration_jwst_years` and explains `is_binding: 0` on every step, which a new time chain
+simply leaves out; and the file has top-level `phase` and `note` keys, which the ingest
+ignores. Copy the example in `methodology/chain-schema.md` instead.
+
+Do the work in the worktree `engine/worktree.mjs` made. If you switch branches inside it,
+rebuild refuses with "HEAD MOVED"; run `node engine/preflight.mjs` again, as the message
+says.
 
 ### 1. Choose the gap — ask David
 
@@ -101,10 +115,18 @@ of what would help, and resources typed `Initiative` are who is already building
 - **`cost`** — labor or money per unit of output. Use when the gap statement is about
   expense and figures exist per step.
 
-**The number displayed on each step must measure the axis.** If the only figures you can
-find are durations, it is a time chain, whatever the gap title says. The publishing chain
-breaks this rule — it declares a cost axis and displays elapsed days — and it is the
-first thing a careful reader pushes on. Do not repeat it.
+**The number displayed on each step should measure the axis.** For a time chain that
+works: `duration_years` is shown. **For a cost chain the format cannot do it yet.** There
+is no numeric cost field; the only number a cost chain displays is `duration_days`, which
+is elapsed time. That is why the publishing chain declares cost and shows days, and any
+new cost chain will do the same until the format gains a cost field (task A2 in
+`docs/future-work.md`, David's decision). Until then, on a cost chain:
+
+- Put each money or labor figure in `figure`, as words with its unit, and cite it in
+  `evidence`.
+- Use `duration_days` only where elapsed time is a fair stand-in for cost on that step,
+  and say so in `duration_span_note`.
+- If the only figures you can find are durations, make it a time chain instead.
 
 A gap statement usually bundles several axes; the publishing gap bundles cost, speed and
 who can afford to take part. Choose one, and name the rest in `axes_excluded`. A chain
@@ -137,9 +159,10 @@ git commit -m "Pre-register <id>: <the prediction in a few words>"
 The checker also prints the capabilities attached to the gap, with their exact names.
 
 **This file is never edited afterwards.** The ingest refuses the full chain if `gap_id`,
-`axis`, `axis_kind`, `axes_excluded` or `expectation` differ from it. A prediction
-written before the analysis and then confirmed is evidence; one written after is a story.
-If the chain contradicts the prediction, that is a result, and it goes in `finding`.
+`axis`, `axis_kind`, `axes_excluded` or `expectation` differ from it. It cannot tell if
+both files were edited together; git can, and the reviewer checks. A prediction written
+before the analysis and then confirmed is evidence; one written after is a story. If the
+chain contradicts the prediction, that is a result, and it goes in `finding`.
 
 ### 5. Decompose into steps
 
@@ -160,8 +183,11 @@ The steps are the work, in the order it happens, from the start of the axis to i
 ### 6. Map Convergent's capabilities to steps
 
 For each capability attached to the gap, read its description and its resources, and
-decide which steps it acts on: none, one or several. Put its **exact name** in each of
-those steps' `capabilities` arrays. The ingest rejects any name not attached to the gap.
+decide which steps it acts on: none, one or several. Put its name, as printed by
+`engine/check-preregistration.mjs`, in each of those steps' `capabilities` arrays. The
+ingest rejects any name not attached to the gap. Some of Convergent's names contain line
+breaks a terminal hides; the checker shows them on one line, and the ingest accepts that
+form.
 
 This is the part of the chain that comes from their data rather than from our labels, and
 it is usually the strongest result: on the publishing chain, 4 of 7 steps have nothing
@@ -185,6 +211,11 @@ When one published figure covers several steps, carry it on the first of them an
 the steps in `duration_covers`. Never divide it between steps to make each one look
 measured.
 
+**If you commit before every step is researched**, set `status: "draft"` and say in
+each unresearched step's `duration_span_note` that it has not been researched yet. A draft
+validates but is never exported. Do not use the words of an honest null for a step you
+have not searched.
+
 Save your searches before you rebuild, or they are lost:
 
 ```bash
@@ -199,6 +230,7 @@ node engine/export-searches.mjs chain-<short-name> --phase chain-<short-name>
 | `ai_type` | What kind of work stands in the way *at this step*? Stored name — see `methodology/chain-schema.md`. |
 | `maturity` | **Would applying that AI move this step?** `Working now`, `2-5 years`, `Speculative`. |
 | `is_binding` | Cost chains only. Does this step carry a disproportionate share of the cost, with evidence? |
+| `confidence` | `confident` or `guess`, on every step. Set `guess` whenever the call could reasonably go another way, and say why in `rationale`. A chain with no guesses is not confident, it is dishonest. |
 
 **Maturity is efficacy, not availability.** The telescope's first step is labeled
 `Working now` because language models are good at scientific synthesis, but the step's
@@ -223,7 +255,10 @@ The first paragraph is shown on the site; the rest is behind a click.
 
 ### 10. Validate and commit — commit 2
 
-Write the full chain to `research-log/critical-paths/<id>.json`, one chain per file.
+Write the full chain to `research-log/critical-paths/<id>.json`, one chain per file, with
+`status: "complete"` once every step is researched, or `"draft"` if not.
+`is_binding` compares steps with each other, so set it only once the other steps have
+figures; on a draft, leave it out or mark the step `guess`.
 
 ```bash
 node engine/rebuild.mjs          # runs the ingest; every problem is listed at once
@@ -257,7 +292,8 @@ The site renders chains by hard-coded id in `app/src/app/chains/page.jsx` and
 
 ## Rules that change the answer
 
-1. **One axis, and the displayed number measures it.**
+1. **One axis, and the number you show measures it** — which the format only allows on
+   time chains so far (step 3).
 2. **Maturity is efficacy on this step**, never whether the technique exists.
 3. **A published figure covering several steps is a span.** Use `duration_covers`; do not
    split it.
@@ -269,9 +305,9 @@ The site renders chains by hard-coded id in `app/src/app/chains/page.jsx` and
 
 ## Known issues in the existing chains
 
-- **Publishing declares `cost` and displays days.** Unresolved. The fix is either
-  per-step labor figures, or re-declaring it as a time chain, which would require a new
-  pre-registration and would say so.
+- **A cost chain cannot display a cost.** The format has no numeric cost field, so the
+  publishing chain declares `cost` and displays days, and so will the next cost chain.
+  Task A2 in `docs/future-work.md`.
 - **5 of 15 steps carry the availability reading of maturity.** The worst is the
   telescope's science-case step. Correcting it moves the telescope headline from "AI
   acts on 9.5 of 32.5 years" to roughly 2.5, a stronger claim, but a second reader has

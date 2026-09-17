@@ -26,11 +26,12 @@ The full procedure is `methodology/critical-path.md`. Read it, then
 6. Map each Convergent capability to the steps it acts on, by exact name.
 7. Research every step: evidence for the blocker, and a cited quantity on the axis, or an
    honest null from at least six logged searches with a named near-miss.
-8. Label `ai_acts`, `ai_type`, `maturity` (efficacy on this step) and, on a cost chain
-   only, `is_binding`.
+8. Label `ai_acts`, `ai_type`, `maturity` (efficacy on this step), `confidence` on every
+   step, and, on a cost chain only, `is_binding`.
 9. Write the finding: claim first; whether the expectation held; what the capability set
    touches, as observation.
-10. **Commit 2: the chain.** Write `research-log/critical-paths/<id>.json`, export your
+10. **Commit 2: the chain.** Write `research-log/critical-paths/<id>.json` with
+    `status: "complete"`, or `"draft"` if any step is not yet researched. Export your
     searches, run `node engine/rebuild.mjs` until it passes, commit both, push the branch.
 
 ## Hard rules
@@ -44,6 +45,8 @@ The full procedure is `methodology/critical-path.md`. Read it, then
 - **Never fix the ingest to make your file pass.** Fix the file.
 - **`reviewed` stays `"ai-only"`.** Only David sets `"human"`.
 - **Every number has a citation that resolves**: title, year, DOI or URL.
+- **A cost chain has no numeric cost field.** Put money and labor figures in `figure`, as
+  words with units. Do not put them in `duration_days`.
 - **Capability coverage is an observation**, never an omission on their part.
 - **Maturity asks whether applying AI would move this step**, not whether the technique
   exists. Read the step's blocker before choosing it.

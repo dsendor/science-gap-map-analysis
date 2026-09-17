@@ -18,6 +18,9 @@ is right and this file needs fixing. The procedure that produces the file is
 - **Capability names must be attached to the gap, spelled exactly.** Get them from
   `engine/check-preregistration.mjs`.
 - **Unknown fields are errors**, so a typo like `durations_years` cannot vanish quietly.
+- **New chains need `status` and a `confidence` on every step.** `status: "draft"` keeps a
+  partly researched chain out of the public data.
+- **A cost chain has no numeric cost field yet.** Money goes in `figure`, as words.
 
 ---
 
@@ -36,6 +39,7 @@ is right and this file needs fixing. The procedure that produces the file is
 | `duration_basis` | no | string | Time chains: whose milestone record the durations come from, and how overlaps were handled. |
 | `programmes` | no | array | Time chains comparing several programmes. See the telescope chain for the shape. |
 | `reviewed` | no | `"ai-only"` \| `"human"` | Defaults to `"ai-only"`. **Only David sets `"human"`.** |
+| `status` | yes | `"draft"` \| `"complete"` | A draft validates but is never exported. The two original chains are `complete` without the field. |
 | `links` | yes | array | The steps, in order. At least one. |
 
 ## Step fields
@@ -47,21 +51,29 @@ is right and this file needs fixing. The procedure that produces the file is
 | `blocker` | yes | string | What holds this step up. The first sentence is shown on the site, so make it stand alone. |
 | `rationale` | yes | string | Why the labels on this step are what they are. |
 | `ai_acts` | yes | boolean | Does a current AI capability act on this step at all? |
+| `confidence` | yes | `"confident"` \| `"guess"` | On every step of a new chain. Not required on the two originals. |
 | `ai_type` | no | stored name | The kind of work in the way at this step. See the table below. |
 | `maturity` | no | `"Working now"` \| `"2-5 years"` \| `"Speculative"` | Would applying that AI move *this step*? |
 | `is_binding` | no | `0` \| `1` | **Cost chains only.** 1 when this step carries a disproportionate share of the cost. Rejected on time chains. |
-| `capabilities` | no | array of strings | Names of Convergent capabilities attached to the gap that act on this step. Exact spelling. `[]` is a real answer. |
+| `capabilities` | no | array of strings | Names of Convergent capabilities attached to the gap that act on this step, as printed by `engine/check-preregistration.mjs`. Matched ignoring whitespace, because some stored names contain hidden line breaks; the exact stored name is what is saved. `[]` is a real answer. |
 | `evidence` | if a number is present | string | The source: title, year, DOI or URL. Required whenever the step carries a duration or a `figure`. |
-| `figure` | no | string | A published quantity for the step, in words, when it is not a duration. |
+| `figure` | no | string | A published quantity for the step, in words with its unit, when it is not a duration. **On a cost chain, this is where money and labor figures go**, because there is no numeric cost field yet. |
 | `duration_years` | time chains | number | Elapsed years for this step. |
 | `duration_span` | no | string | The two milestones the years are measured between, e.g. `"1989 → 1996"`. |
 | `duration_note` | no | string | How the interval was chosen. |
 | `duration_days` | cost chains | number | Elapsed days, where a published figure exists. |
 | `duration_span_note` | no | string | Shown under the number: what the figure measures, or why there is none. |
-| `duration_covers` | when a number is present | array of integers | The steps this figure measures, starting with this one, consecutive. `[3]` for a figure on step 3 alone; `[2,3,4,5]` for one figure covering four steps. |
+| `duration_covers` | when the step carries a duration | array of integers | The steps this figure measures, starting with this one, consecutive. `[3]` for a figure on step 3 alone; `[2,3,4,5]` for one figure covering four steps. |
 
 **Legacy names.** `duration_jwst_years` and `duration_jwst_span` are accepted because the
 telescope chain uses them. New chains use `duration_years` and `duration_span`.
+
+**Top-level keys.** Only `paths` is read. The original `chains.json` also has `phase` and
+`note`, which are ignored.
+
+**Spans only work for durations.** `duration_covers` needs a `duration_years` or
+`duration_days` on the same step, so a money figure that covers several steps cannot be
+drawn as a span yet. Say which steps it covers in the `figure` text.
 
 ## `ai_type`: stored names
 
@@ -81,6 +93,7 @@ Definitions and discriminating examples: `methodology/taxonomy.md`.
 ## Rules the ingest checks
 
 - No unknown fields, on paths or steps.
+- New chains have `status`, and `confidence` on every step.
 - A pre-registration exists for every chain except the two originals, and the five
   registered fields match it exactly.
 - `seq` runs 1..n in order.
@@ -114,6 +127,7 @@ be wrong.
       "finding": "The claim, in one paragraph.\n\nThe working, in the paragraphs after it.",
       "duration_basis": "Whose milestone record, and how overlapping phases were handled.",
       "reviewed": "ai-only",
+      "status": "complete",
       "links": [
         {
           "seq": 1,
@@ -122,6 +136,7 @@ be wrong.
           "ai_acts": true,
           "ai_type": "Design and optimization search",
           "maturity": "Working now",
+          "confidence": "confident",
           "capabilities": ["<exact capability name>"],
           "duration_years": 4,
           "duration_span": "2000 → 2004",
@@ -145,6 +160,7 @@ be wrong.
   "ai_acts": true,
   "ai_type": "LLM reasoning and synthesis",
   "maturity": "Working now",
+  "confidence": "confident",
   "is_binding": 0,
   "capabilities": [],
   "duration_days": 119,
@@ -160,6 +176,7 @@ be wrong.
   "ai_acts": false,
   "ai_type": "Coordination and institutional",
   "maturity": "Speculative",
+  "confidence": "guess",
   "is_binding": 1,
   "capabilities": ["<exact capability name>"],
   "duration_span_note": "No published figure, and probably not measurable.",

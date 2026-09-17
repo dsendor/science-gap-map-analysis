@@ -17,11 +17,19 @@ What is open is small.
 
 ## Open
 
-- [ ] **Merge `research-playbook`** — reorganizes how to build critical paths, label gaps
-      and research evidence, so another agent can pick the work up; makes the chain ingest
-      refuse bad input; saves searches across rebuilds; enforces pre-registration.
-      Proposed CLAUDE.md change, not made: add `methodology/README.md` to the pointer
-      table as the start point for extending the analysis.
+- [ ] **Merge `research-playbook` before anyone builds a chain.** The procedure, the
+      chain format and the new tools exist only on that branch, and `engine/worktree.mjs`
+      starts new work from `origin/main`. It reorganizes how to build critical paths,
+      label gaps and research evidence; makes the chain ingest refuse bad input; saves
+      searches across rebuilds; enforces pre-registration; and keeps draft chains out of
+      the public data. A cold-read test by a fresh agent found the gaps fixed in its
+      last two commits.
+- [ ] **Proposed CLAUDE.md change, not made:** add two rows to the pointer table —
+      `methodology/README.md` as the start point for extending the analysis, and
+      `agents/chain-builder.md` as the brief to hand a sub-agent.
+- [ ] **Taxonomy strain, found by the cold-read test:** interpretability of a model trained
+      on biological data fits none of the eight kinds of work. Worth a decision before
+      chains on AI-for-biology gaps multiply.
 - [ ] **Choose the gap for the next critical path.** Task A1 in `docs/future-work.md`.
 
 - [ ] **Merge `docs-and-deploy-fix`** — the production build fix and this todo.

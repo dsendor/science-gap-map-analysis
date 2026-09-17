@@ -97,11 +97,16 @@ measures something next to the step, or a prediction written after the fact. Rev
 chain at a time. You did not build it, and you do not read the builder's report before
 forming your own view.
 
-1. **Confirm the prediction came first.** The chain's
-   `research-log/critical-paths/preregistered/<id>.json` must be in an earlier commit than
-   `research-log/critical-paths/<id>.json`. Check with
-   `git log --follow --format='%h %ad %s' -- <file>` on both. The ingest already enforces
-   that the fields match; you check the order.
+1. **Confirm the prediction came first and never changed.** The ingest only checks the
+   chain against the registration file as it is now, so an edit to both files together
+   passes it. Check git:
+   ```bash
+   REG=research-log/critical-paths/preregistered/<id>.json
+   git log --follow --format='%h %ad %s' -- $REG research-log/critical-paths/<id>.json
+   FIRST=$(git log --diff-filter=A --format=%h -- $REG | tail -1)
+   git diff $FIRST HEAD -- $REG      # must be empty
+   ```
+   The registration must be committed before the chain, and unchanged since.
 2. **Argue that the time or cost sits somewhere else.** Take the strongest case you can
    for at least two other steps, using the same evidence. If you can make a serious case,
    the finding is not established.

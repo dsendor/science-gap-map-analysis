@@ -46,6 +46,10 @@ export in step 6 collects it cleanly.
      catch than a wrong number.
    - **Its date.** A 2019 figure is not current.
    - **Its scope.** One journal, one field, one country. Say so where the figure is used.
+
+   **If the page is paywalled or blocked**, fetch the open version of the same work: the
+   preprint (arXiv, bioRxiv, medRxiv), the PubMed Central copy, or the author's accepted
+   manuscript. Cite the published version and note which copy you read.
 5. **Cite it** in the step's `evidence`: title, year, DOI or URL, and the sample where it
    matters, e.g. "~7,000 manuscripts".
 6. **Save the searches** before any rebuild:
@@ -65,8 +69,11 @@ export in step 6 collects it cleanly.
 2. **Peer-reviewed studies**, especially systematic reviews with a stated sample.
 3. **Editorials and surveys by the institution being measured**, which are often the only
    source for internal figures. Name the institution and the sample.
-4. **Reputable secondary reporting**, only to find a primary source.
-5. **Never:** an unsourced blog figure, a snippet, or a number from memory.
+4. **An author's own writing about their work** — a lab page, a blog post, a talk. Usable
+   for estimates the paper does not state, such as what an experiment cost, if you name it
+   as the author's estimate and treat it as the weakest evidence on the chain.
+5. **Reputable secondary reporting**, only to find a primary source.
+6. **Never:** an unsourced figure, a snippet, or a number from memory.
 
 ## Figures that cover several steps
 

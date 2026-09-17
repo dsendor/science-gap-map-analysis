@@ -16,8 +16,9 @@ the two should agree on what is open.
   shown it can return the opposite one. **David chooses the gap.**
 - **The unlock for doing chains at scale is typing Convergent's 389 capability edges** —
   necessary, sufficient or partial. Today every chain reconstructs that by hand.
-- **Two corrections to the existing chains are waiting**: the publishing chain shows days
-  on a cost axis, and 5 of 15 steps read maturity as availability.
+- **Cost chains cannot display a cost**: the format has no numeric cost field, which is
+  why the publishing chain shows days. That, and 5 of 15 steps reading maturity as
+  availability, are the corrections waiting on the existing chains.
 - **The cheapest label fix is dropping the "Proxy only" tier**, which failed its own audit
   at 78% disagreement.
 - **Never on this list:** ranking their gaps, or redesigning their schema by shipping one.
@@ -52,17 +53,20 @@ the two should agree on what is open.
   asked.
 - **Size.** Medium: a day of agent work, most of it research.
 
-### A2. Resolve the publishing chain's axis
+### A2. Give cost chains a number that measures cost
 
-- **Goal.** The number shown on each step measures the axis the chain declares.
-- **Why.** The chain declares `cost` and displays elapsed days. It is the first thing a
-  careful reader at Convergent will push on.
-- **Needs David.** Which fix: find per-step labor figures and keep the cost axis, or
-  re-declare it as a time chain. Re-declaring needs a new pre-registration, and the
-  finding must say the axis changed and why.
-- **Output.** A revised publishing chain, and a line in `research-log/decisions.json`.
-- **Done when.** Every displayed number measures the declared axis.
-- **Size.** Small if re-declared; medium if labor figures exist.
+- **Goal.** A cost chain displays a cost on each step, not an elapsed time.
+- **Why.** The format has no numeric cost field. The only number a cost chain can show is
+  `duration_days`, so the publishing chain declares `cost` and displays days, and a
+  cold-read test confirmed the next cost chain would do the same. Money can only go in
+  free text, and cannot be drawn as a span across steps.
+- **Needs David.** The field design (a value plus a unit, such as reviewer-hours per paper
+  or dollars per experiment), and then which fix for the publishing chain: labor figures
+  per step, or re-declaring it as a time chain with a new pre-registration.
+- **Output.** A cost field in `db/schema.sql`, the ingest, `methodology/chain-schema.md` and
+  the step table; a revised publishing chain; a line in `research-log/decisions.json`.
+- **Done when.** Every displayed number on every chain measures its declared axis.
+- **Size.** Medium.
 
 ### A3. Re-read maturity on the existing chain steps
 
