@@ -13,9 +13,9 @@ the register, not what goes on which page.
 
 The shape:
 
-1. **A TL;DR or a short bulleted list of the things to know, at the top.** Short
-   enough to read in one pass and act on without scrolling.
-2. **Detail below**, clearly separated, for whoever wants the reasoning.
+1. **A TL;DR or a short bulleted list of the things to know, at the end of every turn.** Short
+   enough to read in one pass and act on without scrolling. (note that this used to say at the beginning, but we want it at the end.)
+2. **Detail Above**, clearly separated, for whoever wants the reasoning.
 3. **Never make someone read the working to find the conclusion.**
 
 In practice:

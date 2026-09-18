@@ -13,11 +13,11 @@ invite contributions. Tone follows from that everywhere.
 
 ## Always, in every session
 
-1. **Never commit or merge to `main`, and never edit this file, without asking David.**
-   Work on a branch, push it, ask. This holds even when the change looks obviously right
+1. **Never commit to `main` or merge to `main`, and never edit this file, without asking David.**
+   Work on a branch, push it, commit frequently, and ask. This holds even when the change looks obviously right
    and even when a brief names `main` as the working branch. Asking costs one message.
-2. **Lead with the answer.** Every document, page and reply opens with a TL;DR readable
-   in one pass. Detail below, clearly separated. `methodology/writing.md`.
+2. **Lead with the answer.** Every document, page and reply ENDS with a TL;DR readable
+   in one pass. `methodology/writing.md`.
 3. **Additive only.** Never modify `gm_*` outside `engine/import-gapmap.mjs`.
    `node engine/verify-additive.mjs` must pass before every commit. Do not fix their typos.
 4. **Never rank their gaps.** No score column exists, by design. They deferred
