@@ -22,9 +22,13 @@ is a CHECK constraint and an invention is a hard write failure.
    cluster on one kind of link while the gap binds on another, that is a finding.
 3. **Search only where the label turns on a fact you do not have** — typically the
    maturity call ("is autonomous experimentation actually working in this domain
-   today?"). Use `node engine/search.mjs "query" --phase 1 --gap <id>`, which caches
-   to disk and logs to `search_log` so the auditor sees the same evidence you did.
-   Do not search to confirm what the description already tells you.
+   today?"). Use `node engine/search.mjs "query" --phase <batch-name> --gap <id>`,
+   which caches to disk and logs to `search_log` so the auditor sees the same evidence
+   you did. **Before anyone rebuilds, run
+   `node engine/export-searches.mjs <batch-name> --phase <batch-name>`** and include the
+   file it writes in your output; a rebuild deletes `search_log` and restores it only
+   from `research-log/searches/`. Do not search to confirm what the description already
+   tells you. Method: `methodology/research-method.md`.
 4. **Assign all three dimensions** with a one-line rationale each.
 5. **Set confidence honestly.** `guess` is not a failure state — it is the mechanism
    that makes the artifact credible. A batch that is 100% `confident` will be assumed
@@ -44,7 +48,10 @@ is a CHECK constraint and an invention is a hard write failure.
 
 ## Output
 
-Write `research-log/labels/<field-slug>.json`:
+Write `research-log/labels/<field-slug>.json`, plus
+`research-log/searches/<batch-name>.json` if you searched. The artifact currently
+proposes only the kind of work and its maturity; the outcome and measurability tier are
+still recorded for every gap, so fill them in, but spend your care on the first two:
 
 ```json
 {

@@ -188,7 +188,7 @@ w();
 w('## Critical paths');
 w();
 {
-  for (const p of all('SELECT * FROM critical_paths ORDER BY id')) {
+  for (const p of all("SELECT * FROM critical_paths WHERE status = 'complete' ORDER BY id")) {
     const links = all('SELECT * FROM critical_path_links WHERE path_id=? ORDER BY seq', p.id);
     const bind = links.filter((l) => l.is_binding);
     w(`- **${p.title}** — axis: ${p.axis}. ${bind.length} of ${links.length} links bind: ${bind.map((l) => l.link).join(', ')}.`);

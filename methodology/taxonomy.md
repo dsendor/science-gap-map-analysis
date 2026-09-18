@@ -167,8 +167,9 @@ a question about nature. Both are tier 3; they are not the same phenomenon.
 
 ### Known limits of this dimension
 
-Two cases where the taxonomy is a poor fit rather than a hard call, both surfaced by
-blind audit. Label the dominant component, flag `guess`, and say so in the notes —
+One case where the taxonomy is a poor fit rather than a hard call, surfaced by blind
+audit. (A second, gaps where AI is the object rather than the instrument, is now handled
+by the frame flag rather than by a type.) Label the dominant component, flag `guess`, and say so in the notes —
 do not force a clean answer:
 
 - **Composite gaps.** "We Can Learn More from Nature's Biological Designs" spans

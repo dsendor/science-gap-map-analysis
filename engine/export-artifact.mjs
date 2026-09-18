@@ -85,7 +85,9 @@ for (const r of all(`
   initiativesByCap.get(r.cap).set(r.title, { title: r.title, url: r.url });
 }
 
-const paths = all('SELECT * FROM critical_paths ORDER BY id').map((p) => ({
+// Drafts are validated on ingest but never exported, so a partly researched chain
+// cannot reach the public JSON or the site looking finished.
+const paths = all("SELECT * FROM critical_paths WHERE status = 'complete' ORDER BY id").map((p) => ({
   ...p,
   programmes: JSON.parse(p.programmes_json || '[]'),
   gap_name: gaps.find((g) => g.id === p.gap_id)?.name ?? null,

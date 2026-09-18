@@ -1,140 +1,201 @@
-# What this doesn't do yet
+# The plan: what to build next
 
-**Status: a list of open work, not a roadmap and not a request.** Nothing here has been
-built. Published on the site as *What's missing* (`/missing/`), which renders the same list
-with its numbers read live out of the artifact data rather than typed in.
+**The work that extends this analysis, as tasks an agent can pick up.** Three
+workstreams: building critical paths, improving the labels on gaps, and the research
+that supports both. Each task says what it produces, how to know it is done, and whether
+David must decide something first.
 
-It is written down so the limits of this contribution are legible, and so that if
-Convergent want any of it, the case and the cost are already stated.
+The public version of the open items is the site's *What's missing* page
+(`app/src/app/missing/page.jsx`), written for Convergent. This file is the working plan;
+the two should agree on what is open.
 
-The augmentation adds four things to the Gap Map: an outcome per gap, an AI capability
-type and maturity per gap, a measurability tier per gap, and two worked critical paths.
-Every one of those four has a known edge, and four of the items below come from the
-augmentation failing its own audit rather than from wishing it were bigger. That is the
-useful kind of future work.
+## TL;DR
 
-Ordered by what would add the most, not by what would be easiest.
+- **The highest-value task is the next critical path**, on a gap where AI might reach the
+  binding step. Both existing chains returned the same answer, so the method has never
+  shown it can return the opposite one. **David chooses the gap.**
+- **The unlock for doing chains at scale is typing Convergent's 389 capability edges** —
+  necessary, sufficient or partial. Today every chain reconstructs that by hand.
+- **Cost chains cannot display a cost**: the format has no numeric cost field, which is
+  why the publishing chain shows days. That, and 5 of 15 steps reading maturity as
+  availability, are the corrections waiting on the existing chains.
+- **The cheapest label fix is dropping the "Proxy only" tier**, which failed its own audit
+  at 78% disagreement.
+- **Never on this list:** ranking their gaps, or redesigning their schema by shipping one.
 
----
+## How to pick up a task
 
-## 1. Critical paths across the whole map, not two
-
-**What is missing.** Two chains, hand-built, out of 103 gaps. They exist to demonstrate
-something a catalogue structurally cannot show — that two gaps in different fields can
-share a binding link, so bottlenecks recur across fields and can be counted. Two chains
-prove the shape exists. They do not tell you where else it occurs.
-
-**What blocks it, and it is one thing.** Capability-to-gap edges are untyped. Nothing in
-the source data marks a capability as *necessary*, *sufficient*, or *partial* for the gap
-it hangs under, so there is no way to compute a path — a chain needs to know which links
-are load-bearing. Both existing chains had their link semantics reconstructed by hand,
-which is why there are two.
-
-**The unlock is mechanical.** Type the 389 capability edges. One pass, one added column,
-no schema redesign, and it changes chains from illustrations somebody authored into
-something the data yields. This is the single highest-value item on this list, and the
-cheapest of the top three.
-
-## 2. A `5-10 years` maturity value, and splitting the two questions it conflates
-
-**What is wrong.** Maturity has three values and the middle one is doing most of the
-work — a bucket holding half the map is barely a label. Worse, the three values are not
-on one axis. `Speculative` means *no clear path from here*, which is a claim about kind.
-`2-5 years` is a claim about time. A gap with a perfectly clear path that simply takes
-fifteen years has nowhere to go, and currently lands in the middle bucket next to things
-that are nearly here.
-
-**Why it is not fixed here.** Adding a fourth value means re-reviewing every gap already
-in the middle bucket, because a value nobody has applied to the whole set is worse than
-three honest ones — the existing rows would silently mean "2-5 or 5-10, unexamined". That
-is a full labelling pass with a blind second reader, on the scale of the v2 relabel.
-
-**What it should probably be instead of one more bucket.** Two fields: how long, and
-whether a path is known. They are different questions and the current three values answer
-them at the same time.
-
-## 3. Blocked on adoption, or blocked on capability
-
-**The observation.** Repairing the maturity dimension turned up eleven gaps where the
-reason the label is not `Working now` has nothing to do with whether the technique exists.
-DNA-synthesis screening works and is not adopted. Web-scale archiving works and permission
-is withheld. Adaptive platform trials work, have run since 2010, and the field has not
-taken them up.
-
-**Why it matters more than it sounds.** Maturity absorbs all of that and reports it as
-*not ready*, and *not ready* sends a funder toward more research. For an unadopted
-capability, more research is the wrong intervention — the answer is procurement, a
-standard, a mandate, or somebody paying for a thing nobody is billed for. A single flag
-distinguishing the two would change what the map recommends for a fifth of its rows.
-
-**Status.** This is the one item on the list that would be a genuine addition to the map
-rather than a correction to the augmentation, and it is the strongest candidate if
-Convergent ask what to add next. It needs its own definition, its own pass and its own
-audit, which is why it is not here.
-
-## 4. Indicators as coverage, and as a series rather than a reading
-
-**What exists.** A sample of eight gaps across all four measurability tiers, one of them
-an honest null, every non-null value read off a page that was actually fetched. It is
-explicitly not coverage and must not be extrapolated to the other ninety-five. (An
-earlier version of this document said eleven gaps and two nulls. Eleven was an artifact
-of duplicate rows left by a non-idempotent ingest, and the second null was the
-quantum-gravity row Gate A refuted.)
-
-**Two separate pieces of work, and the second is the valuable one.** Coverage means an
-indicator for every directly-measurable gap. But a one-time reading only says where a gap
-is. What a funder needs is the slope, and a slope needs the same quantity read off the
-same source on a schedule. That is a maintained system rather than a research output, and
-it is the difference between a map and a dashboard.
-
-## 5. Outcomes as a first-class entity
-
-Outcomes are stored as one sentence on the gap. They are not one-to-one with gaps: there
-are almost certainly more outcomes than gaps, and a single capability unlocks outcomes
-across several fields. Modelling them properly means a join table and a schema change,
-which is not something a stranger should propose by doing it. Named as a limitation from
-the start, and still the cleanest example of the augmentation's structure being simpler
-than the thing it describes.
-
-## 6. Three measurability tiers, not four
-
-`Proxy only` failed its own blind audit at 78% disagreement, against 0% for
-`Directly measurable`, and every auditor independently reported it was the nearest
-alternative and almost never the winner. If a measurability attribute is adopted, three
-tiers would work better than four. This is a correction, not an expansion, and it is the
-cheapest item on the list.
-
-## 7. Decomposing composite gaps
-
-Some gap statements bundle several unrelated research programmes under one heading, and a
-single tier and a single AI type cannot represent them. Written up in full, with the two
-distinct patterns and a worked proposal, in the decomposition proposal (removed from the working tree; in git history up to 7f77af9). Not applied,
-because splitting them means authoring gap records Convergent did not write.
-
-## 8. Urgency and impact, if they ever want them
-
-The augmentation has no score column anywhere, by design: Convergent deferred
-prioritisation deliberately and a stranger ranking their map would be presumptuous. But
-the reason to build a gap map at all is eventually to choose, and urgency and impact
-attributes are the honest name for what a reader is doing in their head anyway. This is
-listed because it is the obvious next attribute and because refusing to build it was a
-decision rather than an oversight. It is theirs to make, not ours.
-
-## 9. Coverage
-
-103 gaps is not the field. Convergent say so plainly and repeatedly. The four proposed
-gaps in this contribution demonstrate a method for adding one — near-duplicate checked
-against every existing gap and capability, funding-checked, written to their format — they
-are not a survey. Extending coverage is the largest item here and the least suited to
-being done from outside.
+1. Take a worktree: `node engine/worktree.mjs <task-name>`.
+2. If the task says **Needs David**, ask the question it names before doing anything else.
+3. Follow the procedure it points to. Work on the branch; push it; ask before merging.
+4. Update `docs/todo.md` when you start and when you finish.
 
 ---
 
-## What is deliberately not on this list
+## A. Critical paths
 
-**Anything that ranks.** No numeric score column exists in the schema and adding one is
-not future work, it is a different project.
+### A1. Build the next chain
 
-**Any redesign of their interface or their schema.** Items 3 and 5 imply new columns and
-say so; proposing a redesign by shipping one is how a contribution turns into a rewrite of
-somebody else's map.
+- **Goal.** A third chain, chosen to test whether the method can find AI reaching the step
+  where the time or cost concentrates.
+- **Why.** Telescopes (Physical build, time) and publishing (Coordination, cost) both
+  found AI missing the steps that matter. A method that has only ever returned one answer
+  has not shown it can return another.
+- **Needs David.** Which gap. Offer candidates grouped by kind of work, using the query in
+  `methodology/critical-path.md`, step 1. Never an ordered list.
+- **Procedure.** `methodology/critical-path.md`. Brief for a sub-agent:
+  `agents/chain-builder.md`.
+- **Output.** `research-log/critical-paths/preregistered/<id>.json` (commit 1),
+  `research-log/critical-paths/<id>.json` and `research-log/searches/<name>.json`
+  (commit 2), and a review (commit 3).
+- **Done when.** Rebuild passes; a reviewer in mode C of `agents/reviewer.md` has checked
+  it and its findings are fixed or recorded; the branch is pushed and David has been
+  asked.
+- **Size.** Medium: a day of agent work, most of it research.
+
+### A2. Give cost chains a number that measures cost
+
+- **Goal.** A cost chain displays a cost on each step, not an elapsed time.
+- **Why.** The format has no numeric cost field. The only number a cost chain can show is
+  `duration_days`, so the publishing chain declares `cost` and displays days, and a
+  cold-read test confirmed the next cost chain would do the same. Money can only go in
+  free text, and cannot be drawn as a span across steps.
+- **Needs David.** The field design (a value plus a unit, such as reviewer-hours per paper
+  or dollars per experiment), and then which fix for the publishing chain: labor figures
+  per step, or re-declaring it as a time chain with a new pre-registration.
+- **Output.** A cost field in `db/schema.sql`, the ingest, `methodology/chain-schema.md` and
+  the step table; a revised publishing chain; a line in `research-log/decisions.json`.
+- **Done when.** Every displayed number on every chain measures its declared axis.
+- **Size.** Medium.
+
+### A3. Re-read maturity on the existing chain steps
+
+- **Goal.** Every step's maturity answers "would applying AI move this step".
+- **Why.** 5 of 15 steps carry the availability reading. The telescope's science-case step
+  is labeled `Working now` although its blocker is a field reaching consensus. Correcting
+  it moves the telescope headline from 9.5 of 32.5 years to roughly 2.5.
+- **Procedure.** A second reader relabels maturity on all 15 steps blind, following
+  `methodology/audit-protocol.md`, then disagreements are adjudicated on the merits.
+- **Needs David.** Approval before the published telescope number changes.
+- **Done when.** All 15 steps are agreed or flagged `guess`, and the site's figures match.
+- **Size.** Small.
+
+### A4. Type the capability edges
+
+- **Goal.** For each of Convergent's 389 capability-to-gap edges, whether the capability
+  is **necessary**, **sufficient** or **partial** for its gap.
+- **Why.** It is the one missing piece that stops chains being hand-built. With it, which
+  steps a capability acts on becomes derivable across the map rather than argued gap by
+  gap. It is also the most useful single thing to ask Convergent for.
+- **Needs David.** Whether to build this ourselves or propose it to Convergent. It is their
+  data model.
+- **Output.** A new augmentation table and file under `research-log/`, joined on their ids,
+  with a rationale and a confidence on every edge. Never a change to `gm_*`.
+- **Done when.** Every edge is typed, and a blind relabel of a sample has published its
+  disagreement rate.
+- **Size.** Large.
+
+### A5. Count recurring blockers across chains
+
+- **Goal.** Which kinds of blocking step recur across fields.
+- **Why.** The two chains share one step: allocation by peer review of proposals. A map
+  with one row per gap has nowhere to record that. With more chains it can be counted
+  rather than noticed.
+- **Needs.** At least four chains in different fields, so a pattern is not two
+  coincidences.
+- **Output.** A section in `docs/findings.md`, derived from the database.
+- **Size.** Small, once the chains exist.
+
+### A6. Publish a new chain on the site
+
+- **Goal.** A reviewed chain appears on `/chains`.
+- **Needs David.** Always. The site selects chains by id in
+  `app/src/app/chains/page.jsx`, and publishing is an outward-facing change.
+- **Size.** Small.
+
+---
+
+## B. Improve the labels on gaps
+
+### B1. Drop the "Proxy only" measurability tier
+
+- **Goal.** Three measurability tiers instead of four.
+- **Why.** "Proxy only" ran 78% disagreement in the blind audit, against 0% for "Directly
+  measurable", and every auditor named it as the nearest alternative and almost never the
+  winner. 19 gaps hold it.
+- **Procedure.** Relabel those 19 into the remaining tiers with a rationale each; update the
+  CHECK constraint in `db/schema.sql` and `methodology/taxonomy.md`.
+- **Size.** Small. The cheapest item on this list.
+
+### B2. Split maturity into two questions
+
+- **Goal.** Two fields: **how long**, and **whether a path is known**.
+- **Why.** `2-5 years` holds 62 of 103 gaps, so it barely discriminates, and the three
+  values are not one axis: `Speculative` says there is no clear path, while `2-5 years`
+  says how long. A gap with a clear path that takes fifteen years has nowhere to go.
+- **Procedure.** A full labeling pass with a blind second reader, like the original
+  relabel. `agents/labeler.md`, `agents/auditor.md`, `methodology/audit-protocol.md`.
+- **Needs David.** The definitions, before any labeling.
+- **Size.** Large.
+
+### B3. Blocked on adoption, or blocked on capability
+
+- **Goal.** A flag separating "the technique works and is not adopted" from "the technique
+  does not work yet".
+- **Why.** Eleven gaps found during the maturity repair are held back by adoption, not
+  capability: DNA-synthesis screening works and is not adopted; adaptive platform trials
+  have run since 2010 and the field has not taken them up. Maturity reports both as "not
+  ready", which points a funder at more research when the answer is procurement, a
+  standard or a mandate.
+- **Why it matters most.** It is the one item that would add to their map rather than
+  correct ours, and the strongest answer if Convergent ask what to add next.
+- **Needs David.** The definition.
+- **Size.** Medium: a definition, a pass, and an audit.
+
+### B4. A second pass on outcome sentences
+
+- **Goal.** A blind second reading of the outcome on every gap.
+- **Why.** Outcomes have had one labeler and no audit, except the publishing gap. They are
+  in the export but not proposed, which is why this is not higher.
+- **Size.** Medium.
+
+### B5. Decompose composite gaps
+
+- **Goal.** Gaps that bundle unrelated research programmes are split, or flagged.
+- **Why.** One label cannot represent two programmes.
+- **Needs David.** Splitting means writing gap records Convergent did not write, so the
+  likely answer is to flag and propose, not to split. The earlier proposal is in git
+  history.
+- **Size.** Medium.
+
+---
+
+## C. Research beyond the current map
+
+### C1. Proposed new gaps
+
+- **Goal.** Gaps Convergent do not have, written in their format.
+- **Why.** Two survived an adversarial check that tried to find them already covered or
+  already funded; the plan's own floor was three to five.
+- **Procedure.** `methodology/house-format.md`; reviewer mode B, which defaults to "this is
+  already covered" and makes the proposal survive.
+- **Needs David.** Whether more are wanted at all.
+- **Size.** Medium per gap.
+
+### C2. Indicators as a series
+
+- **Goal.** The same quantity, from the same source, read on a schedule.
+- **Why.** A single reading says where a gap is; a funder needs the slope. That is a
+  maintained system rather than a research output.
+- **Status.** Parked. Indicators are built for eight gaps, in the export, and not proposed.
+- **Size.** Large, and ongoing.
+
+---
+
+## Not on this list, deliberately
+
+- **Anything that ranks their gaps.** No score column exists, by design, and adding one is
+  a different project. We may rank what we create.
+- **Redesigning their interface or schema by shipping one.** Tasks A4, B2 and B3 imply new
+  fields and say so; they are proposed as additions joined on their ids, never as edits to
+  their data.

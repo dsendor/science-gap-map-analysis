@@ -1,8 +1,19 @@
-# Sub-agent brief: Reviewer (phases 3–6)
+# Sub-agent brief: Reviewer
 
-Phase 2 used a blind *relabeler* — a second agent doing the same job on the same
-inputs, so agreement could be counted. Phases 3–6 do not produce labels, so that
-design does not transfer. Each phase gets the check its failure mode deserves.
+Checks anything that is not a label: an indicator, a proposed gap, a critical path, or
+the finished artifact. Labels have their own blind relabel, in
+`methodology/audit-protocol.md`; that design needs a second agent doing the same job so
+agreement can be counted, and these outputs do not produce anything to count. Each gets
+the check its failure mode deserves.
+
+| Mode | Reviews | Use when |
+|---|---|---|
+| A | a progress indicator | a number is claimed to track a gap |
+| B | a proposed new gap | a gap is proposed in Convergent's format |
+| **C** | **a critical path** | **a chain is ready, before David reads it** |
+| D | the finished artifact | before anything is published |
+
+Modes A, B and D were written for the original run and still name its phases.
 
 The principle carries over unchanged: **the reviewer must not be the producer, and
 must not see the producer's reasoning before forming its own.** A review that starts
@@ -78,29 +89,50 @@ against `research-log/format-test-key.json`.
   length, hedging, vocabulary, sentence shape, presence of numbers. That is directly
   actionable.
 
-## Mode C — Phase 5, adversarial chain check
+## Mode C — reviewing a critical path
 
-The failure mode is a chain whose binding link was chosen because it suits the
-argument. This one is load-bearing: the whole point of two chains is that the method
-discriminates, and it only discriminates if the binding links were found rather than
-selected.
+The failure mode is a chain whose conclusion was chosen rather than found: steps
+decomposed to suit the argument, a maturity read as "the technique exists", a figure that
+measures something next to the step, or a prediction written after the fact. Review one
+chain at a time. You did not build it, and you do not read the builder's report before
+forming your own view.
 
-1. **Verify the expectation was genuinely pre-registered.** `critical_paths.expectation`
-   must appear in a commit *earlier* than the commit containing `finding`. Check with
-   `git log -p --follow` on the relevant files. If they were written together, say so —
-   a prediction recorded after the fact is a story, not evidence.
-2. **For each chain, argue that a different link binds.** Take the strongest case you
-   can for at least two non-binding links, using the same evidence base. If you can
-   make a serious case, the chain's conclusion is not established.
-3. Check the elapsed-time and evidence figures against their sources.
-4. **Check the axis discipline.** Chain 2 must commit to one axis, name the excluded
-   ones, and never smuggle evidence from cost into a claim about speed.
-5. **Check the tone rule.** Every statement about Convergent's capability set must read
-   as observation, not deficiency. Flag any sentence that a reader at Convergent would
-   experience as being told they missed something.
-6. **Check the intersection claim specifically**: that chain 1's approval link really is
-   an instance of chain 2's review machinery, and that the Distributed Peer Review
-   evidence says what the chain claims it says.
+1. **Confirm the prediction came first and never changed.** The ingest only checks the
+   chain against the registration file as it is now, so an edit to both files together
+   passes it. Check git:
+   ```bash
+   REG=research-log/critical-paths/preregistered/<id>.json
+   git log --follow --format='%h %ad %s' -- $REG research-log/critical-paths/<id>.json
+   FIRST=$(git log --diff-filter=A --format=%h -- $REG | tail -1)
+   git diff $FIRST HEAD -- $REG      # must be empty
+   ```
+   The registration must be committed before the chain, and unchanged since.
+2. **Argue that the time or cost sits somewhere else.** Take the strongest case you can
+   for at least two other steps, using the same evidence. If you can make a serious case,
+   the finding is not established.
+3. **Re-fetch every figure** from its cited source. Confirm the number appears, that it
+   measures what the step claims rather than something adjacent, its date, and its scope.
+   Verdict per step: `confirmed` / `wrong-value` / `measures-something-else` / `stale` /
+   `unreachable`.
+4. **Check every null independently.** Search for a quantity yourself before reading the
+   builder's searches in `research-log/searches/`. If you find one they missed, say so
+   loudly: a false null is worse than a missing number.
+5. **Check maturity as efficacy.** For each step marked `Working now` or `2-5 years`, read
+   the blocker and ask whether applying that AI would actually shorten or cheapen this
+   step. Flag every step where the label describes the technique rather than the step.
+6. **Check the axis.** One axis; the displayed number measures it; the excluded axes are
+   named; no evidence about one axis is used to support a claim about another.
+7. **Check the capability mapping.** For each capability, read its description and decide
+   yourself which steps it acts on. Compare with the file. Disagreements on a step with
+   zero capabilities matter most, because that is usually the chain's main result.
+8. **Check the tone.** Every sentence about Convergent's capability set must read as
+   observation. Flag any sentence a reader at Convergent would take as being told they
+   missed something.
+9. **Check for circularity.** If the steps AI reaches and the steps carrying the cost are
+   exactly complementary, say so; the labels may be restating each other.
+
+Report per chain: the findings above, each with the step, the evidence, and a severity
+(`blocks-publishing` / `should-fix` / `note`). Do not edit the chain.
 
 ## Mode D — Phase 6, completeness and constraint check
 

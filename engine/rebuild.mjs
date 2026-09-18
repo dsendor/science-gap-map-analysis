@@ -52,6 +52,7 @@ for (const [dir, script] of [
   ['research-log/indicators', 'ingest-indicators.mjs'],
   ['research-log/new-gaps', 'ingest-new-gaps.mjs'],
   ['research-log/critical-paths', 'ingest-critical-paths.mjs'],
+  ['research-log/searches', 'ingest-searches.mjs'],
 ]) {
   const path = `${root}${dir}`;
   if (!existsSync(path) || !existsSync(`${root}engine/${script}`)) continue;

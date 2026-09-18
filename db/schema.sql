@@ -226,6 +226,10 @@ CREATE TABLE IF NOT EXISTS critical_paths (
     -- with a person; the other is a model's first pass and nobody has checked it. Those
     -- deserve different weight from a reader and the artifact says which is which.
     reviewed      TEXT NOT NULL DEFAULT 'ai-only' CHECK (reviewed IN ('ai-only', 'human')),
+    -- A chain can be committed before every step is researched. Drafts are validated
+    -- like any chain but never exported, so a half-built chain cannot reach the public
+    -- JSON and CSV looking finished.
+    status        TEXT NOT NULL DEFAULT 'complete' CHECK (status IN ('draft', 'complete')),
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
@@ -275,6 +279,9 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     -- is the most actionable thing either chain produces: it is derived entirely from
     -- their data, so it is a statement about their map rather than about our labels.
     capabilities_json TEXT NOT NULL DEFAULT '[]',
+    -- Every judgment carries a confidence (CLAUDE.md, rule 6). Required on new chains;
+    -- NULL on the two original chains, which predate the field.
+    confidence        TEXT CHECK (confidence IN ('confident', 'guess')),
     PRIMARY KEY (path_id, seq)
 );
 
