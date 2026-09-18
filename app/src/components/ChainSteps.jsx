@@ -31,8 +31,11 @@ const firstSentence = (t) => {
 
 export default function ChainSteps({ path, showBlockers = true }) {
   const isTime = path.axis_kind === 'time';
-  const val = (l) => (isTime ? l.duration_years : l.duration_days);
-  const unit = isTime ? (v) => (v === 1 ? 'year' : 'years') : () => 'days';
+  // A cost chain shows its cost where it has one. Where it only has elapsed time, it
+  // shows days and says so, which is the honest fallback rather than a silent proxy.
+  const val = (l) => (isTime ? l.duration_years : l.cost_value ?? l.duration_days);
+  const unit = (l, v) =>
+    isTime ? (v === 1 ? 'year' : 'years') : l.cost_value != null ? l.cost_unit : 'days';
   const unitShort = isTime ? 'year' : 'day';
 
   // seq -> the link whose figure covers it, so a covered row renders no duration cell
@@ -150,7 +153,7 @@ export default function ChainSteps({ path, showBlockers = true }) {
                     {d != null ? (
                       <>
                         <span className="sched__num">
-                          {d} <small>{unit(d)}</small>
+                          {d} <small>{unit(l, d)}</small>
                         </span>
                         {covers && covers.length > 1 && (
                           <span className="sched__span">

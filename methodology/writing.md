@@ -1,8 +1,7 @@
 # How we write
 
-Two rules, one idea: **lead with the answer, put the detail where someone who wants it
-will find it.** This governs the artifact, every doc in `docs/`, and every reply to
-David.
+Two rules, one idea: **the answer must be readable in one pass, and it goes at the end.**
+This governs the artifact, every doc in `docs/`, and every reply to David.
 
 This file is about *structure*. For *voice* — how a page reads to a Convergent reader,
 and how to keep it from reading as machine-written — use the
@@ -13,20 +12,22 @@ the register, not what goes on which page.
 
 The shape:
 
-1. **A TL;DR or a short bulleted list of the things to know, at the end of every turn.** Short
-   enough to read in one pass and act on without scrolling. (note that this used to say at the beginning, but we want it at the end.)
-2. **Detail Above**, clearly separated, for whoever wants the reasoning.
+1. **A TL;DR, or a short bulleted list of the things to know, at the end.** Short enough
+   to read in one pass and act on without scrolling.
+2. **The detail above it**, clearly separated, for whoever wants the reasoning.
 3. **Never make someone read the working to find the conclusion.**
+
+This changed on 2026-09-18. It used to say the TL;DR went first, and in practice the
+summary on top kept losing the detail that arrived below it.
 
 In practice:
 
-- **Documents.** `docs/todo.md` is the model: bullets at the top saying what needs
-  doing, a `# Detail` section at the bottom holding the why. If a doc has grown to the
-  point where the first screen no longer says what matters, that is the signal to
-  restructure it, not to add a summary paragraph on top of the sprawl.
-- **Replies.** Open with what happened and what it means. Method, caveats, and the
-  route taken go after. A reply that opens with what was tried is a reply about the
-  agent.
+- **Documents.** The content, then a closing section — `## In short` — carrying what a
+  reader must leave with. If a doc has grown to the point where that closing section
+  cannot honestly summarize it, that is the signal to restructure the doc, not to write
+  a longer summary.
+- **Replies.** The work and what it means, then the TL;DR last. A reply whose body is
+  about what was tried rather than what it means is a reply about the agent.
 - **Length is a decision, not a default.** More detail is not more rigour. Detail that
   nobody reads is worse than absent, because it hides the parts that matter.
 

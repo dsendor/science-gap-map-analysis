@@ -3,23 +3,6 @@
 **How to find, check, cite and save the evidence behind a label or a chain step.** Every
 rule below exists because this project broke it once.
 
-## TL;DR
-
-- **Search, then fetch, then cite.** A search snippet is never a source; read the number
-  off the page you fetched.
-- **A citation must resolve:** title, year, and a DOI or URL. "An editorial reports X" is
-  not a citation.
-- **Check the number measures what the step claims**, not something next to it. That is
-  the most likely error, and it has happened here.
-- **An honest null needs six genuine searches and a named near-miss.** A null is a
-  finding, not a gap in the work.
-- **Save your searches before you rebuild**: `node engine/export-searches.mjs <name>`.
-  Otherwise they are deleted.
-- **Search only where the answer turns on a fact you do not have.** Convergent's own text
-  answers most questions for free.
-
----
-
 ## The three tools
 
 | Tool | For | Why it is the one |
@@ -122,3 +105,20 @@ adjudicated and absurd. See `methodology/taxonomy.md` and `methodology/audit-pro
 `engine/worktree.mjs` copies `.env` into new worktrees. The predecessor repo committed a
 live key into `.mcp.json` in public git history, and this layout exists to make that
 impossible here.
+
+---
+
+## In short
+
+- **Search, then fetch, then cite.** A search snippet is never a source; read the number
+  off the page you fetched.
+- **A citation must resolve:** title, year, and a DOI or URL. "An editorial reports X" is
+  not a citation.
+- **Check the number measures what the step claims**, not something next to it. That is
+  the most likely error, and it has happened here.
+- **An honest null needs six genuine searches and a named near-miss.** A null is a
+  finding, not a gap in the work.
+- **Save your searches before you rebuild**: `node engine/export-searches.mjs <name>`.
+  Otherwise they are deleted.
+- **Search only where the answer turns on a fact you do not have.** Convergent's own text
+  answers most questions for free.

@@ -268,6 +268,12 @@ CREATE TABLE IF NOT EXISTS critical_path_links (
     -- steps 1 and 7 of the publishing chain is the finding rather than a gap in the work.
     duration_days      REAL,
     duration_span_note TEXT,
+    -- A cost chain's own number. Until this existed the only figure a cost chain could
+    -- display was duration_days, which is elapsed time, so a chain declaring a cost axis
+    -- showed something else. cost_unit carries the unit because cost is not one thing:
+    -- reviewer-hours per paper and dollars per experiment are both costs.
+    cost_value         REAL,
+    cost_unit          TEXT,
     -- Which step numbers this figure actually covers, as a JSON array. A published
     -- median that brackets four steps is not a measurement of any one of them, and the
     -- renderer needs to know that to draw one bracket across four rows instead of a

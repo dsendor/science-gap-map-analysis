@@ -57,7 +57,7 @@ const LINK_KEYS = new Set([
   'seq', 'link', 'blocker', 'ai_acts', 'ai_type', 'maturity', 'is_binding', 'capabilities',
   'evidence', 'rationale', 'figure', 'confidence',
   'duration_years', 'duration_span', 'duration_note',
-  'duration_days', 'duration_span_note', 'duration_covers',
+  'duration_days', 'duration_span_note', 'duration_covers', 'cost_value', 'cost_unit',
   // Legacy names from the first chain, which was JWST-specific. Accepted so that file
   // still loads; new chains use duration_years and duration_span.
   'duration_jwst_years', 'duration_jwst_span',
@@ -182,9 +182,16 @@ for (const p of batch.paths ?? []) {
       lerr('duration_years and legacy duration_jwst_years disagree; use duration_years only');
     }
     const years = l.duration_years ?? l.duration_jwst_years;
-    if (!isTime && years != null) lerr('duration_years on a cost chain is never displayed; use duration_days');
+    if (!isTime && years != null) lerr('duration_years on a cost chain is never displayed; use cost_value, or duration_days where elapsed time is a fair stand-in');
     if (isTime && l.duration_days != null) lerr('duration_days on a time chain is never displayed; use duration_years');
-    const value = isTime ? years : l.duration_days;
+    if (isTime && (l.cost_value != null || l.cost_unit != null)) lerr('cost_value is never displayed on a time chain');
+    if (l.cost_value != null && !text(l.cost_unit)) lerr('cost_value needs a cost_unit, e.g. "reviewer-hours per paper" or "USD per experiment"');
+    if (l.cost_value == null && text(l.cost_unit)) lerr('cost_unit is set with no cost_value');
+    if (!isTime && l.cost_value != null && l.duration_days != null) {
+      lerr('a step shows one number: cost_value or duration_days, not both');
+    }
+    // What the step displays on this axis, and what duration_covers therefore spans.
+    const value = isTime ? years : (l.cost_value ?? l.duration_days);
     if (value != null && (typeof value !== 'number' || value < 0)) lerr('duration must be a non-negative number');
     if ((value != null || text(l.figure)) && !text(l.evidence)) {
       lerr('a step carrying a number needs evidence naming its source');
@@ -232,15 +239,17 @@ try {
       db.prepare(`INSERT INTO critical_path_links
         (path_id, seq, link, blocker, ai_type, maturity, is_binding, evidence, rationale,
          duration_years, duration_span, duration_note, figure, ai_acts, capabilities_json,
-         duration_days, duration_span_note, duration_covers_json, confidence)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+         duration_days, duration_span_note, duration_covers_json, confidence,
+         cost_value, cost_unit)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
         .run(p.id, l.seq, l.link, l.blocker, l.ai_type ?? null, l.maturity ?? null,
              l.is_binding ?? 0, l.evidence ?? null, l.rationale,
              l.duration_years ?? l.duration_jwst_years ?? null,
              l.duration_span ?? l.duration_jwst_span ?? null, l.duration_note ?? null,
              l.figure ?? null, l.ai_acts ? 1 : 0, JSON.stringify(l._canonicalCaps ?? []),
              l.duration_days ?? null, l.duration_span_note ?? null,
-             l.duration_covers ? JSON.stringify(l.duration_covers) : null, l.confidence ?? null);
+             l.duration_covers ? JSON.stringify(l.duration_covers) : null, l.confidence ?? null,
+             l.cost_value ?? null, l.cost_unit ?? null);
       links++;
     }
     chains++;

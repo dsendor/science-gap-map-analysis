@@ -4,22 +4,6 @@
 evidence for either.** This page tells you what to read, in what order, and what every
 piece of work has in common. What to work on is `docs/future-work.md`.
 
-## TL;DR
-
-- **Every piece of work has the same shape:** a worktree, a prediction or definition
-  written first, the work, `node engine/rebuild.mjs` to validate it, a review by a
-  different agent, then David. Nothing merges or publishes without him.
-- **Building a critical path?** Read `critical-path.md`, then `chain-schema.md`, then
-  `research-method.md`. Hand a sub-agent `agents/chain-builder.md`.
-- **Labeling gaps?** Read `taxonomy.md`, then `audit-protocol.md`. Hand a sub-agent
-  `agents/labeler.md`, and a different one `agents/auditor.md`.
-- **Researching evidence?** `research-method.md`. Save your searches with
-  `engine/export-searches.mjs` before anyone rebuilds.
-- **Unfamiliar word?** `docs/glossary.md`. It marks which words are Convergent's and
-  which are ours.
-
----
-
 ## I want to…
 
 | Task | Read, in this order | Hand a sub-agent |
@@ -77,3 +61,19 @@ node engine/export-artifact.mjs                           # regenerate the site'
 | `research-log/critical-paths/preregistered/` | Chain predictions, committed before the chain. Not read by rebuild. |
 | `research-log/searches/` | Saved searches, restored into `search_log` on rebuild. |
 | `docs/` | What was found, what is open, and how the repo runs. |
+
+---
+
+## In short
+
+- **Every piece of work has the same shape:** a worktree, a prediction or definition
+  written first, the work, `node engine/rebuild.mjs` to validate it, a review by a
+  different agent, then David. Nothing merges or publishes without him.
+- **Building a critical path?** Read `critical-path.md`, then `chain-schema.md`, then
+  `research-method.md`. Hand a sub-agent `agents/chain-builder.md`.
+- **Labeling gaps?** Read `taxonomy.md`, then `audit-protocol.md`. Hand a sub-agent
+  `agents/labeler.md`, and a different one `agents/auditor.md`.
+- **Researching evidence?** `research-method.md`. Save your searches with
+  `engine/export-searches.mjs` before anyone rebuilds.
+- **Unfamiliar word?** `docs/glossary.md`. It marks which words are Convergent's and
+  which are ours.

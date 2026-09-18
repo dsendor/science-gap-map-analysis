@@ -5,25 +5,6 @@
 is right and this file needs fixing. The procedure that produces the file is
 `methodology/critical-path.md`.
 
-## TL;DR
-
-- **One chain per file:** `research-log/critical-paths/<id>.json`, containing
-  `{ "paths": [ … ] }`. The pre-registration lives beside it in `preregistered/<id>.json`.
-- **Run `node engine/rebuild.mjs` to validate.** It lists every problem at once and
-  writes nothing until the file is clean.
-- **Use stored names for `ai_type`**, not the names the site displays. A display name is
-  rejected with the stored name to use instead.
-- **Time chains use `duration_years`; cost chains use `duration_days`.** A number in the
-  other field would never be displayed, so it is rejected.
-- **Capability names must be attached to the gap, spelled exactly.** Get them from
-  `engine/check-preregistration.mjs`.
-- **Unknown fields are errors**, so a typo like `durations_years` cannot vanish quietly.
-- **New chains need `status` and a `confidence` on every step.** `status: "draft"` keeps a
-  partly researched chain out of the public data.
-- **A cost chain has no numeric cost field yet.** Money goes in `figure`, as words.
-
----
-
 ## Path fields
 
 | Field | Required | Type | Rules |
@@ -57,13 +38,15 @@ is right and this file needs fixing. The procedure that produces the file is
 | `is_binding` | no | `0` \| `1` | **Cost chains only.** 1 when this step carries a disproportionate share of the cost. Rejected on time chains. |
 | `capabilities` | no | array of strings | Names of Convergent capabilities attached to the gap that act on this step, as printed by `engine/check-preregistration.mjs`. Matched ignoring whitespace, because some stored names contain hidden line breaks; the exact stored name is what is saved. `[]` is a real answer. |
 | `evidence` | if a number is present | string | The source: title, year, DOI or URL. Required whenever the step carries a duration or a `figure`. |
-| `figure` | no | string | A published quantity for the step, in words with its unit, when it is not a duration. **On a cost chain, this is where money and labor figures go**, because there is no numeric cost field yet. |
+| `figure` | no | string | A published quantity for the step, in words, when it is not numeric. |
 | `duration_years` | time chains | number | Elapsed years for this step. |
 | `duration_span` | no | string | The two milestones the years are measured between, e.g. `"1989 → 1996"`. |
 | `duration_note` | no | string | How the interval was chosen. |
-| `duration_days` | cost chains | number | Elapsed days, where a published figure exists. |
+| `cost_value` | cost chains | number | The step's cost on this chain's axis. Needs `cost_unit`. |
+| `cost_unit` | with `cost_value` | string | The unit, chosen per chain: `"reviewer-hours per paper"`, `"USD per experiment"`. Displayed beside the number. |
+| `duration_days` | cost chains | number | Elapsed days, only where time is a fair stand-in for cost on that step. Never on the same step as `cost_value`; say it is a stand-in in `duration_span_note`. |
 | `duration_span_note` | no | string | Shown under the number: what the figure measures, or why there is none. |
-| `duration_covers` | when the step carries a duration | array of integers | The steps this figure measures, starting with this one, consecutive. `[3]` for a figure on step 3 alone; `[2,3,4,5]` for one figure covering four steps. |
+| `duration_covers` | when the step carries a number | array of integers | The steps this figure measures, starting with this one, consecutive. `[3]` for a figure on step 3 alone; `[2,3,4,5]` for one figure covering four steps. |
 
 **Legacy names.** `duration_jwst_years` and `duration_jwst_span` are accepted because the
 telescope chain uses them. New chains use `duration_years` and `duration_span`.
@@ -71,9 +54,8 @@ telescope chain uses them. New chains use `duration_years` and `duration_span`.
 **Top-level keys.** Only `paths` is read. The original `chains.json` also has `phase` and
 `note`, which are ignored.
 
-**Spans only work for durations.** `duration_covers` needs a `duration_years` or
-`duration_days` on the same step, so a money figure that covers several steps cannot be
-drawn as a span yet. Say which steps it covers in the `figure` text.
+**Spans work for any displayed number**, including `cost_value`: `duration_covers` needs
+whichever number that axis displays to be on the same step.
 
 ## `ai_type`: stored names
 
@@ -100,7 +82,9 @@ Definitions and discriminating examples: `methodology/taxonomy.md`.
 - `ai_type` and `maturity` are allowed values.
 - Every capability name is attached to the gap.
 - `is_binding` is never 1 on a time chain.
-- A time chain carries no `duration_days`; a cost chain carries no `duration_years`.
+- A time chain carries no `duration_days` and no `cost_value`; a cost chain carries no
+  `duration_years`.
+- `cost_value` has a `cost_unit`, and never shares a step with `duration_days`.
 - A step with a duration or a `figure` has `evidence`.
 - `duration_covers` starts at its own step, is consecutive, stays within the chain, sits
   on a step that has a number, and never covers a step twice.
@@ -163,9 +147,10 @@ be wrong.
   "confidence": "confident",
   "is_binding": 0,
   "capabilities": [],
-  "duration_days": 119,
+  "cost_value": 6.5,
+  "cost_unit": "reviewer-hours per paper",
   "duration_covers": [2, 3, 4, 5],
-  "duration_span_note": "Submission to acceptance, covering steps 2 to 5 together. Not a measurement of screening alone.",
+  "duration_span_note": "Covers steps 2 to 5 together. Not a measurement of screening alone.",
   "evidence": "Title, year, and DOI or URL.",
   "rationale": "…"
 },
@@ -187,3 +172,22 @@ be wrong.
 
 Steps 3 to 5 in that chain carry no duration and no `duration_covers`; the site draws the
 119-day figure once, across all four rows.
+
+---
+
+## In short
+
+- **One chain per file:** `research-log/critical-paths/<id>.json`, containing
+  `{ "paths": [ … ] }`. The pre-registration lives beside it in `preregistered/<id>.json`.
+- **Run `node engine/rebuild.mjs` to validate.** It lists every problem at once and
+  writes nothing until the file is clean.
+- **Use stored names for `ai_type`**, not the names the site displays. A display name is
+  rejected with the stored name to use instead.
+- **Time chains use `duration_years`; cost chains use `duration_days`.** A number in the
+  other field would never be displayed, so it is rejected.
+- **Capability names must be attached to the gap, spelled exactly.** Get them from
+  `engine/check-preregistration.mjs`.
+- **Unknown fields are errors**, so a typo like `durations_years` cannot vanish quietly.
+- **New chains need `status` and a `confidence` on every step.** `status: "draft"` keeps a
+  partly researched chain out of the public data.
+- **A cost chain shows `cost_value` with a `cost_unit`**, which you choose.

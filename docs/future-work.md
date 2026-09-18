@@ -9,28 +9,12 @@ The public version of the open items is the site's *What's missing* page
 (`app/src/app/missing/page.jsx`), written for Convergent. This file is the working plan;
 the two should agree on what is open.
 
-## TL;DR
-
-- **The highest-value task is the next critical path**, on a gap where AI might reach the
-  binding step. Both existing chains returned the same answer, so the method has never
-  shown it can return the opposite one. **David chooses the gap.**
-- **The unlock for doing chains at scale is typing Convergent's 389 capability edges** —
-  necessary, sufficient or partial. Today every chain reconstructs that by hand.
-- **Cost chains cannot display a cost**: the format has no numeric cost field, which is
-  why the publishing chain shows days. That, and 5 of 15 steps reading maturity as
-  availability, are the corrections waiting on the existing chains.
-- **The cheapest label fix is dropping the "Proxy only" tier**, which failed its own audit
-  at 78% disagreement.
-- **Never on this list:** ranking their gaps, or redesigning their schema by shipping one.
-
 ## How to pick up a task
 
 1. Take a worktree: `node engine/worktree.mjs <task-name>`.
 2. If the task says **Needs David**, ask the question it names before doing anything else.
 3. Follow the procedure it points to. Work on the branch; push it; ask before merging.
 4. Update `docs/todo.md` when you start and when you finish.
-
----
 
 ## A. Critical paths
 
@@ -53,20 +37,18 @@ the two should agree on what is open.
   asked.
 - **Size.** Medium: a day of agent work, most of it research.
 
-### A2. Give cost chains a number that measures cost
+### A2. Make the publishing chain show a cost
 
-- **Goal.** A cost chain displays a cost on each step, not an elapsed time.
-- **Why.** The format has no numeric cost field. The only number a cost chain can show is
-  `duration_days`, so the publishing chain declares `cost` and displays days, and a
-  cold-read test confirmed the next cost chain would do the same. Money can only go in
-  free text, and cannot be drawn as a span across steps.
-- **Needs David.** The field design (a value plus a unit, such as reviewer-hours per paper
-  or dollars per experiment), and then which fix for the publishing chain: labor figures
-  per step, or re-declaring it as a time chain with a new pre-registration.
-- **Output.** A cost field in `db/schema.sql`, the ingest, `methodology/chain-schema.md` and
-  the step table; a revised publishing chain; a line in `research-log/decisions.json`.
+- **Goal.** The publishing chain displays costs, not elapsed days.
+- **Status.** Half done. `cost_value` and `cost_unit` exist, and any new cost chain uses
+  them. The publishing chain predates them and still shows days throughout.
+- **What is left.** Per-step labor figures for the seven steps — reviewer-hours or
+  editor-hours per paper — each cited. Where no figure exists, keep `duration_days` and
+  say in `duration_span_note` that time is standing in for cost.
+- **Needs David.** Whether it is worth re-researching, or whether the chain is left as it
+  is with the limitation stated.
 - **Done when.** Every displayed number on every chain measures its declared axis.
-- **Size.** Medium.
+- **Size.** Medium, and it is research rather than code.
 
 ### A3. Re-read maturity on the existing chain steps
 
@@ -199,3 +181,19 @@ the two should agree on what is open.
 - **Redesigning their interface or schema by shipping one.** Tasks A4, B2 and B3 imply new
   fields and say so; they are proposed as additions joined on their ids, never as edits to
   their data.
+
+---
+
+## In short
+
+- **The highest-value task is the next critical path**, on a gap where AI might reach the
+  binding step. Both existing chains returned the same answer, so the method has never
+  shown it can return the opposite one. **David chooses the gap.**
+- **The unlock for doing chains at scale is typing Convergent's 389 capability edges** —
+  necessary, sufficient or partial. Today every chain reconstructs that by hand.
+- **Two corrections wait on the existing chains**: the publishing chain still shows days
+  on a cost axis, because it predates the cost field, and 5 of 15 steps read maturity as
+  availability.
+- **The cheapest label fix is dropping the "Proxy only" tier**, which failed its own audit
+  at 78% disagreement.
+- **Never on this list:** ranking their gaps, or redesigning their schema by shipping one.

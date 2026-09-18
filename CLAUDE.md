@@ -64,13 +64,17 @@ node engine/export-artifact.mjs  # regenerate data.json and the CSV
 
 | | |
 |---|---|
+| **Extending the analysis: a new chain, new labels, new research** | **`methodology/README.md` — start here** |
 | What is outstanding | `docs/todo.md` — update it when you pick something up |
+| What to build next, as tasks | `docs/future-work.md` |
 | What every term means, and whose word it is | `docs/glossary.md` |
 | What the work found | `docs/findings.md` |
 | How to write anything here | `methodology/writing.md`, and the `writing-like-convergent` skill |
 | How to write *this* file | `docs/claude-md-guidelines.md` |
 | Taxonomy values and discriminating examples | `methodology/taxonomy.md` |
 | Critical paths, and what "binding" means | `methodology/critical-path.md` |
+| The chain file format | `methodology/chain-schema.md` |
+| Briefs to hand a sub-agent | `agents/chain-builder.md`, `agents/labeler.md`, `agents/auditor.md`, `agents/reviewer.md` |
 | Auditing and sanity-checking labels | `methodology/audit-protocol.md` |
 | Research tooling and sourcing rules | `methodology/research-method.md` |
 | Repo layout, the derived database, decision protocol | `docs/architecture.md` |

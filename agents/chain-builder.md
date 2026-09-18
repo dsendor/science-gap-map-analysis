@@ -45,8 +45,9 @@ The full procedure is `methodology/critical-path.md`. Read it, then
 - **Never fix the ingest to make your file pass.** Fix the file.
 - **`reviewed` stays `"ai-only"`.** Only David sets `"human"`.
 - **Every number has a citation that resolves**: title, year, DOI or URL.
-- **A cost chain has no numeric cost field.** Put money and labor figures in `figure`, as
-  words with units. Do not put them in `duration_days`.
+- **A cost chain shows a cost.** Put the number in `cost_value` with a `cost_unit` you
+  choose. `duration_days` is only for a step where elapsed time is a fair stand-in, and
+  never on the same step as `cost_value`.
 - **Capability coverage is an observation**, never an omission on their part.
 - **Maturity asks whether applying AI would move this step**, not whether the technique
   exists. Read the step's blocker before choosing it.

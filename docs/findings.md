@@ -4,26 +4,6 @@
 previous version described four proposed attributes and pointed readers at an empty
 table; both were true when it was written in August and neither is true now.
 
-## TL;DR
-
-- **Two things are proposed**: critical paths, and a kind-of-work label on every gap.
-  Outcomes, the measurability tier and progress indicators were built, are in the export,
-  and are deliberately not proposed.
-- **The strongest result comes from Convergent's own data, not from our labels.** On the
-  publishing chain, 4 of 7 steps have no capability attached — including reviewer
-  recruitment, where the labour concentrates. On the telescope chain, 4 of 8 have none,
-  and they are the first three steps plus commissioning, which is where most of the years
-  sit.
-- **Coordination and institutions is the primary blocker for 15 of 103 gaps, and not one
-  of them has an AI capability that works today.** It is the only one of the eight kinds
-  of work with nothing in the working-now column.
-- **A one-line label predicted a seven-step decomposition.** Same author wrote both, so
-  it is a consistency check and not an independent test, and it is reported that way.
-- **47% of the primary labels are flagged `guess`** (48 of 103). That is the honest
-  number, published rather than smoothed.
-
----
-
 ## What was added
 
 | | Count | Proposed? |
@@ -98,3 +78,23 @@ Nothing here is typed from memory. The decision ledger behind the judgment calls
 
 *Search transcripts live in `research-log/searches/`. The `search_log` table is empty and
 the previous version of this document pointed readers at it.*
+
+---
+
+## In short
+
+- **Two things are proposed**: critical paths, and a kind-of-work label on every gap.
+  Outcomes, the measurability tier and progress indicators were built, are in the export,
+  and are deliberately not proposed.
+- **The strongest result comes from Convergent's own data, not from our labels.** On the
+  publishing chain, 4 of 7 steps have no capability attached — including reviewer
+  recruitment, where the labour concentrates. On the telescope chain, 4 of 8 have none,
+  and they are the first three steps plus commissioning, which is where most of the years
+  sit.
+- **Coordination and institutions is the primary blocker for 15 of 103 gaps, and not one
+  of them has an AI capability that works today.** It is the only one of the eight kinds
+  of work with nothing in the working-now column.
+- **A one-line label predicted a seven-step decomposition.** Same author wrote both, so
+  it is a consistency check and not an independent test, and it is reported that way.
+- **47% of the primary labels are flagged `guess`** (48 of 103). That is the honest
+  number, published rather than smoothed.
