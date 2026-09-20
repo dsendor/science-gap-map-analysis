@@ -1,0 +1,2657 @@
+{
+  "note": "Every search issued for this piece of work, with its cache key and the result titles and URLs returned. research-cache/ is gitignored, so this file is what makes the evidence, and any null result, checkable by someone else.",
+  "searches": [
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Navier-Stokes Millennium Prize blow up result implications for turbulence modeling",
+      "cache_key": "50a2a3f9f1b214c587a9beb03b4cfa1f",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:36",
+      "results": [
+        {
+          "title": "AI Has Solved One of Math’s $1 Million Millennium Prize Problems | Quanta Magazine",
+          "url": "https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/"
+        },
+        {
+          "title": "Navier–Stokes existence and smoothness - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness"
+        },
+        {
+          "title": "The Navier–Stokes Millennium Problem: Why Turbulence May Need Discrete Geometry | by Myo Oo | Sep, 2026 | Medium",
+          "url": "https://medium.com/@dharmakirti/the-navier-stokes-millennium-problem-why-turbulence-may-need-discrete-geometry-244cbaab184e"
+        },
+        {
+          "title": "Major breakthrough made on famous Millennium maths problem | New Scientist",
+          "url": "https://www.newscientist.com/article/2588115-major-breakthrough-made-on-famous-millennium-maths-problem/"
+        },
+        {
+          "title": "On the Navier–Stokes Millennium Prize Problem | OpenAI",
+          "url": "https://openai.com/index/navier-stokes-solution/"
+        },
+        {
+          "title": "r/technology on Reddit: On the Navier–Stokes Millennium Prize Problem",
+          "url": "https://www.reddit.com/r/technology/comments/1waup3r/on_the_navierstokes_millennium_prize_problem/"
+        },
+        {
+          "title": "(PDF) Navier-Stokes Equations—Millennium Prize Problems",
+          "url": "https://www.researchgate.net/publication/272831988_Navier-Stokes_Equations-Millennium_Prize_Problems"
+        },
+        {
+          "title": "r/CFD on Reddit: How do you think OpenAI's recent Navier–Stokes breakthrough could affect the future of CFD?",
+          "url": "https://www.reddit.com/r/CFD/comments/1waz85w/how_do_you_think_openais_recent_navierstokes/"
+        },
+        {
+          "title": "On the Navier–Stokes Millennium Prize Problem | alphaXiv",
+          "url": "https://www.alphaxiv.org/abs/2609.navier-stokes-solution"
+        },
+        {
+          "title": "AI cracked the Navier–Stokes challenge. What does that mean for physics? | Nature",
+          "url": "https://www.nature.com/articles/d41586-026-02922-6"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Terence Tao reaction OpenAI Navier-Stokes proof September 2026",
+      "cache_key": "44ba803363e4cb2d79f962acdf02d91b",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:37",
+      "results": [
+        {
+          "title": "Finite time blowup with smooth forcing term for the incompressible porous medium, Boussinesq, and incompressible Euler equations | What's new",
+          "url": "https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/"
+        },
+        {
+          "title": "What Is Navier-Stokes, the ‘Millennium’ Math Problem OpenAI Claims to Have Solved? - The New York Times",
+          "url": "https://www.nytimes.com/2026/09/08/science/what-is-navier-stokes.html"
+        },
+        {
+          "title": "Will AI solve math too fast?",
+          "url": "https://www.ibm.com/think/news/will-ai-solve-math-too-fast-navier-stokes-terence-tao"
+        },
+        {
+          "title": "OpenAI Navier-Stokes Proof: Credit Dispute Explained | explainx.ai Blog | explainx.ai",
+          "url": "https://explainx.ai/blog/openai-navier-stokes-solution-agent-swarm-2026"
+        },
+        {
+          "title": "OpenAI says it cracked Navier-Stokes, one of math's grand challenges. | Fortune",
+          "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/"
+        },
+        {
+          "title": "OpenAI has solved the Navier-Stokes Millennium problem using $15m of AI effort | New Scientist",
+          "url": "https://www.newscientist.com/article/2588063-openai-has-solved-the-navier-stokes-millennium-problem-using-15m-of-ai-effort/"
+        },
+        {
+          "title": "SciTech Era on X: \"80-year-old Navier-Stokes problem solved?.. 🍿🤯 Anthropic & OpenAI researchers are sparring over credit for a major step toward solving one of mathematics’ biggest unsolved problems. And things are getting VERY interesting. Key takeaways from the new development: > The proof… / X",
+          "url": "https://x.com/SciTechera/status/2097270842275324255"
+        },
+        {
+          "title": "Clay Institute Won't Call Navier-Stokes Solved by OpenAI",
+          "url": "https://www.implicator.ai/clay-institute-navier-stokes-openai-proof-claim/"
+        },
+        {
+          "title": "Navier-Stokes Holds As OpenAI And Anthropic Staff Clash",
+          "url": "https://gadgetsnow.indiatimes.com/tech-news/navier-stokes-holds-as-openai-and-anthropic-staff-clash/articleshow/133935320.cms"
+        },
+        {
+          "title": "OpenAI says its AI cracked Navier-Stokes | StartupHub.ai",
+          "url": "https://www.startuphub.ai/ai-news/ai-research/2026/openai-says-its-ai-cracked-navier-stokes"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Clay Mathematics Institute response OpenAI Navier-Stokes statement C forced",
+      "cache_key": "223d064abe379dd69848248f14c9f8ce",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:38",
+      "results": [
+        {
+          "title": "OpenAI’s Navier–Stokes Proof Claim: Evidence and Dispute",
+          "url": "https://kingy.ai/blog/navier-stokes-ai-proof-claims-dispute/"
+        },
+        {
+          "title": "Clay Institute Won't Call Navier-Stokes Solved by OpenAI",
+          "url": "https://www.implicator.ai/clay-institute-navier-stokes-openai-proof-claim/"
+        },
+        {
+          "title": "Did AI Solve Navier-Stokes? OpenAI's Claim, Explained | DataCamp",
+          "url": "https://www.datacamp.com/blog/openai-navier-stokes-math-problem"
+        },
+        {
+          "title": "OpenAI fought dirty on career-making math problem, says NYU mathematician | TechCrunch",
+          "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/"
+        },
+        {
+          "title": "OpenAI Claims Its AI Proved a Navier-Stokes Blowup — Mathematicians Question Priority and Verification | XenoSpectrum",
+          "url": "https://xenospectrum.com/en/openai-navier-stokes-singularity-clay-dispute/"
+        },
+        {
+          "title": "On the Navier–Stokes Millennium Prize Problem | OpenAI",
+          "url": "https://openai.com/index/navier-stokes-solution/"
+        },
+        {
+          "title": "Navier-Stokes Holds As OpenAI And Anthropic Staff Clash",
+          "url": "https://gadgetsnow.indiatimes.com/tech-news/navier-stokes-holds-as-openai-and-anthropic-staff-clash/articleshow/133935320.cms"
+        },
+        {
+          "title": "Clay Navier-Stokes Problem: Official Statement Explained",
+          "url": "https://navier-stokes.org/navier-stokes-existence-and-smoothness/"
+        },
+        {
+          "title": "Did OpenAI Just Solve Navier–Stokes? The Clay Institute Says Not So Fast (as of September 12, 2026)",
+          "url": "https://seoulinside.substack.com/p/did-openai-just-solve-navierstokes"
+        },
+        {
+          "title": "OpenAI Navier-Stokes Proof: Credit Dispute Explained | explainx.ai Blog | explainx.ai",
+          "url": "https://explainx.ai/blog/openai-navier-stokes-solution-agent-swarm-2026"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "does Navier-Stokes regularity matter for engineering turbulence models",
+      "cache_key": "6b7cc1a8d822f724228189c79608e47f",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:39",
+      "results": [
+        {
+          "title": "Navier–Stokes existence and smoothness - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness"
+        },
+        {
+          "title": "r/math on Reddit: Turbulence and the Navier-Stokes existence and smoothness problem",
+          "url": "https://www.reddit.com/r/math/comments/1cif95n/turbulence_and_the_navierstokes_existence_and/"
+        },
+        {
+          "title": "Solving the Navier-Stokes Equations: What \"Solution\" Really Means",
+          "url": "https://navier-stokes.org/navier-stokes-equation-solution/"
+        },
+        {
+          "title": "Euler Equations, Navier-Stokes Equations and Turbulence",
+          "url": "https://web.math.princeton.edu/~const/cim.pdf"
+        },
+        {
+          "title": "Navier–Stokes equations - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations"
+        },
+        {
+          "title": "r/FluidMechanics on Reddit: is the navier stokes problem of turbulence a physics question or a math question?",
+          "url": "https://www.reddit.com/r/FluidMechanics/comments/179xrbo/is_the_navier_stokes_problem_of_turbulence_a/"
+        },
+        {
+          "title": "fluid dynamics - Is Navier-Stokes a turbulence model? - Physics Stack Exchange",
+          "url": "https://physics.stackexchange.com/questions/428765/is-navier-stokes-a-turbulence-model"
+        },
+        {
+          "title": "Navier-Stokes Equations and Turbulence",
+          "url": "https://www.cambridge.org/core/books/navierstokes-equations-and-turbulence/F183F2E2116DF34CE771B3622469BF22"
+        },
+        {
+          "title": "Geometry of turbulent dissipation and the Navier–Stokes regularity problem | Scientific Reports",
+          "url": "https://www.nature.com/articles/s41598-021-87774-y"
+        },
+        {
+          "title": "The Navier-Stokes Problem — navier-stokes.dev",
+          "url": "https://navier-stokes.dev/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Buckmaster Alpoge Euler blowup Anthropic model proof 2026",
+      "cache_key": "d3a236436d52bf572e42827197c6eebd",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:41",
+      "results": [
+        {
+          "title": "Buckmaster and Alpöge Post AI Fluid Blowup Proofs, Detail OpenAI Calls – Unite.AI",
+          "url": "https://www.unite.ai/buckmaster-and-alpoge-post-ai-fluid-blowup-proofs-dispute-openai-contact/"
+        },
+        {
+          "title": "Finite time blowup with smooth forcing term for the incompressible porous medium, Boussinesq, and incompressible Euler equations | What's new",
+          "url": "https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/"
+        },
+        {
+          "title": "Mathematician Says OpenAI Pressured Him Over Navier-Stokes Credit",
+          "url": "https://genztech.blog/p/buckmaster-openai-navier-stokes-dispute/"
+        },
+        {
+          "title": "OpenAI vs Buckmaster: The Navier-Stokes Lean Proofs, Audited",
+          "url": "https://stanfordtechreview.com/articles/openai-buckmaster-navier-stokes-lean-proofs"
+        },
+        {
+          "title": "AI may have just solved a million-dollar math problem. The field will never be the same | Scientific American",
+          "url": "https://www.scientificamerican.com/article/ai-may-have-just-solved-a-million-dollar-math-problem-the-field-will-never-be-the-same/"
+        },
+        {
+          "title": "The mathematicians published machine-checkable proofs. OpenAI announced its result on a call with reporters.",
+          "url": "https://thenextweb.com/news/openai-navier-stokes-claim-verification-credit"
+        },
+        {
+          "title": "OpenAI’s Navier–Stokes Proof Claim: Evidence and Dispute",
+          "url": "https://kingy.ai/blog/navier-stokes-ai-proof-claims-dispute/"
+        },
+        {
+          "title": "Two Teams Claim Progress on Fluid Dynamics' Hardest Problem. The Fight Over Credit Has Already Begun. — Glitchwire",
+          "url": "https://glitchwire.com/news/two-teams-claim-progress-on-fluid-dynamics-hardest-problem-the-fight-over-credit/"
+        },
+        {
+          "title": "Navier–Stokes priority controversy - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy"
+        },
+        {
+          "title": "Today, Levent Alp¨oge and I have made public three results: finite-time",
+          "url": "https://cims.nyu.edu/~tristanb/statement.pdf"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Navier-Stokes singularity forced versus unforced significance",
+      "cache_key": "287454e3b7b39c420d1c59c70cc2c77d",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:17:42",
+      "results": [
+        {
+          "title": "Navier–Stokes existence and smoothness - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness"
+        },
+        {
+          "title": "How OpenAI found a singularity in Navier-Stokes",
+          "url": "https://nickmcgreivy.substack.com/p/how-openai-found-a-singularity-in"
+        },
+        {
+          "title": "Navier–Stokes priority controversy - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy"
+        },
+        {
+          "title": "Solving the Navier-Stokes Equations: What \"Solution\" Really Means",
+          "url": "https://navier-stokes.org/navier-stokes-equation-solution/"
+        },
+        {
+          "title": "Canadian Technology Magazine: OpenAI’s Navier Stokes Claim, the Credit D",
+          "url": "https://bizrescuepro.com/openai-navier-stokes-proof-ai-credit/"
+        },
+        {
+          "title": "Finite time blowup with smooth forcing term for the incompressible porous medium, Boussinesq, and incompressible Euler equations | What's new",
+          "url": "https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/"
+        },
+        {
+          "title": "OpenAI Found a Navier–Stokes Singularity: Why Nature Still Cannot Reach It | by Myo Oo | Sep, 2026 | Medium",
+          "url": "https://medium.com/@dharmakirti/openai-found-a-navier-stokes-singularity-why-nature-still-cannot-reach-it-d34477a3498c"
+        },
+        {
+          "title": "OpenAI's Navier-Stokes Claim: What It Actually Proved | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/openai-navier-stokes-millennium-prize"
+        },
+        {
+          "title": "The Navier-Stokes Problem: What It Asks and Why It's Open",
+          "url": "https://navier-stokes.org/the-problem/"
+        },
+        {
+          "title": "Stable and Unstable Singularities in Navier-Stokes | alphaXiv",
+          "url": "https://www.alphaxiv.org/abs/2609.stable-unstable-singularities-navier-stokes"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "grid point requirements large eddy simulation Chapman estimates revisited Choi Moin",
+      "cache_key": "483bcf48c991e067db5f67b86be03a8c",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:22",
+      "results": [
+        {
+          "title": "(PDF) Grid-point requirements for large eddy simulation: Chapman’s estimates revisited",
+          "url": "https://www.researchgate.net/publication/258077198_Grid-point_requirements_for_large_eddy_simulation_Chapman%27s_estimates_revisited"
+        },
+        {
+          "title": "Grid-point and time-step requirements for direct numerical simulation and large-eddy simulation | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/33/1/015108/1061120/Grid-point-and-time-step-requirements-for-direct"
+        },
+        {
+          "title": "Grid-point requirements for large eddy simulation: Chapman's estimates revisited - ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2012PhFl...24a1702C/abstract"
+        },
+        {
+          "title": "(PDF) Grid-point requirements for large eddy simulation: Chapman’s estimates revisited",
+          "url": "https://www.academia.edu/60506114/Grid_point_requirements_for_large_eddy_simulation_Chapman_s_estimates_revisited"
+        },
+        {
+          "title": "[PDF] Grid-point requirements for large eddy simulation: Chapman’s estimates revisited | Semantic Scholar",
+          "url": "https://www.semanticscholar.org/paper/Grid-point-requirements-for-large-eddy-simulation:-Choi-Moin/b16941b6fc86fd9d2eb1128095a24b47ebacb062"
+        },
+        {
+          "title": "Grid-point requirements for large eddy simulation: Chapman’s estimates revisited | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/1.3676783/14069693/011702_1_online.pdf"
+        },
+        {
+          "title": "Grid-point requirements for large eddy simulation",
+          "url": "https://gibbs.science/teaching/les/handouts/choi_and_moin_2011.pdf"
+        },
+        {
+          "title": "Grid-point and time-step requirements for direct numerical simulation and",
+          "url": "https://arxiv.org/pdf/2010.15307"
+        },
+        {
+          "title": "Grid-point and time-step requirements for direct numerical ...",
+          "url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0036515/12533592/015108_1_online.pdf"
+        },
+        {
+          "title": "[PDF] Grid-point and time-step requirements for direct numerical simulation and large-eddy simulation | Semantic Scholar",
+          "url": "https://www.semanticscholar.org/paper/Grid-point-and-time-step-requirements-for-direct-Yang-Griffin/1c568d33cff708691e9d94288e63b4762ce2fb42"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "NASA CFD Vision 2030 study mesh generation bottleneck engineer time",
+      "cache_key": "2495043d2355241d59ef559a12b8b198",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:22",
+      "results": [
+        {
+          "title": "March 2014 NASA/CR–2014-218178 CFD Vision 2030 Study: A Path to",
+          "url": "https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf"
+        },
+        {
+          "title": "Geometry, Mesh Generation, and the CFD 2030 Vision - DOKUMEN.PUB",
+          "url": "https://dokumen.pub/download/geometry-mesh-generation-and-the-cfd-2030-vision.html"
+        },
+        {
+          "title": "Continued progress toward the CFD Vision 2030 goals - Aerospace America",
+          "url": "https://aerospaceamerica.aiaa.org/year-in-review/continued-progress-toward-the-cfd-vision-2030-goals/"
+        },
+        {
+          "title": "nTop and CoreWeave Demonstrate NASA's 2030 Grand Challenge in CFD is Within Reach Today",
+          "url": "https://www.ntop.com/resources/blog/ntop-coreweave-nasa-2030-grand-challenge-in-cfd/"
+        },
+        {
+          "title": "𝐷⁢𝑚⁢𝑠⁢ℎ: A Multi-Agent Reinforcement Learning Framework for All-Quad Mesh Generation",
+          "url": "https://arxiv.org/html/2606.10601"
+        },
+        {
+          "title": "Progress toward the 2030 vision of CFD - Aerospace America",
+          "url": "https://aerospaceamerica.aiaa.org/year-in-review/progress-toward-the-2030-vision-of-cfd/"
+        },
+        {
+          "title": "The CFD Vision 2030 Roadmap: Updated for 2020",
+          "url": "https://www.cfd2030.com/report/CFD-Vision-2030-Roadmap-2020-Report.pdf"
+        },
+        {
+          "title": "Geometry, Mesh Generation, and the CFD 2030 Vision | Request PDF",
+          "url": "https://www.researchgate.net/publication/303902671_Geometry_Mesh_Generation_and_the_CFD_2030_Vision"
+        },
+        {
+          "title": "CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20140003093"
+        },
+        {
+          "title": "Meshing, visualization community works on CFD Vision 2030 - Aerospace America",
+          "url": "https://aerospaceamerica.aiaa.org/year-in-review/meshing-visualization-community-works-on-cfd-vision-2030/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Spalart-Allmaras k-omega SST still industry standard turbulence model decades",
+      "cache_key": "65feafede92e49a9584e43042471e15f",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:24",
+      "results": [
+        {
+          "title": "Development and Application of Elliptic Blending Lag k-omega SST Standard and Wall-Distance-Free Turbulence Model",
+          "url": "https://openscholarship.wustl.edu/eng_etds/527/"
+        },
+        {
+          "title": "NASA Turbulence Modeling Resource - NASA",
+          "url": "https://turbmodels.larc.nasa.gov/spalart.html"
+        },
+        {
+          "title": "(PDF) Ten years of industrial experience with the SST turbulence model",
+          "url": "https://www.researchgate.net/publication/228742295_Ten_years_of_industrial_experience_with_the_SST_turbulence_model"
+        },
+        {
+          "title": "Allmaras Model - an overview | ScienceDirect Topics",
+          "url": "https://www.sciencedirect.com/topics/engineering/allmaras-model"
+        },
+        {
+          "title": "Turbulence Models and Their Application to Complex Flows R. H. Nichols",
+          "url": "https://www.nasa.gov/wp-content/uploads/2025/09/turbulence-guide-v4-01.pdf?emrc=90c0ad"
+        },
+        {
+          "title": "SST k-omega model -- CFD-Wiki, the free CFD reference",
+          "url": "https://www.cfd-online.com/Wiki/SST_k-omega_model"
+        },
+        {
+          "title": "Spalart–Allmaras turbulence model - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Spalart%E2%80%93Allmaras_turbulence_model"
+        },
+        {
+          "title": "Why is the Spalart-Allmaras model preferred in aerodynamics ? | ResearchGate",
+          "url": "https://www.researchgate.net/post/Why_is_the_Spalart-Allmaras_model_preferred_in_aerodynamics"
+        },
+        {
+          "title": "Choosing the Right Turbulence Model for Your CFD Simulation - Engineering.com",
+          "url": "https://www.engineering.com/choosing-the-right-turbulence-model-for-your-cfd-simulation/"
+        },
+        {
+          "title": "Turbulence models: Spalart-Allmaras, k- Epsilon and k-Omega",
+          "url": "https://www.linkedin.com/pulse/turbulence-models-spalart-allmaras-k-epsilon-k-omega-yong-kw"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "machine learning turbulence closure model a posteriori generalization failure",
+      "cache_key": "714e748952d1de5f91abfad887869ec8",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:25",
+      "results": [
+        {
+          "title": "Generalization Limits of Data-Driven Turbulence Models | Flow, Turbulence and Combustion | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s10494-024-00595-7"
+        },
+        {
+          "title": "Turbulence closure modeling with machine learning: a foundational physics perspective - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/1367-2630/ad6689"
+        },
+        {
+          "title": "Turbulence Closure modeling with machine learning approaches: A Perspective",
+          "url": "https://arxiv.org/html/2312.14902v1"
+        },
+        {
+          "title": "A posteriori closure of turbulence models: are symmetries preserved?",
+          "url": "https://arxiv.org/html/2504.03870"
+        },
+        {
+          "title": "Generalizable data-driven turbulence closure modeling on unstructured grids with differentiable physics",
+          "url": "https://arxiv.org/html/2307.13533v2"
+        },
+        {
+          "title": "Bridging physics and data: A review of machine learning approaches for turbulence closure modeling | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/38/9/091302/3404733/Bridging-physics-and-data-A-review-of-machine"
+        },
+        {
+          "title": "(PDF) Generalization Limits of Data-Driven Turbulence Models",
+          "url": "https://www.researchgate.net/publication/385673624_Generalization_Limits_of_Data-Driven_Turbulence_Models"
+        },
+        {
+          "title": "Deep Learning of Solver-Aware Turbulence Closures from Nudged LES Dynamics",
+          "url": "https://arxiv.org/html/2604.23874v1"
+        },
+        {
+          "title": "Scientific machine learning for closure models in multiscale problems: a review",
+          "url": "https://arxiv.org/html/2403.02913v2"
+        },
+        {
+          "title": "SCIENTIFIC MACHINE LEARNING FOR CLOSURE MODELS IN 1",
+          "url": "https://www.osti.gov/servlets/purl/2496578"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "AIAA Drag Prediction Workshop turbulence model spread scatter results",
+      "cache_key": "b393b40f71af0a13b36a13e217d08114",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:26",
+      "results": [
+        {
+          "title": "Summary Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C034409"
+        },
+        {
+          "title": "Summary of Data from the Fifth Computational Fluid Dynamics Drag Prediction Workshop | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C032389"
+        },
+        {
+          "title": "(PDF) Summary of data from the fifth AIAA CFD drag prediction workshop",
+          "url": "https://www.researchgate.net/publication/259899195_Summary_of_data_from_the_fifth_AIAA_CFD_drag_prediction_workshop"
+        },
+        {
+          "title": "Summary of Data from the Fifth AIAA CFD Drag Prediction Workshop - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20130003313"
+        },
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6907020/"
+        },
+        {
+          "title": "Summary of the Fourth AIAA CFD Drag Prediction Workshop",
+          "url": "https://ntrs.nasa.gov/api/citations/20100025833/downloads/20100025833.pdf"
+        },
+        {
+          "title": "Summary of Data from the First AIAA CFD Drag Prediction Workshop - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20030007848"
+        },
+        {
+          "title": "(PDF) Summary of the Fourth AIAA CFD Drag Prediction Workshop",
+          "url": "https://www.academia.edu/27796257/Summary_of_the_Fourth_AIAA_CFD_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "Summary of Data from the Fifth AIAA CFD Drag Prediction Workshop | Aerospace Sciences Meetings",
+          "url": "https://arc.aiaa.org/doi/10.2514/6.2013-46"
+        },
+        {
+          "title": "Statistical Analysis of Solutions from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7816761/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "data-driven RANS closure adopted industrial CFD production code",
+      "cache_key": "127d874c609847349880829410ed852f",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:27",
+      "results": [
+        {
+          "title": "A probabilistic, data-driven closure model for RANS simulations",
+          "url": "https://arxiv.org/pdf/2307.02432"
+        },
+        {
+          "title": "Data-driven RANS closures for improving mean ﬁeld calculation of separated ﬂows",
+          "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2024.1347657/pdf"
+        },
+        {
+          "title": "Data-driven RANS closures using a relative importance term analysis based classifier for 2D and 3D separated flows - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0045793025003597"
+        },
+        {
+          "title": "Frontiers | Data-driven RANS closures for improving mean field calculation of separated flows",
+          "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2024.1347657/full"
+        },
+        {
+          "title": "[2307.02432] A probabilistic, data-driven closure model for RANS simulations with aleatoric, model uncertainty",
+          "url": "https://ar5iv.labs.arxiv.org/html/2307.02432"
+        },
+        {
+          "title": "(PDF) Customized data-driven RANS closures for bi-fidelity LES-RANS optimization",
+          "url": "https://www.researchgate.net/publication/340500126_Customized_data-driven_RANS_closures_for_bi-fidelity_LES-RANS_optimization"
+        },
+        {
+          "title": "Data-driven RANS closures for wind turbine wakes under neutral conditions - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0045793021003261"
+        },
+        {
+          "title": "Multiscale Data-Driven RANS Closure for Trailing Edge Cutback Film Cooling Flows | J. Turbomach. | ASME Digital Collection",
+          "url": "https://asmedigitalcollection.asme.org/turbomachinery/article-abstract/148/5/051003/1222638/Multiscale-Data-Driven-RANS-Closure-for-Trailing?redirectedFrom=fulltext"
+        },
+        {
+          "title": "Turbulence closure modeling with data-driven techniques: physical compatibility and consistency considerations - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/1367-2630/abadb3"
+        },
+        {
+          "title": "A curated dataset for data-driven turbulence modelling | Scientific Data",
+          "url": "https://www.nature.com/articles/s41597-021-01034-2"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "wall-modeled LES cost scaling Reynolds number aircraft simulation core hours",
+      "cache_key": "498fb0d4425d9b9180345e5d312fa842",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:28",
+      "results": [
+        {
+          "title": "Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics | Flow | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/flow/article/large-eddy-simulation-of-aircraft-at-affordable-cost-a-milestone-in-computational-fluid-dynamics/D5659DC34EE5F0F3D6A273AFF14C1286"
+        },
+        {
+          "title": "Scale Resolving Methods for Aeronautical Flows toward the Era of “Industrial LES” | Flow, Turbulence and Combustion | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s10494-025-00659-2"
+        },
+        {
+          "title": "Wall-Modeled Large-Eddy Simulation of a High Reynolds Number Separating and Reattaching Flow - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6800694/"
+        },
+        {
+          "title": "Wall-layer models for large-eddy simulations - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S037604210800047X"
+        },
+        {
+          "title": "A wall model for large-eddy simulation of highly compressible flows based on a new scaling of the law of the wall | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/wall-model-for-largeeddy-simulation-of-highly-compressible-flows-based-on-a-new-scaling-of-the-law-of-the-wall/71691520A0B30A826AFCDEFB909936AA"
+        },
+        {
+          "title": "Wall-modeled large-eddy simulation of high Reynolds number flow around an airfoil near stall condition - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0045793012004379"
+        },
+        {
+          "title": "Building-block-flow computational model for large-eddy simulation of external aerodynamic applications | Communications Engineering",
+          "url": "https://www.nature.com/articles/s44172-024-00278-1"
+        },
+        {
+          "title": "Characterization of pressure fluctuations within a controlled-diffusion blade boundary layer using the equilibrium wall-modelled LES | Scientific Reports",
+          "url": "https://www.nature.com/articles/s41598-020-69671-y"
+        },
+        {
+          "title": "High Reynolds Number Airfoil: From Wall-Resolved to Wall-Modeled LES | Request PDF",
+          "url": "https://www.researchgate.net/publication/330812813_High_Reynolds_Number_Airfoil_From_Wall-Resolved_to_Wall-Modeled_LES"
+        },
+        {
+          "title": "Wall-Modeled Large-Eddy Simulation for Complex Turbulent ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6800697/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "certification by analysis CFD aircraft FAA EASA turbulence model validation",
+      "cache_key": "09132079cd8224c1fee6f358d73b2828",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:18:29",
+      "results": [
+        {
+          "title": "Challenge Problem Overview for the Certification by ...",
+          "url": "https://ntrs.nasa.gov/api/citations/20250005704/downloads/AIAA_CbA_CoI_Aviation_Paper-forReview_06092025.pdf"
+        },
+        {
+          "title": "The role of CFD in passing aircraft EASA regulations",
+          "url": "https://airshaper.com/blog/cfd-in-passing-aircraft-easa-regulations"
+        },
+        {
+          "title": "May 2021 NASA/CR-20210015404 A Guide for Aircraft Certification by Analysis",
+          "url": "https://ntrs.nasa.gov/api/citations/20210015404/downloads/NASA-CR-20210015404%20updated.pdf"
+        },
+        {
+          "title": "NASA@SC21: Turbulence Resolving Simulations for Aircraft Certification by Analysis",
+          "url": "https://www.nas.nasa.gov/SC21/research/project4.html"
+        },
+        {
+          "title": "CS-25 Structural Certification Specifications - EASA",
+          "url": "https://www.easa.europa.eu/sites/default/files/dfu/proposed_cm-s-014_modelling_simulation_-_for_consultation.pdf"
+        },
+        {
+          "title": "Requirements and Challenges for CFD Validation within ...",
+          "url": "https://commonresearchmodel.larc.nasa.gov/wp-content/uploads/sites/7/2023/02/AIAA-2020-2772-Requirements.pdf"
+        },
+        {
+          "title": "AGARD-AR-303-VOL-1 A Selection of Experimental Test Cases for the Validation of CFD codes",
+          "url": "https://www.abbottaerospace.com/downloads/agard-ar-303-vol-1/"
+        },
+        {
+          "title": "High-Lift Common Research Model (CRM-HL)",
+          "url": "https://ntrs.nasa.gov/api/citations/20210010908/downloads/06-NASA-IFAR-Cert-CRM-HL-Wahls-final.pdf"
+        },
+        {
+          "title": "Comprehensive Approach to Verification and Validation of CFD Simulations",
+          "url": "https://ntrs.nasa.gov/api/citations/20120013081/downloads/20120013081.pdf"
+        },
+        {
+          "title": "A Guide for Aircraft Certification by Analysis - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20210015404"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "McGreivy Hakim weak baselines reporting biases machine learning fluid partial differential equations",
+      "cache_key": "fa7b5cdefb6f2b74e7534cb788b570fe",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:52",
+      "results": [
+        {
+          "title": "[2407.07218] Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations",
+          "url": "https://arxiv.org/abs/2407.07218"
+        },
+        {
+          "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations | Nature Machine Intelligence",
+          "url": "https://www.nature.com/articles/s42256-024-00897-5"
+        },
+        {
+          "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations (Journal Article) | OSTI.GOV",
+          "url": "https://www.osti.gov/pages/biblio/2475825"
+        },
+        {
+          "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations - Princeton University",
+          "url": "https://collaborate.princeton.edu/en/publications/weak-baselines-and-reporting-biases-lead-to-overoptimism-in-machi/"
+        },
+        {
+          "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations | Request PDF",
+          "url": "https://www.researchgate.net/publication/384352056_Weak_baselines_and_reporting_biases_lead_to_overoptimism_in_machine_learning_for_fluid-related_partial_differential_equations"
+        },
+        {
+          "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations | AI Research Paper Details",
+          "url": "https://www.aimodels.fyi/papers/arxiv/weak-baselines-reporting-biases-lead-to-overoptimism"
+        },
+        {
+          "title": "[PDF] Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations | Semantic Scholar",
+          "url": "https://www.semanticscholar.org/paper/Weak-baselines-and-reporting-biases-lead-to-in-for-McGreivy-Hakim/fda0812099547cd3b91031851f644e1929b4b77c"
+        },
+        {
+          "title": "r/CFD on Reddit: Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations - N McGreivy, A Hakim",
+          "url": "https://www.reddit.com/r/CFD/comments/1h1pj8m/weak_baselines_and_reporting_biases_lead_to/"
+        },
+        {
+          "title": "[Literature Review] Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations",
+          "url": "https://www.themoonlight.io/en/review/weak-baselines-and-reporting-biases-lead-to-overoptimism-in-machine-learning-for-fluid-related-partial-differential-equations"
+        },
+        {
+          "title": "(PDF) Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations",
+          "url": "https://www.researchgate.net/publication/382145718_Weak_baselines_and_reporting_biases_lead_to_overoptimism_in_machine_learning_for_fluid-related_partial_differential_equations"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "machine learning CFD speedup claims overstated Nature Machine Intelligence 2024",
+      "cache_key": "8ade3073d5964339bb68a7d6938b8329",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:53",
+      "results": [
+        {
+          "title": "Machine Learning Reshaping Computational Fluid Dynamics: A Paradigm Shift in Accuracy and Speed",
+          "url": "https://www.mdpi.com/2311-5521/10/10/275"
+        },
+        {
+          "title": "Analyses in 2024 | Nature Machine Intelligence",
+          "url": "https://www.nature.com/natmachintell/articles?type=analysis&year=2024"
+        },
+        {
+          "title": "Machine Learning in CFD: Accelerating Simulation | Neural Concept",
+          "url": "https://www.neuralconcept.com/post/applying-machine-learning-in-cfd-to-accelerate-simulation"
+        },
+        {
+          "title": "r/CFD on Reddit: Is AI/ML just hype or do you think it will actually speed up solving time?",
+          "url": "https://www.reddit.com/r/CFD/comments/12dsate/is_aiml_just_hype_or_do_you_think_it_will/"
+        },
+        {
+          "title": "Recent Advances on Machine Learning for Computational Fluid Dynamics: A Survey",
+          "url": "https://arxiv.org/html/2408.12171v1"
+        },
+        {
+          "title": "Enhancing CFD solver with Machine Learning techniques - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S004578252400389X"
+        },
+        {
+          "title": "NeurIPS 2024 ML4CFD Competition: Results and Retrospective Analysis",
+          "url": "https://arxiv.org/html/2506.08516"
+        },
+        {
+          "title": "Machine Learning to speed up Computational Fluid Dynamics engineering simulations for built environments: A review - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0360132324010710"
+        },
+        {
+          "title": "Enhancing computational fluid dynamics with machine learning | Nature Computational Science",
+          "url": "https://www.nature.com/articles/s43588-022-00264-7"
+        },
+        {
+          "title": "Machine learning as CFD surrogate models for rapid prediction of building-related physical fields: A review of methods and state-of-the-art - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0360132325011382"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "neural operator Fourier turbulence extrapolation Reynolds number out of distribution failure",
+      "cache_key": "51c75c75815a01bc18286398c1525ab2",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:54",
+      "results": [
+        {
+          "title": "Forcing and Diagnosing Failure Modes of Fourier Neural Op-",
+          "url": "https://arxiv.org/pdf/2601.11428"
+        },
+        {
+          "title": "Fourier neural operators for spatiotemporal dynamics in two-dimensional turbulence",
+          "url": "https://arxiv.org/html/2409.14660v2"
+        },
+        {
+          "title": "Fourier neural operator for large eddy simulation of compressible Rayleigh-Taylor turbulence",
+          "url": "https://arxiv.org/html/2404.05834v1"
+        },
+        {
+          "title": "Fourier neural operator for large eddy simulation of ...",
+          "url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0213412/20058482/075165_1_5.0213412.pdf"
+        },
+        {
+          "title": "(PDF) Fourier neural operator for large eddy simulation of compressible Rayleigh–Taylor turbulence",
+          "url": "https://www.researchgate.net/publication/382375538_Fourier_neural_operator_for_large_eddy_simulation_of_compressible_Rayleigh-Taylor_turbulence"
+        },
+        {
+          "title": "Fourier neural operator for large eddy simulation of compressible Rayleigh–Taylor turbulence | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/36/7/075165/3303797/Fourier-neural-operator-for-large-eddy-simulation"
+        },
+        {
+          "title": "Fourier Neural Operators for Spatiotemporal Dynamics in ...",
+          "url": "https://conferences.computer.org/sc-wpub/pdfs/SC-W2024-6oZmigAQfgJ1GhPL0yE3pS/555400a041/555400a041.pdf"
+        },
+        {
+          "title": "(PDF) Fourier neural operators for spatiotemporal dynamics in two-dimensional turbulence",
+          "url": "https://www.researchgate.net/publication/384266696_Fourier_neural_operators_for_spatiotemporal_dynamics_in_two-dimensional_turbulence"
+        },
+        {
+          "title": "When Neural PDE Solvers Fail to Extrapolate: Spectral Truncation and Boundary Condition Neglect | OpenReview",
+          "url": "https://openreview.net/forum?id=8eNfdcjleF"
+        },
+        {
+          "title": "Explaining the physics of transfer learning in data-driven turbulence modeling - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9991455/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "GraphCast GenCast NeuralGCM skill operational weather forecast ECMWF 2025",
+      "cache_key": "ca1fdd8d6799e44755c3ff433d0b4239",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:55",
+      "results": [
+        {
+          "title": "GitHub - google-deepmind/weathernext · GitHub",
+          "url": "https://github.com/google-deepmind/graphcast"
+        },
+        {
+          "title": "Research and benchmarks | WeatherNext | Google for Developers",
+          "url": "https://developers.google.com/weathernext/guides/research"
+        },
+        {
+          "title": "Learning skillful medium-range global weather forecasting | Science",
+          "url": "https://www.science.org/doi/10.1126/science.adi2336"
+        },
+        {
+          "title": "GenCast: Diffusion-based ensemble forecasting for medium-range weather",
+          "url": "https://arxiv.org/html/2312.15796v1"
+        },
+        {
+          "title": "GenCast predicts weather and the risks of extreme conditions with state-of-the-art accuracy — Google DeepMind",
+          "url": "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/"
+        },
+        {
+          "title": "Probabilistic weather forecasting with machine learning | Nature",
+          "url": "https://www.nature.com/articles/s41586-024-08252-9"
+        },
+        {
+          "title": "GraphCast: Global Weather Forecasting",
+          "url": "https://www.emergentmind.com/topics/graphcast"
+        },
+        {
+          "title": "NOAA EAGLE (Experimental AI Global and Limited-Area Ensemble) Global Deterministic and Ensemble Forecasts - Registry of Open Data on AWS",
+          "url": "https://registry.opendata.aws/noaa-nws-graphcastgfs-pds/"
+        },
+        {
+          "title": "[2212.12794] GraphCast: Learning skillful medium-range global weather forecasting",
+          "url": "https://ar5iv.labs.arxiv.org/html/2212.12794"
+        },
+        {
+          "title": "GenCast: Diffusion Ensemble Forecasting",
+          "url": "https://www.emergentmind.com/papers/2312.15796"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "AI weather model subgrid parameterization climate model hybrid 2026",
+      "cache_key": "d8061acb601d78056b3e37d2687813df",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:56",
+      "results": [
+        {
+          "title": "Bridging the weather and climate divide with artificial intelligence | Nature Communications",
+          "url": "https://www.nature.com/articles/s41467-026-75787-y"
+        },
+        {
+          "title": "Next-Generation Climate Modeling: AI-Enhanced, Machine-Learning, and Hybrid Approaches Beyond Conventional GCMs",
+          "url": "https://www.mdpi.com/3042-5743/34/1/15"
+        },
+        {
+          "title": "Finetuning AI Foundation Models to Develop Subgrid-Scale Parameterizations: A Case Study on Atmospheric Gravity Waves · Pith",
+          "url": "https://pith.science/paper/2509.03816"
+        },
+        {
+          "title": "Beyond the Training Data: Confidence-Guided Mixing of Parameterizations in a Hybrid AI-Climate Model",
+          "url": "https://arxiv.org/html/2510.08107"
+        },
+        {
+          "title": "A Framework for Hybrid Physics-AI Coupled Ocean Models",
+          "url": "https://arxiv.org/html/2510.22676v1"
+        },
+        {
+          "title": "Reduced cloud cover errors in a hybrid AI-climate model through equation discovery and automatic tuning | Scientific Reports",
+          "url": "https://www.nature.com/articles/s41598-025-29155-3"
+        },
+        {
+          "title": "Climate Models: Resolving Subgrid Physics for Accuracy",
+          "url": "https://lacuna.tiptreesystems.com/direction/resolving-subgrid-scale-physics-in-global-climate-models/txn_8e084482e4124161bf4d52e80f14d02c"
+        },
+        {
+          "title": "A hybrid framework for global weather forecasting via low-resolution dynamical core and multigrid neural operator | npj Climate and Atmospheric Science",
+          "url": "https://www.nature.com/articles/s41612-026-01374-z"
+        },
+        {
+          "title": "AI Weather Forecasting 2026: Models, Accuracy & Results",
+          "url": "https://www.articsledge.com/post/ai-weather-forecasting"
+        },
+        {
+          "title": "Stable Machine-Learning Parameterization of Subgrid Processes in a Comprehensive Atmospheric Model Learned From Embedded Convection-Permitting Simulations",
+          "url": "https://arxiv.org/html/2407.00124v4"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "field inversion machine learning turbulence model industrial adoption Siemens Ansys",
+      "cache_key": "7569415959e2087c14142ffe4a49825b",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:57",
+      "results": [
+        {
+          "title": "(PDF) Integrated Field Inversion and Machine Learning With Embedded Neural Network Training for Turbulence Modeling",
+          "url": "https://www.researchgate.net/publication/333907217_Integrated_Field_Inversion_and_Machine_Learning_With_Embedded_Neural_Network_Training_for_Turbulence_Modeling"
+        },
+        {
+          "title": "Machine learning for turbulence modeling | Monolith AI",
+          "url": "https://www.monolithai.com/blog/machine-learning-for-turbulence-modeling"
+        },
+        {
+          "title": "Augmentation of Turbulence Models Using Field Inversion and Machine Learning",
+          "url": "https://deepblue.lib.umich.edu/bitstream/handle/2027.42/143032/6.2017-0993.pdf?sequence=1."
+        },
+        {
+          "title": "Data driven turbulence modeling in turbomachinery — An applicability study - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0045793022000408"
+        },
+        {
+          "title": "Augmentation of Turbulence Models Using Field Inversion and Machine Learning | AIAA SciTech Forum",
+          "url": "https://arc.aiaa.org/doi/10.2514/6.2017-0993"
+        },
+        {
+          "title": "On the Generalization Capability of a Data-Driven Turbulence Model by Field Inversion and Machine Learning",
+          "url": "https://www.mdpi.com/2226-4310/11/7/592"
+        },
+        {
+          "title": "Simulation podcasts: 9 Conversations with Siemens experts",
+          "url": "https://blogs.sw.siemens.com/simcenter/simulation-podcasts-engineers/"
+        },
+        {
+          "title": "Machine learning methods for turbulence modeling in ...",
+          "url": "https://arxiv.org/pdf/1806.05904"
+        },
+        {
+          "title": "Turbulence Modeling via Data Assimilation and Machine Learning for Separated Flows over Airfoils | AIAA Journal",
+          "url": "https://arc.aiaa.org/doi/full/10.2514/1.J062711?journalCode=aiaaj"
+        },
+        {
+          "title": "(PDF) Augmentation of Turbulence Models Using Field Inversion and Machine Learning",
+          "url": "https://www.researchgate.net/publication/315664261_Augmentation_of_Turbulence_Models_Using_Field_Inversion_and_Machine_Learning"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "symbolic regression turbulence closure gene expression programming Sandberg",
+      "cache_key": "b0c208a178211aa03cc83dbd1649e492",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:58",
+      "results": [
+        {
+          "title": "Gradient Information and Regularization for Gene Expression Programming to Develop Data-Driven Physics Closure Models | Flow, Turbulence and Combustion | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s10494-024-00579-7"
+        },
+        {
+          "title": "Symbolic turbulence model development for complex-geometry flows exploiting language model-based transfer learning | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/37/9/095180/3363938/Symbolic-turbulence-model-development-for-complex"
+        },
+        {
+          "title": "Recent evolution of Gene-Expression Programming for ...",
+          "url": "https://turbmodels.larc.nasa.gov/Turb-prs2022/Slide_presentations/Day_2/01_Sandberg_invitedtalk.pdf"
+        },
+        {
+          "title": "A coupled framework for symbolic turbulence models from deep-learning - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0142727X23000395"
+        },
+        {
+          "title": "Constraining Genetic Symbolic Regression via Semantic Backpropagation",
+          "url": "https://ouci.dntb.gov.ua/en/works/4w5xxJB9/"
+        },
+        {
+          "title": "Strategies for Enhancing One-Equation Turbulence Model Predictions Using Gene-Expression Programming",
+          "url": "https://doi.org/10.3390/fluids9080191"
+        },
+        {
+          "title": "Reynolds-averaged stress and scalar-flux closures via symbolic regression for vertical natural convection - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0142727X2200056X"
+        },
+        {
+          "title": "A Novel Attribution-Based Search-Space Reduction Approach Accelerating Simulation-Driven Evolutionary Symbolic Regression by Wilhelm Widulski, Maximilian Reissmann, Richard Sandberg, Andrea Beck :: SSRN",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7181482"
+        },
+        {
+          "title": "Gradient Information and Regularization for Gene ...",
+          "url": "https://eprints.soton.ac.uk/478247/1/2211.12341v1.pdf"
+        },
+        {
+          "title": "GitHub - sayin/Data_Driven_Symbolic_Regression: Interpretable machine learning (symbolic regression) using Genetic programming/Gene expression programming and Sparse regression used to identify physical process, numerical schemes, and LES subgrid scale (eddy viscosity) turbulence models.",
+          "url": "https://github.com/sayin/Data_Driven_Symbolic_Regression"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "CFD Vision 2030 progress 2025 machine learning turbulence assessment",
+      "cache_key": "156e7bc00d922500c53a5d5ec39ff8a1",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:19:59",
+      "results": [
+        {
+          "title": "The CFD Vision 2030 Roadmap: Updated for 2020",
+          "url": "https://www.cfd2030.com/report/CFD-Vision-2030-Roadmap-2020-Report.pdf"
+        },
+        {
+          "title": "Vision 2030 Roadmap Progress and Technology Highlights ...",
+          "url": "http://www.cfd2030.com/report/CFD-Vision-2030-Roadmap-2021-Report-v2.pdf"
+        },
+        {
+          "title": "2024 CFD Vision 2030 Roadmap Progress and Technology Highlights for 2024",
+          "url": "https://www.cfd2030.com/report/CFD_Vision_2030_Roadmap_Update_2024-FINAL.pdf"
+        },
+        {
+          "title": "CFD Vision 2030 Road Map: Progress and Perspectives | AIAA AVIATION Forum",
+          "url": "https://arc.aiaa.org/doi/10.2514/6.2021-2726"
+        },
+        {
+          "title": "The CFD Vision 2030 - Roadmap Update Reports",
+          "url": "https://sourcelink.cadence.com/report.html"
+        },
+        {
+          "title": "CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20140003093"
+        },
+        {
+          "title": "Progress And Challenges On The CFD Vision 2030 Roadmap",
+          "url": "https://semiengineering.com/progress-and-challenges-on-the-cfd-vision-2030-roadmap/"
+        },
+        {
+          "title": "March 2014 NASA/CR–2014-218178 CFD Vision 2030 Study: A Path to",
+          "url": "https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf"
+        },
+        {
+          "title": "CFD Vision 2030 Study: A Path To Revolutionary Computational Aerosciences 1",
+          "url": "https://math.umd.edu/~tadmor/pub/TV+entropy/Boeing%20CFD%20Vision_2030_Final_Report_CRDL.pdf"
+        },
+        {
+          "title": "CFD Vision 2030, AIAA Integration Committee",
+          "url": "https://www.cfd2030.com/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "DeepMind unstable singularities fluid equations PINN 2025 discovering new solutions",
+      "cache_key": "670c0c68bef424b9e2f2c14421121e55",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:25",
+      "results": [
+        {
+          "title": "Discovering new solutions to century-old problems in fluid dynamics — Google DeepMind",
+          "url": "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/"
+        },
+        {
+          "title": "Discovery of Unstable Singularities",
+          "url": "https://arxiv.org/html/2509.14185v1"
+        },
+        {
+          "title": "Physics Informed Neural Networks, A Proven PINNs Guide 2025",
+          "url": "https://binaryverseai.com/physics-informed-neural-networks-pinns-explained/"
+        },
+        {
+          "title": "Google AI's Potential Win of Millennium Prize: Chinese Doctor Solves Century - Old Math Problem, Captures Singularity First",
+          "url": "https://eu.36kr.com/en/p/3473272279865732"
+        },
+        {
+          "title": "Meet The New Family of Blow-Ups Discovered By Google DeepMind – Circular Astronomy",
+          "url": "https://circularastronomy.com/2025/09/21/meet-the-new-family-of-blow-ups-discovered-by-google-deepmind/"
+        },
+        {
+          "title": "Keryc",
+          "url": "https://keryc.com/en/news/ai-discovers-unprecedented-singularities-fluid-dynamics-0aa35601"
+        },
+        {
+          "title": "Unstable genius: DeepMind cracks a century-old physics mystery with AI",
+          "url": "https://www.businessinsider.com/google-deepmind-cracks-century-old-physics-mystery-ai-fluid-dynamics-2025-11"
+        },
+        {
+          "title": "r/singularity on Reddit: Google DeepMind discovers new solutions to century-old problems in fluid dynamics",
+          "url": "https://www.reddit.com/r/singularity/comments/1nkf7ma/google_deepmind_discovers_new_solutions_to/"
+        },
+        {
+          "title": "Neural networks discover unstable singularities in fluid systems – Physics World",
+          "url": "https://physicsworld.com/a/neural-networks-discover-unstable-singularities-in-fluid-systems/"
+        },
+        {
+          "title": "Open-Sourcing the Universe’s Code: Unstable Singularities in Fluid Dynamics | by Manuel Alfaro | Medium",
+          "url": "https://medium.com/@m.alfaro.007/open-sourcing-the-universes-code-unstable-singularities-in-fluid-dynamics-9f5cdb5e5e9e"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "AI turbulence model 2026 breakthrough large eddy simulation surrogate industrial",
+      "cache_key": "fac49e58d68566017a517dc76b99bb23",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:26",
+      "results": [
+        {
+          "title": "AI turbulence simulation: 1000× faster in 2026 | Patsnap",
+          "url": "https://www.patsnap.com/resources/blog/articles/ai-turbulence-simulation-1000x-faster-in-2026/"
+        },
+        {
+          "title": "Unlocking the Physics of Turbulence with AI - USC Viterbi | School of Engineering",
+          "url": "https://viterbischool.usc.edu/news/2026/08/unlocking-the-physics-of-turbulence-with-ai/"
+        },
+        {
+          "title": "Machine learning for turbulence modeling | Monolith AI",
+          "url": "https://www.monolithai.com/blog/machine-learning-for-turbulence-modeling"
+        },
+        {
+          "title": "Data-Driven Turbulence Modelling Challenge",
+          "url": "https://ml4fluids2026.github.io/challenges/"
+        },
+        {
+          "title": "High-Fidelity Simulation of Turbulence in the Piscataqua River Using a Novel Neural Network Surrogate",
+          "url": "https://www.mdpi.com/2073-4441/18/12/1500"
+        },
+        {
+          "title": "Deep reinforcement learning for turbulence modeling in large eddy simulations - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0142727X2200162X"
+        },
+        {
+          "title": "Making turbulence simulations more reliable with physics-aware AI",
+          "url": "https://www.tue.nl/en/news-and-events/news-overview/29-05-2026-making-turbulence-simulations-more-reliable-with-physics-aware-ai"
+        },
+        {
+          "title": "A fully three-dimensional deep learning surrogate model for large-eddy simulation-resolved wake dynamics in wind farm | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article-abstract/38/5/055122/3389382/A-fully-three-dimensional-deep-learning-surrogate?redirectedFrom=fulltext"
+        },
+        {
+          "title": "Future Applications of AI in CFD | Resolved Analytics",
+          "url": "https://www.resolvedanalytics.com/ai-in-cfd/how-will-ai-impact-cfd"
+        },
+        {
+          "title": "Generative AI for subgrid turbulence in large-eddy simulations",
+          "url": "https://arxiv.org/html/2510.00383"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "ECMWF AIFS operational AI forecast 2025 2026 accuracy versus physical model",
+      "cache_key": "cc577afbff1185386a0afe9987143ff4",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:27",
+      "results": [
+        {
+          "title": "ECMWF’s AI forecasts become operational | ECMWF",
+          "url": "https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwfs-ai-forecasts-become-operational"
+        },
+        {
+          "title": "ECMWF’s ensemble AI forecasts become operational | ECMWF",
+          "url": "https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwfs-ensemble-ai-forecasts-become-operational"
+        },
+        {
+          "title": "AI and physics-based weather forecasting: A comparative study",
+          "url": "https://arxiv.org/html/2606.02508v1"
+        },
+        {
+          "title": "Significant update to ECMWF’s key forecasting systems IFS and AIFS to go live | EurekAlert!",
+          "url": "https://www.eurekalert.org/news-releases/1127636"
+        },
+        {
+          "title": "GMD - AIFS Single 1.1.0: an update to ECMWF's machine-learned weather forecast model AIFS",
+          "url": "https://gmd.copernicus.org/articles/19/4703/2026/"
+        },
+        {
+          "title": "Forecast performance 2025 | ECMWF",
+          "url": "https://www.ecmwf.int/en/newsletter/187/news/forecast-performance-2025"
+        },
+        {
+          "title": "An update to ECMWF’s machine-learned weather forecast model AIFS",
+          "url": "https://arxiv.org/html/2509.18994v1"
+        },
+        {
+          "title": "ECMWF - delivering forecasts over 10 times faster and cutting energy usage by 1000 | EurekAlert!",
+          "url": "https://www.eurekalert.org/news-releases/1088526"
+        },
+        {
+          "title": "Artificial Intelligence Forecasting System (AIFS) - OECD.AI",
+          "url": "https://oecd.ai/en/catalogue/tools/artificial-intelligence-forecasting-system-aifs"
+        },
+        {
+          "title": "AI Weather Forecasting 2026: Models, Accuracy & Results",
+          "url": "https://www.articsledge.com/post/ai-weather-forecasting"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "climate model subgrid parameterization machine learning instability long rollout drift",
+      "cache_key": "b9832ac6d51714861b6746235aa79def",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:29",
+      "results": [
+        {
+          "title": "Stable machine-learning parameterization of subgrid processes for climate modeling at a range of resolutions | Nature Communications",
+          "url": "https://www.nature.com/articles/s41467-020-17142-3"
+        },
+        {
+          "title": "Stable machine-learning parameterization of subgrid processes for climate modeling at a range of resolutions",
+          "url": "https://dspace.mit.edu/handle/1721.1/126573"
+        },
+        {
+          "title": "Stable Machine-Learning Parameterization of Subgrid Processes with Real Geography and Full-physics Emulation",
+          "url": "https://arxiv.org/html/2407.00124v1"
+        },
+        {
+          "title": "(PDF) Stable machine-learning parameterization of subgrid processes for climate modeling at a range of resolutions",
+          "url": "https://www.researchgate.net/publication/342667723_Stable_machine-learning_parameterization_of_subgrid_processes_for_climate_modeling_at_a_range_of_resolutions"
+        },
+        {
+          "title": "Stable machine-learning parameterization of subgrid processes for climate modeling at a range of resolutions",
+          "url": "https://ouci.dntb.gov.ua/en/works/73DEAAX4/"
+        },
+        {
+          "title": "Stable machine-learning parameterization of subgrid processes for climate modeling at a range of resolutions - ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2020AGUFMA056...04Y/abstract"
+        },
+        {
+          "title": "Stable Machine-Learning Parameterization of Subgrid Processes in a Comprehensive Atmospheric Model Learned From Embedded Convection-Permitting Simulations",
+          "url": "https://arxiv.org/html/2407.00124v4"
+        },
+        {
+          "title": "Stable machine-learning parameterization of subgrid ...",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32620769/"
+        },
+        {
+          "title": "Climate Models: Resolving Subgrid Physics for Accuracy",
+          "url": "https://lacuna.tiptreesystems.com/direction/resolving-subgrid-scale-physics-in-global-climate-models/txn_8e084482e4124161bf4d52e80f14d02c"
+        },
+        {
+          "title": "Stable Machine‐Learning Parameterization of Subgrid Processes in a Comprehensive Atmospheric Model Learned From Embedded Convection‐Permitting Simulations - Hu - 2025 - Journal of Advances in Modeling Earth Systems - Wiley Online Library",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024MS004618"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "aerodynamic certification by analysis progress 2025 wind tunnel replacement CFD",
+      "cache_key": "a8e13a2164b9e71abf445143be709fc0",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:30",
+      "results": [
+        {
+          "title": "Challenge Problem Overview for the Certification by ...",
+          "url": "https://ntrs.nasa.gov/api/citations/20250005704/downloads/AIAA_CbA_CoI_Aviation_Paper-forReview_06092025.pdf"
+        },
+        {
+          "title": "Advancements and applications of wind tunnel testing in aerial vehicle development: A state-of-the-art overview - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S221509862500299X"
+        },
+        {
+          "title": "Requirements and Challenges for CFD Validation within ...",
+          "url": "https://commonresearchmodel.larc.nasa.gov/wp-content/uploads/sites/7/2023/02/AIAA-2020-2772-Requirements.pdf"
+        },
+        {
+          "title": "Analysis Applications: Wind Tunnel Studies - NASA",
+          "url": "https://www.nasa.gov/analysis-applications-wind-tunnel-studies/"
+        },
+        {
+          "title": "What is the best approach for aerodynamic testing, wind ...",
+          "url": "https://www.facebook.com/groups/proawetechforum/posts/3849925191906233/"
+        },
+        {
+          "title": "Progress in the wind tunnel, virtual tunnel, air and digital spaces - Aerospace America",
+          "url": "https://aerospaceamerica.aiaa.org/year-in-review/progress-in-the-wind-tunnel-virtual-tunnel-air-and-digital-spaces/"
+        },
+        {
+          "title": "Winds of Change Hit Aerodynamics Testing - Digital Engineering 24/7",
+          "url": "https://www.digitalengineering247.com/article/winds-of-change-hit-aerodynamics-testing/"
+        },
+        {
+          "title": "AirShaper - Aerodynamics Made Easy",
+          "url": "https://airshaper.com/"
+        },
+        {
+          "title": "Wind Tunnel CFD Evaluation: Smarter Aerodynamic Testing | Predictive Engineering",
+          "url": "https://predictiveengineering.com/content/wind-tunnel-cfd-evaluation-smarter-aerodynamic-testing"
+        },
+        {
+          "title": "CFD vs Wind Tunnel Testing: Which Is Better? (With Decision Table) | SimuTecra",
+          "url": "https://simutecra.com/blogs/cfd-vs-wind-tunnel-testing-which-is-better"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "wall model machine learning WMLES generalization separated flow 2025",
+      "cache_key": "63aa92c9d696a3cee3e3e4bff071f618",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:31",
+      "results": [
+        {
+          "title": "Consistently Enforced Wall Models by Reinforcement Learning for Wall-Modeled Large-Eddy Simulation",
+          "url": "https://www.mdpi.com/2311-5521/11/6/147"
+        },
+        {
+          "title": "Machine learning building-block-flow wall model for large-eddy simulation | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/machine-learning-buildingblockflow-wall-model-for-largeeddy-simulation/D0DF4A2EA0E4338EC22B32F611BE6496"
+        },
+        {
+          "title": "A wall model for separated flows: embedded learning to improve a posteriori performance",
+          "url": "https://arxiv.org/html/2409.00984v1"
+        },
+        {
+          "title": "A wall model for separated flows: embedded learning to improve a posteriori performance | Request PDF",
+          "url": "https://www.researchgate.net/publication/387336948_A_wall_model_for_separated_flows_embedded_learning_to_improve_a_posteriori_performance"
+        },
+        {
+          "title": "Enhancing Turbulence Modeling: Integrating Machine Learning in Wall-Modeled Large Eddy Simulations for Improved Non-Equilibrium Flow Prediction | Argonne Leadership Computing Facility",
+          "url": "https://www.alcf.anl.gov/events/enhancing-turbulence-modeling-integrating-machine-learning-wall-modeled-large-eddy"
+        },
+        {
+          "title": "General-purpose Data-driven Wall Model for Low-speed Flows",
+          "url": "https://arxiv.org/pdf/2511.16511"
+        },
+        {
+          "title": "Data-driven wall modeling for turbulent separated flows - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0021999123002681"
+        },
+        {
+          "title": "Machine-learning wall model of large-eddy simulation for low- and high-speed flows over rough surfaces",
+          "url": "https://arxiv.org/html/2601.20786"
+        },
+        {
+          "title": "General-purpose Data-driven Wall Model for Low-speed Flows Part I: Baseline Model",
+          "url": "https://arxiv.org/html/2511.16511"
+        },
+        {
+          "title": "A features-embedded-learning immersed boundary model for large-eddy simulation of turbulent flows with complex boundaries · Pith",
+          "url": "https://pith.science/paper/2506.21985"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "turbulence model uncertainty quantification model form error RANS aerospace design margin",
+      "cache_key": "09c7fbb7cc3c417af9fc3504ddebbce7",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:32",
+      "results": [
+        {
+          "title": "An uncertainty estimation module for turbulence model predictions in SU2",
+          "url": "https://arxiv.org/pdf/1803.00725"
+        },
+        {
+          "title": "1 Recommendations for Future Efforts in RANS Modeling and Simulation",
+          "url": "https://ntrs.nasa.gov/api/citations/20200002463/downloads/20200002463.pdf"
+        },
+        {
+          "title": "A confidence-based aerospace design approach robust to structural turbulence closure uncertainty - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0045793022002171"
+        },
+        {
+          "title": "Quantification of model uncertainty in RANS simulations: A review - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0376042118300952"
+        },
+        {
+          "title": "Quantifying and Reducing Model-Form Uncertainties in Reynolds-Averaged Navier–Stokes Simulations: A Data-Driven, Physics-Based Bayesian Approach",
+          "url": "https://arxiv.org/html/1508.06315"
+        },
+        {
+          "title": "(PDF) Quantification of Model Uncertainty in RANS Simulations: A Review",
+          "url": "https://www.researchgate.net/publication/325929714_Quantification_of_Model_Uncertainty_in_RANS_Simulations_A_Review"
+        },
+        {
+          "title": "(PDF) Uncertainty quantification of turbulence models for complex aerospace flows",
+          "url": "https://www.researchgate.net/publication/329705364_Uncertainty_quantification_of_turbulence_models_for_complex_aerospace_flows"
+        },
+        {
+          "title": "Data-driven and physics-constrained uncertainty quantification for turbulence models | Stanford Digital Repository",
+          "url": "https://purl.stanford.edu/xb783jh2567"
+        },
+        {
+          "title": "Optimization under turbulence model uncertainty for aerospace design",
+          "url": "https://kiwi.oden.utexas.edu/papers/Turbulence-design-under-uncertainty-Cook-Willcox.pdf"
+        },
+        {
+          "title": "(PDF) Optimization under turbulence model uncertainty for aerospace design",
+          "url": "https://researchgate.net/publication/336784558_Optimization_under_turbulence_model_uncertainty_for_aerospace_design"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "how much does a wind tunnel test cost per hour aerospace",
+      "cache_key": "1b0fc442a2964f78da25f7711c5dbccd",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:20:33",
+      "results": [
+        {
+          "title": "r/aerospace on Reddit: Running Cost of a Hypersonic (or High-Speed Supersonic) Wind Tunnel",
+          "url": "https://www.reddit.com/r/aerospace/comments/u6jffc/running_cost_of_a_hypersonic_or_highspeed/"
+        },
+        {
+          "title": "Services & rates | UW William E. Boeing Department of Aeronautics & Astronautics",
+          "url": "https://www.aa.washington.edu/AERL/KWT/rateguide"
+        },
+        {
+          "title": "Types of Wind Tunnels",
+          "url": "https://www.grc.nasa.gov/WWW/k-12/WindTunnel/WTExpKids/tsld032.htm"
+        },
+        {
+          "title": "Running a wind tunnel can cost as much ...",
+          "url": "https://www.facebook.com/AIAAfan/posts/running-a-wind-tunnel-can-cost-as-much-as-20000-per-hour-but-cfd-cant-model-ever/10156266727400330/"
+        },
+        {
+          "title": "Wind Tunnel CFD Evaluation: Smarter Aerodynamic Testing | Predictive Engineering",
+          "url": "https://predictiveengineering.com/content/wind-tunnel-cfd-evaluation-smarter-aerodynamic-testing"
+        },
+        {
+          "title": "Wind Tunnel Testing: Options Explained and Compared - Tyto Robotics",
+          "url": "https://www.tytorobotics.com/blogs/articles/wind-tunnel-testing-comparison"
+        },
+        {
+          "title": "Rates & Scheduling – UWAL - Kirsten Wind Tunnel",
+          "url": "https://www.uwal.uw.edu/rates-scheduling/"
+        },
+        {
+          "title": "INFRASTRUCTURE, SAFETY, AND ENVIRONMENT and NATIONAL SECURITY RESEARCH DIVISION",
+          "url": "https://www.rand.org/content/dam/rand/pubs/technical_reports/2011/RAND_TR999.pdf"
+        },
+        {
+          "title": "Wind Tunnel Testing Doesn’t Have to Cost Millions of Dollars…",
+          "url": "https://www.linkedin.com/pulse/wind-tunnel-testing-doesnt-have-cost-millions-dollars-mike-cavanaugh"
+        },
+        {
+          "title": "Wind tunnel cost | Eng-Tips",
+          "url": "https://www.eng-tips.com/threads/wind-tunnel-cost.426641/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Goc Lehmkuhl Park Bose Moin large eddy simulation aircraft affordable cost milestone",
+      "cache_key": "639423d3b3de18c88b2c6b989f59246f",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:45",
+      "results": [
+        {
+          "title": "Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics | Flow | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/flow/article/large-eddy-simulation-of-aircraft-at-affordable-cost-a-milestone-in-computational-fluid-dynamics/D5659DC34EE5F0F3D6A273AFF14C1286"
+        },
+        {
+          "title": "(PDF) Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics",
+          "url": "https://www.researchgate.net/publication/357178538_Large_eddy_simulation_of_aircraft_at_affordable_cost_a_milestone_in_computational_fluid_dynamics"
+        },
+        {
+          "title": "Large eddy simulation of aircraft at affordable cost",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D5659DC34EE5F0F3D6A273AFF14C1286/S2633425921000179a.pdf/large-eddy-simulation-of-aircraft-at-affordable-cost-a-milestone-in-computational-fluid-dynamics.pdf"
+        },
+        {
+          "title": "Large-eddy simulation of the NASA high-lift common ...",
+          "url": "https://web.stanford.edu/group/ctr/ResBriefs/2021/03_Goc.pdf"
+        },
+        {
+          "title": "Wind Tunnel and Grid Resolution Effects in Large-Eddy Simulations of the High-Lift Common Research Model | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C037238"
+        },
+        {
+          "title": "Parviz Moin | Flow Physics and Computational Engineering",
+          "url": "https://fpce.stanford.edu/people/parviz-moin"
+        },
+        {
+          "title": "On the Wall-Modeled Large Eddy Simulations of the Windsor Body at Different Yaw Angles | Springer Nature Link",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-032-19268-4_2"
+        },
+        {
+          "title": "A novel large-eddy simulation framework with consistently enforced wall models by a near-wall dynamic correction procedure | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article-abstract/37/3/035103/3338274/A-novel-large-eddy-simulation-framework-with"
+        },
+        {
+          "title": "HiLiftAeroML: High-Fidelity Computational Fluid Dynamics Dataset for High-Lift Aircraft Aerodynamics",
+          "url": "https://arxiv.org/html/2605.19565v1"
+        },
+        {
+          "title": "Direct- and Large Eddy Simulations of Turbulent Flow in CS0 Diffuser on Resolved and Under-resolved Meshes | Flow, Turbulence and Combustion | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s10494-023-00399-1"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "wall modeled LES full aircraft core hours cost high lift prediction workshop",
+      "cache_key": "5e25db53822da856b7974e2bfa65a370",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:45",
+      "results": [
+        {
+          "title": "Summary of the 4th High-Lift Prediction Workshop Hybrid RANS/LES Technology Focus Group | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C037329"
+        },
+        {
+          "title": "Wall-modeled LES around the CRM-HL using Fully-automated Cartesian-grid-based Flow Solver FFVHC-ACE | AIAA AVIATION Forum",
+          "url": "https://arc.aiaa.org/doi/abs/10.2514/6.2022-3435"
+        },
+        {
+          "title": "Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics | Flow | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/flow/article/large-eddy-simulation-of-aircraft-at-affordable-cost-a-milestone-in-computational-fluid-dynamics/D5659DC34EE5F0F3D6A273AFF14C1286"
+        },
+        {
+          "title": "LAVA WMLES Results for the 5th High-Lift Prediction Workshop",
+          "url": "https://ntrs.nasa.gov/api/citations/20240015729/downloads/LAVA_WMLES_Final.pdf"
+        },
+        {
+          "title": "Thoughts on the 4th High-Lift Prediction Workshop",
+          "url": "https://tecplot.com/2022/01/27/thoughts-on-the-4th-high-lift-prediction-workshop/"
+        },
+        {
+          "title": "AIAA CFD High-Lift Prediction Workshop - NASA",
+          "url": "https://www.nasa.gov/reference/aiaa-cfd-high-lift-prediction-workshop/"
+        },
+        {
+          "title": "High Lift Prediction Workshop 5 - Wall-Modeled LES TFG",
+          "url": "https://hiliftpw.larc.nasa.gov/Workshop5/TFG_wmles.html"
+        },
+        {
+          "title": "Overview and Summary of the Third AIAA High Lift Prediction Workshop | Request PDF",
+          "url": "https://www.researchgate.net/publication/329657776_Overview_and_Summary_of_the_Third_AIAA_High_Lift_Prediction_Workshop"
+        },
+        {
+          "title": "Introduction to the Fourth AIAA High-Lift Prediction Workshop Virtual Collection | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C037674"
+        },
+        {
+          "title": "Publications | High Lift Prediction Workshop",
+          "url": "http://aiaa-hlpw.org/publications/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "AIAA Drag Prediction Workshop 6 scatter drag count statistics turbulence model",
+      "cache_key": "d967e4ef88322ede1d746302fb453d09",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:46",
+      "results": [
+        {
+          "title": "Statistical Analysis of Solutions from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7816761/"
+        },
+        {
+          "title": "Summary Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C034409"
+        },
+        {
+          "title": "Statistical Analysis of the Sixth AIAA Drag Prediction Workshop Solutions | Journal of Aircraft",
+          "url": "https://doi.org/10.2514/1.C034938"
+        },
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction ...",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6907020/"
+        },
+        {
+          "title": "cfd drag prediction: Topics by Science.gov",
+          "url": "https://www.science.gov/topicpages/c/cfd+drag+prediction"
+        },
+        {
+          "title": "Summary of Data from the Fifth Computational Fluid Dynamics Drag Prediction Workshop | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C032389"
+        },
+        {
+          "title": "Summary Data from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop: Code Verification | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C034856"
+        },
+        {
+          "title": "Drag Prediction Workshop - NASA",
+          "url": "https://aiaa-dpw.larc.nasa.gov/"
+        },
+        {
+          "title": "(PDF) AIAA 2002-0841 Summary of Data from the First AIAA CFD Drag Prediction Workshop",
+          "url": "https://www.researchgate.net/publication/2844294_AIAA_2002-0841_Summary_of_Data_from_the_First_AIAA_CFD_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "(PDF) Summary of the Fourth AIAA CFD Drag Prediction Workshop",
+          "url": "https://www.academia.edu/27796257/Summary_of_the_Fourth_AIAA_CFD_Drag_Prediction_Workshop"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "high lift prediction workshop 4 results scatter CFD participants lift coefficient",
+      "cache_key": "94105bff940a332d472f6ff0a7c417ae",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:48",
+      "results": [
+        {
+          "title": "HIGH-LIFT PREDICTION WORKSHOPS: RETROSPECTIVE, LESSONS",
+          "url": "https://ntrs.nasa.gov/api/citations/20240006238/downloads/ICAS-rumsey-hilift_4.pdf"
+        },
+        {
+          "title": "Overview and Summary of the Second AIAA High Lift Prediction Workshop (Invited)",
+          "url": "https://ntrs.nasa.gov/api/citations/20140011924/downloads/20140011924.pdf"
+        },
+        {
+          "title": "Overview and Summary of the Second AIAA High-Lift Prediction Workshop | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C032864"
+        },
+        {
+          "title": "HIGH-LIFT PREDICTION WORKSHOPS: RETROSPECTIVE, LESSONS",
+          "url": "https://www.icas.org/icas_archive/icas2024/data/papers/icas2024_1217_paper.pdf"
+        },
+        {
+          "title": "Fourth High-Lift Prediction/Third Geometry and Mesh Generation Workshops: Overview and Summary",
+          "url": "https://www.researchgate.net/publication/369321529_Fourth_High-Lift_PredictionThird_Geometry_and_Mesh_Generation_Workshops_Overview_and_Summary"
+        },
+        {
+          "title": "Thoughts on the 4th High-Lift Prediction Workshop",
+          "url": "https://tecplot.com/2022/01/27/thoughts-on-the-4th-high-lift-prediction-workshop/"
+        },
+        {
+          "title": "4th AIAA CFD High Lift Prediction Workshop (HLPW-4) - NASA",
+          "url": "https://hiliftpw.larc.nasa.gov/index-workshop4.html"
+        },
+        {
+          "title": "Summary of the First AIAA CFD High Lift Prediction Workshop (invited)",
+          "url": "https://ntrs.nasa.gov/api/citations/20110002879/downloads/20110002879.pdf"
+        },
+        {
+          "title": "4th AIAA CFD High Lift Prediction Workshop - NASA",
+          "url": "https://hiliftpw.larc.nasa.gov/Workshop4/OfficialTestCases-HiLiftPW-4-2021_v15.pdf"
+        },
+        {
+          "title": "Prediction of high lift: Review of present CFD capability",
+          "url": "https://www.researchgate.net/publication/247227751_Prediction_of_high_lift_Review_of_present_CFD_capability"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "wind tunnel test cost per occupancy hour NASA transonic facility",
+      "cache_key": "3bf617f9eaf1afb093601c41f1c65bee",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:49",
+      "results": [
+        {
+          "title": "INFRASTRUCTURE, SAFETY, AND ENVIRONMENT and NATIONAL SECURITY RESEARCH DIVISION",
+          "url": "https://www.rand.org/content/dam/rand/pubs/technical_reports/2011/RAND_TR999.pdf"
+        },
+        {
+          "title": "GAO has reviewed a total 0.; 74 wind tunnels Costing ahwit $309 miiilon.",
+          "url": "https://www.gao.gov/assets/psad-76-133.pdf"
+        },
+        {
+          "title": "Contract GS-10F-0313N Order DE-AD52-04NA99603 August 13, 2015 Official NASA",
+          "url": "https://www.nasa.gov/wp-content/uploads/2023/06/nasa-wind-tunnels-final-report-20150813-tagged.pdf"
+        },
+        {
+          "title": "Types of Wind Tunnels",
+          "url": "https://www.grc.nasa.gov/WWW/k-12/WindTunnel/WTExpKids/tsld032.htm"
+        },
+        {
+          "title": "r/aerospace on Reddit: Running Cost of a Hypersonic (or High-Speed Supersonic) Wind Tunnel",
+          "url": "https://www.reddit.com/r/aerospace/comments/u6jffc/running_cost_of_a_hypersonic_or_highspeed/"
+        },
+        {
+          "title": "Ames Unitary Plan Wind Tunnel 11-by 11-foot TWT Test Section - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/ames-unitary-plan-wind-tunnel-11-by-11-foot-twt-test-section/"
+        },
+        {
+          "title": "Wind Tunnel Division Test Planning Guide for High Speed Wind Tunnels",
+          "url": "https://www.nasa.gov/wp-content/uploads/2015/03/a027-9391-xb2_tpg_rev8.1.pdf"
+        },
+        {
+          "title": "NASA Langley Research Center LARC Wind Tunnel Test Capabilities Tunnel For Hire",
+          "url": "https://ntrs.nasa.gov/api/citations/20210013460/downloads/LARC%20AETC%20STTB%20General%20Briefing%2020210401.pptx.pdf"
+        },
+        {
+          "title": "Running a wind tunnel can cost as much ...",
+          "url": "https://www.facebook.com/AIAAfan/posts/running-a-wind-tunnel-can-cost-as-much-as-20000-per-hour-but-cfd-cant-model-ever/10156266727400330/"
+        },
+        {
+          "title": "National Aeronautics and Space Administration Wind Tunnel Testing Guide",
+          "url": "https://www.nasa.gov/wp-content/uploads/2024/08/wind-tunnel-test-guide-2024-revised-v2.pdf?emrc=8bccda"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "DNS database cost core hours channel flow largest simulation",
+      "cache_key": "cef48b6d76e6246c3410e36cc3556686",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:50",
+      "results": [
+        {
+          "title": "SC13 Research Highlight: Petascale DNS of Turbulent Channel Flow - HPCwire",
+          "url": "https://www.hpcwire.com/2013/11/15/sc13-research-highlight-petascale-dns-turbulent-channel-flow/"
+        },
+        {
+          "title": "Direct Numerical Simulation - an overview | ScienceDirect Topics",
+          "url": "https://www.sciencedirect.com/topics/engineering/direct-numerical-simulation"
+        },
+        {
+          "title": "r/CFD on Reddit: Largest DNS turbulent channel flow simulation ever, Re = 5000 [x-post from /r/engineering]",
+          "url": "https://www.reddit.com/r/CFD/comments/1djw60/largest_dns_turbulent_channel_flow_simulation/"
+        },
+        {
+          "title": "Direct numerical simulation (DNS) for incompressible turbulent channel flow at Reτ = 5200",
+          "url": "https://repositories.lib.utexas.edu/handle/2152/33514"
+        },
+        {
+          "title": "(PDF) Petascale direct numerical simulation of turbulent channel flow on up to 786K cores",
+          "url": "https://www.researchgate.net/publication/262205556_Petascale_direct_numerical_simulation_of_turbulent_channel_flow_on_up_to_786K_cores"
+        },
+        {
+          "title": "KL analyses of DNS databases of turbulent channel flow | Download Table",
+          "url": "https://www.researchgate.net/figure/KL-analyses-of-DNS-databases-of-turbulent-channel-flow_tbl5_258487603"
+        },
+        {
+          "title": "Direct Numerical Simulation - Altair HyperWorks",
+          "url": "https://help.altair.com/hwcfdsolvers/acusolve/topics/acusolve/training_manual/direct_numerical_simulation_r.htm"
+        },
+        {
+          "title": "Johns Hopkins Turbulence Database JHTDB",
+          "url": "https://turbulence.pha.jhu.edu/"
+        },
+        {
+          "title": "Highly scalable DNS solver for turbulent bubble-laden channel flow - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0045793018303311"
+        },
+        {
+          "title": "3. Channel flow",
+          "url": "https://turbulence.pha.jhu.edu/Channel_Flow.aspx"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "machine learning mesh generation automation CFD 2025 reinforcement learning",
+      "cache_key": "8edf4f6ce72e6f37b281d95f0c2878a3",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:51",
+      "results": [
+        {
+          "title": "Reinforcement learning for automatic quadrilateral mesh generation: A soft actor–critic approach - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S089360802200418X"
+        },
+        {
+          "title": "A Survey of AI Methods for Geometry Preparation and Mesh Generation in Engineering Simulation",
+          "url": "https://arxiv.org/html/2512.23719v2"
+        },
+        {
+          "title": "𝐷⁢𝑚⁢𝑠⁢ℎ: A Multi-Agent Reinforcement Learning Framework for All-Quad Mesh Generation",
+          "url": "https://arxiv.org/html/2606.10601"
+        },
+        {
+          "title": "Automatic mesh generation for optimal CFD of a blade passage using deep reinforcement learning - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0021999125005893"
+        },
+        {
+          "title": "A Survey of AI Methods for Geometry Preparation and ...",
+          "url": "https://arxiv.org/pdf/2512.23719"
+        },
+        {
+          "title": "Development of agent-based mesh generator for flow analysis using deep reinforcement learning | Engineering with Computers | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s00366-024-02045-4"
+        },
+        {
+          "title": "Prospective on applying machine learning in computational fluid dynamics (CFD) simulation of metallurgical reactors - Yuhong Liu, Jiangshan Zhang, Shufeng Yang, Jingshe Li, Qing Liu, 2025",
+          "url": "https://journals.sagepub.com/doi/10.1177/03019233241278460"
+        },
+        {
+          "title": "Development of agent-based mesh generator for flow analysis using deep reinforcement learning — Lacuna",
+          "url": "https://lacuna.tiptreesystems.com/work/development-of-agent-based-mesh-generator-for-flow-analysis-using-deep/wrk_a580ad178b61a6a9b88f80b026bc765c"
+        },
+        {
+          "title": "Mesh deep Q network: A deep reinforcement learning framework for improving meshes in computational fluid dynamics | AIP Advances | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/adv/article/13/1/015026/2871176/Mesh-deep-Q-network-A-deep-reinforcement-learning"
+        },
+        {
+          "title": "Reinforcement learning for automatic quadrilateral mesh ...",
+          "url": "https://arxiv.org/pdf/2203.11203"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "turbulence model machine learning production solver deployed commercial 2026",
+      "cache_key": "932faa95743d15232aa6a774b8cb0b8d",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:22:52",
+      "results": [
+        {
+          "title": "AI turbulence simulation: 1000× faster in 2026 | Patsnap",
+          "url": "https://www.patsnap.com/resources/blog/articles/ai-turbulence-simulation-1000x-faster-in-2026/"
+        },
+        {
+          "title": "A Framework for Turbulence Modeling Using Big Data- ...",
+          "url": "https://nari.arc.nasa.gov/sites/default/files/Duraisamy_MLforTurbulence_0.pdf"
+        },
+        {
+          "title": "Online Machine Learning for Large Scale Turbulent Simulations | Argonne Leadership Computing Facility",
+          "url": "https://www.alcf.anl.gov/science/projects/online-machine-learning-large-scale-turbulent-simulations-1"
+        },
+        {
+          "title": "Machine learning for turbulence modeling | Monolith AI",
+          "url": "https://www.monolithai.com/blog/machine-learning-for-turbulence-modeling"
+        },
+        {
+          "title": "A Machine Learning Approach to Improve Turbulence Modelling from DNS Data Using Neural Networks",
+          "url": "https://www.mdpi.com/2504-186X/6/2/17"
+        },
+        {
+          "title": "Machine Learning for Turbulence Modeling",
+          "url": "https://www.osti.gov/servlets/purl/1404810"
+        },
+        {
+          "title": "GitHub - TOffeeAM/ml-turbulence-modelling: AI Driven Open Source Framework for Next Generation Heat Exchangers · GitHub",
+          "url": "https://github.com/TOffeeAM/ml-turbulence-modelling"
+        },
+        {
+          "title": "A single machine-learning model predicts many kinds of turbulent flow | EurekAlert!",
+          "url": "https://www.eurekalert.org/news-releases/1136732"
+        },
+        {
+          "title": "Bridging physics and data: A review of machine learning approaches for turbulence closure modeling | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/38/9/091302/3404733/Bridging-physics-and-data-A-review-of-machine"
+        },
+        {
+          "title": "Machine learning application and operational strategy for global low-level aviation turbulence forecasting | npj Climate and Atmospheric Science",
+          "url": "https://www.nature.com/articles/s41612-025-01260-0"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Tinoco summary data sixth AIAA CFD drag prediction workshop CRM cases NTRS",
+      "cache_key": "436b4a296c37ef7f013b0fcecddbf153",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:09",
+      "results": [
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases 2 to 5 - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/search.jsp?R=20170001397"
+        },
+        {
+          "title": "(PDF) Summary Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases",
+          "url": "https://www.researchgate.net/publication/321539387_Summary_Data_from_the_Sixth_AIAA_CFD_Drag_Prediction_Workshop_CRM_Cases"
+        },
+        {
+          "title": "Summary Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.C034409"
+        },
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases 2 to 5 | Request PDF",
+          "url": "https://www.researchgate.net/publication/312494923_Summary_of_Data_from_the_Sixth_AIAA_CFD_Drag_Prediction_Workshop_CRM_Cases_2_to_5"
+        },
+        {
+          "title": "[PDF] Summary Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases | Semantic Scholar",
+          "url": "https://www.semanticscholar.org/paper/Summary-Data-from-the-Sixth-AIAA-CFD-Drag-Workshop:-Tinoco-Brodersen/2ab095214092af147579eaf089273dfe25b3bee0"
+        },
+        {
+          "title": "Summary Data from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop: Code Verification | Journal of Aircraft",
+          "url": "https://doi.org/10.2514/1.c034856"
+        },
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction Workshop: Case 1 Code Verification - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31831913/"
+        },
+        {
+          "title": "Summary of Data from the Fifth AIAA CFD Drag Prediction Workshop - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20130003313"
+        },
+        {
+          "title": "Summary of Data from the Sixth AIAA CFD Drag Prediction ...",
+          "url": "https://ntrs.nasa.gov/api/citations/20170001397/downloads/20170001397.pdf"
+        },
+        {
+          "title": "NASA Technical Reports Server (NTRS) 20170001397: Summary of Data from the Sixth AIAA CFD Drag Prediction Workshop: CRM Cases 2 to 5 : NASA Technical Reports Server (NTRS) : Free Download, Borrow, and Streaming : Internet Archive",
+          "url": "https://archive.org/details/NASA_NTRS_Archive_20170001397/20170001397"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "drag prediction workshop scatter standard deviation drag counts has not decreased",
+      "cache_key": "75e259c22740c6bd44047c4636635d8b",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:10",
+      "results": [
+        {
+          "title": "(PDF) Summary of Data from the Fifth AIAA CFD Drag Prediction Workshop",
+          "url": "https://www.academia.edu/27796260/Summary_of_Data_from_the_Fifth_AIAA_CFD_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "(PDF) Summary of data from the fifth AIAA CFD drag prediction workshop",
+          "url": "https://www.researchgate.net/publication/259899195_Summary_of_data_from_the_fifth_AIAA_CFD_drag_prediction_workshop"
+        },
+        {
+          "title": "(PDF) Summary of the Fourth AIAA CFD Drag Prediction Workshop",
+          "url": "https://www.academia.edu/27796257/Summary_of_the_Fourth_AIAA_CFD_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "Summary of Data from the Fifth AIAA CFD Drag Prediction ...",
+          "url": "https://ntrs.nasa.gov/api/citations/20130003313/downloads/20130003313.pdf"
+        },
+        {
+          "title": "Statistical Analysis of Solutions from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7816761/"
+        },
+        {
+          "title": "Statistical Analysis of the AIAA Drag Prediction Workshop ...",
+          "url": "https://publications.sto.nato.int/publications/STO%20Meeting%20Proceedings/RTO-MP-AVT-147/MP-AVT-147-55.pdf"
+        },
+        {
+          "title": "(PDF) Grid Quality and Resolution Issues from the Drag Prediction Workshop Series",
+          "url": "https://www.academia.edu/27796253/Grid_Quality_and_Resolution_Issues_from_the_Drag_Prediction_Workshop_Series"
+        },
+        {
+          "title": "(PDF) Statistical Analysis of CFD Solutions from 2nd Drag Prediction Workshop",
+          "url": "https://www.researchgate.net/publication/23918039_Statistical_Analysis_of_CFD_Solutions_from_2nd_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "(PDF) Summary of the fourth AIAA CFD drag prediction workshop",
+          "url": "https://www.researchgate.net/publication/236888814_Summary_of_the_fourth_AIAA_CFD_drag_prediction_workshop"
+        },
+        {
+          "title": "Transonic drag prediction on a DLR-F6 transport configuration using unstructured grid solvers - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S0045793008001217"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Derlaga Morrison statistical analysis sixth drag prediction workshop",
+      "cache_key": "576ace85c23971bd975e44a26e81e6d0",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:11",
+      "results": [
+        {
+          "title": "Statistical Analysis of Solutions from the Sixth AIAA Computational Fluid Dynamics Drag Prediction Workshop - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7816761/"
+        },
+        {
+          "title": "Statistical Analysis of the Sixth AIAA Drag Prediction Workshop Solutions | Journal of Aircraft",
+          "url": "https://doi.org/10.2514/1.c034938"
+        },
+        {
+          "title": "Statistical Analysis of CFD Solutions from the 6th AIAA CFD Drag Prediction Workshop - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/citations/20170001316"
+        },
+        {
+          "title": "Sixth Drag Prediction Workshop Results Using FUN3D with k-kL-MEAH2015 Turbulence Model - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33154602/"
+        },
+        {
+          "title": "Data Summary from the First AIAA Computational Fluid Dynamics Drag Prediction Workshop | Journal of Aircraft",
+          "url": "https://arc.aiaa.org/doi/10.2514/2.6877"
+        },
+        {
+          "title": "Statistical Analysis of CFD Solutions from the Fourth AIAA Drag Prediction Workshop | Fluid Dynamics and Co-located Conferences",
+          "url": "https://arc.aiaa.org/doi/10.2514/6.2010-4673"
+        },
+        {
+          "title": "cfd drag prediction: Topics by Science.gov",
+          "url": "https://www.science.gov/topicpages/c/cfd+drag+prediction"
+        },
+        {
+          "title": "(PDF) Statistical Analysis of CFD Solutions from 2nd Drag Prediction Workshop",
+          "url": "https://www.researchgate.net/publication/23918039_Statistical_Analysis_of_CFD_Solutions_from_2nd_Drag_Prediction_Workshop"
+        },
+        {
+          "title": "Statistical Analysis of CFD Solutions from 2nd Drag Prediction Workshop (Invited) | Aerospace Sciences Meetings",
+          "url": "https://arc.aiaa.org/doi/10.2514/6.2004-556"
+        },
+        {
+          "title": "Summary of Data from the Fifth Computational Fluid Dynamics Drag Prediction Workshop | Journal of Aircraft",
+          "url": "https://dx.doi.org/10.2514/1.C032389"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "machine learning turbulence model released commercial CFD solver default 2025 2026",
+      "cache_key": "14ddb0dc212c81a8e4c3c9e23cf79162",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:58",
+      "results": [
+        {
+          "title": "Accelerating CFD-driven training of transition and turbulence models for turbine flows by one-shot and real-time transformer integration - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0045793025003871"
+        },
+        {
+          "title": "Machine learning for turbulence modeling | Monolith AI",
+          "url": "https://www.monolithai.com/blog/machine-learning-for-turbulence-modeling"
+        },
+        {
+          "title": "Deep learning to develop zero-equation based turbulence model for CFD simulations of the built environment",
+          "url": "https://www.sciopen.com/article/10.1007/s12273-023-1083-4"
+        },
+        {
+          "title": "Machine Learning in Fluid Dynamics: Bridging Physics and Data for Smarter Simulations | by Jayesh M | Techloop | Medium",
+          "url": "https://medium.com/techloop/machine-learning-in-fluid-dynamics-bridging-physics-and-data-for-smarter-simulations-acb7a31b67d3"
+        },
+        {
+          "title": "(PDF) Machine Learning Reshaping Computational Fluid Dynamics: A Paradigm Shift in Accuracy and Speed",
+          "url": "https://www.researchgate.net/publication/396759853_Machine_Learning_Reshaping_Computational_Fluid_Dynamics_A_Paradigm_Shift_in_Accuracy_and_Speed"
+        },
+        {
+          "title": "Bridging physics and data: A review of machine learning approaches for turbulence closure modeling | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/38/9/091302/3404733/Bridging-physics-and-data-A-review-of-machine"
+        },
+        {
+          "title": "(PDF) Machine Learning and Turbulence Modeling Including Case Studies",
+          "url": "https://www.researchgate.net/publication/360995996_Machine_Learning_and_Turbulence_Modeling_Including_Case_Studies"
+        },
+        {
+          "title": "Rapid CFD Prediction Based on Machine Learning Surrogate Model in Built Environment: A Review",
+          "url": "https://www.mdpi.com/2311-5521/10/8/193"
+        },
+        {
+          "title": "AI in Computational Fluid Dynamics (CFD)",
+          "url": "https://www.engineermd.com/2026/09/ai-in-computational-fluid-dynamics-cfd.html"
+        },
+        {
+          "title": "AI-accelerated CFD patent landscape 2026 | Patsnap",
+          "url": "https://www.patsnap.com/resources/blog/articles/ai-accelerated-cfd-patent-landscape-2026/"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "foundation model for fluid dynamics pretrained PDE 2026 generalization",
+      "cache_key": "a1e7331dc90754358503d49c2f172bec",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:58",
+      "results": [
+        {
+          "title": "Towards a Foundation Model for Partial Differential Equations Across Physics Domains for AAAI 2026 - IBM Research",
+          "url": "https://research.ibm.com/publications/towards-a-foundation-model-for-partial-differential-equations-across-physics-domains"
+        },
+        {
+          "title": "PROSE-FD: A Multimodal PDE Foundation Model for Learning",
+          "url": "https://ww3.math.ucla.edu/wp-content/uploads/2025/02/2409.09811v1.pdf"
+        },
+        {
+          "title": "FLOW MARCHING FOR A GENERATIVE PDE FOUNDATION MODEL A PREPRINT Zituo Chen",
+          "url": "https://arxiv.org/pdf/2509.18611"
+        },
+        {
+          "title": "Physics-informed fine-tuning of foundation models for partial differential equations",
+          "url": "https://arxiv.org/html/2603.15431v1"
+        },
+        {
+          "title": "Towards a Foundation Model for Partial Differential Equations Across Physics",
+          "url": "https://www.arxiv.org/pdf/2511.21861"
+        },
+        {
+          "title": "[2509.18611] Flow marching for a generative PDE foundation model",
+          "url": "https://arxiv.org/abs/2509.18611"
+        },
+        {
+          "title": "Towards a Physics Foundation Model",
+          "url": "https://arxiv.org/html/2509.13805v4"
+        },
+        {
+          "title": "Poseidon: Efficient foundation models for PDEs · Pith",
+          "url": "https://pith.science/citations/f9ea4049-33b0-421b-b513-7bf316a19c3c"
+        },
+        {
+          "title": "Towards a Foundation Model for Partial Differential Equations Across Physics Domains",
+          "url": "https://arxiv.org/html/2511.21861v1"
+        },
+        {
+          "title": "PROSE-FD: A Multimodal PDE Foundation Model for Learning Multiple Operators for Forecasting Fluid Dynamics",
+          "url": "https://arxiv.org/html/2409.09811.pdf"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "neural network wall model deployed production aerospace CFD limitations",
+      "cache_key": "ed7790b63be2ad8e3ee31d739a77da91",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:24:59",
+      "results": [
+        {
+          "title": "On the application of artificial neural network for the development of a nonlinear aeroelastic model - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1270963821003552"
+        },
+        {
+          "title": "Building-block-flow computational model for large-eddy simulation of external aerodynamic applications | Communications Engineering",
+          "url": "https://www.nature.com/articles/s44172-024-00278-1"
+        },
+        {
+          "title": "Differentiable Hybrid Neural–CFD Modelling of Wall-Bounded Turbulence: Coupled Learning of Subgrid-Scale and Wall Closures",
+          "url": "https://arxiv.org/html/2607.17357"
+        },
+        {
+          "title": "Machine learning building-block-flow wall model for large-eddy simulation | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/machine-learning-buildingblockflow-wall-model-for-largeeddy-simulation/D0DF4A2EA0E4338EC22B32F611BE6496"
+        },
+        {
+          "title": "CFD-driven neural network and SVM models for airfoil aerodynamic enhancement with bio-inspired riblets and plasma actuation - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13139372/"
+        },
+        {
+          "title": "(PDF) CFD-driven neural network and SVM models for airfoil aerodynamic enhancement with bio-inspired riblets and plasma actuation",
+          "url": "https://www.researchgate.net/publication/402817276_CFD-driven_neural_network_and_SVM_models_for_airfoil_aerodynamic_enhancement_with_bio-inspired_riblets_and_plasma_actuation"
+        },
+        {
+          "title": "Physics-Based Machine Learning Closures and Wall Models for Hypersonic Transition–Continuum Boundary Layer Predictions",
+          "url": "https://arxiv.org/html/2507.08986"
+        },
+        {
+          "title": "A Neural Network-Based Wall Condensation Model | Springer Nature Link",
+          "url": "https://link.springer.com/chapter/10.1007/978-981-95-3405-0_26"
+        },
+        {
+          "title": "Machine Learning to speed up Computational Fluid Dynamics engineering simulations for built environments: A review - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0360132324010710"
+        },
+        {
+          "title": "Aero-Nef: Neural Fields for Rapid Aircraft Aerodynamics Simulations",
+          "url": "https://arxiv.org/html/2407.19916v1"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "AI surrogate aerodynamic design loop industry adoption 2026 Airbus Boeing",
+      "cache_key": "52c21746fe4f2465250eb7a0f9847083",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:00",
+      "results": [
+        {
+          "title": "AI Aerodynamic Optimization: 20 Updated Directions (2026) - Yenra",
+          "url": "https://yenra.com/ai20/aerodynamic-optimization/"
+        },
+        {
+          "title": "AI in Aerospace Engineering: Redefining Intelligent Design | Neural Concept",
+          "url": "https://www.neuralconcept.com/post/applications-of-ai-in-aerospace-and-defence-design-intelligent-aerospace"
+        },
+        {
+          "title": "AI in Aerospace Engineering",
+          "url": "https://www.engineermd.com/2026/08/ai-in-aerospace-engineering.html"
+        },
+        {
+          "title": "ML surrogates for CAD models: Application in the aerostructural optimization of transport aircraft - ScienceDirect",
+          "url": "https://sciencedirect.com/science/article/abs/pii/S0045793026002458?via=ihub%3D"
+        },
+        {
+          "title": "Generative Artificial Intelligence in Aircraft Design Optimization",
+          "url": "https://www.mdpi.com/2227-9717/14/4/719"
+        },
+        {
+          "title": "Optimization of Airfoil Design with Surrogate AI Modeling | Springer Nature Link",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-032-30826-9_25"
+        },
+        {
+          "title": "How Artificial Intelligence is Transforming the Future of Aviation - General Aviation Support",
+          "url": "https://genaviationsupport.com/how-artificial-intelligence-is-transforming-the-future-of-aviation/"
+        },
+        {
+          "title": "AI Disrupts Advanced Aerospace Materials Engineering as Global Investment Surpasses $650 Billion in Infrastructure Buildout",
+          "url": "https://www.globenewswire.com/news-release/2026/08/26/3351201/0/en/ai-disrupts-advanced-aerospace-materials-engineering-as-global-investment-surpasses-650-billion-in-infrastructure-buildout.html"
+        },
+        {
+          "title": "An automated surrogate model generation framework for rapid aeroelastic structural sizing optimizations in conceptual aircraft design | CEAS Aeronautical Journal | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s13272-026-00996-6"
+        },
+        {
+          "title": "[2604.18491] Faster by Design: Interactive Aerodynamics via Neural Surrogates Trained on Expert-Validated CFD",
+          "url": "https://arxiv.org/abs/2604.18491"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "NASA turbulence modeling resource machine learning augmented model status",
+      "cache_key": "422f272b80b2e1db86e2fde829136ecc",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:02",
+      "results": [
+        {
+          "title": "NASA/TM–20240012512 Augmenting RANS Turbulence Models",
+          "url": "https://ntrs.nasa.gov/api/citations/20240012512/downloads/TM_SRCW_1_wmb_resolved_v2.pdf"
+        },
+        {
+          "title": "A Framework for Turbulence Modeling Using Big Data- ...",
+          "url": "https://nari.arc.nasa.gov/sites/default/files/Duraisamy_MLforTurbulence_0.pdf"
+        },
+        {
+          "title": "Explainability analysis of neural network-based turbulence modeling for transonic axial compressor rotor flows - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S127096382300439X"
+        },
+        {
+          "title": "Machine-Learning-Augmented Predictive Modeling of Turbulent Separated Flows over Airfoils | AIAA Journal",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.J055595"
+        },
+        {
+          "title": "NASA Turbulence Modeling Resource - NASA",
+          "url": "https://www.nasa.gov/nasa-turbulence-modeling-resource/"
+        },
+        {
+          "title": "Turbulence Modeling Resource",
+          "url": "https://tmbwg.github.io/turbmodels/"
+        },
+        {
+          "title": "Overflow Turbulence Model Resource Verification Results",
+          "url": "https://www.nas.nasa.gov/assets/nas/pdf/papers/NAS_Technical_Report_NAS-2014-03.pdf"
+        },
+        {
+          "title": "Turbulence Modeling Resource: Large Files - NASA",
+          "url": "https://www.nasa.gov/reference/turbulence-modeling-resource-large-files/"
+        },
+        {
+          "title": "On the Generalization Capability of a Data-Driven Turbulence Model by Field Inversion and Machine Learning",
+          "url": "https://doi.org/10.3390/aerospace11070592"
+        },
+        {
+          "title": "August 1, 2023 1 AN OLD-FASHIONED FRAMEWORK FOR MACHINE LEARNING",
+          "url": "https://turbmodels.larc.nasa.gov/Turb-prs2022/Spalart-2023-ERCOFTAC-Machine-Learning-TMR.pdf"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "ml4fluids 2026 data driven turbulence modelling challenge results",
+      "cache_key": "a97b2fe8034a95f99370e144a4517734",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:03",
+      "results": [
+        {
+          "title": "Data-Driven Turbulence Modelling Challenge",
+          "url": "https://ml4fluids2026.github.io/challenges/"
+        },
+        {
+          "title": "ERCOFTAC ML4FLUIDS 2026",
+          "url": "https://ml4fluids2026.github.io/"
+        },
+        {
+          "title": "ERCOFTAC - Machine Learning for Fluid Dynamics",
+          "url": "https://www.ercoftac.org/special_interest_groups/54-machine-learning-for-fluid-dynamics/"
+        },
+        {
+          "title": "3rd ERCOFTAC Workshop on Machine Learning for Fluid Dynamics",
+          "url": "https://ml4fluids2026.github.io/assets/ERCOFTAC_ML4Fluids_2026_FullProgram_20260216.pdf"
+        },
+        {
+          "title": "Data‑Driven Reduced‑Complexity Modeling of Fluid Flows: A Community Challenge",
+          "url": "https://arxiv.org/html/2601.06183"
+        },
+        {
+          "title": "Bridging physics and data: A review of machine learning approaches for turbulence closure modeling | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/38/9/091302/3404733/Bridging-physics-and-data-A-review-of-machine"
+        },
+        {
+          "title": "GitHub - zihao-wang/ML4Fluids: A collection of papers in Machine Learning for Fluid Dynamics",
+          "url": "https://github.com/zihao-wang/ML4Fluids"
+        },
+        {
+          "title": "Data-driven modeling of multiscale phenomena with applications to fluid turbulence - PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42316611/"
+        },
+        {
+          "title": "Machine Learning for Fluid Dynamics 2026 (by invitation only) | Springer Nature Link",
+          "url": "https://link.springer.com/collections/febdcababj"
+        },
+        {
+          "title": "The Closure Challenge: a benchmark task for machine learning in turbulence modelling",
+          "url": "https://arxiv.org/html/2603.28884v1"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "direct numerical simulation turbulent channel flow core hours cost largest Reynolds number",
+      "cache_key": "525368caa816c1b18a04b59d197ea79d",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:49",
+      "results": [
+        {
+          "title": "Direct numerical simulation of turbulent open channel flows at moderately high Reynolds numbers | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/direct-numerical-simulation-of-turbulent-open-channel-flows-at-moderately-high-reynolds-numbers/12A6B5A6F8464FF254287A692853BB78"
+        },
+        {
+          "title": "[1410.7809] Direct numerical simulation of turbulent channel flow up to $Re_τ\\approx 5200$",
+          "url": "https://arxiv.org/abs/1410.7809"
+        },
+        {
+          "title": "Direct numerical simulation of turbulent channel flow up to $\\mathit{Re}_{{\\it\\tau}}\\approx 5200$ | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/direct-numerical-simulation-of-turbulent-channel-flow-up-to-mathitreittauapprox-5200/3AE84A5A48F83AF294F6CB042AF92DA8"
+        },
+        {
+          "title": "r/CFD on Reddit: Largest DNS turbulent channel flow simulation ever, Re = 5000 [x-post from /r/engineering]",
+          "url": "https://www.reddit.com/r/CFD/comments/1djw60/largest_dns_turbulent_channel_flow_simulation/"
+        },
+        {
+          "title": "Direct numerical simulation of turbulent channel flow up to ...",
+          "url": "https://arxiv.org/pdf/1410.7809"
+        },
+        {
+          "title": "Direct Numerical Simulation of a Fully Developed Turbulent Channel Flow With Respect to the Reynolds Number Dependence | J. Fluids Eng. | ASME Digital Collection",
+          "url": "https://asmedigitalcollection.asme.org/fluidsengineering/article/123/2/382/463150/Direct-Numerical-Simulation-of-a-Fully-Developed"
+        },
+        {
+          "title": "Petascale Direct Numerical Simulations of Turbulent Channel Flow | Argonne Leadership Computing Facility",
+          "url": "https://www.alcf.anl.gov/science/projects/petascale-direct-numerical-simulations-turbulent-channel-flow"
+        },
+        {
+          "title": "Direct Numerical Simulations of High Reynolds Number Turbulent Channel Flow | Argonne Leadership Computing Facility",
+          "url": "https://www.alcf.anl.gov/science/projects/direct-numerical-simulations-high-reynolds-number-turbulent-channel-flow"
+        },
+        {
+          "title": "Direct numerical simulations of turbulent pipe flow up to $Re_\\tau \\approx 5200$ | Journal of Fluid Mechanics | Cambridge Core",
+          "url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/direct-numerical-simulations-of-turbulent-pipe-flow-up-to-retau-approx-5200/FEC0468DEA81E466517EAE9FE43F6CEA"
+        },
+        {
+          "title": "Direct numerical simulation of turbulent channel flow up to Reτ=590 | Physics of Fluids | AIP Publishing",
+          "url": "https://pubs.aip.org/aip/pof/article/11/4/943/253866/Direct-numerical-simulation-of-turbulent-channel"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "number of wind tunnel test hours to develop a commercial transport aircraft program",
+      "cache_key": "fe01236b38cbc7bc263f0ce8e2751691",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:50",
+      "results": [
+        {
+          "title": "aircraft wind tunnel: Topics by Science.gov",
+          "url": "https://www.science.gov/topicpages/a/aircraft+wind+tunnel"
+        },
+        {
+          "title": "Wind Tunnel Testing for Aircraft Development - AIAA - Shaping the future of aerospace | AIAA",
+          "url": "https://aiaa.org/courses/wind-tunnel-testing-for-aircraft-development/"
+        },
+        {
+          "title": "3 FACILITY REQUIREMENTS | Future Aerospace Ground Test Facility Requirements for the Arnold Engineering Development Center | The National Academies Press",
+          "url": "https://nap.nationalacademies.org/read/9189/chapter/8"
+        },
+        {
+          "title": "Wind Tunnel Testing – Introduction to Aerospace Flight Vehicles",
+          "url": "https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/wind-tunnel-testing/"
+        },
+        {
+          "title": "Wind Tunnel Testing for Aircraft Development – Online Short Course (Starts 4 March 2025)",
+          "url": "https://www.aiaa.org/events-learning/courses-workshops/detail/wind-tunnel-testing-for-aircraft-development-online-short-course"
+        },
+        {
+          "title": "A 2025+ View of the Art of Wind Tunnel Testing Frank Steinle",
+          "url": "https://apps.dtic.mil/sti/pdfs/ADA522904.pdf"
+        },
+        {
+          "title": "Safran and ONERA start wind tunnel tests of future Open Fan | Safran",
+          "url": "https://www.safran-group.com/pressroom/safran-and-onera-start-wind-tunnel-tests-future-open-fan-2024-01-19"
+        },
+        {
+          "title": "Wind Tunnel Testing for Aircraft Development – Online Short Course (Starts 4 Mar 2025)",
+          "url": "https://aiaa.mycrowdwisdom.com/diweb/catalog/item?id=17103046"
+        },
+        {
+          "title": "Advancements and applications of wind tunnel testing in aerial vehicle development: A state-of-the-art overview - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S221509862500299X"
+        },
+        {
+          "title": "The crucial role of wind tunnel testing in advancing aviation | Aerospace Testing International",
+          "url": "https://www.aerospacetestinginternational.com/features/the-crucial-role-of-wind-tunnel-testing-in-advancing-aviation.html"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "Boeing 787 wind tunnel hours development aerodynamic database",
+      "cache_key": "79958b5bf8c64cfc5fc6b7635d3fb3f0",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:51",
+      "results": [
+        {
+          "title": "Boeing Concludes New Round of Wind-tunnel Tests for 747-8 Family | Aero-News Network",
+          "url": "https://www.aero-news.net/index.cfm?do=main.textpost&id=44D6A8CB-1435-48C5-8AF8-95B00670368A"
+        },
+        {
+          "title": "Wind Tunnel Testing",
+          "url": "https://services.boeing.com/training-solutions/specialty-training-services/boeing-testing-services/wind-tunnel-testing"
+        },
+        {
+          "title": "Boeing",
+          "url": "https://www.boeing.com/company/key-orgs/boeing-testing-services/wind-tunnels-and-propulsion"
+        },
+        {
+          "title": "Ares I Aerodynamic Testing at the Boeing Polysonic Wind Tunnel - NASA Technical Reports Server (NTRS)",
+          "url": "https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20110004323.pdf"
+        },
+        {
+          "title": "Ares I Aerodynamic Testing at the Boeing Polysonic Wind Tunnel∗",
+          "url": "https://ntrs.nasa.gov/api/citations/20110004323/downloads/20110004323.pdf"
+        },
+        {
+          "title": "Boeing 787 Dreamliner - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Boeing_787_Dreamliner"
+        },
+        {
+          "title": "A 50 Year Chronology of the Boeing PolySonic Wind Tunnel: An Era of Aerodynamic Invention and Innovation",
+          "url": "https://www.researchgate.net/publication/269051374_A_50_Year_Chronology_of_the_Boeing_PolySonic_Wind_Tunnel_An_Era_of_Aerodynamic_Invention_and_Innovation"
+        },
+        {
+          "title": "Advancements and applications of wind tunnel testing in aerial vehicle development: A state-of-the-art overview - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S221509862500299X"
+        },
+        {
+          "title": "Boeing 787-8 explained: design, roles, and key data",
+          "url": "https://readyfortakeoffbook.com/blogs/aircraft-type/boeing-787-8"
+        },
+        {
+          "title": "Erau",
+          "url": "https://commons.erau.edu/cgi/viewcontent.cgi?article=1012&context=pr-discovery-day"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "NASA Ames unitary plan wind tunnel occupancy rate dollars per hour 2024",
+      "cache_key": "3625b2f759a088f5e55d573aac403829",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:52",
+      "results": [
+        {
+          "title": "NASA Ames Unitary Plan Wind Tunnel - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/"
+        },
+        {
+          "title": "Ames Unitary Plan Wind Tunnel Overview - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/ames-unitary-plan-wind-tunnel-overview/"
+        },
+        {
+          "title": "Unitary Plan Wind Tunnel (U.S. National Park Service)",
+          "url": "https://www.nps.gov/articles/unitary-plan-wind-tunnel.htm"
+        },
+        {
+          "title": "Ames Unitary Plan Wind Tunnel 9-by 7-foot SWT Test Section - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/ames-unitary-plan-wind-tunnel-9-by-7-foot-swt-test-section/"
+        },
+        {
+          "title": "About NASA Ames Unitary Plan Wind Tunnel - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/about-nasa-ames-unitary-plan-wind-tunnel/"
+        },
+        {
+          "title": "Unitary Plan Wind Tunnel (Mountain View, California) - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Unitary_Plan_Wind_Tunnel_(Mountain_View,_California)"
+        },
+        {
+          "title": "Ames Unitary Plan Wind Tunnel 11-by 11-foot TWT Test Section - NASA",
+          "url": "https://www.nasa.gov/nasa-ames-unitary-plan-wind-tunnel/ames-unitary-plan-wind-tunnel-11-by-11-foot-twt-test-section/"
+        },
+        {
+          "title": "Unitary Plan Wind Tunnel",
+          "url": "https://www.asme.org/wwwasmeorg/media/resourcefiles/aboutasme/history/landmarks/187-nasa-ames-unitary-plan-wind-tunnel.pdf"
+        },
+        {
+          "title": "NASA Ames Unitary Plan Wind Tunnel - ASME",
+          "url": "https://www.asme.org/about-asme/engineering-history/landmarks/187-nasa-ames-unitary-plan-wind-tunnel"
+        },
+        {
+          "title": "Ames Research Center - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ames_Research_Center"
+        }
+      ]
+    },
+    {
+      "phase": "chain-turbulence",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "provider": "brave",
+      "query": "DNS of turbulent boundary layer cost millions of CPU hours database",
+      "cache_key": "301dc2f768f588325b9f55d05371b28c",
+      "n_results": 10,
+      "created_at": "2026-09-20 23:25:53",
+      "results": [
+        {
+          "title": "Data from DNS - Turbulence Modeling Resource - NASA",
+          "url": "https://turbmodels.larc.nasa.gov/other_dns.html"
+        },
+        {
+          "title": "Direct Numerical Simulation - an overview | ScienceDirect Topics",
+          "url": "https://www.sciencedirect.com/topics/engineering/direct-numerical-simulation"
+        },
+        {
+          "title": "DNS of a turbulent boundary layer using inflow conditions derived from 4D-PTV data | Experiments in Fluids | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s00348-021-03287-4"
+        },
+        {
+          "title": "DNS of Hypersonic Turbulent Boundary Layers",
+          "url": "http://croccolab.umd.edu/publications/conf-docs/AIAA_2004_2337.pdf"
+        },
+        {
+          "title": "Direct Numerical Simulation Database for Supersonic and Hypersonic Turbulent Boundary Layers | AIAA Journal",
+          "url": "https://arc.aiaa.org/doi/10.2514/1.J057296"
+        },
+        {
+          "title": "Direct Numerical Simulation Database for Hypersonic ... - PMC",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7802740/"
+        },
+        {
+          "title": "High-performance simulations of turbulent boundary layer flow using Intel Xeon Phi many-core processors | The Journal of Supercomputing | Springer Nature Link",
+          "url": "https://link.springer.com/article/10.1007/s11227-021-03642-6"
+        },
+        {
+          "title": "Structure of a turbulent boundary layer studied by DNS | Springer Nature Link",
+          "url": "https://link.springer.com/chapter/10.1007/978-94-007-2482-2_2"
+        },
+        {
+          "title": "RANS vs LES vs DNS: Which Turbulence Model Should You Use?",
+          "url": "https://ideametricsglobalengineering.com/rans-vs-les-vs-dns-turbulence-models/"
+        },
+        {
+          "title": "A multiscale Pseudo-DNS approach for solving turbulent boundary-layer problems - ScienceDirect",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0045782525000763"
+        }
+      ]
+    }
+  ]
+}

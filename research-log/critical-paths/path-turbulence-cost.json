@@ -1,0 +1,134 @@
+{
+  "paths": [
+    {
+      "id": "path-turbulence-cost",
+      "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+      "title": "From a flow problem to a trusted prediction: what sets the cost of modelling turbulence",
+      "axis": "Cost of producing one trusted prediction of a turbulent flow at application Reynolds number, in core-hours per flow condition where compute dominates and engineer-days where labour dominates",
+      "axis_kind": "cost",
+      "axes_excluded": "Elapsed time from a new closure being proposed to its routine use in production design, which runs over a different set of steps — formulation, solver implementation, workshop validation and certification acceptance — and is measured in decades rather than per prediction. Also excluded: the mathematical question of existence and smoothness of solutions to the Navier-Stokes equations, which is a different kind of work and does not sit on the path to a prediction at all.",
+      "expectation": "AI acts on three of the seven steps: mesh and geometry preparation, the choice and form of the closure, and the simulation run itself through learned surrogates. It does not act on generating the high-fidelity ground truth that calibration and validation consume, nor on getting a result accepted for a decision. The cost concentrates on the simulation run once the flow must be resolved rather than modelled, and on obtaining ground truth; I expect at least one step carrying cost to also be a step AI reaches, which neither the telescope nor the publishing chain produced. The binding constraint should turn out to be circular rather than absent: the learned surrogate that cheapens the run is trained on data from the ground-truth step it cannot replace, so the cost moves upstream rather than disappearing. Convergent attach a single capability to this gap, 'Develop New Modeling Frameworks for Turbulence', and I expect it to act on the closure step alone, leaving six of seven steps with nothing attached. The September 2026 Navier-Stokes blow-up result acts on none of the seven steps.",
+      "finding": "The only step in turbulence prediction that carries a published price is the one AI reaches, and it was already getting cheaper without AI. On the single case where the whole workflow has been costed end to end - a high-lift aircraft model at a chord Reynolds number of two million - the simulation run is about 360,000 CPU core-hours per flow condition and the mesh that feeds it is about 33. The two steps that plausibly cost more than either, generating the high-fidelity data a closure is calibrated and validated against, and getting a prediction accepted in place of a test, have no published figure at all.\n\nThe pre-registered expectation was half right and wrong in the way that matters. AI does reach the step that carries the measured cost, which neither the telescope nor the publishing chain produced, so the method can return that answer. But the step it reaches was already falling by a factor of roughly thirty through GPUs and solver work rather than through learning: the same case runs in seven hours on 96 GPUs against 7.5 days on 2,000 CPU cores. And the expectation that at least one priced step would also be an AI step turns out to be a statement about what has been priced rather than about where the cost is. Four of the seven steps have no number on this axis, and two of those four are the ones practitioners describe as the expensive part.\n\nThe expectation was also wrong about capability coverage. Convergent attach one capability to this gap, 'Develop New Modeling Frameworks for Turbulence', and reading its four substantive resources rather than its name puts it on three steps, not one: the closure itself, the data the closure is trained on, and the run. The DARPA APAQuS programme behind it is explicitly about producing turbulence data from tabletop quantum simulators at lower cost than wind tunnels, which is the ground-truth step. What the capability set does not touch is either end of the workflow - deciding what accuracy the decision needs, turning model error into design margin, and getting the answer accepted. That is an observation about where a single capability was aimed, not a gap in their map; with one capability attached, the coverage reading here is thin by construction.\n\nThe September 2026 Navier-Stokes result acts on none of the seven steps, as registered. OpenAI's agents established statement C of the Clay formulation - a finite-time singularity in three-dimensional incompressible flow with a smooth forcing term - and the unforced question that physicists care about stays open. Nothing on this chain waits on that answer: every step here is about the cost of approximating a solution, not about whether a smooth one exists. The result is a strong datapoint about AI doing mathematics and a weak one about modelling turbulence, and those are different claims that the coverage has tended to merge.\n\nWhere the evidence is thin: one costed workflow carries steps 2 and 5, at a wind-tunnel Reynolds number an order of magnitude below flight, and the same authors' scaling would multiply the run by Re^(4/3) to get there. The nulls on steps 4 and 7 are genuine but they are nulls, and a reader should treat 'the unpriced steps cost more' as the practitioners' claim it is rather than as a measurement.",
+      "reviewed": "ai-only",
+      "status": "complete",
+      "links": [
+        {
+          "seq": 1,
+          "link": "Fix the case and the accuracy the decision needs",
+          "blocker": "The error a turbulence model will make on a flow it has not been validated against cannot be stated before the run, so the accuracy requirement is negotiated from precedent instead of predicted. The certification literature names this directly: predictive capability is defined as use of a model 'under conditions for which the computational model has not been validated', and that is exactly the condition a new prediction is wanted for.",
+          "ai_acts": false,
+          "ai_type": "Coordination and institutional",
+          "maturity": "Speculative",
+          "confidence": "guess",
+          "is_binding": 0,
+          "capabilities": [],
+          "duration_span_note": "No cost on this axis: the step consumes meetings, not core-hours. It sets every number downstream.",
+          "evidence": "Bekemeyer, Geisbauer, Schaefer, Macomber, Wittenberg, Coggon, Held, Gojny, Denham, Bui and Yoo, 'Challenge Problem Overview for the Certification by Analysis Uncertainty Quantification Discussion Group', AIAA Aviation 2025, NASA NTRS 20250005704, https://ntrs.nasa.gov/api/citations/20250005704/downloads/AIAA_CbA_CoI_Aviation_Paper-forReview_06092025.pdf",
+          "rationale": "Labelled as institutional work because what is missing is an agreed answer to 'how accurate is accurate enough here', which a model cannot supply. Marked guess because a reader could reasonably argue that an LLM reading the regulation and the precedent set would shorten the negotiation; the blocker is agreement between an applicant and a regulator, which is why ai_acts is false."
+        },
+        {
+          "seq": 2,
+          "link": "Build the geometry and the mesh",
+          "blocker": "The resolution map has to be chosen before the flow is known. Cutting the mesh is no longer the expense: a 157-million-cell body-fitted Voronoi grid for this case is generated in about two minutes on 1,000 cores. Deciding where the cells go is, and the authors say it 'is guided with little a priori information', resting on an assumed number of cells across the boundary layer plus experimental data near the leading edge.",
+          "ai_acts": true,
+          "ai_type": "Design and optimization search",
+          "maturity": "2-5 years",
+          "confidence": "guess",
+          "is_binding": 0,
+          "capabilities": [],
+          "cost_value": 33,
+          "cost_unit": "CPU core-hours per flow condition",
+          "duration_covers": [
+            2
+          ],
+          "duration_span_note": "About 2 minutes on 1,000 Ivy Bridge cores, converted to core-hours. Four orders of magnitude below the run it feeds. The human judgment that sizes the mesh is not measured on this axis, and by the 2014 survey it was the dominant cost in human intervention across the CFD workflow.",
+          "evidence": "Goc, Lehmkuhl, Park, Bose and Moin, 'Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics', Flow 1, E14 (2021), doi:10.1017/flo.2021.17. Wall-modelled LES of the JAXA Standard Model high-lift configuration at Re_c = 2x10^6, charLES solver, Table 1. Mesh generation timing from section 4 of the same paper. The human-cost characterisation is Slotnick et al., 'CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences', NASA/CR-2014-218178 (2014), https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf, section 5.3: mesh generation 'constitutes the dominant cost in terms of human intervention'.",
+          "rationale": "ai_acts is true because adaptive and learned mesh sizing is an active, working line of work and mesh generation is a search problem with a checkable objective. Maturity is 2-5 years rather than Working now because on this chain's axis the step already costs almost nothing, so applying AI to it moves the measured cost by a rounding error; the gain would be in engineer time, which this axis does not measure. Marked guess for exactly that reason - on a labour-cost axis the same step would read differently."
+        },
+        {
+          "seq": 3,
+          "link": "Choose the closure and the fidelity level",
+          "blocker": "There is no rule that says which closure fits a flow you have not run. The one- and two-equation RANS models that carry industrial aerodynamics date from 1992 and 1994 and the 2014 survey described their development as 'nearly stagnant' for the preceding twenty years; the data-driven replacements have a named unsolved obstacle, the mismatch between the pointwise offline objective they are trained on and the solver-coupled way they must run.",
+          "ai_acts": true,
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "confidence": "guess",
+          "is_binding": 0,
+          "capabilities": [
+            "Develop New Modeling Frameworks for Turbulence"
+          ],
+          "duration_span_note": "No cost on this axis. The choice is free to make and sets the cost of every step after it.",
+          "evidence": "Slotnick et al., 'CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences', NASA/CR-2014-218178 (2014), https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf ('RANS models, which have seen nearly stagnant development for 20 years'). Current state of the data-driven alternatives: Hu and Yang, 'Bridging physics and data: A review of machine learning approaches for turbulence closure modeling', Physics of Fluids 38, 091302 (17 September 2026), doi:10.1063/5.0339930.",
+          "rationale": "This is the step Convergent's capability is named for, and the one where AI has the longest record: field inversion, symbolic regression and neural closures all act here. Maturity is 2-5 years rather than Working now because the September 2026 review identifies the a priori/a posteriori gap as unresolved and traces it to properties of turbulence rather than to architecture, so applying a learned closure to an unseen flow today does not reliably move the step. Guess, because on the narrow classes where a closure has been tuned against matched data it already works now."
+        },
+        {
+          "seq": 4,
+          "link": "Get the high-fidelity data the closure is calibrated and validated against",
+          "blocker": "The reference data is the expensive thing, and it is expensive in the same currency as the prediction it is supposed to make cheap. Direct numerical simulation cost scales as Re^2.91 against Re^1.14 for wall-modelled LES, and in the boundary-layer range examined DNS is about 100 times the cost of wall-resolved LES. The experimental route is limited by 'test cost, large number of cases needed, and instrumentation limitations'.",
+          "ai_acts": false,
+          "ai_type": "Autonomous experimentation",
+          "maturity": "Speculative",
+          "confidence": "guess",
+          "is_binding": 1,
+          "capabilities": [
+            "Develop New Modeling Frameworks for Turbulence"
+          ],
+          "figure": "DNS cost scales as Re^2.91, wall-resolved LES as Re^2.72 and wall-modelled LES as Re^1.14; DNS is roughly 100 times wall-resolved LES in the range examined",
+          "duration_span_note": "A scaling, not a price. No published core-hour figure was found for producing a validation dataset for a given engineering flow.",
+          "evidence": "Yang and Griffin, 'Grid-point and time-step requirements for direct numerical simulation and large-eddy simulation', Physics of Fluids 33, 015108 (2021), doi:10.1063/5.0036515, read as arXiv:2010.15307v2. Data-scarcity characterisation from Slotnick et al., 'CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences', NASA/CR-2014-218178 (2014), https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf, turbulence modelling impediments: 'Typical impediments include test cost, large number of cases needed, and instrumentation limitations.'",
+          "rationale": "ai_acts is false because a learned model trained on ground truth is not ground truth; the September 2026 review lists the scarcity of high-fidelity data as an open problem rather than a solved one. Marked guess, and the near-miss is real: DARPA's APAQuS, one of the resources behind Convergent's capability, proposes tabletop quantum simulators to produce turbulence data at lower cost than wind tunnels, with AI-based discovery of governing laws on top. If that works it acts squarely on this step, which is why the label is a guess rather than confident. is_binding is set because this is the step the field itself names as the constraint on every data-driven route, and because the cost of the reference data does not fall when the prediction gets cheaper."
+        },
+        {
+          "seq": 5,
+          "link": "Run the simulation",
+          "blocker": "At the Reynolds numbers of the application the resolved-scale cost still outruns the machine. For this case the fine grid costs about 360,000 CPU core-hours per flow condition, six times the steady RANS reference on the same configuration, and reaching flight conditions multiplies it again by roughly Re^(4/3).",
+          "ai_acts": true,
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "Speculative",
+          "confidence": "guess",
+          "is_binding": 1,
+          "capabilities": [
+            "Develop New Modeling Frameworks for Turbulence"
+          ],
+          "cost_value": 360000,
+          "cost_unit": "CPU core-hours per flow condition",
+          "duration_covers": [
+            5
+          ],
+          "duration_span_note": "Fine grid, 157 million cells, 30 convective flow passes. The 32-million-cell medium grid is about 40,000 and the steady RANS reference about 60,000, so the medium LES already costs about what RANS costs. Wall-clock: 7.5 days on 2,000 CPU cores, or 7 hours on 96 GPUs.",
+          "evidence": "Goc, Lehmkuhl, Park, Bose and Moin, 'Large eddy simulation of aircraft at affordable cost: a milestone in computational fluid dynamics', Flow 1, E14 (2021), doi:10.1017/flo.2021.17. Wall-modelled LES of the JAXA Standard Model high-lift configuration at Re_c = 2x10^6, charLES solver, Table 1.",
+          "rationale": "ai_acts is true: learned surrogates and neural operators are aimed exactly here, and this is the step that carries the measured cost. Maturity is Speculative because the accuracy is not there in three dimensions - the strongest current physics foundation model is restricted to 2D and its authors state that reaching engineering precision 'will necessitate orders of magnitude improvement' - and because the published speedups are unreliable: of 76 articles claiming to beat a standard numerical method on a fluid PDE, 79% compared against a weak baseline. Marked guess because for a narrowly scoped, heavily sampled configuration a surrogate does move this step today. is_binding is set on the arithmetic: this step is more than 99.9% of the cost this chain can measure. Note that the factor of thirty already won here came from GPUs, not from learning. Evidence for the ML caveats: McGreivy and Hakim, 'Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations', Nature Machine Intelligence 6, 1256-1269 (2024), doi:10.1038/s42256-024-00897-5, arXiv:2407.07218. Sample: 76 articles claiming to outperform a standard numerical method. 'Towards a Physics Foundation Model', arXiv:2509.13805v4 (revised 31 May 2026), https://arxiv.org/html/2509.13805v4."
+        },
+        {
+          "seq": 6,
+          "link": "Turn the model error into design margin",
+          "blocker": "The error bar comes from the spread between codes rather than from a validated model of the error, and that spread has not narrowed across the workshop series. At the sixth Drag Prediction Workshop the interquartile spread of total drag across submissions was four to five drag counts, the whisker spread was ten to fifteen, and about 18% of grid-convergence submissions were statistical outliers, 'consistent with earlier workshops'.",
+          "ai_acts": true,
+          "ai_type": "ML surrogates and prediction",
+          "maturity": "2-5 years",
+          "confidence": "guess",
+          "is_binding": 0,
+          "capabilities": [],
+          "figure": "Interquartile spread of 4 to 5 drag counts across submissions, whisker spread 10 to 15 counts, and about 18% of grid-convergence submissions statistical outliers",
+          "duration_span_note": "A spread, not a cost. What the spread costs is the margin carried in the design, and no published figure puts a number on that.",
+          "evidence": "Derlaga and Morrison, 'Statistical Analysis of CFD Solutions from the 6th AIAA CFD Drag Prediction Workshop', AIAA 2017-0209, NASA NTRS 20170001316, https://ntrs.nasa.gov/api/citations/20170001316/downloads/20170001316.pdf",
+          "rationale": "ai_acts is true because estimating model-form uncertainty from features of the flow field is a working line of work with a decade of results behind it. Maturity is 2-5 years because what is wanted is a calibrated error bar a regulator would accept, and the same 18% outlier rate across six workshops says the field does not have one yet. Guess: this step could reasonably be read as institutional rather than predictive, because what is missing may be an agreed convention for reporting error rather than a better estimate of it."
+        },
+        {
+          "seq": 7,
+          "link": "Get the prediction accepted in place of a test",
+          "blocker": "Regulators accept a computed answer where a validation record already exists, and the conditions a prediction is wanted for are by definition the ones without one. As of 2025 certification by analysis is still at the stage of a community challenge problem; EASA and the FAA have accepted CFD for a narrow case, a radome added to an already-certified fuselage, and the position paper behind the challenge says demonstrating credibility 'remains a challenge for many types of certification requirements'.",
+          "ai_acts": false,
+          "ai_type": "Coordination and institutional",
+          "maturity": "Speculative",
+          "confidence": "confident",
+          "is_binding": 1,
+          "capabilities": [],
+          "duration_span_note": "No published cost, and the searches that looked for one are in research-log/searches/chain-turbulence.json.",
+          "evidence": "Honest null. Six searches from different angles - published wind-tunnel rates, occupancy-hour cost at a national transonic facility, tunnel hours in a transport development programme, a named programme's tunnel hours, certification-by-analysis progress, and the replacement question directly - found no figure for what a certification decision costs when the prediction is not accepted. The closest near-miss is Slotnick et al., 'CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences', NASA/CR-2014-218178 (2014), https://ntrs.nasa.gov/api/citations/20140003093/downloads/20140003093.pdf, case study 4, which reports that on Ares I 'CFD was often less reliable and more expensive than experimental testing, resulting in limited use of CFD principally in specific regions of the flight envelope where testing was not feasible' - a direction without a quantity. Current status: Bekemeyer, Geisbauer, Schaefer, Macomber, Wittenberg, Coggon, Held, Gojny, Denham, Bui and Yoo, 'Challenge Problem Overview for the Certification by Analysis Uncertainty Quantification Discussion Group', AIAA Aviation 2025, NASA NTRS 20250005704, https://ntrs.nasa.gov/api/citations/20250005704/downloads/AIAA_CbA_CoI_Aviation_Paper-forReview_06092025.pdf",
+          "rationale": "ai_acts is false because what is missing is an agreed basis for trusting an unvalidated prediction, which is a decision by a regulator. Confident, because the certification literature states the blocker in those terms rather than in terms of model accuracy. is_binding is set on the practitioners' account rather than on a number: the test is still run, so its cost sits on top of everything above. That is a judgment, and the absence of a figure is recorded rather than filled."
+        }
+      ]
+    }
+  ]
+}
