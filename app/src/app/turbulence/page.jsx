@@ -39,10 +39,10 @@ const STEPS = [
     n: 4,
     name: 'Get the trustworthy data you calibrate the stand-in against',
     reach: false,
-    cost: true,
+    cost: false,
     what: `A stand-in is only as good as the thing you tuned it against. That reference comes from either a brute-force simulation that resolves every eddy, or a physical experiment. Both are expensive, and they're expensive in the same currency as the answer you were trying to get cheaply.`,
     stuck: `Brute-force cost grows as roughly the Reynolds number cubed, against about the first power for the cheap wall-modelled version, and in the range people have looked at, brute force runs about 100 times the cost of the next tier down. The experimental route runs into "test cost, large number of cases needed, and instrumentation limitations."`,
-    plain: `This is the circle at the heart of the gap. To make a cheap model you need expensive truth, and you need it at the conditions you can't afford. Nothing in current AI produces ground truth — a model trained on the data is not more data.`,
+    plain: `This is the circle at the heart of the gap. To make a cheap model you need expensive truth, at the conditions you can't afford, and nothing in current AI produces ground truth — a model trained on the data is not more data. I first marked this step as carrying cost and a reviewer talked me out of it: a reference dataset gets computed once for a canonical flow and reused for decades, while step 5's bill lands again on every single flow condition.`,
   },
   {
     n: 5,
@@ -51,7 +51,7 @@ const STEPS = [
     cost: true,
     what: `The actual simulation. For the one aircraft case where somebody published the whole bill — a Japanese high-lift research model, wing, flaps, slats, in a wind tunnel — this is 360,000 processor core-hours for one flow condition, on the fine grid.`,
     stuck: `The cost climbs faster than the machines do as you go from wind-tunnel conditions to real flight. That case sat at a Reynolds number of two million; an airliner in cruise is an order of magnitude higher, and the same authors put the scaling at Reynolds to the four-thirds power.`,
-    plain: `360,000 core-hours, six times what the old-style cheap calculation costs on the same aircraft. It is more than 99.9% of all the cost this chain can actually measure — and the factor of about 25 already won here (7.5 days on 2,000 CPUs down to 7 hours on 96 GPUs) came from better chips and better solvers, not from AI.`,
+    plain: `360,000 core-hours, six times what the old-style cheap calculation costs on the same aircraft, and more than 99.9% of all the cost this chain can actually measure. Cost is already coming out of this step without any AI: the same authors put the GPU route at “an order of magnitude less” in money than CPU supercomputers, and turnaround at 7 hours on 96 GPUs against 7.5 days on 2,000 CPU cores — which is a stopwatch comparison across different hardware, not a fall in core-hours, so it doesn't show up in the number above.`,
   },
   {
     n: 6,
@@ -68,7 +68,7 @@ const STEPS = [
     reach: false,
     cost: true,
     what: `Yes — this means exactly what it sounds like. A regulator, the FAA or EASA, agreeing that a computer calculation can stand in for a wind-tunnel campaign or a flight test when you certify the aircraft. The industry term is "certification by analysis."`,
-    stuck: `A regulator accepts a simulation where a validation record already exists, and the conditions you most want to simulate are the ones nobody has tested — that's why you wanted the simulation. As of 2025 the field is still at the stage of an industry challenge problem run by AIAA with Boeing, Airbus, DLR and NASA. EASA and the FAA have accepted CFD for one narrow job: showing that bolting a radome onto an already-certified fuselage doesn't break the original compliance case.`,
+    stuck: `A regulator accepts a simulation where a validation record already exists, and the conditions you most want to simulate are the ones nobody has tested — that's why you wanted the simulation. It isn't nothing already: large antenna installations have been certified by analysis since the early 2000s, on the A330-200 and the 737-8, with approved methods of compliance behind them, and EASA and the FAA will take CFD for showing that bolting a radome onto an already-certified fuselage doesn't break the original case. Outside that narrow envelope the field is still at the stage of an industry challenge problem run by AIAA with Boeing, Airbus, DLR and NASA, reporting in 2027.`,
     plain: `Until this step moves, the physical test still happens, so its cost sits on top of everything above. No published figure says how much, and six searches from different angles didn't find one — which is itself a finding.`,
   },
 ];
@@ -91,9 +91,15 @@ const RESOURCES = [
   },
   {
     title: 'Tensor networks for turbulence probability distributions (Science Advances)',
-    steps: [5],
+    steps: [5, 6],
     changes:
-      'A cheaper way to get the statistics out of the run. This is the step carrying the 360,000 core-hours, so it\u2019s aimed at the only number the chain can actually measure.',
+      'A cheaper way to get the statistics out of the run \u2014 the step carrying the 360,000 core-hours. A reviewer argued it belongs on step 6 as well, since a distribution of flow quantities is what a calibrated error bar is made of. I read it as step 5, and it is recorded on both, because claiming a step has nothing on it when it does is the worse mistake.',
+  },
+  {
+    title: 'ReynKo Inc. \u2014 Beroz\u2019s company, building software and hardware around that closed-form framework',
+    steps: [3, 5],
+    changes:
+      'The commercial route for the same idea, aimed at oil and gas, wind, aerospace and cardiovascular flow. Whether the underlying framework holds up is exactly the sort of claim step 4 exists to settle.',
   },
   {
     title: 'DARPA APAQuS \u2014 tabletop \u201cquantum wind tunnels\u201d made of ultracold quantum fluids, plus automated discovery of the governing laws',
@@ -243,16 +249,25 @@ export default function TurbulencePage() {
             <p>
               Only two steps have a published price at all: the mesh at 33 core-hours and the run at
               360,000. That&rsquo;s the step AI reaches, and it&rsquo;s the step that was already
-              getting cheaper on its own. The two steps that practitioners say cost the most
-              &mdash; buying trustworthy reference data, and still having to run the physical test
-              &mdash; carry no published figure whatsoever.
+              getting cheaper on its own.
             </p>
             <p>
-              Which makes the honest headline a slightly awkward one. It isn&rsquo;t &ldquo;AI
-              misses the bottleneck,&rdquo; which is what the two earlier chains on this site found
-              for telescopes and for publishing. It&rsquo;s that the bottleneck here is unpriced,
-              and the one thing anybody has bothered to price is the thing the field already knew
-              how to make cheaper.
+              Now look at what the unit is doing, because a reviewer caught me leaning on it.
+              Core-hours is machine time. The same NASA survey quoted above says the step this page
+              prices at 33 core-hours &mdash; sizing the mesh &mdash; is &ldquo;the dominant cost in
+              terms of human intervention&rdquo; across the whole workflow. Stand a week of an
+              engineer next to 360,000 core-hours at commodity rates and they&rsquo;re the same order
+              of magnitude; stand it next to the GPU version and the engineer costs more. So the
+              honest headline is that <em>the only priced step is one AI reaches, and the choice of
+              unit is doing some of that work.</em>
+            </p>
+            <p>
+              What doesn&rsquo;t move either way: four of the seven steps have no number on either
+              unit, and the two practitioners point at &mdash; buying trustworthy reference data, and
+              still having to run the physical test &mdash; are among them. That&rsquo;s a different
+              result from the two earlier chains on this site, which both found AI missing the step
+              where the time or the cost concentrated. Here the expensive part isn&rsquo;t so much
+              missed as unpriced.
             </p>
           </div>
         </section>
@@ -264,8 +279,8 @@ export default function TurbulencePage() {
               Convergent attach one capability to this gap: <em>Develop New Modeling Frameworks for
               Turbulence</em> &mdash; &ldquo;create and implement novel mathematical models and
               computational frameworks that can more accurately simulate and predict turbulent
-              flows.&rdquo; Read the name on its own and it lands on step 3. Read the four
-              substantive resources behind it and it lands on three steps, which is more
+              flows.&rdquo; Read the name on its own and it lands on step 3. Read the five
+              substantive resources behind it and it lands on four steps, which is more
               interesting.
             </p>
             <div className="grid2" style={{ margin: '22px 0' }}>
@@ -287,7 +302,8 @@ export default function TurbulencePage() {
             </div>
             <p>
               So the capability set covers the middle of the workflow &mdash; the data, the model,
-              the run &mdash; and touches neither end. Steps 1, 2, 6 and 7 have nothing attached.
+              the run, and arguably the error bar &mdash; and touches neither end. Steps 1, 2 and 7
+              have nothing attached.
               That&rsquo;s an observation about where one capability was pointed, not a hole in
               their map, and with a single capability on this gap it&rsquo;s a thin reading either
               way. It does suggest an obvious thing to ask them though: would a capability aimed at
@@ -296,8 +312,8 @@ export default function TurbulencePage() {
             </p>
             <p>
               My own guess, and it is a guess: APAQuS is the one to watch. Steps 3 and 5 are
-              crowded with clever people and money, and step 5&rsquo;s cost has already fallen by a
-              factor of 25 without any of it. Step 4 is the one where a win would change what all
+              crowded with clever people and money, and step 5&rsquo;s cost is already falling without
+              any of it. Step 4 is the one where a win would change what all
               the others can do &mdash; and it&rsquo;s the only one of the seven where no current AI
               capability acts at all!
             </p>
@@ -327,7 +343,12 @@ export default function TurbulencePage() {
               <li>
                 Of the seven steps, only two carry a published cost: the mesh at 33 core-hours and
                 the run at 360,000. AI reaches the expensive one &mdash; and GPUs got there first,
-                cutting it by about 25&times; on their own.
+                which the same paper puts at about an order of magnitude in money.
+              </li>
+              <li>
+                That comparison is in machine time, and machine time is half the story. In engineer
+                time the 33-core-hour step is the one NASA calls the dominant cost. The unit is doing
+                some of the work in the headline, which is worth knowing before you repeat it.
               </li>
               <li>
                 The two steps people say cost the most have no published number at all: buying
@@ -336,9 +357,9 @@ export default function TurbulencePage() {
               </li>
               <li>
                 &ldquo;Accepted in place of a test&rdquo; means exactly that: the FAA or EASA taking
-                a simulation instead of a wind tunnel or a flight. Today they&rsquo;ll do it for a
-                radome bolted to an already-certified fuselage, and the industry is still running
-                challenge problems to work out the rest.
+                a simulation instead of a wind tunnel or a flight. They&rsquo;ve done it for antenna
+                installations since the early 2000s, and outside that narrow envelope the industry is
+                still running challenge problems to work out the rest.
               </li>
             </ul>
           </div>

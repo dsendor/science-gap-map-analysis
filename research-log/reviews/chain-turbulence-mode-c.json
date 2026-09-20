@@ -1,0 +1,109 @@
+{
+  "phase": "chain-turbulence",
+  "mode": "C",
+  "gate": "C",
+  "target": "path-turbulence-cost",
+  "reviewed_by": "claude-opus-5 (sub-agent, did not see the builder's reasoning)",
+  "reviewed_at": "2026-09-20",
+  "prereg": {
+    "expectation_commit": "99bf221",
+    "chain_commit": "5d38430",
+    "registration_unedited": true,
+    "five_fields_match": true,
+    "reviewer_caveat": "Committed before the chain, but written after 14 logged orienting searches that had already surfaced every load-bearing source. Recorded in the chain's finding."
+  },
+  "blocking": [
+    {
+      "id": 1,
+      "what": "The pre-registration was committed first but written after the orienting research, so the finding claimed more for it than the record supports.",
+      "action": "fixed",
+      "how": "The finding now states that fourteen logged searches preceded the registration and that it should carry less weight than the two earlier chains' predictions."
+    },
+    {
+      "id": 2,
+      "what": "'A factor of roughly thirty, getting cheaper without AI' was a wall-clock ratio across different hardware (7.5 days on 2,000 CPU cores vs 7 hours on 96 GPUs = 25.7x), presented as a fall in cost on a core-hours axis. 96 GPUs x 7 h is 672 GPU-hours, a different unit.",
+      "action": "fixed",
+      "how": "The claim is now carried by the same paper's own monetary statement - GPU cost 'an order of magnitude less than current central processing unit (CPU)-based supercomputing platforms' - and the wall-clock figures are labelled as wall-clock on different hardware."
+    }
+  ],
+  "should_fix": [
+    {
+      "id": 3,
+      "what": "is_binding on step 4 was argued as a constraint on a technology path, not a share of cost. Per prediction, a canonical DNS dataset amortises across decades of reuse while the 360,000 core-hours recur per flow condition.",
+      "action": "accepted",
+      "how": "is_binding withdrawn from step 4; the argument that withdrew it is recorded in the step rationale and in the finding."
+    },
+    {
+      "id": 4,
+      "what": "The axis declares two units and only ever shows one, so the 99.9% result is partly an artifact of the unit. The chain's own NASA source calls the step priced at 33 core-hours the dominant cost in human intervention.",
+      "action": "accepted",
+      "how": "The axis is frozen by the registration, so the correction lives in the finding's first paragraph and in step 2's rationale."
+    },
+    {
+      "id": 5,
+      "what": "Step 7 understated certification-by-analysis maturity: large antenna installations have been certified by analysis since the early 2000s (A330-200, 737-8) with approved methods of compliance, per section II of the same paper the step cites.",
+      "action": "fixed",
+      "how": "Step 7's blocker rewritten to state the approved envelope and then the limit of it."
+    },
+    {
+      "id": 6,
+      "what": "Step 1 said the certification literature 'names this directly' when the source defines predictive capability but says nothing about requirements being negotiated from precedent.",
+      "action": "fixed",
+      "how": "Blocker and rationale now separate what the source states from the practitioners' account."
+    },
+    {
+      "id": 7,
+      "what": "Step 2's maturity of 2-5 years contradicted its own rationale, which said applying AI there moves the measured cost by a rounding error.",
+      "action": "fixed",
+      "how": "Maturity is now Speculative, stated as a fact about the axis rather than about the technique, with the note that a labour-cost chain would read it Working now."
+    },
+    {
+      "id": 8,
+      "what": "The step 7 null clears the six-search bar but named a weaker near-miss than its own searches returned: a widely repeated ~$20,000 per wind-tunnel hour figure.",
+      "action": "fixed",
+      "how": "Both near-misses are now named, with the reason the trade figure was rejected under the project's source ranking."
+    },
+    {
+      "id": 9,
+      "what": "The capability mapping probably misses step 6: Gourianov et al.'s tensor-network calculation of turbulence probability distributions is arguably what a calibrated error bar is made of.",
+      "action": "accepted, with the disagreement recorded",
+      "how": "The capability is attached to step 6; the step rationale records that the builder read that resource as acting on the run and the reviewer read it as acting on the error bar, because overstating a bare step is the more costly error."
+    },
+    {
+      "id": 10,
+      "what": "The capability carries five substantive resources, not four.",
+      "action": "fixed",
+      "how": "Count corrected in the finding and on the site page."
+    },
+    {
+      "id": 11,
+      "what": "The Hu and Yang citation could not be verified by the reviewer: AIP 403s and there is no preprint.",
+      "action": "fixed",
+      "how": "The evidence field now quotes the exact abstract clause, names the date as published online 17 September 2026, and states that only the abstract was read and from where."
+    },
+    {
+      "id": 12,
+      "what": "The sixth Drag Prediction Workshop spread is not purely model error; the authors attribute the fifth workshop's tighter scatter to a common grid sequence.",
+      "action": "fixed",
+      "how": "Step 6's blocker now says how much of the spread is gridding."
+    }
+  ],
+  "confirmed": [
+    "Every figure re-fetched checks out and sits on the step that claims it: Goc et al. (360,000 / 40,000 / 60,000 / 33 core-hours, factor of six, 7.5 days / 7 hours, Re^(4/3), 'guided with little a priori information'); Yang and Griffin (Re^2.91 / Re^2.72 / Re^1.14, DNS about 100x wall-resolved LES); NASA/CR-2014-218178 (four quotes verbatim, section 5.3 correct, the validation-data line on the right step); Derlaga and Morrison (4-5 count IQR, 10-15 whiskers, 18% outliers); McGreivy and Hakim (60/76 = 79%); the radome acceptance; APAQuS; the physics foundation model quotes.",
+    "The Navier-Stokes paragraph is accurate and correctly scoped. OpenAI's Theorem 1.1 constructs a smooth compactly supported force and a finite-energy solution from rest with unbounded velocity, establishing alternative C; Fefferman's A and B set the force to zero, so the unforced question does stay open.",
+    "No circularity: AI-acts steps are {2,3,5,6} and cost-bearing steps are {4,5,7}, which overlap rather than partition. This is the first chain of the three to produce a non-complementary split.",
+    "Tone passes. Every capability sentence reads as observation rather than as omission.",
+    "The step 7 null is corroborated by the reviewer's own independent searches: NTF and Ames Unitary occupancy rates are genuinely unpublished."
+  ],
+  "not_actioned": [
+    {
+      "what": "The reviewer's proposed replacement headline.",
+      "why": "Its substance is now in the finding's first paragraph - the unit chose the answer, and four of seven steps have no number on either unit. The reviewer's wording was not adopted verbatim because the site shows only the first paragraph of a finding, so it has to carry the claim rather than the caveat."
+    },
+    {
+      "what": "methodology/writing.md and methodology/critical-path.md disagree on whether a finding leads or closes with the claim.",
+      "why": "A real conflict in the docs, but not a defect in this chain, and reconciling them is a separate change. Left for David."
+    }
+  ],
+  "reviewer_verdict": "The headline survives as literally stated; the clause after it did not, and was rewritten. One capability on this gap means the coverage half of the method cannot say much here, which the chain states honestly."
+}
