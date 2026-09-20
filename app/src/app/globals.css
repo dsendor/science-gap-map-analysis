@@ -617,3 +617,40 @@ details .body { padding: 0 2px 16px; }
   font-size: 14.5px; line-height: 1.5; color: var(--ink-2);
 }
 .provenance .tag { flex: none; }
+
+/* ---- the plain-language walkthrough (/turbulence/) ---------------------------
+   Same colour contract as the rest of the site: blue means a current AI capability
+   acts on this step, gold means the step carries the cost, slate means neither. The
+   rail down the left is the order the work happens in, because the whole point of a
+   step-by-step page is that a reader can see they are on step 4 of 7. */
+.walk { display: grid; gap: 0; margin: 26px 0 0; }
+.wstep {
+  display: grid; grid-template-columns: 46px 1fr; gap: 0 18px;
+  padding: 0 0 26px; position: relative;
+}
+.wstep:last-child { padding-bottom: 0; }
+.wstep::before {
+  content: ''; position: absolute; left: 22px; top: 40px; bottom: 0; width: 2px;
+  background: var(--rule);
+}
+.wstep:last-child::before { display: none; }
+.wnum {
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  font: 600 17px/1 var(--font-sans, system-ui, sans-serif);
+  border: 2px solid var(--none); color: var(--none); background: var(--page);
+  position: relative; z-index: 1;
+}
+.wstep[data-reach='yes'] .wnum { border-color: var(--reach-1); color: var(--reach-1); background: var(--reach-wash); }
+.wstep[data-cost='yes'] .wnum { border-color: var(--cost); color: var(--cost); background: var(--cost-wash); }
+.wbody { padding-top: 2px; }
+.wbody h3 { margin: 6px 0 8px; font-size: 20px; }
+.wbody p { margin: 0 0 10px; }
+.wtags { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 0; }
+.tag.reach { border-color: var(--reach-1); color: var(--reach-1); background: var(--reach-wash); }
+.tag.spend { border-color: var(--cost); color: var(--cost); background: var(--cost-wash); }
+.tag.quiet { border-color: var(--rule); color: var(--ink-3); }
+.wplain {
+  background: var(--surface); border-left: 3px solid var(--rule); border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin: 12px 0 0; font-size: 15px; color: var(--ink-2);
+}
+.wplain strong { color: var(--ink); }
