@@ -1,45 +1,51 @@
 # What is left
 
-## Decide: the gap for the next critical path
+## Decide: publish the turbulence chain, and whether two new gaps are wanted
 
-Everything else is built and merged. The next chain needs a gap, and the choice is
-yours. David's focus is physics and astronomy, so these are the unchained gaps in those
-two fields, **alphabetical, not ranked** — ordering their gaps by merit is not ours to do.
+The third critical path is built and on the branch
+`claude/turbulence-modeling-ai-gaps-aca454`: **`path-turbulence-cost`**, on Physics /
+*Inability to Model Turbulence*, a cost chain in CPU core-hours per flow condition.
+It is `reviewed: "ai-only"` and not on the site. Three things need David.
 
-| Field | Capabilities | Primary kind of work | Gap |
-|---|---:|---|---|
-| Astrophysics | 1 | Real-time control | Higher-Resolution Views of the Universe Are Roadblocked by Formation Flying Technology |
-| Astrophysics | **3** | Measurement and sensing | Limited Detection of Gravitational Waves Across the Frequency Spectrum |
-| Astrophysics | 1 | Coordination and institutions | Major Planetary Science and Astrobiology Missions Are Not Realized by Existing Government Space Agencies |
-| Physics | 1 | Real-time control | Artisanal Nature of Experimental Physics Platforms |
-| Physics | 1 | Prediction and modeling | Inability to Model Turbulence |
-| Physics | 1 | Measurement and sensing | Inadequate Imaging of Material Structures |
-| Physics | 1 | Running experiments | Incomplete Resolution of the Possibility of Low-Energy Nuclear Reactions |
-| Physics | 1 | Real-time control | Particle Accelerators Are Large and Expensive |
-| Physics | 1 | Measurement and sensing | Quantum Gravity is Experimentally Hard to Constrain |
-| Physics | 2 | Real-time control | Robust and Compact Plasma Confinement for Fusion is Still Not Solved |
-| Physics | 1 | Coordination and institutions | Uncertainty and Noise in the Science of Room-Temperature Superconductivity |
+**1. Does the chain go on the site?** Publishing is a separate change: the pages select
+chains by hard-coded id in `app/src/app/chains/page.jsx` and `app/src/app/page.jsx`,
+and the Mermaid source in `app/src/components/mermaid.js` needs the steps.
 
-**What the choice affects.** Both existing chains found AI missing the steps where the
-time or cost concentrates, on gaps whose primary work is Physical build and Coordination.
-A gap whose primary work is something AI is good at — measurement and sensing, prediction
-and modeling, running experiments — is the one that tests whether the method can return
-the opposite answer.
+**2. Does `reviewed` become `"human"`?** Only David sets that, and only after reading the
+chain against the gap. The adversarial review in mode C has run; its findings are in
+`research-log/reviews/`.
 
-**Capability count matters.** "Which steps have no capability attached" is the finding
-that comes from Convergent's own data rather than our labels. On a gap with one
-capability it can barely say anything; gravitational waves is the only one here with
-three. Picking a one-capability gap is fine, but that result will be thin.
+**3. Are two new gaps wanted?** The chain surfaced two candidates that sit *between*
+Convergent's gaps rather than inside them, and task C1 in `docs/future-work.md` says
+whether more proposed gaps are wanted at all is David's call:
 
-Once chosen: `methodology/critical-path.md`, or hand `agents/chain-builder.md` to a
-sub-agent. The rest of the backlog is `docs/future-work.md`.
+| Candidate | Why it is not the turbulence gap |
+|---|---|
+| Reference data for turbulence models cannot be produced at the Reynolds numbers that matter | It is the input to modelling, not the modelling. DNS cost scales as Re^2.91; the experimental route is limited by test cost and instrumentation. |
+| A computed prediction has no accepted basis for use where no validation record exists | Certification-by-analysis calls this *predictive capability*. It blocks every simulation field, not turbulence alone. |
+
+Neither has been written in house format or put through a novelty refutation. That is
+`methodology/house-format.md` and `agents/reviewer.md` mode B, and it is only worth
+doing if the answer to (3) is yes.
+
+## What the chain did to the method
+
+Both earlier chains found AI missing the step where the time or cost concentrates. This
+one was chosen to test whether the method can return the opposite answer, and the answer
+it returned is a third thing: **AI does reach the step carrying the measured cost, and
+four of the seven steps have no number on this axis at all** — including the two that
+practitioners name as the expensive part. That is a result about what has been priced,
+not only about where the cost is. Whether that reading survives is what the review and
+David's reading are for.
 
 ---
 
 ## In short
 
-- One thing is open: **choose the gap for the next critical path.**
-- Physics and astronomy have eleven unchained gaps; only *Limited Detection of
-  Gravitational Waves* has three capabilities, and the rest have one or two.
-- Choosing one whose primary work is something AI does well is what makes the chain
-  informative, because both existing chains returned the same answer.
+- **The next critical path is built**: `path-turbulence-cost`, on *Inability to Model
+  Turbulence*, pushed on `claude/turbulence-modeling-ai-gaps-aca454`, reviewed ai-only.
+- **Three decisions wait on David**: publish it to the site, mark it human-reviewed, and
+  whether to write up the two candidate gaps it surfaced.
+- **It returned a third answer, not the opposite one.** AI reaches the priced step; the
+  steps that plausibly cost more carry no published figure.
+- The rest of the backlog is unchanged and lives in `docs/future-work.md`.
