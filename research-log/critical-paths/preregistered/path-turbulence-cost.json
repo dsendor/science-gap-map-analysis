@@ -1,0 +1,10 @@
+{
+  "id": "path-turbulence-cost",
+  "gap_id": "1c1cb37e-2a00-80c0-80e2-d417b7597a77",
+  "axis": "Cost of producing one trusted prediction of a turbulent flow at application Reynolds number, in core-hours per flow condition where compute dominates and engineer-days where labour dominates",
+  "axis_kind": "cost",
+  "axes_excluded": "Elapsed time from a new closure being proposed to its routine use in production design, which runs over a different set of steps — formulation, solver implementation, workshop validation and certification acceptance — and is measured in decades rather than per prediction. Also excluded: the mathematical question of existence and smoothness of solutions to the Navier-Stokes equations, which is a different kind of work and does not sit on the path to a prediction at all.",
+  "expectation": "AI acts on three of the seven steps: mesh and geometry preparation, the choice and form of the closure, and the simulation run itself through learned surrogates. It does not act on generating the high-fidelity ground truth that calibration and validation consume, nor on getting a result accepted for a decision. The cost concentrates on the simulation run once the flow must be resolved rather than modelled, and on obtaining ground truth; I expect at least one step carrying cost to also be a step AI reaches, which neither the telescope nor the publishing chain produced. The binding constraint should turn out to be circular rather than absent: the learned surrogate that cheapens the run is trained on data from the ground-truth step it cannot replace, so the cost moves upstream rather than disappearing. Convergent attach a single capability to this gap, 'Develop New Modeling Frameworks for Turbulence', and I expect it to act on the closure step alone, leaving six of seven steps with nothing attached. The September 2026 Navier-Stokes blow-up result acts on none of the seven steps.",
+  "registered_by": "claude-opus-5",
+  "registered_on": "2026-09-20"
+}
