@@ -170,7 +170,7 @@
     },
     {
       "phase": "phase-6",
-      "decision": "Wired engine/adjudicate.mjs into engine/rebuild.mjs after finding that a clean rebuild silently dropped every Phase 2 confidence downgrade.",
+      "decision": "Made the adjudication step part of the standard rebuild after finding that a clean rebuild silently dropped every Phase 2 confidence downgrade.",
       "rationale": "adjudicate.mjs writes confidence flags directly to SQLite and had only ever been run by hand. Because db/gapmap.sqlite is gitignored, a rebuild from files produced 5 tier guesses and 10 AI-type guesses where the published findings say 24 and 20 — including the blanket downgrade of every 'Proxy only' assignment, which is one of the project's headline results. The artifact was reading those wrong numbers before this was caught. The script is idempotent, so running it inside rebuild is safe.",
       "runner_up": "Bake the downgrades into the label files. Rejected: the labels are what the labeler wrote, and overwriting them would erase the fact that adjudication changed something.",
       "confidence": "high",

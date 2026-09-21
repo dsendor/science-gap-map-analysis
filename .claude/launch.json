@@ -3,8 +3,11 @@
   "configurations": [
     {
       "name": "gap-map-rewrite",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4322", "--directory", "app/out"],
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "engine/serve.mjs",
+        "4322"
+      ],
       "port": 4322
     }
   ]

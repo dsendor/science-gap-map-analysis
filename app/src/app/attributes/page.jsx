@@ -82,14 +82,6 @@ export default function AttributesPage() {
               answers one question only: what stands between here and the gap closing. It is not a
               claim that AI does that work &mdash; that is the separate question in the last column.
             </p>
-            <p>
-              Six of the eight were originally named after the AI that would do the work
-              (&ldquo;LLM reasoning and synthesis&rdquo;) and two after the work itself
-              (&ldquo;Physical build and manipulation&rdquo;). Read together, that made the
-              institutional category look out of place when it was the one naming the thing
-              consistently. All eight are now named for the work. The stored labels and every
-              recorded judgment are unchanged; only the words a reader sees moved.
-            </p>
           </div>
           <div className="scroll" style={{ marginTop: 16 }}>
             <table>
@@ -143,15 +135,18 @@ export default function AttributesPage() {
                 A full independent relabel of all 103 gaps put type disagreement at 25%. It also
                 confirmed the eighth category was worth adding: four gaps took real-time control as
                 their primary. Two problems the audit found are still open. Gaps where AI is the
-                object rather than the instrument now carry a separate frame flag instead of a type.
+                object of the research rather than a tool for doing it &mdash; &ldquo;AI Could Be
+                Misused&rdquo; is one &mdash; are marked separately rather than given a type, because
+                &ldquo;what kind of work would close this&rdquo; does not parse for them.
                 Composite gaps, which bundle sub-problems needing different values, are still recorded
                 under one label.
               </p>
               <p>
                 Maturity is the weakest thing measured here. The two passes agreed on the kind of work
                 for 77 of 103 gaps and on maturity for only 63, and the disagreements moved
-                overwhelmingly in one direction. The working-now gradient the first pass produced did
-                not replicate and has been withdrawn.
+                overwhelmingly in one direction. A first attempt to rank the eight kinds of
+                work by how much AI already reaches them did not survive the second labelling pass,
+                and is withdrawn.
               </p>
               <p style={{ marginBottom: 0 }}>
                 Fusing &ldquo;what kind of blocker&rdquo; with &ldquo;how mature is the AI for

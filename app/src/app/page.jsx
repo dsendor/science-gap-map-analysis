@@ -70,8 +70,9 @@ export default function Page() {
                 journals sell is not distribution.
               </li>
               <li>
-                <strong>Review is a clear current blocker.</strong> AI can act on it, and it may
-                stay hard anyway.
+                <strong>Review is where the cost sits, and AI only reaches half of it.</strong> A
+                model can pick the right reviewer for a paper. It cannot make that person agree to
+                do it, and it takes 4.5 invitations to land one accepted review.
               </li>
               <li>
                 <strong>Credit and legitimacy is the biggest challenge</strong>, and the one AI is

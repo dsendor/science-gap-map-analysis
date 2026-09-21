@@ -13,6 +13,22 @@ export const metadata = { title: 'Method, audit and what is wrong with this' };
 
 export default function MethodPage() {
   const { summary: s, gaps, audit_summary: audit, runs, decisions } = data;
+  // The ledger is a record of calls that could have gone the other way, and some of
+  // them were about plumbing rather than about any gap. A reader at Convergent wants
+  // the judgment calls; the tooling ones dilute them, and deleting them would be
+  // editing the record. So they are split, and the plumbing goes last.
+  const BUILD_CALLS = [
+    'Persisted the Phase 3 search transcript',
+    'Added ai_type, maturity and tier columns to new_gaps',
+    'The Notion connector',
+    'Rendered the two chains as HTML/SVG',
+    'Made the adjudication step part of the standard rebuild',
+    'Made agreement between the two labeling passes an overridable default',
+    'Added docs/future-work.md and an app page',
+  ];
+  const isBuild = (d) => BUILD_CALLS.some((t) => d.decision.startsWith(t));
+  const judgmentCalls = decisions.filter((d) => !isBuild(d));
+  const buildCalls = decisions.filter(isBuild);
   const m = audit.dimensions.measurability;
   const mins = Math.round(
     runs
@@ -449,10 +465,12 @@ export default function MethodPage() {
 
             <h2 style={{ marginTop: 40 }}>Calls that could have gone the other way</h2>
             <p>
-              {decisions.length} of them, each with the runner-up and what would reverse it. The
-              runner-up was usually the more flattering option.
+              {judgmentCalls.length} of them, each with the runner-up and what would reverse it. The
+              runner-up was usually the more flattering option. {buildCalls.length} further calls
+              were about how the thing was built rather than about any gap, and they are at the
+              bottom.
             </p>
-            {decisions.map((d, n) => (
+            {judgmentCalls.map((d, n) => (
               <details key={n}>
                 <summary>{d.decision}</summary>
                 <div className="body">
@@ -471,6 +489,25 @@ export default function MethodPage() {
                   <div className="why">
                     <div className="k">What would reverse it</div>
                     <div className="t">{d.reversal_condition}</div>
+                  </div>
+                </div>
+              </details>
+            ))}
+
+            <h3 style={{ marginTop: 34 }}>Calls about how it was built</h3>
+            <p style={{ fontSize: 15, color: 'var(--ink-3)' }}>
+              Tooling and plumbing. They are here because the record should be complete, not because
+              they say anything about the map.
+            </p>
+            {buildCalls.map((d, n) => (
+              <details key={`build-${n}`}>
+                <summary>{d.decision}</summary>
+                <div className="body">
+                  <div className="why">
+                    <div className="k">
+                      {d.phase}, confidence {d.confidence}
+                    </div>
+                    <div className="t">{d.rationale}</div>
                   </div>
                 </div>
               </details>

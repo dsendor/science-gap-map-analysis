@@ -25,12 +25,14 @@ export default function ProposedPage() {
               Each one was grepped against all {s.n_gaps} of the map&rsquo;s gaps and all {s.n_capabilities} of
               its capabilities for near-duplicates, and checked against current programs to see
               whether it is already funded and under construction. Two of those funding checks came
-              back &ldquo;not clear&rdquo;, and say so. Open a card for both tests, the full
-              near-duplicate check, and the funding check.
+              back &ldquo;not clear&rdquo;, and say so. Open a card for all five checks: the nearest thing
+              already in the map, whether the gap pulls against something else worth having, what it
+              would unlock downstream, the near-duplicate search in full, and the funding check.
             </p>
             <p>
-              These live in their own table with ids prefixed <code>new-</code>. None of them is a
-              Convergent-style UUID, so nothing downstream can confuse a proposal with Convergent&rsquo;s data.
+              Both are proposals, not part of the Gap Map. They are kept separately from
+              Convergent&rsquo;s data everywhere, and the <span className="tag new">proposed</span>{' '}
+              mark on a card is how to tell at a glance.
             </p>
           </div>
         </section>
