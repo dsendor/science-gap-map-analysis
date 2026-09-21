@@ -4,7 +4,7 @@ import PageProvenance from '../../components/PageProvenance';
 import { TIER_ORDER } from '../../lib/constants';
 import { StackedMaturity } from '../../components/Charts';
 
-export const metadata = { title: 'The four attributes, and how to read them' };
+export const metadata = { title: 'The label on every gap' };
 
 const KINDS = [
   { k: 'Reading and synthesis', ai: 'Language models. Working today.',

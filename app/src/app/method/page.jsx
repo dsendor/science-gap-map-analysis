@@ -131,7 +131,7 @@ export default function MethodPage() {
             <h2>What I would not rely on</h2>
             <ul>
               <li>
-                <strong>Maturity is the least reliable label here.</strong> The two independent passes
+                <strong>Maturity is the least reliable label here.</strong> Two independent labelling passes
                 agreed on the kind of work for {data.relabel.type_agreed} of {data.relabel.n} gaps and
                 on maturity for only {data.relabel.maturity_agreed}. A third pass then repaired it
                 against a sharper definition. Treat a single gap&rsquo;s maturity as a judgment, and

@@ -24,7 +24,7 @@ export default function MissingPage() {
   const FIRST = [
     {
       n: 1,
-      h: 'Critical paths across the whole map, not two',
+      h: 'Critical paths across the whole map, not three',
       tag: 'cheapest of the three',
       body: (
         <>
@@ -118,7 +118,7 @@ export default function MissingPage() {
   const REST = [
     {
       h: 'Indicators as coverage, and as a series',
-      what: `A sample of ${s.n_indicators} gaps across all four tiers, ${spell(s.n_indicator_nulls)} of them honest nulls, explicitly not to be extrapolated to the other ${s.n_gaps - s.n_indicators}.`,
+      what: `A sample of ${s.n_indicators} gaps across all four tiers, ${s.n_indicator_nulls === 1 ? 'one of them an honest null' : `${spell(s.n_indicator_nulls)} of them honest nulls`}, explicitly not to be extrapolated to the other ${s.n_gaps - s.n_indicators}.`,
       why: 'Coverage is the smaller half. A one-time reading says where a gap is; a funder needs the slope, and a slope needs the same quantity read off the same source on a schedule. That is a maintained system rather than a research output.',
     },
     {

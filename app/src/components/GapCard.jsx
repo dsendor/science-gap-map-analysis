@@ -110,7 +110,7 @@ export default function GapCard({ gap, pathHref }) {
             onClick={() => setOpen(!open)}
           >
             <span>
-              {gap.is_new ? 'Checks and reasoning' : `${caps.length} Capabilities, and why these labels`}
+              {gap.is_new ? 'Checks and reasoning' : `${caps.length} ${caps.length === 1 ? 'capability' : 'capabilities'}, and why these labels`}
             </span>
             <span className="icon">{open ? '▲' : '▼'}</span>
           </button>

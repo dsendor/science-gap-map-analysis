@@ -144,6 +144,16 @@ export default function Chain({ path }) {
                 </p>
               ))}
             <h4>Appendix: what I predicted before running this</h4>
+            {/* A prediction is evidence only if it is never edited, so this one is
+                printed exactly as it was written — including the numbering used when
+                there were two chains, which is the one thing on the page a reader
+                cannot resolve from the page. Hence the gloss rather than a rewrite. */}
+            {/\bchain [12]\b/i.test(path.expectation) && (
+              <p style={{ fontSize: 14, color: 'var(--ink-3)', fontStyle: 'italic' }}>
+                Printed unedited, as written. It numbers the chains: &ldquo;chain 1&rdquo; is the
+                telescope chain and &ldquo;chain 2&rdquo; is the publishing chain.
+              </p>
+            )}
             <p style={{ fontSize: 15.5, color: 'var(--ink-3)' }}>{path.expectation}</p>
           </div>
         </details>

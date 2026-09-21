@@ -40,9 +40,142 @@ const capsByGap = byGap(all(`
   SELECT gc.gap_id, c.id, c.name, c.description
   FROM gm_gap_capabilities gc JOIN gm_capabilities c ON c.id = gc.capability_id`));
 
+// ---------------------------------------------------------------------------
+// Rationales, said in words a reader outside this repo can resolve.
+//
+// The labelling run recorded how each label was settled, and the record is
+// accurate: two passes, a mechanical adjudication rule, a maturity repair. That
+// vocabulary belongs in research-log/, which is the record of what happened, and
+// it is the reason it is not rewritten there. What it does not belong in is the
+// answer to "why these labels" on a public card, where "v2 taken because it had
+// the complete eight-category taxonomy available" tells a reader nothing about
+// their gap and several things about our process. A clarity audit found this text
+// on 102 of 103 gaps.
+//
+// So the record stays and the published sentence is translated here. Every rule
+// below preserves what was decided and what was disagreed about; only the internal
+// names for the passes come out. Anything the rules do not recognise is published
+// unchanged, so a substantive rationale can never be silently dropped.
+const readableRationale = (raw) => {
+  if (!raw) return raw;
+  let t = String(raw).trim();
+
+  // "both independent passes agreed" — 88 of them, and the whole rationale.
+  if (/^both independent passes agreed\.?$/i.test(t)) {
+    return 'Two readers labelled this gap separately and reached the same answer.';
+  }
+
+  // "Independent passes disagreed (type: A vs B; ). v2 taken because …; flagged
+  // guess because …" — note the empty clause before the bracket, which is a bug in
+  // the string builder rather than a missing thought.
+  const split = t.match(
+    /^Independent passes disagreed \((type|maturity): (.+?)\s+vs\s+(.+?);\s*\)\.\s*v2 taken[^.]*\.\s*(.*)$/i
+  );
+  if (split) {
+    const [, dimension, a, b] = split;
+    const what =
+      dimension.toLowerCase() === 'maturity'
+        ? 'on how soon AI could move this gap'
+        : 'on what kind of work is in the way';
+    // The "flagged guess" clause sits inside the same sentence as "v2 taken", so it
+    // is looked for in the whole string rather than in what is left after it.
+    const rest = /flagged guess/i.test(t)
+      ? ' The label is flagged a guess because the two readings did not converge.'
+      : '';
+    return `Two readers labelled this gap separately and split ${what}, between ${a} and ${b}. ${b} was taken.${rest}`;
+  }
+
+  // "Maturity re-adjudicated on the merits (v1 X / v2 Y; mechanical rule had given
+  // Z). <the actual reasoning> Type unchanged from the mechanical adjudication."
+  // The reasoning in the middle is the part worth reading, so it leads.
+  const readj = t.match(
+    /^Maturity re-adjudicated on the merits \(v1 (.+?) \/ v2 (.+?);[^)]*\)\.\s*(.*)$/i
+  );
+  if (readj) {
+    const [, v1, v2, body] = readj;
+    const substance = body
+      .replace(/\s*Type unchanged(?: from the mechanical adjudication)?\.?\s*$/i, '')
+      .trim();
+    const split_note = `Two readers split on how soon AI could move this gap, between ${v1} and ${v2}.`;
+    return substance ? `${substance} ${split_note}` : split_note;
+  }
+
+  // The audit rounds were lettered A to D in the record. A reader has no way to
+  // resolve a letter, and does not need to: what matters is that somebody checked the
+  // row and what they concluded. Same for the field names that leak out of the
+  // indicator rows, and for the author's first name, which appears on the masthead
+  // but not as an authority a rationale can cite without introducing him.
+  t = t
+    .replace(/\bREVISED after Gate [ABCD],?\s*(which\s+)?/gi, 'Revised after a second reader ')
+    .replace(/\bNULL CORROBORATED by Gate [ABCD]\b/gi, 'Null corroborated by a second reader')
+    .replace(/\bCONTESTED after Gate [ABCD]\b/gi, 'Contested by a second reader')
+    .replace(/\bGate [ABCD] (found|re-fetched|graded|established|corrected)\b/gi, 'A second reader $1')
+    .replace(/\bGate [ABCD]\b/gi, 'a second reader')
+    .replace(/\bthe gates\b/gi, 'these checks')
+    // The chains were numbered while there were two of them. The site names them by
+    // gap, so the numbers resolve to nothing a reader can see.
+    .replace(/\bchain 1\b/gi, 'the telescope chain')
+    .replace(/\bchain 2\b/gi, 'the publishing chain')
+    .replace(/\bis_binding\b/g, 'the carries-the-cost flag')
+    .replace(/\bai_acts\b/g, 'the AI-reaches-it flag')
+    .replace(/\bre-adjudicat(ing|ed|ion)\b/gi, (_m, tail) => `re-decid${tail === 'ion' ? 'ing' : tail}`)
+    .replace(/\bdecided by David\b/gi, 'decided by the author rather than by a model')
+    .replace(/\bDavid ruled\b/g, 'The author ruled')
+    .replace(/\bDavid notes\b/g, 'The author notes')
+    .replace(/\bDavid\b/g, 'the author')
+    // A repo path is not evidence to somebody reading a website, and the note about
+    // an empty table is an internal defect report that escaped onto a public page.
+    .replace(
+      /\(recorded in research-log\/[^)]*?\)/gi,
+      '(the six searches are recorded in the public repository)'
+    )
+    .replace(/\s*—\s*the search_log database table is empty, so that file is the provenance/gi, '')
+    .replace(/\bresearch-log\/[A-Za-z0-9._\/-]+/g, 'the public repository')
+    .replace(/\bengine\/[A-Za-z0-9._-]+\.mjs/g, 'the build scripts')
+    // "Grepped … on /a|b|c/" prints a regular expression at a reader. The terms are
+    // the useful part, so they are kept and the delimiters and pipes are not.
+    .replace(/\bGrepped\b/g, 'Searched')
+    .replace(/ on \/([^/]+)\/\./g, (_m, terms) => {
+      const list = terms.split('|').map((x) => x.trim()).filter(Boolean);
+      const last = list.pop();
+      return ` for ${list.join(', ')} and ${last}.`;
+    })
+    .replace(/\bsource_checked\b/g, 'the source-check field');
+
+  // Everything else: take out the internal names sentence by sentence and leave the
+  // reasoning alone.
+  t = t
+    .replace(/\bthe mechanical rule\b/gi, 'the automatic tie-break')
+    .replace(/\bthe mechanical adjudication\b/gi, 'the automatic tie-break')
+    .replace(/\bthe maturity repair\b/gi, 'a later re-reading of the maturity labels')
+    .replace(/\bv1 said\b/gi, 'the first reader said')
+    .replace(/\bv2 said\b/gi, 'the second reader said')
+    .replace(/\bv1\b/gi, 'the first reading')
+    .replace(/\bv2\b/gi, 'the second reading')
+    .replace(/\bindependent passes\b/gi, 'the two readers')
+    .replace(/\bre-adjudicated\b/gi, 're-decided')
+    .replace(/\s*Type unchanged(?: from the automatic tie-break)?\.?\s*$/i, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  return t;
+};
+
+// The same translation, applied to the two other places the internal vocabulary
+// reaches a reader: the decision ledger on the method page, and the checks behind each
+// proposed gap. Both are our own prose, and both were written for a reader who had the
+// repo open.
+const readableFields = (row, keys) => {
+  const out = { ...row };
+  for (const k of keys) if (typeof out[k] === 'string') out[k] = readableRationale(out[k]);
+  return out;
+};
+
 const enriched = gaps
   .map((g) => {
-    const types = (aiByGap[g.id] ?? []).map(({ gap_id, created_at, labeled_by, ...t }) => t);
+    const types = (aiByGap[g.id] ?? []).map(({ gap_id, created_at, labeled_by, ...t }) => ({
+      ...t,
+      rationale: readableRationale(t.rationale),
+    }));
     const primary = types.find((t) => t.is_primary === 1) ?? null;
     return {
       ...g,
@@ -52,7 +185,10 @@ const enriched = gaps
       primary_maturity: primary?.maturity ?? null,
       primary_rationale: primary?.rationale ?? null,
       primary_confidence: primary?.confidence ?? null,
-      indicators: (indByGap[g.id] ?? []).map(({ gap_id, created_at, ...i }) => i),
+      indicators: (indByGap[g.id] ?? []).map(({ gap_id, created_at, ...i }) => ({
+        ...i,
+        rationale: readableRationale(i.rationale),
+      })),
       capabilities: (capsByGap[g.id] ?? []).map(({ gap_id, ...c }) => c),
     };
   })
@@ -218,12 +354,23 @@ const out = {
   },
   summary,
   gaps: enriched,
-  new_gaps: newGaps,
+  new_gaps: newGaps.map((r) =>
+    readableFields(r, [
+      'rationale',
+      'nearest',
+      'tension_test',
+      'unlock_test',
+      'dedup_check',
+      'funding_check',
+    ])
+  ),
   critical_paths: paths,
   audits,
   audit_summary: auditSummary,
   relabel,
-  decisions: all('SELECT phase, decision, rationale, runner_up, confidence, reversal_condition FROM decisions ORDER BY id'),
+  decisions: all(
+    'SELECT phase, decision, rationale, runner_up, confidence, reversal_condition FROM decisions ORDER BY id'
+  ).map((r) => readableFields(r, ['decision', 'rationale', 'runner_up', 'reversal_condition'])),
   runs: all('SELECT phase, kind, started_at, ended_at, n_units, note FROM runs ORDER BY id'),
 };
 

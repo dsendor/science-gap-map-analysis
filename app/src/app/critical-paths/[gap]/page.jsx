@@ -64,7 +64,7 @@ export default async function GapCriticalPaths({ params }) {
             </div>
             <PageProvenance>
               {anyUnchecked
-                ? 'This page was written by Claude and no person has read it against the gap.'
+                ? 'This page was written by Claude and checked by a second model pass. No person has read it against the gap.'
                 : 'The chain on this page has been read against the gap by a person.'}
             </PageProvenance>
 

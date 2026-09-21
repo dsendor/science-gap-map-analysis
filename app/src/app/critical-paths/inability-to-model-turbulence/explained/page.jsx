@@ -118,9 +118,9 @@ export default function TurbulencePage() {
           <div className="col">
             <h1>Turbulence, step by step</h1>
             <PageProvenance>
-              This page was written by Claude. It&rsquo;s the plain-language companion to the
-              turbulence critical path; the figures are the same ones, and neither has been read
-              against the gap by a person yet.
+              This page was written by Claude, and a second model pass has checked it. It&rsquo;s
+              the plain-language companion to the turbulence critical path and carries the same
+              figures. No person has read either against the gap.
             </PageProvenance>
             <p className="lead">
               What the September 2026 Navier&ndash;Stokes proof solved, what it didn&rsquo;t, and
