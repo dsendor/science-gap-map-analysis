@@ -65,7 +65,10 @@ export default function ChainSteps({ path, showBlockers = true }) {
             <th scope="col" className="sched__hstep">Step</th>
             <th scope="col">AI reaches it</th>
             <th scope="col">Gap Map capabilities</th>
-            <th scope="col" className="sched__htime">Elapsed</th>
+            {/* "Elapsed" is only true of a time chain. A cost chain shows a cost,
+                and calling it elapsed time is the mislabel methodology/critical-path.md
+                rule 1 exists to prevent. */}
+            <th scope="col" className="sched__htime">{isTime ? 'Elapsed' : 'Cost'}</th>
           </tr>
         </thead>
         <tbody>

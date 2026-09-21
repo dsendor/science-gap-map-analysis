@@ -33,13 +33,14 @@ export default function MissingPage() {
             exist to show something a catalog structurally cannot &mdash; that two gaps in
             different fields can share one binding link, so bottlenecks recur across fields and can
             be counted. {Spell(nPaths)} chains prove the shape exists. They say nothing about where
-            else it occurs.
+            else it occurs, and the third one does not share the link the first two do, which is
+            the difference between noticing a pattern and counting one.
           </p>
           <p>
             <strong>One thing blocks it.</strong> Capability edges are untyped. Nothing in the source
             data marks a capability as necessary, sufficient, or partial for the gap it hangs under,
-            and a chain needs to know which links are load-bearing. Both existing chains had their
-            link semantics reconstructed by hand, which is exactly why there are {spell(nPaths)}.
+            and a chain needs to know which links are load-bearing. Every chain here had its link
+            semantics reconstructed by hand, which is exactly why there are {spell(nPaths)}.
           </p>
           <div className="pull">
             <p>

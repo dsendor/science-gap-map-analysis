@@ -80,8 +80,9 @@ export default function Page() {
               </li>
             </ol>
             <p>
-              <a href="./chains/">
-                This chain step by step, plus a second gap (telescopes) that Claude did on its own
+              <a href="./critical-paths/">
+                This chain step by step, plus two more gaps &mdash; telescopes and turbulence &mdash;
+                that Claude did on its own
               </a>
             </p>
             <p className="footnote" id="fn-orgsci">

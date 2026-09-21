@@ -654,3 +654,31 @@ details .body { padding: 0 2px 16px; }
   padding: 12px 16px; margin: 12px 0 0; font-size: 15px; color: var(--ink-2);
 }
 .wplain strong { color: var(--ink); }
+
+/* ---- critical paths index, and the link from a gap card ---------------------
+   The index is a directory of chains, one block per gap, and the whole block is the
+   link: at three chains a reader can scan them, and at thirty they still can, which
+   is the thing the old single-page layout could not do. */
+.pathrow {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--rule); border-radius: 10px; background: var(--surface);
+  padding: 20px 22px; margin-bottom: 16px;
+}
+.pathrow:hover { border-color: var(--accent); background: var(--reach-wash); }
+.pathrow__head { display: flex; gap: 14px; align-items: baseline; justify-content: space-between; flex-wrap: wrap; }
+.pathrow__head h2 { margin: 0; font-size: 20px; }
+.pathrow__path { margin-top: 14px; }
+.pathrow__path + .pathrow__path { border-top: 1px solid var(--rule-soft); padding-top: 14px; }
+.pathrow__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 9px; }
+.pathrow__path p { margin: 0; font-size: 15px; color: var(--ink-2); }
+.pathrow__go { display: inline-block; margin-top: 14px; font-size: 14.5px; color: var(--accent-ink); font-weight: 500; }
+
+/* On a gap card, the one gap in a hundred that has a chain says so here. */
+.gcard__path { padding: 0 22px 2px; }
+.gcard__path a {
+  display: inline-block; font-size: 14.5px; font-weight: 500;
+  color: var(--accent-ink); text-decoration: none;
+  border: 1px solid var(--accent); background: var(--reach-wash);
+  border-radius: 7px; padding: 7px 12px;
+}
+.gcard__path a:hover { text-decoration: underline; }

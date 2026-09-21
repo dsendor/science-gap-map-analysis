@@ -92,7 +92,9 @@ the two should agree on what is open.
 
 - **Goal.** A reviewed chain appears on `/chains`.
 - **Needs David.** Always. The site selects chains by id in
-  `app/src/app/chains/page.jsx`, and publishing is an outward-facing change.
+  `app/src/app/page.jsx` for the front page only. Since 2026-09-21 the critical-path
+  pages generate themselves from the export, so a complete chain reaches the site on the
+  next build; deploying it is still an outward-facing change and still David's.
 - **Size.** Small.
 
 ---

@@ -92,6 +92,10 @@ const paths = all("SELECT * FROM critical_paths WHERE status = 'complete' ORDER 
   programmes: JSON.parse(p.programmes_json || '[]'),
   gap_name: gaps.find((g) => g.id === p.gap_id)?.name ?? null,
   gap_field: gaps.find((g) => g.id === p.gap_id)?.field ?? null,
+  // Their slug, not one of ours. The site routes a gap's critical paths at
+  // /critical-paths/<slug>/ so the URL joins back to gap-map.org/gaps/<slug>/ and
+  // stays stable if we ever rename a chain id.
+  gap_slug: gaps.find((g) => g.id === p.gap_id)?.slug ?? null,
   links: all('SELECT * FROM critical_path_links WHERE path_id = ? ORDER BY seq', p.id).map((l) => ({
     ...l,
     capabilities: JSON.parse(l.capabilities_json || '[]'),

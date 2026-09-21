@@ -5,7 +5,7 @@ import GapCard from './GapCard';
 import { fieldColor } from '../lib/fields';
 import { TIER_ORDER, MATURITY_ORDER } from '../lib/constants';
 
-export default function MapBrowser({ gaps, newGaps }) {
+export default function MapBrowser({ gaps, newGaps, pathSlugs = [] }) {
   const [fields, setFields] = useState(() => new Set());
   const [tier, setTier] = useState('');
   const [kind, setKind] = useState('');
@@ -40,6 +40,11 @@ export default function MapBrowser({ gaps, newGaps }) {
     () => [...new Set(gaps.map((g) => g.primary_ai_type).filter(Boolean))].sort(),
     [gaps]
   );
+
+  // Which gaps have a critical path, so a card can offer the link. Passed down from
+  // the page because the browser is a client component and should not import the
+  // whole export a second time.
+  const hasPath = useMemo(() => new Set(pathSlugs), [pathSlugs]);
 
   const toggle = (f) =>
     setFields((prev) => {
@@ -132,7 +137,11 @@ export default function MapBrowser({ gaps, newGaps }) {
           Showing {rows.length} of {all.length}. The Gap Map&rsquo;s export order, not a ranking.
         </p>
         {rows.map((g) => (
-          <GapCard key={g.id} gap={g} />
+          <GapCard
+            key={g.id}
+            gap={g}
+            pathHref={hasPath.has(g.slug) ? `../critical-paths/${g.slug}/` : null}
+          />
         ))}
         {rows.length === 0 && <p style={{ color: 'var(--ink-3)' }}>Nothing matches those filters.</p>}
       </div>

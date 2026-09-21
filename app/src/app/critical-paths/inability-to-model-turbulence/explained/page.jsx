@@ -1,5 +1,5 @@
-import Nav from '../../components/Nav';
-import PageProvenance from '../../components/PageProvenance';
+import Nav from '../../../../components/Nav';
+import PageProvenance from '../../../../components/PageProvenance';
 
 export const metadata = { title: 'Turbulence, step by step' };
 
@@ -112,7 +112,7 @@ const RESOURCES = [
 export default function TurbulencePage() {
   return (
     <>
-      <Nav here="turbulence/" />
+      <Nav here="critical-paths/inability-to-model-turbulence/explained/" />
       <main className="wrap">
         <section>
           <div className="col">
@@ -369,8 +369,9 @@ export default function TurbulencePage() {
         <div className="wrap col">
           <p style={{ color: 'var(--ink-3)' }}>
             David Sendor, <a href="mailto:david@sendorai.com">david@sendorai.com</a> ·{' '}
-            <a href="../">The argument</a> · <a href="../chains/">Critical paths</a> ·{' '}
-            <a href="../map/">The extended map</a>
+            <a href="../">The turbulence critical path</a> ·{' '}
+            <a href="../../">All critical paths</a> · <a href="../../../">The argument</a> ·{' '}
+            <a href="../../../map/">The extended map</a>
           </p>
         </div>
       </div>

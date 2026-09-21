@@ -263,7 +263,17 @@ to `"human"`, and only after reading the chain against the gap himself.
 
 ### 13. Publishing is a separate change
 
-The site renders chains by hard-coded id in `app/src/app/chains/page.jsx` and
+**This changed on 2026-09-21.** The site no longer selects chains by id. `/critical-paths/`
+lists every complete chain, and each one has its own page at
+`/critical-paths/<their gap slug>/`, generated from the export by
+`generateStaticParams`. So a chain that passes the ingest appears on the site the next
+time the site is built, with no page edit. Two things still gate it: a chain with
+`status: "draft"` is never exported at all, and building and deploying the site is
+David's, which is where rule 9 applies. Adding a chain to the Mermaid source in
+`app/src/components/mermaid.js` is still a deliberate edit.
+
+The old text, kept because the front page still works this way: the site renders the
+publishing chain by hard-coded id in `app/src/app/page.jsx` and
 `app/src/app/page.jsx`. Adding a chain to the site, and to the Mermaid source in
 `app/src/components/mermaid.js`, is a site change David approves on its own.
 

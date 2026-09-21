@@ -16,6 +16,21 @@ export default function Chain({ path }) {
   const bind = path.links.filter((l) => l.is_binding);
   const aiYears = path.links.filter((l) => l.ai_acts).reduce((a, l) => a + (l.duration_years ?? 0), 0);
   const restYears = total - aiYears;
+  // The overlap between "AI acts here" and "this step carries the cost" used to be
+  // written into the sentence as a literal, which was true of the publishing chain
+  // and wrong for any other. It is the interesting number on a cost chain — a chain
+  // where the two sets are exactly complementary is a chain to suspect — so it is
+  // counted rather than asserted.
+  const aiSteps = path.links.filter((l) => l.ai_acts);
+  const bindAndAi = bind.filter((l) => l.ai_acts).length;
+  // What the step displays on a cost chain: a cost with its unit, a published
+  // quantity in words, or elapsed days standing in for a cost.
+  const measure = (l) => {
+    if (l.cost_value != null) return `${l.cost_value.toLocaleString()} ${l.cost_unit ?? ''}`.trim();
+    if (l.figure) return l.figure;
+    if (l.duration_days != null) return `${l.duration_days} days`;
+    return '\u2014';
+  };
 
   return (
     <div className="card" style={{ marginBottom: 22 }}>
@@ -54,9 +69,13 @@ export default function Chain({ path }) {
             <strong>
               {bind.length} of the {path.links.length} steps carry the cost,
             </strong>{' '}
-            and AI acts on {path.links.filter((l) => l.ai_acts).length} steps, two of which are not
-            among them. Cost here is additive rather than sequential, so &ldquo;carries the cost&rdquo;
-            means where the labor concentrates.
+            and AI acts on {aiSteps.length}{' '}
+            {aiSteps.length === 1 ? 'step' : 'steps'},{' '}
+            {bindAndAi === 0
+              ? 'none of which are among them'
+              : `${bindAndAi} of which ${bindAndAi === 1 ? 'is' : 'are'} also among them`}
+            . Cost here is additive rather than sequential, so &ldquo;carries the cost&rdquo; means
+            where the cost concentrates.
           </p>
         )}
       </div>
@@ -154,7 +173,7 @@ export default function Chain({ path }) {
                   <td>{l.is_binding ? <strong>{l.link}</strong> : l.link}</td>
                   <td>{l.blocker}</td>
                   <td className={isTime ? 'num' : ''}>
-                    {isTime ? `${l.duration_years} yr` : l.figure}
+                    {isTime ? `${l.duration_years} yr` : measure(l)}
                   </td>
                   <td>
                     {l.ai_type}

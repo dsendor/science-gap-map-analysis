@@ -7,9 +7,11 @@ The third critical path is built and on the branch
 *Inability to Model Turbulence*, a cost chain in CPU core-hours per flow condition.
 It is `reviewed: "ai-only"` and not on the site. Three things need David.
 
-**1. Does the chain go on the site?** Publishing is a separate change: the pages select
-chains by hard-coded id in `app/src/app/chains/page.jsx` and `app/src/app/page.jsx`,
-and the Mermaid source in `app/src/components/mermaid.js` needs the steps.
+**1. Does the chain go on the site?** It already does, locally: `/critical-paths/` is now
+an index and every complete chain generates its own page at `/critical-paths/<gap slug>/`
+from the export, so there is no per-chain page edit any more. What still needs David is
+the deploy, and whether the front page should mention the turbulence chain — that page
+still names its chain by hand. The old `/chains/` URL redirects.
 
 **2. Does `reviewed` become `"human"`?** Only David sets that, and only after reading the
 chain against the gap. The adversarial review in mode C has run; its findings are in

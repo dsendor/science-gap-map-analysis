@@ -28,7 +28,9 @@ function Attr({ cap, cls, title, children }) {
   );
 }
 
-export default function GapCard({ gap }) {
+// `pathHref` is passed rather than derived, because the card does not know how deep
+// in the site it is being rendered and a static export has no router to ask.
+export default function GapCard({ gap, pathHref }) {
   const [open, setOpen] = useState(false);
   const caps = gap.capabilities ?? [];
   const ind = gap.indicators?.[0];
@@ -59,6 +61,14 @@ export default function GapCard({ gap }) {
       <div className="gcard__body">
         <p className="gcard__theirs">{gap.description}</p>
       </div>
+
+      {pathHref && (
+        <div className="gcard__path">
+          <a href={pathHref}>
+            Critical path: the steps this gap runs through, and which of them AI reaches &rarr;
+          </a>
+        </div>
+      )}
 
       <div className="gcard__attrs">
         <Attr
