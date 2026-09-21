@@ -44,7 +44,8 @@ export default function MissingPage() {
           </p>
           <div className="pull">
             <p>
-              Type the {s.n_edges} capability edges. One pass, one column, no schema redesign &mdash;
+              Type the {s.n_edges} gap-to-capability links &mdash; more than there are capabilities,
+              because some hang under two gaps. One pass, one column, no schema redesign &mdash;
               and chains stop being illustrations somebody authored and start being something the
               data yields.
             </p>
@@ -105,7 +106,7 @@ export default function MissingPage() {
           </p>
           <div className="pull">
             <p>
-              One flag distinguishing the two would change what the map recommends for a fifth of
+              One flag distinguishing the two would change what the map recommends for roughly a tenth of
               its rows. It is the only item on this page that would add to the map rather than
               correct this contribution, and it needs its own definition, pass and audit.
             </p>

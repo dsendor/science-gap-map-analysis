@@ -314,8 +314,8 @@ export default function TurbulencePage() {
               My own guess, and it is a guess: APAQuS is the one to watch. Steps 3 and 5 are
               crowded with clever people and money, and step 5&rsquo;s cost is already falling without
               any of it. Step 4 is the one where a win would change what all
-              the others can do &mdash; and it&rsquo;s the only one of the seven where no current AI
-              capability acts at all!
+              the others can do. Three of the seven steps have no current AI capability acting on
+              them at all, and step 4 is the one where a win would unlock the other two!
             </p>
           </div>
         </section>
