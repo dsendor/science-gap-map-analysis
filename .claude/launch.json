@@ -9,6 +9,12 @@
         "4322"
       ],
       "port": 4322
+    },
+    {
+      "name": "gap-map-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "app", "run", "dev"],
+      "port": 3000
     }
   ]
 }

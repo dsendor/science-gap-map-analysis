@@ -503,6 +503,12 @@ details .body { padding: 0 2px 16px; }
 }
 .fill--hollow { background: transparent; }
 .sched__no { color: var(--none); font-family: var(--font-mono, ui-monospace, monospace); font-size: 12.5px; }
+/* No current AI capability acts on the step: the maturity label is still shown, in
+   grey, behind a dashed empty square, so it reads as "not counted" without hiding
+   what was recorded. */
+.sched__ai--off { color: var(--ink-3); }
+.fill--off { background: transparent; border: 1.5px dashed var(--none); }
+.sched__keyoff { color: var(--ink-3); }
 
 .sched__caps { font-size: 13.5px; }
 .sched__capcount {

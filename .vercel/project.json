@@ -1,1 +1,16 @@
-{"projectId":"prj_tEMMQuXK4Vvo90UMIIOP4maub8IF","orgId":"team_4e92QQ88unnxAWbsuvZ7ep3R","projectName":"science-gap-map-analysis"}
+{
+  "projectId": "prj_tEMMQuXK4Vvo90UMIIOP4maub8IF",
+  "orgId": "team_4e92QQ88unnxAWbsuvZ7ep3R",
+  "projectName": "science-gap-map-analysis",
+  "settings": {
+    "createdAt": 1787531175643,
+    "framework": null,
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": "cd app && npm install && npm run build",
+    "outputDirectory": "app/out",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}

@@ -57,6 +57,18 @@ export default function ChainSteps({ path, showBlockers = true }) {
 
   const noCaps = path.links.filter((l) => !(l.capability_links ?? []).length).length;
 
+  const KEY = [
+    { fill: 'full', label: 'works now' },
+    { fill: 'half', label: '2–5 years' },
+    { fill: 'hollow', label: 'speculative' },
+  ];
+  const aiCount = path.links.filter((l) => l.ai_acts).length;
+  const shownFills = new Set(
+    path.links.filter((l) => l.ai_acts).map((l) => MATURITY[l.maturity]?.fill ?? 'half')
+  );
+  const anyOff = path.links.some((l) => !l.ai_acts);
+  const anyCost = path.axis_kind === 'cost' && path.links.some((l) => l.is_binding === 1);
+
   return (
     <figure className="sched">
       <table>
@@ -91,15 +103,25 @@ export default function ChainSteps({ path, showBlockers = true }) {
                   )}
                 </th>
 
-                <td className="sched__ai">
-                  {l.ai_acts ? (
-                    <>
-                      <i className={`fill fill--${m?.fill ?? 'half'}`} aria-hidden="true" />
-                      {m?.label ?? l.maturity}
-                    </>
-                  ) : (
-                    <span className="sched__no">— no</span>
-                  )}
+                {/* One rule, the same on every chain: a step counts toward "AI acts on N"
+                    when a current AI capability acts on it, and that is what blue means.
+                    Every step shows its maturity label either way. This used to print
+                    "— no" whenever no capability acted, which hid the label, so a step
+                    recorded as speculative read "no" on one chain and "speculative" on
+                    another and a reader could not tell whether the counts agreed. */}
+                <td
+                  className={l.ai_acts ? 'sched__ai' : 'sched__ai sched__ai--off'}
+                  title={
+                    l.ai_acts
+                      ? 'A current AI capability acts on this step. Counted.'
+                      : 'No current AI capability acts on this step yet. Not counted.'
+                  }
+                >
+                  <i
+                    className={`fill fill--${l.ai_acts ? m?.fill ?? 'half' : 'off'}`}
+                    aria-hidden="true"
+                  />
+                  {m?.label ?? l.maturity}
                 </td>
 
                 <td className="sched__caps">
@@ -185,12 +207,27 @@ export default function ChainSteps({ path, showBlockers = true }) {
 
       <figcaption className="sched__key">
         <strong>
-          {noCaps} of {path.links.length} steps have no capability attached.
+          AI acts on {aiCount} of {path.links.length} steps &mdash; the blue ones.
         </strong>
-        <span><i className="fill fill--full" />works now</span>
-        <span><i className="fill fill--half" />2–5 years</span>
-        <span><i className="fill fill--hollow" />speculative</span>
-        <span className="sched__keycost">gold edge · carries the cost</span>
+        <strong>
+          {noCaps} of {path.links.length} have no Gap Map capability attached.
+        </strong>
+        {/* The key lists only what this chain's table actually shows. It used to list
+            all three maturities and the gold edge on every chain, including values a
+            chain never used, and omitted the one mark ("— no") that it did. */}
+        {KEY.filter((k) => shownFills.has(k.fill)).map((k) => (
+          <span key={k.fill}>
+            <i className={`fill fill--${k.fill}`} />
+            {k.label}
+          </span>
+        ))}
+        {anyOff && (
+          <span className="sched__keyoff">
+            <i className="fill fill--off" />
+            grey: no current AI capability acts yet, so not counted; the label is how far off
+          </span>
+        )}
+        {anyCost && <span className="sched__keycost">gold edge · carries the cost</span>}
       </figcaption>
     </figure>
   );
