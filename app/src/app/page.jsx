@@ -57,9 +57,9 @@ export default function Page() {
                 <strong>Production and drafting is where AI has had the biggest impact</strong>, and
                 where it will keep having one.{' '}
                 The saving is real and large, and it has not arrived as cheaper publishing.
-                Submissions rose 42% after ChatGPT&rsquo;s release &mdash; against a 20% bump
-                during COVID &mdash; and the work that came off authors landed downstream on
-                volunteer editors doing desk screening.
+                Submissions rose 42% after ChatGPT&rsquo;s release, against a 20% bump during
+                COVID, and the work that came off authors landed downstream on volunteer editors
+                doing desk screening.
                 <sup className="fn-ref">
                   <a href="#fn-orgsci" id="fn-orgsci-ref" aria-label="Source, note 1">
                     1
