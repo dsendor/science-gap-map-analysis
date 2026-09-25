@@ -30,6 +30,17 @@ Neither has been written in house format or put through a novelty refutation. Th
 `methodology/house-format.md` and `agents/reviewer.md` mode B, and it is only worth
 doing if the answer to (3) is yes.
 
+## Ready to publish, waiting on David
+
+Two releases, **in this order**, each needing David's yes (`docs/publishing.md`):
+
+1. **Gap map** — this branch, `claude/turbulence-modeling-ai-gaps-aca454`. Fast-forwarding
+   `main` to it publishes gapmap.sendorai.com. Every branch push builds a gated preview.
+2. **David's site** — branch `gapmap-sync` in `dsendor/sendorai`, off `design-versions`.
+   It points the Webb page at the telescope's new page on the gap map, so it must go
+   second. David releases it with `vercel deploy --prod` from a `design-versions`
+   checkout, never from `main`.
+
 ## What the chain did to the method
 
 Both earlier chains found AI missing the step where the time or cost concentrates. This

@@ -1,5 +1,12 @@
 # Vercel deployment
 
+> **Read `docs/publishing.md` first.** Since 2026-09-20 the site is public at
+> https://gapmap.sendorai.com, deployed from `main` by the Git connection: **a push to
+> `main` publishes it.** The access-control section below was written while the site
+> was meant to stay private. Its warnings about unlinked worktrees and preview gating
+> still hold; its instruction never to assign a production domain no longer describes
+> the project.
+
 ## Layout
 
 The Next.js app lives in `app/`, but its build script shells out to

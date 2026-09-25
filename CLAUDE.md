@@ -29,8 +29,10 @@ invite contributions. Tone follows from that everywhere.
 7. **Preserve their ids and slugs**, so the additions join back to their data.
 8. **One track, one worktree.** `node engine/worktree.mjs <track>` before starting.
 9. **Ask before anything outward-facing or hard to reverse** — a push to `main`, a
-   merge, a deploy, a public visibility change, a message to Convergent. Everything else,
-   decide and proceed: `docs/architecture.md`.
+   merge, a deploy, a public visibility change, a message to Convergent. **A push to
+   `main` here publishes gapmap.sendorai.com immediately**, so say so when you ask.
+   Both sites' publishing steps: `docs/publishing.md`. Everything else, decide and
+   proceed: `docs/architecture.md`.
 
 ## The four failure modes, in the order they happen here
 
@@ -79,4 +81,5 @@ node engine/export-artifact.mjs  # regenerate data.json and the CSV
 | Research tooling and sourcing rules | `methodology/research-method.md` |
 | Repo layout, the derived database, decision protocol | `docs/architecture.md` |
 | Working in parallel without collisions | `docs/worktrees.md` |
+| **Publishing either site, and what triggers it** | **`docs/publishing.md` — read before any merge to `main`** |
 | Deployment and access control | `docs/vercel-deploy.md` |
